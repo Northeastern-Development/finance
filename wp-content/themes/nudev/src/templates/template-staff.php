@@ -1,43 +1,44 @@
 <?php
 
-	/* Template Name: Staff */
-
-	/*
-
-	Eventually this page may include the use of a filter ala the administration page of main EDU
-
-	*/
+	/* Template Name: staff */
 
 	get_header();
 
 	wp_reset_query();
 
-	$department = "leadership";
+	// we need to be able to translate back the custom pretty URL to get the correct filter if one has been optioned
+	$fChk = $wp_query->query_vars['team-filter'];
+	$filter = (isset($fChk) && $fChk != ''?$fChk:'');
 
-	$deptTitle = 'KRI Leadership';
 ?>
 
-	<main id="staff" role="main" aria-label="Content">
+	<div class="main" role="main" aria-label="content">
 
-		<div style="width:100vw;background:#000;height:180px;">
+		<?php include(locate_template('includes/pagehero.php')); ?>
 
-		</div>
-		<div class="nu__hero-header"><a name="contact"></a>
-			<h2><span class="nu__red-span">KRI</span> is lead by academic and industry experts who know how to translate discoveries to the marketplace.</h2>
-		</div>
+		<?php include(locate_template('loops/loop-staff-president.php')); ?>
 
-		<section class="departmenthead">
-			<?php include(locate_template('loops/loop-staff-departmenthead.php')); ?>
-		</section>
-
-		<section class="stafflist">
+		<section class="nu__filters">
+			<h2>Leadership Team</h2>
+			<input id="toggle" type="checkbox" title="Click to select">
 			<div>
-				<h2><?=$deptTitle?></h2>
 				<ul>
-					<?php include(locate_template('loops/loop-staff.php')); ?>
+					<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
+					<?php include(locate_template('loops/loop-staff-filters.php')); ?>
 				</ul>
+				<div title="Click to show/hide more options" class="js__showmore">More</div>
 			</div>
 		</section>
 
-	</main>
-<?php	wp_reset_query(); get_footer(); ?>
+		<?php  include(locate_template('loops/loop-staff.php')); ?>
+
+	</div>
+
+<?php
+
+	if($filter != ''){
+		echo '<script> $(document).ready(function(){ $("html, body").animate({scrollTop: $("section.nu__filters").offset().top - ($("header").height() + 20)},0); });</script>';
+	}
+
+	get_footer();
+?>
