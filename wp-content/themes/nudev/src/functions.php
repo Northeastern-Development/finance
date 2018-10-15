@@ -8,6 +8,7 @@ require_once "modules/is-debug.php";
 
 // Load any external files you have here
 
+
 /*------------------------------------*\
     Theme Support
 \*------------------------------------*/
@@ -74,13 +75,12 @@ add_action('init', 'myplugin_rewrite_tag', 10, 0);
 function custom_rewrite_rule() {
     add_rewrite_rule('^faculty-and-staff/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
     add_rewrite_rule('^news/article/([^/]*)?','index.php?page_id=157&show-article=$matches[1]','top');  // full news article details
+    
+    // Finance Site (staff section) rewrite rules
+    add_rewrite_rule('^about/university-administration/([^/]*)?','index.php?page_id=778&team-filter=$matches[1]','top');  // administration
+    add_rewrite_rule('^about/board-of-trustees/([^/]*)?','index.php?page_id=781&board-type=$matches[1]','top');  // trustees
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
-
-
-
-
-
 
 
 
