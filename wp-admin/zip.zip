@@ -1,0 +1,111 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+	    <title>CAS &#8211; Central Authentication Service</title>
+        
+           
+           
+                
+                <link type="text/css" rel="stylesheet" href="/cas-server/css/cas.css;jsessionid=ndltp1tgujkjbrpvngge9s9u" />
+           
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="icon" href="/cas-server/favicon.ico;jsessionid=ndltp1tgujkjbrpvngge9s9u" type="image/x-icon" />
+	</head>
+	<body id="cas" class="fl-theme-iphone">
+<div id="header" class="flc-screenNavigator-navbar fl-navbar fl-table">
+<center>
+<img src="/cas-server/images/neu.png" alt="Northeastern University">
+</center>
+                </div>
+    <div class="flc-screenNavigator-view-container">
+
+        <div class="fl-screenNavigator-view">
+            </div>		
+            <div id="content" class="fl-screenNavigator-scroll-container">
+
+
+
+
+  <div class="box fl-panel" id="login">
+			<form id="fm1" class="fm-v clearfix" action="/cas-server/login;jsessionid=ndltp1tgujkjbrpvngge9s9u?service=https%3A%2F%2Fneuidmsso.neu.edu%2Fidp%2FAuthn%2FExtCas%3Bjsessionid%3D1bi7589pkmfhvhzkr9zwuxq9z%3Fconversation%3De1s1&amp;entityId=https%3A%2F%2Fgithub.neu.edu" method="post">
+                  
+                 Northeastern Enterprise Authentication Service 
+                    <h2></h2>
+                    <div class="row fl-controls-left">
+                        <label for="username" class="fl-label">myNortheastern <span class="accesskey">U</span>sername:</label>
+						
+
+						
+						
+						<input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value="" size="25" autocomplete="false"/>
+						
+                    </div>
+                    <div class="row fl-controls-left">
+                        <label for="password" class="fl-label">myNortheastern <span class="accesskey">P</span>assword:</label>
+						
+						
+						<input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off"/>
+                    </div>
+<!--
+                    <div class="row check">
+                        <input id="warn" name="warn" value="true" tabindex="3" accesskey="w" type="checkbox" />
+                        <label for="warn"><span class="accesskey">W</span>arn me before logging me into other sites.</label>
+                    </div>
+-->
+                    <div class="row btn-row">
+						<input type="hidden" name="lt" value="LT-2693046-2hA9ppidYdpcEQxjtVRdwD5H6QGVfT" />
+						<input type="hidden" name="execution" value="e1s1" />
+						<input type="hidden" name="_eventId" value="submit" />
+
+                        <input class="btn-submit" name="submit" accesskey="l" value="LOGIN" tabindex="4" type="submit" />
+                        <input class="btn-reset" name="reset" accesskey="c" value="CLEAR" tabindex="5" type="reset" />
+<br><br>
+                      <p>
+  <a href="http://my.northeastern.edu/myneu/accounts/password.html" target="_blank">Forgot your password?</a> 
+</p>
+<br><br>
+<p class="fl-panel fl-note fl-bevel-white fl-font-size-80">For security reasons, please Log Out and Exit your web browser when you are done accessing services that require authentication!</p>
+<br><br>
+<div id="neu1">
+<span style="vertical-align:middle">&copy 2014 Northeastern University&nbsp;</span>
+<img style="vertical-align:middle" src="/cas-server/images/InC_Participant.jpg" alt="InCommon">
+</div>
+
+                  </div> 
+            </form>
+          </div>
+            <div id="sidebar">
+                	
+            </div>
+
+                
+
+</div>
+                
+            </div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/cas-server/js/cas.js;jsessionid=ndltp1tgujkjbrpvngge9s9u"></script>
+    </body>
+</html>
+
+

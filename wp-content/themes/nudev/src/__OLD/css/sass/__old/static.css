@@ -1,0 +1,149 @@
+/**
+ * partials/static
+ * ---
+ */
+/**
+ * modules/variables
+ * ---
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/**
+ * Grid
+ */
+/* These are variables for the header */
+/* These are variables for the main navigation */
+/**
+ * modules/mixins
+ * ---
+ */
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
+/*
+@font-face {
+  font-family: "Font-Name";
+  src: url("fonts/font-name.eot");
+  src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
+    url("fonts/font-name.woff") format("woff"),
+    url("fonts/font-name.ttf") format("truetype"),
+    url("fonts/font-name.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+main.staticpage {
+  margin-bottom: 0; }
+  main.staticpage.submitastory {
+    margin: 190px 0 1vw 0; }
+  main.staticpage > section {
+    margin-top: 0; }
+    main.staticpage > section:nth-of-type(2) {
+      width: 100%;
+      margin: 0 0 0 0; }
+      main.staticpage > section:nth-of-type(2) > article {
+        width: 100%; }
+        main.staticpage > section:nth-of-type(2) > article > #contentarea {
+          margin: 50px 0 0 0;
+          background: #efefef; }
+          main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel {
+            padding: 50px 0 0 0;
+            margin: 0 15vw 0 15vw; }
+            main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel > div.contentarea > ul {
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: row;
+              list-style: none;
+              list-style-type: none;
+              margin: 0 7.5vw 0 7.5vw;
+              padding: 0 0 0 0; }
+              main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel > div.contentarea > ul > li {
+                width: 50%;
+                margin: 0 0 2vw 0; }
+                main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel > div.contentarea > ul > li > span {
+                  display: block; }
+                  main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel > div.contentarea > ul > li > span:nth-of-type(1) {
+                    font-weight: 700; }
+    main.staticpage > section > article {
+      width: 100%; }
+      main.staticpage > section > article > #contentarea {
+        padding: 0 0 0 0;
+        background: white; }
+        main.staticpage > section > article > #contentarea div.overlap {
+          background: white;
+          height: 50px;
+          top: -50px;
+          z-index: 1;
+          width: 70vw;
+          margin: 0 0 0 0; }
+        main.staticpage > section > article > #contentarea > div.panel > div.contact {
+          padding: 1vw 0 0 0; }
+        main.staticpage > section > article > #contentarea > div.panel > div.contentarea a {
+          text-decoration: underline; }
+          main.staticpage > section > article > #contentarea > div.panel > div.contentarea a:hover {
+            text-decoration: none; }
+        main.staticpage > section > article > #contentarea > div.panel > div.contentarea p {
+          margin: 0 7.5vw 1vw 7.5vw; }
+        main.staticpage > section > article > #contentarea > div.panel > div.contentarea h1 {
+          margin: 0 7.5vw 1vw 7.5vw;
+          font-family: "Tungsten Rounded A", "Tungsten Rounded B";
+          font-weight: 700;
+          font-size: 10rem;
+          line-height: 8rem;
+          letter-spacing: 2px;
+          text-transform: uppercase; }
+        main.staticpage > section > article > #contentarea > div.panel > div.contentarea h2 {
+          margin: 1vw 7.5vw 1vw 7.5vw;
+          text-transform: uppercase;
+          border-top: solid black 7px;
+          padding: 1vw 0 0 0; }
+        main.staticpage > section > article > #contentarea > div.panel > div.contentarea form {
+          margin: 4vw 7.5vw 4vw 7.5vw; }
+        main.staticpage > section > article > #contentarea > div.panel:nth-of-type(2) {
+          margin: 1vw 7.5vw 1vw 7.5vw; }
+          main.staticpage > section > article > #contentarea > div.panel:nth-of-type(2) > div.contentarea > h2 {
+            margin: 1vw 0 1vw 0; }
+          main.staticpage > section > article > #contentarea > div.panel:nth-of-type(2) > div.contentarea > p {
+            margin: 0 0 1vw 0; }
+
+@media only screen and (max-width: 1080px) {
+  main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel {
+    padding: 20px 0 0 0; }
+    main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel > div.contentarea > ul {
+      margin: 0 0 0 0; }
+  main.staticpage > section > article > #contentarea div.overlap {
+    display: none; }
+  main.staticpage > section > article > #contentarea > div.panel > div.contentarea p {
+    margin: 0 0 1vw 0; }
+  main.staticpage > section > article > #contentarea > div.panel > div.contentarea h1 {
+    margin: 3vw 0 1vw 0; }
+  main.staticpage > section > article > #contentarea > div.panel > div.contentarea h2 {
+    margin: 1vw 0 1vw 0; }
+  main.staticpage > section > article > #contentarea > div.panel > div.contentarea form {
+    margin: 4vw 0 4vw 0; } }
+
+@media only screen and (max-width: 700px) {
+  main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel {
+    width: 90vw;
+    margin: 0 5vw 0 5vw; } }
+
+@media only screen and (max-width: 600px) {
+  main.staticpage {
+    margin-top: 250px; }
+    main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel {
+      width: 90vw;
+      margin: 0 5vw 0 5vw; }
+      main.staticpage > section:nth-of-type(2) > article > #contentarea > div.panel > div.contentarea > ul > li {
+        width: 100%; }
+    main.staticpage > section > article > #contentarea > div.panel > div.contentarea p {
+      margin: 0 0 3vw 0; }
+    main.staticpage > section > article > #contentarea > div.panel > div.contentarea h1 {
+      margin: 5vw 0 1vw 0; }
+    main.staticpage > section > article > #contentarea > div.panel > div.contentarea form {
+      margin: 5vw 0 5vw 0; } }
