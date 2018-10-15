@@ -1037,6 +1037,10 @@ function create_post_type_nudev()
         ) // Add Category and Post Tags support
     ));
 
+
+    /**
+     * Staff CPT and Extras
+     */
     register_taxonomy_for_object_type('category', 'Staff'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'Staff');
     register_post_type('staff', // Register Custom Post Type
@@ -1056,22 +1060,132 @@ function create_post_type_nudev()
             'not_found_in_trash' => __('No Staff Members found in Trash', 'nudev')
         ),
         'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
+        'hierarchical' => false,        // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => false,
+        'rewrite' => array(
+            'with_front' => false,
+            'slug'       => 'alerts'
+        ),
         'supports' => array(
             'title',
             'editor',
             'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom nudev post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
+            // 'thumbnail'
+        ),                              // Go to Dashboard Custom nudev post for supports
+
+        'can_export' => false           // Allows export in Tools > Export
+        
+        // 'taxonomies' => array(
+        //     'post_tag',
+        //     'category'
+        // ) // Add Category and Post Tags support
     ));
+    // Add columns to staff post listing
+    function add_staff_acf_columns ( $columns )
+    {
+        $slice1 = array_slice($columns, 0, 2, true);
+        $slice2 = array_slice($columns, 2, count($columns), true);
+        return array_merge($slice1,array('type' => __ ( 'Type' )),array('department' => __ ( 'Department' )),array('sub-type' => __ ( 'Sub-Type' )),$slice2);
+    }
+    function staff_custom_column ( $column, $post_id )
+    {
+        switch ( $column ) {
+          case 'department':
+            $depts = get_post_meta ( $post_id, 'department', true );
+            // print_r($depts);
+            // if(count($depts) > 1){ // they are in more than one dept
+            if(gettype($depts) == "array"){ // they are in more than one dept
+              $v = '';
+              foreach($depts as $d){  // loop through and grab each department that this person is part of
+                $v .= ($v != ''?', '.$d:$d);
+              }
+              echo $v;
+            }else{  // they are only in one dept
+              // echo $depts[0];
+              echo $depts;
+            }
+            break;
+          case 'type':
+            echo get_post_meta ( $post_id, 'type', true );
+            break;
+          case 'sub-type':
+            echo get_post_meta ( $post_id, 'sub_type', true );
+            break;
+        }
+    }
+    // add filter options
+    function staff_admin_posts_filter_restrict_manage_posts()
+    {
+        global $typenow;
+        $type = 'staff';
+
+        if ($typenow == $type)
+        {
+            // get the full list of departments from the acf fields
+            //$field = get_field_object('field_5a5e2ca106a03');
+            //print_r($field['choices']);
+            // $values = $field['choices'];
+            $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
+            $guide = '<option value="%s"%s>%s</option>';
+            // hardcoded values for now, there is an issue retrieving them again after the first filter
+            $values = array(
+                'Advancement' => 'Advancement'
+                ,'External Affairs' => 'External Affairs'
+                ,'Finance' => 'Finance'
+                ,'General Counsel' => 'General Counsel'
+                ,'Lifelong Learning Network' => 'Lifelong Learning Network'
+                ,'President' => 'President'
+                ,'Professional Advancement Network' => 'Professional Advancement Network'
+                ,'Provost' => 'Provost'
+                ,'Strategy' => 'Strategy'
+            );
+        ?>
+            <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Department', 'department'); ?></option>
+        <?php
+            foreach ($values as $label => $value)
+            {
+                printf(
+                    $guide
+                    ,$value
+                    ,$value == $current_v? ' selected="selected"':''
+                    ,$label
+                );
+            }
+         ?>
+            </select>
+         <?php
+        }
+    } // end function 'staff_admin_posts_filter_restrict_manage_posts'
+
+    function staff_posts_filter( $query )
+    {
+        global $pagenow;
+        global $typenow;
+        $type = 'staff';
+        if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != '')
+        {
+            // this is so that we can fuzzy find a match even if the profile is in more than 1 dept.
+            $query->set('meta_query',array(
+            array(
+                'key' => 'department'
+                ,'value' => $_GET['ADMIN_FILTER_FIELD_VALUE']
+                ,'compare' => 'LIKE'
+            )
+            ));
+
+        }
+    }
+
+    add_filter ( 'manage_staff_posts_columns', 'add_staff_acf_columns' );
+    add_action ( 'manage_staff_posts_custom_column', 'staff_custom_column', 10, 2 );
+    add_action( 'restrict_manage_posts', 'staff_admin_posts_filter_restrict_manage_posts' );
+    add_filter( 'parse_query', 'staff_posts_filter' );
 
 
+
+    /**
+     * News and Events CPT & Extras
+     */
     register_taxonomy_for_object_type('category', 'newsandevents'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'newsandevents');
     register_post_type('newsandevents', // Register Custom Post Type
