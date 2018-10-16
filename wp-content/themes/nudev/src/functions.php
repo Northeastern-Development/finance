@@ -68,6 +68,9 @@ if (function_exists('add_theme_support'))
 function myplugin_rewrite_tag() {
   add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
   add_rewrite_tag( '%show-article%', '([^&]+)' );	// this is for the news article details
+
+  add_rewrite_tag( '%team-filter%', '([^&]+)' );	// this is for the administration page
+  
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
