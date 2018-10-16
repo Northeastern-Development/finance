@@ -11,6 +11,9 @@
 
 // Partials
 @import "partials/reset";
+
+@import "partials/static";
+
 @import "partials/wordpress";
 @import "partials/utils";
 @import "partials/wrapper";
@@ -22,10 +25,10 @@
 @import "pages/convening";
 @import "pages/location";
 @import "pages/form";
+
 @import "partials/responsive";
 @import "partials/print";
-
-@import "staff.scss";
+@import "pages/staff";
 
 
 a{

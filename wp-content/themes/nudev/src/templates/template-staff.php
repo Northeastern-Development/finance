@@ -14,7 +14,7 @@
 
 	<div class="main" role="main" aria-label="content">
 
-		<?php include(locate_template('includes/pagehero.php')); ?>
+		<?php include(locate_template('/includes/pagehero.php')); ?>
 
 		<?php include(locate_template('loops/loop-staff-president.php')); ?>
 
@@ -23,7 +23,7 @@
 			<input id="toggle" type="checkbox" title="Click to select">
 			<div>
 				<ul>
-					<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
+					<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/staff/" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
 					<?php include(locate_template('loops/loop-staff-filters.php')); ?>
 				</ul>
 				<div title="Click to show/hide more options" class="js__showmore">More</div>

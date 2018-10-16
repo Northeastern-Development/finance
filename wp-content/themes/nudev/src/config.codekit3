@@ -869,6 +869,16 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/news.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/sass/news-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/sass/news.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -930,6 +940,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/pages/location.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/pages/staff.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/pages/staff.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1051,6 +1074,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/partials/static.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/static.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/partials/utils.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1090,19 +1126,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/staff.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/staff.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/style.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1115,16 +1138,6 @@
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
-		},
-	"/css/staff.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/staff-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/css/style.css": {
 		"aP": 1,
@@ -1695,6 +1708,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/includes/navigation.php",
+		"oF": 0
+		},
+	"/includes/pagehero.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/pagehero.php",
 		"oF": 0
 		},
 	"/includes/sharepanel.php": {

@@ -80,7 +80,7 @@ function custom_rewrite_rule() {
     add_rewrite_rule('^news/article/([^/]*)?','index.php?page_id=157&show-article=$matches[1]','top');  // full news article details
     
     // Finance Site (staff section) rewrite rules
-    add_rewrite_rule('^about/university-administration/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
+    add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 
@@ -468,12 +468,12 @@ function nudev_styles(){
 
 
     // load the staff styles
-    if(is_page_template('templates/template-staff.php') || is_page_template('templates/template-staff-bio.php')){
-      wp_register_style('staffcss', get_template_directory_uri() . '/css/staff.css', array(), '1.0');
-      wp_enqueue_style('staffcss');
-      wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
-      wp_enqueue_style('magnificcss');
-    }
+    // if(is_page_template('templates/template-staff.php') || is_page_template('templates/template-staff-bio.php')){
+    //   wp_register_style('staffcss', get_template_directory_uri() . '/css/staff.css', array(), '1.0');
+    //   wp_enqueue_style('staffcss');
+    //   wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
+    //   wp_enqueue_style('magnificcss');
+    // }
 
 
     // load the news styles

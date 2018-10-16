@@ -1,0 +1,287 @@
+div.main {
+    margin: 0 auto 0 auto;
+    width: $content-width;
+
+    &>section {
+        position: relative;
+        margin: 0 0 0 0;
+        width: inherit;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+div.main {
+    width: $wrapper-width;
+    margin-top: $header-height;
+    background: rgba($brand_colors-white, 1.0);
+    color: rgba($brand_colors-black, 1.0);
+    height: auto;
+    section.hero {
+        background: rgba($brand_colors-black, 1.0);
+        width: $wrapper-width;
+        margin: 0 0 ($gutter * 2) 0;
+        overflow: hidden;
+        &>div {
+            width: $content-width-narrow;
+            margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+            color: rgba($brand_colors-white, 1.0);
+        }
+    }
+    section.intro {
+        width: $content-width-narrow;
+        margin: 0 auto 0 auto;
+        border-bottom: solid rgba($brand_colors-black, 1.0) 1px;
+
+        &>h1 {
+            margin: 0 0 ($gutter / 2) 0;
+        }
+    }
+    section.fullwidth {
+        width: $wrapper-width;
+        margin: ($gutter * 1.7) auto 0 auto;
+        padding: $gutter 0 0 0;
+        background: rgba($brand_colors-beige, 1.0);
+        text-align: center;
+        &>h4 {
+            text-align: center;
+        }
+        &>ul {
+            margin: $gutter 10vw 0 10vw;
+        }
+        & a {
+            &:hover {
+                border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
+                color: inherit;
+            }
+        }
+    }
+    section {
+        width: 50vw;
+        margin: ($gutter * 1.7) auto 0 auto;
+        & ul {
+            display: flex;
+            flex-direction: row;
+            margin: $gutter auto 0 auto;
+            list-style: none;
+            list-style-type: none;
+            &>li {
+                flex: 1;
+                margin: 0 $gutter $gutter 0;
+                text-align: left;
+                & a {
+                    border-bottom: none;
+                }
+                & h6 {
+                    &>a {
+                        border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
+                    }
+                }
+            }
+        }
+        &>ul.list {
+            display: block;
+            margin: 0 0 0 $gutter;
+            list-style: disc;
+            &>li {
+                margin: 0 0 ($gutter / 2) 0;
+                text-align: left;
+                letter-spacing: 0;
+                & a {
+                    border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
+                }
+                & h6 {
+                    &>a {
+                        border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
+                    }
+                }
+                &>ul {
+                    list-style: circle;
+                    margin: 0 0 0 $gutter;
+                }
+            }
+        }
+    }
+
+    section:last-child {
+        margin: ($gutter * 1.7) auto 0 auto;
+        padding-bottom: ($gutter * 1.5);
+    }
+}
+@media only screen and (max-width: 1280px) {
+
+    $gutter: 15px;
+
+    div.main {
+
+        section.hero {
+            margin: 0 0 ($gutter * 2) 0;
+
+            &>div {
+                margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+
+                &>h2 {
+                    //@include font-6l-c;
+                }
+
+                &>h3 {
+                    //@include font-2l-c;
+                }
+            }
+        }
+
+
+        section.intro {
+
+            &>h1 {
+                margin: 0 0 ($gutter / 2) 0;
+                //@include font-5r-l;
+            }
+        }
+
+
+        section.fullwidth {
+            margin: ($gutter * 1.7) auto 0 auto;
+            padding: $gutter 0 0 0;
+
+            &>h4 {
+                //@include font-3b-c;
+                text-align: center;
+            }
+
+        }
+
+
+        section {
+            margin: ($gutter * 1.7) auto 0 auto;
+
+            &>ul {
+                width: $content-width-wide;
+                //margin: 0 auto;
+                margin: $gutter auto 0 auto;
+
+                &>li {
+                    margin: 0 $gutter $gutter 0;
+
+                    & a {}
+
+                    & h6 {
+                        &>a {}
+                    }
+                }
+            }
+
+            &>h4 {
+                text-align: left;
+            }
+        }
+
+
+        section:last-child {
+            margin: ($gutter * 1.7) auto 0 auto;
+            padding-bottom: ($gutter * 1.5);
+        }
+
+    }
+
+}
+
+
+// @media only screen and (max-width: 1080px) {
+//
+//    section{
+//      width: $content-width;
+//    }
+//
+// }
+
+
+
+
+@media only screen and (max-width: 959px) {
+    div.main {
+
+        section.hero {
+
+            &>div {
+                width: $content-width;
+            }
+        }
+
+
+        section.intro {
+            width: $content-width;
+
+            &>h1 {}
+        }
+
+
+        section.fullwidth {
+            &>ul {
+                width: $content-width;
+            }
+        }
+
+        section {
+            width: $content-width-960;
+
+            &>ul:not(.nu__grid-filters-options, .nu__grid) {
+                flex-wrap: wrap;
+
+                &>li {
+                    flex: 0 0 45%;
+                    margin-right: 10%;
+
+                    &:nth-child(even) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width: 620px) {
+
+    div.main {
+
+        section.intro {
+            &>h1 {
+                text-align: left;
+            }
+        }
+
+        section {
+            width: $content-width-700;
+
+            &>ul {
+                width: 100%;
+                margin: 0 auto;
+                flex-direction: column;
+
+                &>li {
+                    //flex: 0 0 45%;
+                    margin-right: 0;
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 440px) {
+    div.main {
+        section.fullwidth {
+            &>h4 {
+                margin: 0 10vw;
+            }
+        }
+    }
+}

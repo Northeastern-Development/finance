@@ -12,7 +12,7 @@
 	if($field){
 		foreach($field['choices'] as $k => $v){
 			if(!in_array($v,$skipThese)){
-				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
+				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/staff/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
 			}
 		}
 	}
