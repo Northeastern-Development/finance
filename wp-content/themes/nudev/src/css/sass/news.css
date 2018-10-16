@@ -1,0 +1,261 @@
+/*
+ * Marketing
+ */
+/**
+ * modules/variables
+ * ---
+ */
+/**
+ * Typography
+ */
+/**
+  * Colors
+  */
+/**
+  * Grid
+  */
+/* These are variables for the header */
+/* These are variables for the main navigation */
+/**
+ * modules/mixins
+ * ---
+ */
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
+/* lato-100 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: url("../.fonts/lato-v14-latin-100.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Hairline"), local("Lato-Hairline"), url("../.fonts/lato-v14-latin-100.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-100.woff2") format("woff2"), url("../.fonts/lato-v14-latin-100.woff") format("woff"), url("../.fonts/lato-v14-latin-100.ttf") format("truetype"), url("../.fonts/lato-v14-latin-100.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-100italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 100;
+  src: url("../.fonts/lato-v14-latin-100italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Hairline Italic"), local("Lato-HairlineItalic"), url("../.fonts/lato-v14-latin-100italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-100italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-100italic.woff") format("woff"), url("../.fonts/lato-v14-latin-100italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-100italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../.fonts/lato-v14-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light"), local("Lato-Light"), url("../.fonts/lato-v14-latin-300.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-300.woff2") format("woff2"), url("../.fonts/lato-v14-latin-300.woff") format("woff"), url("../.fonts/lato-v14-latin-300.ttf") format("truetype"), url("../.fonts/lato-v14-latin-300.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: url("../.fonts/lato-v14-latin-300italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light Italic"), local("Lato-LightItalic"), url("../.fonts/lato-v14-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-300italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-300italic.woff") format("woff"), url("../.fonts/lato-v14-latin-300italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-300italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../.fonts/lato-v14-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Regular"), local("Lato-Regular"), url("../.fonts/lato-v14-latin-regular.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-regular.woff2") format("woff2"), url("../.fonts/lato-v14-latin-regular.woff") format("woff"), url("../.fonts/lato-v14-latin-regular.ttf") format("truetype"), url("../.fonts/lato-v14-latin-regular.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../.fonts/lato-v14-latin-italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Italic"), local("Lato-Italic"), url("../.fonts/lato-v14-latin-italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-italic.woff") format("woff"), url("../.fonts/lato-v14-latin-italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../.fonts/lato-v14-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold"), local("Lato-Bold"), url("../.fonts/lato-v14-latin-700.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-700.woff2") format("woff2"), url("../.fonts/lato-v14-latin-700.woff") format("woff"), url("../.fonts/lato-v14-latin-700.ttf") format("truetype"), url("../.fonts/lato-v14-latin-700.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../.fonts/lato-v14-latin-700italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("../.fonts/lato-v14-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-700italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-700italic.woff") format("woff"), url("../.fonts/lato-v14-latin-700italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-700italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../.fonts/lato-v14-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black"), local("Lato-Black"), url("../.fonts/lato-v14-latin-900.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900.woff") format("woff"), url("../.fonts/lato-v14-latin-900.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  src: url("../.fonts/lato-v14-latin-900italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+main#news .pagination:first-of-type {
+  margin-bottom: 30px; }
+
+main#news .pagination .current {
+  padding: 0 2px 10px 2px;
+  border-bottom: solid #cc0000 4px;
+  font-weight: 700; }
+
+main#news section.newslist > div {
+  width: 59vw;
+  margin: 0 auto 0 auto; }
+  main#news section.newslist > div > ul {
+    list-style: none;
+    list-style-type: none; }
+    main#news section.newslist > div > ul > li {
+      margin: 0 0 30px 0;
+      clear: both;
+      overflow: hidden; }
+      main#news section.newslist > div > ul > li > div {
+        width: 50%;
+        min-height: 300px;
+        overflow: hidden;
+        float: left; }
+        main#news section.newslist > div > ul > li > div > h3 {
+          font-size: 2.4rem;
+          line-height: 3.2rem;
+          font-weight: 700; }
+        main#news section.newslist > div > ul > li > div > h4 {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          font-weight: 400;
+          text-transform: none;
+          text-align: left;
+          font-size: 1.2rem; }
+          main#news section.newslist > div > ul > li > div > h4:before {
+            display: none; }
+        main#news section.newslist > div > ul > li > div:nth-of-type(1) {
+          margin: 0 2% 0 0;
+          width: 48%;
+          background: black;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+          background-size: cover !important; }
+        main#news section.newslist > div > ul > li > div > div.kri__more-link {
+          border-bottom: 1px solid #cc0000;
+          float: left; }
+          main#news section.newslist > div > ul > li > div > div.kri__more-link a:before {
+            display: block;
+            float: left;
+            font-family: 'Material Icons';
+            content: '\e5c8';
+            padding: 4px 10px 0 0;
+            line-height: 2.2rem; }
+
+main#news section.breadcrumbs {
+  width: 59vw;
+  margin: 200px auto 20px auto;
+  font-size: 1.2rem; }
+
+main#news section.newsarticle > div {
+  width: 59vw;
+  margin: 0 auto 0 auto; }
+  main#news section.newsarticle > div > div.img {
+    width: 100%;
+    height: 400px;
+    background: black;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important; }
+  main#news section.newsarticle > div .nu__caption {
+    font-size: 1.2rem;
+    font-weight: 700; }
+  main#news section.newsarticle > div h2 {
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700; }
+  main#news section.newsarticle > div p a span {
+    font-family: 'Material Icons'; }
+  main#news section.newsarticle > div blockquote {
+    width: 300px;
+    overflow: hidden;
+    font-size: 6rem;
+    line-height: 7rem;
+    word-wrap: break-word;
+    float: left;
+    border-right: solid #cc0000 10px;
+    padding: 0 20px 0 0;
+    margin: 0 20px 10px 0; }
+    main#news section.newsarticle > div blockquote.right {
+      float: right;
+      border-left: solid #cc0000 10px;
+      border-right: none;
+      padding: 0 0 0 20px;
+      margin: 0 0 10px 20px; }
+  main#news section.newsarticle > div a {
+    border-bottom: solid #cc0000 1px; }
+
+@media only screen and (max-width: 1000px) {
+  main#news section.newslist > div {
+    width: 71vw; }
+  main#news section.breadcrumbs {
+    width: 71vw;
+    margin: 200px auto 0 auto; }
+  main#news section.newsarticle > div {
+    width: 71vw; } }
+
+@media only screen and (max-width: 990px) {
+  main#news section.newslist {
+    width: 90vw;
+    margin: 0 auto; }
+    main#news section.newslist > div {
+      width: 90vw; }
+  main#news section.breadcrumbs {
+    width: 90vw;
+    margin: 200px auto 0 auto; }
+  main#news section.newsarticle {
+    width: 90vw;
+    margin: 0 auto; }
+    main#news section.newsarticle > div {
+      width: 90vw; } }
+
+@media only screen and (max-width: 600px) {
+  .alignleft, .alignright, .aligncenter {
+    width: 100%; }
+  main#news section.newslist > div > ul > li > div {
+    width: 100%;
+    float: none; }
+    main#news section.newslist > div > ul > li > div:last-of-type {
+      min-height: auto; }
+    main#news section.newslist > div > ul > li > div:nth-of-type(1) {
+      width: 100%; }
+  main#news section.newsarticle > div > div.img {
+    height: 250px; } }
