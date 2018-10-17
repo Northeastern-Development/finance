@@ -899,7 +899,6 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );//Removing Emoji cod
 
 
 
-
 // Add Filters
 add_filter('avatar_defaults', 'nudevgravatar'); // Custom Gravatar in Settings > Discussion
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
@@ -1001,6 +1000,8 @@ add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
 /*------------------------------------*\
     Custom Post Types
 \*------------------------------------*/
+
+require_once('classes/class.CPTs.php');
 
 // Create 1 Custom Post type for a Demo, called nudev
 function create_post_type_nudev()

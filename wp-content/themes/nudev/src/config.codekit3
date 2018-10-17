@@ -581,6 +581,13 @@
 		"oAP": "/category.php",
 		"oF": 0
 		},
+	"/classes/class.CPTs.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/classes/class.CPTs.php",
+		"oF": 0
+		},
 	"/comments.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2272,6 +2279,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-staff.php",
+		"oF": 0
+		},
+	"/templates/template-tasks.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-tasks.php",
 		"oF": 0
 		}
 	},
