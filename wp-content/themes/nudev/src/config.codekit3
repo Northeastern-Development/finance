@@ -876,16 +876,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/news.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/news-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/css/sass/news.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -960,6 +950,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/pages/staff.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/pages/tasks.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/pages/tasks.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2097,6 +2100,27 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-staff.php",
+		"oF": 0
+		},
+	"/loops/loop-task-faqs.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-task-faqs.php",
+		"oF": 0
+		},
+	"/loops/loop-task-main.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-task-main.php",
+		"oF": 0
+		},
+	"/loops/loop-task-optiongroup.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-task-optiongroup.php",
 		"oF": 0
 		},
 	"/loops/loop.php": {

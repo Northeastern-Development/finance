@@ -28,7 +28,7 @@
        &:nth-child(2){
          width: 55%;
          & > h3{
-           @include font-6l-l;
+        //    @include font-6l-l;
            border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
            padding: 0 0 ($gutter / 2) 0;
            margin: $gutter $gutter ($gutter / 2) 0;
@@ -47,7 +47,7 @@
                 position: absolute;
                 left: 0;
                 top: 8px;
-                @include font-4-c;
+                // @include font-4-c;
                 line-height: 10px;
                 color: rgba($brand_colors-black,0.8);
               }
@@ -81,7 +81,7 @@
            bottom: $gutter;
            color: rgba($brand_colors-white,1.0);
            & > span{
-             @include font-3b-l;
+            //  @include font-3b-l;
              letter-spacing: 1px;
            }
          }
@@ -94,7 +94,7 @@
      width: $content-width-wide;
     // overflow: hidden;
      & > h2{
-       @include font-6l-c;
+    //    @include font-6l-c;
      }
      & > input[type=checkbox]{
        position: absolute;
@@ -117,7 +117,7 @@
      & > div > div{
        position: relative;
        padding: 0 30px 0 10px;
-       @include font-1r-l;
+    //    @include font-1r-l;
        color: rgba($brand_colors-black,0.7);
        height: 40px;
        text-transform: uppercase;
@@ -187,18 +187,18 @@
            padding: 0 20px 11px 20px;
            color: rgba($brand_colors-black,0.7);
            text-transform: uppercase;
-           @include font-1r-l;
+        //    @include font-1r-l;
 
            & > span{
              display: none;
-             @include font-4-c;
+            //  @include font-4-c;
              font-weight: normal;
              height: 18px;
              overflow: hidden;
              margin: 15px 0 0 0;
            }
            &.active{
-             @include font-1b-l;
+            //  @include font-1b-l;
              color: rgba($brand_colors-black,1.0);
              border-bottom: solid rgba($brand_colors-red,1.0) 4px;
            }
@@ -235,14 +235,14 @@
             margin-right: 2vw;
             & > p{
               &.nametitle{
-                @include font-3b-l;
+                // @include font-3b-l;
                 margin-bottom: ($gutter / 2);
                 & > span{
-                  @include font-5b-l;
+                //   @include font-5b-l;
                 }
               }
               &.description{
-                @include font-2r-l;
+                // @include font-2r-l;
               }
               &.contact{
                 & > a{
@@ -255,7 +255,7 @@
                     position: absolute;
                     left: 0;
                     top: 8px;
-                    @include font-4-c;
+                    // @include font-4-c;
                     line-height: 10px;
                     color: rgba($brand_colors-black,0.8);
                   }
@@ -282,11 +282,11 @@
               background-size: cover !important;
             }
             & > p{
-              @include font-2r-l;
+            //   @include font-2r-l;
               margin: 10px 0 0 0;
               margin-bottom: ($gutter / 2);
               & > span{
-                @include font-2b-l;
+                // @include font-2b-l;
               }
             }
           }
@@ -315,14 +315,14 @@
            margin-right: 2vw;
            & > p{
              &.nametitle{
-               @include font-3b-l;
+            //    @include font-3b-l;
                margin-bottom: ($gutter / 2);
                & > span{
-                 @include font-5b-l;
+                //  @include font-5b-l;
                }
              }
              &.description{
-               @include font-2r-l;
+            //    @include font-2r-l;
              }
              &.contact{
                & > a{
@@ -335,7 +335,7 @@
                    position: absolute;
                    left: 0;
                    top: 8px;
-                   @include font-4-c;
+                //    @include font-4-c;
                    line-height: 10px;
                    color: rgba($brand_colors-black,0.8);
                  }
@@ -362,12 +362,12 @@
              background-size: cover !important;
            }
            & > p{
-             @include font-2r-l;
+            //  @include font-2r-l;
              line-height: 2.2rem;
              margin: 10px 0 0 0;
              margin-bottom: ($gutter / 2);
              & > span{
-               @include font-2b-l;
+            //    @include font-2b-l;
                line-height: 2.2rem;
              }
            }
@@ -381,7 +381,7 @@
 
      width: $content-width-wide;
      & > h3{
-       @include font-5b-c;
+    //    @include font-5b-c;
        margin: 2vw auto 2vw auto;
      }
      & > ul{
@@ -407,12 +407,12 @@
          }
          & > p{
            width: $ww;
-           @include font-2r-l;
+        //    @include font-2r-l;
            line-height: 2.2rem;
            margin: 10px 0 0 0;
            margin-bottom: ($gutter / 2);
            & > span{
-             @include font-2b-l;
+            //  @include font-2b-l;
              line-height: 2.2rem;
            }
          }
@@ -494,7 +494,7 @@
          &:nth-child(2){
            // width: 55%;
            & > h3{
-             @include font-5l-l;
+            //  @include font-5l-l;
              // border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
              // padding: 0 0 ($gutter / 2) 0;
              // margin: $gutter $gutter ($gutter / 2) 0;
@@ -547,7 +547,7 @@
              // bottom: $gutter;
              // color: rgba($brand_colors-white,1.0);
              & > span{
-               @include font-2b-l;
+            //    @include font-2b-l;
                // letter-spacing: 1px;
              }
            }
@@ -560,7 +560,7 @@
        // width: $content-width-wide;
       // overflow: hidden;
        & > h2{
-         @include font-5l-c;
+        //  @include font-5l-c;
        }
        // & > input[type=checkbox]{
        //   position: absolute;
@@ -700,10 +700,10 @@
               // margin-right: 2vw;
               & > p{
                 &.nametitle{
-                  @include font-2b-l;
+                //   @include font-2b-l;
                   // margin-bottom: ($gutter / 2);
                   & > span{
-                    @include font-3b-l;
+                    // @include font-3b-l;
                   }
                 }
                 // &.description{
@@ -780,10 +780,10 @@
              // margin-right: 2vw;
              & > p{
                &.nametitle{
-                 @include font-2b-l;
+                //  @include font-2b-l;
                  // margin-bottom: ($gutter / 2);
                  & > span{
-                   @include font-3b-l;
+                //    @include font-3b-l;
                  }
                }
                // &.description{
@@ -846,7 +846,7 @@
 
        // width: $content-width-wide;
        & > h3{
-         @include font-3b-c;
+        //  @include font-3b-c;
          // margin: 2vw auto 2vw auto;
        }
        // & > ul{
@@ -965,7 +965,7 @@
          &:nth-child(2){
          //   width: 55%;
            & > h3{
-             @include font-3l-l;
+            //  @include font-3l-l;
          //     border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
          //     padding: 0 0 ($gutter / 2) 0;
          //     margin: $gutter $gutter ($gutter / 2) 0;
@@ -1031,7 +1031,7 @@
        // width: $content-width-wide;
       // overflow: hidden;
        & > h2{
-         @include font-3l-c;
+        //  @include font-3l-c;
        }
        // & > input[type=checkbox]{
        //   position: absolute;
@@ -1832,12 +1832,12 @@
               text-align: center;
        //       color: rgba($brand_colors-black,0.7);
        //       text-transform: uppercase;
-              @include font-1r-c;
+            //   @include font-1r-c;
             // & > span{
             //   display: inline-block;
             // }
              &.active{
-               @include font-1b-c;
+            //    @include font-1b-c;
                // line-height: 1rem;
                // color: rgba($brand_colors-black,1.0);
                // border-bottom: solid rgba($brand_colors-red,1.0) 4px;

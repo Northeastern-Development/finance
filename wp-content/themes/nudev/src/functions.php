@@ -66,21 +66,27 @@ if (function_exists('add_theme_support'))
 
 // add custom query tags here
 function myplugin_rewrite_tag() {
-  add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
-  add_rewrite_tag( '%show-article%', '([^&]+)' );	// this is for the news article details
+//   add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
+//   add_rewrite_tag( '%show-article%', '([^&]+)' );	// this is for the news article details
 
   add_rewrite_tag( '%team-filter%', '([^&]+)' );	// this is for the administration page
+
+  
+  add_rewrite_tag( '%taskname%', '([^&]+)' );	// this is for the tasks page
   
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
 // add custom rewrite rules here
 function custom_rewrite_rule() {
-    add_rewrite_rule('^faculty-and-staff/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
-    add_rewrite_rule('^news/article/([^/]*)?','index.php?page_id=157&show-article=$matches[1]','top');  // full news article details
+    // add_rewrite_rule('^faculty-and-staff/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
+    // add_rewrite_rule('^news/article/([^/]*)?','index.php?page_id=157&show-article=$matches[1]','top');  // full news article details
     
+
     // Finance Site (staff section) rewrite rules
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
+
+    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 
