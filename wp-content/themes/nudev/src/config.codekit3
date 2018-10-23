@@ -1808,6 +1808,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/tasks-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/tasks-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/tasks.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/tasks-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/languages/cy_GB.mo": {
 		"cB": 0,
 		"ft": 8192,
@@ -2128,6 +2148,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop.php",
+		"oF": 0
+		},
+	"/loops/reuseable/loop-heretohelp.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/reuseable/loop-heretohelp.php",
 		"oF": 0
 		},
 	"/modules/is-debug.php": {

@@ -1,10 +1,9 @@
 @media only screen {
-
-
-    // fix some annoyances (bug related)
-    body.page-template-template-tasks,
-    body.single-tasks {
-        header {
+    main#task {
+        padding-top: 40px;
+    }
+    body.tasks {
+        .header {
             top: 0;
         }
         p.testp {
@@ -12,36 +11,35 @@
         }
     }
 
-    main#task {
-        padding-top: 40px;
-        text-align: center;
-        section, div, p {
-            text-align: left;
+    .task-options > li {
+        border-bottom: 1px solid #000;
+        margin-bottom: 40px;
+    }
+
+    // Accordions Top Level:
+    .task-options > li > a {
+        &:hover {
+            color: inherit;
         }
-        h4 {
-            &:before {
-                display: none;
-            }
+
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+        img, h5 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 auto;
+        }
+        h5 {
+            margin-left: 15px;
         }
     }
 
-    .tasks-description {
-        max-width: 960px;
-        margin: 0 auto;
-        margin-top: 40px;
-    }
+    // Accordions Nested Level
+    .task-options > li > ul {
+        margin-left: 40px;
 
-    .tasks-optiongroup {
-        padding: 20px;
-        
-        ul {
-            padding-left: 40px;
-            list-style-type: circle;
-            p {
-                font-size: 14px;
-            }
-        }
     }
-    
-    
 }

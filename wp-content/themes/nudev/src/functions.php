@@ -331,9 +331,6 @@ function nudev_header_scripts()
                     'jquery'),
                 '1.0.0');
 
-            // Enqueue Scripts
-            wp_enqueue_script('nudevscripts');
-
         // If production
         } else {
             // Scripts minify
@@ -405,6 +402,15 @@ function nudev_conditional_scripts(){
   //   wp_enqueue_script('magnificjs');
   // }
 
+    // load tasks js for the task page
+    if( get_page_template_slug($post_id) === 'templates/template-tasks.php'){
+        wp_register_script('taskspage', get_template_directory_uri() . '/js/tasks.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('taskspage');
+    }
+
+
+    
+    
 }
 
 /* ******************************************************************* */
@@ -873,7 +879,7 @@ function nudevcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'nudev_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'nudev_conditional_scripts'); // Add Conditional Page Scripts
+add_action('wp_enqueue_scripts', 'nudev_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_head', 'ism_dns_prefetch', 0); // DNS Prefetch Google Fonts
 add_action('wp_enqueue_scripts', 'nudev_styles'); // Add Theme Stylesheet

@@ -41,25 +41,17 @@
 
     get_header();
     
-    
+    $taskFields = get_fields($task);
+
  ?>
 <main id="task" role="main" aria-label="content">
-
-    
-
     <?php 
         include(locate_template('loops/loop-task-main.php'));
-     ?>
-
-    <?php 
         include(locate_template('loops/loop-task-optiongroup.php'));
+        if( !empty($taskFields['faq']) ){
+            include(locate_template('loops/loop-task-faqs.php'));
+        }
      ?>
-
-    <?php 
-        include(locate_template('loops/loop-task-faqs.php'));
-     ?>
-    
-
 </main>
 <?php 
     get_footer();
