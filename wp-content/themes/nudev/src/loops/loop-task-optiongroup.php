@@ -20,7 +20,6 @@ foreach ($taskFields['options_group'] as $option) {
     $options .= '</ul>';
 }
 $options .= '</ul>';
-$format = '<h2>%s</h2><section>%s</section>';
+$format = '<section><h2>%s</h2>%s</section>';
 echo sprintf($format, $taskFields['sub_title'], $options);
 ?>
-

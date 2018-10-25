@@ -1,6 +1,6 @@
 <?php
 
-	/* Template Name: staff */
+	/* Template Name: Staff */
 
 	get_header();
 

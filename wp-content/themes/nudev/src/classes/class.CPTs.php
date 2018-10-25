@@ -52,6 +52,30 @@ class CPTs
             'menu_position' => null,
         );
         register_post_type('tasks', $args);
+
+        $labels = array(
+            'name' => __('Helpful Links', 'nudev'), // Rename these to suit
+            'singular_name' => __('Helpful Links', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit', 'nudev'),
+            'new_item' => __('New Helpful Links Item', 'nudev'),
+            'view' => __('View Helpful Links Item', 'nudev'),
+            'view_item' => __('View Helpful Links Item', 'nudev'),
+            'search_items' => __('Search Helpful Links', 'nudev'),
+            'not_found' => __('No Helpful Links found', 'nudev'),
+            'not_found_in_trash' => __('No Helpful Links found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+        );
+        register_taxonomy_for_object_type('category', 'Helpful Links'); // Register Taxonomies for Category
+        register_taxonomy_for_object_type('post_tag', 'Helpful Links');
+        register_post_type('helpful_links', $args);
     }
 }
 $cpts = new CPTs();

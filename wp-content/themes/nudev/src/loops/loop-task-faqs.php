@@ -4,7 +4,7 @@
  */
 $format = '<li><h5>%s</h5><p>%s</p></li>';
 
-$content = '<h2>FAQ</h2><ul class="js__collapsible_list">';
+$content = '<section><h2>FAQ</h2><ul class="js__collapsible_list">';
 
 foreach ($taskFields['faq'] as $faq) {
 
@@ -16,6 +16,6 @@ foreach ($taskFields['faq'] as $faq) {
         
     );
 }
-$content .= '</ul>';
+$content .= '</ul></section>';
 echo $content;
 ?>

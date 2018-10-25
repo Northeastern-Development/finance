@@ -588,6 +588,13 @@
 		"oAP": "/classes/class.CPTs.php",
 		"oF": 0
 		},
+	"/classes/class.Prefooter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/classes/class.Prefooter.php",
+		"oF": 0
+		},
 	"/comments.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1006,6 +1013,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/partials/helpful-links.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/helpful-links.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/partials/nav.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1041,6 +1061,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/print.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/partials/related-tasks.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/related-tasks.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1727,6 +1760,20 @@
 		"oAP": "/includes/pagehero.php",
 		"oF": 0
 		},
+	"/includes/prefooter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/prefooter.php",
+		"oF": 0
+		},
+	"/includes/related-tasks.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/related-tasks.php",
+		"oF": 0
+		},
 	"/includes/sharepanel.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2094,6 +2141,13 @@
 		"oAP": "/loops/loop-news-archive.php",
 		"oF": 0
 		},
+	"/loops/loop-prefooter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-prefooter.php",
+		"oF": 0
+		},
 	"/loops/loop-staff-departmenthead.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2150,11 +2204,11 @@
 		"oAP": "/loops/loop.php",
 		"oF": 0
 		},
-	"/loops/reuseable/loop-heretohelp.php": {
+	"/loops/reusable/loop-heretohelp.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/loops/reuseable/loop-heretohelp.php",
+		"oAP": "/loops/reusable/loop-heretohelp.php",
 		"oF": 0
 		},
 	"/modules/is-debug.php": {

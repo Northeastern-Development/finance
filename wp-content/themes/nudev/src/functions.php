@@ -93,8 +93,6 @@ add_action('init', 'custom_rewrite_rule', 10, 0);
 
 
 
-
-
 // nudev navigation
 function nudev_nav()
 {
@@ -1007,13 +1005,12 @@ function my_admin_bar_render() {
 add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
 
 
-
-
 /*------------------------------------*\
     Custom Post Types
 \*------------------------------------*/
 
-require_once('classes/class.CPTs.php');
+require_once('classes/class.cpts.php');
+require_once('classes/class.prefooter.php');
 
 // Create 1 Custom Post type for a Demo, called nudev
 function create_post_type_nudev()

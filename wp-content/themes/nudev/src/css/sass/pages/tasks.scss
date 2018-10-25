@@ -42,4 +42,29 @@
         margin-left: 40px;
 
     }
+
+    .h2h-items {
+        display: flex;
+        flex-flow: row nowrap;
+        list-style-type: none;
+        max-width: 720px;
+        margin: 0 auto;
+        p {
+            margin-bottom: 2px;
+            font-size: 14px;
+            line-height: 1.25;
+        }
+    }
+    .h2h-items-item {
+        flex: 1 0 auto;
+    }
+
+    .h2h-items-item-img {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+    }
+    
+    
+    
 }

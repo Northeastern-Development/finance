@@ -51,6 +51,22 @@
         if( !empty($taskFields['faq']) ){
             include(locate_template('loops/loop-task-faqs.php'));
         }
+        include(locate_template('loops/reusable/loop-heretohelp.php'));
+        
+        include(locate_template('includes/prefooter.php'));
+
+        
+        
+        
+     ?>
+    <?php 
+        if( !empty($taskFields['related_tasks']) ) :
+     ?>
+            <section class="relatedtasks">
+                <?php include(locate_template('includes/related-tasks.php')); ?>
+            </section>
+    <?php 
+        endif;
      ?>
 </main>
 <?php 
