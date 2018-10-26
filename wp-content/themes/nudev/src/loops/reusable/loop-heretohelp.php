@@ -3,11 +3,19 @@
  * Here To Help Reusable Section
  */
 
-    // Open a section and a ul
     $content = '<section id="heretohelp"><ul class="h2h-items">';
 
-    // Set the sprintf guide to create line items
-    $guide = '<li class="h2h-items-item"><img class="h2h-items-item-img" src="%s"><p>%s</p><p>%s</p><p>%s</p><p>%s</p><a href="tel:%s"><p>%s</p></a><a href="mailto:%s"><p>%s</p></li>';
+    $guide = '
+        <li class="h2h-items-item">
+        <img class="h2h-items-item-img" src="%s">
+        %s
+        %s
+        %s
+        %s
+        %s
+        %s
+        </li>
+    ';
 
     // loop thru the 'helpers' post objects (they are staff cpt posts)
 
@@ -18,14 +26,12 @@
         $content .= sprintf(
             $guide
             ,$fields['headshot']['url']
-            ,$helper['helper']->post_title
-            ,$fields['department'][0]
-            ,$fields['title']
-            ,$fields['expert_at']
-            ,$fields['phone']
-            ,$fields['phone']
-            ,$fields['email']
-            ,$fields['email']
+            , (isset($helper['helper']->post_title)) ? '<p>'.$helper['helper']->post_title.'</p>' : null
+            , (isset( $fields['department'][0] )) ? '<p>'.$fields['department'][0].'</p>' : null
+            , (isset( $fields['title'] )) ? '<p>'.$fields['title'].'</p>' : null
+            , (isset( $fields['expert_at'] )) ? '<p>'.$fields['expert_at'].'</p>' : null
+            , (isset( $fields['phone'] )) ? '<a href="tel:'.$fields['phone'].'"><p>'.$fields['phone'].'</p></a>' : null
+            , (isset( $fields['email'] )) ? '<a href="mailto:'.$fields['email'].'"><p>'.$fields['email'].'</p></a>' : null
         );
     }
     // close out the ul and the section
