@@ -136,7 +136,7 @@
 
 		$departments .= '<section class="nu__team-list">'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
 
-		$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></li>';
+		$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p><p>%s</p><p>%s</p><p>%s</p></li>';
 
 		foreach($res as $r){
 			$fields = get_fields($r->ID);
@@ -152,7 +152,10 @@
 				$guide
 				,$fields['headshot']['url']
 				,trim($r->post_title)
-				,trim($fields['title'])
+                ,trim($fields['title'])
+                ,( isset($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
+                ,( isset($fields['phone']) ) ? '<a href="tel:"'. $fields['phone'] .'">'.$fields['phone'].'</a>' : null
+                ,( isset($fields['email']) ) ? '<a href="mailto:"'. $fields['email'] .'">'.$fields['email'].'</a>' : null
 			);
 
 		}

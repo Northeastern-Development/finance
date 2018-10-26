@@ -2169,13 +2169,6 @@
 		"oAP": "/loops/loop-staff-president.php",
 		"oF": 0
 		},
-	"/loops/loop-staff.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-staff.php",
-		"oF": 0
-		},
 	"/loops/loop-task-faqs.php": {
 		"cB": 0,
 		"ft": 8192,
