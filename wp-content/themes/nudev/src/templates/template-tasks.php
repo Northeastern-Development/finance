@@ -46,27 +46,24 @@
  ?>
 <main id="task" role="main" aria-label="content">
     <?php 
+        // Required Page Sections :
         include(locate_template('loops/loop-task-main.php'));
+        
         include(locate_template('loops/loop-task-optiongroup.php'));
+
+        // Optional Page Sections :
         if( !empty($taskFields['faq']) ){
             include(locate_template('loops/loop-task-faqs.php'));
         }
-        include(locate_template('loops/reusable/loop-heretohelp.php'));
-        
-        include(locate_template('includes/prefooter.php'));
-
-        
-        
-        
-     ?>
-    <?php 
-        if( !empty($taskFields['related_tasks']) ) :
-     ?>
-            <section class="relatedtasks">
-                <?php include(locate_template('includes/related-tasks.php')); ?>
-            </section>
-    <?php 
-        endif;
+        if( !empty($taskFields['helpers']) ){
+            include(locate_template('loops/reusable/loop-heretohelp.php'));
+        }
+        if( $taskFields['use_pre-footer'] !== 1 ){
+            include(locate_template('includes/prefooter.php'));
+        }
+        if( !empty($taskFields['related_tasks'])  ) {
+            include(locate_template('includes/related-tasks.php'));
+        }
      ?>
 </main>
 <?php 

@@ -76,6 +76,34 @@ class CPTs
         register_taxonomy_for_object_type('category', 'Helpful Links'); // Register Taxonomies for Category
         register_taxonomy_for_object_type('post_tag', 'Helpful Links');
         register_post_type('helpful_links', $args);
+
+
+        $this->reg_glossary_post_type();
+    }
+    function reg_glossary_post_type(){
+        // Task Categories
+        $labels = array(
+            'name' => __('Glossary Items', 'nudev'), // Rename these to suit
+            'singular_name' => __('Glossary Item', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Glossary Item', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Glossary Item', 'nudev'),
+            'new_item' => __('New Glossary Item', 'nudev'),
+            'view' => __('View Glossary Item', 'nudev'),
+            'view_item' => __('View Glossary Item', 'nudev'),
+            'search_items' => __('Search Glossary Items', 'nudev'),
+            'not_found' => __('No Glossary Items found', 'nudev'),
+            'not_found_in_trash' => __('No Glossary Items found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('glossary_items', $args);
     }
 }
 $cpts = new CPTs();

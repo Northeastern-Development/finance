@@ -592,7 +592,7 @@
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/classes/class.Prefooter.php",
+		"oAP": "/classes/class.prefooter.php",
 		"oF": 0
 		},
 	"/comments.php": {
@@ -2139,13 +2139,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-news-archive.php",
-		"oF": 0
-		},
-	"/loops/loop-prefooter.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-prefooter.php",
 		"oF": 0
 		},
 	"/loops/loop-staff-departmenthead.php": {

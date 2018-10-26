@@ -1,12 +1,12 @@
 <?php 
 
-    $content = '<h2>Related Tasks</h2><ul>';
-    $guide = '<a href="%s"><li>%s</li></a>';
+    $content = '<section class="relatedtasks"><h3>Related Tasks</h3><ul>';
+    $guide = '<a href="%s" target="_blank"><li>%s</li></a>';
     foreach ($taskFields['related_tasks'] as $i => $relTask) {
 
         $fields = get_fields($relTask['task']->ID);
         
-        $path = $fields['category'][0]->post_name . '/' . $relTask['task']->post_name;
+        $path = 'tasks/'.$fields['category'][0]->post_name . '/' . $relTask['task']->post_name;
 
         $modifiedurl =  home_url($path);
         
@@ -17,7 +17,7 @@
             , $relTask['task']->post_title
         );
     }
-    $content .= '</ul>';
+    $content .= '</ul></section>';
 
     echo $content;
 

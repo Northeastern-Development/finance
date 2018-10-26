@@ -3,8 +3,12 @@
  * Template Name: Glossary
  */
     get_header();
+
+
+    // Get the Glossary Posts
+    
  ?>
-<main role="main">
+<main id="glossary" role="main">
     <section>
 
         
