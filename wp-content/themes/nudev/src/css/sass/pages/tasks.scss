@@ -1,8 +1,10 @@
 @media only screen {
-    main#task {
+    main#task,
+    main#glossary {
         padding-top: 40px;
     }
-    body.tasks {
+    body.tasks,
+    body.glossary {
         .header {
             top: 0;
         }
