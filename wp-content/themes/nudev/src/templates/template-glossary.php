@@ -22,48 +22,53 @@
         'orderby' => 'position',
         'order' => 'ASC'
     );
-
     $glossQuery = get_posts( $args );
-
-
+    // define alphabet w/ each letter associated to an empty array
     $alphabet = array('a' => [],'b' => [],'c' => [],'d' => [],'e' => [],'f' => [],'g' => [],'h' => [],'i' => [],'j' => [],'k' => [],'l' => [],'m' => [],'n' => [],'o' => [],'p' => [],'q' => [],'r' => [],'s' => [],'t' => [],'u' => [],'v' => [],'w' => [],'x' => [],'y' => [],'z' => []);
     
-    // adds record data to the letter array based on position
-    foreach( $glossQuery as $i => $glossPost){
+    // set each letter's empty array to matching glossary posts by their 'position' field
+    foreach( $glossQuery as $i => $glossPost)
+    {
         $fields = get_fields($glossPost);
-
-        // $fields['post_title'] = $glossPost->post_title;
-
-        $alphabet[ $fields['position'] ][] = array("post_title"=>$glossPost->post_title,"description"=>$fields['description']);
-    }
-
-    $guide = '<h2>%s</h2>';
-    $content = '<div><ul>';
-
-    $objGuide = '<li>%s%s</li>';
-
-    // loop to present information to the screen
-    foreach( $alphabet as $letter => $objects ){
-
-        $content .= sprintf($guide, strtoupper($letter));
-        
-        // each record at the specific letter position
-        foreach( $objects as $object ){
-            $content .= sprintf(
-                $objGuide
-                ,$object['post_title']
-                ,$object['description']
-            );
-        }
-        $content .= '</ul>';
+        $alphabet[ $fields['position'] ][] = array(
+            "post_title" => $glossPost->post_title
+            ,"description" => $fields['description']
+        );
     }
     
+    $jumpnav = '<div class="glossary-jumpnav">';
+    $contents = '<div>';
+    $haspost_guide = '<li><h6>%s</h6>%s</li>';
+    // each letter
+    foreach( $alphabet as $letter => $array )
+    {
+        // each letter is a h2 within an ul
+        $contents .= '<ul id="'.$letter.'"><h2>'.strtoupper($letter).'</h2>';
+        // if letter has posts
+        if( !empty($array) ){
+            foreach( $array as $info ){
+                $contents .= sprintf(
+                    $haspost_guide
+                    ,$info['post_title']
+                    ,$info['description']
+                );
+            }
+            // jumpnav letter is active
+            $jumpnav .= '<span><a href="#'.$letter.'">'.strtoupper($letter).'</a></span>';
+        }
+        // letter has no posts
+        else {
+            $jumpnav .= '<span>'.strtoupper($letter).'</span>';
+        }
+        $contents .= '</ul>';   
+    }
+    $jumpnav .= '</div>';
+    $contents .= '</div>';
  ?>
 <main id="glossary" role="main">
+    <?php echo $jumpnav; ?>
     <section>
-
-        <?php echo $content; ?>
-        
+        <?php echo $contents; ?>
     </section>
 </main>
 <?php 
