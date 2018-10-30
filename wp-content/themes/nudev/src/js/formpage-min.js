@@ -1,0 +1,1 @@
+!function(s,o,i){s(function(){function o(){s(this).next(".js__forms_collapsible").slideToggle()}s(".js__forms_collapsible").slideUp(0),s(".forms-category > h5").on("click",o)})}(jQuery,this);

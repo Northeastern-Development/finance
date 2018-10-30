@@ -79,7 +79,57 @@ class CPTs
 
 
         $this->reg_glossary_post_type();
+        $this->reg_forms_post_types();
     }
+
+    function reg_forms_post_types(){
+        $labels = array(
+            'name' => __('Forms', 'nudev'), // Rename these to suit
+            'singular_name' => __('Form', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Form', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Form', 'nudev'),
+            'new_item' => __('New Form', 'nudev'),
+            'view' => __('View Form', 'nudev'),
+            'view_item' => __('View Form', 'nudev'),
+            'search_items' => __('Search Forms', 'nudev'),
+            'not_found' => __('No Forms found', 'nudev'),
+            'not_found_in_trash' => __('No Forms found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('forms', $args);
+
+        $labels = array(
+            'name' => __('Form Categories', 'nudev'), // Rename these to suit
+            'singular_name' => __('Form Category', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Form Category', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Form Category', 'nudev'),
+            'new_item' => __('New Form Category', 'nudev'),
+            'view' => __('View Form Categories', 'nudev'),
+            'view_item' => __('View Form Category', 'nudev'),
+            'search_items' => __('Search Form Categories', 'nudev'),
+            'not_found' => __('No Form Categories found', 'nudev'),
+            'not_found_in_trash' => __('No Form Categories found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('forms_categories', $args);
+    }
+
     function reg_glossary_post_type(){
         // Task Categories
         $labels = array(

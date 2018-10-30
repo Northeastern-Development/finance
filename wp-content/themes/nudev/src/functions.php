@@ -406,6 +406,11 @@ function nudev_conditional_scripts(){
         wp_enqueue_script('taskspage');
     }
 
+    if( get_page_template_slug($post_id) === 'templates/template-forms.php'){
+        wp_register_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('formspage');
+    }
+
 
     
     
