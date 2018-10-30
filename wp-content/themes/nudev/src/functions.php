@@ -411,6 +411,13 @@ function nudev_conditional_scripts(){
         wp_enqueue_script('formspage');
     }
 
+    if( 
+        get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
+        //  || get_page_template_slug($post_id) === 'templates/template-tasks.php'
+    ){
+        wp_register_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('reusables');
+    }
 
     
     
@@ -1016,6 +1023,7 @@ add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
 
 require_once('classes/class.cpts.php');
 require_once('classes/class.prefooter.php');
+require_once('classes/class.helpful_links.php');
 
 // Create 1 Custom Post type for a Demo, called nudev
 function create_post_type_nudev()

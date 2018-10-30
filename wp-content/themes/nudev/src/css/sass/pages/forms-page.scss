@@ -3,52 +3,26 @@
 
 
 
-    .forms-category {
 
-        // category title
-        > h1 {
-            text-align: center;
-            font-weight: 400;
-            margin: 40px auto;
-        }
-        // form post title
-        > h5 {
-            line-height: 3;
-        }
-    }
-    .forms-category-collapsible {
-        margin: 20px auto;
-        > div {
-            margin: 20px auto;
-            > h6 {
-                font-weight: bold;
-                margin: 20px auto;
-            }
-        }
-    }
-    
-    .forms-category-collapsible-files,
-    .forms-category-collapsible-related {
-        a {
-            display: block;
-            margin-left: 40px;
-        }
-    }
-    .forms-category-collapsible-related {
+    #forms {
         ul, ol {
             list-style-type: none;
-            margin-left: 40px;
         }
-    }
-    
-    .forms-category-collapsible-infoblocks {
-        > div {
-            margin-left: 40px;
-            ul, ol {
-                list-style-position: inside;
+
+        .forms-category {
+            margin: 40px 0;
+            > h1 {
+                text-align: center;
+            }
+            > li {
+                margin-bottom: 40px;
             }
         }
     }
+    
+    
+    
+    
     
     
 }

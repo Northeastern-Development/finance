@@ -41,7 +41,7 @@
 
     get_header();
     
-    $taskFields = get_fields($task);
+    $fields = get_fields($task);
 
  ?>
 <main id="task" role="main" aria-label="content">
@@ -52,16 +52,16 @@
         include(locate_template('loops/loop-task-optiongroup.php'));
 
         // Optional Page Sections :
-        if( !empty($taskFields['faq']) ){
-            include(locate_template('loops/loop-task-faqs.php'));
+        if( !empty($fields['faqs']) ){
+            include(locate_template('loops/reusable/loop-faqs.php'));
         }
-        if( !empty($taskFields['helpers']) ){
+        if( !empty($fields['helpers']) ){
             include(locate_template('loops/reusable/loop-heretohelp.php'));
         }
-        if( $taskFields['use_pre-footer'] !== 1 ){
+        if( $fields['use_pre-footer'] == '1' ){
             include(locate_template('includes/prefooter.php'));
         }
-        if( !empty($taskFields['related_tasks'])  ) {
+        if( !empty($fields['related_tasks'])  ) {
             include(locate_template('includes/related-tasks.php'));
         }
      ?>

@@ -588,6 +588,13 @@
 		"oAP": "/classes/class.cpts.php",
 		"oF": 0
 		},
+	"/classes/class.helpful_links.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/classes/class.helpful_links.php",
+		"oF": 0
+		},
 	"/classes/class.Prefooter.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1814,6 +1821,16 @@
 		"oAP": "/index.php",
 		"oF": 0
 		},
+	"/js/formpage-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/formpage-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/formpage.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1867,6 +1884,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/magnific-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/reusables.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/reusables-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2233,6 +2260,13 @@
 		"oAP": "/loops/loop.php",
 		"oF": 0
 		},
+	"/loops/reusable/loop-faqs.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/reusable/loop-faqs.php",
+		"oF": 0
+		},
 	"/loops/reusable/loop-heretohelp.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2371,6 +2405,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-employmentprofessional.php",
+		"oF": 0
+		},
+	"/templates/template-financial_statements.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-financial_statements.php",
 		"oF": 0
 		},
 	"/templates/template-form.php": {

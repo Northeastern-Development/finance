@@ -4,7 +4,7 @@
     $content = sprintf(
         $format
         ,$task->post_title
-        ,(isset($taskFields['description'])) ? $taskFields['description'] : null
+        ,(isset($fields['description'])) ? $fields['description'] : null
     );
     
     echo $content;
