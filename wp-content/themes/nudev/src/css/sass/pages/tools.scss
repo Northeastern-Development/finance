@@ -33,7 +33,10 @@
         }
     }
 
-    
+    .tool-grouping-active {
+        border-bottom: 1px solid red;
+    }
+
     .tools-grid {
         list-style-type: none;
         display: flex;

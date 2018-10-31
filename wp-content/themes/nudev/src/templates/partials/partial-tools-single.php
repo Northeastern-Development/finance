@@ -10,12 +10,13 @@
     
 
 
-    $groupSelectorGuide = '<li><a href="%s">%s</a></li>';
+    $groupSelectorGuide = '<li class="%s"><a href="%s">%s</a></li>';
     $groupSelectorContent = '<ul class="tool-groupingnav">';
     foreach( $fields['groupings'] as $grouping ){
         // pass title to both the nav and the list
         $groupSelectorContent .= sprintf(
             $groupSelectorGuide
+            ,( seoUrl($grouping['title']) == $theGrouping  ) ? 'tool-grouping-active' : null
             ,get_permalink($toolPost['ID']) . seoUrl($grouping['title'])
             ,$grouping['title']
         );
