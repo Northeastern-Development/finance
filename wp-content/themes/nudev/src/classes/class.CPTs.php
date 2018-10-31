@@ -80,6 +80,32 @@ class CPTs
 
         $this->reg_glossary_post_type();
         $this->reg_forms_post_types();
+        $this->reg_tools_post_type();
+    }
+
+    function reg_tools_post_type(){
+        $labels = array(
+            'name' => __('Tools', 'nudev'), // Rename these to suit
+            'singular_name' => __('Tool', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Tool', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Tool', 'nudev'),
+            'new_item' => __('New Tool', 'nudev'),
+            'view' => __('View Tool', 'nudev'),
+            'view_item' => __('View Tool', 'nudev'),
+            'search_items' => __('Search Tools', 'nudev'),
+            'not_found' => __('No Tools found', 'nudev'),
+            'not_found_in_trash' => __('No Tools found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('tools', $args);
     }
 
     function reg_forms_post_types(){

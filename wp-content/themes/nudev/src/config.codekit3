@@ -581,7 +581,7 @@
 		"oAP": "/category.php",
 		"oF": 0
 		},
-	"/classes/class.CPTs.php": {
+	"/classes/class.cpts.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -1888,6 +1888,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/reusables-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/reusables-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/reusables.js": {
 		"ft": 64,
 		"ma": 0,
@@ -2365,6 +2375,20 @@
 		"oAP": "/templates/__OLD/template-staff.php.disabled",
 		"oF": 0
 		},
+	"/templates/partials/partial-tools-archive.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/partials/partial-tools-archive.php",
+		"oF": 0
+		},
+	"/templates/partials/partial-tools-single.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/partials/partial-tools-single.php",
+		"oF": 0
+		},
 	"/templates/template-convening.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2475,6 +2499,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-tasks.php",
+		"oF": 0
+		},
+	"/templates/template-tools.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-tools.php",
 		"oF": 0
 		}
 	},

@@ -73,7 +73,10 @@ function myplugin_rewrite_tag() {
 
   
   add_rewrite_tag( '%taskname%', '([^&]+)' );	// this is for the tasks page
-  
+
+  add_rewrite_tag( '%toolname%', '([^&]+)' );	// this is for the tools page
+  add_rewrite_tag( '%toolgroup%', '([^&]+)' );	// this is for the tools page
+
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
@@ -86,7 +89,10 @@ function custom_rewrite_rule() {
     // Finance Site (staff section) rewrite rules
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
 
-    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks
+    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks   
+
+    add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=$matches[2]','top');  // tasks   
+
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 
