@@ -26,35 +26,35 @@
 
 
     // (main page content stuff here)
-    // we need a UL for each group - a line item for each info block, 
-    
-    $groupContent = '<ul>';
+    $groupContent = '<div class="tool-groups">';
 
-    $groupGuide = '<h6>%s</h6><li>%s</li>';
+    $groupContent_guide = '<ul><h2>%s</h2>%s</ul>';
 
-    
-    $infoblockGuide = '<li><p>%s</p><p>%s</p></li>';
-    
+    $infoblock_guide = '<li><p>%s</p><p>%s</p></li>';
+
     foreach( $currentGrouping['group'] as $group ){
-        // prep the infoblock content var
-        $infoblockContent = '';
-        // set the infoblock content var
+
+        $infoblock_string = '';
         foreach( $group['information_blocks'] as $infoblock ){
-            $infoblockContent .= sprintf(
-                $groupGuide
+            $infoblock_string .= sprintf(
+                $infoblock_guide
                 ,$infoblock['title']
                 ,$infoblock['description']
             );
         }
-        // sprint the 'group' and its infoblock within the outer grouping
+
         $groupContent .= sprintf(
-            $groupGuide
+            $groupContent_guide
             ,$group['title']
-            ,$infoblockContent
+            ,$infoblock_string
         );
         
+        
     }
-    $groupContent .= '</ul>';
+    $groupContent .= '</div>';
+
+
+
 
     get_header();
 ?>
