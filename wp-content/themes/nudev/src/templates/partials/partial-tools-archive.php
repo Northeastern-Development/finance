@@ -5,10 +5,11 @@
         'post_type' => 'tools',
         'posts_per_page' => -1,
         'meta_query' => array(
-            'key' => 'status',
-            'value' => '1',
-            'compare' => '='
-            
+            array(
+                'key' => 'status',
+                'value' => '1',
+                'compare' => '='
+            )
         ),
     );
     $tools = get_posts($args);
@@ -30,9 +31,9 @@
         </li>
     ';
 
-    // [0] => status [1] => categories [2] => image [3] => sub_title [4] => short_description [5] => full_description [6] => custom_link [7] => external_link [8] => groupings 
     foreach( $tools as $post ){
 
+        
         $fields = get_fields($post);
 
         $content .= sprintf(
@@ -54,7 +55,10 @@
  ?>
 <main id="tools">
     <section>
-        <?php echo $content; ?>
+        <?php 
+            echo '<h1>' . $post->post_title . '</h1>';
+            echo $content;
+         ?>
     </section>
 </main>
 <?php 

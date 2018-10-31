@@ -17,6 +17,11 @@
     }
 
     #tools {
+        > section > h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
         .js__collapsible_list {
             h2 {
                 text-align: center;
@@ -28,8 +33,21 @@
         }
     }
 
-    .tool-groups {
-
+    
+    .tools-grid {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
     }
+    .tools-grid-tool {
+        max-width: calc(33% - 40px);
+        flex: 1 0 auto;
+        margin: 0 20px 20px 0;
+        &:nth-child(3n){
+            margin-right: 0px;
+        }
+    }
+    
+    
     
 }
