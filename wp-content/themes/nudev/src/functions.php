@@ -419,7 +419,7 @@ function nudev_conditional_scripts(){
 
     if( 
         get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
-        //  || get_page_template_slug($post_id) === 'templates/template-tasks.php'
+         || get_page_template_slug($post_id) === 'templates/template-tools.php'
     ){
         wp_register_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
         wp_enqueue_script('reusables');
