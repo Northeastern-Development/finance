@@ -13,15 +13,19 @@
     $groupSelectorGuide = '<li class="%s"><a href="%s">%s</a></li>';
     $groupSelectorContent = '<ul class="tool-groupingnav">';
     foreach( $fields['groupings'] as $grouping ){
-        // pass title to both the nav and the list
-        $groupSelectorContent .= sprintf(
-            $groupSelectorGuide
-            ,( seoUrl($grouping['title']) == $theGrouping  ) ? 'tool-grouping-active' : null
-            ,get_permalink($toolPost['ID']) . seoUrl($grouping['title'])
-            ,$grouping['title']
-        );
+        if( $grouping['status'] == 1 ){
+
+            // pass title to both the nav and the list
+            $groupSelectorContent .= sprintf(
+                $groupSelectorGuide
+                ,( seoUrl($grouping['title']) == $theGrouping  ) ? 'tool-grouping-active' : null
+                ,get_permalink($toolPost['ID']) . seoUrl($grouping['title'])
+                ,$grouping['title']
+            );
+            
+        }
         //
-        if( seoUrl($grouping['title']) == $theGrouping  ){
+        if( seoUrl($grouping['title']) == $theGrouping ){
             $currentGrouping = $grouping;
         }
         // 

@@ -31,19 +31,25 @@
         </li>
     ';
 
-    // what if I reduce the tools array first...
-    
 
+    $tools = array_filter($tools, function($tool){
+        $fields = get_fields($tool);
+        // check that we have a grouping with active status and a title
+        foreach( $fields['groupings'] as $grouping ){
+            if( $grouping['status'] == 1 && !empty($grouping['title']) ){
+                return $tool;
+            }
+        }
+    });
+    // print_r($tools);
+    // die();
+    
     foreach( $tools as $tool ){
         $fields = get_fields($tool);
 
-        // need to verify that the tool has at least one active grouping
-        // 
-        
-
         $content .= sprintf(
             $guide
-            ,get_permalink($tool) . seoUrl($fields['groupings'][0]['title'])    // THE FIRST GROUPING MAY BE INACTIVE, AND ANY GROUPING THEREAFTER MAY BE ACTIVE THIS DOESNT WORK
+            ,get_permalink($tool) . seoUrl($fields['groupings'][0]['title'])
             ,'More information about ' . $tool->post_title
             ,wp_get_attachment_image_src($fields['image'])[0]
             ,$tool->post_title
