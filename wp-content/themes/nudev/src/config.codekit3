@@ -588,13 +588,6 @@
 		"oAP": "/classes/class.cpts.php",
 		"oF": 0
 		},
-	"/classes/class.helpful_links.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/classes/class.helpful_links.php",
-		"oF": 0
-		},
 	"/classes/class.Prefooter.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2253,13 +2246,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-staff.php",
-		"oF": 0
-		},
-	"/loops/loop-task-faqs.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-task-faqs.php",
 		"oF": 0
 		},
 	"/loops/loop-task-main.php": {

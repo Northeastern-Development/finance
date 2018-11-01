@@ -24,9 +24,19 @@
         </li>
     ';
 
-    // loop thru the 'helpers' post objects (they are staff cpt posts)
+    
+    
+    // Handle getting/setting the email subject based on the page template
+    if( get_page_template_slug($post_id) == 'templates/template-tasks.php' ){
+        $subject = $task->post_title;
+    } else {
+        $subject = $post->post_title;
+    }
 
+    // loop thru the 'helpers' post objects (they are staff cpt posts)
     foreach($fields['helpers'] as $i => $helper){
+
+
 
         $subfields = get_fields($helper['helper']->ID);
 
@@ -38,7 +48,7 @@
             , (isset( $subfields['title'] )) ? '<p>'.$subfields['title'].'</p>' : null
             , (isset( $subfields['expert_at'] )) ? '<p>'.$subfields['expert_at'].'</p>' : null
             , (isset( $subfields['phone'] )) ? '<a href="tel:'.$subfields['phone'].'">'.$subfields['phone'].'</a>' : null
-            , (isset( $subfields['email'] )) ? ' | <a href="mailto:'.$subfields['email'].'?subject='.$task->post_title.'">e-mail</a>' : null
+            , (isset( $subfields['email'] )) ? ' | <a href="mailto:'.$subfields['email'].'?subject='.$subject.'">e-mail</a>' : null
         );
     }
     // close out the ul and the section

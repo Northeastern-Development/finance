@@ -8,7 +8,6 @@
         $fields = get_fields($post->ID);
     }
 
-    
     $content = '<div><h2>FAQ</h2><ul class="js__collapsible_list">';
     
     $format = '<li><h5>%s</h5><p>%s</p></li>';

@@ -19,9 +19,9 @@
 
     $guide ='
         <li class="tools-grid-tool">
-            <a href="%s" target="_blank">
+            <a href="%s" title="%s">
                 <figure>
-                    <img src="%s" alt="">
+                    <img src="%s" alt="This Tool\'s Featured Image">
                 </figure>
                 <h5>%s</h5>
                 <h6>%s</h6>
@@ -31,24 +31,27 @@
         </li>
     ';
 
-    foreach( $tools as $post ){
+    // what if I reduce the tools array first...
+    
 
+    foreach( $tools as $tool ){
+        $fields = get_fields($tool);
+
+        // need to verify that the tool has at least one active grouping
+        // 
         
-        $fields = get_fields($post);
 
         $content .= sprintf(
             $guide
-            ,get_permalink($post) . seoUrl($fields['groupings'][0]['title'])
+            ,get_permalink($tool) . seoUrl($fields['groupings'][0]['title'])    // THE FIRST GROUPING MAY BE INACTIVE, AND ANY GROUPING THEREAFTER MAY BE ACTIVE THIS DOESNT WORK
+            ,'More information about ' . $tool->post_title
             ,wp_get_attachment_image_src($fields['image'])[0]
-            ,$post->post_title
+            ,$tool->post_title
             ,$fields['sub_title']
             ,$fields['short_description']
         );
-
     }
     $content .= '</ul>';
-
-
 
 
     get_header();
@@ -61,7 +64,7 @@
          ?>
         <?php 
             $fields = get_fields($post->ID);
-            
+
             // FAQ,
             if( !empty($fields['faqs']) ){
                 include(locate_template('loops/reusable/loop-faqs.php'));

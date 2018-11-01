@@ -1029,7 +1029,6 @@ add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
 
 require_once('classes/class.cpts.php');
 require_once('classes/class.prefooter.php');
-require_once('classes/class.helpful_links.php');
 
 // Create 1 Custom Post type for a Demo, called nudev
 function create_post_type_nudev()
