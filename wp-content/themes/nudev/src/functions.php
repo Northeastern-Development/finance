@@ -90,7 +90,9 @@ function custom_rewrite_rule() {
     // Finance Site (staff section) rewrite rules
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
 
-    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks   
+    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks
+
+    add_rewrite_rule('^tasks/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=null','top');  // tasks
 
     add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=$matches[2]','top');  // TOOLS   
 
