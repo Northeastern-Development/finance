@@ -2,38 +2,6 @@
 /**
  * Template Name: Tasks
  */
-    // Get: Task CPT Relevant Query Vars    
-    // $fChk = $wp_query->query_vars['taskname'];
-    // $slugTag = (isset($fChk) && $fChk != ''?$fChk:'');
-
-    // // if a tag is set,
-    // if( !empty($slugTag) ){
-    //     // use tag as slug for query posts
-    //     $args = array(
-    //         'name' => $slugTag,
-    //         'post_type' => 'tasks',
-    //         'meta_query' => array(
-    //             array(
-    //                 'key' => 'task-status',
-    //                 'value' => '1',
-    //                 'compare' => '='
-    //             )
-    //         )
-    //     );
-    //     $task = query_posts($args)[0];
-    //     // if there is a post object w/ this slug
-    //     if( empty( $task ) ){
-    //         $invalid = true;
-    //     }
-    // } else {
-    //     $invalid = true;
-    // }
-
-    // if( $invalid === true ){
-    //     wp_redirect('/');
-    //     exit();
-    // }
-
     
     // Get: Query Vars
     $task_name = $wp_query->query_vars['taskname'];
@@ -68,7 +36,7 @@
         wp_redirect( home_url() );
         exit();
     }
-    
+
     $fields = get_fields($task);
 
     // Verify: $task_name belongs to the $task_category in the CMS
