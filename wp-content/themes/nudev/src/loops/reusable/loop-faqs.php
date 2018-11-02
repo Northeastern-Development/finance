@@ -10,7 +10,7 @@
 
     $content = '<div><h2>FAQ</h2><ul class="js__collapsible_list">';
     
-    $format = '<li><h5>%s</h5><p>%s</p></li>';
+    $format = '<li><h5>%s</h5><div>%s</div></li>';
 
     foreach( $fields['faqs'] as $i => $faq ){
         

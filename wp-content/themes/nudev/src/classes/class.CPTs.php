@@ -81,7 +81,57 @@ class CPTs
         $this->reg_glossary_post_type();
         $this->reg_forms_post_types();
         $this->reg_tools_post_type();
+        $this->reg_discounts_post_types();
     }
+
+    function reg_discounts_post_types(){
+        $labels = array(
+            'name' => __('Discount Categories', 'nudev'), // Rename these to suit
+            'singular_name' => __('Discount Category', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Discount Category', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Discount Category', 'nudev'),
+            'new_item' => __('New Discount Category', 'nudev'),
+            'view' => __('View Discount Category', 'nudev'),
+            'view_item' => __('View Discount Category', 'nudev'),
+            'search_items' => __('Search Discount Categories', 'nudev'),
+            'not_found' => __('No Discount Categories found', 'nudev'),
+            'not_found_in_trash' => __('No Discount Categories found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('discount-categories', $args);
+
+        $labels = array(
+            'name' => __('Discount Items', 'nudev'), // Rename these to suit
+            'singular_name' => __('Discount Item', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Discount Item', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Discount Item', 'nudev'),
+            'new_item' => __('New Discount Item', 'nudev'),
+            'view' => __('View Discount Item', 'nudev'),
+            'view_item' => __('View Discount Item', 'nudev'),
+            'search_items' => __('Search Discount Items', 'nudev'),
+            'not_found' => __('No Discount Items found', 'nudev'),
+            'not_found_in_trash' => __('No Discount Items found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('discount-items', $args);
+    }
+    
 
     function reg_tools_post_type(){
         $labels = array(

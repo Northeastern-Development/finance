@@ -1,11 +1,13 @@
 @media only screen {
     main#task,
+    main#discounts,
     main#glossary,
     main#forms,
     main#tools {
         padding-top: 40px;
     }
     body.tools,
+    body.discounts,
     body.tasks,
     body.glossary,
     body.forms {

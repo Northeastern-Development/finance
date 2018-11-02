@@ -2213,6 +2213,27 @@
 		"oAP": "/loops/loop-careers.php",
 		"oF": 0
 		},
+	"/loops/loop-discounts.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-discounts.php",
+		"oF": 0
+		},
+	"/loops/loop-forms-refactored.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-forms-refactored.php",
+		"oF": 0
+		},
+	"/loops/loop-forms.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-forms.php",
+		"oF": 0
+		},
 	"/loops/loop-news-archive.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2374,20 +2395,6 @@
 		"oAP": "/templates/__OLD/template-staff.php.disabled",
 		"oF": 0
 		},
-	"/templates/partials/partial-tools-archive.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/partials/partial-tools-archive.php",
-		"oF": 0
-		},
-	"/templates/partials/partial-tools-single.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/partials/partial-tools-single.php",
-		"oF": 0
-		},
 	"/templates/template-convening.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2400,6 +2407,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-default.php",
+		"oF": 0
+		},
+	"/templates/template-discounts.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-discounts.php",
 		"oF": 0
 		},
 	"/templates/template-employment.php": {
@@ -2498,6 +2512,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-tasks.php",
+		"oF": 0
+		},
+	"/templates/template-tools-index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-tools-index.php",
+		"oF": 0
+		},
+	"/templates/template-tools-item.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-tools-item.php",
 		"oF": 0
 		},
 	"/templates/template-tools.php": {

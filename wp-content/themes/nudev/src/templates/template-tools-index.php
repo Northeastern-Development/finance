@@ -41,8 +41,6 @@
             }
         }
     });
-    // print_r($tools);
-    // die();
     
     foreach( $tools as $tool ){
         $fields = get_fields($tool);

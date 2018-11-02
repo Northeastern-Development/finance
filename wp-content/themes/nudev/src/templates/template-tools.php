@@ -17,13 +17,15 @@ function seoUrl($string) {
 $isPost = $wp_query->query_vars['toolname'];
 $theGrouping = $wp_query->query_vars['toolgroup'];
 
-if( $isPost ){
-    include(locate_template('templates/partials/partial-tools-single.php'));
+if( $isPost && $theGrouping == 'null' ){
+    wp_redirect( home_url('tools') );
+    exit;
+}
+if( $isPost && $theGrouping ){
+    include(locate_template('templates/template-tools-item.php'));
 }
 else {
-    include(locate_template('templates/partials/partial-tools-archive.php'));
+    include(locate_template('templates/template-tools-index.php'));
 }
-
-
 
 ?>

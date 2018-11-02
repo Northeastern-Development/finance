@@ -73,6 +73,7 @@ function myplugin_rewrite_tag() {
 
   
   add_rewrite_tag( '%taskname%', '([^&]+)' );	// this is for the tasks page
+  add_rewrite_tag( '%taskcat%', '([^&]+)' );	// this is for the tasks page
 
   add_rewrite_tag( '%toolname%', '([^&]+)' );	// this is for the tools page
   add_rewrite_tag( '%toolgroup%', '([^&]+)' );	// this is for the tools page
@@ -91,7 +92,10 @@ function custom_rewrite_rule() {
 
     add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks   
 
-    add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=$matches[2]','top');  // tasks   
+    add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=$matches[2]','top');  // TOOLS   
+
+    add_rewrite_rule('^tools/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=null','top');  // TOOLS   
+
 
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
@@ -420,6 +424,9 @@ function nudev_conditional_scripts(){
     if( 
         get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
          || get_page_template_slug($post_id) === 'templates/template-tools.php'
+         || get_page_template_slug($post_id) === 'templates/template-tasks.php'
+         || get_page_template_slug($post_id) === 'templates/template-discounts.php'
+         || get_page_template_slug($post_id) === 'templates/template-forms.php'
     ){
         wp_register_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
         wp_enqueue_script('reusables');

@@ -1,14 +1,13 @@
 <?php 
 /**
  * Template Name: Tasks
- * 
- * Description:
- *  The Tasks Template handles any pages related to the Tasks CPT
  */
-    wp_reset_query();
-
-    // get / set the rewrite tag ( expects a valid slug )
+    // Get: Task CPT Relevant Query Vars    
     $fChk = $wp_query->query_vars['taskname'];
+
+    print_r($cat);
+    print_r($fChk);
+
     $slugTag = (isset($fChk) && $fChk != ''?$fChk:'');
 
     // if a tag is set,
@@ -38,6 +37,12 @@
         wp_redirect('/');
         exit();
     }
+
+
+
+    $task_name = $wp_query->query_vars['taskname'];
+    $task_category = $wp_query->query_vars['taskcat'];
+
 
     get_header();
     
