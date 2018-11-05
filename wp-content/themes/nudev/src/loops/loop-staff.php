@@ -135,7 +135,7 @@
                 ,trim($fields['title'])
                 ,( isset($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
                 ,( isset($fields['phone']) ) ? '<a href="tel:"'. $fields['phone'] .'">'.$fields['phone'].'</a>' : null
-                ,( isset($fields['email']) ) ? '<a href="mailto:"'. $fields['email'] .'">'.$fields['email'].'</a>' : null
+                ,( isset($fields['email']) ) ? '<a href="mailto:"'. $fields['email'] .'">e-mail</a>' : null
 			);
 
 		}

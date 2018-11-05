@@ -1,7 +1,7 @@
 <?php 
 
     $content = '<section class="relatedtasks"><h3>Related Tasks</h3><ul>';
-    $guide = '<a href="%s" target="_blank"><li>%s</li></a>';
+    $guide = '<a href="%s" target="_blank" title="View this Related Task"><li>%s</li></a>';
     foreach ($taskFields['related_tasks'] as $i => $relTask) {
 
         $fields = get_fields($relTask['task']->ID);

@@ -14,7 +14,7 @@
 
     $guide = '
         <li class="h2h-items-item">
-        <img class="h2h-items-item-img" src="%s">
+        <img class="h2h-items-item-img" src="%s" alt="Staff Bio Image">
         %s
         %s
         %s
@@ -47,7 +47,7 @@
             , (isset( $subfields['department'][0] )) ? '<p>'.$subfields['department'][0].'</p>' : null
             , (isset( $subfields['title'] )) ? '<p>'.$subfields['title'].'</p>' : null
             , (isset( $subfields['expert_at'] )) ? '<p>'.$subfields['expert_at'].'</p>' : null
-            , (isset( $subfields['phone'] )) ? '<a href="tel:'.$subfields['phone'].'">'.$subfields['phone'].'</a>' : null
+            , (isset( $subfields['phone'] )) ? '<a href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank">'.$subfields['phone'].'</a>' : null
             , (isset( $subfields['email'] )) ? ' | <a href="mailto:'.$subfields['email'].'?subject='.$subject.'">e-mail</a>' : null
         );
     }

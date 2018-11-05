@@ -588,7 +588,7 @@
 		"oAP": "/classes/class.cpts.php",
 		"oF": 0
 		},
-	"/classes/class.Prefooter.php": {
+	"/classes/class.prefooter.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -2283,6 +2283,20 @@
 		"oAP": "/loops/loop-task-optiongroup.php",
 		"oF": 0
 		},
+	"/loops/loop-tools-index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-tools-index.php",
+		"oF": 0
+		},
+	"/loops/loop-tools-item.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-tools-item.php",
+		"oF": 0
+		},
 	"/loops/loop.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2512,20 +2526,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-tasks.php",
-		"oF": 0
-		},
-	"/templates/template-tools-index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-tools-index.php",
-		"oF": 0
-		},
-	"/templates/template-tools-item.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-tools-item.php",
 		"oF": 0
 		},
 	"/templates/template-tools.php": {

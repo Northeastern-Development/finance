@@ -22,10 +22,10 @@ if( $isPost && $theGrouping == 'null' ){
     exit;
 }
 if( $isPost && $theGrouping ){
-    include(locate_template('templates/template-tools-item.php'));
+    include(locate_template('loops/loop-tools-item.php'));
 }
 else {
-    include(locate_template('templates/template-tools-index.php'));
+    include(locate_template('loops/loop-tools-index.php'));
 }
 
 ?>
