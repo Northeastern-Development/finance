@@ -217,3 +217,20 @@ div#wpfront-scroll-top-container{
     text-align: center;
   }
 }
+
+
+/* Styles for the main content */
+main{
+  // margin: $header-height 0 $gutter 0;
+  padding-bottom:50px;
+  & > section{
+    position: relative;
+    // margin: nth($wrapper-margins, 1) nth($wrapper-margins, 2) nth($wrapper-margins, 3) nth($wrapper-margins, 4);
+    width: $content-width;
+    width: 80%;
+    margin: 0 auto;;
+    &:nth-of-type(1){
+      // margin: $gutter nth($wrapper-margins, 2) nth($wrapper-margins, 3) nth($wrapper-margins, 4);
+    }
+  }
+}
