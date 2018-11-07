@@ -13,23 +13,24 @@ $(function () {
     
     function do_toggle_collapsibles(){
 
-        var toOpen = $(this).siblings('.js__collapsible_area');
+        // get the grouping of collapsibles that toggle eachother
+        var grouping = $(this).closest('.js__collapsible_list');
+        // get the collapsible we are toggling directly
+        var thiscollapsible = $(this).siblings('.js__collapsible_area');
 
-        var grouping = $(this).parents('.js__collapsible_list');
+        // if this already has the open class (and is open)
+        // we need to remove that class and close it
+        if( thiscollapsible.hasClass('js__collapsible_open') ){
+            grouping.find('.js__collapsible_area').removeClass('js__collapsible_open');
+        } else {
+            // if not, we need to add that class and open it
+            grouping.find('.js__collapsible_area').removeClass('js__collapsible_open');
+            thiscollapsible.addClass('js__collapsible_open');
+        }
 
-
-
-        $(grouping).find('.js__collapsible_area').removeClass('js__collapsible_open');
-
+        grouping.find('.js__collapsible_area').not('.js__collapsible_open').slideUp();
+        grouping.find('.js__collapsible_open').slideDown();
         
-        
-        $(toOpen).addClass('js__collapsible_open');
-
-        $(grouping).find('.js__collapsible_area').slideUp();
-        $(grouping).find('.js__collapsible_area.js__collapsible_open').slideDown();
-
-        
-
     }
     
     
