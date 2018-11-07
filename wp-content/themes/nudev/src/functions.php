@@ -426,7 +426,7 @@ function nudev_conditional_scripts(){
     if( 
         get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
          || get_page_template_slug($post_id) === 'templates/template-tools.php'
-         || get_page_template_slug($post_id) === 'templates/template-tasks.php'
+        //  || get_page_template_slug($post_id) === 'templates/template-tasks.php'
          || get_page_template_slug($post_id) === 'templates/template-discounts.php'
          || get_page_template_slug($post_id) === 'templates/template-forms.php'
     ){

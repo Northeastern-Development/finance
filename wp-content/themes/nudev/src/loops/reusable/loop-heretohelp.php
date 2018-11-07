@@ -10,7 +10,7 @@
     }
 
 
-    $content = '<h2>We are Here to Help</h2><ul class="h2h-items">';
+    $content = '<div class="here2help"><h2>We are Here to Help</h2><ul class="h2h-items">';
 
     $guide = '
         <li class="h2h-items-item">
@@ -52,7 +52,7 @@
         );
     }
     // close out the ul and the section
-    $content .= '</ul>';
+    $content .= '</ul></div>';
 
     echo $content;
 ?>

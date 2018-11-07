@@ -654,6 +654,10 @@ nav.nu__mobile-nav {
 @media only screen {
   .nu__prefooter > h2 {
     text-align: center; }
+  .here2help {
+    margin: 40px 0; }
+    .here2help h2 {
+      text-align: center; }
   .h2h-items {
     display: flex;
     flex-flow: row nowrap;
@@ -1226,10 +1230,7 @@ main#locations {
   float: right; }
 
 @media only screen {
-  main[role="main"] > section {
-    text-align: center; }
   .statements-files {
-    display: inline-block;
     list-style-type: none;
     margin: 0 auto;
     width: 100%;
@@ -2507,25 +2508,42 @@ div.main section.nu__team-list {
 
 @media only screen {
   .task-heading {
-    margin: 0 auto;
-    max-width: 720px; }
-    .task-heading h1 {
-      text-align: center;
-      padding: 40px 0; }
-  ul.task-options {
     max-width: 720px;
-    margin: 0 auto; }
-    ul.task-options > li {
+    margin: 20px auto; }
+    .task-heading h1 {
+      text-align: center; }
+  .task-options {
+    max-width: 720px;
+    margin: 20px auto; }
+    .task-options h2 {
+      text-align: center; }
+  .task-options-list {
+    list-style-type: none; }
+    .task-options-list > li {
+      margin-bottom: 20px;
       border-bottom: 1px solid #000; }
-      ul.task-options > li > a img {
-        width: 32px;
-        height: 32px; }
-      ul.task-options > li > a h5 {
+      .task-options-list > li > div img, .task-options-list > li > div h5 {
         display: inline-block;
         vertical-align: middle; }
-  main#task > section > h1,
-  main#task > section > h2 {
-    text-align: center; } }
+      .task-options-list > li > div img {
+        width: 32px;
+        height: 32px; }
+      .task-options-list > li > div h5 {
+        line-height: 3;
+        margin-left: 2rem; }
+      .task-options-list > li > ul {
+        margin: 10px auto;
+        margin-left: 20px;
+        padding-left: 20px;
+        position: relative; }
+        .task-options-list > li > ul:before {
+          position: absolute;
+          top: 0;
+          left: 0px;
+          height: 100%;
+          width: 1px;
+          background: #000;
+          content: ''; } }
 
 a {
   color: black;

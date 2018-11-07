@@ -1,9 +1,8 @@
 (function ($, root, undefined) {
     $(function () {
             
-       
-    
-    
+
+
         $('.js__collapsible_list > li > div').slideUp(0);
     
         $('.js__collapsible_list > li > h5').on('click', do_toggle_faqs);
@@ -27,6 +26,10 @@
             }
             
         }
+
+
+        
+        
     
             
     });

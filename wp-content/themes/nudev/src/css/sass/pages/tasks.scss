@@ -1,42 +1,66 @@
 @media only screen {
 
-  .task-heading {
-    margin: 0 auto;
-    max-width: 720px;
-    h1 {
-      text-align: center;
-      padding: 40px 0;
-    }
-  }
 
-  ul.task-options {
-    max-width: 720px;
-    margin: 0 auto;
-    // (accordion clickable area)
-    > li {
-      border-bottom: 1px solid #000;
-      > a {
-        // ( parts of the accordion toggle area )
-        img {
-          width: 32px;
-          height: 32px;
+
+    .task-heading {
+        max-width: 720px;
+        margin: 20px auto;
+
+        h1 {
+            text-align: center;
         }
-        h5 {
-          display: inline-block;
-          vertical-align: middle;
+    }
+    .task-options {
+        max-width: 720px;
+        margin: 20px auto;
+
+        h2 {
+            text-align: center;
         }
-      }
     }
-  }
 
-    main#task > section {
-    > h1,
-    > h2 {
-      text-align: center;
+    .task-options-list {
+        list-style-type: none;
+        > li {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000;
+            
+            
+            > div {
+                img, h5 {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+                h5 {
+                    line-height: 3;
+                    margin-left: 2rem;
+                }
+            }
+
+            > ul {
+                margin: 10px auto;
+                margin-left: 20px;
+                padding-left: 20px;
+                position: relative;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0px;
+                    height: 100%;
+                    width: 1px;
+                    background: #000;
+                    content: '';
+                }
+            }
+        }
     }
-  }
-
-
+    
+    
+    
 
 
 }

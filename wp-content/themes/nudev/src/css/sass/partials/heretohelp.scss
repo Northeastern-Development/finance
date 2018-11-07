@@ -7,7 +7,12 @@
     }
   }
 
-
+  .here2help {
+    h2 {
+      text-align: center;
+    }
+    margin: 40px 0;
+  }
   .h2h-items {
     display: flex;
     flex-flow: row nowrap;
