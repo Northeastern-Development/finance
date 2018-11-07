@@ -1,18 +1,18 @@
-<?php 
+<?php
 /**
  * Template Name: Financial Statements
  */
 
-    $fields = get_fields($post->ID);
+  $fields = get_fields($post->ID);
 
 get_header();
 ?>
-<main id="financialstatements">
+<main id="financialstatements" role="main">
     <section>
-        <?php 
+        <?php
 
             // Files Section (required)
-            $content = '<ul>';
+            $content = '<ul class="statements-files">';
             $guide = '<li><a target="_blank" title="Click to Download (opens in a new window)" href="%s">%s</a></li>';
             foreach( $fields['files'] as $file ){
                 $content .= sprintf(
@@ -22,9 +22,9 @@ get_header();
                 );
             }
             $content .= '</ul>';
-            
+
             echo $content;
-            
+
             // FAQ,
             if( !empty($fields['faqs']) ){
                 include(locate_template('loops/reusable/loop-faqs.php'));
@@ -43,6 +43,6 @@ get_header();
     </section>
 </main>
 
-<?php 
+<?php
 get_footer();
  ?>

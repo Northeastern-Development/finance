@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: Glossary
  */
@@ -25,7 +25,7 @@
     $glossQuery = get_posts( $args );
     // define alphabet w/ each letter associated to an empty array
     $alphabet = array('a' => [],'b' => [],'c' => [],'d' => [],'e' => [],'f' => [],'g' => [],'h' => [],'i' => [],'j' => [],'k' => [],'l' => [],'m' => [],'n' => [],'o' => [],'p' => [],'q' => [],'r' => [],'s' => [],'t' => [],'u' => [],'v' => [],'w' => [],'x' => [],'y' => [],'z' => []);
-    
+
     // set each letter's empty array to matching glossary posts by their 'position' field
     foreach( $glossQuery as $i => $glossPost)
     {
@@ -35,9 +35,9 @@
             ,"description" => $fields['description']
         );
     }
-    
+
     $jumpnav = '<div class="glossary-jumpnav">';
-    $contents = '<div>';
+    $contents = '<div class="glossary-content">';
     $haspost_guide = '<li><h6>%s</h6>%s</li>';
     // each letter
     foreach( $alphabet as $letter => $array )
@@ -60,17 +60,17 @@
         else {
             $jumpnav .= '<span>'.strtoupper($letter).'</span>';
         }
-        $contents .= '</ul>';   
+        $contents .= '</ul>';
     }
     $jumpnav .= '</div>';
     $contents .= '</div>';
  ?>
 <main id="glossary" role="main">
-    <?php echo $jumpnav; ?>
     <section>
-        <?php echo $contents; ?>
+      <?php echo $jumpnav; ?>
+      <?php echo $contents; ?>
     </section>
 </main>
-<?php 
+<?php
     get_footer();
  ?>

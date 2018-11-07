@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  *  May appear on ANY page
  *  EXPECTS a $fields object
@@ -8,13 +8,13 @@
     if( empty($fields) ){
         $fields = get_fields($post->ID);
     }
- 
- 
-    $content = '<section id="heretohelp"><h3>We are Here to Help</h3><ul class="h2h-items">';
+
+
+    $content = '<h2>We are Here to Help</h2><ul class="h2h-items">';
 
     $guide = '
         <li class="h2h-items-item">
-        <img class="h2h-items-item-img" src="%s" alt="Staff Bio Image">
+        <figure style="background-image:url(%s)"></figure>
         %s
         %s
         %s
@@ -24,8 +24,8 @@
         </li>
     ';
 
-    
-    
+
+
     // Handle getting/setting the email subject based on the page template
     if( get_page_template_slug($post_id) == 'templates/template-tasks.php' ){
         $subject = $task->post_title;
@@ -52,7 +52,7 @@
         );
     }
     // close out the ul and the section
-    $content .= '</ul></section>';
+    $content .= '</ul>';
 
     echo $content;
 ?>

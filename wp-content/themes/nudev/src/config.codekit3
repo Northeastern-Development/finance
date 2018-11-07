@@ -987,6 +987,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/pages/statements.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/pages/statements.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/pages/tasks.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1026,6 +1039,32 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/partials/collapsibles.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/collapsibles.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/partials/faqs.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/faqs.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/partials/footer.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1061,6 +1100,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/helpful-links.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/partials/heretohelp.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/heretohelp.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2542,7 +2594,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 561390443.63101804,
-	"displayValue": "Finance-Foo",
+	"displayValue": "Finance",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0

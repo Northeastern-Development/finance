@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * Template Name: Tasks
  */
-    
+
     // Get: Query Vars
     $task_name = $wp_query->query_vars['taskname'];
     $task_category = $wp_query->query_vars['taskcat'];
@@ -48,10 +48,12 @@
     get_header();
  ?>
 <main id="task" role="main" aria-label="content">
-    <?php 
+  <section>
+
+    <?php
         // Required Page Sections :
         include(locate_template('loops/loop-task-main.php'));
-        
+
         include(locate_template('loops/loop-task-optiongroup.php'));
 
         // Optional Page Sections :
@@ -68,7 +70,9 @@
             include(locate_template('includes/related-tasks.php'));
         }
      ?>
+
+   </section>
 </main>
-<?php 
+<?php
     get_footer();
  ?>

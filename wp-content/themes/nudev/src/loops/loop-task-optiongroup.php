@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $options = '<ul class="task-options">';
 
@@ -8,8 +8,8 @@ $guideSubOptions = '<li><h5>%s</h5>%s</li>';
 
 
 foreach ($fields['options_group'] as $option) {
-    
-    
+
+
     $options .= sprintf(
         $guideOptions
         , $option['icon']
@@ -36,7 +36,7 @@ foreach ($fields['options_group'] as $option) {
 
 $options .= '</ul>';
 
-$format = '<section><h2>%s</h2>%s</section>';
+$format = '<h2>%s</h2>%s';
 
 echo sprintf($format, $fields['sub_title'], $options);
 

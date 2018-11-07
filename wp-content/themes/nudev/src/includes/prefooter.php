@@ -1,22 +1,22 @@
 <?php
     wp_reset_query();
-    
-    
+
+
     if( empty($fields) ){
         $fields = get_fields($post->ID);
     }
 
-    
+
     $prefooterFields = $fields;
-    
-    
+
+
     $return_prefooter = '';
-    
-    
+
+
     if($prefooterFields['use_pre-footer'] == 1){	// if the page is using the pre-footer option
 		$prefooterBgColor = ($prefooterFields['background_color'] == ''?' bg_white':' bg_'.$prefooterFields['background_color']);
         if(isset($prefooterFields['pre-footer_image_block']) && $prefooterFields['pre-footer_image_block'] != ''){		// image blocks: image, title, description
-			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
+			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><h2>'.$prefooterFields['pre-footer_area_title'].'</h2><div><ul>';
             $guide = '
                 <li>
                     <a href="%s" title="%s"%s>
@@ -30,15 +30,15 @@
                 </li>
             ';
 			foreach($prefooterFields['pre-footer_image_block'] as $r){
-                $fields = get_fields($r['items'][0]['item']->ID);
+                $helpful_link_fields = get_fields($r['items'][0]['item']->ID);
 				$return_prefooter .= sprintf(
 					$guide
-					,$fields['link']
-					,$r['block_title'].(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-					,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
-					,$fields['image']['url']
+					,$helpful_link_fields['link']
+					,$r['block_title'].(isset($helpful_link_fields['external_link']) && $helpful_link_fields['external_link'] == "1"?' [will open in new window]':'')
+					,(isset($helpful_link_fields['external_link']) && $helpful_link_fields['external_link'] == "1"?' target="_blank"':'')
+					,$helpful_link_fields['image']['url']
 					,$r['block_title']
-					,$fields['description']
+					,$helpful_link_fields['description']
 				);
 			}
 			$return_prefooter .= '</ul></div></div>';

@@ -1,78 +1,47 @@
 @media only screen {
-    main#task,
-    main#discounts,
-    main#glossary,
-    main#forms,
-    main#tools {
-        padding-top: 40px;
+
+
+  body p.testp {
+    display: none;
+  }
+
+  .task-heading {
+    margin: 0 auto;
+    max-width: 720px;
+    h1 {
+      text-align: center;
+      padding: 40px 0;
     }
-    body.tools,
-    body.discounts,
-    body.tasks,
-    body.glossary,
-    body.forms {
-        .header {
-            top: 0;
-        }
-        p.testp {
-            display: none;
-        }
-    }
+  }
 
-    .task-options > li {
-        border-bottom: 1px solid #000;
-        margin-bottom: 40px;
-    }
-
-    // Accordions Top Level:
-    .task-options > li > a {
-        &:hover {
-            color: inherit;
-        }
-
-
+  ul.task-options {
+    max-width: 720px;
+    margin: 0 auto;
+    // (accordion clickable area)
+    > li {
+      border-bottom: 1px solid #000;
+      > a {
+        // ( parts of the accordion toggle area )
         img {
-            width: 32px;
-            height: 32px;
-        }
-        img, h5 {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 auto;
+          width: 32px;
+          height: 32px;
         }
         h5 {
-            margin-left: 15px;
+          display: inline-block;
+          vertical-align: middle;
         }
+      }
     }
+  }
 
-    // Accordions Nested Level
-    .task-options > li > ul {
-        margin-left: 40px;
+    main#task > section {
+    > h1,
+    > h2 {
+      text-align: center;
+    }
+  }
 
-    }
 
-    .h2h-items {
-        display: flex;
-        flex-flow: row nowrap;
-        list-style-type: none;
-        max-width: 720px;
-        margin: 0 auto;
-        p {
-            margin-bottom: 2px;
-            font-size: 14px;
-            line-height: 1.25;
-        }
-    }
-    .h2h-items-item {
-        flex: 1 0 auto;
-    }
 
-    .h2h-items-item-img {
-        width: 72px;
-        height: 72px;
-        object-fit: cover;
-    }
-    
-    
-    
+
 }

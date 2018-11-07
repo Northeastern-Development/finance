@@ -1,32 +1,30 @@
 @media only screen {
+  #glossary ul {
+    list-style-type: none;
+  }
 
+  .glossary-jumpnav {
+    position: fixed;
+    background-color: white;
+    width: 80%;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
 
+    span {
+      flex: 1 0 auto;
+      color: lightgrey;
 
-    #glossary ul {
-        list-style-type: none;
+      a {
+        color: black;
+        font-weight: bold;
+      }
     }
-    
+  }
 
-    .glossary-jumpnav {
-        position: fixed;
-        background-color: white;
-        top: 130px;
-        left: 10%;
-        width: 80%;
-        display: flex;
-        text-align: center;
-        margin: 0 auto;
-        padding: 10px;
-        span {
-            flex: 1 0 auto;
-            color: lightgrey;
-            a {
-                color: black;
-                font-weight: bold;
-            }
-        }
-    }
-    
-    
-    
+  .glossary-content {
+    padding-top: 80px;
+  }
+
 }

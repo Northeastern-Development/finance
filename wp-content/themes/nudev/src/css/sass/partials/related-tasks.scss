@@ -1,24 +1,20 @@
 @media only screen {
+  .relatedtasks {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
 
-
-
-    .relatedtasks {
-        text-align: center;
-        ul {
-            list-style-type: none;
-            margin: 0 auto;
-            display: inline-block;
-            text-align: left;
-        }
-        li {
-            width: 50%;
-            padding: 0 10px;
-            display: inline-block;
-        }
+    ul {
+      list-style-type: none;
+      margin: 0 auto;
+      display: inline-block;
+      text-align: left;
     }
-    
-    
-    
-    
-    
+
+    li {
+      width: 50%;
+      padding: 0 10px;
+      display: inline-block;
+    }
+  }
 }

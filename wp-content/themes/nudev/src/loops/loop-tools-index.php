@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
     $args = array(
@@ -20,9 +20,7 @@
     $guide ='
         <li class="tools-grid-tool">
             <a href="%s" title="%s">
-                <figure>
-                    <img src="%s" alt="This Tool\'s Featured Image">
-                </figure>
+                <figure style="background-image: url(%s)" title="Tool feat img"></figure>
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>
@@ -41,7 +39,7 @@
             }
         }
     });
-    
+
     foreach( $tools as $tool ){
         $fields = get_fields($tool);
 
@@ -60,13 +58,13 @@
 
     get_header();
  ?>
-<main id="tools">
+<main id="tools" role="main">
     <section>
-        <?php 
+        <?php
             echo '<h1>' . $post->post_title . '</h1>';
             echo $content;
          ?>
-        <?php 
+        <?php
             $fields = get_fields($post->ID);
 
             // FAQ,
@@ -83,10 +81,10 @@
             if( $fields['use_pre-footer'] == '1' ){
                 include(locate_template('includes/prefooter.php'));
             }
-        
+
          ?>
     </section>
 </main>
-<?php 
+<?php
     get_footer();
  ?>

@@ -1,0 +1,28 @@
+@media only screen {
+
+
+
+
+  main[role="main"] {
+    > section {
+      text-align: center;
+    }
+  }
+
+  .statements-files {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 720px;
+    li {
+      text-align: left;
+      border-bottom: 1px solid black;
+      line-height: 3;
+      padding-left: 32px;
+    }
+  }
+
+
+
+}

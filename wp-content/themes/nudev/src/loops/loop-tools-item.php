@@ -1,4 +1,4 @@
-<?php 
+<?php
     $toolPost = get_page_by_path($isPost, ARRAY_A, 'tools');
     $fields = get_fields($toolPost['ID']);
 
@@ -7,7 +7,7 @@
     // when the grouping nav is clicked, it will refresh the page; rewriting the current grouping; which will cause this object to dynamically change
     // this should always have an array of the subfields inside of the 'current' grouping
     $currentGrouping = [];
-    
+
     // dont show this feature if there is only one grouping with groups
 
     $haveGroups = array_filter($fields['groupings'], function($grouping){
@@ -19,10 +19,10 @@
 
         $groupSelectorGuide = '<li class="%s"><a href="%s">%s</a></li>';
         $groupSelectorContent = '<ul class="tool-groupingnav">';
-        
+
         foreach( $fields['groupings'] as $grouping ){
             if( $grouping['status'] == 1 ){
-                
+
                 // pass title to both the nav and the list
                 $groupSelectorContent .= sprintf(
                     $groupSelectorGuide
@@ -30,18 +30,18 @@
                     ,get_permalink($toolPost['ID']) . seoUrl($grouping['title'])
                     ,$grouping['title']
                 );
-                
+
             }
             //
             if( seoUrl($grouping['title']) == $theGrouping ){
                 $currentGrouping = $grouping;
             }
-            // 
+            //
         }
         $groupSelectorContent .= '</ul>';
     }
-    // 
-    
+    //
+
 
     // (main page content stuff here)
     $groupContent = '<div class="tool-groups">';
@@ -70,8 +70,8 @@
                 ,$infoblock_string
             );
         }
-        
-        
+
+
     }
     $groupContent .= '</div>';
 
@@ -80,12 +80,12 @@
 
     get_header();
 ?>
-<main id="tools">
+<main id="tools" role="main">
     <section>
-        <?php 
+        <?php
 
-            echo '<h1>'.$toolPost['post_title'] . '</h1><p>' . $fields['full_description'] . '</p>';
-            
+            echo '<h1>'.$toolPost['post_title'] . '</h1>' . $fields['full_description'];
+
             echo $groupSelectorContent;
 
             echo $groupContent;
@@ -93,6 +93,6 @@
          ?>
     </section>
 </main>
-<?php 
+<?php
     get_footer();
  ?>

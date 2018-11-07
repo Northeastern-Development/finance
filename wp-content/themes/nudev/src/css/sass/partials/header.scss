@@ -39,7 +39,8 @@ header {
   left: 0;
   position: fixed;
   top: 40px;
-  width: 100vw;
+  // width: 100vw;
+  width: 100%;
   z-index: 1000;
 
   & > div#header{
