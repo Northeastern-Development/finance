@@ -706,7 +706,7 @@ nav.nu__mobile-nav {
         line-height: 3; } }
 
 @media only screen {
-  .js__collapsible_list li h5 {
+  .js__collapsible_list > li > h5 {
     cursor: pointer; } }
 
 /**
@@ -1297,14 +1297,29 @@ div.wpforms-container-full .wpforms-form select {
   margin: 0 auto; }
 
 @media only screen {
-  #forms ul, #forms ol {
+  #forms ul,
+  #forms ol {
     list-style-type: none; }
   #forms .forms-category {
-    margin: 40px 0; }
+    padding-top: 40px;
+    margin: 40px auto;
+    max-width: 720px; }
     #forms .forms-category > h1 {
-      text-align: center; }
-    #forms .forms-category > li {
-      margin-bottom: 40px; } }
+      text-align: center;
+      font-weight: 400; }
+    #forms .forms-category > ul {
+      margin: 20px 0; }
+    #forms .forms-category > ul > li {
+      text-align: left;
+      padding: 10px 0;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #000; }
+      #forms .forms-category > ul > li h5 {
+        line-height: 3; }
+      #forms .forms-category > ul > li > div > h5 {
+        margin-top: 20px; }
+  .forms-category-relatedresources li {
+    margin-left: 20px; } }
 
 @media only screen {
   .tool-grouptitle {

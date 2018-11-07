@@ -4,25 +4,51 @@
 
 
 
-    #forms {
-        ul, ol {
-            list-style-type: none;
-        }
+  #forms {
 
-        .forms-category {
-            margin: 40px 0;
-            > h1 {
-                text-align: center;
-            }
-            > li {
-                margin-bottom: 40px;
-            }
-        }
+    ul,
+    ol {
+      list-style-type: none;
     }
-    
-    
-    
-    
-    
-    
+
+    .forms-category {
+      padding-top: 40px;
+      margin: 40px auto;
+      max-width: 720px;
+      >h1 {
+        text-align: center;
+        font-weight: 400;
+      }
+
+      // wrappers for each section
+      > ul {
+        margin: 20px 0;
+      }
+
+      > ul > li {
+        text-align: left;
+        padding: 10px 0;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #000;
+        h5 {
+          line-height: 3;
+        }
+        > div > h5 {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .forms-category-relatedresources {
+    li {
+      margin-left: 20px;
+    }
+  }
+
+
+
+
+
+
 }
