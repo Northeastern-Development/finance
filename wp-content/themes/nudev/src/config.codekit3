@@ -2272,13 +2272,6 @@
 		"oAP": "/loops/loop-discounts.php",
 		"oF": 0
 		},
-	"/loops/loop-forms-refactored.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-forms-refactored.php",
-		"oF": 0
-		},
 	"/loops/loop-forms.php": {
 		"cB": 0,
 		"ft": 8192,

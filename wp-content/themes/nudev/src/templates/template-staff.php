@@ -11,7 +11,6 @@
 	$filter = (isset($fChk) && $fChk != ''?$fChk:'');
 
 ?>
-
 	<div class="main" role="main" aria-label="content">
 
 		<?php include(locate_template('/includes/pagehero.php')); ?>

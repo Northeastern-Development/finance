@@ -15,7 +15,7 @@ var Finance = {};
       // set normal header
       normalHeader: $('header.header'),
       // set page content ( to be assigned dynamic margin top )
-      pageContent: $('main[role="main"]'),
+      pageContent: $('*[role="main"]'),
       _init: function() {
         $(window).on('load', Finance.header._doOffsetHeader);
       },
