@@ -1,25 +1,325 @@
-
     <!-- logo -->
     <div class="logo">
+      <a href="<?php echo home_url(); ?>">
+        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 339.4 59.9"><style>.st0{fill:#000}</style><path class="st0" d="M16.6 42.9H7.5v3.9H16v4.1H7.5v4.3h9.4v4.2H2.3V38.7h14.3v4.2zM29.3 50.8l5.4 8.7h-5.9L26 53.8l-2.6 5.7h-5.7L23 51l-4.8-7.4h5.9l2.1 4.5 2.2-4.5H34l-4.7 7.2zM41.7 44h3.7v3.5h-3.7V54c0 1.3.4 1.9 1.8 1.9.8 0 1.4-.1 2.2-.3v3.7c-1 .3-2.3.5-3.6.5-4 0-5.3-1.9-5.3-5.1v-7.3h-2.1V44h2.1v-4.1h5V44zM62.6 51.8v.9H51.7c.1 2.3 1.5 3.4 3.5 3.4 1.7 0 2.6-.8 3.4-2l3.9 1.9c-1.5 2.4-4 3.8-7.5 3.8-5.2 0-8.3-3.5-8.3-8.4s3-8.4 8.1-8.4c4.7.1 7.8 3.5 7.8 8.8zm-10.9-2.1h5.9c-.1-2.2-1.2-3.1-2.9-3.1s-2.9.9-3 3.1zM74.9 43.2V48h-1c-2.4 0-4.3 1-4.3 5.3v6.2h-5V43.6h4.8v2.6c1.1-2.2 2.6-3 4.3-3 .4-.1.8 0 1.2 0zM91.2 49.1v10.4h-5v-8.9c0-2.2-.5-3.2-2.2-3.2-1.7 0-2.9 1.4-2.9 3.5v8.6h-5V43.6H81v2.1c1.2-1.8 2.9-2.6 5-2.6 3.3 0 5.2 2.2 5.2 6zM107.9 48.1v7.8c0 1.3.1 2.4.5 3.5h-4.8c-.3-.5-.4-1-.6-1.6-1.1 1.5-2.7 2-4.6 2-3.4 0-5.3-2-5.3-4.9 0-3.1 1.8-4.9 6.7-5.5l3-.4v-.7c0-1.4-.4-1.9-2-1.9-1.5 0-2.1.5-2.2 1.8h-4.9c.1-3.4 2.7-5.2 7.2-5.2 5 .1 7 2 7 5.1zm-6.9 4.3c-2 .3-2.8.9-2.8 2.1 0 1 .6 1.7 1.8 1.7 1.6 0 2.8-1.1 2.8-2.6v-1.4l-1.8.2zM115.6 59.5h-5V38.7h5v20.8zM136.1 56.4h-7.3l-.8 3h-5.3l6.6-20.8h6.6l6.7 20.8h-5.5l-1-3zm-3.7-13.8l-2.6 9.8h5.1l-2.5-9.8zM153.4 38.7v3.5c-.8-.2-1.8-.4-2.8-.4-1.2 0-1.6.3-1.6 1.3v.9h3.8v3.5H149v12h-5v-12h-2.1V44h2.1v-1.3c0-2.7 1.6-4.6 5.5-4.6 1.5 0 2.9.3 3.9.6zM165.5 38.7v3.5c-.8-.2-1.8-.4-2.8-.4-1.2 0-1.6.3-1.6 1.3v.9h3.8v3.5h-3.8v12h-5v-12H154V44h2.1v-1.3c0-2.7 1.6-4.6 5.5-4.6 1.5 0 2.8.3 3.9.6zM180 48.1v7.8c0 1.3.1 2.4.5 3.5h-4.8c-.3-.5-.4-1-.6-1.6-1.1 1.5-2.7 2-4.6 2-3.4 0-5.3-2-5.3-4.9 0-3.1 1.8-4.9 6.7-5.5l3-.4v-.7c0-1.4-.4-1.9-2-1.9-1.5 0-2.1.5-2.2 1.8h-4.9c.1-3.4 2.7-5.2 7.2-5.2 5.1.1 7 2 7 5.1zm-6.8 4.3c-2 .3-2.8.9-2.8 2.1 0 1 .6 1.7 1.8 1.7 1.6 0 2.8-1.1 2.8-2.6v-1.4l-1.8.2zM188.1 38.8c0 1.5-1.3 2.7-2.9 2.7s-2.9-1.2-2.9-2.7c0-1.5 1.3-2.7 2.9-2.7s2.9 1.1 2.9 2.7zm-.3 20.7h-5V43.6h5v15.9zM200.9 43.2V48h-1c-2.4 0-4.3 1-4.3 5.3v6.2h-5V43.6h4.8v2.6c1.1-2.2 2.6-3 4.3-3 .4-.1.8 0 1.2 0zM216 45.5l-2.4 2.7c-1.4-1.1-2.7-1.6-4.3-1.6-1.6 0-2.2.5-2.2 1.2 0 .8.5 1.1 3.7 1.7 3.8.7 5.6 2.3 5.6 5.1 0 3-2.7 5.1-7.4 5.1-3.7 0-6-1.1-7.9-2.7l2.4-2.9c1.7 1.4 3.3 1.9 4.9 1.9 1.9 0 2.8-.5 2.8-1.3s-.3-1.2-3.6-1.8c-3.8-.7-5.6-2.2-5.6-5 0-3.3 3.1-5.1 7.2-5.1 3 .3 5.3 1.3 6.8 2.7z"/><g><path class="st0" d="M330.4 25.3L336 13c1.1-2.4 1.4-2.9 2.6-3.2V9h-5.8v.8c1.9.4 2.1 1.4 1.2 3.4l-2.2 5.3-2.8-6.3c-.6-1.4-.5-2.2 1.5-2.4v-.9h-7.7v.9c.9.2 1.3.6 2.1 2.3l4.9 10.6-.8 1.8c-.5 1-.9 1.8-1.4 2.2-.4-1.2-1-1.9-2.1-1.9s-2 .7-2 2.1c0 1.4 1.1 2.4 2.4 2.4 1.9.1 3.1-.9 4.5-4m-7.8-3.7l-.4-.9c-.8.4-1.5.5-2.1.5-1.4 0-1.7-.7-1.7-1.7v-8.9h3.7V8.9h-3.7V6.2h-.5l-5.3 3.5v.9h2.1v9.6c0 1.9 1.1 2.9 3.2 2.9 1.6.1 3.3-.4 4.7-1.5m-11.2.4c-1.8-.3-2.1-.6-2.1-2.3V8.4h-1.4l-4.3 2.8v.6h2.1v7.8c0 1.6-.3 2-2.1 2.3v.9h7.9l-.1-.8zm-4.2-15.7c1.2 0 2.2-1 2.2-2.3 0-1.1-.9-2-2-2-1.3 0-2.3 1-2.3 2.2 0 1.2.9 2.1 2.1 2.1M302 18.6c0-2.7-2.3-3.6-4.4-4.3-2.1-.7-3.5-1.1-3.5-2.6 0-.8.6-1.6 1.8-1.6 1.5 0 2.8.9 4.4 2.7l.8-.4-1.1-3.6h-.5l-.5.5c-.8-.4-1.8-.6-2.8-.6-3.1 0-5.1 1.8-5.1 4.5s2.3 3.5 4.4 4.2c2.1.7 3.5 1.1 3.5 2.7 0 1-.7 1.7-2.1 1.7-2 0-3.5-1.3-5.3-3.6l-.8.3 1.2 4.6h.5l.9-.6c1 .5 2.1.7 3.3.7 2.9.1 5.4-1.7 5.3-4.6m-15.3 3.5c-1.9-.3-2.2-.7-2.2-2.5v-6.1c.6-1.1 1.1-1.8 1.7-2.4 0 1.1.8 1.9 1.8 1.9s2-.8 2-2.3c0-1.3-.7-2.1-2-2.1-1.4 0-2.6 1.2-3.6 2.9v-3h-1.3l-4.3 2.8v.6h2v7.8c0 1.6-.3 2-1.9 2.3v.9h7.8v-.8zm-18.4-8c0-2.4 1-3.8 2.9-3.8 1.4 0 2.2 1 2.6 2.9l-5.5 1.9v-1m9.2 6.3l-.8-.6c-.8.9-2 1.5-3.4 1.5-2.7 0-4.2-2.1-4.8-4.7l8.8-3c-.2-3.1-2.5-4.8-5.4-4.8-4.1 0-7.1 3.3-7.1 7.4 0 4.1 2.6 7.1 7.2 7.1 2.8 0 4.5-1.2 5.5-2.9m-15.4-7.3c1.1-2.4 1.4-2.9 2.6-3.2v-.8h-5.8v.8c1.9.4 2.1 1.4 1.2 3.4l-2.2 5.3-2.8-6.3c-.6-1.4-.5-2.2 1.5-2.4V9h-7.7v.9c.9.2 1.3.6 2.1 2.3l5.1 10.9h1.5l4.5-10zm-13.5 9c-1.8-.3-2.1-.6-2.1-2.3V8.5h-1.4l-4.3 2.8v.6h2.1v7.8c0 1.6-.3 2-2.1 2.3v.9h7.9l-.1-.8zm-4.2-15.7c1.2 0 2.2-1 2.2-2.3 0-1.1-.9-2-2-2-1.3 0-2.3 1-2.3 2.2.1 1.2.9 2.1 2.1 2.1m-14.8 15.8c-1.7-.2-1.9-.6-1.9-2.3v-6.8c1.5-1.3 2.7-2 3.7-2 1.4 0 1.9.7 1.9 2.1v6.7c0 1.6-.3 2-1.9 2.3v.9h7.6v-.9c-1.7-.2-1.9-.6-1.9-2.3v-7c0-2.4-1-4-4-4-1.8 0-3.6 1.1-5.4 2.6V8.7h-1.4l-4.3 2.8v.6h2v7.8c0 1.6-.3 2-1.9 2.3v.9h7.6l-.1-.9zM197.5 4.9v8.8c0 5.7 3 9.7 10.5 9.7s10.5-4 10.5-9.6V6.7c0-3.4 1-4.3 2.6-4.8V1H214v.9c1.7.5 2.7 1.3 2.7 4.8v7.1c0 5-2.6 7.3-7.6 7.3-4.9 0-7.6-2.3-7.6-7.3V4.9c0-2.2.6-2.6 2.5-2.9V1h-8.9v1c1.8.3 2.4.7 2.4 2.9M173.9 22.3c-1.7-.2-1.9-.6-1.9-2.3v-6.8c1.5-1.3 2.7-2 3.7-2 1.4 0 1.9.7 1.9 2.1V20c0 1.6-.3 2-1.9 2.3v.9h7.6v-.9c-1.7-.2-1.9-.6-1.9-2.3v-7c0-2.4-1-4-4-4-1.8 0-3.6 1.1-5.4 2.6V8.8h-1.4l-4.3 2.8v.6h2V20c0 1.6-.3 2-1.9 2.3v.9h7.6l-.1-.9zm-11.7 0c-1.9-.3-2.2-.7-2.2-2.5v-6.1c.6-1.1 1.1-1.8 1.7-2.4 0 1.1.8 1.9 1.8 1.9s2-.8 2-2.3c0-1.3-.7-2.1-2-2.1-1.4 0-2.6 1.2-3.6 2.9v-3h-1.3l-4.3 2.8v.6h2v7.8c0 1.6-.3 2-1.9 2.3v.9h7.8v-.8zm-18.5-8c0-2.4 1-3.8 2.9-3.8 1.4 0 2.2 1 2.6 2.9l-5.5 1.9v-1m9.3 6.3l-.8-.6c-.8.9-2 1.5-3.4 1.5-2.7 0-4.2-2.1-4.8-4.7l8.8-3c-.2-3.1-2.5-4.8-5.4-4.8-4.1 0-7.1 3.3-7.1 7.4 0 4.1 2.6 7.1 7.2 7.1 2.8 0 4.5-1.2 5.5-2.9m-13.6 1.3l-.4-.9c-.8.4-1.5.5-2.1.5-1.4 0-1.7-.7-1.7-1.7v-8.9h3.7V9.2h-3.7V6.5h-.5l-5.3 3.5v.9h2.1v9.6c0 1.9 1.1 2.9 3.2 2.9 1.6.2 3.3-.4 4.7-1.5M128.2 19c0-2.7-2.3-3.6-4.4-4.3-2.1-.7-3.5-1.1-3.5-2.6 0-.8.6-1.6 1.8-1.6 1.5 0 2.8.9 4.4 2.7l.8-.4-1.1-3.6h-.5l-.5.4c-.8-.4-1.8-.6-2.8-.6-3.1 0-5.1 1.8-5.1 4.5s2.3 3.5 4.4 4.2c2.1.7 3.5 1.1 3.5 2.7 0 1-.7 1.7-2.1 1.7-2 0-3.5-1.3-5.3-3.6l-.8.3 1.2 4.6h.5l.9-.6c1 .5 2.1.7 3.3.7 2.9.1 5.3-1.7 5.3-4.5m-22.6.6c0-1.5.7-2.2 4.1-3.2v4.3c-.8.6-1.6.9-2.3.9-1.1 0-1.8-.6-1.8-2m6.5 3.9c1.3 0 2.6-.6 3.5-1.2l-.3-.8c-1.4.3-2 .1-2-.9v-7.9c0-2.4-1-3.6-4.4-3.6-3.7 0-6.5 2-6.5 3.9 0 .9.6 1.7 1.7 1.7 1.2 0 1.8-.8 2-1.6.2-.9-.1-1.6-.6-2 .7-.4 1.5-.5 2.2-.5 1.3 0 1.9.4 1.9 1.6v2.9c-5.3 1.3-7.7 2.5-7.7 5.3 0 2.1 1.4 3.3 3.6 3.3 1.4 0 3-.6 4.3-1.7.3.9 1 1.5 2.3 1.5m-20.9-9.1c0-2.4 1-3.8 2.9-3.8 1.4 0 2.2 1 2.6 2.9l-5.5 1.9v-1m9.2 6.3l-.8-.6c-.8.9-2 1.5-3.4 1.5-2.7 0-4.2-2.1-4.8-4.7l8.8-3c-.2-3.1-2.5-4.8-5.4-4.8-4.1 0-7.1 3.3-7.1 7.4 0 4.1 2.6 7.1 7.2 7.1 2.8 0 4.5-1.2 5.5-2.9M77 22.5c-1.7-.2-1.9-.6-1.9-2.3v-6.8c1.4-1.3 2.5-1.9 3.7-1.9 1.4 0 1.9.7 1.9 2.1v6.7c0 1.6-.3 2-1.9 2.3v.9h7.6v-.9c-1.7-.2-1.9-.6-1.9-2.3v-7c0-2.4-1-4-4-4-1.8 0-3.6 1.1-5.3 2.5L75 0h-1.1l-4.7 3.1v.6h2.1v16.5c0 1.6-.3 2-1.9 2.3v.9H77v-.9zm-8.5-.4l-.4-.9c-.8.4-1.5.5-2.1.5-1.4 0-1.7-.7-1.7-1.7v-8.9H68V9.4h-3.7V6.7h-.5l-5.3 3.5v.9h2.1v9.6c0 1.9 1.1 2.9 3.2 2.9 1.7.1 3.3-.5 4.7-1.5m-14.4.4c-1.9-.3-2.2-.7-2.2-2.5v-6.1c.6-1.1 1.1-1.8 1.7-2.4 0 1.1.8 1.9 1.8 1.9s2-.8 2-2.3c0-1.3-.7-2.1-2-2.1-1.4 0-2.6 1.2-3.6 2.9v-3h-1.3l-4.3 2.8v.6h2v7.8c0 1.6-.3 2-1.9 2.3v.9h7.8v-.8zM32.8 15c0-2.6 1.1-4.3 3.6-4.3 3.1 0 4 3.8 4 7.3 0 2.6-1.1 4.3-3.6 4.3-3 0-4-3.8-4-7.3m11.3 1.3c0-3.9-2.6-7.1-7.3-7.1-4.8 0-7.6 3.5-7.6 7.5 0 3.9 2.6 7.1 7.3 7.1 4.8-.1 7.6-3.5 7.6-7.5M24.9 7.1c0-3.4 1-4.3 2.6-4.8v-.9h-7.1v.9c1.7.5 2.7 1.3 2.7 4.8v10.4L8.1 2.3c-.9-.8-1.2-.9-1.7-.9H.8v.9c1.2.2 1.9.6 3.3 1.9.5.5.9 1 .9 1.8v11.8c0 3.4-1 4.3-2.6 4.8v.9h7.1v-.9c-1.7-.5-2.7-1.3-2.7-4.8V6.7l16.9 17h1.2V7.1z"/></g></svg>
 
-      <a href="<?php echo home_url(); ?>" title="Kostas Research Institute">
-        <!-- <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="kostas research institute logo"> -->
-        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 192.56"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M30.57,51.92l-8.16,9V83.19H3.75V9H22.41v30.2L47.94,9H69.88L43.39,39.21l28.5,44H49.75Z" transform="translate(0 0.32)"/><path class="cls-1" d="M131.45,54.79c0,17.9-11.87,29.88-30.62,29.88-19.39,0-30.63-12.4-30.63-29.88S81.65,24.9,100.83,24.9C119.69,24.9,131.45,37.72,131.45,54.79Zm-42.6-.22c0,10.81,4.45,16.22,12,16.22s11.87-5.41,11.87-16.22c0-11-4.67-15.79-11.87-15.79S88.85,43.55,88.85,54.57Z" transform="translate(0 0.32)"/><path class="cls-1" d="M187.41,33.49l-8.69,9.75c-5-3.82-9.65-5.73-15.26-5.73s-7.84,1.7-7.84,4.35c0,3,1.8,3.92,13.24,6.14,13.46,2.55,19.82,8.06,19.82,18.34,0,10.81-9.65,18.33-26.49,18.33-13.14,0-21.41-3.82-28.09-9.64l8.48-10.18c5.94,5.09,11.87,6.89,17.49,6.89,6.78,0,9.85-1.8,9.85-4.66s-1.06-4.13-12.71-6.36c-13.46-2.54-20-7.74-20-17.7,0-11.65,11.12-18.12,25.54-18.12C173.63,24.9,181.9,28.51,187.41,33.49Z" transform="translate(0 0.32)"/><path class="cls-1" d="M215.38,27.87h13.25v12.5H215.38V63.69c0,4.66,1.38,6.78,6.36,6.78a31.22,31.22,0,0,0,7.74-1.06V82.76a42.77,42.77,0,0,1-12.82,1.91c-14.31,0-19.08-6.78-19.08-18.23V40.37H190V27.87h7.63V13.25h17.8Z" transform="translate(0 0.32)"/><path class="cls-1" d="M285.12,42.81V70.58c0,4.76.31,8.58,1.9,12.61H269.75a19.79,19.79,0,0,1-2-5.62c-3.92,5.19-9.65,7.1-16.32,7.1-12,0-18.76-7.31-18.76-17.38,0-10.91,6.46-17.38,24-19.6l10.7-1.28V43.87c0-5.09-1.38-6.89-7.1-6.89-5.4,0-7.52,1.91-7.73,6.57H234.89c.42-12.29,9.75-18.65,25.64-18.65C278.23,24.9,285.12,31.47,285.12,42.81ZM260.74,58c-7.31,1.05-10,3.28-10,7.41,0,3.71,2.23,5.94,6.47,5.94,5.61,0,10.06-3.82,10.06-9.33V57Z" transform="translate(0 0.32)"/><path class="cls-1" d="M343.51,33.49l-8.69,9.75c-5-3.82-9.65-5.73-15.26-5.73s-7.84,1.7-7.84,4.35c0,3,1.8,3.92,13.24,6.14,13.46,2.55,19.82,8.06,19.82,18.34,0,10.81-9.65,18.33-26.49,18.33-13.14,0-21.41-3.82-28.09-9.64l8.48-10.18c5.94,5.09,11.87,6.89,17.49,6.89,6.78,0,9.85-1.8,9.85-4.66S325,63,313.31,60.72c-13.46-2.54-20-7.74-20-17.7,0-11.65,11.12-18.12,25.54-18.12C329.73,24.9,338,28.51,343.51,33.49Z" transform="translate(0 0.32)"/><path class="cls-1" d="M433.37,32.64c0,9.85-5.19,16.64-14.83,20.45l19.28,30.1H415.57l-15.37-27h-8.26v27H373.29V9h29.35C424.26,9,433.37,18.86,433.37,32.64Zm-41.43-8.8V42.07h11c6.57,0,11.13-2.33,11.13-9.33,0-6-3.71-8.9-10.6-8.9Z" transform="translate(0 0.32)"/><path class="cls-1" d="M494.73,56v3.18H456c.53,8.16,5.3,12.19,12.4,12.19,5.93,0,9.43-3,12-7l14,6.68C488.8,79.69,480,84.67,467.39,84.67c-18.44,0-29.77-12.51-29.77-29.88S448.21,24.9,466.33,24.9C483.92,24.9,494.73,36.77,494.73,56Zm-38.89-7.42h20.88c-.43-7.84-4.35-11.12-10.49-11.12C460.72,37.41,456.37,40.59,455.84,48.53Z" transform="translate(0 0.32)"/><path class="cls-1" d="M550.58,33.49l-8.69,9.75c-5-3.82-9.64-5.73-15.26-5.73s-7.84,1.7-7.84,4.35c0,3,1.8,3.92,13.25,6.14,13.45,2.55,19.81,8.06,19.81,18.34,0,10.81-9.64,18.33-26.49,18.33-13.14,0-21.4-3.82-28.08-9.64l8.48-10.18c5.93,5.09,11.86,6.89,17.48,6.89,6.78,0,9.86-1.8,9.86-4.66S532,63,520.38,60.72c-13.46-2.54-20-7.74-20-17.7,0-11.65,11.13-18.12,25.54-18.12C536.8,24.9,545.07,28.51,550.58,33.49Z" transform="translate(0 0.32)"/><path class="cls-1" d="M612.58,56v3.18H573.79c.53,8.16,5.3,12.19,12.4,12.19,5.93,0,9.43-3,12-7l14,6.68c-5.51,8.69-14.3,13.67-26.91,13.67-18.44,0-29.78-12.51-29.78-29.88s10.6-29.89,28.72-29.89C601.77,24.9,612.58,36.77,612.58,56Zm-38.89-7.42h20.87c-.42-7.84-4.34-11.12-10.49-11.12C578.56,37.41,574.22,40.59,573.69,48.53Z" transform="translate(0 0.32)"/><path class="cls-1" d="M669.27,42.81V70.58c0,4.76.32,8.58,1.91,12.61H653.91a20.11,20.11,0,0,1-2-5.62c-3.92,5.19-9.64,7.1-16.32,7.1-12,0-18.75-7.31-18.75-17.38,0-10.91,6.46-17.38,23.95-19.6l10.7-1.28V43.87c0-5.09-1.38-6.89-7.1-6.89-5.41,0-7.52,1.91-7.73,6.57H619c.43-12.29,9.75-18.65,25.65-18.65C662.39,24.9,669.27,31.47,669.27,42.81ZM644.9,58c-7.31,1.05-10,3.28-10,7.41,0,3.71,2.23,5.94,6.46,5.94,5.62,0,10.07-3.82,10.07-9.33V57Z" transform="translate(0 0.32)"/><path class="cls-1" d="M715.69,25.22v17c-2-.1-2.75-.1-3.5-.1-8.58,0-15.36,3.6-15.36,19.07v22H679V26.49h17.06V35.6c3.92-7.84,9.32-10.7,15.25-10.7A30.21,30.21,0,0,1,715.69,25.22Z" transform="translate(0 0.32)"/><path class="cls-1" d="M773.76,40.59l-15.47,6c-1.8-5.09-5.51-7.85-10.49-7.85-7.1,0-11.87,4.88-11.87,15.9,0,10.81,4.66,16.11,12,16.11,6.25,0,9.32-3.92,11-8.8l15.27,5.93c-4.77,10-13.67,16.75-27.34,16.75-18.44,0-29.57-12.4-29.57-29.78s11.44-30,29.57-30C760.2,24.9,768.89,30.73,773.76,40.59Z" transform="translate(0 0.32)"/><path class="cls-1" d="M797.4,33.38c4.23-5.51,9.43-8.48,16.85-8.48,12.08,0,19,7.74,19,21.3v37h-17.8V51c0-7.42-1.91-11.13-7.84-11.13s-10.17,5-10.17,12.51V83.19H779.59V9H797.4Z" transform="translate(0 0.32)"/><path class="cls-1" d="M883.66,83.19H865V9h18.65Z" transform="translate(0 0.32)"/><path class="cls-1" d="M948.41,46.2v37H930.6V51.29c0-7.74-1.9-11.45-7.83-11.45s-10.18,5-10.18,12.51V83.19h-17.8V26.49h17.06v7.63c4.24-6.46,10.38-9.22,17.91-9.22C941.52,24.9,948.41,32.53,948.41,46.2Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1006.69,33.49,998,43.24c-5-3.82-9.64-5.73-15.26-5.73s-7.84,1.7-7.84,4.35c0,3,1.8,3.92,13.25,6.14,13.45,2.55,19.81,8.06,19.81,18.34,0,10.81-9.64,18.33-26.49,18.33-13.14,0-21.41-3.82-28.08-9.64l8.48-10.18c5.93,5.09,11.86,6.89,17.48,6.89,6.78,0,9.86-1.8,9.86-4.66s-1.06-4.13-12.72-6.36c-13.46-2.54-20-7.74-20-17.7,0-11.65,11.13-18.12,25.54-18.12C992.92,24.9,1001.18,28.51,1006.69,33.49Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1034.67,27.87h13.25v12.5h-13.25V63.69c0,4.66,1.38,6.78,6.36,6.78a31.35,31.35,0,0,0,7.74-1.06V82.76a42.84,42.84,0,0,1-12.83,1.91c-14.3,0-19.07-6.78-19.07-18.23V40.37h-7.63V27.87h7.63V13.25h17.8Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1074,9.33c0,5.4-4.77,9.64-10.18,9.64s-10.17-4.24-10.17-9.64,4.77-9.65,10.17-9.65S1074,3.92,1074,9.33Zm-1.27,73.86h-17.81V26.49h17.81Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1103.24,27.87h13.24v12.5h-13.24V63.69c0,4.66,1.37,6.78,6.35,6.78a31.29,31.29,0,0,0,7.74-1.06V82.76a42.82,42.82,0,0,1-12.82,1.91c-14.31,0-19.08-6.78-19.08-18.23V40.37h-7.63V27.87h7.63V13.25h17.81Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1175.93,83.19h-17.06V76.3a20.36,20.36,0,0,1-17.17,8.37c-10.49,0-18.75-6-18.75-19.82V26.49h17.8v34c0,6.57,2.44,8.9,7.42,8.9,6,0,10-4.66,10-11.55V26.49h17.8Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1206.46,27.87h13.24v12.5h-13.24V63.69c0,4.66,1.37,6.78,6.35,6.78a31.29,31.29,0,0,0,7.74-1.06V82.76a42.82,42.82,0,0,1-12.82,1.91c-14.31,0-19.08-6.78-19.08-18.23V40.37H1181V27.87h7.63V13.25h17.81Z" transform="translate(0 0.32)"/><path class="cls-1" d="M1280,56v3.18h-38.79c.53,8.16,5.3,12.19,12.4,12.19,5.94,0,9.43-3,12-7l14,6.68c-5.5,8.69-14.3,13.67-26.91,13.67-18.44,0-29.78-12.51-29.78-29.88s10.6-29.89,28.72-29.89C1269.19,24.9,1280,36.77,1280,56Zm-38.89-7.42H1262c-.42-7.84-4.34-11.12-10.49-11.12C1246,37.41,1241.64,40.59,1241.11,48.53Z" transform="translate(0 0.32)"/><path class="cls-1" d="M988.84,181.08l15.09-33.43c3-6.58,3.91-8,7-8.83v-2.24l-15.79,0v2.24c5.21,1.11,5.77,3.76,3.38,9.37l-6.06,14.51-7.56-17c-1.61-3.76-1.38-5.93,4.15-6.58v-2.48l-21.07,0v2.48c2.49.64,3.45,1.68,5.62,6.16l13.43,28.81-2.24,4.82c-1.27,2.8-2.47,4.89-3.83,6.09-1-3.28-2.81-5-5.7-5s-5.36,1.94-5.35,5.7a6.56,6.56,0,0,0,6.66,6.56c5.12,0,8.32-2.58,12.23-11.16M967.44,171l-1.21-2.56a14.53,14.53,0,0,1-5.77,1.46c-3.76,0-4.73-1.92-4.73-4.56l0-24.12h10.17v-4.57l-10.17,0v-7.45h-1.45l-14.4,9.48v2.56h5.85l.05,26.2c0,5.21,3,8,8.83,8A21.36,21.36,0,0,0,967.44,171M937,172.2c-5-.71-5.7-1.75-5.7-6.16l-.06-30.68h-3.92l-11.77,7.71v1.76h5.69l0,21.23c0,4.41-.79,5.45-5.67,6.18v2.48l21.39,0Zm-11.46-42.84a6.1,6.1,0,0,0,6.08-6.18,5.42,5.42,0,0,0-5.46-5.52,6.05,6.05,0,0,0-6.15,6.1,5.45,5.45,0,0,0,5.53,5.6m-14,33.59c0-7.45-6.18-9.76-12-11.59s-9.62-3-9.63-7.2c0-2.24,1.67-4.32,5-4.33,4.09,0,7.69,2.47,12,7.35l2.08-1L906,136.28h-1.28l-1.44,1.2a19.21,19.21,0,0,0-7.54-1.51c-8.49,0-14,4.91-14,12.28s6.18,9.61,12,11.52,9.62,3,9.63,7.27c0,2.65-2,4.65-5.84,4.66-5.37,0-9.46-3.51-14.36-9.75l-2.16.81,3.15,12.49h1.36l2.32-1.69a20.21,20.21,0,0,0,8.9,2c8.17,0,14.89-4.84,14.87-12.61m-41.72,9.37c-5.21-.79-5.93-1.91-5.94-6.88l0-16.5a24.51,24.51,0,0,1,4.72-6.42,4.82,4.82,0,0,0,4.9,5.12c2.72,0,5.36-2.17,5.35-6.34,0-3.53-2-5.68-5.54-5.68-3.92,0-7,3.3-9.84,7.95v-8.09h-3.53l-11.6,7.63v1.76h5.52l0,21.31c0,4.4-.71,5.53-5.28,6.18v2.48l21.23,0Zm-50.19-21.7c0-6.49,2.71-10.34,8-10.35,3.68,0,6,2.63,7,7.84l-14.89,5.15c-.08-.88-.08-1.76-.09-2.64m25.11,17L842.61,166a12.18,12.18,0,0,1-9.2,4.18c-7.37,0-11.55-5.59-13.08-12.87l24-8.06c-.5-8.49-6.76-13.12-14.69-13.11-11.13,0-19.29,9-19.27,20.14s7.09,19.46,19.5,19.43c7.61,0,12.17-3.38,14.89-8m-42-19.64c3-6.57,3.91-8,7-8.82v-2.24L794,137v2.25c5.21,1.11,5.77,3.75,3.38,9.36l-6.06,14.51L783.78,146c-1.61-3.76-1.38-5.92,4.15-6.57V137l-21.07,0v2.49c2.49.63,3.53,1.67,5.62,6.15l13.75,29.7h4.17ZM766.2,172.5c-5-.71-5.69-1.75-5.7-6.16l0-30.68h-3.93l-11.76,7.71v1.76h5.69l0,21.23c0,4.41-.8,5.45-5.68,6.18V175l21.39,0Zm-11.45-42.84a6.09,6.09,0,0,0,6.07-6.18,5.41,5.41,0,0,0-5.45-5.51,6,6,0,0,0-6.16,6.09,5.45,5.45,0,0,0,5.54,5.6m-40.38,42.93c-4.57-.63-5.29-1.75-5.3-6.16l0-18.5c4-3.61,7.28-5.38,10.16-5.39,3.93,0,5,2,5.06,5.6l0,18.27c0,4.4-.71,5.53-5.28,6.18v2.48l20.59,0v-2.48c-4.56-.63-5.29-1.75-5.29-6.16l0-19.15c0-6.41-2.74-11-10.83-11-5,0-9.85,3.06-14.65,7.15v-7.69h-3.69l-11.6,7.63v1.76H699l0,21.31c0,4.41-.72,5.53-5.28,6.18v2.48l20.59,0ZM627,125.64l0,24c0,15.54,8.13,26.34,28.56,26.3s28.5-10.86,28.48-26.08l0-19.31c0-9.37,2.62-11.78,7.19-13.07V115l-19.38,0v2.48c4.57,1.28,7.22,3.67,7.23,13l0,19.3c0,13.54-7.1,19.8-20.55,19.83s-20.6-6.21-20.63-19.75l0-24.36c0-6.09,1.75-7.13,6.79-7.86v-2.64l-24.35,0v2.64c5.05.72,6.65,1.75,6.66,7.84" transform="translate(0 0.32)"/><path class="cls-1" d="M562.79,172.88c-4.56-.63-5.29-1.75-5.3-6.16l0-18.5c4-3.61,7.28-5.38,10.17-5.39,3.92,0,5,2,5,5.6l0,18.27c0,4.4-.72,5.53-5.28,6.17v2.49l20.59,0v-2.48c-4.57-.64-5.29-1.76-5.3-6.16l0-19.15c0-6.41-2.75-11-10.84-10.95-5,0-9.85,3.06-14.65,7.15V136h-3.69l-11.6,7.63v1.76h5.53l0,21.31c0,4.41-.71,5.53-5.28,6.18v2.48l20.59,0Zm-31.88.06c-5.21-.79-5.93-1.91-5.94-6.88l0-16.5a24.51,24.51,0,0,1,4.72-6.42,4.82,4.82,0,0,0,4.89,5.12c2.73,0,5.37-2.17,5.36-6.34,0-3.53-2-5.68-5.54-5.68-3.93,0-7,3.3-9.84,7.95V136.1H521l-11.6,7.64v1.76h5.53l0,21.31c0,4.4-.71,5.53-5.28,6.18v2.48l21.23,0Zm-50.19-21.7c0-6.49,2.71-10.34,8-10.35,3.69,0,6,2.63,7,7.84l-14.89,5.15a25.88,25.88,0,0,1-.09-2.64m25.11,17-2.17-1.68a12.19,12.19,0,0,1-9.2,4.18c-7.38,0-11.55-5.59-13.09-12.87l24-8.06c-.49-8.49-6.75-13.13-14.68-13.11-11.14,0-19.29,9-19.27,20.14s7.08,19.46,19.5,19.43c7.61,0,12.17-3.38,14.89-8m-37,3.67-1.2-2.56a14.75,14.75,0,0,1-5.77,1.45c-3.77,0-4.73-1.92-4.74-4.56l0-24.11,10.18,0v-4.57l-10.18,0v-7.45h-1.44l-14.4,9.48v2.56h5.85l0,26.2c0,5.21,3,8,8.83,8a21.47,21.47,0,0,0,12.89-4.43m-30.3-8.12c0-7.45-6.18-9.76-11.95-11.6s-9.62-3-9.63-7.19c0-2.24,1.68-4.33,5-4.33,4.09,0,7.7,2.47,12,7.35l2.08-1L433,137.14h-1.28l-1.44,1.21a19,19,0,0,0-7.54-1.51c-8.49,0-14,4.91-14,12.28s6.18,9.6,11.95,11.52,9.62,3,9.63,7.27c0,2.64-2,4.65-5.84,4.66-5.37,0-9.46-3.51-14.36-9.75l-2.16.8,3.15,12.49h1.36l2.32-1.68a20.2,20.2,0,0,0,8.9,2c8.17,0,14.89-4.83,14.87-12.6m-61.68,1.63c0-4.09,1.83-6,11.2-8.59l0,11.61a10,10,0,0,1-6.24,2.58c-3.13,0-5-1.67-5-5.6m17.64,10.7a17.82,17.82,0,0,0,9.53-3.3l-.72-2.24c-3.93.73-5.37.17-5.37-2.47l0-21.39c0-6.41-2.82-9.85-11.88-9.84-10.17,0-17.61,5.48-17.6,10.61a4.37,4.37,0,0,0,4.57,4.56,5.22,5.22,0,0,0,5.36-4.34,5.46,5.46,0,0,0-1.53-5.36,13.72,13.72,0,0,1,6.09-1.45c3.44,0,5.13,1.19,5.13,4.31l0,8c-14.34,3.55-20.9,6.69-20.89,14.3,0,5.85,3.78,9,9.71,9A19.91,19.91,0,0,0,388.63,172c.56,2.64,2.41,4.16,5.85,4.15m-56.84-24.65c0-6.49,2.71-10.34,8-10.35,3.68,0,6,2.63,7,7.84l-14.89,5.15c-.08-.88-.09-1.76-.09-2.64m25.11,17-2.17-1.68a12.16,12.16,0,0,1-9.2,4.18c-7.37,0-11.55-5.58-13.08-12.87l24-8.06c-.5-8.49-6.76-13.12-14.69-13.11-11.13,0-19.29,9-19.27,20.14s7.08,19.46,19.5,19.44c7.61,0,12.17-3.39,14.89-8M299,173.35c-4.57-.63-5.29-1.75-5.3-6.16l0-18.59c3.84-3.53,6.8-5.3,10.17-5.3,3.93,0,5.05,2,5.06,5.6l0,18.26c0,4.41-.71,5.53-5.28,6.18v2.48l20.59,0V173.3c-4.57-.63-5.29-1.75-5.3-6.16l0-19.14c0-6.41-2.74-11-10.84-11-4.88,0-9.68,2.9-14.4,6.92l-.06-31.73h-3l-12.89,8.43v1.77l5.84,0,.08,44.79c0,4.4-.71,5.53-5.27,6.18v2.48l20.59,0Zm-23-1.08-1.2-2.56a14.58,14.58,0,0,1-5.77,1.45c-3.77,0-4.73-1.92-4.73-4.56l-.05-24.11,10.18,0V137.9l-10.18,0v-7.45h-1.44L248.38,140v2.57l5.85,0,.05,26.2c0,5.21,3,8,8.82,8A21.47,21.47,0,0,0,276,172.27m-39.25,1.19c-5.21-.79-5.93-1.91-5.94-6.88l0-16.5a24.51,24.51,0,0,1,4.72-6.42,4.82,4.82,0,0,0,4.89,5.12c2.73,0,5.37-2.17,5.36-6.34,0-3.53-2-5.68-5.54-5.68-3.92,0-7,3.3-9.84,8v-8.09h-3.53l-11.6,7.63V146h5.53l0,21.31c0,4.4-.71,5.53-5.28,6.18V176l21.23,0ZM178.86,153c0-7.21,3.11-11.78,9.68-11.79,8.49,0,11,10.39,11,19.93,0,7.21-3.11,11.78-9.68,11.79-8.49,0-11-10.39-11-19.93m30.69,3.55c0-10.49-7.08-19.29-20-19.27s-20.73,9.41-20.71,20.31c0,10.49,7.08,19.29,20,19.27s20.73-9.41,20.71-20.31m-52.27-25c0-9.37,2.62-11.78,7.18-13.07V116l-19.39,0v2.48c4.56,1.28,7.21,3.68,7.23,13.05l.05,28.2-40.93-41.19c-2.25-2.24-3.13-2.47-4.57-2.47l-15.14,0v2.48c3.29.31,5.21,1.59,9,5.19a6.12,6.12,0,0,1,2.33,4.72l.06,32.13c0,9.37-2.62,11.78-7.19,13.07v2.48l19.39,0v-2.49c-4.57-1.27-7.22-3.67-7.23-13L108,130.35l46.07,46.14h3.29Z" transform="translate(0 0.32)"/><path class="cls-1" d="M10.28,177.85C4,177.85,0,174.66,0,169.4c0-8.6,10.59-11.57,22.54-13.63v-4c0-5.17-1-7-4.72-7S12,146.33,11,150.06c-.84,2.82-2.67,4.11-4.88,4.11s-3.65-1.37-3.65-4.11c0-5,6.47-9.06,16.14-9.06,7.08,0,13.18,2.59,13.18,11.12v17.74c0,2.36.76,3.5,2.28,3.5a5.45,5.45,0,0,0,2.51-.76V176a11.56,11.56,0,0,1-6.85,1.83c-3.58,0-6.24-1.3-7-4.8C19.34,175.42,15,177.85,10.28,177.85ZM22.54,159.5c-7.77,1.3-12.87,3.2-12.87,8.23,0,3.27,2.13,4.64,4.8,4.64,2.89,0,5.56-1.29,8.07-3Z" transform="translate(0 0.32)"/><path class="cls-1" d="M54.46,177.85c-6.17,0-10.28-2.28-10.28-9.67V146.1H39.45v-2.21c6.25-2.28,9.22-6.47,10.59-13.17h3.35v11.42h8.68v4H53.39v22.16c0,3.65,1.45,5.25,4.19,5.25a11,11,0,0,0,4.49-.91v3.81A21,21,0,0,1,54.46,177.85Z" transform="translate(0 0.32)"/></svg>
       </a>
     </div>
     <!-- /logo -->
-
-    <input type="checkbox" name="nav-btn" id="nav-btn" />
+    <input  type="checkbox" name="nav-btn" id="nav-btn" />
     <span></span>
-    <!-- nav -->
-    <nav class="nu__mobile-nav">
-      <?php nudev_nav(); ?>
+
+    <!--MOBILE NAV-->
+    <div id="nu__mobile">
+      <nav>
+        <ul>
+          <li>
+            <a class="toggle js-mobile-nav parent" href="javascript:void(0);">How do I..</a>
+            <ul class="inner">
+              <li>
+                <a href="#" class="toggle js-mobile-nav child">Become or Select a Vendor</a>
+                <div class="inner">
+                  <ul>
+                    <li><a href="https://www.google.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#" class="toggle js-mobile-nav child">Buy/Pay for Goods Services</a>
+                <div class="inner">
+                  <ul>
+                    <li><a href="https://www.google.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#" class="toggle js-mobile-nav child">Travel or Do Expense Report</a>
+                <div class="inner">
+                  <ul>
+                    <li><a href="https://www.google.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#" class="toggle js-mobile-nav child">Manage Funds: Budgets, Accounting, and Taxes</a>
+                <div class="inner">
+                  <ul>
+                    <li><a href="https://www.google.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#" class="toggle js-mobile-nav child">Pay Northeastern</a>
+                <div class="inner">
+                  <ul>
+                    <li><a href="https://www.google.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                    <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="">Forms</a>  </li>
+          <li><a href="">Tools</a></li>
+          <li><a href="">Expense Codes</a></li>
+
+          <li>
+            <a class="toggle js-mobile-nav parent" href="javascript:void(0);">About</a>
+            <ul class="inner">
+              <!-- <h6>Who We Are</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla.</p> -->
+              <li><a href="">Overview</a></li>
+              <li><a href="">Department & Staff Information</a></li>
+              <li><a href="">Contact US</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <!--DESKTOP NAV-->
+    <nav class="nu__main-nav" id="nu__main-nav-desktop">
+      <ul>
+        <li class="has-children" data-id="howdoi">
+          <a href=""><span>How do I...</span></a>
+
+          <div class="neumenu-wrapper" id="howdoi">
+            <div class="neumenu verticle" data-pos="list.right" data-classes="active">
+              <div class="neumenu-item active">
+                <h6>Become or Select a Vendor</h6>
+                <div class="neumenu-sub first-sub">
+                  <div class="neumenu-sub-flex">
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="https://www.google.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="neumenu-item">
+                <h6>Buy/Pay for Goods Services</h6>
+                <div class="neumenu-sub">
+                  <div class="neumenu-sub-flex">
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="neumenu-item">
+                <h6>Travel or Do Expense Report</h6>
+                <div class="neumenu-sub">
+                  <div class="neumenu-sub-flex">
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="neumenu-item">
+                <h6>Manage Funds: Budgets, Accounting, and Taxes</h6>
+                <div class="neumenu-sub">
+                  <div class="neumenu-sub-flex">
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="neumenu-item">
+                <h6>Pay Northeastern</h6>
+                <div class="neumenu-sub">
+                  <div class="neumenu-sub-flex">
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                    <div class="neumenu-sub_box">
+                      <ul>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li>
+        <li><a href=""><span>Forms</span></a></li>
+        <li><a href=""><span>Tools</span></a></li>
+        <li><a href=""><span>Expense Codes</span></a></li>
+        <li class="has-children" data-id="about"><a href=""><span>About</span></a>
+          <div class="neumenu-wrapper" id="about">
+            <div  class="neumenu verticle" data-pos="list.right" data-classes="active">
+              <div class="neumenu-item ">
+                <h6 style="cursor:default;">Who we are</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend mauris vel.</p>
+                <a href="">Learn More</a>
+                <div class="neumenu-sub first-sub">
+                  <div class="neumenu-sub-flex">
+                    <div class="neumenu-sub_box neumenu-sub-about">
+                      <h6>
+                        <a href="https://www.google.com">
+                          <span>Overview</span>
+                        </a>
+                      </h6>
+                    </div>
+                    <div class="neumenu-sub_box neumenu-sub-about">
+                      <h6><a href=""><span>Department & Staff Information</span></a></h6>
+                    </div>
+                    <div class="neumenu-sub_box neumenu-sub-about">
+                      <h6><a href=""><span>Contact Us</span></a></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </nav>
-
-    <!-- nav -->
-    <nav class="nu__main-nav">
-      <?php nudev_nav(); ?>
-    </nav>
-
-
-    <!-- /nav -->

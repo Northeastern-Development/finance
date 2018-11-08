@@ -4,6 +4,256 @@ var Finance = {};
 
   $(function() {
 
+
+    (function ($) {
+        $.fn.extend({
+            "neumenu": function (parameters) {
+                // default parameters
+                var defaults = {
+                    pos: "list.bottom",
+                    classes: "active",
+                }
+
+                // combines defaults and parameters
+                var options = $.extend({}, defaults, parameters);
+
+                // extension main
+                this.each(function () {
+                    // get [data-pos=...] attribute
+                    var pos = $(this).attr("data-pos");
+                    if (pos == undefined) {
+                        pos = options.pos;
+                    }
+
+                    // get [data-classes=...] attribute
+                    var classes = $(this).attr("data-classes");
+                    if (classes == undefined) {
+                        classes = options.classes;
+                    }
+
+                    // get .neumenu-list element
+                    var list = $(this);
+
+                    // each .neumenu-item element
+                    $(this).find(".neumenu-item").each(function () {
+
+
+                        // get .neumenu-sub element
+                        var sub = $(this).find(".neumenu-sub");
+                        if (sub.length == 0) return true;
+
+                        switch (pos) {
+                            case "list.right":
+                                sub.css({
+                                    "top": 0,
+                                    "left": 0,
+                                    "margin-left": (list.outerWidth() - 1) + "%",
+                                    "height": '100%',
+                                    "border-left": "none"
+                                });
+                                break;
+
+                            case "list.left":
+                                sub.css({
+                                    "top": 0,
+                                    "right": 0,
+                                    "margin-right": (list.outerWidth() - 1) + "px",
+                                    "height": list.outerHeight() + "px",
+                                    "border-right": "none"
+                                });
+                                break;
+
+                            case "list.bottom":
+                                sub.css({
+                                    "left": 0,
+                                    "width": list.outerWidth() + "px"
+                                });
+                                break;
+
+                            case "list.top":
+                                sub.css({
+                                    "left": 0,
+                                    "width": list.outerWidth() + "px",
+                                    "bottom": 0,
+                                    "margin-bottom": list.outerHeight() + "px",
+                                });
+                                break;
+                        }
+
+                        //CLICK EVENT
+                        $(this).on('click', function () {
+                            $('.neumenu-item, .neumenu-sub').removeClass('active')
+                            $(this).addClass("active");
+                            sub.addClass(classes);
+                        });
+
+                        //HOVER EVENT IF THEY WANT IT TO WORK ON HOVER INSTEAD OF CLICK
+                        // $(this).mouseenter(function () {
+                        //   $(this).addClass("active");
+                        //   sub.addClass(classes);
+                        //
+                        // });
+                        //
+                        // $(this).mouseleave(function () {
+                        //   $(this).removeClass("active");
+                        //   sub.removeClass(classes);
+                        // });
+                    });
+                });
+
+                // for chain-style code
+                return this;
+            }
+
+
+        });
+
+
+
+    })($);
+
+
+
+    //DROPDOWN NAV WITH TAB PANEL
+    $('.nu__main-nav > ul > li.has-children ').on('click', function (e) {
+        var sub = $(this).attr('data-id');
+
+        if (!$(e.target).is("a")) { //was unable to click on any links within the dropdown nav panels. event was bubbling
+            e.preventDefault();
+        }
+        
+
+
+        // depricated; doesn't allow toggling active navs closed
+        // $('li.has-children').removeClass('neu__active'); //removes top nav active state class
+
+
+        
+        
+
+        if( $(this).hasClass('neu__active') ){
+            // this nav item active ( close it )
+        }
+        else if( !$(this).hasClass('neu__active') ){
+            // the nav item is inactive ( open it )
+            $(this).addClass('neu__active');
+        }
+
+
+        
+        // $(this).addClass('neu__active'); //adds top nav active state class to items with drop down menu
+
+        if (sub == 'howdoi') {
+            $('#about, .first-sub').css({
+                'display': 'none'
+            });
+            $('#howdoi, .first-sub').css({
+                'display': 'block'
+            });
+        }
+        if (sub == 'about') {
+            $('#howdoi, .first-sub').css({
+                'display': 'none'
+            });
+            $('#about, .first-sub').css({
+                'display': 'block'
+            });
+        }
+    });
+
+
+
+
+    $(".neumenu").neumenu(); //THIS CONTROLS TABBED MENU
+
+    $('#about > .neumenu > .neumenu-item').on('click', function (e) {
+        $('.neumenu-item').removeClass('active');
+    });
+
+
+
+
+    //MOBILE ACCORDION NAV
+    $('.js-mobile-nav').click(function (e) {
+        e.preventDefault();
+
+        var $this = $(this);
+
+        if ($this.next().hasClass('show')) {
+            $this.next().removeClass('show');
+            $this.removeClass("active");
+            $this.next().slideUp(350);
+        } else {
+            $this.parent().parent().find('li .inner').removeClass('show');
+            if ($this.hasClass('parent')) {
+                /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED */
+                $this.parents("#nu__mobile > nav ul").find(".toggle").removeClass("active");
+            } else if ($this.hasClass('child')) {
+                /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+                $this.parents("#nu__mobile > nav ul").find(".toggle.child").removeClass("active");
+            } else {
+                /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD OF CHILD */
+                $this.parents("#nu__mobile > nav ul").find(".toggle.child-child").removeClass("active");
+            }
+            $this.parent().parent().find('li .inner').slideUp(350);
+            $this.next().toggleClass('show');
+            $this.addClass("active");
+            $this.next().slideToggle(350);
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     /**
      * Properly set up the Global/Normal Header layout
      * @type {Object}
