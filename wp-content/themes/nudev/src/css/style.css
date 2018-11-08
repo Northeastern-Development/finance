@@ -2603,10 +2603,14 @@ a {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out; }
 
-.hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+.hvr-shutter-out-horizontal:hover,
+.hvr-shutter-out-horizontal:focus,
+.hvr-shutter-out-horizontal:active {
   color: white; }
 
-.hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+.hvr-shutter-out-horizontal:hover:before,
+.hvr-shutter-out-horizontal:focus:before,
+.hvr-shutter-out-horizontal:active:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1); }
 
@@ -2692,6 +2696,9 @@ main {
   padding-bottom: 50px; }
   main > section {
     position: relative;
+    margin: 0 14.5vw 0 14.5vw;
     width: 80vw;
-    width: 80%;
     margin: 0 auto; }
+    main > section:nth-of-type(1) {
+      margin: 1vw 14.5vw 0 14.5vw;
+      margin: 0 auto; }
