@@ -246,13 +246,17 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
   }
 
   #nu__mobile {
-    top:150px;
+    top:124px;
     width:100%;
+    background-color: #fff;
+    
+    
     & > nav {
       width:97vw;
       position:relative;
       margin:0 auto;
-      padding-bottom:35vw;
+      padding-bottom:35vw; // WHY?
+      padding: 20px 1.5vw; // (1.5vw padding on the sides is consistent with the rest of the nav)
       ul {
         list-style: none;
         padding: 0;

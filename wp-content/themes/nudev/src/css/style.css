@@ -507,13 +507,15 @@ header {
   #nu__main-nav-desktop {
     display: none; }
   #nu__mobile {
-    top: 150px;
-    width: 100%; }
+    top: 124px;
+    width: 100%;
+    background-color: #fff; }
     #nu__mobile > nav {
       width: 97vw;
       position: relative;
       margin: 0 auto;
-      padding-bottom: 35vw; }
+      padding-bottom: 35vw;
+      padding: 20px 1.5vw; }
       #nu__mobile > nav ul {
         list-style: none;
         padding: 0; }
@@ -2807,3 +2809,6 @@ main {
     main > section:nth-of-type(1) {
       margin: 1vw 14.5vw 0 14.5vw;
       margin: 0 auto; }
+
+body p.testp {
+  display: none; }

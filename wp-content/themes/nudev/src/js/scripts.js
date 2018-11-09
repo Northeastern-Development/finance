@@ -112,36 +112,21 @@ var Finance = {};
 
     })($);
 
-
+    
+    
 
     //DROPDOWN NAV WITH TAB PANEL
     $('.nu__main-nav > ul > li.has-children ').on('click', function (e) {
+        //e.preventDefault();
         var sub = $(this).attr('data-id');
 
         if (!$(e.target).is("a")) { //was unable to click on any links within the dropdown nav panels. event was bubbling
             e.preventDefault();
         }
-        
 
 
-        // depricated; doesn't allow toggling active navs closed
-        // $('li.has-children').removeClass('neu__active'); //removes top nav active state class
-
-
-        
-        
-
-        if( $(this).hasClass('neu__active') ){
-            // this nav item active ( close it )
-        }
-        else if( !$(this).hasClass('neu__active') ){
-            // the nav item is inactive ( open it )
-            $(this).addClass('neu__active');
-        }
-
-
-        
-        // $(this).addClass('neu__active'); //adds top nav active state class to items with drop down menu
+        $('li.has-children').removeClass('neu__active'); //removes top nav active state class
+        $(this).addClass('neu__active'); //adds top nav active state class to items with drop down menu
 
         if (sub == 'howdoi') {
             $('#about, .first-sub').css({
@@ -160,6 +145,12 @@ var Finance = {};
             });
         }
     });
+
+    $('main').on('click touchend',function(){
+        $('li.has-children').removeClass('neu__active');
+        $('#howdoi, .first-sub').css({'display':'none'});
+        $('#about, .first-sub').css({'display':'none'});
+   });
 
 
 
