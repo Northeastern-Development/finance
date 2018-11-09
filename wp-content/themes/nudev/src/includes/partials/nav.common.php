@@ -2,8 +2,6 @@
 /**
  *  Logic / Vars etc. shared between mobile/desktop nav
  */
-
-
 // get task categories
 $args = array(
     'post_type'         =>  'tasks_categories',
@@ -17,7 +15,6 @@ $args = array(
     )
 );
 $cats = get_posts($args);
-
 // get task items
 $args = array(
     'post_type'         =>  'tasks',
@@ -31,12 +28,10 @@ $args = array(
     )
 );
 $tasks = get_posts($args);
-
 // prep filtering tasks into categories
 $filter_cats = array();
 foreach ($tasks as $task) {
     $task_fields = get_fields($task);
     $filter_cats[$task_fields['category'][0]->post_name][] = $task;
 }
-
 ?>
