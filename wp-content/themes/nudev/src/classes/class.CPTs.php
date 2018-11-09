@@ -6,8 +6,19 @@ class CPTs
         add_action('init', array($this, 'register_cpts'));
     }
     function register_cpts(){
-        // Task Categories
-        $labels = array(
+        $this->reg_helpful_links_post_type();
+        $this->reg_tasks_post_types();
+        $this->reg_glossary_post_type();
+        $this->reg_forms_post_types();
+        $this->reg_tools_post_type();
+        $this->reg_discounts_post_types();
+        // $this->reg_news_post_types();
+        // $this->reg_events_post_types();
+    }
+
+    function reg_tasks_post_types(){
+         // Task Categories
+         $labels = array(
             'name' => __('Tasks Categories', 'nudev'), // Rename these to suit
             'singular_name' => __('Tasks Category', 'nudev'),
             'add_new' => __('Add New', 'nudev'),
@@ -52,7 +63,8 @@ class CPTs
             'menu_position' => null,
         );
         register_post_type('tasks', $args);
-
+    }
+    function reg_helpful_links_post_type(){
         $labels = array(
             'name' => __('Helpful Links', 'nudev'), // Rename these to suit
             'singular_name' => __('Helpful Links', 'nudev'),
@@ -73,16 +85,108 @@ class CPTs
             'hierarchical' => false,
             'has_archive' => false,
         );
+        register_post_type('helpful_links', $args);
         register_taxonomy_for_object_type('category', 'Helpful Links'); // Register Taxonomies for Category
         register_taxonomy_for_object_type('post_tag', 'Helpful Links');
-        register_post_type('helpful_links', $args);
-
-
-        $this->reg_glossary_post_type();
-        $this->reg_forms_post_types();
-        $this->reg_tools_post_type();
-        $this->reg_discounts_post_types();
     }
+
+    // function reg_news_post_types(){
+
+    //     $labels = array(
+    //         'name' => __('News Items', 'nudev'), // Rename these to suit
+    //         'singular_name' => __('News Item', 'nudev'),
+    //         'add_new' => __('Add New', 'nudev'),
+    //         'add_new_item' => __('Add New', 'nudev'),
+    //         'edit' => __('Edit', 'nudev'),
+    //         'edit_item' => __('Edit', 'nudev'),
+    //         'new_item' => __('New News Item', 'nudev'),
+    //         'view' => __('View News Item', 'nudev'),
+    //         'view_item' => __('View News Item', 'nudev'),
+    //         'search_items' => __('Search News Items', 'nudev'),
+    //         'not_found' => __('No News Items found', 'nudev'),
+    //         'not_found_in_trash' => __('No News Items found in Trash', 'nudev')
+    //     );
+    //     $args = array(
+    //         'labels' => $labels,
+    //         'public' => true,
+    //         'hierarchical' => false,
+    //         'has_archive' => false,
+    //     );
+    //     register_post_type('news-items', $args);
+
+
+    //     $labels = array(
+    //         'name' => __('News Categories', 'nudev'), // Rename these to suit
+    //         'singular_name' => __('News Category', 'nudev'),
+    //         'add_new' => __('Add New', 'nudev'),
+    //         'add_new_item' => __('Add New', 'nudev'),
+    //         'edit' => __('Edit', 'nudev'),
+    //         'edit_item' => __('Edit', 'nudev'),
+    //         'new_item' => __('New News Category', 'nudev'),
+    //         'view' => __('View News Category', 'nudev'),
+    //         'view_item' => __('View News Category', 'nudev'),
+    //         'search_items' => __('Search News Categories', 'nudev'),
+    //         'not_found' => __('No News Categories found', 'nudev'),
+    //         'not_found_in_trash' => __('No News Categories found in Trash', 'nudev')
+    //     );
+    //     $args = array(
+    //         'labels' => $labels,
+    //         'public' => true,
+    //         'hierarchical' => false,
+    //         'has_archive' => false,
+    //     );
+    //     register_post_type('news-categories', $args);
+        
+    // }
+    // function reg_events_post_types(){
+
+    //     $labels = array(
+    //         'name' => __('Events Items', 'nudev'), // Rename these to suit
+    //         'singular_name' => __('Events Item', 'nudev'),
+    //         'add_new' => __('Add New', 'nudev'),
+    //         'add_new_item' => __('Add New', 'nudev'),
+    //         'edit' => __('Edit', 'nudev'),
+    //         'edit_item' => __('Edit', 'nudev'),
+    //         'new_item' => __('New Events Item', 'nudev'),
+    //         'view' => __('View Events Item', 'nudev'),
+    //         'view_item' => __('View Events Item', 'nudev'),
+    //         'search_items' => __('Search Events Items', 'nudev'),
+    //         'not_found' => __('No Events Items found', 'nudev'),
+    //         'not_found_in_trash' => __('No Events Items found in Trash', 'nudev')
+    //     );
+    //     $args = array(
+    //         'labels' => $labels,
+    //         'public' => true,
+    //         'hierarchical' => false,
+    //         'has_archive' => false,
+    //     );
+    //     register_post_type('events-items', $args);
+
+
+
+    //     $labels = array(
+    //         'name' => __('Events Categories', 'nudev'), // Rename these to suit
+    //         'singular_name' => __('Events Categories', 'nudev'),
+    //         'add_new' => __('Add New', 'nudev'),
+    //         'add_new_item' => __('Add New', 'nudev'),
+    //         'edit' => __('Edit', 'nudev'),
+    //         'edit_item' => __('Edit', 'nudev'),
+    //         'new_item' => __('New Events Categories', 'nudev'),
+    //         'view' => __('View Events Categories', 'nudev'),
+    //         'view_item' => __('View Events Categories', 'nudev'),
+    //         'search_items' => __('Search Events Categories', 'nudev'),
+    //         'not_found' => __('No Events Categories found', 'nudev'),
+    //         'not_found_in_trash' => __('No Events Categories found in Trash', 'nudev')
+    //     );
+    //     $args = array(
+    //         'labels' => $labels,
+    //         'public' => true,
+    //         'hierarchical' => false,
+    //         'has_archive' => false,
+    //     );
+    //     register_post_type('events-categories', $args);
+        
+    // }
 
     function reg_discounts_post_types(){
         $labels = array(
@@ -131,7 +235,6 @@ class CPTs
         );
         register_post_type('discount-items', $args);
     }
-    
 
     function reg_tools_post_type(){
         $labels = array(

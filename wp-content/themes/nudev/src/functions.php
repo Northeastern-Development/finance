@@ -134,119 +134,6 @@ function nudev_nav()
 
 
 
-/**
- * [list_searcheable_acf list all the custom fields we want to include in our search query]
- * @return [array] [list of custom fields]
- */
-// function list_searcheable_acf(){
-//   $list_searcheable_acf = array(
-//      'title_panel'
-//     ,'type'
-//     ,'image'
-//     ,'caption'
-//     ,'photo_credit'
-//     ,'primary_title'
-//     ,'secondary_title'
-//     ,'background_image_caption'
-//     ,'background_image_photo_credit'
-//     ,'copy'
-//     ,'side_note_copy'
-//     ,'copy_block'
-//     ,'stats_caption'
-//     ,'stats_photo_credit'
-//     ,'stats'
-//     ,'content'
-//     ,'quote'
-//     ,'rubrick_rubric'
-//     // ,'rubric'
-//     ,'author_name'
-//     ,'short_bio'
-//     ,'full_bio'
-//     ,'email'
-//   );
-//   return $list_searcheable_acf;
-// }
-/**
- * [advanced_custom_search search that encompasses ACF/advanced custom fields and taxonomies and split expression before request]
- * @param  [query-part/string]      $where    [the initial "where" part of the search query]
- * @param  [object]                 $wp_query []
- * @return [query-part/string]      $where    [the "where" part of the search query as we customized]
- * see https://vzurczak.wordpress.com/2013/06/15/extend-the-default-wordpress-search/
- * credits to Vincent Zurczak for the base query structure/spliting tags section
- */
-// function advanced_custom_search( $where, &$wp_query ) {
-//     global $wpdb;
-//
-//     if ( empty( $where ))
-//         return $where;
-//
-//     // get search expression
-//     $terms = $wp_query->query_vars[ 's' ];
-//
-//     // explode search expression to get search terms
-//     $exploded = explode( ' ', $terms );
-//     if( $exploded === FALSE || count( $exploded ) == 0 )
-//         $exploded = array( 0 => $terms );
-//
-//     // reset search in order to rebuilt it as we whish
-//     $where = '';
-//
-//     // get searcheable_acf, a list of advanced custom fields you want to search content in
-//     $list_searcheable_acf = list_searcheable_acf();
-//     foreach( $exploded as $tag ) :
-//         $where .= "
-//           AND (
-//             (wp_posts.post_title LIKE '%$tag%')
-//             OR (wp_posts.post_content LIKE '%$tag%')
-//             OR EXISTS (
-//               SELECT * FROM wp_postmeta
-// 	              WHERE post_id = wp_posts.ID
-// 	                AND (";
-//         foreach ($list_searcheable_acf as $searcheable_acf) :
-//           if ($searcheable_acf == $list_searcheable_acf[0]):
-//             $where .= " (meta_key LIKE '%" . $searcheable_acf . "%' AND meta_value LIKE '%$tag%') ";
-//           else :
-//             $where .= " OR (meta_key LIKE '%" . $searcheable_acf . "%' AND meta_value LIKE '%$tag%') ";
-//           endif;
-//         endforeach;
-// 	        $where .= ")
-//             )
-//             OR EXISTS (
-//               SELECT * FROM wp_comments
-//               WHERE comment_post_ID = wp_posts.ID
-//                 AND comment_content LIKE '%$tag%'
-//             )
-//             OR EXISTS(
-//               SELECT * FROM wp_terms
-//               INNER JOIN wp_postmeta
-//                 ON wp_postmeta.meta_value = wp_terms.term_id
-//               WHERE post_id = wp_posts.ID
-//               AND wp_terms.name LIKE '%$tag%'
-//             )
-//             OR EXISTS (
-//               SELECT * FROM wp_terms
-//               INNER JOIN wp_term_taxonomy
-//                 ON wp_term_taxonomy.term_id = wp_terms.term_id
-//               INNER JOIN wp_term_relationships
-//                 ON wp_term_relationships.term_taxonomy_id = wp_term_taxonomy.term_taxonomy_id
-//               WHERE (
-//           		taxonomy = 'post_tag'
-//             		OR taxonomy = 'category'
-//             		OR taxonomy = 'myCustomTax'
-//           		)
-//               	AND object_id = wp_posts.ID
-//               	AND wp_terms.name LIKE '%$tag%'
-//             )
-//         )";
-//     endforeach;
-//     return $where;
-// }
-//
-// add_filter( 'posts_search', 'advanced_custom_search', 500, 2 );
-
-
-
-
 
 
 
@@ -350,15 +237,6 @@ function nudev_header_scripts()
         }
     }
 }
-
-
-
-// load custom jquery
-// function nudev_include_custom_jquery() {
-// 	wp_deregister_script('jquery');
-// 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), false, '2.2.0', true);
-// }
-// add_action('wp_enqueue_scripts', 'nudev_include_custom_jquery');
 
 // include custom jQuery
 function neudev_include_custom_jquery() {
@@ -472,47 +350,6 @@ function nudev_styles(){
         // Register CSS
         wp_enqueue_style('nudevcssmin');
     }
-
-
-
-
-    // load homepage styles
-    // if(is_page('')){
-    //   wp_register_style('homepagecss', get_template_directory_uri() . '/css/homepage.css', array(), '1.0');
-    //   wp_enqueue_style('homepagecss');
-    // }
-
-
-    // if(get_query_var('s') != ""){
-    //   //echo "SEARCH RESULT: ".$_GET['s'];
-    //   wp_register_style('searchcss', get_template_directory_uri() . '/css/category.css', array(), '1.0');
-    //   wp_enqueue_style('searchcss');
-    // }
-
-
-    // load the category styles
-    // if(is_page_template('templates/template-category.php')){
-    //   wp_register_style('categorycss', get_template_directory_uri() . '/css/category.css', array(), '1.0');
-    //   wp_enqueue_style('categorycss');
-    // }
-
-
-    // load the article style: editorial
-    // if(is_page_template('templates/single-editorial.php')){
-    //   wp_register_style('editorialcss', get_template_directory_uri() . '/css/editorial.css', array(), '1.0');
-    //   wp_enqueue_style('editorialcss');
-    // }
-
-
-    // load the staff styles
-    // if(is_page_template('templates/template-staff.php') || is_page_template('templates/template-staff-bio.php')){
-    //   wp_register_style('staffcss', get_template_directory_uri() . '/css/staff.css', array(), '1.0');
-    //   wp_enqueue_style('staffcss');
-    //   wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
-    //   wp_enqueue_style('magnificcss');
-    // }
-
-
     // load the news styles
     if(is_page_template('templates/template-news-archive.php') || is_page_template('templates/template-news-item.php')){
       wp_register_style('newscss', get_template_directory_uri() . '/css/news.css', array(), '1.0');
@@ -520,27 +357,6 @@ function nudev_styles(){
       // wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
       // wp_enqueue_style('magnificcss');
     }
-
-
-    // load the article style: multimedia
-    // if(is_page_template('templates/single-media.php')){
-    //   wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
-    //   wp_enqueue_style('magnificcss');
-    //   wp_register_style('multimediacss', get_template_directory_uri() . '/css/multimedia.css', array(), '1.0');
-    //   wp_enqueue_style('multimediacss');
-    // }
-
-
-
-
-    // load the static styles for the about and submit a story templates
-    // if(is_page_template(array('templates/template-about.php','templates/template-submitstory.php','templates/template-contact.php'))){
-    //   wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
-    //   wp_enqueue_style('staticcss');
-    // }
-
-
-
 }
 
 // Register nudev Navigation
@@ -553,89 +369,6 @@ function register_nudev_menu()
     ));
 }
 
-
-
-
-
-
-
-
-
-
-/* THESE ARE TWEAKS TO TINYMCE */
-
-
-
-/**
- * Add the TinyMCE Lineheight Plugin.
- *
- * @param array $plugins An array of all plugins.
- * @return array
- */
-// function mce_custom_plugins( $mceplugins ) {
-//   //die("this is trying to load a plugin!!!");
-//     $mceplugins['lineheight'] = plugins_url( 'tinymce/') . 'lineheight/plugin.js';
-//      return $mceplugins;
-// }
-// add_filter( 'mce_external_plugins', 'mce_custom_plugins' );
-//
-//
-// if ( ! function_exists( 'wpex_mce_lineheights' ) ) {
-//     function wpex_mce_lineheights( $initArray ){
-//       $fSizes = "";
-//       for($i=9;$i<=100;$i++){
-//         $fSizes .= ($i>9?" ":"").$i."px";
-//       }
-//       $initArray['lineheight_formats'] = $fSizes;
-//       return $initArray;
-//     }
-// }
-// add_filter( 'tiny_mce_before_init', 'wpex_mce_lineheights' );
-//
-// if ( ! function_exists( 'load_custom_fonts' ) ) {
-//     function load_custom_fonts( $initArray ){
-//       // $fSizes = "";
-//       // for($i=9;$i<=100;$i++){
-//       //   $fSizes .= ($i>9?" ":"").$i."px";
-//       // }
-//       // $initArray['fontsize_formats'] = $fSizes;
-//
-//       //$theme_advanced_fonts = array("Tungsten");
-//
-//       //$initArray['$theme_advanced_fonts'] = 'Aclonica=Aclonica, sans-serif;';
-//
-//       // $init['content_css'] = "https://fonts.googleapis.com/css?family=Lato";
-//       $initArray['content_css'] = "https://cloud.typography.com/7862092/6820572/css/fonts.css";
-//
-//       $initArray['font_formats'] = "Tungsten='Tungsten Rounded A','Tungsten Rounded B'";
-//
-//
-//       //function wpex_mce_text_sizes( $initArray ){
-//         $fSizes = "";
-//         for($i=9;$i<=100;$i++){
-//           $fSizes .= ($i>9?" ":"").$i."px";
-//         }
-//         $initArray['fontsize_formats'] = $fSizes;
-//         //return $initArray;
-//
-//       return $initArray;
-//     }
-// }
-// add_filter( 'tiny_mce_before_init', 'load_custom_fonts' );
-
-// if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
-//     function wpex_mce_text_sizes( $initArray ){
-//       $fSizes = "";
-//       for($i=9;$i<=100;$i++){
-//         $fSizes .= ($i>9?" ":"").$i."px";
-//       }
-//       $initArray['fontsize_formats'] = $fSizes;
-//       return $initArray;
-//     }
-// }
-// add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
-
-
 function thisismyurl_remove_full_screen_button( $buttons ) {
 
 	if ( in_array( 'fullscreen', $buttons ) )
@@ -645,37 +378,6 @@ function thisismyurl_remove_full_screen_button( $buttons ) {
 
 }
 add_filter( 'mce_buttons', 'thisismyurl_remove_full_screen_button', 999 );
-
-
-
-
-// function my_mce_buttons_line_2( $buttons ) {
-//
-//   // array_unshift( $buttons, 'fontselect |  fontsizeselect | lineheightselect' );
-//   array_push( $buttons, 'fontselect','fontsizeselect','lineheightselect' );
-//   return $buttons;
-// }
-// add_filter( 'mce_buttons_2', 'my_mce_buttons_line_2' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
@@ -721,32 +423,6 @@ function remove_width_attribute( $html ) {
    return $html;
 }
 
-
-// If Dynamic Sidebar Exists
-if (function_exists('register_sidebar'))
-{
-    // Define Sidebar Widget Area 1
-    // register_sidebar(array(
-    //     'name' => __('Widget Area 1', 'nudev'),
-    //     'description' => __('Description for this widget-area...', 'nudev'),
-    //     'id' => 'widget-area-1',
-    //     'before_widget' => '<div id="%1$s" class="%2$s">',
-    //     'after_widget' => '</div>',
-    //     'before_title' => '<h3>',
-    //     'after_title' => '</h3>'
-    // ));
-    //
-    // // Define Sidebar Widget Area 2
-    // register_sidebar(array(
-    //     'name' => __('Widget Area 2', 'nudev'),
-    //     'description' => __('Description for this widget-area...', 'nudev'),
-    //     'id' => 'widget-area-2',
-    //     'before_widget' => '<div id="%1$s" class="%2$s">',
-    //     'after_widget' => '</div>',
-    //     'before_title' => '<h3>',
-    //     'after_title' => '</h3>'
-    // ));
-}
 
 // Remove wp_head() injected Recent Comment styles
 function my_remove_recent_comments_style()
