@@ -13,6 +13,32 @@ class CPTs
         $this->reg_tools_post_type();
         $this->reg_discounts_post_types();
         $this->reg_newsandevents_post_types();
+        $this->reg_departments_post_type();
+    }
+
+    function reg_departments_post_type(){
+        $labels = array(
+            'name' => __('Departments', 'nudev'), // Rename these to suit
+            'singular_name' => __('Department', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Department', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Department', 'nudev'),
+            'new_item' => __('New Department', 'nudev'),
+            'view' => __('View Department', 'nudev'),
+            'view_item' => __('View Department', 'nudev'),
+            'search_items' => __('Search Departments', 'nudev'),
+            'not_found' => __('No Departments found', 'nudev'),
+            'not_found_in_trash' => __('No Departments found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('departments', $args);
     }
 
     function reg_newsandevents_post_types(){
@@ -111,6 +137,7 @@ class CPTs
         );
         register_post_type('tasks', $args);
     }
+
     function reg_helpful_links_post_type(){
         $labels = array(
             'name' => __('Helpful Links', 'nudev'), // Rename these to suit

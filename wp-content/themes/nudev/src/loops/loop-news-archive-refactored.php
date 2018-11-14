@@ -12,7 +12,7 @@ class NUNewsArchive{
 
     // initialize
     function __construct(){
-        $this->pageMax = 5;
+        $this->pageMax = 10;
         $this->paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $this->getData();
         $this->pagination = $this->paginate();
