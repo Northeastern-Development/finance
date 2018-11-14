@@ -1405,6 +1405,14 @@ div.wpforms-container-full .wpforms-form select {
   margin: 0 auto; }
 
 @media only screen {
+  ul.newsandevents {
+    list-style-type: none; }
+    ul.newsandevents li {
+      margin: 40px auto;
+      border-bottom: 1px solid black;
+      padding: 10px 0; } }
+
+@media only screen {
   #forms ul,
   #forms ol {
     list-style-type: none; }

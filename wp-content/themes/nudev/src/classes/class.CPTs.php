@@ -12,10 +12,57 @@ class CPTs
         $this->reg_forms_post_types();
         $this->reg_tools_post_type();
         $this->reg_discounts_post_types();
-        // $this->reg_news_post_types();
-        // $this->reg_events_post_types();
+        $this->reg_newsandevents_post_types();
     }
 
+    function reg_newsandevents_post_types(){
+        $labels = array(
+            'name' => __('News & Events Categories', 'nudev'), // Rename these to suit
+            'singular_name' => __('News & Events Categories', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New News & Events Category', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit News & Events Category', 'nudev'),
+            'new_item' => __('New News & Events Category', 'nudev'),
+            'view' => __('View News & Events Categories', 'nudev'),
+            'view_item' => __('View News & Events Category', 'nudev'),
+            'search_items' => __('Search News & Events Categories', 'nudev'),
+            'not_found' => __('No News & Events Categories found', 'nudev'),
+            'not_found_in_trash' => __('No News & Events Categories found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('newsevents-cats', $args);
+
+        $labels = array(
+            'name' => __('News & Events Items', 'nudev'), // Rename these to suit
+            'singular_name' => __('News & Events Item', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New News & Events Item', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit News & Events Item', 'nudev'),
+            'new_item' => __('New News & Events Item', 'nudev'),
+            'view' => __('View News & Events Item', 'nudev'),
+            'view_item' => __('View News & Events Item', 'nudev'),
+            'search_items' => __('Search News & Events Items', 'nudev'),
+            'not_found' => __('No News & Events Items found', 'nudev'),
+            'not_found_in_trash' => __('No News & Events Items found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('newsevents-items', $args);
+    }
+    
     function reg_tasks_post_types(){
          // Task Categories
          $labels = array(
@@ -89,104 +136,6 @@ class CPTs
         register_taxonomy_for_object_type('category', 'Helpful Links'); // Register Taxonomies for Category
         register_taxonomy_for_object_type('post_tag', 'Helpful Links');
     }
-
-    // function reg_news_post_types(){
-
-    //     $labels = array(
-    //         'name' => __('News Items', 'nudev'), // Rename these to suit
-    //         'singular_name' => __('News Item', 'nudev'),
-    //         'add_new' => __('Add New', 'nudev'),
-    //         'add_new_item' => __('Add New', 'nudev'),
-    //         'edit' => __('Edit', 'nudev'),
-    //         'edit_item' => __('Edit', 'nudev'),
-    //         'new_item' => __('New News Item', 'nudev'),
-    //         'view' => __('View News Item', 'nudev'),
-    //         'view_item' => __('View News Item', 'nudev'),
-    //         'search_items' => __('Search News Items', 'nudev'),
-    //         'not_found' => __('No News Items found', 'nudev'),
-    //         'not_found_in_trash' => __('No News Items found in Trash', 'nudev')
-    //     );
-    //     $args = array(
-    //         'labels' => $labels,
-    //         'public' => true,
-    //         'hierarchical' => false,
-    //         'has_archive' => false,
-    //     );
-    //     register_post_type('news-items', $args);
-
-
-    //     $labels = array(
-    //         'name' => __('News Categories', 'nudev'), // Rename these to suit
-    //         'singular_name' => __('News Category', 'nudev'),
-    //         'add_new' => __('Add New', 'nudev'),
-    //         'add_new_item' => __('Add New', 'nudev'),
-    //         'edit' => __('Edit', 'nudev'),
-    //         'edit_item' => __('Edit', 'nudev'),
-    //         'new_item' => __('New News Category', 'nudev'),
-    //         'view' => __('View News Category', 'nudev'),
-    //         'view_item' => __('View News Category', 'nudev'),
-    //         'search_items' => __('Search News Categories', 'nudev'),
-    //         'not_found' => __('No News Categories found', 'nudev'),
-    //         'not_found_in_trash' => __('No News Categories found in Trash', 'nudev')
-    //     );
-    //     $args = array(
-    //         'labels' => $labels,
-    //         'public' => true,
-    //         'hierarchical' => false,
-    //         'has_archive' => false,
-    //     );
-    //     register_post_type('news-categories', $args);
-        
-    // }
-    // function reg_events_post_types(){
-
-    //     $labels = array(
-    //         'name' => __('Events Items', 'nudev'), // Rename these to suit
-    //         'singular_name' => __('Events Item', 'nudev'),
-    //         'add_new' => __('Add New', 'nudev'),
-    //         'add_new_item' => __('Add New', 'nudev'),
-    //         'edit' => __('Edit', 'nudev'),
-    //         'edit_item' => __('Edit', 'nudev'),
-    //         'new_item' => __('New Events Item', 'nudev'),
-    //         'view' => __('View Events Item', 'nudev'),
-    //         'view_item' => __('View Events Item', 'nudev'),
-    //         'search_items' => __('Search Events Items', 'nudev'),
-    //         'not_found' => __('No Events Items found', 'nudev'),
-    //         'not_found_in_trash' => __('No Events Items found in Trash', 'nudev')
-    //     );
-    //     $args = array(
-    //         'labels' => $labels,
-    //         'public' => true,
-    //         'hierarchical' => false,
-    //         'has_archive' => false,
-    //     );
-    //     register_post_type('events-items', $args);
-
-
-
-    //     $labels = array(
-    //         'name' => __('Events Categories', 'nudev'), // Rename these to suit
-    //         'singular_name' => __('Events Categories', 'nudev'),
-    //         'add_new' => __('Add New', 'nudev'),
-    //         'add_new_item' => __('Add New', 'nudev'),
-    //         'edit' => __('Edit', 'nudev'),
-    //         'edit_item' => __('Edit', 'nudev'),
-    //         'new_item' => __('New Events Categories', 'nudev'),
-    //         'view' => __('View Events Categories', 'nudev'),
-    //         'view_item' => __('View Events Categories', 'nudev'),
-    //         'search_items' => __('Search Events Categories', 'nudev'),
-    //         'not_found' => __('No Events Categories found', 'nudev'),
-    //         'not_found_in_trash' => __('No Events Categories found in Trash', 'nudev')
-    //     );
-    //     $args = array(
-    //         'labels' => $labels,
-    //         'public' => true,
-    //         'hierarchical' => false,
-    //         'has_archive' => false,
-    //     );
-    //     register_post_type('events-categories', $args);
-        
-    // }
 
     function reg_discounts_post_types(){
         $labels = array(

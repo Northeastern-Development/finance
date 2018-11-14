@@ -74,18 +74,28 @@ function myplugin_rewrite_tag() {
   
   add_rewrite_tag( '%taskname%', '([^&]+)' );	// this is for the tasks page
   add_rewrite_tag( '%taskcat%', '([^&]+)' );	// this is for the tasks page
+  
+
+  add_rewrite_tag( '%newsitem%', '([^&]+)' );	// this is for the tasks page
 
   add_rewrite_tag( '%toolname%', '([^&]+)' );	// this is for the tools page
   add_rewrite_tag( '%toolgroup%', '([^&]+)' );	// this is for the tools page
 
+
+    
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
 // add custom rewrite rules here
 function custom_rewrite_rule() {
     // add_rewrite_rule('^faculty-and-staff/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
+
+    
     // add_rewrite_rule('^news/article/([^/]*)?','index.php?page_id=157&show-article=$matches[1]','top');  // full news article details
     
+    add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');
+    add_rewrite_rule('^news-events/([^/]*)?', 'index.php?page_id=3286&newsitem=$matches[1]', 'top');
+
 
     // Finance Site (staff section) rewrite rules
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
@@ -895,45 +905,6 @@ function create_post_type_nudev()
     add_action ( 'manage_staff_posts_custom_column', 'staff_custom_column', 10, 2 );
     add_action( 'restrict_manage_posts', 'staff_admin_posts_filter_restrict_manage_posts' );
     add_filter( 'parse_query', 'staff_posts_filter' );
-
-
-
-    /**
-     * News and Events CPT & Extras
-     */
-    register_taxonomy_for_object_type('category', 'newsandevents'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'newsandevents');
-    register_post_type('newsandevents', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('News and Events', 'nudev'), // Rename these to suit
-            'singular_name' => __('News and Events', 'nudev'),
-            'add_new' => __('Add New', 'nudev'),
-            'add_new_item' => __('Add New News and Events', 'nudev'),
-            'edit' => __('Edit', 'nudev'),
-            'edit_item' => __('Edit News and Events', 'nudev'),
-            'new_item' => __('New News and Events', 'nudev'),
-            'view' => __('View News and Events', 'nudev'),
-            'view_item' => __('View News and Events', 'nudev'),
-            'search_items' => __('Search News and Events', 'nudev'),
-            'not_found' => __('No News and Events found', 'nudev'),
-            'not_found_in_trash' => __('No News and Events found in Trash', 'nudev')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom nudev post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
 
 
     // Add columns to administration post listing

@@ -585,7 +585,7 @@
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/classes/class.cpts.php",
+		"oAP": "/classes/class.CPTs.php",
 		"oF": 0
 		},
 	"/classes/class.prefooter.php": {
@@ -980,6 +980,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/pages/location.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/pages/newsandevents.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/pages/newsandevents.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2317,11 +2330,25 @@
 		"oAP": "/loops/loop-forms.php",
 		"oF": 0
 		},
+	"/loops/loop-news-archive-refactored.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-news-archive-refactored.php",
+		"oF": 0
+		},
 	"/loops/loop-news-archive.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-news-archive.php",
+		"oF": 0
+		},
+	"/loops/loop-newsandevents.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-newsandevents.php",
 		"oF": 0
 		},
 	"/loops/loop-staff-departmenthead.php": {
@@ -2478,6 +2505,20 @@
 		"oAP": "/tag.php",
 		"oF": 0
 		},
+	"/templates/__OLD/template-news-archive.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-news-archive.php.disabled",
+		"oF": 0
+		},
+	"/templates/__OLD/template-news-item.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-news-item.php.disabled",
+		"oF": 0
+		},
 	"/templates/__OLD/template-staff-bio.php.disabled": {
 		"cB": 0,
 		"ft": 8192,
@@ -2583,18 +2624,18 @@
 		"oAP": "/templates/template-location.php",
 		"oF": 0
 		},
-	"/templates/template-news-archive.php": {
+	"/templates/template-newsandevents-index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/templates/template-news-archive.php",
+		"oAP": "/templates/template-newsandevents-index.php",
 		"oF": 0
 		},
-	"/templates/template-news-item.php": {
+	"/templates/template-newsandevents-item.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/templates/template-news-item.php",
+		"oAP": "/templates/template-newsandevents-item.php",
 		"oF": 0
 		},
 	"/templates/template-staff.php": {
