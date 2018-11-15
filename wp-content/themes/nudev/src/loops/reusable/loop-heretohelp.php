@@ -44,9 +44,9 @@
             $guide
             ,$subfields['headshot']['url']
             , (isset($helper['helper']->post_title)) ? '<p>'.$helper['helper']->post_title.'</p>' : null
-            , (isset( $subfields['department'][0] )) ? '<p>'.$subfields['department'][0].'</p>' : null
+            , (isset( $subfields['department'][0] )) ? '<p>'.$subfields['department']->post_title.'</p>' : null
             , (isset( $subfields['title'] )) ? '<p>'.$subfields['title'].'</p>' : null
-            , (isset( $subfields['expert_at'] )) ? '<p>'.$subfields['expert_at'].'</p>' : null
+            , (isset( $subfields['expert_at'] )) ? '<p> Expert at: '.$subfields['expert_at'].'</p>' : null
             , (isset( $subfields['phone'] )) ? '<a href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank">'.$subfields['phone'].'</a>' : null
             , (isset( $subfields['email'] )) ? ' | <a href="mailto:'.$subfields['email'].'?subject='.$subject.'">e-mail</a>' : null
         );

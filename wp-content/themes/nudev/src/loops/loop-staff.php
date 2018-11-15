@@ -1,32 +1,22 @@
 <?php
-
+   
 	wp_reset_query();
 
-	$departments = '';
-
-	if($filter == ''){	// this is for the SLT
-
-		$args = array(
-			 "post_type" => "staff"
-			,'meta_query' => array(
-				 'relation' => 'AND'
-				,array("key"=>"type","value"=>"Department","compare"=>"=")
-			)
-		);
-		$res = query_posts($args);
-		$depts = array();
-        foreach($res as $r)
-        {
-			$fields = get_fields($r->ID);
-			$depts[] = array(
-				 "name" => $r->post_title
-				,"department" => $fields['department'][0]
-				,"departmentslug" => $r->post_name
-				,"link" => $fields['url']
-				,"email" => $fields['email']
-				,"phone" => $fields['phone']
-			);
-		}
+    $departments = '';
+    
+    if($filter == ''){	// this is for the SLT
+        $args = array(
+            'post_type' => 'departments',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                array(
+                    'key' => 'status',
+                    'value' => '1',
+                    'compare' => '='
+                )
+            )
+        );
+        $depts = get_posts($args);
         foreach($depts as $d)
         {
 			// get the manager of this department
@@ -36,24 +26,33 @@
 				,'meta_query' => array(
 					 'relation' => 'AND'
 					,array("key"=>"type","value"=>"individual","compare"=>"=")
-					,array("key"=>"department","value"=>'"'.$d['department'].'"',"compare"=>"LIKE")
+                    ,array("key"=>"department","value"=>'"'.$d->ID.'"',"compare"=>"LIKE")
 					,array("key"=>"department_head","value"=>"1","compare"=>"LIKE")
 				)
 			);
-			$manager = query_posts($args);
-			$managerFields = get_fields($manager[0]->ID);
-			$guide = '<article><div><div style="background-image: url(%s);"></div></div><div><p class="nametitle"><span>%s</span><br />%s</p><p class="description">%s</p><p class="contact">%s%s%s</p></div></article>';
+            $manager = query_posts($args);
+            $managerFields = get_fields($manager[0]->ID);
+            $guide = '
+                <article>
+                    <div>
+                        <div style="background-image: url(%s)"></div>
+                    </div>
+                    <div>
+                        <p class="nametitle"><span>%s</span><br />%s</p>
+                        <p class="description">%s</p>
+                        <p class="contact">%s%s</p>
+                    </div>
+                </article>
+            ';
 			$department = sprintf(
 				$guide
                 ,$managerFields['headshot']['url']
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description']
-				,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
-				,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
-				,($d['department'] != 'Strategy'?'<a href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
-
-			);
+				,(isset($managerFields['phone']) && $managerFields['phone'] != ''?'<a href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$managerFields['phone'].'</a><br />':'')
+				,($d->post_title != 'Strategy'?'<a href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
+            );
 			$departments .= '<section class="nu__slt">'.$department.'</section>';
 		}
     }
