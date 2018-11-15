@@ -58,6 +58,7 @@
     }
     else
     {   // this is for a specific department
+
 		$args = array(
 			 "post_type" => "staff"
 			 ,'meta_query' => array(
@@ -66,7 +67,15 @@
 			 	,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
 			)
 		);
-		$dept = query_posts($args);
+        $dept = query_posts($args);
+        
+        // (get the actual department matching this filter)
+        $args = array(
+            'post_type' => 'departments',
+            'name' => str_replace('-', ' ', $filter)
+        );
+        $dept = get_posts($args);
+
 		$deptFields = get_fields($dept[0]->ID);
 		// get the manager of this department
 		$args = array(
@@ -75,20 +84,33 @@
 			,'meta_query' => array(
 				 'relation' => 'AND'
 				,array("key"=>"type","value"=>"individual","compare"=>"=")
-				,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+				,array("key"=>"department","value"=>'"'. $dept[0]->ID .'"',"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"1","compare"=>"=")
 			)
 		);
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
-		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
+        $guide = '
+            <section class="nu__team">
+                <article>
+                    <div>
+                        <p class="description">%s</p>
+                        <p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /></p>
+                    </div>
+                    <div>
+                        <div style="background-image: url(%s);"></div>
+                        <p><span>%s</span><br />%s</p>
+                    </div>
+                </article>
+            </section>
+        ';
 		$department = sprintf(
 			$guide
 			,$deptFields['description']
 			,$deptFields['phone']
 			,strtolower($dept[0]->post_title)
 			,$deptFields['phone']
-			,$deptFields['url']
+			// ,$deptFields['url']
 			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
@@ -102,9 +124,9 @@
 			,"posts_per_page" => -1
 			,'meta_query' => array(
 				 'relation' => 'AND'
-				,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
+				// ,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
 				,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
-				,'dept_clause' => array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+				,'dept_clause' => array("key"=>"department","value"=>'"'.$dept[0]->ID.'"',"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
 			)
 		);
