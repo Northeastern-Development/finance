@@ -4,7 +4,12 @@
 
     $departments = '';
     
-    if($filter == ''){	// this is for the SLT
+    /**
+     * Has No Filter ( basic /staff/ page )
+     */
+    if($filter == '')
+    {
+        // get departments
         $args = array(
             'post_type' => 'departments',
             'posts_per_page' => -1,
@@ -17,20 +22,21 @@
             )
         );
         $depts = get_posts($args);
+        // loop departments as department
         foreach($depts as $d)
         {
-			// get the manager of this department
+			// get department manager from staff
 			$args = array(
 				 "post_type" => "staff"
 				,"posts_per_page" => -1
 				,'meta_query' => array(
 					 'relation' => 'AND'
-					,array("key"=>"type","value"=>"individual","compare"=>"=")
+					// ,array("key"=>"type","value"=>"individual","compare"=>"=") // type is depricated now
                     ,array("key"=>"department","value"=>'"'.$d->ID.'"',"compare"=>"LIKE")
 					,array("key"=>"department_head","value"=>"1","compare"=>"LIKE")
 				)
 			);
-            $manager = query_posts($args);
+            $manager = get_posts($args);
             $managerFields = get_fields($manager[0]->ID);
             $guide = '
                 <article>
@@ -50,46 +56,39 @@
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description']
-				,(isset($managerFields['phone']) && $managerFields['phone'] != ''?'<a href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$managerFields['phone'].'</a><br />':'')
-				,($d->post_title != 'Strategy'?'<a href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
+				,( isset($managerFields['phone']) && $managerFields['phone'] != '' ) ? '<a href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$managerFields['phone'].'</a><br />' : ''
+				,($d->post_title != 'Strategy') ? '<a href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><span>&#xE7EF;</span> View Leadership</a>' : ''
             );
 			$departments .= '<section class="nu__slt">'.$department.'</section>';
 		}
     }
+    /**
+     * Has Department Filter, i.e.  siteurl/staff/department
+     */
     else
-    {   // this is for a specific department
-
-		$args = array(
-			 "post_type" => "staff"
-			 ,'meta_query' => array(
- 				 'relation' => 'AND'
-				 ,array("key"=>"type","value"=>"Department","compare"=>"=")
-			 	,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
-			)
-		);
-        $dept = query_posts($args);
-        
-        // (get the actual department matching this filter)
+    {
+        // get the department matching the filter (by name)
         $args = array(
             'post_type' => 'departments',
             'name' => str_replace('-', ' ', $filter)
         );
         $dept = get_posts($args);
-
 		$deptFields = get_fields($dept[0]->ID);
-		// get the manager of this department
+
+        // get the department head for this department
 		$args = array(
 			 "post_type" => "staff"
 			,"posts_per_page" => -1
 			,'meta_query' => array(
 				 'relation' => 'AND'
-				,array("key"=>"type","value"=>"individual","compare"=>"=")
+				// ,array("key"=>"type","value"=>"individual","compare"=>"=") // type is depricated
 				,array("key"=>"department","value"=>'"'. $dept[0]->ID .'"',"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"1","compare"=>"=")
 			)
 		);
-		$manager = query_posts($args);
-		$managerFields = get_fields($manager[0]->ID);
+		$manager = get_posts($args);
+        $managerFields = get_fields($manager[0]->ID);
+        // set guide for writing the department head
         $guide = '
             <section class="nu__team">
                 <article>
@@ -104,13 +103,13 @@
                 </article>
             </section>
         ';
+        // write department head first, above the team
 		$department = sprintf(
 			$guide
-			,$deptFields['description']
-			,$deptFields['phone']
+			,$managerFields['description']
+			,$managerFields['phone']
 			,strtolower($dept[0]->post_title)
-			,$deptFields['phone']
-			// ,$deptFields['url']
+			,$managerFields['phone']
 			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
@@ -118,53 +117,50 @@
 		$departments .= $department;
 
 
-		// now we can gather up the members of the department ordered by sub-type
+        // get team members that have been organized by sub-type
 		$args = array(
 			 "post_type" => "staff"
 			,"posts_per_page" => -1
 			,'meta_query' => array(
 				 'relation' => 'AND'
-				// ,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
-				,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
+				// ,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=") // type field is depricated
+				,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS") 
 				,'dept_clause' => array("key"=>"department","value"=>'"'.$dept[0]->ID.'"',"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
 			)
 		);
+		$members = get_posts($args);
 
-		$res = query_posts($args);
+        // get the first sub-type
+		$subType = get_fields($members[0]->ID)['sub_type'];
 
-		$subType = get_fields($res[0]->ID)['sub_type'];
-
+        // if there is a sub-type, open the team list with that heading
 		$departments .= '<section class="nu__team-list">'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
 
-		$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p><p>%s</p><p>%s</p><p>%s</p></li>';
+		$guide = '<li><div style="background-image: url(%s)"></div><p><span>%s</span><br />%s</p><p>%s</p><p>%s</p><p>%s</p></li>';
 
-		foreach($res as $r){
-			$fields = get_fields($r->ID);
-			// print_r($r);
-			// print_r($fields);
-
+        // loop remaining staff members
+		foreach($members as $member){
+			$fields = get_fields($member->ID);
+            // if this member is not in the current subtype,
 			if($fields['sub_type'] != $subType){
-				$subType = $fields['sub_type'];
+                // set the new subtype
+                $subType = $fields['sub_type'];
+                // end the last subtype grouping, and create a new subtype grouping
 				$departments .= '</ul>'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
 			}
-
+            // write the member ( as li )
 			$departments .= sprintf(
 				$guide
 				,$fields['headshot']['url']
-				,trim($r->post_title)
+				,trim($member->post_title)
                 ,trim($fields['title'])
                 ,( isset($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
                 ,( isset($fields['phone']) ) ? '<a href="tel:"'. $fields['phone'] .'">'.$fields['phone'].'</a>' : null
                 ,( isset($fields['email']) ) ? '<a href="mailto:"'. $fields['email'] .'">e-mail</a>' : null
 			);
-
 		}
-
 		$departments .= "</ul></section>";
-
 	}
-
 	echo $departments;
-
 ?>
