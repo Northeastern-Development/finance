@@ -2547,6 +2547,20 @@
 		"oAP": "/templates/template-default.php",
 		"oF": 0
 		},
+	"/templates/template-departments-detail.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-departments-detail.php",
+		"oF": 0
+		},
+	"/templates/template-departments-index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-departments-index.php",
+		"oF": 0
+		},
 	"/templates/template-discounts.php": {
 		"cB": 0,
 		"ft": 8192,

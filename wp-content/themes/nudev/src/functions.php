@@ -69,14 +69,16 @@ function myplugin_rewrite_tag() {
 //   add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
 //   add_rewrite_tag( '%show-article%', '([^&]+)' );	// this is for the news article details
 
-  add_rewrite_tag( '%team-filter%', '([^&]+)' );	// this is for the administration page
+  add_rewrite_tag( '%team-filter%', '([^&]+)' );	// this is for the (staff) page
 
   
   add_rewrite_tag( '%taskname%', '([^&]+)' );	// this is for the tasks page
   add_rewrite_tag( '%taskcat%', '([^&]+)' );	// this is for the tasks page
   
 
-  add_rewrite_tag( '%newsitem%', '([^&]+)' );	// this is for the tasks page
+  add_rewrite_tag( '%newsitem%', '([^&]+)' );	// this is for the news/events detail page
+
+  add_rewrite_tag( '%department%', '([^&]+)' );	// this is for the department detail page
 
   add_rewrite_tag( '%toolname%', '([^&]+)' );	// this is for the tools page
   add_rewrite_tag( '%toolgroup%', '([^&]+)' );	// this is for the tools page
@@ -95,6 +97,9 @@ function custom_rewrite_rule() {
     
     add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');
     add_rewrite_rule('^news-events/([^/]*)?', 'index.php?page_id=3286&newsitem=$matches[1]', 'top');
+    
+
+    add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page
 
 
     // Finance Site (staff section) rewrite rules

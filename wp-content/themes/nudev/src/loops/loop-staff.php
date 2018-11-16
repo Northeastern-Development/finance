@@ -46,17 +46,19 @@
                     <div>
                         <p class="nametitle"><span>%s</span><br />%s</p>
                         <p class="description">%s</p>
-                        <p class="contact">%s%s</p>
+                        <p class="contact">%s%s%s</p>
                     </div>
                 </article>
             ';
+            // add the URL back
 			$department = sprintf(
-				$guide
+                $guide
                 ,$managerFields['headshot']['url']
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description']
 				,( isset($managerFields['phone']) && $managerFields['phone'] != '' ) ? '<a href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$managerFields['phone'].'</a><br />' : ''
+                ,( !empty($managerFields['url']) ) ? '<a href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />' : null
 				,($d->post_title != 'Strategy') ? '<a href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><span>&#xE7EF;</span> View Leadership</a>' : ''
             );
 			$departments .= '<section class="nu__slt">'.$department.'</section>';
@@ -95,6 +97,7 @@
                     <div>
                         <p class="description">%s</p>
                         <p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /></p>
+                        <p>%s</p>
                     </div>
                     <div>
                         <div style="background-image: url(%s);"></div>
@@ -109,7 +112,8 @@
 			,$managerFields['description']
 			,$managerFields['phone']
 			,strtolower($dept[0]->post_title)
-			,$managerFields['phone']
+            ,$managerFields['phone']
+            ,( !empty($managerFields['url']) ) ? '<a href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />' : null
 			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
