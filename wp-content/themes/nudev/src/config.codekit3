@@ -997,6 +997,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/pages/staff-bio.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/pages/staff-bio.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/pages/staff.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1071,6 +1084,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/collapsibles.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/partials/deadlines.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/deadlines.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1930,6 +1956,26 @@
 		"oAP": "/index.php",
 		"oF": 0
 		},
+	"/js/deadlines-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/deadlines-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/deadlines.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/deadlines-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/formpage-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1986,6 +2032,16 @@
 		"oA": 0,
 		"oAP": "/js/lib/mapstyle.jsOLD",
 		"oF": 0
+		},
+	"/js/magnific-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/magnific-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/js/magnific.js": {
 		"ft": 64,
@@ -2316,6 +2372,13 @@
 		"oAP": "/loops/loop-careers.php",
 		"oF": 0
 		},
+	"/loops/loop-deadlines.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-deadlines.php",
+		"oF": 0
+		},
 	"/loops/loop-discounts.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2505,6 +2568,13 @@
 		"oAP": "/tag.php",
 		"oF": 0
 		},
+	"/templates/__OLD/template-homepage.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-homepage.php.disabled",
+		"oF": 0
+		},
 	"/templates/__OLD/template-news-archive.php.disabled": {
 		"cB": 0,
 		"ft": 8192,
@@ -2650,6 +2720,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-newsandevents-item.php",
+		"oF": 0
+		},
+	"/templates/template-staff-bio.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-staff-bio.php",
 		"oF": 0
 		},
 	"/templates/template-staff.php": {

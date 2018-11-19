@@ -83,7 +83,7 @@ function myplugin_rewrite_tag() {
   add_rewrite_tag( '%toolname%', '([^&]+)' );	// this is for the tools page
   add_rewrite_tag( '%toolgroup%', '([^&]+)' );	// this is for the tools page
 
-
+  add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
     
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
@@ -103,6 +103,8 @@ function custom_rewrite_rule() {
 
 
     // Finance Site (staff section) rewrite rules
+    add_rewrite_rule('^staff/bio/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
+    
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
 
     add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks
@@ -113,6 +115,9 @@ function custom_rewrite_rule() {
 
     add_rewrite_rule('^tools/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=null','top');  // TOOLS   
 
+
+    
+    
 
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
@@ -275,7 +280,7 @@ function nudev_footer_scripts() {
      wp_enqueue_script('googlemap');
    }
 
-   if(is_page_template('templates/template-staff.php')){
+   if( is_page_template('templates/template-staff.php') || is_page_template('templates/template-departments-detail.php') ){
      wp_register_script('magnificjs', get_template_directory_uri() . '/js/magnific.js', array(), '1.0.0');
      wp_enqueue_script('magnificjs');
    }
@@ -327,6 +332,10 @@ function nudev_conditional_scripts(){
         wp_enqueue_script('reusables');
     }
 
+
+    if( get_page_template_slug($post_id) === 'templates/template-homepage.php' ){
+        wp_register_script('deadlines', get_template_directory_uri() . '/js/deadlines.js', array('jquery'), '1.0.0');
+    }
     
     
 }
@@ -366,11 +375,11 @@ function nudev_styles(){
         wp_enqueue_style('nudevcssmin');
     }
     // load the news styles
-    if(is_page_template('templates/template-news-archive.php') || is_page_template('templates/template-news-item.php')){
+    if(is_page_template('templates/template-news-archive.php') || is_page_template('templates/template-news-item.php') || is_page_template('templates/template-departments-detail.php')){
       wp_register_style('newscss', get_template_directory_uri() . '/css/news.css', array(), '1.0');
       wp_enqueue_style('newscss');
-      // wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
-      // wp_enqueue_style('magnificcss');
+      wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
+      wp_enqueue_style('magnificcss');
     }
 }
 

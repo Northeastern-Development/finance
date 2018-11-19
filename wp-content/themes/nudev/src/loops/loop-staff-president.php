@@ -23,7 +23,24 @@
 
     $fields = get_fields($pres[0]->ID);    
 
-	$guide = '<section class="nu__president"><div style="background-image: url(%s);"><div></div><p><span>%s</span><br />President</p></div><div><h3>Office of the President</h3><p>%s</p><p><a href="tel:%s" title="Call the Office of the President"><span>&#xE0B0;</span> %s</a><br /><a href="%s" title="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a></p></div></section>';
+    // (empty div is a darkened overlay)
+    $guide = '
+        <section class="nu__president">
+            <div style="background-image: url(%s);">
+                <div></div>
+                <p><span>%s</span><br />President</p>
+            </div>
+            <div>
+                <h3>Office of the President</h3>
+                <p>%s</p>
+                <p>
+                    <a href="tel:%s" title="Call the Office of the President"><span>&#xE0B0;</span> %s</a>
+                    <br />
+                    <a href="%s" title="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a>
+                </p>
+            </div>
+        </section>
+    ';
 
 	$president = sprintf(
 		$guide

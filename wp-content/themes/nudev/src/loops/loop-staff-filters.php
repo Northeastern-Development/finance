@@ -1,39 +1,46 @@
 <?php
 /**
- * get departments
- * create a 'filtering nav' to sort by department
+ * Staff Page : Switch Departments 'filter'
  */
 
-    $args = array(
-        'post_type' => 'departments',
-        'posts_per_page' => -1,
-        'meta_query' => array(
-            array(
-                'key' => 'status',
-                'value' => '1',
-                'compare' => '='
-            )
-        )
-    );
-    $departments = get_posts($args);
 
-    $dept_titles = [];
-    foreach( $departments as $department ){
-        $dept_titles[] = $department->post_title;
+// get all active departments
+$args = array(
+    'post_type' => 'departments',
+    'posts_per_page' => -1,
+    'meta_query' => array(
+        array(
+            'key' => 'status',
+            'value' => '1',
+            'compare' => '='
+        )
+    )
+);
+$departments = get_posts($args);
+
+
+// write each department title ( with exceptions ) into the switch-department filter
+$return = '';
+if( !empty($departments) ){
+
+    $format_dept = '<li><a class="%s" href="%s" title="%s">%s %s</a></li>';
+
+    foreach ($departments as $dept) {
+
+        // ignore 'president' section
+        if( $dept->post_name != 'president' ){
+
+            $return .= sprintf(
+                $format_dept
+                ,( $filter == $dept->post_name ) ? 'active' : null
+                ,site_url('/staff/' . $dept->post_name)
+                ,'Filter to show ' . $dept->post_title . ' team'
+                ,$dept->post_title
+                ,'<span>&#xE313;</span>'
+            );
+        }
     }
 
-	$return = '';
-
-    $skipThese = array('President','Strategy');
-
-    if( !empty($dept_titles) ){
-		foreach($dept_titles as $v){
-			if(!in_array($v,$skipThese)){
-				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/staff/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
-			}
-		}
-	}
-
-	echo $return;
-
+}
+echo $return;
 ?>

@@ -599,6 +599,24 @@ var Finance = {};
 
 
 
+
+    // MAGNIFIC STUFF FOR STAFF / DEPARTMENTS
+    // if($("#staff").length){
+
+        $(".js__bio").magnificPopup({
+            type: "ajax"
+            ,closeOnContentClick: false
+            ,closeOnBgClick: false
+            ,enableEscapeKey: false
+            ,verticalFit: true
+            ,removalDelay: 300
+            ,mainClass: 'mfp-fade'
+        });
+    // }
+    
+    
+    
+
   });
 
 })(jQuery, this);
