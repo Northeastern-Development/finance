@@ -1,16 +1,9 @@
 <?php 
-    // get forms
-    $args = array(
-        'post_type' => 'forms',
-        'posts_per_page' => -1,
-        'meta_query' => array(
-            'key' => 'status',
-            'value' => '1',
-            'compare' => '='
-        )
-    );
-    $forms = get_posts($args);
-    // get forms-categories
+/**
+ * Loop: Forms
+  */    
+
+    // Get: Active Form Categories
     $args = array(
         'post_type' => 'forms_categories',
         'posts_per_page' => -1,
@@ -19,19 +12,61 @@
             'value' => '1',
             'compare' => '='
         ),
-        'order' => 'ASC'
     );
     $categories = get_posts($args);
+    
+    // Check : if on a department detail page
+    if( !empty(get_query_var('department')) ){   
+
+        // Only get Forms tagged to this department
+        $args = array(
+            'post_type' => 'forms',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'status',
+                    'value' => '1',
+                    'compare' => '='
+                ),
+                array(
+                    'key' => 'department',
+                    'value' => get_page_by_path(get_query_var('department'), OBJECT, 'departments')->ID,
+                    'compare' => 'LIKE'
+                )
+            )
+        );
+    }
+    // Check : not on a department detail page
+    else {
+        // Get all active forms
+        $args = array(
+            'post_type' => 'forms',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                'key' => 'status',
+                'value' => '1',
+                'compare' => '='
+            )
+        );
+    }
+    $forms = get_posts($args);
+
 
     
+
+
+
     // set empty content var
     $content = '';
     $format_category = '<div class="forms-category"><h1>%s</h1>%s</div>';
     $format_form = '<ul class="js__collapsible_list"><li><h5>%s</h5><div>%s%s<h5>Last Updated</h5>%s%s</div></li></ul>';
     $format_files = '<a href="%s" title="click to open this file in a new tab" target="_blank"><p>%s</p></a>';
     $format_blocks = '<h5>%s</h5>%s';
+    $format_relresources = '<li><a target="%s" href="%s" title="View this Related Resource">%s</a></li>';    
 
-    $format_relresources = '<li><a target="%s" href="%s" title="View this Related Resource">%s</a></li>';
+    
+    
     
     // loop thru the active categories
     foreach( $categories as $category ){
@@ -89,14 +124,16 @@
                 );
             }
         }
-        // Set: format string combining each form into its category
-        $content .= sprintf(
-            $format_category
-            ,$category->post_title
-            ,$content_form
-        );
 
+        // Only print the category if forms exist inside it!
+        if( !empty($content_form) ){
+            // Set: format string combining each form into its category
+            $content .= sprintf(
+                $format_category
+                ,$category->post_title
+                ,$content_form
+            );
+        }
     }
-
     echo $content;
  ?>

@@ -1481,6 +1481,16 @@ div.wpforms-container-full .wpforms-form select {
     .tools-grid-tool:nth-child(3n) {
       margin-right: 0; } }
 
+@media only screen {
+  body.department main > section {
+    margin: 40px auto; }
+    body.department main > section > h1 {
+      text-align: center;
+      margin: 20px auto; }
+    body.department main > section ul {
+      list-style-type: none;
+      margin-bottom: 20px; } }
+
 @media only screen and (max-width: 1560px) {
   .nu__col-left {
     flex: 0 0 21%; }

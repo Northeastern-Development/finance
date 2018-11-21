@@ -57,17 +57,34 @@
          ?>
         <div class="main">
             <?php 
-                // note: div.main is required markup wrapper to enable the lightbox overlay!
-                // main#pagename > section > div.main is nonsense and should probably change
-
-                // loop-staff is used on both the dedicated staff page and the department detail page
-                // we set the required $filter var here, and track the page template we are on to determine the loop-staff behavior
                 $filter = get_query_var('department');
-                // include the staff loop (per department)
                 include locate_template('loops/loop-staff.php');
              ?>
         </div>
     </section>
+
+    <section>
+        <h1>Forms</h1>
+        <?php 
+            include(locate_template('loops/loop-forms.php'));
+         ?>
+    </section>
+
+    <section>
+        <h1>Tools</h1>
+        <?php 
+            include(locate_template('loops/reusable/loop-tools.php'));
+         ?>
+    </section>
+
+    <section>
+        <h1>Tasks</h1>
+        <?php 
+            include(locate_template('loops/reusable/loop-tasks.php'));
+         ?>
+    </section>
+
+
 </main>
 <?php 
     get_footer();

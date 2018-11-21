@@ -919,6 +919,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/pages/departments.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/pages/departments.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/pages/form.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1907,13 +1920,6 @@
 		"oAP": "/includes/pagehero.php",
 		"oF": 0
 		},
-	"/includes/partials/nav.common.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/includes/partials/nav.common.php",
-		"oF": 0
-		},
 	"/includes/partials/nav.desktop.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2491,6 +2497,20 @@
 		"oAP": "/loops/reusable/loop-heretohelp.php",
 		"oF": 0
 		},
+	"/loops/reusable/loop-tasks.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/reusable/loop-tasks.php",
+		"oF": 0
+		},
+	"/loops/reusable/loop-tools.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/reusable/loop-tools.php",
+		"oF": 0
+		},
 	"/modules/is-debug.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2743,11 +2763,18 @@
 		"oAP": "/templates/template-tasks.php",
 		"oF": 0
 		},
-	"/templates/template-tools.php": {
+	"/templates/template-tool-detail.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/templates/template-tools.php",
+		"oAP": "/templates/template-tool-detail.php",
+		"oF": 0
+		},
+	"/templates/template-tools-index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-tools-index.php",
 		"oF": 0
 		}
 	},

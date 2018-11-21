@@ -111,9 +111,10 @@ function custom_rewrite_rule() {
 
     add_rewrite_rule('^tasks/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=null','top');  // tasks
 
-    add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=$matches[2]','top');  // TOOLS   
 
-    add_rewrite_rule('^tools/([^/]*)?','index.php?page_id=3183&toolname=$matches[1]&toolgroup=null','top');  // TOOLS   
+    // Tools Detail Page:
+    add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3435&toolname=$matches[1]&toolgroup=$matches[2]','top'); // Tool w/ Selected Grouping
+    add_rewrite_rule('^tools/([^/]*)?','index.php?page_id=3435&toolname=$matches[1]&toolgroup=null','top'); // Tool w/ no Selected Grouping (default)
 
 
     
@@ -316,17 +317,19 @@ function nudev_conditional_scripts(){
         wp_enqueue_script('taskspage');
     }
 
-    if( get_page_template_slug($post_id) === 'templates/template-forms.php'){
+    if( get_page_template_slug($post_id) === 'templates/template-forms.php' )
+    {
         wp_register_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('jquery'), '1.0.0');
         wp_enqueue_script('formspage');
     }
 
     if( 
         get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
-         || get_page_template_slug($post_id) === 'templates/template-tools.php'
-        //  || get_page_template_slug($post_id) === 'templates/template-tasks.php'
+         || get_page_template_slug($post_id) === 'templates/template-tools-index.php'
+         || get_page_template_slug($post_id) === 'templates/template-tools-detail.php'
          || get_page_template_slug($post_id) === 'templates/template-discounts.php'
          || get_page_template_slug($post_id) === 'templates/template-forms.php'
+         || get_page_template_slug($post_id) === 'templates/template-departments-detail.php'
     ){
         wp_register_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
         wp_enqueue_script('reusables');

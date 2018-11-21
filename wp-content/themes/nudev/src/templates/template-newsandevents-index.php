@@ -1,7 +1,6 @@
 <?php 
 /**
  * Template Name: News and Events Index
- * Description: This page displays a single news or event item that is categorized
  */  
     get_header();
  ?>

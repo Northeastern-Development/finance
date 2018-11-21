@@ -1,7 +1,23 @@
 <?php 
-// format output
-$content_howdoi = '';
-$format_howdoi = '
+/**
+ * Desktop Nav
+ */
+// get task categories
+$args = array(
+    'post_type'         =>  'tasks_categories',
+    'posts_per_page'    =>  -1,
+    'meta_query'        => array(
+        array(
+            'key'       => 'status', // (we can always just set this to 'status', but need to verify change everywhere)
+            'value'     => '1',
+            'compare'   => '='
+        )
+    )
+);
+$cats = get_posts($args);
+
+$content_cats = '';
+$format_cats = ' 
     <div class="neumenu-item %s">
         <h6>%s</h6>
         <div class="neumenu-sub %s">
@@ -15,36 +31,57 @@ $format_howdoi = '
         </div>
     </div>
 ';
-// format output
-$content_tasks = '';
 $format_tasks = '
     <li>
-        <a href="%s">
-            %s
-        </a>
+        <a href="%s">%s</a>
     </li>
 ';
-// set a counter (first submenu item gets an 'active' class)
-$counter = 0;
-// sprintf content
-foreach ($filter_cats as $cat_name => $cat_tasks) {
+$count = 0;
+// loop thru each category looking for posts that are assigned to it,
+foreach( $cats as $cat )
+{
+    // get all active tasks within this category
+    $args = array(
+        'post_type' => 'tasks',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'status',
+                'value' => '1',
+                'compare' => '='
+            ),
+            array(
+                'key' => 'category',
+                'value' => $cat->ID,
+                'compare' => 'LIKE'
+            )
+        )
+    );
+    $tasks = get_posts($args);
+
+    
+    // set: string of each task within 'this' category as line items, reset for each cat
     $content_tasks = '';
-    foreach( $cat_tasks as $cat_task ){
+    foreach( $tasks as $task ){
         $content_tasks .= sprintf(
             $format_tasks
-            ,site_url( '/tasks/' . $cat_name . '/' . $cat_task->post_name)
-            ,$cat_task->post_title
+            ,site_url('/tasks/') . $cat->post_name.'/'.$task->post_name
+            ,$task->post_title
         );
     }
-    $content_howdoi .= sprintf(
-        $format_howdoi
-        ,($counter == 0 ) ? 'active' : ''
-        ,get_page_by_path($cat_name, OBJECT, 'tasks_categories')->post_title
-        ,($counter == 0 ) ? 'first-sub' : ''
+
+    // set: string of each category that contains its tasks
+    $content_cats .= sprintf(
+        $format_cats
+        ,( $count === 0 ) ? 'active' : null
+        ,$cat->post_title
+        ,( $count === 0 ) ? 'first-sub' : null
         ,$content_tasks
     );
-    $counter++;
-}
+
+    $count++;
+} // end foreach $cats
 ?>
 <nav class="nu__main-nav" id="nu__main-nav-desktop">
     <ul>
@@ -52,7 +89,7 @@ foreach ($filter_cats as $cat_name => $cat_tasks) {
             <a href=""><span>How do I...</span></a>
             <div class="neumenu-wrapper" id="howdoi">
                 <div class="neumenu verticle" data-pos="list.right" data-classes="active">
-                    <?php echo $content_howdoi; ?>
+                    <?php echo $content_cats; ?>
                 </div>
             </div>
         </li>
