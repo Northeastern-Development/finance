@@ -581,7 +581,7 @@
 		"oAP": "/category.php",
 		"oF": 0
 		},
-	"/classes/class.cpts.php": {
+	"/classes/class.CPTs.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -2460,6 +2460,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-task-optiongroup.php",
+		"oF": 0
+		},
+	"/loops/loop-tasks-options.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-tasks-options.php",
 		"oF": 0
 		},
 	"/loops/loop-tools-index.php": {

@@ -3121,43 +3121,29 @@ div.main section.nu__team-list {
         width: 40vw; } }
 
 @media only screen {
-  .task-heading {
-    max-width: 720px;
-    margin: 20px auto; }
-    .task-heading h1 {
-      text-align: center; }
   .task-options {
     max-width: 720px;
     margin: 20px auto; }
-    .task-options h2 {
-      text-align: center; }
-  .task-options-list {
-    list-style-type: none; }
-    .task-options-list > li {
-      margin-bottom: 20px;
-      border-bottom: 1px solid #000; }
-      .task-options-list > li > div img, .task-options-list > li > div h5 {
-        display: inline-block;
-        vertical-align: middle; }
-      .task-options-list > li > div img {
-        width: 32px;
-        height: 32px; }
-      .task-options-list > li > div h5 {
-        line-height: 3;
-        margin-left: 2rem; }
-      .task-options-list > li > ul {
-        margin: 10px auto;
-        margin-left: 20px;
-        padding-left: 20px;
-        position: relative; }
-        .task-options-list > li > ul:before {
-          position: absolute;
-          top: 0;
-          left: 0px;
-          height: 100%;
-          width: 1px;
-          background: #000;
-          content: ''; } }
+    .task-options ul {
+      list-style-type: none; }
+  .task-options-list > li {
+    margin: 40px auto; }
+  .task-options-list-item-suboptions {
+    position: relative;
+    margin: 40px auto;
+    overflow: hidden; }
+    .task-options-list-item-suboptions > li,
+    .task-options-list-item-suboptions .relatedfiles,
+    .task-options-list-item-suboptions .sidebar {
+      margin: 20px auto; }
+    .task-options-list-item-suboptions .relatedfiles {
+      float: left; }
+    .task-options-list-item-suboptions .sidebar {
+      float: right;
+      max-width: 25%;
+      margin-left: 20px; }
+    .task-options-list-item-suboptions > li {
+      clear: left; } }
 
 a {
   color: black;
