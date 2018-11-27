@@ -12,7 +12,7 @@ get_header();
         <?php
 
             // Files Section (required)
-            $content = '<ul class="statements-files">';
+            $content = '<ul>';
             $guide = '<li><a target="_blank" title="Click to Download (opens in a new window)" href="%s">%s</a></li>';
             foreach( $fields['files'] as $file ){
                 $content .= sprintf(

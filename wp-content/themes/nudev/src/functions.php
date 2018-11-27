@@ -66,61 +66,34 @@ if (function_exists('add_theme_support'))
 
 // add custom query tags here
 function myplugin_rewrite_tag() {
-//   add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
-//   add_rewrite_tag( '%show-article%', '([^&]+)' );	// this is for the news article details
-
-  add_rewrite_tag( '%team-filter%', '([^&]+)' );	// this is for the (staff) page
-
+  add_rewrite_tag( '%team-filter%', '([^&]+)' );    // Staff
+  add_rewrite_tag( '%show-bio%', '([^&]+)' );	    // Bio (staff lightbox)
   
-  add_rewrite_tag( '%taskname%', '([^&]+)' );	// this is for the tasks page
-  add_rewrite_tag( '%taskcat%', '([^&]+)' );	// this is for the tasks page
-  
+  add_rewrite_tag( '%taskname%', '([^&]+)' );	    // Tasks
+  add_rewrite_tag( '%taskcat%', '([^&]+)' );	    // Tasks
 
-  add_rewrite_tag( '%newsitem%', '([^&]+)' );	// this is for the news/events detail page
-
-  add_rewrite_tag( '%department%', '([^&]+)' );	// this is for the department detail page
-
-  add_rewrite_tag( '%toolname%', '([^&]+)' );	// this is for the tools page
-  add_rewrite_tag( '%toolgroup%', '([^&]+)' );	// this is for the tools page
-
-  add_rewrite_tag( '%show-bio%', '([^&]+)' );	// this is for the full bio details
+  add_rewrite_tag( '%newsitem%', '([^&]+)' );	    // News/Events Detail
+  add_rewrite_tag( '%department%', '([^&]+)' );	    // Department Detail
+  add_rewrite_tag( '%toolname%', '([^&]+)' );	    // Tools
+  add_rewrite_tag( '%toolgroup%', '([^&]+)' );	    // Tools
     
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
 // add custom rewrite rules here
 function custom_rewrite_rule() {
-    // add_rewrite_rule('^faculty-and-staff/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
-
-    
-    // add_rewrite_rule('^news/article/([^/]*)?','index.php?page_id=157&show-article=$matches[1]','top');  // full news article details
-    
     add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');
     add_rewrite_rule('^news-events/([^/]*)?', 'index.php?page_id=3286&newsitem=$matches[1]', 'top');
-    
-
     add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page
-
-
     // Finance Site (staff section) rewrite rules
     add_rewrite_rule('^staff/bio/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
-    
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
-
-    
     // Tasks:
     add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');
     add_rewrite_rule('^tasks/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=null','top'); // ( can this be removed??? )
-
-
     // Tools Detail Page:
     add_rewrite_rule('^tools/([^/]*)/([^/]*)?','index.php?page_id=3435&toolname=$matches[1]&toolgroup=$matches[2]','top'); // Tool w/ Selected Grouping
     add_rewrite_rule('^tools/([^/]*)?','index.php?page_id=3435&toolname=$matches[1]&toolgroup=null','top'); // Tool w/ no Selected Grouping (default)
-
-
-    
-    
-
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 
@@ -151,13 +124,6 @@ function nudev_nav()
         )
     );
 }
-
-
-
-
-
-
-
 
 //Adds active class to current page main menu item
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
@@ -200,6 +166,7 @@ function nudev_async_scripts($url)
     }
 add_filter( 'clean_url', 'nudev_async_scripts', 11, 1 );
 
+
 function disable_embeds_init() {
 
     // Remove the REST API endpoint.
@@ -215,50 +182,25 @@ function disable_embeds_init() {
     // Remove oEmbed-specific JavaScript from the front-end and back-end.
     remove_action('wp_head', 'wp_oembed_add_host_js');
 }
-
 add_action('init', 'disable_embeds_init', 9999);
 
 //* Adding DNS Prefetching
 function ism_dns_prefetch() {
-    echo '<meta http-equiv="x-dns-prefetch-control" content="on">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" />';
-
+    echo '<meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" />';
 }
 
-// Load nudev scripts (header.php)
-function nudev_header_scripts()
-{
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        if (nudev_DEBUG) {
-            // jQuery
-            // wp_deregister_script('jquery');
-            // wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '1.11.1');
 
-            // Conditionizr
-            // wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0');
 
-            // Modernizr
-            // wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
 
-            // Custom scripts
-            wp_register_script(
-                'nudevscripts',
-                get_template_directory_uri() . '/js/scripts.js',
-                array(
-                    'conditionizr',
-                    'modernizr',
-                    'jquery'),
-                '1.0.0');
 
-        // If production
-        } else {
-            // Scripts minify
-            //wp_register_script('nudevscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(jquery), '1.0.0');
-            // Enqueue Scripts
-            //wp_enqueue_script('nudevscripts-min');
-        }
-    }
-}
+
+
+
+
+
+
+
+
 
 // include custom jQuery
 function neudev_include_custom_jquery() {
@@ -274,16 +216,6 @@ add_action('wp_enqueue_scripts', 'neudev_include_custom_jquery');
 
 function nudev_footer_scripts() {
 
-    //location page
-    if ( is_page( 14 ) )
-    {
-        wp_register_script('mapstyles', get_template_directory_uri() . '/js/lib/mapstyle-min.js',  array(), '1.0.0', true);
-        wp_enqueue_script('mapstyles');
-        wp_enqueue_script('googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDIi5IUYN3xySijRqfhNDikL-MhWbYARoQ&callback=initMap', array(), '1.0.0', true);
-        wp_enqueue_script('googlemap');
-    }
-
-    // CONDITIONALLY LOADED SCRIPTS SHOULD BE MOVED OUT
     if( 
         is_page_template('templates/template-staff.php') 
         || is_page_template('templates/template-departments-detail.php')
@@ -307,11 +239,6 @@ Page Conditional Scripts
 ********************************************************************** */
 function nudev_conditional_scripts(){
 
-  // load magnific for the staff pages
-  // if(is_page_template('templates/template-staff.php')){
-  //   wp_register_script('magnificjs', get_template_directory_uri() . '/js/magnific.js', array(), '1.0.0');
-  //   wp_enqueue_script('magnificjs');
-  // }
 
     // load tasks js for the task page
     if( get_page_template_slug($post_id) === 'templates/template-tasks.php'){
@@ -347,19 +274,7 @@ function nudev_conditional_scripts(){
 
 /* ******************************************************************* */
 
-
-
 // Load nudev conditional scripts
-
-
-
-
-
-
-
-
-
-
 
 // Load nudev styles
 function nudev_styles(){
@@ -379,20 +294,22 @@ function nudev_styles(){
         // Register CSS
         wp_enqueue_style('nudevcssmin');
     }
-    // load the news styles
-    if( 
-        is_page_template('templates/template-news-archive.php') 
-        || is_page_template('templates/template-news-item.php') 
-        || is_page_template('templates/template-departments-detail.php')
-        || is_page_template('templates/template-tasks.php')
-    )
-    {
-        wp_register_style('newscss', get_template_directory_uri() . '/css/news.css', array(), '1.0');
-        wp_enqueue_style('newscss');
-        wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
-        wp_enqueue_style('magnificcss');
-    }
+    wp_register_style('magnific', get_template_directory_uri() . '/css/lib/magnific-popup.css', array(), '1.0');
+    wp_enqueue_style('magnific');
 }
+add_action('wp_enqueue_scripts', 'nudev_styles'); // Add Theme Stylesheet
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Register nudev Navigation
 function register_nudev_menu()
@@ -618,7 +535,10 @@ add_action('init', 'nudev_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'nudev_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_head', 'ism_dns_prefetch', 0); // DNS Prefetch Google Fonts
-add_action('wp_enqueue_scripts', 'nudev_styles'); // Add Theme Stylesheet
+
+
+
+
 add_action('init', 'register_nudev_menu'); // Add nudev Menu
 add_action('init', 'create_post_type_nudev'); // Add our nudev Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()

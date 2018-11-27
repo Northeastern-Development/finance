@@ -595,6 +595,13 @@
 		"oAP": "/classes/class.prefooter.php",
 		"oF": 0
 		},
+	"/classes/class.setuptheme.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/classes/class.setuptheme.php",
+		"oF": 0
+		},
 	"/comments.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -602,247 +609,15 @@
 		"oAP": "/comments.php",
 		"oF": 0
 		},
-	"/css/__old/banner.css": {
+	"/css/lib/magnific-popup.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/__old/banner-min.css",
+		"oAP": "/css/lib/magnific-popup-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"/css/__old/category.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/category-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/__old/editorial.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/editorial-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/__old/homepage.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/homepage-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/__old/magnific.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/magnific-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/__old/multimedia.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/multimedia-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/__old/panels.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/panels-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/__old/static.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/__old/static-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/hover-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/hover-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/magnific-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/magnific-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/magnific.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/magnific-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/news.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/news-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/__old/category.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/category-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/__old/category.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/category.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/__old/editorial.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/editorial-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/__old/editorial.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/editorial.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/__old/multimedia.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/multimedia-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/__old/multimedia.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/multimedia.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/__old/panels.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/panels-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/__old/panels.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/panels.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/__old/staff.scss.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/css/sass/__old/staff.scss.disabled",
-		"oF": 0
-		},
-	"/css/sass/__old/static.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/static-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/__old/static.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/__old/static.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
 		},
 	"/css/sass/modules/fonts.scss": {
 		"aP": 0,
@@ -879,29 +654,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/modules/variables.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/news.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/news-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/news.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/news.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1036,19 +788,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/pages/statements.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/pages/statements.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/pages/tasks.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1153,13 +892,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/partials/header.scss.bak": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/css/sass/partials/header.scss.bak",
-		"oF": 0
-		},
 	"/css/sass/partials/helpful-links.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1260,19 +992,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/responsive.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/sidebar.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/partials/sidebar.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2002,42 +1721,33 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/js/lib/conditionizr-4.3.0.min.js": {
+	"/js/lib/jquery.magnific-popup.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/js/lib/conditionizr-4.3.0.min-min.js",
+		"oAP": "/js/lib/jquery.magnific-popup.min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"/js/lib/mapstyle-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/lib/mapstyle-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/js/lib/mapstyle.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/lib/mapstyle-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/js/lib/mapstyle.jsOLD": {
+	"/js/lib/readme.md": {
 		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/js/lib/mapstyle.jsOLD",
-		"oF": 0
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "/js/lib/readme.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"/js/magnific-min.js": {
 		"ft": 64,
@@ -4653,7 +4363,7 @@
 		"strictUnits": 0
 		},
 	"languageDefaultsMARKDOWN": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*.html",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
@@ -4774,7 +4484,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, /storage/framework/sessions, node_modules",
+	"skippedFoldersString": "_cache,cache,.idea,log,_logs,logs,node_modules,/storage/framework/sessions,NewSkippedItem",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,
