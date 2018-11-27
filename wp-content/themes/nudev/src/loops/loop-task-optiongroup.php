@@ -14,12 +14,8 @@
                 %s
             </div>
             <ul class="task-options-list-item-suboptions js__collapsible_area">
-                <ul class="relatedfiles">
-                    %s
-                </ul>
-                <div class="sidebar">
-                    %s
-                </div>
+                %s
+                %s
                 %s
             </ul>
         </li>
@@ -30,7 +26,7 @@
     // still isnt working properly
     $format_the_video = '
         <li>
-            <h5><a href="%s" class="js__video-popup" title="Click to Open Video in Lightbox">%s</a></h5>
+            <h5><a href="%s" class="js__youtube" title="Click to Open Video in Lightbox">%s</a></h5>
         </li>
     ';
 
@@ -63,6 +59,7 @@
         // each option has its own related files and sidebar
         $content_relatedfiles = '';
         $content_sidebar = '';
+
 
         // Get : (if) related files
         if( $option['use_related_files'] ){
@@ -118,7 +115,7 @@
             ,$option['title']
             ,$option['description']
             , ( !empty($content_relatedfiles) ) ? '<ul><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null
-            , ( !empty($content_sidebar) ) ? $content_sidebar : null
+            , ( !empty($content_sidebar) ) ? '<div class="sidebar">'.$content_sidebar.'</div>' : null
             ,$content_suboption
         );
         

@@ -107,9 +107,10 @@ function custom_rewrite_rule() {
     
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
 
-    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');  // tasks
-
-    add_rewrite_rule('^tasks/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=null','top');  // tasks
+    
+    // Tasks:
+    add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');
+    add_rewrite_rule('^tasks/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=null','top'); // ( can this be removed??? )
 
 
     // Tools Detail Page:
@@ -273,26 +274,27 @@ add_action('wp_enqueue_scripts', 'neudev_include_custom_jquery');
 
 function nudev_footer_scripts() {
 
-   if ( is_page( 14 ) ) {//location page
-     wp_register_script('mapstyles', get_template_directory_uri() . '/js/lib/mapstyle-min.js',  array(), '1.0.0', true);
-     wp_enqueue_script('mapstyles');
+    //location page
+    if ( is_page( 14 ) )
+    {
+        wp_register_script('mapstyles', get_template_directory_uri() . '/js/lib/mapstyle-min.js',  array(), '1.0.0', true);
+        wp_enqueue_script('mapstyles');
+        wp_enqueue_script('googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDIi5IUYN3xySijRqfhNDikL-MhWbYARoQ&callback=initMap', array(), '1.0.0', true);
+        wp_enqueue_script('googlemap');
+    }
 
-     wp_enqueue_script('googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDIi5IUYN3xySijRqfhNDikL-MhWbYARoQ&callback=initMap', array(), '1.0.0', true);
-     wp_enqueue_script('googlemap');
-   }
-
-   if( is_page_template('templates/template-staff.php') || is_page_template('templates/template-departments-detail.php') ){
-     wp_register_script('magnificjs', get_template_directory_uri() . '/js/magnific.js', array(), '1.0.0');
-     wp_enqueue_script('magnificjs');
-   }
-
-
+    // CONDITIONALLY LOADED SCRIPTS SHOULD BE MOVED OUT
+    if( 
+        is_page_template('templates/template-staff.php') 
+        || is_page_template('templates/template-departments-detail.php')
+        || is_page_template('templates/template-tasks.php') 
+    )
+    {
+        wp_register_script('magnificjs', get_template_directory_uri() . '/js/magnific.js', array(), '1.0.0');
+        wp_enqueue_script('magnificjs');
+    }
    wp_register_script('nudevscripts-min', get_template_directory_uri() . '/js/scripts-min.js',  array('jquery'), '1.0.0', true);
    wp_enqueue_script('nudevscripts-min');
-
-
-
-
 }
 add_action('wp_footer', 'nudev_footer_scripts');
 
@@ -378,11 +380,17 @@ function nudev_styles(){
         wp_enqueue_style('nudevcssmin');
     }
     // load the news styles
-    if(is_page_template('templates/template-news-archive.php') || is_page_template('templates/template-news-item.php') || is_page_template('templates/template-departments-detail.php')){
-      wp_register_style('newscss', get_template_directory_uri() . '/css/news.css', array(), '1.0');
-      wp_enqueue_style('newscss');
-      wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
-      wp_enqueue_style('magnificcss');
+    if( 
+        is_page_template('templates/template-news-archive.php') 
+        || is_page_template('templates/template-news-item.php') 
+        || is_page_template('templates/template-departments-detail.php')
+        || is_page_template('templates/template-tasks.php')
+    )
+    {
+        wp_register_style('newscss', get_template_directory_uri() . '/css/news.css', array(), '1.0');
+        wp_enqueue_style('newscss');
+        wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific.css', array(), '1.0');
+        wp_enqueue_style('magnificcss');
     }
 }
 

@@ -1,10 +1,7 @@
 var exceedsContainer = false;
 var Finance = {};
 (function($, root, undefined) {
-
   $(function() {
-
-
     (function ($) {
         $.fn.extend({
             "neumenu": function (parameters) {
@@ -13,10 +10,8 @@ var Finance = {};
                     pos: "list.bottom",
                     classes: "active",
                 }
-
                 // combines defaults and parameters
                 var options = $.extend({}, defaults, parameters);
-
                 // extension main
                 this.each(function () {
                     // get [data-pos=...] attribute
@@ -100,16 +95,10 @@ var Finance = {};
                         // });
                     });
                 });
-
                 // for chain-style code
                 return this;
             }
-
-
         });
-
-
-
     })($);
 
     
@@ -333,7 +322,6 @@ var Finance = {};
 
     // if we are on the staff page, allow for some links to open full bio details in a lightbox
     if ($("#staff").length) {
-
       $(".js__bio").magnificPopup({
         // type: "iframe"
         type: "ajax",
@@ -349,9 +337,6 @@ var Finance = {};
         //   }
         // }
       });
-
-
-
     }
 
 
@@ -597,34 +582,53 @@ var Finance = {};
     });
 
 
-        $(".js__video-popup").magnificPopup({
-            type: "ajax"
-            ,closeOnContentClick: false
-            ,closeOnBgClick: false
-            ,enableEscapeKey: false
-            ,verticalFit: true
-            ,removalDelay: 300
-            ,mainClass: 'mfp-fade'
-        });
-
-
-    // MAGNIFIC STUFF FOR STAFF / DEPARTMENTS
-    // if($("#staff").length){
-
-        $(".js__bio").magnificPopup({
-            type: "ajax"
-            ,closeOnContentClick: false
-            ,closeOnBgClick: false
-            ,enableEscapeKey: false
-            ,verticalFit: true
-            ,removalDelay: 300
-            ,mainClass: 'mfp-fade'
-        });
-    // }
+    // This is parsing the URL to make sure that youtube.com AND youtu.be URLS work
+    $('.js__youtube').magnificPopup({
+        type: 'iframe',
+        iframe: {
+            patterns: {
+                youtube: {
+                    index: 'youtu', 
+                    id: function(url) {   
     
+                        var m = url.match( /^.*(?:youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/ );
+                        if ( !m || !m[1] ) return null;
     
+                            if(url.indexOf('t=') != - 1){
     
-
+                                var $split = url.split('t=');
+                                var hms = $split[1].replace('h',':').replace('m',':').replace('s','');
+                                var a = hms.split(':');
+    
+                                if (a.length == 1){
+    
+                                    $start = a[0]; 
+    
+                                } else if (a.length == 2){
+    
+                                    $start = (+a[0]) * 60 + (+a[1]); 
+    
+                                } else if (a.length == 3){
+    
+                                    $start = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+    
+                                }
+                            }                                   
+    
+                            var suffix = '?autoplay=1';
+    
+                            if( $start > 0 ){
+    
+                                suffix = '?start=' + $start + '&autoplay=1';
+                            }
+    
+                        return m[1] + suffix;
+                    },
+                    src: '//www.youtube.com/embed/%id%'
+                },
+            }
+        }
+    });
+    
   });
-
 })(jQuery, this);

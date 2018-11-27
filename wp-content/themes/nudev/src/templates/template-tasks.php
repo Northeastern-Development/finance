@@ -9,8 +9,8 @@
 
     // Verify: Correct URL structure
     // ( home_url/tasks/$task_category/$task_name )
+    // Do: Redirect to Home if invalid URL
     if( !$task_category || !$task_name || $task_name == 'null' ){
-        // Do: Redirect to Home if invalid URL
         wp_redirect( home_url() );
         exit();
     }
@@ -36,18 +36,7 @@
         wp_redirect( home_url() );
         exit();
     }
-
     $fields = get_fields($task);
-
-
-    // !!! BELOW HERE BROKE !!!
-
-    // Verify: $task_name belongs to the $task_category in the CMS
-    // if( $fields['category'][0]->post_name !== $task_category ){
-    //     // Do: Redirect to Home if invalid URL
-    //     wp_redirect( home_url() );
-    //     exit();
-    // }
 
 
     get_header();
