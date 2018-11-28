@@ -1,6 +1,15 @@
 <?php
+/**
+ * Initialize Theme
+ */
+require_once('classes/class.setuptheme.php');
 
-require_once "modules/is-debug.php";
+
+
+
+
+
+// require_once "modules/is-debug.php";
 
 /*------------------------------------*\
     External Modules/Files
@@ -201,103 +210,6 @@ function ism_dns_prefetch() {
 
 
 
-
-// include custom jQuery
-function neudev_include_custom_jquery() {
-
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), false, '2.2.0', true);
-
-}
-add_action('wp_enqueue_scripts', 'neudev_include_custom_jquery');
-
-
-
-
-function nudev_footer_scripts() {
-
-    if( 
-        is_page_template('templates/template-staff.php') 
-        || is_page_template('templates/template-departments-detail.php')
-        || is_page_template('templates/template-tasks.php') 
-    )
-    {
-        wp_register_script('magnificjs', get_template_directory_uri() . '/js/magnific.js', array(), '1.0.0');
-        wp_enqueue_script('magnificjs');
-    }
-   wp_register_script('nudevscripts-min', get_template_directory_uri() . '/js/scripts-min.js',  array('jquery'), '1.0.0', true);
-   wp_enqueue_script('nudevscripts-min');
-}
-add_action('wp_footer', 'nudev_footer_scripts');
-
-
-
-
-
-/* **********************************************************************
-Page Conditional Scripts
-********************************************************************** */
-function nudev_conditional_scripts(){
-
-
-    // load tasks js for the task page
-    if( get_page_template_slug($post_id) === 'templates/template-tasks.php'){
-        wp_register_script('taskspage', get_template_directory_uri() . '/js/tasks.js', array('jquery'), '1.0.0');
-        wp_enqueue_script('taskspage');
-    }
-
-    if( get_page_template_slug($post_id) === 'templates/template-forms.php' )
-    {
-        wp_register_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('jquery'), '1.0.0');
-        wp_enqueue_script('formspage');
-    }
-
-    if( 
-        get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
-         || get_page_template_slug($post_id) === 'templates/template-tools-index.php'
-         || get_page_template_slug($post_id) === 'templates/template-tools-detail.php'
-         || get_page_template_slug($post_id) === 'templates/template-discounts.php'
-         || get_page_template_slug($post_id) === 'templates/template-forms.php'
-         || get_page_template_slug($post_id) === 'templates/template-departments-detail.php'
-    ){
-        wp_register_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
-        wp_enqueue_script('reusables');
-    }
-
-
-    if( get_page_template_slug($post_id) === 'templates/template-homepage.php' ){
-        wp_register_script('deadlines', get_template_directory_uri() . '/js/deadlines.js', array('jquery'), '1.0.0');
-    }
-    
-    
-}
-
-/* ******************************************************************* */
-
-// Load nudev conditional scripts
-
-// Load nudev styles
-function nudev_styles(){
-    if (nudev_DEBUG) {
-        // normalize-css
-        // wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1');
-
-        // Custom CSS
-        // wp_register_style('nudev', get_template_directory_uri() . '/css/style.css', array('normalize'), '1.0');
-        wp_register_style('nudev', get_template_directory_uri() . '/css/style.css', array(), '1.0');
-
-        // Register CSS
-        wp_enqueue_style('nudev');
-    } else {
-        // Custom CSS
-        wp_register_style('nudevcssmin', get_template_directory_uri() . '/css/style.css', array(), '1.0');
-        // Register CSS
-        wp_enqueue_style('nudevcssmin');
-    }
-    wp_register_style('magnific', get_template_directory_uri() . '/css/lib/magnific-popup.css', array(), '1.0');
-    wp_enqueue_style('magnific');
-}
-add_action('wp_enqueue_scripts', 'nudev_styles'); // Add Theme Stylesheet
 
 
 
@@ -532,7 +444,7 @@ function nudevcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'nudev_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_enqueue_scripts', 'nudev_conditional_scripts'); // Add Conditional Page Scripts
+// add_action('wp_enqueue_scripts', 'nudev_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_head', 'ism_dns_prefetch', 0); // DNS Prefetch Google Fonts
 

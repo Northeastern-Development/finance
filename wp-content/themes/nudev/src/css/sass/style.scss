@@ -1,6 +1,12 @@
-/* 
-    legacy sass from kri to be refactored
- */
+// Base
+@import 'base/normalize.scss';
+@import 'base/fonts.scss';
+@import 'base/vars.scss';
+@import 'base/mixins.scss';
+@import 'base/nureset.scss';
+ 
+ 
+ 
 // Modules
 @import "modules/variables";
 @import "modules/mixins";
