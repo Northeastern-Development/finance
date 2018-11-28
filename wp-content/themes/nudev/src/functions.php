@@ -443,7 +443,7 @@ function nudevcomments($comment, $args, $depth)
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'nudev_header_scripts'); // Add Custom Scripts to wp_head
+// add_action('init', 'nudev_header_scripts'); // Add Custom Scripts to wp_head
 // add_action('wp_enqueue_scripts', 'nudev_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_head', 'ism_dns_prefetch', 0); // DNS Prefetch Google Fonts

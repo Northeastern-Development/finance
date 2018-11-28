@@ -196,6 +196,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/base/static.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/base/static.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/base/vars.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -209,7 +222,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/modules/fonts.scss": {
+	"/css/sass/modules/faqs.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -217,12 +230,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/css/sass/modules/fonts.css",
+		"oAP": "/css/sass/modules/faqs.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/modules/mixins.scss": {
+	"/css/sass/modules/helpful-links.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -230,12 +243,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/css/sass/modules/mixins.css",
+		"oAP": "/css/sass/modules/helpful-links.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/modules/variables.scss": {
+	"/css/sass/modules/heretohelp.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -243,12 +256,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/css/sass/modules/variables.css",
+		"oAP": "/css/sass/modules/heretohelp.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/pages/convening.scss": {
+	"/css/sass/modules/related-tasks.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -256,7 +269,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/css/sass/pages/convening.css",
+		"oAP": "/css/sass/modules/related-tasks.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -270,19 +283,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/pages/departments.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/pages/form.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/pages/form.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -309,45 +309,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/pages/glossary.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/pages/homepage.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/pages/homepage.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/pages/location.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/pages/location.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/pages/newsandevents.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/pages/newsandevents.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -411,47 +372,8 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/sass/partials/articles.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/collapsibles.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/collapsibles.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/deadlines.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/deadlines.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/faqs.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/faqs.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -482,32 +404,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/partials/helpful-links.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/helpful-links.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/heretohelp.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/heretohelp.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/partials/nav.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -517,19 +413,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/nav.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/old.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/partials/old.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -547,32 +430,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/partials/related-tasks.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/related-tasks.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/reset.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/reset.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/partials/responsive.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -582,32 +439,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/responsive.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/static.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/static.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/utils.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/partials/utils.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -953,16 +784,6 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
-		},
-	"/font-awesome.min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/font-awesome.min-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/footer-article.php": {
 		"cB": 0,
@@ -1329,7 +1150,7 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/js/lib/readme.html",
 		"oF": 0,
 		"oFM": 0,
@@ -1375,6 +1196,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/reusables-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/scripts-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/scripts-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -3943,7 +3774,7 @@
 		"strictUnits": 0
 		},
 	"languageDefaultsMARKDOWN": {
-		"autoOutputAction": 1,
+		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.html",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
@@ -4064,7 +3895,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "_cache,cache,.idea,log,_logs,logs,node_modules,/storage/framework/sessions,NewSkippedItem",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, /storage/framework/sessions, node_modules",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,

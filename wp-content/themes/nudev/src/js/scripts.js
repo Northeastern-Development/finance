@@ -321,7 +321,7 @@ var Finance = {};
 
 
     // if we are on the staff page, allow for some links to open full bio details in a lightbox
-    if ($("#staff").length) {
+    // if ($("#staff").length) {
       $(".js__bio").magnificPopup({
         // type: "iframe"
         type: "ajax",
@@ -337,7 +337,7 @@ var Finance = {};
         //   }
         // }
       });
-    }
+    // }
 
 
 
@@ -582,52 +582,28 @@ var Finance = {};
     });
 
 
-    // This is parsing the URL to make sure that youtube.com AND youtu.be URLS work
     $('.js__youtube').magnificPopup({
         type: 'iframe',
         iframe: {
+            markup: '<div class="mfp-iframe-scaler">'+
+                      '<div class="mfp-close"></div>'+
+                      '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                    '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+          
             patterns: {
-                youtube: {
-                    index: 'youtu', 
-                    id: function(url) {   
-    
-                        var m = url.match( /^.*(?:youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/ );
-                        if ( !m || !m[1] ) return null;
-    
-                            if(url.indexOf('t=') != - 1){
-    
-                                var $split = url.split('t=');
-                                var hms = $split[1].replace('h',':').replace('m',':').replace('s','');
-                                var a = hms.split(':');
-    
-                                if (a.length == 1){
-    
-                                    $start = a[0]; 
-    
-                                } else if (a.length == 2){
-    
-                                    $start = (+a[0]) * 60 + (+a[1]); 
-    
-                                } else if (a.length == 3){
-    
-                                    $start = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
-    
-                                }
-                            }                                   
-    
-                            var suffix = '?autoplay=1';
-    
-                            if( $start > 0 ){
-    
-                                suffix = '?start=' + $start + '&autoplay=1';
-                            }
-    
-                        return m[1] + suffix;
-                    },
-                    src: '//www.youtube.com/embed/%id%'
-                },
-            }
-        }
+              youtube: {
+                index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+          
+                id: 'v=', // String that splits URL in a two parts, second part should be %id%
+                // Or null - full URL will be returned
+                // Or a function that should return %id%, for example:
+                // id: function(url) { return 'parsed id'; }
+          
+                src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
+              }
+            },          
+            srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+          }
     });
     
   });

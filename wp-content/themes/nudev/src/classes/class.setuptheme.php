@@ -15,8 +15,8 @@ class SetupTheme
     }
 
     function do_wp_footer(){
-        wp_enqueue_script('magnificjs');
-        wp_enqueue_script('theme');
+        // wp_enqueue_script('magnificjs');
+        // wp_enqueue_script('theme');
     }
 
     function do_wp_enqueue_scripts(){
@@ -35,9 +35,9 @@ class SetupTheme
         // dereg. jquery
         wp_deregister_script('jquery');
         // reg. custom jquery version
-        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), '2.2.0', true);
+        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), '2.2.0', false);
         // reg. magnific
-        wp_register_script('magnificjs', get_template_directory_uri() . '/js/magnific-min.js', array('jquery'), '1.0.0', true);
+        wp_register_script('magnificjs', get_template_directory_uri() . '/js/lib/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
         // reg. main scripts file
         wp_register_script('theme', get_template_directory_uri() . '/js/scripts-min.js',  array('jquery'), '1.0.0', true);
 
@@ -78,7 +78,8 @@ class SetupTheme
     }
     function enqueue_scripts(){
         wp_enqueue_script('jquery');
-        
+        wp_enqueue_script('magnificjs');
+        wp_enqueue_script('theme');
         wp_enqueue_script('taskspage');
         wp_enqueue_script('formspage');
         wp_enqueue_script('deadlines');

@@ -1,43 +1,32 @@
 // Base
 @import 'base/normalize.scss';
-@import 'base/fonts.scss';
 @import 'base/vars.scss';
 @import 'base/mixins.scss';
+@import 'base/fonts.scss';
 @import 'base/nureset.scss';
- 
- 
+@import "base/static";
+
  
 // Modules
-@import "modules/variables";
-@import "modules/mixins";
-@import "modules/fonts";
+@import "modules/faqs";
+@import "modules/helpful-links";
+@import "modules/heretohelp";
+@import "modules/related-tasks";
+
 // Partials
-@import "partials/reset";
-@import "partials/static";
-@import "partials/wordpress";
-@import "partials/utils";
-@import "partials/wrapper";
 @import "partials/header";
 @import "partials/nav";
-@import "partials/helpful-links";
-@import "partials/heretohelp";
-@import "partials/related-tasks";
-@import "partials/faqs";
-@import "partials/collapsibles";
 @import "partials/footer";
 @import "partials/responsive";
-@import "partials/deadlines";
 @import "partials/print";
+@import "partials/articles";
+@import "partials/wrapper";
+@import "partials/wordpress";
 // Pages
-@import "pages/homepage";
-@import "pages/convening";
-@import "pages/location";
 @import "pages/glossary";
-@import "pages/form";
-@import "pages/newsandevents";
 @import "pages/forms-page";
 @import "pages/tools";
 @import "pages/departments";
-@import "pages/staff-bio";
 @import "pages/staff";
+@import "pages/staff-bio";
 @import "pages/tasks";
