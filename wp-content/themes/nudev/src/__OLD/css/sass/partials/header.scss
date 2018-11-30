@@ -1,0 +1,150 @@
+/**
+ * partials/header
+ * ---
+ */
+
+
+// header{
+//   height: auto;
+//   width: $wrapper-width;
+//   position: fixed;
+//   top: 0;
+//   background: rgba(0,0,0,1.0);
+//   flex: none;
+//   // border-bottom: solid #fff 2px;
+//   z-index: 1000;
+//
+//   & > div#logo{
+//     width: $content-width;
+//     height: $header-height;
+//     overflow: hidden;
+//     margin: nth($wrapper-margins, 1) nth($wrapper-margins, 2) nth($wrapper-margins, 3) nth($wrapper-margins, 4);
+//     // background: rgba(255,255,255,1.0);
+//     & > a{
+//       & img{
+//         height: 80px;
+//         margin: 20px 0 0 0;
+//       }
+//       font-size: 0;
+//     }
+//   }
+// }
+
+
+// Header container
+header {
+  flex: none;
+  background: $black;
+  height: $header-height;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
+
+  & > div#header{
+    max-width: $content-width;
+    width:100%;
+    margin: 0 auto 0 auto;
+    height: $header-height;
+    display: table;
+    overflow: hidden;
+    position:relative;
+    //background:red;
+    & .logo {
+      display: table-cell;
+      vertical-align: middle;
+      & a {
+        & img {
+          float:left;
+          max-width:300px;
+          width:100%;
+          & path {
+            fill:$white;
+          }
+          &:hover {
+            path {
+              fill:$red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// @media only screen and (max-width: 1080px){
+//
+//
+//
+// }
+
+
+
+
+
+@media only screen and (max-width: 1080px){
+  header{
+    & > div#secondarynav{
+      & > ul{
+        height: 30px;
+        overflow: hidden;
+        &.open{
+          height: auto;
+          background: rgba(99, 99, 99, 1.0);
+          & li{
+            & a{
+              color: rgba(255,255,255,1.0);
+            }
+          }
+        }
+        // &:hover{
+        //   height: auto;
+        //   background: rgba(99, 99, 99, 1.0);
+        //   & li{
+        //     & a{
+        //       color: rgba(255,255,255,1.0);
+        //     }
+        //   }
+        // }
+        & > li{
+          text-align: right;
+          padding: 0 20px 0 20px;
+          &:nth-child(1){
+            display: block;
+          }
+          display: block;
+        }
+      }
+    }
+    & > div#logo{
+      & > a{
+        & img{
+          height: 70px;
+          margin: 20px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 700px){
+  header{
+    & > div#secondarynav{
+      margin: $gutter 5vw 0 0;
+    }
+    & > div#logo{
+      width: auto;
+      height: 90px;
+      margin: 0 0 20px 5vw;
+      & img{
+        height: 70px;
+      }
+    }
+  }
+}
