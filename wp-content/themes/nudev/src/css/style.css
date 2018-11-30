@@ -304,18 +304,11 @@ template {
   display: none; }
 
 /**
- * modules/variables
- * ---
- */
-/**
- * Typography
- */
-/**
-  * Colors
-  */
-/**
-  * Grid
-  */
+*
+*
+*   Variables
+*   
+*/
 /* These are variables for the header */
 /* These are variables for the main navigation */
 /**
@@ -340,7 +333,9 @@ body {
   font-weight: 400;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  min-height: 100%; }
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; }
 
 img {
   max-width: 100%;
@@ -366,85 +361,156 @@ input[type="search"] {
   color: white;
   text-shadow: none; }
 
-div.main {
-  margin: 0 auto;
-  width: 80vw; }
-  div.main > section {
-    position: relative;
-    margin: 0;
-    width: inherit;
-    clear: both;
-    overflow: hidden; }
-
-div.main {
-  width: 100vw;
-  margin-top: 110px;
-  background: #fffffe;
-  color: black;
-  height: auto; }
-  div.main section.hero {
-    background: black;
-    width: 100vw;
-    margin: 0 0 2vw 0;
-    overflow: hidden; }
-    div.main section.hero > div {
-      width: 50vw;
-      margin: 1.75vw auto 2.1vw auto;
-      color: #fffffe; }
-  div.main section.intro {
-    width: 50vw;
+/**
+*   site-wide basic styles
+*   clean, DRY, markup-dependent
+*   be careful in templates to adhere to the element structure and hierarchy established here ( expounded in comments )
+*/
+@media only screen {
+  div#nu__globalheader {
+    width: 100%; }
+  div.wrapper {
+    flex: 1 0 auto;
+    max-width: 100vw;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 125px; }
+  main,
+  div.main {
     margin: 0 auto;
-    border-bottom: solid black 1px; }
-    div.main section.intro > h1 {
-      margin: 0 0 0.5vw 0; }
-  div.main section.fullwidth {
     width: 100vw;
-    margin: 1.7vw auto 0 auto;
-    padding: 1vw 0 0;
-    background: #ece6d5;
-    text-align: center; }
-    div.main section.fullwidth > h4 {
+    background-color: #fffffe;
+    color: black; }
+    main > section,
+    div.main > section {
+      position: relative;
+      margin: 0;
+      width: inherit;
+      clear: both;
+      overflow: hidden; }
+    main > section.hero,
+    div.main > section.hero {
+      background: black;
+      width: 100vw;
+      margin: 0 0 2vw 0;
+      overflow: hidden; }
+      main > section.hero > div,
+      div.main > section.hero > div {
+        width: 50vw;
+        margin: 1.75vw auto 2.1vw auto;
+        color: #fffffe; }
+    main > section.intro,
+    div.main > section.intro {
+      width: 50vw;
+      margin: 0 auto;
+      border-bottom: solid black 1px; }
+      main > section.intro > h1,
+      div.main > section.intro > h1 {
+        margin: 0 0 0.5vw 0; }
+    main > section.fullwidth,
+    div.main > section.fullwidth {
+      width: 100vw;
+      margin: 1.7vw auto 0 auto;
+      padding: 1vw 0 0;
+      background: #ece6d5;
       text-align: center; }
-    div.main section.fullwidth > ul {
-      margin: 1vw 10vw 0; }
-    div.main section.fullwidth a:hover {
-      border-bottom: solid #cc0000 1px;
-      color: inherit; }
-  div.main section {
-    width: 50vw;
-    margin: 1.7vw auto 0 auto; }
-    div.main section ul {
-      display: flex;
-      flex-direction: row;
-      margin: 1vw auto 0;
-      list-style: none;
-      list-style-type: none; }
-      div.main section ul > li {
-        flex: 1;
-        margin: 0 1vw 1vw 0;
-        text-align: left; }
-        div.main section ul > li a {
-          border-bottom: none; }
-        div.main section ul > li h6 > a {
-          border-bottom: solid #cc0000 1px; }
-    div.main section > ul.list {
-      display: block;
-      margin: 0 0 0 1vw;
-      list-style: disc; }
-      div.main section > ul.list > li {
-        margin: 0 0 0.5vw 0;
-        text-align: left;
-        letter-spacing: 0; }
-        div.main section > ul.list > li a {
-          border-bottom: solid #cc0000 1px; }
-        div.main section > ul.list > li h6 > a {
-          border-bottom: solid #cc0000 1px; }
-        div.main section > ul.list > li > ul {
-          list-style: circle;
-          margin: 0 0 0 1vw; }
-  div.main section:last-child {
-    margin: 1.7vw auto 0 auto;
-    padding-bottom: 1.5vw; }
+      main > section.fullwidth > h4,
+      div.main > section.fullwidth > h4 {
+        text-align: center; }
+      main > section.fullwidth > ul,
+      div.main > section.fullwidth > ul {
+        margin: 1vw 10vw 0; }
+      main > section.fullwidth a:hover,
+      div.main > section.fullwidth a:hover {
+        border-bottom: solid #cc0000 1px;
+        color: inherit; }
+    main > section,
+    div.main > section {
+      width: 50vw;
+      margin: 1.7vw auto 0 auto; }
+      main > section ul,
+      div.main > section ul {
+        display: flex;
+        flex-direction: row;
+        margin: 1vw auto 0;
+        list-style: none;
+        list-style-type: none; }
+        main > section ul > li,
+        div.main > section ul > li {
+          flex: 1;
+          margin: 0 1vw 1vw 0;
+          text-align: left; }
+          main > section ul > li a,
+          div.main > section ul > li a {
+            border-bottom: none; }
+          main > section ul > li h6 > a,
+          div.main > section ul > li h6 > a {
+            border-bottom: solid #cc0000 1px; }
+      main > section > ul.list,
+      div.main > section > ul.list {
+        display: block;
+        margin: 0 0 0 1vw;
+        list-style: disc; }
+        main > section > ul.list > li,
+        div.main > section > ul.list > li {
+          margin: 0 0 0.5vw 0;
+          text-align: left;
+          letter-spacing: 0; }
+          main > section > ul.list > li a,
+          div.main > section > ul.list > li a {
+            border-bottom: solid #cc0000 1px; }
+          main > section > ul.list > li h6 > a,
+          div.main > section > ul.list > li h6 > a {
+            border-bottom: solid #cc0000 1px; }
+          main > section > ul.list > li > ul,
+          div.main > section > ul.list > li > ul {
+            list-style: circle;
+            margin: 0 0 0 1vw; }
+    main > section:last-child,
+    div.main > section:last-child {
+      margin: 1.7vw auto 0 auto;
+      padding-bottom: 1.5vw; } }
+
+/*
+    code below is being slowly depricated and integrated above,
+    if it is commented out it has been pulled up; otherwise it should be pulled up and then commented out.
+*/
+div.main section {
+  width: 50vw;
+  margin: 1.7vw auto 0 auto; }
+  div.main section ul {
+    display: flex;
+    flex-direction: row;
+    margin: 1vw auto 0;
+    list-style: none;
+    list-style-type: none; }
+    div.main section ul > li {
+      flex: 1;
+      margin: 0 1vw 1vw 0;
+      text-align: left; }
+      div.main section ul > li a {
+        border-bottom: none; }
+      div.main section ul > li h6 > a {
+        border-bottom: solid #cc0000 1px; }
+  div.main section > ul.list {
+    display: block;
+    margin: 0 0 0 1vw;
+    list-style: disc; }
+    div.main section > ul.list > li {
+      margin: 0 0 0.5vw 0;
+      text-align: left;
+      letter-spacing: 0; }
+      div.main section > ul.list > li a {
+        border-bottom: solid #cc0000 1px; }
+      div.main section > ul.list > li h6 > a {
+        border-bottom: solid #cc0000 1px; }
+      div.main section > ul.list > li > ul {
+        list-style: circle;
+        margin: 0 0 0 1vw; }
+
+div.main section:last-child {
+  margin: 1.7vw auto 0 auto;
+  padding-bottom: 1.5vw; }
 
 @media only screen and (max-width: 1280px) {
   div.main section.hero {
@@ -2079,17 +2145,6 @@ main section > article > div#contentarea {
       font-size: 1.25rem;
       line-height: 2.5rem;
       padding: 22px 0 40px 0; } }
-
-/**
- * partials/wrapper
- * ---
- */
-.wrapper {
-  flex: 1;
-  max-width: 100vw;
-  max-width: 100%; }
-  .wrapper div#nu__globalheader {
-    width: 100%; }
 
 /**
  * partials/wordpress

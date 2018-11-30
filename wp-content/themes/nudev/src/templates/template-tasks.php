@@ -41,7 +41,7 @@
 
     get_header();
  ?>
-<main id="task" role="main" aria-label="content">
+<div class="main" id="task" role="main" aria-label="content">
   <section>
 
     <?php
@@ -66,7 +66,7 @@
      ?>
 
    </section>
-</main>
+</div>
 <?php
     get_footer();
  ?>

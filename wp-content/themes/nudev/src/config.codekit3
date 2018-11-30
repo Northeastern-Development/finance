@@ -798,6 +798,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/pages/homepage.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/sass/pages/homepage.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/pages/staff-bio.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -974,7 +987,7 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/css/sass/partials/wrapper.css",
 		"oF": 0,
 		"oS": 0,
@@ -2230,6 +2243,13 @@
 		"oAP": "/tag.php",
 		"oF": 0
 		},
+	"/templates/__OLD/template-convening.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-convening.php.disabled",
+		"oF": 0
+		},
 	"/templates/__OLD/template-homepage.php.disabled": {
 		"cB": 0,
 		"ft": 8192,
@@ -2263,13 +2283,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/__OLD/template-staff.php.disabled",
-		"oF": 0
-		},
-	"/templates/template-convening.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-convening.php",
 		"oF": 0
 		},
 	"/templates/template-default.php": {

@@ -6,11 +6,11 @@
 
     get_header();
 ?>
-<main role="main">
+<div role="main" class="main">
     <section>
         <?php include(locate_template('loops/loop-deadlines.php')) ?>
     </section>
-</main>
+</div>
 <?php 
     get_footer();
  ?>

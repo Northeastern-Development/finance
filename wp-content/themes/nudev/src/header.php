@@ -44,30 +44,19 @@
 
 
 		<?php wp_head(); ?>
-
-
-
-	</head>
+    </head>    
 	<body <?php body_class(); ?>>
-
-		<p class="testp" style="position:fixed;background:#000;color:#fff;top:100px;left:0;font-weight:bold;font-size:20px;z-index:99999999;"></p>
-
-		<!-- wrapper -->
-		<div class="wrapper">
-
-			<?php
-				if(!is_page_template('templates/template-staff-bio.php')){
-			?>
-
-			<?php if(function_exists("NUML_globalheader")){NUML_globalheader();} ?><header class="header clear" role="banner">
+        <?php 
+            // header/footer disabled on staff-bio template
+            if( !is_page_template('templates/template-staff-bio.php') ) :
+                // if enabled, include the globalheader
+                if(function_exists("NUML_globalheader")){ NUML_globalheader(); }
+                // then the siteheader
+         ?>
+            <?php if(function_exists("NUML_globalheader")){NUML_globalheader();} ?><header class="header clear" role="banner">
 				<div id="header">
 					<?php require_once(dirname(__FILE__)."/includes/navigation.php"); ?>
 				</div>
-
 			</header>
-
-			<?php
-
-				}
-
-			?>
+        <?php endif; ?>
+		<div class="wrapper">

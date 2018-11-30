@@ -277,7 +277,7 @@ var Finance = {};
         }
       }
     }
-    Finance.header._init();
+    // Finance.header._init();
 
 
     Finance.glossary = {
