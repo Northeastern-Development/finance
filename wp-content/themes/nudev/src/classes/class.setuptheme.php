@@ -39,7 +39,7 @@ class SetupTheme
         if( 
             get_page_template_slug($post_id) === 'templates/template-financial_statements.php'
             || get_page_template_slug($post_id) === 'templates/template-tools-index.php'
-            || get_page_template_slug($post_id) === 'templates/template-tools-detail.php'
+            || get_page_template_slug($post_id) === 'templates/template-tool-detail.php'
             || get_page_template_slug($post_id) === 'templates/template-discounts.php'
             || get_page_template_slug($post_id) === 'templates/template-forms.php'
             || get_page_template_slug($post_id) === 'templates/template-departments-detail.php'
@@ -60,7 +60,13 @@ class SetupTheme
         // }
         // add any conditional stylesheets below:
         if( is_page_template('templates/template-homepage.php') ){
-            wp_enqueue_style('homepage', get_template_directory_uri() . '/css/pages/homepage.css', 'theme', '1.0.0');
+            wp_enqueue_style('homepage', get_template_directory_uri() . '/css/conditionals/css/homepage.css', 'theme', '1.0.0');
+        }
+        if( is_page_template('templates/template-tools-index.php') || is_page_template('templates/template-tool-detail.php') ){
+            wp_enqueue_style('tools', get_template_directory_uri() . '/css/conditionals/css/tools.css', array('theme'), '1.0.0');
+        }
+        if( is_page_template('templates/template-tasks.php') ){
+            wp_enqueue_style('tasks', get_template_directory_uri() . '/css/conditionals/css/tasks.css', array('theme'), '1.0.0');
         }
     }
 }

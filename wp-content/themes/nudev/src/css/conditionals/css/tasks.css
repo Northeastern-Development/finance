@@ -1,0 +1,10 @@
+@media only screen {
+  ul.list {
+    align-items: flex-start; }
+  .sidebar {
+    float: right;
+    max-width: 25%;
+    margin-left: 20px; }
+    .sidebar img {
+      width: 100px;
+      height: 100px; } }

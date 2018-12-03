@@ -1,0 +1,52 @@
+/**
+*   Tool Index Styles
+*/
+@import '../../sass/base/vars.scss';
+
+
+@media only screen {
+
+
+    .tools-grid {
+        flex-flow: row wrap;
+        li {
+            flex: 1 0 auto;
+            width: 30%;
+        }
+        figure {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 220px;
+        }
+
+    }
+   
+    main, div.main {
+        section {
+            ul.tool-groupingnav {
+                text-align: center;
+                li {
+                    text-align: center;
+                    margin: 0 auto;
+                    a {
+                        text-align: center;
+                    }
+                    &.tool-grouping-active {
+                        border-bottom: 1px solid $brand_colors-red;
+                    }
+                }
+            }
+
+            .tool-groups {
+                ul {
+                    flex-flow: row wrap;
+                    li {
+                        flex: 1 0 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+}

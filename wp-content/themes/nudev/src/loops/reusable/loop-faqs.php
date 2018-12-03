@@ -8,7 +8,7 @@
         $fields = get_fields($post->ID);
     }
 
-    $content = '<div class="module-faqs"><h2>FAQ</h2><ul class="js__collapsible_list">';
+    $content = '<ul class="js__collapsible_list list nufin-faqs"><h2>FAQ</h2>';
 
     $format = '<li><h5>%s</h5><div>%s</div></li>';
 
@@ -21,7 +21,7 @@
         );
     }
 
-    $content .= '</ul></div>';
+    $content .= '</ul>';
 
     echo $content;
 

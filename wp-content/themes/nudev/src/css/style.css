@@ -315,6 +315,23 @@ template {
  * modules/mixins
  * ---
  */
+@media only screen {
+  h1 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 72px;
+    text-align: center; }
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 48px;
+    text-align: center; }
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: 300; } }
+
 *,
 *:after,
 *:before {
@@ -394,6 +411,14 @@ input[type="search"] {
       width: 100vw;
       margin: 0 0 2vw 0;
       overflow: hidden; }
+      main > section.hero > h1,
+      div.main > section.hero > h1 {
+        color: #fffffe;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 72px;
+        text-align: center; }
       main > section.hero > div,
       div.main > section.hero > div {
         width: 50vw;
@@ -510,7 +535,7 @@ input[type="search"] {
       div.main section > ul > li {
         flex: 0 0 45%;
         margin-right: 10%; }
-        div.main section > ul > li:nth-child(even) {
+        div.main section > ul > li :nth-child(even) {
           margin-right: 0; } }
 
 @media only screen and (max-width: 620px) {
@@ -528,6 +553,17 @@ input[type="search"] {
 @media only screen and (max-width: 440px) {
   div.main section.fullwidth > h4 {
     margin: 0 10vw; } }
+
+@media only screen {
+  div.main > section.nobg,
+  main > section.nobg {
+    background: none; }
+  div.main ul.list,
+  main ul.list {
+    flex-flow: row wrap; }
+    div.main ul.list li,
+    main ul.list li {
+      flex: 1 0 100%; } }
 
 @media only screen {
   /* Shutter Out Horizontal */
@@ -573,25 +609,28 @@ input[type="search"] {
     transform: scaleX(1); } }
 
 @media only screen {
-  .module-faqs {
-    max-width: 720px;
-    margin: 40px auto; }
-    .module-faqs > h2 {
+  div.main > section ul.nufin-faqs,
+  main > section ul.nufin-faqs {
+    list-style-type: none;
+    margin: 0; }
+    div.main > section ul.nufin-faqs h2,
+    main > section ul.nufin-faqs h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 48px;
       text-align: center; }
-    .module-faqs ul {
-      list-style-type: none;
-      text-align: left; }
-    .module-faqs li {
-      border-bottom: 1px solid #000; }
-      .module-faqs li h5 {
-        line-height: 3; } }
+    div.main > section ul.nufin-faqs li,
+    main > section ul.nufin-faqs li {
+      padding: 10px 0;
+      border-bottom: 1px solid black; } }
 
 @media only screen {
   div.nu__prefooter {
     height: auto;
     background: #fffffe;
-    width: 100%;
-    margin: 0 0 0 0; }
+    width: auto;
+    margin: 0 10vw; }
     div.nu__prefooter.bg_tan {
       background: #ece6d5;
       padding: 20px 0 0 0; }
@@ -2257,50 +2296,6 @@ main section > article > div#contentarea {
     margin-left: 20px; } }
 
 @media only screen {
-  .tool-grouptitle {
-    text-align: center; }
-  .tool-groupingnav {
-    margin: 40px auto;
-    width: 100%;
-    text-align: center; }
-    .tool-groupingnav li {
-      display: inline-block;
-      padding: 5px 10px; }
-  #tools > section > h1 {
-    text-align: center;
-    padding: 40px 0; }
-  #tools > section > p:nth-child(2) {
-    max-width: 720px;
-    margin: 0 auto; }
-  #tools .js__collapsible_list h2 {
-    text-align: center; }
-  #tools .js__collapsible_list li {
-    margin: 20px 0;
-    border-bottom: 1px solid gray; }
-  .tool-groups {
-    max-width: 720px;
-    margin: 0 auto; }
-  .tool-grouping-active {
-    border-bottom: 1px solid red; }
-  .tools-grid {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap; }
-  .tools-grid-tool {
-    max-width: calc(33% - 40px);
-    flex: 1 0 auto;
-    margin: 0 20px 20px 0; }
-    .tools-grid-tool > a > figure {
-      margin: 0;
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      height: 220px;
-      margin-bottom: 1rem; }
-    .tools-grid-tool:nth-child(3n) {
-      margin-right: 0; } }
-
-@media only screen {
   body.department main > section {
     margin: 40px auto; }
     body.department main > section > h1 {
@@ -3193,28 +3188,3 @@ main#staff section.stafflist {
             margin: 0 auto 3vw auto; }
       main#staff section.stafflist > div h2 {
         font-size: 2.5rem; } }
-
-@media only screen {
-  .task-options {
-    max-width: 720px;
-    margin: 20px auto; }
-    .task-options ul {
-      list-style-type: none; }
-  .task-options-list > li {
-    margin: 40px auto; }
-  .task-options-list-item-suboptions {
-    position: relative;
-    margin: 40px auto;
-    overflow: hidden; }
-    .task-options-list-item-suboptions > li,
-    .task-options-list-item-suboptions .relatedfiles,
-    .task-options-list-item-suboptions .sidebar {
-      margin: 20px auto; }
-    .task-options-list-item-suboptions .relatedfiles {
-      float: left; }
-    .task-options-list-item-suboptions .sidebar {
-      float: right;
-      max-width: 25%;
-      margin-left: 20px; }
-    .task-options-list-item-suboptions > li {
-      clear: left; } }

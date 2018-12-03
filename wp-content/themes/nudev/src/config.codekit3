@@ -622,6 +622,75 @@
 		"oAP": "/comments.php",
 		"oF": 0
 		},
+	"/css/conditionals/css/homepage.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/homepage-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/conditionals/css/tasks.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/tasks-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/conditionals/css/tools.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/tools-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/conditionals/sass/homepage.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/homepage.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/conditionals/sass/tasks.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/tasks.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/conditionals/sass/tools.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/tools.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/lib/hover-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -824,29 +893,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/pages/homepage.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/pages/homepage-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/sass/pages/homepage.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/pages/homepage.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/pages/staff-bio.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -882,19 +928,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/pages/tasks.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/pages/tools.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/sass/pages/tools.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

@@ -50,21 +50,29 @@
 
         include(locate_template('loops/loop-task-optiongroup.php'));
 
-        // Optional Page Sections :
-        if( !empty($fields['faqs']) ){
-            include(locate_template('loops/reusable/loop-faqs.php'));
-        }
-        if( !empty($fields['helpers']) ){
-            include(locate_template('loops/reusable/loop-heretohelp.php'));
-        }
-        if( $fields['use_pre-footer'] == '1' ){
-            include(locate_template('includes/prefooter.php'));
-        }
-        if( !empty($fields['related_tasks'])  ) {
-            include(locate_template('includes/related-tasks.php'));
-        }
+        
      ?>
-
+   </section>
+   <section>
+       <?php 
+            if( !empty($fields['faqs']) ){
+                include(locate_template('loops/reusable/loop-faqs.php'));
+            }
+        ?>
+   </section>
+   <section>
+       <?php 
+            // Optional Page Sections :
+            if( !empty($fields['helpers']) ){
+                include(locate_template('loops/reusable/loop-heretohelp.php'));
+            }
+            if( $fields['use_pre-footer'] == '1' ){
+                include(locate_template('includes/prefooter.php'));
+            }
+            if( !empty($fields['related_tasks'])  ) {
+                include(locate_template('includes/related-tasks.php'));
+            }
+       ?>
    </section>
 </div>
 <?php

@@ -40,7 +40,11 @@
             width: $wrapper-width;
             margin: 0 0 ($gutter * 2) 0;
             overflow: hidden;
-    
+            > h1 {
+                color: rgba($brand_colors-white, 1.0);
+                text-align: center;
+                @include font-8l-c;
+            }
             > div {
                 width: $content-width-narrow;
                 margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
@@ -149,23 +153,15 @@
         section.hero {
             margin: 0 0 ($gutter * 2) 0;
 
-            &>div {
+            >div {
                 margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
 
-                &>h2 {
-                    //@include font-6l-c;
-                }
-
-                &>h3 {
-                    //@include font-2l-c;
-                }
             }
         }
 
         section.intro {
-            &>h1 {
+            >h1 {
                 margin: 0 0 ($gutter / 2) 0;
-                //@include font-5r-l;
             }
         }
 
@@ -173,8 +169,7 @@
             margin: ($gutter * 1.7) auto 0 auto;
             padding: $gutter 0 0;
 
-            &>h4 {
-                //@include font-3b-c;
+            >h4 {
                 text-align: center;
             }
         }
@@ -182,23 +177,17 @@
         section {
             margin: ($gutter * 1.7) auto 0 auto;
 
-            &>ul {
+            >ul {
                 width: $content-width-wide;
-                //margin: 0 auto;
                 margin: $gutter auto 0;
 
-                &>li {
+                >li {
                     margin: 0 $gutter $gutter 0;
 
-                    & a {}
-
-                    & h6 {
-                        &>a {}
-                    }
                 }
             }
 
-            &>h4 {
+            >h4 {
                 text-align: left;
             }
         }
@@ -210,29 +199,19 @@
     }
 }
 
-// @media only screen and (max-width: 1080px) {
-//
-//    section{
-//      width: $content-width;
-//    }
-//
-// }
 @media only screen and (max-width: 959px) {
     div.main {
         section.hero {
-            &>div {
+            >div {
                 width: $content-width;
             }
         }
-
         section.intro {
             width: $content-width;
-
-            &>h1 {}
         }
 
         section.fullwidth {
-            &>ul {
+            >ul {
                 width: $content-width;
             }
         }
@@ -240,14 +219,14 @@
         section {
             width: $content-width-960;
 
-            &>ul:not(.nu__grid-filters-options, .nu__grid) {
+            >ul:not(.nu__grid-filters-options, .nu__grid) {
                 flex-wrap: wrap;
 
-                &>li {
+                >li {
                     flex: 0 0 45%;
                     margin-right: 10%;
 
-                    &:nth-child(even) {
+                    :nth-child(even) {
                         margin-right: 0;
                     }
                 }
@@ -259,7 +238,7 @@
 @media only screen and (max-width: 620px) {
     div.main {
         section.intro {
-            &>h1 {
+            >h1 {
                 text-align: left;
             }
         }
@@ -267,12 +246,12 @@
         section {
             width: $content-width-700;
 
-            &>ul {
+            >ul {
                 width: 100%;
                 margin: 0 auto;
                 flex-direction: column;
 
-                &>li {
+                >li {
                     //flex: 0 0 45%;
                     margin-right: 0;
                 }
@@ -284,9 +263,30 @@
 @media only screen and (max-width: 440px) {
     div.main {
         section.fullwidth {
-            &>h4 {
+            >h4 {
                 margin: 0 10vw;
             }
         }
     }
+}
+
+// ADDITIONAL TWEAKS AS I NEED THEM BELOW:
+
+@media only screen {
+    div.main,
+    main {
+        > section.nobg {
+            background: none;
+        }
+        
+        ul.list {
+            flex-flow: row wrap;
+            li {
+                flex: 1 0 100%;
+            }
+        }    
+        
+    }
+    
+    
 }

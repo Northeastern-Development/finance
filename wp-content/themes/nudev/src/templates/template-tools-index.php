@@ -73,29 +73,44 @@
     get_header();
 ?>
 <main role="main">
+    <?php 
+        $fields = get_fields($post_id);
+        $format_hero = '<section class="hero"><h1>%s</h1><div>%s</div></section>';
+        $content_hero = sprintf(
+            $format_hero
+            ,$fields['title']
+            ,$fields['description']
+        );
+        echo $content_hero;
+     ?>
+    
+    <section class="fullwidth nobg">
+        <?= $content ?>
+    </section>
+    
     <section>
-        <?php
-            echo '<h1>' . $post->post_title . '</h1>';
-            echo $content;
-         ?>
-        <?php
-            $fields = get_fields($post->ID);
-
+        <?php 
             // FAQ,
             if( !empty($fields['faqs']) ){
                 include(locate_template('loops/reusable/loop-faqs.php'));
             }
-
-            // Here2Help,
-            if( !empty($fields['helpers']) ){
+         ?>
+    </section>
+    <section>
+        <?php 
+             // Here2Help,
+             if( !empty($fields['helpers']) ){
                 include(locate_template('loops/reusable/loop-heretohelp.php'));
             }
+         ?>
+    </section>
 
+    <section class="fullwidth nobg">
+        <?php
             // HelpfulLinks,
             if( $fields['use_pre-footer'] == '1' ){
                 include(locate_template('includes/prefooter.php'));
             }
-
          ?>
     </section>
 </main>

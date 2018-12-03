@@ -43,14 +43,11 @@
                     ,get_permalink($toolpost['ID']) . seoUrl($grouping['title'])
                     ,$grouping['title']
                 );
-
             }
             //
             if( seoUrl($grouping['title']) == $toolgrouping ){
                 $currentGrouping = $grouping;
             }
-            print_r( seoUrl($grouping['title'] ));
-            //
         }
         $groupSelectorContent .= '</ul>';
     }
@@ -59,7 +56,7 @@
     // (main page content stuff here)
     $groupContent = '<div class="tool-groups">';
 
-    $groupContent_guide = '<ul class="js__collapsible_list"><h2>%s</h2>%s</ul>';
+    $groupContent_guide = '<h2>%s</h2><ul class="js__collapsible_list list">%s</ul>';
 
     $infoblock_guide = '<li><h5>%s</h5><div>%s</div></li>';
 
@@ -93,15 +90,20 @@
     get_header();
 ?>
 <main role="main">
+    <section class="hero">
+        <?php echo '<h1>'.$toolpost['post_title'].'</h1>'; ?>
+    </section>
+
     <section>
-    <?php
-
-        echo '<h1>'.$toolpost['post_title'] . '</h1>' . $fields['full_description'];
-
-        echo $groupSelectorContent;
-
-        echo $groupContent;
-
+        <?php 
+            echo $fields['full_description'];
+         ?>
+    </section>
+    
+    <section>
+        <?php
+            echo $groupSelectorContent;
+            echo $groupContent;
         ?>
     </section>
 </main>

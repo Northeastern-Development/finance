@@ -272,3 +272,23 @@
     line-height: 28px;
     text-align: center;
 }
+
+
+// BASIC TYPOGRAPHICAL STUFF BELOW
+// COMPLETELY ASSUMPTIONS SO FAR
+@media only screen {
+    
+    h1 {
+        @include font-8l-c;
+    }
+    h2 {
+        @include font-6l-c;
+    }
+    h3 {
+        @include font-5l-c;
+    }
+
+    
+    
+    
+}

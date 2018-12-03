@@ -2,31 +2,27 @@
 
 
 
-
-
-    .module-faqs {
-      max-width: 720px;
-      margin: 40px auto;
-      > h2 {
-        text-align: center;
-      }
-      ul {
-        list-style-type: none;
-        text-align: left;
-      }
-      li {
-        border-bottom: 1px solid #000;
-        h5 {
-          line-height: 3;
+    
+    
+    
+    div.main,
+    main {
+        > section{
+            ul.nufin-faqs {
+                list-style-type: none;
+                margin: 0;
+                h2 {
+                    text-align: center;
+                    @include font-6l-c; // THIS SHOULD JUST BE DEFAULT ON H2
+                }
+                li {
+                    padding: 10px 0;
+                    border-bottom: 1px solid $brand_colors-black;
+                    
+                }
+            }
+            
         }
-      }
-    }
-  
-  
-  
-  
-  
-  
-  
-  }
-  
+    } 
+        
+}

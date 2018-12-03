@@ -3,7 +3,7 @@
  * Tasks Options Groups & Sub Fields
  */
 
-    $content_option = '<div class="task-options"><h2>'.$fields['sub_title'].'</h2><ul class="task-options-list js__collapsible_list">';
+    $content_option = '<div class="task-options"><h2>'.$fields['sub_title'].'</h2><ul class="list task-options-list js__collapsible_list">';
 
     // the entire compiled option, including sidebar, related files, suboptions etc
     $format_option = '
@@ -13,7 +13,7 @@
                 <h5>%s</h5>
                 %s
             </div>
-            <ul class="task-options-list-item-suboptions js__collapsible_area">
+            <ul class="list task-options-list-item-suboptions js__collapsible_area">
                 %s
                 %s
                 %s
@@ -114,7 +114,7 @@
             ,( !empty($option['icon']) ) ? '<img src="'.$option['icon'].'">' : null
             ,$option['title']
             ,$option['description']
-            , ( !empty($content_relatedfiles) ) ? '<ul><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null
+            , ( !empty($content_relatedfiles) ) ? '<ul class="list"><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null
             , ( !empty($content_sidebar) ) ? '<div class="sidebar">'.$content_sidebar.'</div>' : null
             ,$content_suboption
         );
