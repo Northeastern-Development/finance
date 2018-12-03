@@ -52,7 +52,7 @@
             margin: 0 auto;
             border-bottom: solid rgba($brand_colors-black, 1.0) 1px;
     
-            &>h1 {
+            >h1 {
                 margin: 0 0 ($gutter / 2) 0;
             }
         }
@@ -64,15 +64,15 @@
             background: rgba($brand_colors-beige, 1.0);
             text-align: center;
     
-            &>h4 {
+            >h4 {
                 text-align: center;
             }
     
-            &>ul {
+            >ul {
                 margin: $gutter 10vw 0;
             }
     
-            & a {
+            a {
                 &:hover {
                     border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
                     color: inherit;
@@ -83,199 +83,64 @@
             width: 50vw;
             margin: ($gutter * 1.7) auto 0 auto;
     
-            & ul {
+            ul {
                 display: flex;
                 flex-direction: row;
                 margin: $gutter auto 0;
                 list-style: none;
                 list-style-type: none;
     
-                &>li {
+                >li {
                     flex: 1;
                     margin: 0 $gutter $gutter 0;
                     text-align: left;
     
-                    & a {
+                    a {
                         border-bottom: none;
                     }
     
-                    & h6 {
-                        &>a {
+                    h6 {
+                        >a {
                             border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
                         }
                     }
                 }
             }
     
-            &>ul.list {
+            >ul.list {
                 display: block;
                 margin: 0 0 0 $gutter;
                 list-style: disc;
     
-                &>li {
+                >li {
                     margin: 0 0 ($gutter / 2) 0;
                     text-align: left;
                     letter-spacing: 0;
     
-                    & a {
+                    a {
                         border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
                     }
     
-                    & h6 {
-                        &>a {
+                    h6 {
+                        >a {
                             border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
                         }
                     }
     
-                    &>ul {
+                    >ul {
                         list-style: circle;
                         margin: 0 0 0 $gutter;
                     }
                 }
             }
         }
-    
         > section:last-child {
             margin: ($gutter * 1.7) auto 0 auto;
             padding-bottom: ($gutter * 1.5);
         }
     }
-
-
-
 }
 
-/*
-    code below is being slowly depricated and integrated above,
-    if it is commented out it has been pulled up; otherwise it should be pulled up and then commented out.
-*/
-// div.main {
-//   margin: 0 auto;
-//   width: $content-width;
-
-//   & > section {
-//     position: relative;
-//     margin: 0;
-//     width: inherit;
-//     clear: both;
-//     overflow: hidden;
-//   }
-// }
-
-div.main {
-    //   width: $wrapper-width;
-    //   margin-top: $header-height;
-    // background: rgba($brand_colors-white, 1.0);
-    // color: rgba($brand_colors-black, 1.0);
-    // height: auto;        // this was already defaulting to auto, there was no need to set it???
-
-    // section.hero {
-    //     background: rgba($brand_colors-black, 1.0);
-    //     width: $wrapper-width;
-    //     margin: 0 0 ($gutter * 2) 0;
-    //     overflow: hidden;
-
-    //     &>div {
-    //         width: $content-width-narrow;
-    //         margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
-    //         color: rgba($brand_colors-white, 1.0);
-    //     }
-    // }
-
-    // section.intro {
-    //     width: $content-width-narrow;
-    //     margin: 0 auto;
-    //     border-bottom: solid rgba($brand_colors-black, 1.0) 1px;
-
-    //     &>h1 {
-    //         margin: 0 0 ($gutter / 2) 0;
-    //     }
-    // }
-
-    // section.fullwidth {
-    //     width: $wrapper-width;
-    //     margin: ($gutter * 1.7) auto 0 auto;
-    //     padding: $gutter 0 0;
-    //     background: rgba($brand_colors-beige, 1.0);
-    //     text-align: center;
-
-    //     &>h4 {
-    //         text-align: center;
-    //     }
-
-    //     &>ul {
-    //         margin: $gutter 10vw 0;
-    //     }
-
-    //     & a {
-    //         &:hover {
-    //             border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
-    //             color: inherit;
-    //         }
-    //     }
-    // }
-
-    section {
-        width: 50vw;
-        margin: ($gutter * 1.7) auto 0 auto;
-
-        & ul {
-            display: flex;
-            flex-direction: row;
-            margin: $gutter auto 0;
-            list-style: none;
-            list-style-type: none;
-
-            &>li {
-                flex: 1;
-                margin: 0 $gutter $gutter 0;
-                text-align: left;
-
-                & a {
-                    border-bottom: none;
-                }
-
-                & h6 {
-                    &>a {
-                        border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
-                    }
-                }
-            }
-        }
-
-        &>ul.list {
-            display: block;
-            margin: 0 0 0 $gutter;
-            list-style: disc;
-
-            &>li {
-                margin: 0 0 ($gutter / 2) 0;
-                text-align: left;
-                letter-spacing: 0;
-
-                & a {
-                    border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
-                }
-
-                & h6 {
-                    &>a {
-                        border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
-                    }
-                }
-
-                &>ul {
-                    list-style: circle;
-                    margin: 0 0 0 $gutter;
-                }
-            }
-        }
-    }
-
-    section:last-child {
-        margin: ($gutter * 1.7) auto 0 auto;
-        padding-bottom: ($gutter * 1.5);
-    }
-}
 
 @media only screen and (max-width: 1280px) {
     $gutter: 15px;
