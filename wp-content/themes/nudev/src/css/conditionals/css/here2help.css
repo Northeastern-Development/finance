@@ -1,0 +1,6 @@
+@media only screen {
+  section.here2help > ul > li figure {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover; } }

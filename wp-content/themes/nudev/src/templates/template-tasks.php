@@ -41,18 +41,16 @@
 
     get_header();
  ?>
-<div class="main" id="task" role="main" aria-label="content">
-  <section>
-
-    <?php
-        // Required Page Sections :
-        include(locate_template('loops/loop-task-main.php'));
-
-        include(locate_template('loops/loop-task-optiongroup.php'));
-
-        
-     ?>
+<main class="main">
+  
+<section>
+    <?php include(locate_template('loops/loop-task-main.php')); ?>
    </section>
+
+   <section>
+       <?php include(locate_template('loops/loop-task-optiongroup.php')); ?>
+   </section>
+   
    <section>
        <?php 
             if( !empty($fields['faqs']) ){
@@ -60,15 +58,25 @@
             }
         ?>
    </section>
-   <section>
+
+   <section class="here2help">
        <?php 
-            // Optional Page Sections :
             if( !empty($fields['helpers']) ){
                 include(locate_template('loops/reusable/loop-heretohelp.php'));
             }
+         ?>
+   </section>
+
+   <section>
+       <?php 
             if( $fields['use_pre-footer'] == '1' ){
                 include(locate_template('includes/prefooter.php'));
             }
+        ?>
+   </section>
+
+   <section class="related-tasks">
+       <?php 
             if( !empty($fields['related_tasks'])  ) {
                 include(locate_template('includes/related-tasks.php'));
             }

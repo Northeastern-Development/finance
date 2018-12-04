@@ -563,7 +563,29 @@ input[type="search"] {
     flex-flow: row wrap; }
     div.main ul.list li,
     main ul.list li {
-      flex: 1 0 100%; } }
+      flex: 1 0 100%; }
+  div.main ul.cols-2,
+  main ul.cols-2 {
+    flex-flow: row wrap; }
+    div.main ul.cols-2 li,
+    main ul.cols-2 li {
+      flex: 1 0 50%;
+      margin: 0 auto; }
+  div.main > section > ul.nufin-faqs,
+  main > section > ul.nufin-faqs {
+    list-style-type: none;
+    margin: 0; }
+    div.main > section > ul.nufin-faqs h2,
+    main > section > ul.nufin-faqs h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 48px;
+      text-align: center; }
+    div.main > section > ul.nufin-faqs li,
+    main > section > ul.nufin-faqs li {
+      padding: 10px 0;
+      border-bottom: 1px solid black; } }
 
 @media only screen {
   /* Shutter Out Horizontal */
@@ -609,28 +631,11 @@ input[type="search"] {
     transform: scaleX(1); } }
 
 @media only screen {
-  div.main > section ul.nufin-faqs,
-  main > section ul.nufin-faqs {
-    list-style-type: none;
-    margin: 0; }
-    div.main > section ul.nufin-faqs h2,
-    main > section ul.nufin-faqs h2 {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 300;
-      line-height: 48px;
-      text-align: center; }
-    div.main > section ul.nufin-faqs li,
-    main > section ul.nufin-faqs li {
-      padding: 10px 0;
-      border-bottom: 1px solid black; } }
-
-@media only screen {
   div.nu__prefooter {
     height: auto;
     background: #fffffe;
-    width: auto;
-    margin: 0 10vw; }
+    width: 100%;
+    margin: 0 0 0 0; }
     div.nu__prefooter.bg_tan {
       background: #ece6d5;
       padding: 20px 0 0 0; }
@@ -717,50 +722,6 @@ input[type="search"] {
     width: 92vw; }
     > div.nu__prefooter > div > ul {
       overflow: hidden; } }
-
-@media only screen {
-  .nu__prefooter > h2 {
-    text-align: center; }
-  .here2help {
-    margin: 40px 0; }
-    .here2help h2 {
-      text-align: center; }
-  .h2h-items {
-    display: flex;
-    flex-flow: row nowrap;
-    list-style-type: none;
-    max-width: 720px;
-    margin: 0 auto; }
-  .h2h-items-item {
-    flex: 1 0 auto;
-    margin-right: 20px; }
-    .h2h-items-item > figure {
-      margin: 0;
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      height: 220px;
-      margin-bottom: 1rem; }
-    .h2h-items-item:nth-child(3n) {
-      margin-right: 0px; }
-    .h2h-items-item p:nth-child(2), .h2h-items-item p:nth-child(3) {
-      font-weight: bold;
-      line-height: 1.5; } }
-
-@media only screen {
-  .relatedtasks {
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center; }
-    .relatedtasks ul {
-      list-style-type: none;
-      margin: 0 auto;
-      display: inline-block;
-      text-align: left; }
-    .relatedtasks li {
-      width: 50%;
-      padding: 0 10px;
-      display: inline-block; } }
 
 /**
  * partials/header
@@ -2249,51 +2210,6 @@ main section > article > div#contentarea {
 .reset-box {
   padding: 0;
   margin: 0; }
-
-@media only screen {
-  #glossary ul {
-    list-style-type: none; }
-  .glossary-jumpnav {
-    position: fixed;
-    background-color: white;
-    width: 80%;
-    display: flex;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px; }
-    .glossary-jumpnav span {
-      flex: 1 0 auto;
-      color: lightgrey; }
-      .glossary-jumpnav span a {
-        color: black;
-        font-weight: bold; }
-  .glossary-content {
-    padding-top: 80px; } }
-
-@media only screen {
-  #forms ul,
-  #forms ol {
-    list-style-type: none; }
-  #forms .forms-category {
-    padding-top: 40px;
-    margin: 40px auto;
-    max-width: 720px; }
-    #forms .forms-category > h1 {
-      text-align: center;
-      font-weight: 400; }
-    #forms .forms-category > ul {
-      margin: 20px 0; }
-    #forms .forms-category > ul > li {
-      text-align: left;
-      padding: 10px 0;
-      margin-bottom: 40px;
-      border-bottom: 1px solid #000; }
-      #forms .forms-category > ul > li h5 {
-        line-height: 3; }
-      #forms .forms-category > ul > li > div > h5 {
-        margin-top: 20px; }
-  .forms-category-relatedresources li {
-    margin-left: 20px; } }
 
 @media only screen {
   body.department main > section {

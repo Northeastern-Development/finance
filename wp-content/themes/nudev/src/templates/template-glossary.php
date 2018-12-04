@@ -43,7 +43,7 @@
     foreach( $alphabet as $letter => $array )
     {
         // each letter is a h2 within an ul
-        $contents .= '<ul id="'.$letter.'"><h2>'.strtoupper($letter).'</h2>';
+        $contents .= '<ul id="'.$letter.'" class="list"><h2>'.strtoupper($letter).'</h2>';
         // if letter has posts
         if( !empty($array) ){
             foreach( $array as $info ){
@@ -65,8 +65,8 @@
     $jumpnav .= '</div>';
     $contents .= '</div>';
  ?>
-<main id="glossary" role="main">
-    <section>
+<main role="main">
+    <section id="glossary">
       <?php echo $jumpnav; ?>
       <?php echo $contents; ?>
     </section>

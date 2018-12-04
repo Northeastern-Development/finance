@@ -59,8 +59,8 @@
 
     // set empty content var
     $content = '';
-    $format_category = '<div class="forms-category"><h1>%s</h1>%s</div>';
-    $format_form = '<ul class="js__collapsible_list"><li><h5>%s</h5><div>%s%s<h5>Last Updated</h5>%s%s</div></li></ul>';
+    $format_category = '<div class="forms-category"><h2>%s</h2>%s</div>';
+    $format_form = '<ul class="js__collapsible_list list"><li><h5>%s</h5><div>%s%s<h5>Last Updated</h5>%s%s</div></li></ul>';
     $format_files = '<a href="%s" title="click to open this file in a new tab" target="_blank"><p>%s</p></a>';
     $format_blocks = '<h5>%s</h5>%s';
     $format_relresources = '<li><a target="%s" href="%s" title="View this Related Resource">%s</a></li>';    
@@ -101,7 +101,7 @@
                 }
 
                 // Set: format string for related resources
-                $content_relresources = '<ul class="forms-category-relatedresources"><h5>Related Resources</h5>';
+                $content_relresources = '<ul class="forms-category-relatedresources list"><h5>Related Resources</h5>';
                 foreach( $fields['related_resources'] as $relresource ){
                     $ifExt = ( $related_resource['external_link'] == 1 ) ? '_blank' : '_self'; 
                     $content_relresources .= sprintf(

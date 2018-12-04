@@ -8,7 +8,7 @@
         $fields = get_fields($post->ID);
     }
 
-    $content = '<ul class="js__collapsible_list list nufin-faqs"><h2>FAQ</h2>';
+    $content = '<h2>FAQ</h2><ul class="js__collapsible_list list nufin-faqs">';
 
     $format = '<li><h5>%s</h5><div>%s</div></li>';
 

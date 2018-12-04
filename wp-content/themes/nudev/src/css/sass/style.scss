@@ -8,10 +8,7 @@
 @import "base/hover.scss";
  
 // Modules
-@import "modules/faqs";
 @import "modules/helpful-links";
-@import "modules/heretohelp";
-@import "modules/related-tasks";
 
 // Partials
 @import "partials/header";
@@ -20,15 +17,11 @@
 @import "partials/responsive";
 @import "partials/print";
 @import "partials/articles";
-// @import "partials/wrapper"; // (integrated into static.scss)
 @import "partials/wordpress";
 @import "partials/utils";
 
 
 // Pages
-@import "pages/glossary";
-@import "pages/forms-page";
 @import "pages/departments";
 @import "pages/staff";
 @import "pages/staff-bio";
-@import "pages/tasks";

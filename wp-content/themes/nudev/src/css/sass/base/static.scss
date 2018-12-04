@@ -284,7 +284,29 @@
             li {
                 flex: 1 0 100%;
             }
-        }    
+        }
+        
+        ul.cols-2 {
+            flex-flow: row wrap;
+            li {
+                flex: 1 0 50%;
+                margin: 0 auto;
+            }
+        }
+        // FAQ specific
+        > section > ul.nufin-faqs {
+            list-style-type: none;
+            margin: 0;
+            h2 {
+                text-align: center;
+                @include font-6l-c; // THIS SHOULD JUST BE DEFAULT ON H2
+            }
+            li {
+                padding: 10px 0;
+                border-bottom: 1px solid $brand_colors-black;
+                
+            }
+        }
         
     }
     

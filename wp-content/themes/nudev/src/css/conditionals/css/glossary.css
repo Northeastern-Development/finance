@@ -1,0 +1,32 @@
+@media only screen {
+  /**
+*
+*
+*   Variables
+*   
+*/
+  /* These are variables for the header */
+  /* These are variables for the main navigation */
+  section#glossary div.glossary-jumpnav {
+    position: fixed;
+    top: 124px;
+    padding: 10px;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 50vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: #fffffe;
+    z-index: 10; }
+    section#glossary div.glossary-jumpnav span {
+      flex: 1 0 auto; }
+  section#glossary div.glossary-content > ul {
+    position: relative;
+    min-height: 30px; }
+    section#glossary div.glossary-content > ul h2 {
+      position: absolute;
+      top: 0;
+      left: 0; }
+    section#glossary div.glossary-content > ul li {
+      margin-left: 40px; } }

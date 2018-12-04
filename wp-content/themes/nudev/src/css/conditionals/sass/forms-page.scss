@@ -1,0 +1,19 @@
+@media only screen {
+    main#forms {
+        .forms-category {
+            > ul {
+                border-bottom: 1px solid #000;
+                margin-bottom: 40px;
+                padding: 10px;
+                ul {
+                    padding-left: 20px; // just roughing
+                    list-style-type: disc;
+                    flex-flow: row wrap;
+                    li {
+                        flex: 1 0 100%;
+                    }
+                }
+            }
+        }   
+    }
+}

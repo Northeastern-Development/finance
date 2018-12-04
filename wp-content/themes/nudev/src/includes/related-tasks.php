@@ -1,7 +1,16 @@
 <?php
 
-    $content = '<div class="relatedtasks"><h2>Related Tasks</h2><ul>';
-    $guide = '<a href="%s" target="_blank" title="View this Related Task"><li>%s</li></a>';
+    $content = '
+            <h2>Related Tasks</h2>
+            <ul class="cols-2">
+    ';
+    
+    $guide = '
+        <li>
+            <a href="%s" target="_blank" title="View this Related Task">%s</a>
+        </li>
+    ';
+    
     foreach ($fields['related_tasks'] as $i => $relTask) {
 
         $taskFields = get_fields($relTask['task']->ID);
@@ -10,15 +19,15 @@
 
         $modifiedurl =  home_url($path);
 
-
         $content .= sprintf(
             $guide
             , $modifiedurl
             , $relTask['task']->post_title
         );
     }
-    $content .= '</ul></div>';
+    $content .= '
+            </ul>
+    ';
 
     echo $content;
-
 ?>

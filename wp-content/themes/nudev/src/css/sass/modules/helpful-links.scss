@@ -7,10 +7,10 @@
         height: auto;
         background: rgba($brand_colors-white, 1.0);
         // width: $wrapper-width;
-        // width: 100%;
-        // margin: 0 0 0 0;
-        width: auto;
-        margin: 0 10vw; // matches width of section.fullwidth > ul ( matches width of widest sections above it )
+        width: 100%;
+        margin: 0 0 0 0;
+        // width: auto;
+        // margin: 0 10vw; // matches width of section.fullwidth > ul ( matches width of widest sections above it )
 
 
         &.bg_tan {
