@@ -2211,63 +2211,65 @@ main section > article > div#contentarea {
   padding: 0;
   margin: 0; }
 
-@media only screen {
-  body.department main > section {
-    margin: 40px auto; }
-    body.department main > section > h1 {
-      text-align: center;
-      margin: 20px auto; }
-    body.department main > section ul {
-      list-style-type: none;
-      margin-bottom: 20px; } }
-
 /*
  * departments
  */
+main section.hero,
 div.main section.hero {
   margin: 0 0 0 0; }
 
+main section.nu__president,
 div.main section.nu__president {
   width: 65vw;
   margin: 0 auto 0 auto;
   clear: both; }
+  main section.nu__president > div,
   div.main section.nu__president > div {
     float: right;
     width: 45%;
     min-height: 400px;
     position: relative; }
+    main section.nu__president > div:nth-child(2),
     div.main section.nu__president > div:nth-child(2) {
       width: 55%; }
+      main section.nu__president > div:nth-child(2) > h3,
       div.main section.nu__president > div:nth-child(2) > h3 {
         border-bottom: solid #979797 1px;
         padding: 0 0 0.5vw 0;
         margin: 1vw 1vw 0.5vw 0; }
+      main section.nu__president > div:nth-child(2) > p,
       div.main section.nu__president > div:nth-child(2) > p {
         text-align: left;
         margin-right: 1vw;
         margin-bottom: 0.4vw; }
+        main section.nu__president > div:nth-child(2) > p > a,
         div.main section.nu__president > div:nth-child(2) > p > a {
           border: none;
           line-height: 4rem;
           position: relative;
           overflow: hidden;
           padding: 0 0 0 25px; }
+          main section.nu__president > div:nth-child(2) > p > a > span,
           div.main section.nu__president > div:nth-child(2) > p > a > span {
             position: absolute;
             left: 0;
             top: 8px;
             line-height: 10px;
             color: rgba(0, 0, 0, 0.8); }
+          main section.nu__president > div:nth-child(2) > p > a:hover,
           div.main section.nu__president > div:nth-child(2) > p > a:hover {
             border-bottom: solid #cc0000 2px;
             color: black; }
+            main section.nu__president > div:nth-child(2) > p > a:hover > span,
             div.main section.nu__president > div:nth-child(2) > p > a:hover > span {
               color: black; }
+    main section.nu__president > div:nth-child(1),
     div.main section.nu__president > div:nth-child(1) {
       background: black;
       background-position: center center !important;
       background-repeat: no-repeat !important;
       background-size: cover !important; }
+      main section.nu__president > div:nth-child(1) > div,
       div.main section.nu__president > div:nth-child(1) > div {
         width: 100%;
         height: 50%;
@@ -2275,27 +2277,34 @@ div.main section.nu__president {
         position: absolute;
         bottom: 0;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%); }
+      main section.nu__president > div:nth-child(1) > p,
       div.main section.nu__president > div:nth-child(1) > p {
         position: absolute;
         left: 1vw;
         bottom: 1vw;
         color: #fffffe; }
+        main section.nu__president > div:nth-child(1) > p > span,
         div.main section.nu__president > div:nth-child(1) > p > span {
           letter-spacing: 1px; }
 
+main section.nu__filters,
 div.main section.nu__filters {
   width: 94vw; }
+  main section.nu__filters > input[type=checkbox],
   div.main section.nu__filters > input[type=checkbox] {
     position: absolute;
     display: none;
     width: 100%;
     height: 100px;
     opacity: 0.0; }
+    main section.nu__filters > input[type=checkbox]:hover,
     div.main section.nu__filters > input[type=checkbox]:hover {
       cursor: pointer; }
+  main section.nu__filters > div,
   div.main section.nu__filters > div {
     display: flex;
     flex-direction: row; }
+  main section.nu__filters > div > div,
   div.main section.nu__filters > div > div {
     position: relative;
     padding: 0 30px 0 10px;
@@ -2305,30 +2314,37 @@ div.main section.nu__filters {
     display: none;
     margin: 1vw 0 0 0;
     border-bottom: solid #979797 2px; }
+    main section.nu__filters > div > div:after,
     div.main section.nu__filters > div > div:after {
       position: absolute;
       top: 2px;
       right: 10px;
       content: '\E313'; }
+    main section.nu__filters > div > div:hover,
     div.main section.nu__filters > div > div:hover {
       cursor: pointer;
       color: black; }
+    main section.nu__filters > div > div.active,
     div.main section.nu__filters > div > div.active {
       background: #ece6d5;
       color: black; }
+      main section.nu__filters > div > div.active:after,
       div.main section.nu__filters > div > div.active:after {
         content: '\E316'; }
+  main section.nu__filters > div > ul,
   div.main section.nu__filters > div > ul {
     width: 94vw;
     border-bottom: solid #979797 2px;
     flex-wrap: wrap;
     height: 40px;
     overflow: hidden; }
+    main section.nu__filters > div > ul > li,
     div.main section.nu__filters > div > ul > li {
       flex-grow: 1;
       flex-basis: auto;
       text-align: center;
       margin: 0 0 10px 0; }
+      main section.nu__filters > div > ul > li.inshowmore,
       div.main section.nu__filters > div > ul > li.inshowmore {
         opacity: 0;
         background: #ece6d5;
@@ -2343,67 +2359,85 @@ div.main section.nu__filters {
         -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
         box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3); }
+        main section.nu__filters > div > ul > li.inshowmore:last-of-type,
         div.main section.nu__filters > div > ul > li.inshowmore:last-of-type {
           padding-bottom: 1vw; }
+        main section.nu__filters > div > ul > li.inshowmore > a,
         div.main section.nu__filters > div > ul > li.inshowmore > a {
           border-bottom: solid rgba(151, 151, 151, 0.3) 2px;
           margin: 0 1vw 0 1vw;
           padding: 20px 0 11px 0;
           display: block; }
+          main section.nu__filters > div > ul > li.inshowmore > a:hover,
           div.main section.nu__filters > div > ul > li.inshowmore > a:hover {
             color: black;
             border-bottom: solid #cc0000 2px; }
+      main section.nu__filters > div > ul > li > a,
       div.main section.nu__filters > div > ul > li > a {
         padding: 0 20px 11px 20px;
         color: rgba(0, 0, 0, 0.7);
         text-transform: uppercase; }
+        main section.nu__filters > div > ul > li > a > span,
         div.main section.nu__filters > div > ul > li > a > span {
           display: none;
           font-weight: normal;
           height: 18px;
           overflow: hidden;
           margin: 15px 0 0 0; }
+        main section.nu__filters > div > ul > li > a.active,
         div.main section.nu__filters > div > ul > li > a.active {
           color: black;
           border-bottom: solid #cc0000 4px; }
+        main section.nu__filters > div > ul > li > a:hover,
         div.main section.nu__filters > div > ul > li > a:hover {
           color: black;
           border-bottom: solid #cc0000 4px; }
 
+main section.nu__slt,
 div.main section.nu__slt {
   width: 50vw; }
+  main section.nu__slt > article,
   div.main section.nu__slt > article {
     clear: both;
     margin: 0 auto 0 auto;
     overflow: hidden; }
+    main section.nu__slt > article > div,
     div.main section.nu__slt > article > div {
       position: relative; }
+      main section.nu__slt > article > div:nth-child(2),
       div.main section.nu__slt > article > div:nth-child(2) {
         float: left;
         width: 34vw;
         margin-right: 2vw; }
+        main section.nu__slt > article > div:nth-child(2) > p.nametitle,
         div.main section.nu__slt > article > div:nth-child(2) > p.nametitle {
           margin-bottom: 0.5vw; }
+        main section.nu__slt > article > div:nth-child(2) > p.contact > a,
         div.main section.nu__slt > article > div:nth-child(2) > p.contact > a {
           line-height: 4rem;
           border: none;
           position: relative;
           padding: 0 0 0 25px;
           overflow: hidden; }
+          main section.nu__slt > article > div:nth-child(2) > p.contact > a > span,
           div.main section.nu__slt > article > div:nth-child(2) > p.contact > a > span {
             position: absolute;
             left: 0;
             top: 8px;
             line-height: 10px;
             color: rgba(0, 0, 0, 0.8); }
+          main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover,
           div.main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover {
             color: black;
             border-bottom: solid #cc0000 2px; }
+            main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover > span,
             div.main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover > span {
               color: black; }
+      main section.nu__slt > article > div:nth-child(1),
       div.main section.nu__slt > article > div:nth-child(1) {
         float: right;
         width: 14vw; }
+        main section.nu__slt > article > div:nth-child(1) > div,
         div.main section.nu__slt > article > div:nth-child(1) > div {
           width: 100%;
           height: 14vw;
@@ -2411,44 +2445,56 @@ div.main section.nu__slt {
           background-position: center center !important;
           background-repeat: no-repeat !important;
           background-size: cover !important; }
+        main section.nu__slt > article > div:nth-child(1) > p,
         div.main section.nu__slt > article > div:nth-child(1) > p {
           margin: 10px 0 0 0;
           margin-bottom: 0.5vw; }
 
+main section.nu__team,
 div.main section.nu__team {
   width: 50vw; }
+  main section.nu__team > article,
   div.main section.nu__team > article {
     clear: both;
     margin: 0 auto 0 auto;
     overflow: hidden; }
+    main section.nu__team > article > div,
     div.main section.nu__team > article > div {
       position: relative; }
+      main section.nu__team > article > div:nth-child(1),
       div.main section.nu__team > article > div:nth-child(1) {
         float: left;
         width: 34vw;
         margin-right: 2vw; }
+        main section.nu__team > article > div:nth-child(1) > p.nametitle,
         div.main section.nu__team > article > div:nth-child(1) > p.nametitle {
           margin-bottom: 0.5vw; }
+        main section.nu__team > article > div:nth-child(1) > p.contact > a,
         div.main section.nu__team > article > div:nth-child(1) > p.contact > a {
           line-height: 4rem;
           border: none;
           position: relative;
           padding: 0 0 0 25px;
           overflow: hidden; }
+          main section.nu__team > article > div:nth-child(1) > p.contact > a > span,
           div.main section.nu__team > article > div:nth-child(1) > p.contact > a > span {
             position: absolute;
             left: 0;
             top: 8px;
             line-height: 10px;
             color: rgba(0, 0, 0, 0.8); }
+          main section.nu__team > article > div:nth-child(1) > p.contact > a:hover,
           div.main section.nu__team > article > div:nth-child(1) > p.contact > a:hover {
             color: black;
             border-bottom: solid #cc0000 2px; }
+            main section.nu__team > article > div:nth-child(1) > p.contact > a:hover > span,
             div.main section.nu__team > article > div:nth-child(1) > p.contact > a:hover > span {
               color: black; }
+      main section.nu__team > article > div:nth-child(2),
       div.main section.nu__team > article > div:nth-child(2) {
         float: right;
         width: 14vw; }
+        main section.nu__team > article > div:nth-child(2) > div,
         div.main section.nu__team > article > div:nth-child(2) > div {
           width: 100%;
           height: 14vw;
@@ -2456,29 +2502,37 @@ div.main section.nu__team {
           background-position: center center !important;
           background-repeat: no-repeat !important;
           background-size: cover !important; }
+        main section.nu__team > article > div:nth-child(2) > p,
         div.main section.nu__team > article > div:nth-child(2) > p {
           line-height: 2.2rem;
           margin: 10px 0 0 0;
           margin-bottom: 0.5vw; }
+          main section.nu__team > article > div:nth-child(2) > p > span,
           div.main section.nu__team > article > div:nth-child(2) > p > span {
             line-height: 2.2rem; }
 
+main section.nu__team-list,
 div.main section.nu__team-list {
   width: 94vw; }
+  main section.nu__team-list > h3,
   div.main section.nu__team-list > h3 {
     margin: 2vw auto 2vw auto; }
+  main section.nu__team-list > ul,
   div.main section.nu__team-list > ul {
     width: 94vw;
     margin: 0 auto 0 auto;
     flex-direction: row;
     flex-wrap: wrap; }
+    main section.nu__team-list > ul > li,
     div.main section.nu__team-list > ul > li {
       width: 14vw;
       flex-basis: 14vw;
       margin: 0 2vw 2vw 0;
       flex-grow: 0; }
+      main section.nu__team-list > ul > li:nth-child(6n+6),
       div.main section.nu__team-list > ul > li:nth-child(6n+6) {
         margin: 0 0 2vw 0; }
+      main section.nu__team-list > ul > li > div,
       div.main section.nu__team-list > ul > li > div {
         height: 14vw;
         width: 14vw;
@@ -2486,167 +2540,230 @@ div.main section.nu__team-list {
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important; }
+      main section.nu__team-list > ul > li > p,
       div.main section.nu__team-list > ul > li > p {
         width: 14vw;
         line-height: 2.2rem;
         margin: 10px 0 0 0;
         margin-bottom: 0.5vw; }
+        main section.nu__team-list > ul > li > p > span,
         div.main section.nu__team-list > ul > li > p > span {
           line-height: 2.2rem; }
 
 @media only screen and (max-width: 1400px) {
+  main section.nu__filters > ul,
   div.main section.nu__filters > ul {
     width: 94vw;
     margin: 1vw auto 0 auto; } }
 
 @media only screen and (max-width: 1280px) {
+  main section.nu__team,
   div.main section.nu__team {
     width: 50vw; } }
 
 @media only screen and (max-width: 959px) {
+  main section.nu__president,
   div.main section.nu__president {
     width: 80vw; }
+    main section.nu__president > div,
     div.main section.nu__president > div {
       min-height: 300px; }
+  main section.nu__slt,
   div.main section.nu__slt {
     width: 80vw; }
+    main section.nu__slt > article,
     div.main section.nu__slt > article {
       margin: 0 auto 2vw auto; }
+      main section.nu__slt > article > div:nth-child(2),
       div.main section.nu__slt > article > div:nth-child(2) {
         width: 48vw; }
+      main section.nu__slt > article > div:nth-child(1),
       div.main section.nu__slt > article > div:nth-child(1) {
         width: 30vw; }
+        main section.nu__slt > article > div:nth-child(1) > div,
         div.main section.nu__slt > article > div:nth-child(1) > div {
           height: 30vw; }
+  main section.nu__team,
   div.main section.nu__team {
     width: 80vw; }
+    main section.nu__team > article,
     div.main section.nu__team > article {
       margin: 0 auto 0 auto; }
+      main section.nu__team > article > div:nth-child(1),
       div.main section.nu__team > article > div:nth-child(1) {
         width: 48vw; }
+      main section.nu__team > article > div:nth-child(2),
       div.main section.nu__team > article > div:nth-child(2) {
         width: 30vw; }
+        main section.nu__team > article > div:nth-child(2) > div,
         div.main section.nu__team > article > div:nth-child(2) > div {
           height: 30vw; }
+  main section.nu__team-list > ul > li,
   div.main section.nu__team-list > ul > li {
     width: 22vw;
     flex-basis: 22vw; }
+    main section.nu__team-list > ul > li:nth-child(4n+4),
     div.main section.nu__team-list > ul > li:nth-child(4n+4) {
       margin: 0 0 2vw 0; }
+    main section.nu__team-list > ul > li:nth-child(6n+6),
     div.main section.nu__team-list > ul > li:nth-child(6n+6) {
       margin: 0 2vw 2vw 0; }
+    main section.nu__team-list > ul > li > div,
     div.main section.nu__team-list > ul > li > div {
       height: 22vw;
       width: 22vw; }
+    main section.nu__team-list > ul > li > p,
     div.main section.nu__team-list > ul > li > p {
       width: 22vw; } }
 
 @media only screen and (max-width: 700px) {
+  main section.nu__president,
   div.main section.nu__president {
     width: 100vw; }
+    main section.nu__president > div,
     div.main section.nu__president > div {
       float: none;
       width: 100%;
       min-height: 300px; }
+      main section.nu__president > div:nth-child(2),
       div.main section.nu__president > div:nth-child(2) {
         width: 92vw;
         margin: 0 auto 0 auto; }
+        main section.nu__president > div:nth-child(2) > h3,
         div.main section.nu__president > div:nth-child(2) > h3 {
           margin: 1vw 0 0.5vw 0; }
+      main section.nu__president > div:nth-child(1) > p,
       div.main section.nu__president > div:nth-child(1) > p {
         left: 15px;
         bottom: 15px; }
+  main section.nu__slt,
   div.main section.nu__slt {
     width: 92vw; }
+    main section.nu__slt > article,
     div.main section.nu__slt > article {
       margin: 0 auto 2vw auto; }
+      main section.nu__slt > article > div:nth-child(2),
       div.main section.nu__slt > article > div:nth-child(2) {
         width: 68vw; }
+      main section.nu__slt > article > div:nth-child(1),
       div.main section.nu__slt > article > div:nth-child(1) {
         width: 22vw; }
+        main section.nu__slt > article > div:nth-child(1) > div,
         div.main section.nu__slt > article > div:nth-child(1) > div {
           height: 22vw; }
+  main section.nu__team,
   div.main section.nu__team {
     width: 94vw; }
+    main section.nu__team > article > div:nth-child(1),
     div.main section.nu__team > article > div:nth-child(1) {
       width: 62vw; }
+  main section.nu__team-list > ul > li,
   div.main section.nu__team-list > ul > li {
     width: 30vw;
     flex-basis: 30vw; }
+    main section.nu__team-list > ul > li:nth-child(3n+3),
     div.main section.nu__team-list > ul > li:nth-child(3n+3) {
       margin: 0 0 2vw 0; }
+    main section.nu__team-list > ul > li:nth-child(4n+4),
     div.main section.nu__team-list > ul > li:nth-child(4n+4) {
       margin: 0 2vw 2vw 0; }
+    main section.nu__team-list > ul > li > div,
     div.main section.nu__team-list > ul > li > div {
       height: 30vw;
       width: 30vw; }
+    main section.nu__team-list > ul > li > p,
     div.main section.nu__team-list > ul > li > p {
       width: 30vw; } }
 
 @media only screen and (max-width: 620px) {
+  main section.nu__filters,
   div.main section.nu__filters {
     overflow: visible; }
+    main section.nu__filters > input[type=checkbox],
     div.main section.nu__filters > input[type=checkbox] {
       display: block; }
+      main section.nu__filters > input[type=checkbox]:checked,
       div.main section.nu__filters > input[type=checkbox]:checked {
         display: none; }
+        main section.nu__filters > input[type=checkbox]:checked + div > ul,
         div.main section.nu__filters > input[type=checkbox]:checked + div > ul {
           height: auto; }
+          main section.nu__filters > input[type=checkbox]:checked + div > ul > li > a,
           div.main section.nu__filters > input[type=checkbox]:checked + div > ul > li > a {
             display: block; }
+    main section.nu__filters > div,
     div.main section.nu__filters > div {
       display: block; }
+    main section.nu__filters > div > ul,
     div.main section.nu__filters > div > ul {
       margin: 10px auto 0 auto;
       border-bottom: none;
       display: block;
       height: 85px;
       overflow: hidden; }
+      main section.nu__filters > div > ul > li,
       div.main section.nu__filters > div > ul > li {
         flex: none; }
+        main section.nu__filters > div > ul > li > a,
         div.main section.nu__filters > div > ul > li > a {
           display: none;
           text-align: center; }
+          main section.nu__filters > div > ul > li > a.active,
           div.main section.nu__filters > div > ul > li > a.active {
             display: block; }
+            main section.nu__filters > div > ul > li > a.active > span,
             div.main section.nu__filters > div > ul > li > a.active > span {
               display: inline-block; }
+          main section.nu__filters > div > ul > li > a:hover:not(.active),
           div.main section.nu__filters > div > ul > li > a:hover:not(.active) {
             color: black;
             border-bottom: none; } }
 
 @media only screen and (max-width: 500px) {
+  main section.nu__slt,
   div.main section.nu__slt {
     width: 92vw; }
+    main section.nu__slt > article,
     div.main section.nu__slt > article {
       margin: 0 auto 2vw auto; }
+      main section.nu__slt > article > div:nth-child(2),
       div.main section.nu__slt > article > div:nth-child(2) {
         float: none;
         width: 100%; }
+      main section.nu__slt > article > div:nth-child(1),
       div.main section.nu__slt > article > div:nth-child(1) {
         float: none;
         width: 100%; }
+        main section.nu__slt > article > div:nth-child(1) > div,
         div.main section.nu__slt > article > div:nth-child(1) > div {
           height: 300px; }
+  main section.nu__team > article,
   div.main section.nu__team > article {
     margin: 0 auto 2vw auto; }
+    main section.nu__team > article > div,
     div.main section.nu__team > article > div {
       float: none; }
+      main section.nu__team > article > div:nth-child(2),
       div.main section.nu__team > article > div:nth-child(2) {
         width: 100%; }
+        main section.nu__team > article > div:nth-child(2) > div,
         div.main section.nu__team > article > div:nth-child(2) > div {
           width: 48vw;
           margin: 0 3vw 15px 0;
           height: 48vw;
           float: left; }
+        main section.nu__team > article > div:nth-child(2) > p,
         div.main section.nu__team > article > div:nth-child(2) > p {
           float: left;
           width: 40vw; }
+      main section.nu__team > article > div:nth-child(1),
       div.main section.nu__team > article > div:nth-child(1) {
         width: 100%;
         margin: 0 auto 15px auto; }
+  main section.nu__team-list > ul,
   div.main section.nu__team-list > ul {
     display: block; }
+    main section.nu__team-list > ul > li,
     div.main section.nu__team-list > ul > li {
       clear: both;
       overflow: hidden;
@@ -2654,19 +2771,25 @@ div.main section.nu__team-list {
       width: 100%;
       flex-basis: 0;
       margin: 0 0 15px 0; }
+      main section.nu__team-list > ul > li:nth-child(2n+2),
       div.main section.nu__team-list > ul > li:nth-child(2n+2) {
         margin: 0 0 15px 0; }
+      main section.nu__team-list > ul > li:nth-child(3n+3),
       div.main section.nu__team-list > ul > li:nth-child(3n+3) {
         margin: 0 0 15px 0; }
+      main section.nu__team-list > ul > li:nth-child(4n+4),
       div.main section.nu__team-list > ul > li:nth-child(4n+4) {
         margin: 0 0 15px 0; }
+      main section.nu__team-list > ul > li:nth-child(6n+6),
       div.main section.nu__team-list > ul > li:nth-child(6n+6) {
         margin: 0 0 15px 0; }
+      main section.nu__team-list > ul > li > div,
       div.main section.nu__team-list > ul > li > div {
         float: left;
         height: 48vw;
         width: 48vw;
         margin: 0 3vw 0 0; }
+      main section.nu__team-list > ul > li > p,
       div.main section.nu__team-list > ul > li > p {
         float: left;
         width: 40vw; } }

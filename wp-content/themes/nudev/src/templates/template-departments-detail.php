@@ -55,12 +55,12 @@
         <?php 
             echo $content_department;
          ?>
-        <div class="main">
+        <!-- <div class="main"> -->
             <?php 
                 $filter = get_query_var('department');
                 include locate_template('loops/loop-staff.php');
              ?>
-        </div>
+        <!-- </div> -->
     </section>
 
     <section>
@@ -77,7 +77,7 @@
          ?>
     </section>
 
-    <section>
+    <section class="tasks">
         <h1>Tasks</h1>
         <?php 
             include(locate_template('loops/reusable/loop-tasks.php'));

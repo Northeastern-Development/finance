@@ -86,6 +86,10 @@ class SetupTheme
         if( is_page_template('templates/template-forms.php') ){
             wp_enqueue_style('forms-page', get_template_directory_uri() . '/css/conditionals/css/forms-page.css', array('theme'), '1.0.0');
         }
+        // Departments Index/Detail Pages
+        if( is_page_template('templates/template-departments-detail.php') || is_page_template('templates/template-departments-index.php') ){
+            wp_enqueue_style('departments', get_template_directory_uri() . '/css/conditionals/css/departments.css', array('theme'), '1.0.0');
+        }
     }
 }
 new SetupTheme();
