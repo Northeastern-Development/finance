@@ -4,15 +4,24 @@
  */  
     get_header();
  ?>
-<main role="main" >
-<section>
+<main>
+    <?php 
+    // get hero space if enabled
+        $fields = get_fields($post_id);
+        if( $fields['use_hero'] == '1' ){
+            include(locate_template('includes/pagehero.php'));
+        }
+    ?>
+    
+    <section>
+        
+        <ul class="newsandevents">
+            <?php 
+                include(locate_template('loops/loop-news-archive-refactored.php'));
+            ?>
+        </ul>
 
-    <ul class="newsandevents">
-        <?php 
-            include(locate_template('loops/loop-news-archive-refactored.php'));
-         ?>
-    </ul>
-</section>
+    </section>
 </main>
 <?php 
     get_footer();

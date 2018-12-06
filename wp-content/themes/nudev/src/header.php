@@ -53,7 +53,7 @@
                 if(function_exists("NUML_globalheader")){ NUML_globalheader(); }
                 // then the siteheader
          ?>
-            <?php if(function_exists("NUML_globalheader")){NUML_globalheader();} ?><header class="header clear" role="banner">
+            <header class="header clear" role="banner">
 				<div id="header">
 					<?php require_once(dirname(__FILE__)."/includes/navigation.php"); ?>
 				</div>

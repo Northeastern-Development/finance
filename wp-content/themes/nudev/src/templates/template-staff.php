@@ -13,7 +13,13 @@
 ?>
 	<div class="main" role="main" aria-label="content">
 
-		<?php include(locate_template('/includes/pagehero.php')); ?>
+        <?php 
+            // get hero space if enabled
+            $fields = get_fields($post_id);
+            if( $fields['use_hero'] == '1' ){
+                include(locate_template('includes/pagehero.php'));
+            }
+         ?>
 
 		<?php include(locate_template('loops/loop-staff-president.php')); ?>
 
