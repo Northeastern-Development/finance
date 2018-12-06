@@ -1,3 +1,4 @@
+@import '../../sass/base/mixins.scss';
 @media only screen {
 
 
@@ -19,14 +20,12 @@
 
     main section.tasks {
         > ul{
-            flex-flow: row wrap;
-            > h2 {
-                width: 100%;
-            }
-            li {
-                width: auto;
-                flex: 1 0 100%;
-            }
+            @include ul_grid_cols(1);
+        }
+    }
+    main section.tools {
+        > ul {
+            @include ul_grid_cols(1);
         }
     }
 

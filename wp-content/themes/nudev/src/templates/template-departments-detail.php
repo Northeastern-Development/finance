@@ -70,7 +70,7 @@
          ?>
     </section>
 
-    <section>
+    <section class="tools">
         <h1>Tools</h1>
         <?php 
             include(locate_template('loops/reusable/loop-tools.php'));

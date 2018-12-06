@@ -1,11 +1,16 @@
+/**
+ * modules/mixins
+ * ---
+ */
 @media only screen {
   main section.nu__team-list,
   main section.nu__team {
     width: 100%; }
   main section.tasks > ul {
     flex-flow: row wrap; }
-    main section.tasks > ul > h2 {
-      width: 100%; }
     main section.tasks > ul li {
-      width: auto;
-      flex: 1 0 100%; } }
+      flex: 1 0 calc(100% / 1); }
+  main section.tools > ul {
+    flex-flow: row wrap; }
+    main section.tools > ul li {
+      flex: 1 0 calc(100% / 1); } }
