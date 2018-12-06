@@ -622,6 +622,36 @@
 		"oAP": "/comments.php",
 		"oF": 0
 		},
+	"/css/conditionals/css/departments.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/departments-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/conditionals/css/discounts.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/discounts-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/conditionals/css/financial-statements.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/financial-statements-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/conditionals/css/forms-page.css": {
 		"aP": 1,
 		"bl": 0,
@@ -662,6 +692,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/conditionals/css/news-events.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/news-events-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/conditionals/css/tasks.css": {
 		"aP": 1,
 		"bl": 0,
@@ -691,6 +731,32 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/conditionals/css/departments.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/conditionals/sass/discounts.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/discounts.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/conditionals/sass/financial-statements.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/financial-statements.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -743,6 +809,19 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/conditionals/css/homepage.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/conditionals/sass/news-events.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/conditionals/css/news-events.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -971,19 +1050,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/partials/nav.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/sass/partials/old.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/partials/old.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2051,6 +2117,13 @@
 		"oAP": "/loops/__OLD/loop-homepage.php",
 		"oF": 0
 		},
+	"/loops/__OLD/loop-news-archive.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/__OLD/loop-news-archive.php",
+		"oF": 0
+		},
 	"/loops/__OLD/loop-picks.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2086,11 +2159,11 @@
 		"oAP": "/loops/__OLD/loop-staff.php.disabled",
 		"oF": 0
 		},
-	"/loops/loop-careers.php": {
+	"/loops/__OLD/loop.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/loops/loop-careers.php",
+		"oAP": "/loops/__OLD/loop.php",
 		"oF": 0
 		},
 	"/loops/loop-deadlines.php": {
@@ -2119,20 +2192,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-news-archive-refactored.php",
-		"oF": 0
-		},
-	"/loops/loop-news-archive.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-news-archive.php",
-		"oF": 0
-		},
-	"/loops/loop-newsandevents.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-newsandevents.php",
 		"oF": 0
 		},
 	"/loops/loop-staff-departmenthead.php": {
@@ -2189,13 +2248,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-tools-item.php",
-		"oF": 0
-		},
-	"/loops/loop.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop.php",
 		"oF": 0
 		},
 	"/loops/reusable/loop-faqs.php": {
@@ -2310,11 +2362,60 @@
 		"oAP": "/templates/__OLD/template-convening.php.disabled",
 		"oF": 0
 		},
+	"/templates/__OLD/template-default.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-default.php",
+		"oF": 0
+		},
+	"/templates/__OLD/template-employment.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-employment.php",
+		"oF": 0
+		},
+	"/templates/__OLD/template-employmentfulltime.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-employmentfulltime.php",
+		"oF": 0
+		},
+	"/templates/__OLD/template-employmentparttime.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-employmentparttime.php",
+		"oF": 0
+		},
+	"/templates/__OLD/template-employmentprofessional.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-employmentprofessional.php",
+		"oF": 0
+		},
+	"/templates/__OLD/template-form.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-form.php",
+		"oF": 0
+		},
 	"/templates/__OLD/template-homepage.php.disabled": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/__OLD/template-homepage.php.disabled",
+		"oF": 0
+		},
+	"/templates/__OLD/template-location.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/__OLD/template-location.php",
 		"oF": 0
 		},
 	"/templates/__OLD/template-news-archive.php.disabled": {
@@ -2345,13 +2446,6 @@
 		"oAP": "/templates/__OLD/template-staff.php.disabled",
 		"oF": 0
 		},
-	"/templates/template-default.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-default.php",
-		"oF": 0
-		},
 	"/templates/template-departments-detail.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2373,46 +2467,11 @@
 		"oAP": "/templates/template-discounts.php",
 		"oF": 0
 		},
-	"/templates/template-employment.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-employment.php",
-		"oF": 0
-		},
-	"/templates/template-employmentfulltime.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-employmentfulltime.php",
-		"oF": 0
-		},
-	"/templates/template-employmentparttime.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-employmentparttime.php",
-		"oF": 0
-		},
-	"/templates/template-employmentprofessional.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-employmentprofessional.php",
-		"oF": 0
-		},
 	"/templates/template-financial_statements.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-financial_statements.php",
-		"oF": 0
-		},
-	"/templates/template-form.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-form.php",
 		"oF": 0
 		},
 	"/templates/template-forms.php": {
@@ -2436,13 +2495,6 @@
 		"oAP": "/templates/template-homepage.php",
 		"oF": 0
 		},
-	"/templates/template-location.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-location.php",
-		"oF": 0
-		},
 	"/templates/template-newsandevents-index.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2455,6 +2507,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-newsandevents-item.php",
+		"oF": 0
+		},
+	"/templates/template-page-hero-config.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-page-hero-config.php",
 		"oF": 0
 		},
 	"/templates/template-staff-bio.php": {

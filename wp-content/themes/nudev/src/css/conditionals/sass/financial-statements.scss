@@ -1,0 +1,23 @@
+@media only screen {
+
+
+
+    @import '../../sass/base/vars.scss';
+    @import '../../sass/base/mixins.scss';
+
+    
+    main#financialstatements {
+        > section:nth-child(2) > ul {
+            @include ul_grid_cols(1);
+
+            li {
+                border-bottom: 1px solid $brand_colors-black;
+                padding: 10px 0;
+                padding-left: 20px;
+            }
+        }
+    }
+    
+    
+    
+}

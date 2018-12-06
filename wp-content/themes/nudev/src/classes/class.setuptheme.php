@@ -90,6 +90,18 @@ class SetupTheme
         if( is_page_template('templates/template-departments-detail.php') || is_page_template('templates/template-departments-index.php') ){
             wp_enqueue_style('departments', get_template_directory_uri() . '/css/conditionals/css/departments.css', array('theme'), '1.0.0');
         }
+        // News and Events Page
+        if( is_page_template('templates/template-newsandevents-index.php') ){
+            wp_enqueue_style('newsevents', get_template_directory_uri() . '/css/conditionals/css/news-events.css', array('theme'), '1.0.0');
+        }
+        // Discounts
+        if( is_page_template('templates/template-discounts.php') ){
+            wp_enqueue_style('discounts', get_template_directory_uri() . '/css/conditionals/css/discounts.css', array('theme'), '1.0.0');
+        }
+        // Financial Statements
+        if( is_page_template('templates/template-financial_statements.php') ){
+            wp_enqueue_style('financialstatements', get_template_directory_uri() . '/css/conditionals/css/financial-statements.css', array('theme'), '1.0.0');
+        }
     }
 }
 new SetupTheme();

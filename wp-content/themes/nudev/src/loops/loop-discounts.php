@@ -31,7 +31,7 @@ $args = array(
 $discounts = get_posts($args);
 
 $content = '';
-$catsguide = '<h1>%s</h1><ul class="js__collapsible_list">';
+$catsguide = '<h2>%s</h2><ul class="js__collapsible_list discounts">';
 $itemsguide = '<li><h5>%s</h5><div>%s</div></li>';
 // For Each Active Category,
 foreach( $categories as $category ){

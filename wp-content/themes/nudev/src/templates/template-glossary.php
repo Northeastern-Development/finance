@@ -66,6 +66,17 @@
     $contents .= '</div>';
  ?>
 <main role="main">
+
+    <?php 
+        // get hero space if enabled
+        $fields = get_fields($post_id);
+        if( $fields['use_hero'] == '1' ){
+            include(locate_template('includes/pagehero.php'));
+        }
+     ?>
+
+
+    
     <section id="glossary">
       <?php echo $jumpnav; ?>
       <?php echo $contents; ?>

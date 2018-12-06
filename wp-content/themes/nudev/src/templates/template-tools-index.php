@@ -73,16 +73,15 @@
     get_header();
 ?>
 <main role="main">
+
     <?php 
         $fields = get_fields($post_id);
-        $format_hero = '<section class="hero"><h1>%s</h1><div>%s</div></section>';
-        $content_hero = sprintf(
-            $format_hero
-            ,$fields['title']
-            ,$fields['description']
-        );
-        echo $content_hero;
+        // get hero space if enabled
+        if( $fields['use_hero'] == '1' ){
+            include(locate_template('includes/pagehero.php'));
+        }
      ?>
+    
     
     <section class="fullwidth nobg">
         <?= $content ?>

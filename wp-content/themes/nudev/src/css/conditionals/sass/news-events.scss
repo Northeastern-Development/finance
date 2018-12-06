@@ -1,0 +1,16 @@
+@media only screen {
+
+    @import '../../sass/base/vars.scss';
+
+    ul.newsandevents {
+        flex-flow: row wrap;
+        > a {
+            flex: 1 0 100%;
+            margin-bottom: 20px;
+        }
+
+    }
+    
+    
+    
+}
