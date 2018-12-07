@@ -45,7 +45,6 @@
     $content_item = '';
     $format_item = '
         <div>
-            <h1>%s</h1>
             <p>Type: %s</p>
             <p>Category: %s</p>
             <p>Details: </p>
@@ -57,7 +56,6 @@
     ';
     $content_item .= sprintf(
         $format_item
-        ,$posts[0]->post_title
         ,$the_fields['type']
         ,$the_fields['category']->post_title
         ,str_replace( ['<p>', '</p>'], ['<span>', '</span>'], $the_fields['details'])
@@ -68,6 +66,15 @@
     get_header();
  ?>
  <main role="main">
+
+    <?php 
+        // get hero space if enabled
+        $fields = get_fields($post_id);
+        if( $fields['use_hero'] == '1' ){
+            include(locate_template('includes/pagehero.php'));
+        }
+    ?>
+     
      <section>
          <?php echo $content_item; ?>
      </section>

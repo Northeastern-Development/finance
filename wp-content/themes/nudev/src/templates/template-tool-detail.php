@@ -90,9 +90,15 @@
     get_header();
 ?>
 <main role="main">
-    <section class="hero">
-        <?php echo '<h1>'.$toolpost['post_title'].'</h1>'; ?>
-    </section>
+
+    <?php 
+        // get hero space if enabled
+        $base_title = $toolpost['post_title'];
+        $fields = get_fields($post_id);
+        if( $fields['use_hero'] == '1' ){
+            include(locate_template('includes/pagehero.php'));
+        }
+     ?>
 
     <section>
         <?php 

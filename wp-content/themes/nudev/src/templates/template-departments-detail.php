@@ -51,6 +51,16 @@
     get_header();
  ?>
 <main role="main">
+
+    <?php 
+        $fields = get_fields($post_id);
+        $base_title = $department[0]->post_title;
+        // get hero space if enabled
+        if( $fields['use_hero'] == '1' ){
+            include(locate_template('includes/pagehero.php'));
+        }
+     ?>
+    
     <section>
         <?php 
             echo $content_department;
