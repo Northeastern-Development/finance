@@ -2,6 +2,43 @@ var exceedsContainer = false;
 var Finance = {};
 (function($, root, undefined) {
   $(function() {
+
+
+
+
+
+    Finance.nav = {
+
+        wrapper : $('.neumenu-wrapper-inner'),
+
+        taskCats : $('.neumenu-wrapper-inner > div:not(:first-child) > div'),
+
+        toggler : $('.neumenu-wrapper-inner .removefilter'),
+
+        _init : function(){
+            // did click a category,
+            Finance.nav.taskCats.on('click', Finance.nav._filterTaskCats);
+            // did click 'back to topics'
+            Finance.nav.toggler.on('click', Finance.nav._unfilterTaskCats);
+        },
+        _unfilterTaskCats : function(e){
+
+            Finance.nav.wrapper.find('.theFilter').removeClass('theFilter');
+            Finance.nav.wrapper.removeClass('isFiltered');
+        },
+        _filterTaskCats : function(e){
+
+            Finance.nav.wrapper.addClass('isFiltered');
+            $(this).addClass('theFilter');
+        }
+        
+    }
+    Finance.nav._init();
+    
+    
+
+    
+    //  TRENTS NAV THING HERE
     (function ($) {
         $.fn.extend({
             "neumenu": function (parameters) {

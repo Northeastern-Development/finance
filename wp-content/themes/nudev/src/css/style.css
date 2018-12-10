@@ -924,6 +924,54 @@ header {
   .neu__active > a > span:after {
     color: #cc0000; }
 
+div.neumenu-wrapper#howdoi .neumenu-wrapper-inner {
+  display: flex;
+  flex-flow: row nowrap; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 15px; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child {
+    background-color: #04a4cc;
+    color: white;
+    width: 20%;
+    flex-flow: column nowrap; }
+    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child h3:not(:first-of-type) {
+      display: none; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:not(:first-child) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center; }
+    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:not(:first-child) > div {
+      cursor: pointer;
+      text-align: center; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div > div > ul {
+    list-style-type: none;
+    display: none; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner .removefilter {
+    border: 1px solid #fffffe;
+    padding: 5px 10px;
+    cursor: pointer; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner .taskicon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    object-fit: cover; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:first-child h3:not(:first-of-type) {
+    display: block; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:first-child h3:first-of-type {
+    display: none; }
+  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) {
+    justify-content: flex-start; }
+    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div:not(.theFilter) {
+      display: none; }
+    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul {
+      display: block; }
+    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) .taskicon {
+      display: none; }
+
 @media only screen and (max-width: 1100px) {
   #nu__main-nav-desktop {
     display: none; }
@@ -1051,7 +1099,8 @@ header {
     width: 20px; }
   #nav-btn + span {
     right: 0; }
-  #nav-btn, #nav-btn + span {
+  #nav-btn,
+  #nav-btn + span {
     display: block; }
   #nav-btn + label {
     height: 56px;
