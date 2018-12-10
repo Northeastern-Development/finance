@@ -14,6 +14,6 @@
 <span></span>
 
 <?php 
-    include(__DIR__ . '/partials/nav.mobile.php');
-    include(__DIR__ . '/partials/nav.desktop.php');
+    // include(__DIR__ . '/partials/nav.mobile.php');
+    include(__DIR__ . '/partials/nav.desktop_refactor.php');
  ?>

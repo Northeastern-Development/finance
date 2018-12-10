@@ -1724,6 +1724,13 @@
 		"oAP": "/includes/partials/nav.desktop.php",
 		"oF": 0
 		},
+	"/includes/partials/nav.desktop_refactor.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/partials/nav.desktop_refactor.php",
+		"oF": 0
+		},
 	"/includes/partials/nav.mobile.php": {
 		"cB": 0,
 		"ft": 8192,
