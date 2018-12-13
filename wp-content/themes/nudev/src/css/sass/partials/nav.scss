@@ -276,7 +276,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
 
 // CURRENT REFACTORING EDITS
-div.neumenu-wrapper#howdoi {
+// div.neumenu-wrapper#howdoi {
     .neumenu-wrapper-inner {
         display: flex;
         flex-flow: row nowrap;
@@ -291,6 +291,9 @@ div.neumenu-wrapper#howdoi {
             color: white;
             width: 20%;
             flex-flow: column nowrap;
+            h3 {
+                margin: 10px 0;
+            }
             h3:not(:first-of-type){
                 display: none;
             }
@@ -303,6 +306,9 @@ div.neumenu-wrapper#howdoi {
             > div {
                 cursor: pointer;
                 text-align: center;
+                h4 {
+                    @include font-1r-l;
+                }
             }
         }
         > div > div > ul {
@@ -315,6 +321,10 @@ div.neumenu-wrapper#howdoi {
             border: 1px solid $brand_colors-white;
             padding: 5px 10px;
             cursor: pointer;
+            &:hover {
+                color: $brand_colors-teal;
+                background-color: $brand_colors-white;
+            }
         }
 
         .taskicon {
@@ -336,18 +346,27 @@ div.neumenu-wrapper#howdoi {
         }
         &.isFiltered > div:not(:first-child){
             justify-content: flex-start;
+            align-items: flex-start;
             > div:not(.theFilter){
                 display: none;
             }
             > div.theFilter > ul {
-                display: block;
+                display: flex;
+                flex-flow: row wrap;
+                li {
+                    flex: 1 0 auto;
+                    width: calc(33% - 15px);
+                    text-align: left;
+                    margin-right: 15px;
+                    margin-bottom: 15px;
+                }
             }
             .taskicon {
                 display: none;
             }
         }
     }
-}
+// }
 
 
 

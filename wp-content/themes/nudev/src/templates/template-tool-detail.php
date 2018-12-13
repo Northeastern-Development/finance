@@ -3,17 +3,6 @@
  * Template Name: Tool Detail
  * 
  */
-    function seoUrl($string) {
-        //Lower case everything
-        $string = strtolower($string);
-        //Make alphanumeric (removes all other characters)
-        $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
-        //Clean up multiple dashes or whitespaces
-        $string = preg_replace("/[\s-]+/", " ", $string);
-        //Convert whitespaces and underscore to dash
-        $string = preg_replace("/[\s_]/", "-", $string);
-        return $string;
-    }
     
     $toolgrouping = get_query_var('toolgroup');
     $toolname = get_query_var('toolname');
@@ -60,29 +49,30 @@
 
     $infoblock_guide = '<li><h5>%s</h5><div>%s</div></li>';
 
+    if( !empty($currentGrouping['group']) ){
+        foreach( $currentGrouping['group'] as $group ){
 
-    foreach( $currentGrouping['group'] as $group ){
+            $infoblock_string = '';
+            foreach( $group['information_blocks'] as $infoblock ){
+                if( $infoblock['status'] == 1){
+                    $infoblock_string .= sprintf(
+                        $infoblock_guide
+                        ,$infoblock['title']
+                        ,$infoblock['description']
+                    );
+                }
+            }
 
-        $infoblock_string = '';
-        foreach( $group['information_blocks'] as $infoblock ){
-            if( $infoblock['status'] == 1){
-                $infoblock_string .= sprintf(
-                    $infoblock_guide
-                    ,$infoblock['title']
-                    ,$infoblock['description']
+            if($group['status'] == 1){
+                $groupContent .= sprintf(
+                    $groupContent_guide
+                    ,$group['title']
+                    ,$infoblock_string
                 );
             }
+
+
         }
-
-        if($group['status'] == 1){
-            $groupContent .= sprintf(
-                $groupContent_guide
-                ,$group['title']
-                ,$infoblock_string
-            );
-        }
-
-
     }
     $groupContent .= '</div>';
 

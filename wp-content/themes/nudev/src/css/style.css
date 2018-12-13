@@ -378,11 +378,6 @@ input[type="search"] {
   color: white;
   text-shadow: none; }
 
-/**
-*   site-wide basic styles
-*   clean, DRY, markup-dependent
-*   be careful in templates to adhere to the element structure and hierarchy established here ( expounded in comments )
-*/
 @media only screen {
   div#nu__globalheader {
     width: 100%; }
@@ -391,7 +386,7 @@ input[type="search"] {
     max-width: 100vw;
     max-width: 100%;
     width: 100%;
-    margin-top: 125px; }
+    margin-top: 124px; }
   main,
   div.main {
     margin: 0 auto;
@@ -555,41 +550,50 @@ input[type="search"] {
     margin: 0 10vw; } }
 
 @media only screen {
-  div.main > section.nobg,
-  main > section.nobg {
-    background: none; }
-  div.main ul.list,
-  main ul.list {
-    flex-flow: row wrap; }
-    div.main ul.list li,
-    main ul.list li {
-      flex: 1 0 100%; }
-  div.main ul.cols-2,
-  main ul.cols-2 {
-    flex-flow: row wrap; }
-    div.main ul.cols-2 li,
-    main ul.cols-2 li {
-      flex: 1 0 50%;
-      margin: 0 auto; }
-  div.main > section > ul.nufin-faqs,
-  main > section > ul.nufin-faqs {
-    list-style-type: none;
-    margin: 0; }
-    div.main > section > ul.nufin-faqs h2,
-    main > section > ul.nufin-faqs h2 {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 300;
-      line-height: 48px;
-      text-align: center; }
-    div.main > section > ul.nufin-faqs li,
-    main > section > ul.nufin-faqs li {
-      padding: 10px 0;
-      border-bottom: 1px solid black; }
-  div.main section.hero.hero-image,
-  main section.hero.hero-image {
-    background-size: cover;
-    background-position: center; } }
+  div.main,
+  main {
+    width: 100%; }
+    div.main > section.hero,
+    main > section.hero {
+      width: 100%; }
+    div.main > section.nobg,
+    main > section.nobg {
+      background: none; }
+    div.main ul.list,
+    main ul.list {
+      flex-flow: row wrap; }
+      div.main ul.list li,
+      main ul.list li {
+        flex: 1 0 100%; }
+    div.main ul.cols-2,
+    main ul.cols-2 {
+      flex-flow: row wrap; }
+      div.main ul.cols-2 li,
+      main ul.cols-2 li {
+        flex: 1 0 50%;
+        margin: 0 auto; }
+    div.main > section > ul.nufin-faqs,
+    main > section > ul.nufin-faqs {
+      list-style-type: none;
+      margin: 0; }
+      div.main > section > ul.nufin-faqs h2,
+      main > section > ul.nufin-faqs h2 {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 48px;
+        text-align: center; }
+      div.main > section > ul.nufin-faqs li,
+      main > section > ul.nufin-faqs li {
+        padding: 10px 0;
+        border-bottom: 1px solid black; }
+    div.main section.fullwidth,
+    main section.fullwidth {
+      width: 100%; }
+    div.main section.hero.hero-image,
+    main section.hero.hero-image {
+      background-size: cover;
+      background-position: center; } }
 
 @media only screen {
   /* Shutter Out Horizontal */
@@ -728,19 +732,18 @@ input[type="search"] {
       overflow: hidden; } }
 
 /**
- * partials/header
- * ---
+ * 
  */
 header {
-  -moz-box-flex: 0;
-  background: white none repeat scroll 0 0;
-  flex: 0 0 auto;
   height: 80px;
-  left: 0;
+  width: 100%;
   position: fixed;
+  left: 0;
   top: 44px;
-  width: 100vw;
-  z-index: 1000; }
+  flex: 0 0 auto;
+  z-index: 1000;
+  background: white none repeat scroll 0 0;
+  -moz-box-flex: 0; }
   header div#header {
     height: 80px;
     text-align: left;
@@ -752,9 +755,11 @@ header {
     margin: 0 auto;
     position: relative;
     border-bottom: 1px solid #979797; }
-    header div#header .logo svg {
-      height: 80px;
-      max-width: 280px; }
+    header div#header .logo {
+      height: 100%; }
+      header div#header .logo svg {
+        height: 100%;
+        max-width: 280px; }
 
 /**
  * partials/nav
@@ -924,52 +929,70 @@ header {
   .neu__active > a > span:after {
     color: #cc0000; }
 
-div.neumenu-wrapper#howdoi .neumenu-wrapper-inner {
+.neumenu-wrapper-inner {
   display: flex;
   flex-flow: row nowrap; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div {
+  .neumenu-wrapper-inner > div {
     width: 80%;
     display: flex;
     flex-flow: row nowrap;
     padding: 15px; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child {
+  .neumenu-wrapper-inner > div:first-child {
     background-color: #04a4cc;
     color: white;
     width: 20%;
     flex-flow: column nowrap; }
-    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child h3:not(:first-of-type) {
+    .neumenu-wrapper-inner > div:first-child h3 {
+      margin: 10px 0; }
+    .neumenu-wrapper-inner > div:first-child h3:not(:first-of-type) {
       display: none; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:not(:first-child) {
+  .neumenu-wrapper-inner > div:not(:first-child) {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center; }
-    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:not(:first-child) > div {
+    .neumenu-wrapper-inner > div:not(:first-child) > div {
       cursor: pointer;
       text-align: center; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner > div > div > ul {
+      .neumenu-wrapper-inner > div:not(:first-child) > div h4 {
+        font-size: 14px;
+        color: #979797;
+        line-height: 28px;
+        text-align: left; }
+  .neumenu-wrapper-inner > div > div > ul {
     list-style-type: none;
     display: none; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner .removefilter {
+  .neumenu-wrapper-inner .removefilter {
     border: 1px solid #fffffe;
     padding: 5px 10px;
     cursor: pointer; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner .taskicon {
+    .neumenu-wrapper-inner .removefilter:hover {
+      color: #04a4cc;
+      background-color: #fffffe; }
+  .neumenu-wrapper-inner .taskicon {
     width: 32px;
     height: 32px;
     display: inline-block;
     object-fit: cover; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:first-child h3:not(:first-of-type) {
+  .neumenu-wrapper-inner.isFiltered > div:first-child h3:not(:first-of-type) {
     display: block; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:first-child h3:first-of-type {
+  .neumenu-wrapper-inner.isFiltered > div:first-child h3:first-of-type {
     display: none; }
-  div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) {
-    justify-content: flex-start; }
-    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div:not(.theFilter) {
+  .neumenu-wrapper-inner.isFiltered > div:not(:first-child) {
+    justify-content: flex-start;
+    align-items: flex-start; }
+    .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div:not(.theFilter) {
       display: none; }
-    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul {
-      display: block; }
-    div.neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) .taskicon {
+    .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul {
+      display: flex;
+      flex-flow: row wrap; }
+      .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li {
+        flex: 1 0 auto;
+        width: calc(33% - 15px);
+        text-align: left;
+        margin-right: 15px;
+        margin-bottom: 15px; }
+    .neumenu-wrapper-inner.isFiltered > div:not(:first-child) .taskicon {
       display: none; }
 
 @media only screen and (max-width: 1100px) {
@@ -1150,19 +1173,28 @@ footer {
     padding: 20px 0 20px 0;
     height: auto; }
     footer > div#sitefooter > div {
-      width: 80vw;
-      margin: 0 14.5vw 0 14.5vw;
+      width: 100%;
+      margin: 0 auto;
       position: relative; }
       footer > div#sitefooter > div > ul {
+        padding: 20px;
         list-style: none;
         list-style-type: none;
-        display: flex; }
+        display: flex;
+        border-bottom: 1px solid #979797; }
         footer > div#sitefooter > div > ul > li {
           flex-grow: 1;
           flex-basis: 0;
           font-size: 1.3rem; }
+          footer > div#sitefooter > div > ul > li h5 {
+            color: #979797; }
+          footer > div#sitefooter > div > ul > li > ul {
+            list-style-type: none; }
+          footer > div#sitefooter > div > ul > li:not(:first-child) {
+            flex-basis: 25%; }
           footer > div#sitefooter > div > ul > li:first-child {
-            overflow: hidden; }
+            overflow: hidden;
+            flex-basis: 50%; }
             footer > div#sitefooter > div > ul > li:first-child img {
               width: 200px;
               height: auto; }
@@ -1170,28 +1202,6 @@ footer {
               width: 220px; }
             footer > div#sitefooter > div > ul > li:first-child > a {
               font-size: 0; }
-          footer > div#sitefooter > div > ul > li > a {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 300; }
-            footer > div#sitefooter > div > ul > li > a.download {
-              border: solid white 1px;
-              background: black;
-              height: 50px;
-              line-height: 50px;
-              display: block;
-              color: white;
-              width: 180px;
-              text-transform: uppercase;
-              text-align: center;
-              letter-spacing: 1px; }
-            footer > div#sitefooter > div > ul > li > a:not(.download):hover {
-              color: red;
-              text-decoration: underline; }
-          footer > div#sitefooter > div > ul > li:not(.contact) > a {
-            text-transform: uppercase;
-            font-size: 1.6rem;
-            font-weight: 700; }
 
 @media only screen and (max-width: 1560px) {
   .nu__col-left {

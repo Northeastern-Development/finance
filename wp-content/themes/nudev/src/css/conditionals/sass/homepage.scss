@@ -1,7 +1,122 @@
+@import '../../sass/base/vars.scss';
 @media only screen {
 
 
+
+
+    // Deadlines Feature:
+    div.main,
+    main {
+
+        section.hero {
+            
+            div.home-deadlines {
+                width: 80%;
+                text-align: left;
+                ul.home-deadlines-items {
+                    justify-content: center;
+                    li {
+                        background-color: $brand_colors-white;
+                        color: $brand_colors-black;
+                        padding: 20px;
+                        margin-bottom: 0;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                h4 {
+                    padding: 5px 10px;
+                    display: inline-block;
+                    opacity: 0.5;
+                    background-color: $brand_colors-white;
+                    color: $brand_colors-black;
+                    text-transform: uppercase;
+                }
+                
+            } 
+            
+        }
+        
+    }
+        
+    
+    
+
+
     // code here
+        
     
-    
+    .neumenu-wrapper-inner > div:not(:first-child) {
+        // border-bottom: 1px solid $brand_colors-grayW;
+    }
+    .neumenu-wrapper-inner {
+        box-shadow: 2px 2px 2px #ccc;
+        
+    }
+
+    li[data-id="howdoi"] {
+        pointer-events: none;
+        > a {
+            pointer-events: none;
+        }
+    }
+
+    div.main,
+    main {
+        a.nu__content_btn {
+            display: inline-block;
+            border: 1px solid $brand_colors-black;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            &:hover {
+                border-bottom: 1px solid $brand_colors-black;
+            }
+        }
+
+        section.home-feat-tools,
+        section.home-feat-news {
+            padding: 0 20px;
+            margin-bottom: 30px;
+            > h1 {
+                
+            }
+            > div {
+                display: flex;
+                flex-flow: row nowrap;
+                
+                > div {
+                    flex: 1 0 auto;
+                    width: calc(33% - 20px);
+                    justify-content: space-around;
+                    align-items: center;
+                    p {
+                        text-align: left;
+                    }
+                    &:not(:last-child){
+                        margin-right: 30px;
+                    }
+                    img {
+                        height: auto;
+                        object-fit: cover;
+                        max-height: 120px;
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    section.hero {
+        a.nu__content_btn {
+            border: 1px solid $brand_colors-white;
+            color: $brand_colors-white;
+        }
+        > div:first-of-type{
+            text-align: center;
+        }
+    }
+        
 }

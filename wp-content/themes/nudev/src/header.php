@@ -50,10 +50,10 @@
             // header/footer disabled on staff-bio template
             if( !is_page_template('templates/template-staff-bio.php') ) :
                 // if enabled, include the globalheader
-                if(function_exists("NUML_globalheader")){ NUML_globalheader(); }
+                // if(function_exists("NUML_globalheader")){ NUML_globalheader(); }
                 // then the siteheader
          ?>
-        <header class="header clear" role="banner">
+        <?php if(function_exists("NUML_globalheader")){NUML_globalheader();} ?><header class="header clear" role="banner">
             <div id="header">
                 <?php require_once(dirname(__FILE__)."/includes/navigation.php"); ?>
             </div>

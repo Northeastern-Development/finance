@@ -1,57 +1,32 @@
 /**
- * partials/header
- * ---
+ * 
  */
-
-
-// Header container
 header {
-    -moz-box-flex: 0;
-    background: $white none repeat scroll 0 0;
-    flex: 0 0 auto;
     height: $headerHeight;
-    left: 0;
+    width: 100%;
     position: fixed;
-    top: 44px;
-    width: 100vw;
+    left: 0;
+    top: 44px; // ( globalheader should ALWAYS be enabled )
+    flex: 0 0 auto;
     z-index: 1000;
-
+    background: $white none repeat scroll 0 0;
+    -moz-box-flex: 0;
     div#header {
-        // // display: table;
-        // height: $headerHeight;
-        // // margin: 0 auto;
-        // max-width: $wrapper-width;
-        // overflow: hidden;
-        // width: 100%;
-
-        // overflow: hidden;
         height: $headerHeight;
         text-align: left;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        //   width: 97vw;
         width: 100%;
         padding: 0 1.5vw;
         margin: 0 auto;
         position: relative;
-        border-bottom: 1px solid $brand_colors-grayW; // do we really need this?
-
-        & .logo {
-
-            // display: table-cell;
-            // width: 50%;
-            // vertical-align: middle;
-            // display: table-cell;
-            // vertical-align: middle;
-            & svg {
-                height: 80px;
+        border-bottom: 1px solid $brand_colors-grayW;
+        .logo {
+            height: 100%;
+            svg {
+                height: 100%;
                 max-width: 280px;
-                //float: left;
-
-                //height:80px;
-                // max-width: 300px;
-                //width: 100%;
             }
         }
     }
