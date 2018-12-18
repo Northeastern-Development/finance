@@ -24,7 +24,7 @@
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>
-                <p>Learn More</p>
+                <i class="material-icons">arrow_forward</i><p>Learn More</p>
             </a>
         </li>
     ';

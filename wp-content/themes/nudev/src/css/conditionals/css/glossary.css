@@ -8,25 +8,28 @@
   /* These are variables for the header */
   /* These are variables for the main navigation */
   section#glossary div.glossary-jumpnav {
-    position: fixed;
-    top: 124px;
-    padding: 10px;
-    left: 50vw;
-    transform: translateX(-50%);
-    width: 50vw;
+    position: relative;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     background-color: #fffffe;
-    z-index: 10; }
+    z-index: 10;
+    padding: 10px 0; }
     section#glossary div.glossary-jumpnav span {
-      flex: 1 0 auto; }
+      text-align: center;
+      flex: 1 0 auto;
+      border-bottom: 2px solid #979797; }
+      section#glossary div.glossary-jumpnav span:hover {
+        border-bottom: 2px solid #cc0000; }
+    section#glossary div.glossary-jumpnav a {
+      z-index: 11; }
+    section#glossary div.glossary-jumpnav.js__jumpnav-fixed {
+      position: fixed;
+      top: 124px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50vw; }
   section#glossary div.glossary-content > ul {
     position: relative;
-    min-height: 30px; }
-    section#glossary div.glossary-content > ul h2 {
-      position: absolute;
-      top: 0;
-      left: 0; }
-    section#glossary div.glossary-content > ul li {
-      margin-left: 40px; } }
+    min-height: 30px; } }

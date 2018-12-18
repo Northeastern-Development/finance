@@ -43,7 +43,7 @@ class SetupTheme
             || is_page_template('templates/template-discounts.php')
             || is_page_template('templates/template-forms.php')
             || is_page_template('templates/template-departments-detail.php')
-            || is_page_template('templates/template-tasks.php')
+            // || is_page_template('templates/template-tasks.php')
          ){
             wp_enqueue_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
         }
@@ -73,10 +73,6 @@ class SetupTheme
         // Tasks Page
         if( is_page_template('templates/template-tasks.php') ){
             wp_enqueue_style('tasks', get_template_directory_uri() . '/css/conditionals/css/tasks.css', array('theme'), '1.0.0');
-        }
-        // Here 2 Help Feature ( loaded on tasks page, and others )
-        if( is_page_template('templates/template-tasks.php') ){
-            wp_enqueue_style('here2help', get_template_directory_uri() . '/css/conditionals/css/here2help.css', array('theme'), '1.0.0');
         }
         // Glossary Page
         if( is_page_template('templates/template-glossary.php') ){

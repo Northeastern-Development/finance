@@ -5,6 +5,39 @@ var Finance = {};
 
 
 
+    Finance.glossary = {
+
+        
+        
+        jumpnav : $('.glossary-jumpnav'),
+        
+        initoff : $('section.hero').height(),
+
+
+        _init : function(){
+
+            $(window).on('scroll load', Finance.glossary._scrollHandler);
+
+            
+        },
+        _scrollHandler : function(e){
+
+            if( $(window).scrollTop() >= Finance.glossary.initoff ){
+
+                Finance.glossary.jumpnav.addClass('js__jumpnav-fixed');
+                
+            } else {
+                Finance.glossary.jumpnav.removeClass('js__jumpnav-fixed');
+
+            }
+            
+            
+        }
+        
+        
+    }
+    Finance.glossary._init();
+
 
 
     Finance.nav = {

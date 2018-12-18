@@ -6,6 +6,8 @@
         $('.js__collapsible_list > li > div').slideUp(0);
     
         $('.js__collapsible_list > li > h5').on('click', do_toggle_faqs);
+        
+        $('.js__collapsible_list > li > h4').on('click', do_toggle_faqs);
     
         function do_toggle_faqs(e){
     

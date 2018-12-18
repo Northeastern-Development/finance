@@ -1,18 +1,60 @@
+@import '../../sass/base/vars.scss';
 @media only screen {
 
 
-    ul.list {
-        align-items: flex-start;
-    }
-    .sidebar {
-        float: right;
-        max-width: 25%;
-        margin-left: 20px;
-        img {
-            width: 100px;
-            height: 100px;
+    div.main,
+    main {
+        > section {
+
+            > h2 {
+                text-align: left;
+                border-bottom: 1px solid $brand_colors-black;
+            }
+
+
+            > div.task-options {
+                text-align: center;
+                > h2 {
+                    display: inline-block;
+                    border-bottom: 1px solid $brand_colors-black;
+                }
+                ul.task-options-list {
+                    // any task option grouping
+                    > li {
+                        padding: 10px 0;
+                        border-bottom: 1px solid $brand_colors-black;
+                        // the task option groupings sub-options (steps)
+                        > ul {
+                            display: block;
+                            margin-left: 5%;
+                            > li {
+                                margin: 0 auto;
+                                margin-bottom: 20px;
+                            }
+                            div.sidebar {
+                                width: 25%;
+                                margin: auto;
+                                float: right;
+                            }
+                        }
+                        
+                        // the task option grouping main info (title, description, icon etc)
+                        > div {
+                            h5, img {
+                                display: inline-block;
+                                margin: 0 auto;
+                            }
+                            img {
+                                width: 32px;
+                                height: 32px;
+                            }
+                            h5 {
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-    
-    
 }

@@ -23,13 +23,19 @@
   main section ul.tool-groupingnav, div.main section ul.tool-groupingnav {
     text-align: center; }
     main section ul.tool-groupingnav li, div.main section ul.tool-groupingnav li {
+      border-bottom: 1px solid black;
       text-align: center;
       margin: 0 auto; }
       main section ul.tool-groupingnav li a, div.main section ul.tool-groupingnav li a {
         text-align: center; }
       main section ul.tool-groupingnav li.tool-grouping-active, div.main section ul.tool-groupingnav li.tool-grouping-active {
-        border-bottom: 1px solid #cc0000; }
-  main section .tool-groups ul, div.main section .tool-groups ul {
-    flex-flow: row wrap; }
-    main section .tool-groups ul li, div.main section .tool-groups ul li {
-      flex: 1 0 100%; } }
+        border-bottom: 2px solid #cc0000; }
+  main section .tool-groups, div.main section .tool-groups {
+    margin-top: 40px; }
+    main section .tool-groups > ul, div.main section .tool-groups > ul {
+      flex-flow: row wrap; }
+      main section .tool-groups > ul > li, div.main section .tool-groups > ul > li {
+        padding: 10px 0;
+        margin-bottom: 20px;
+        flex: 1 0 100%;
+        border-bottom: 1px solid black; } }

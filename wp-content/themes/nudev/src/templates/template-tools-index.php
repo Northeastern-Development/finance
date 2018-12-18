@@ -2,7 +2,6 @@
 /**
  * Template Name: Tools Index
  */
-    
     // Get Active Tool Posts
     $args = array(
         'post_type' => 'tools',
@@ -27,7 +26,7 @@
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>
-                <p>Learn More</p>
+                <p><i class="material-icons">arrow_forward</i>Learn More</p>
             </a>
         </li>
     ';
@@ -50,7 +49,7 @@
             $guide
             ,get_permalink($tool) . seoUrl($fields['groupings'][0]['title'])
             ,'More information about ' . $tool->post_title
-            ,wp_get_attachment_image_src($fields['image'])[0]
+            ,$fields['image']
             ,$tool->post_title
             ,$fields['sub_title']
             ,$fields['short_description']
@@ -64,10 +63,8 @@
 
     <?php 
         $fields = get_fields($post_id);
-        // get hero space if enabled
-        if( $fields['use_hero'] == '1' ){
-            include(locate_template('includes/pagehero.php'));
-        }
+        include(locate_template('includes/pagehero.php'));
+        echo PageHero::return_pagehero($fields);
      ?>
     
     

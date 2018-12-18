@@ -1,11 +1,48 @@
+@import '../../sass/base/vars.scss';
+
 @media only screen {
+    div.main,
+    main {
+        > section {
+            .forms-category-relatedresources {
+                > li {
+                    margin: 0 auto;
+                    i, a {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    i {
+                        color: $brand_colors-red;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
     main#forms {
         .forms-category {
             > ul {
                 border-bottom: 1px solid #000;
                 margin-bottom: 40px;
                 padding: 10px;
-                ul {
+                > li {
+                    > div {
+                        > a {
+                            display: block;
+                            p, i {
+                                display: inline-block;
+                                width: auto;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+
+                // 
+                > ul {
                     padding-left: 20px; // just roughing
                     list-style-type: disc;
                     flex-flow: row wrap;

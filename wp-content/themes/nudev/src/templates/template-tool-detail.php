@@ -40,8 +40,6 @@
         }
         $groupSelectorContent .= '</ul>';
     }
-    
-
     // (main page content stuff here)
     $groupContent = '<div class="tool-groups">';
 
@@ -82,16 +80,14 @@
 <main role="main">
 
     <?php 
-        // get hero space if enabled
-        $base_title = $toolpost['post_title'];
         $fields = get_fields($post_id);
-        if( $fields['use_hero'] == '1' ){
-            include(locate_template('includes/pagehero.php'));
-        }
+        include(locate_template('includes/pagehero.php'));
+        echo PageHero::return_pagehero($fields, $toolpost['post_title'], null);
      ?>
 
     <section>
         <?php 
+            $fields = get_fields($toolpost['ID']);
             echo $fields['full_description'];
          ?>
     </section>

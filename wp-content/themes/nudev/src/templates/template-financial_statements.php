@@ -6,7 +6,13 @@
     $fields = get_fields($post->ID);
     // Files Section (required)
     $content = '<ul>';
-    $guide = '<li><a target="_blank" title="Click to Download (opens in a new window)" href="%s">%s</a></li>';
+
+    $guide = '
+        <li>
+            <a target="_blank" title="Click to Download (opens in a new window)" href="%s"><i class="material-icons">arrow_forwards</i>%s</a>
+        </li>
+    ';
+
     foreach( $fields['files'] as $file ){
         $content .= sprintf(
             $guide
@@ -20,10 +26,9 @@ get_header();
 <main id="financialstatements" role="main">
 
     <?php 
-        // get hero space if enabled
-        if( $fields['use_hero'] == '1' ){
-            include(locate_template('includes/pagehero.php'));
-        }
+        $fields = get_fields($post_id);
+        include(locate_template('includes/pagehero.php'));
+        echo PageHero::return_pagehero($fields);
      ?>
 
     <section>
@@ -38,7 +43,8 @@ get_header();
             }
          ?>
     </section>
-    <section>
+
+    <section class="heretohelp">
         <?php 
             // Here2Help,
             if( !empty($fields['helpers']) ){
@@ -46,6 +52,7 @@ get_header();
             }
         ?>
     </section>
+
     <section>
         <?php 
             // HelpfulLinks,

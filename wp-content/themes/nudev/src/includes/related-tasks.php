@@ -1,13 +1,13 @@
 <?php
 
     $content = '
-            <h2>Related Tasks</h2>
-            <ul class="cols-2">
+        <h2>Related Tasks</h2>
+        <ul class="cols-2">
     ';
     
     $guide = '
         <li>
-            <a href="%s" target="_blank" title="View this Related Task">%s</a>
+            <i class="material-icons">arrow_forward</i><a href="%s" target="_blank" title="View this Related Task">%s</a>
         </li>
     ';
     

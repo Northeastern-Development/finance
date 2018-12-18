@@ -5,21 +5,35 @@
 
     section#glossary {
 
-
+        // initial state in flow (not fixed until scrolled)
         div.glossary-jumpnav {
-            position: fixed;
-            top: 124px;
-            padding: 10px;
-            left: 50vw;
-            transform: translateX(-50%);
-            width: 50vw; // matches the content it is within
+
+            position: relative;
+            width: 100%;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
             background-color: $brand_colors-white;
             z-index: 10;
+            padding: 10px 0;
             span {
+                text-align: center;
                 flex: 1 0 auto;
+                border-bottom: 2px solid $brand_colors-grayW;
+                &:hover {
+                    border-bottom: 2px solid $brand_colors-red;
+                }
+            }
+            a {
+                z-index: 11;
+            }
+
+            &.js__jumpnav-fixed {
+                position: fixed;
+                top: 124px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50vw;
             }
         }
         
@@ -28,12 +42,12 @@
                 position: relative;
                 min-height: 30px; // provide space to h2 (letter) if there are no items
                 h2 {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
                 }
                 li {
-                    margin-left: 40px;
+                    // margin-left: 40px;
                 }
             }
         }   

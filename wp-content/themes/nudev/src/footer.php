@@ -25,21 +25,21 @@
                         <li>
                             <h5>Quick Links</h5>
                             <ul>
-                                <li>Policies</li>
-                                <li>News and Updates</li>
-                                <li>Employee Discounts</li>
-                                <li>Financial Statements</li>
-                                <li>Glossary</li>
-                                <li>Contact</li>
+                                <li><a title="" target="_blank" href="<?php echo get_permalink(3557); ?>">Policies</a></li>
+                                <li><a title="" target="_blank" href="<?php echo get_permalink(143); ?>">News and Updates</a></li>
+                                <li><a title="" target="_blank" href="<?php echo get_permalink(3239); ?>">Employee Discounts</a></li>
+                                <li><a title="" target="_blank" href="<?php echo get_permalink(3167); ?>">Financial Statements</a></li>
+                                <li><a title="" target="_blank" href="<?php echo get_permalink(3103); ?>">Glossary</a></li>
+                                <li><a title="" target="_blank" href="<?php echo get_permalink(3259); ?>">Contact</a></li>
                             </ul>
                         </li>
 
                         <li>
                             <h5>Links to Other Departments</h5>
                             <ul>
-                                <li>Payroll/HR</li>
-                                <li>Student Finance</li>
-                                <li>Research Funding</li>
+                                <li><a href="https://www.northeastern.edu/" title="" target="_blank">Payroll/HR</a></li>
+                                <li><a href="https://www.northeastern.edu/" title="" target="_blank">Student Finance</a></li>
+                                <li><a href="https://www.northeastern.edu/" title="" target="_blank">Research Funding</a></li>
                             </ul>
                         </li>
 

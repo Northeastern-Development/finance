@@ -42,11 +42,15 @@
     get_header();
  ?>
 <main class="main">
-  
-<section>
-    <?php include(locate_template('loops/loop-task-main.php')); ?>
-   </section>
+    <?php
+        // page hero
+        $fields = get_fields($post_id);          
+        include(locate_template('includes/pagehero.php'));
+        echo PageHero::return_pagehero($fields, $task->post_title, get_fields($task)['description']);
 
+        $fields = get_fields($task); // (inefficient)
+    ?>
+  
    <section>
        <?php include(locate_template('loops/loop-task-optiongroup.php')); ?>
    </section>

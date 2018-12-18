@@ -6,12 +6,10 @@
  ?>
 <main>
     <?php 
-    // get hero space if enabled
         $fields = get_fields($post_id);
-        if( $fields['use_hero'] == '1' ){
-            include(locate_template('includes/pagehero.php'));
-        }
-    ?>
+        include(locate_template('includes/pagehero.php'));
+        echo PageHero::return_pagehero($fields);
+     ?>
     
     <section>
         

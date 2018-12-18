@@ -151,6 +151,6 @@
 @mixin ul_grid_cols($num) {
     flex-flow: row wrap;
     li {
-       flex: 1 0 calc(100% / #{$num});
+       flex: 1 0 calc(calc(100% / #{$num}) - 20px);
     }
 }

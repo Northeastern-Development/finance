@@ -2,8 +2,13 @@
 /**
  * Tasks Options Groups & Sub Fields
  */
-
-    $content_option = '<div class="task-options"><h2>'.$fields['sub_title'].'</h2><ul class="list task-options-list js__collapsible_list">';
+    $fields = get_fields($task); // (inefficient!)
+    
+    $content_option = '
+        <div class="task-options">
+            <h2>'.$fields['sub_title'].'</h2>
+            <ul class="list task-options-list js__collapsible_list">
+    ';
 
     // the entire compiled option, including sidebar, related files, suboptions etc
     $format_option = '
@@ -111,7 +116,7 @@
         // after all the bits are compiled, bring them all together as a complete option grouping
         $content_option .= sprintf(
             $format_option
-            ,( !empty($option['icon']) ) ? '<img src="'.$option['icon'].'">' : null
+            ,( !empty($option['icon']) ) ? '<img class="taskoption-icon" src="'.$option['icon'].'">' : null
             ,$option['title']
             ,$option['description']
             , ( !empty($content_relatedfiles) ) ? '<ul class="list"><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null

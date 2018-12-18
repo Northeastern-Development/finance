@@ -27,22 +27,27 @@
             ul.tool-groupingnav {
                 text-align: center;
                 li {
+                    border-bottom: 1px solid $brand_colors-black;
                     text-align: center;
                     margin: 0 auto;
                     a {
                         text-align: center;
                     }
                     &.tool-grouping-active {
-                        border-bottom: 1px solid $brand_colors-red;
+                        border-bottom: 2px solid $brand_colors-red;
                     }
                 }
             }
 
             .tool-groups {
-                ul {
+                margin-top: 40px;
+                > ul {
                     flex-flow: row wrap;
-                    li {
+                    > li {
+                        padding: 10px 0;
+                        margin-bottom: 20px;
                         flex: 1 0 100%;
+                        border-bottom: 1px solid $brand_colors-black;
                     }
                 }
             }
