@@ -1560,6 +1560,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/glossary-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/glossary-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/glossary.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/glossary-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/lib/jquery.magnific-popup.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1927,6 +1947,27 @@
 		"oAP": "/loops/__OLD/loop-staff.php.disabled",
 		"oF": 0
 		},
+	"/loops/__OLD/loop-task-main.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/__OLD/loop-task-main.php.disabled",
+		"oF": 0
+		},
+	"/loops/__OLD/loop-tools-index.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/__OLD/loop-tools-index.php.disabled",
+		"oF": 0
+		},
+	"/loops/__OLD/loop-tools-item.php.disabled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/__OLD/loop-tools-item.php.disabled",
+		"oF": 0
+		},
 	"/loops/__OLD/loop.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1939,6 +1980,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-deadlines.php",
+		"oF": 0
+		},
+	"/loops/loop-departments.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-departments.php",
 		"oF": 0
 		},
 	"/loops/loop-discounts.php": {
@@ -1990,32 +2038,11 @@
 		"oAP": "/loops/loop-staff.php",
 		"oF": 0
 		},
-	"/loops/loop-task-main.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-task-main.php",
-		"oF": 0
-		},
 	"/loops/loop-task-optiongroup.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-task-optiongroup.php",
-		"oF": 0
-		},
-	"/loops/loop-tools-index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-tools-index.php",
-		"oF": 0
-		},
-	"/loops/loop-tools-item.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/loops/loop-tools-item.php",
 		"oF": 0
 		},
 	"/loops/reusable/loop-faqs.php": {

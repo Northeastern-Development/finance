@@ -1,24 +1,37 @@
 var exceedsContainer = false;
 var Finance = {};
+var Glossary = {};
 (function($, root, undefined) {
   $(function() {
 
-
+    
+    
 
     Finance.glossary = {
 
         
         
         jumpnav : $('.glossary-jumpnav'),
+
+        jumplinks : $('.glossary-jumpnav a'),
         
         initoff : $('section.hero').height(),
 
+        content : $('.glossary-content'),
 
         _init : function(){
 
             $(window).on('scroll load', Finance.glossary._scrollHandler);
 
-            
+            Finance.glossary.jumplinks.on('click', Finance.glossary._jumpHandler);
+
+        },
+        _jumpHandler : function(e){
+            e.preventDefault();
+            var thisHash = e.target.hash;
+            var pointsTo = Finance.glossary.content.find('ul'+thisHash);
+
+            $(window).scrollTop(pointsTo.offset().top + 140);
         },
         _scrollHandler : function(e){
 
@@ -36,7 +49,7 @@ var Finance = {};
         
         
     }
-    Finance.glossary._init();
+    // Finance.glossary._init();
 
 
 

@@ -82,7 +82,7 @@
     </section>
     <section>
         <?php 
-             // Here2Help,
+             // heretohelp,
              if( !empty($fields['helpers']) ){
                 include(locate_template('loops/reusable/loop-heretohelp.php'));
             }

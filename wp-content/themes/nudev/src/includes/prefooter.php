@@ -23,9 +23,9 @@
                         <div class="image">
                             <div style="background-image: url(%s);"></div>
                         </div>
-                        <h4>%s<span>&#xE8E4;</span></h4>
+                        <h4>%s</h4>
                         <p>%s</p>
-                        <p>Learn More</p>
+                        <p><i class="material-icons">arrow_forward</i>Learn More</p>
                     </a>
                 </li>
             ';

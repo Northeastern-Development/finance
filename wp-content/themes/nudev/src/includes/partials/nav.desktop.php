@@ -23,7 +23,7 @@
             $nav_links = array(
                 'Forms' => get_permalink( get_page_by_path('forms') ),
                 'Tools' => get_permalink( get_page_by_path('tools') ),
-                'Expense Codes' => get_permalink( get_page_by_path('expense-codes') )
+                'Expense Codes' => 'https://www.northeastern.edu/'
             );
             $format_nav_links = '<li><a href="%s">%s</a></li>';
             $content_nav_links = '';

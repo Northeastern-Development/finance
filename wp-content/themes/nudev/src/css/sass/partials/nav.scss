@@ -347,11 +347,15 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
         &.isFiltered > div:not(:first-child){
             justify-content: flex-start;
             align-items: flex-start;
+            > div {
+                flex: 1 0 100%;
+            }
             > div:not(.theFilter){
                 display: none;
             }
             > div.theFilter > ul {
                 display: flex;
+                flex: 1 0 100%;
                 flex-flow: row wrap;
                 li {
                     flex: 1 0 auto;

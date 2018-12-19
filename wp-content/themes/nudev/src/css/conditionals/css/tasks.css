@@ -21,7 +21,8 @@
     div.main > section > div.task-options ul.task-options-list > li,
     main > section > div.task-options ul.task-options-list > li {
       padding: 10px 0;
-      border-bottom: 1px solid black; }
+      border-bottom: 1px solid black;
+      cursor: pointer; }
       div.main > section > div.task-options ul.task-options-list > li > ul,
       main > section > div.task-options ul.task-options-list > li > ul {
         display: block;
@@ -35,6 +36,9 @@
           width: 25%;
           margin: auto;
           float: right; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar i.material-icons,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar i.material-icons {
+            color: #cc0000; }
       div.main > section > div.task-options ul.task-options-list > li > div h5, div.main > section > div.task-options ul.task-options-list > li > div img,
       main > section > div.task-options ul.task-options-list > li > div h5,
       main > section > div.task-options ul.task-options-list > li > div img {

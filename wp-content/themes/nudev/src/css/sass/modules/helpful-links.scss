@@ -13,82 +13,80 @@
         // margin: 0 10vw; // matches width of section.fullwidth > ul ( matches width of widest sections above it )
 
 
-        &.bg_tan {
+        .bg_tan {
             background: rgba($brand_colors-beige, 1.0);
             padding: 20px 0 0 0;
         }
 
 
-        &>p {
+        >p {
             color: rgba($brand_colors-black, 1.0);
             margin: 0 auto 20px auto;
             // width: $content-width-wide;
         }
 
-        &>div {
+        >div {
             // width: $content-width-wide;
             width: 100%;
             height: inherit;
             margin: 0 auto 0 auto;
 
-            &>ul {
+            // the 'helpful links'
+            >ul {
                 display: flex;
                 flex-wrap: nowrap;
                 flex-direction: row;
                 list-style: none;
                 list-style-type: none;
-
-                &>li {
+                // a 'helpful link'
+                >li {
                     text-align: left;
                     flex-grow: 1;
                     flex: 1;
                     min-height: 200px;
                     margin: 0 $gutter $gutter 0;
-
                     &:last-child {
                         margin: 0 0 ($gutter * 2) 0;
                     }
-
-                    &>a {
+                    >a {
                         display: block;
                         width: 100%;
                         height: 100%;
                         border-bottom: none;
-
                         &:hover,
                         &:focus {
                             color: rgba($brand_colors-black, 1.0);
-
-                            &>div.image>div {
+                            
+                            // zoom image when hovered over
+                            > div.image > div {
                                 @include block-item-hover;
 
                             }
 
-                            &>h4 {
-                                @include action-arrow-shown;
-                            }
+                            // ( this is not doing anything anymore )
+                            // >h4 {
+                            //     @include action-arrow-shown;
+                            // }
                         }
-
-                        &>div.image {
+                        > p > i.material-icons {
+                            color: $brand_colors-red;
+                            vertical-align: middle;
+                        }
+                        >div.image {
                             height: 245px;
                             margin: 0 0 10px 0;
                             @include block-group;
-
-                            &>div {
+                            >div {
                                 @include block-item-default;
                             }
                         }
-
-                        &>h4 {
+                        >h4 {
                             &:before {
                                 display: none;
                             }
-
                             width: 90%;
                             margin-bottom:3px;
                         }
-
-                        &>p {}
                     }
                 }
             }

@@ -63,7 +63,7 @@
         ?>
    </section>
 
-   <section class="here2help">
+   <section class="heretohelp">
        <?php 
             if( !empty($fields['helpers']) ){
                 include(locate_template('loops/reusable/loop-heretohelp.php'));

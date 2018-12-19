@@ -17,9 +17,9 @@
             %s
             %s
             %s
-            <i class="material-icons">phone</i> %s
+            %s
             <br>
-            <i class="material-icons">email</i> %s
+            %s
         </li>
     ';
 
@@ -46,8 +46,8 @@
             , (isset( $subfields['department'][0] )) ? '<p>'.$subfields['department']->post_title.'</p>' : null // associated department
             , (isset( $subfields['title'] )) ? '<p>'.$subfields['title'].'</p>' : null // staff member official title (not post title)
             , (isset( $subfields['expert_at'] )) ? '<p> Expert at: '.$subfields['expert_at'].'</p>' : null // expert at
-            , (isset( $subfields['phone'] )) ? '<a href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank">'.$subfields['phone'].'</a>' : null // phone #
-            , (isset( $subfields['email'] )) ? '<a href="mailto:'.$subfields['email'].'?subject='.$subject.'">e-mail</a>' : null // email
+            , (isset( $subfields['phone'] )) ? '<a href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank"><i class="material-icons">phone</i>'.$subfields['phone'].'</a>' : null // phone #
+            , (isset( $subfields['email'] )) ? '<a href="mailto:'.$subfields['email'].'?subject='.$subject.'"><i class="material-icons">email</i>e-mail</a>' : null // email
         );
     }
     // close out the ul and the section

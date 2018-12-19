@@ -2,7 +2,7 @@
 
     $content = '
         <h2>Related Tasks</h2>
-        <ul class="cols-2">
+        <ul>
     ';
     
     $guide = '
@@ -25,9 +25,7 @@
             , $relTask['task']->post_title
         );
     }
-    $content .= '
-            </ul>
-    ';
+    $content .= '</ul>';
 
     echo $content;
 ?>

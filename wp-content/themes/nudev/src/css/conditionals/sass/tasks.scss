@@ -23,6 +23,7 @@
                     > li {
                         padding: 10px 0;
                         border-bottom: 1px solid $brand_colors-black;
+                        cursor: pointer;
                         // the task option groupings sub-options (steps)
                         > ul {
                             display: block;
@@ -35,6 +36,9 @@
                                 width: 25%;
                                 margin: auto;
                                 float: right;
+                                i.material-icons {
+                                    color: $brand_colors-red;
+                                }
                             }
                         }
                         

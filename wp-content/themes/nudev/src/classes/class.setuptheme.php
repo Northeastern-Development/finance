@@ -47,6 +47,9 @@ class SetupTheme
          ){
             wp_enqueue_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
         }
+        if( is_page_template( 'templates/template-glossary.php') ){
+            wp_enqueue_script('glossary', get_template_directory_uri() . '/js/glossary.js', array('jquery'), '1.0.0');
+        }
     }
     function enqueue_styles(){
         // Always Loaded

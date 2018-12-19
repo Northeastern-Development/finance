@@ -34,9 +34,8 @@
 }
 
 @mixin block-item-hover {
-
     transform: scale(1.1);
-    transition: all .5s;
+    transition: all .5s; // BAD PRACTICE OMG
 }
 
 @mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
@@ -106,9 +105,7 @@
 // in some cases they may start hidden and reveal on hover
 
 @mixin action-arrow {
-    &>span {
-
-
+    >span {
         // &:after{
         @include font-7-c;
         color: rgba($brand_colors-red, 1.0);
@@ -128,7 +125,7 @@
     }
 
     @media only screen and (max-width: 959px) {
-        &>span {
+        >span {
             @include font-4-c;
             //top:7px;
             padding-top: 6px;

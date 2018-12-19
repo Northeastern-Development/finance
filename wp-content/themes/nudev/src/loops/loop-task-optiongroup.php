@@ -55,7 +55,7 @@
         %s
         <h4>%s</h4>
         %s
-        <a target="%s" href="%s">%s</a>
+        <a target="%s" href="%s"><i class="material-icons">arrow_forward</i>%s</a>
     ';
 
 
