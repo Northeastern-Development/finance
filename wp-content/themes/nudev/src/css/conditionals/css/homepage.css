@@ -6,7 +6,30 @@
 */
 /* These are variables for the header */
 /* These are variables for the main navigation */
+/**
+ * modules/mixins
+ * ---
+ */
 @media only screen {
+  div.main section.hero a.nu__content_btn,
+  main section.hero a.nu__content_btn {
+    margin: 20px auto;
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    border: 1px solid #fffffe; }
+    div.main section.hero a.nu__content_btn:hover,
+    main section.hero a.nu__content_btn:hover {
+      color: #cc0000;
+      border: 1px solid #cc0000; }
+    div.main section.hero a.nu__content_btn h4,
+    main section.hero a.nu__content_btn h4 {
+      display: inline-block; }
+    div.main section.hero a.nu__content_btn:hover,
+    main section.hero a.nu__content_btn:hover {
+      border: 1px solid #fffffe;
+      color: #fffffe; }
   div.main section.hero div.home-deadlines,
   main section.hero div.home-deadlines {
     width: 80%;
@@ -37,15 +60,16 @@
     pointer-events: none; }
     li[data-id="howdoi"] > a {
       pointer-events: none; }
-  div.main a.nu__content_btn,
-  main a.nu__content_btn {
+  div.main > section > a.nu__content_btn,
+  main > section > a.nu__content_btn {
     display: inline-block;
     border: 1px solid black;
     padding: 10px 30px;
     text-transform: uppercase; }
-    div.main a.nu__content_btn:hover,
-    main a.nu__content_btn:hover {
-      border-bottom: 1px solid black; }
+    div.main > section > a.nu__content_btn:hover,
+    main > section > a.nu__content_btn:hover {
+      color: #cc0000;
+      border: 1px solid #cc0000; }
   div.main section.home-feat-tools,
   div.main section.home-feat-news,
   main section.home-feat-tools,
@@ -71,6 +95,12 @@
         main section.home-feat-tools > div > div p,
         main section.home-feat-news > div > div p {
           text-align: left; }
+          div.main section.home-feat-tools > div > div p i.material-icons,
+          div.main section.home-feat-news > div > div p i.material-icons,
+          main section.home-feat-tools > div > div p i.material-icons,
+          main section.home-feat-news > div > div p i.material-icons {
+            vertical-align: middle;
+            color: #cc0000; }
         div.main section.home-feat-tools > div > div:not(:last-child),
         div.main section.home-feat-news > div > div:not(:last-child),
         main section.home-feat-tools > div > div:not(:last-child),
@@ -84,7 +114,7 @@
           object-fit: cover;
           max-height: 120px;
           width: 80%;
-          margin: 0 auto; }
+          margin: 0 auto 40px; }
   section.hero a.nu__content_btn {
     border: 1px solid #fffffe;
     color: #fffffe; }

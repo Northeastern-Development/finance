@@ -574,6 +574,9 @@ input[type="search"] {
         cursor: pointer;
         padding: 10px 0;
         border-bottom: 1px solid #979797; }
+        div.main > section > ul.nufin-faqs li > div,
+        main > section > ul.nufin-faqs li > div {
+          cursor: initial; }
     div.main section.fullwidth,
     main section.fullwidth {
       width: 100%; }
@@ -583,7 +586,9 @@ input[type="search"] {
       background-position: center; }
     div.main > section.related-tasks > ul > li i,
     main > section.related-tasks > ul > li i {
-      color: #cc0000; }
+      color: #cc0000;
+      vertical-align: middle;
+      margin-right: 5px; }
     div.main > section > .nu__prefooter > h2,
     main > section > .nu__prefooter > h2 {
       text-align: left;
@@ -596,10 +601,8 @@ input[type="search"] {
         flex: 1 0 calc(calc(100% / 2) - 20px); }
       div.main > section.overview-depts > ul li,
       main > section.overview-depts > ul li {
-        margin: 0 auto;
-        border-bottom: 1px solid #979797;
-        margin-right: 20px;
-        padding: 10px 0; }
+        margin: 0 20px 20px 0;
+        border-bottom: 1px solid #979797; }
         div.main > section.overview-depts > ul li:nth-child(2n),
         main > section.overview-depts > ul li:nth-child(2n) {
           margin-right: 0; }
@@ -608,9 +611,12 @@ input[type="search"] {
         main > section.overview-depts > ul li h4 {
           display: inline-block;
           vertical-align: middle; }
-        div.main > section.overview-depts > ul li i,
-        main > section.overview-depts > ul li i {
-          color: #cc0000; }
+        div.main > section.overview-depts > ul li > a,
+        main > section.overview-depts > ul li > a {
+          display: block; }
+          div.main > section.overview-depts > ul li > a:hover > i.material-icons,
+          main > section.overview-depts > ul li > a:hover > i.material-icons {
+            color: #cc0000; }
     div.main > section.heretohelp > ul > li > a:hover,
     main > section.heretohelp > ul > li > a:hover {
       color: #cc0000; }
@@ -1031,7 +1037,7 @@ header {
     .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul {
       display: flex;
       flex: 1 0 100%;
-      flex-flow: row wrap; }
+      flex-flow: column wrap; }
       .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li {
         flex: 1 0 auto;
         width: calc(33% - 15px);

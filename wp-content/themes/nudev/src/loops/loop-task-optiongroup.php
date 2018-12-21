@@ -7,18 +7,18 @@
     $content_option = '
         <div class="task-options">
             <h2>'.$fields['sub_title'].'</h2>
-            <ul class="list task-options-list js__collapsible_list">
+            <ul class="list task-options-list js__tasks_solutions">
     ';
 
     // the entire compiled option, including sidebar, related files, suboptions etc
     $format_option = '
         <li>
-            <div class="js__collapsible_toggle">
+            <div>
                 %s
                 <h5>%s</h5>
                 %s
             </div>
-            <ul class="list task-options-list-item-suboptions js__collapsible_area">
+            <ul class="list task-options-list-item-suboptions js__tasks_steps">
                 %s
                 %s
                 %s

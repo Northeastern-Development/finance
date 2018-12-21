@@ -25,7 +25,7 @@
             <a href="%s">
                 <img src="%s">
                 <p>%s</p>
-                <p>Learn more</p>
+                <p><i class="material-icons">arrow_forward</i>Learn more</p>
             </a>
         </div>
     ';
@@ -63,7 +63,7 @@
                 <img src="%s">
                 <h5>%s</h5>
                 <p>%s</p>
-                <p>Learn more</p>
+                <p><i class="material-icons">arrow_forward</i>Learn more</p>
             </a>
         </div>
     ';
@@ -105,7 +105,7 @@
         <div>
             <h2>One Centralized Department</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi, harum nesciunt repudiandae vel unde neque! Consequuntur error quas, obcaecati recusandae, fugiat quis, unde modi voluptatibus minus aperiam tempore! Quasi.</p>    
-            <a class="nu__content_btn" href="<?php echo get_permalink(3550); ?>"><h4>Learn More</h4></a>
+            <a class="nu__content_btn" href="<?php echo get_permalink(3550); ?>">Learn More</a>
         </div>
         <?php 
             include(locate_template('loops/loop-deadlines.php'));

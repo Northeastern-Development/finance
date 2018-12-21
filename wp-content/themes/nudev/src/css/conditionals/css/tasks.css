@@ -25,6 +25,7 @@
       cursor: pointer; }
       div.main > section > div.task-options ul.task-options-list > li > ul,
       main > section > div.task-options ul.task-options-list > li > ul {
+        cursor: initial;
         display: block;
         margin-left: 5%; }
         div.main > section > div.task-options ul.task-options-list > li > ul > li,

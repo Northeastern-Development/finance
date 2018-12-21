@@ -26,6 +26,7 @@
                         cursor: pointer;
                         // the task option groupings sub-options (steps)
                         > ul {
+                            cursor: initial;
                             display: block;
                             margin-left: 5%;
                             > li {

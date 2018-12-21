@@ -1,60 +1,43 @@
+// the main js file (scripts.js, which is tagged 'theme') is a dependency of this and all conditionally loaded script files,
+// var Finance = {} is available and must not be overwritten due to scripts in the main js file
 (function ($, root, undefined) {
-$(function () {
-        
+    $(function () {
+
+        Finance.tasks = {
+
+            solutionsWrapper : $('.js__tasks_solutions'),
+            solutions : $('.js__tasks_solutions > li'),
+            stepsWrapper : $('.js__tasks_steps'),
+            steps : $('.js__tasks_steps > li'),
+
+            
+            _init : function(){
 
 
-    // Collapse all Collapsible Fields by Default
-    $('.js__collapsible_list .js__collapsible_area').slideUp(0);
+                Finance.tasks.stepsWrapper.slideUp(0);
+                
+                Finance.tasks.solutions.on('click', Finance.tasks._clickHandler);
+                
+            },
+            _clickHandler : function(e){
 
+                var open = 'js__tasks_steps_open';
+                var theseSteps = $(this).find('.js__tasks_steps');
 
-    // When clicking a Collapsible Field's "Toggle Area", trigger collapsing for all other collapsibles within its functional grouping ( section, list, etc)
-    // Then trigger opening the clicked collapsible
-    $('.js__collapsible_list .js__collapsible_toggle').on('click', do_toggle_collapsibles);
-    
-    function do_toggle_collapsibles(){
-
-        // get the grouping of collapsibles that toggle eachother
-        var grouping = $(this).closest('.js__collapsible_list');
-        // get the collapsible we are toggling directly
-        var thiscollapsible = $(this).siblings('.js__collapsible_area');
-
-        // if this already has the open class (and is open)
-        // we need to remove that class and close it
-        if( thiscollapsible.hasClass('js__collapsible_open') ){
-            grouping.find('.js__collapsible_area').removeClass('js__collapsible_open');
-        } else {
-            // if not, we need to add that class and open it
-            grouping.find('.js__collapsible_area').removeClass('js__collapsible_open');
-            thiscollapsible.addClass('js__collapsible_open');
+                Finance.tasks.stepsWrapper.slideUp();
+                
+                if( !theseSteps.hasClass(open) ){
+                    theseSteps.addClass(open);
+                    theseSteps.slideDown();
+                } else {
+                    theseSteps.removeClass(open);
+                    theseSteps.slideUp();
+                }
+                               
+            }
         }
+        Finance.tasks._init();
 
-        grouping.find('.js__collapsible_area').not('.js__collapsible_open').slideUp();
-        grouping.find('.js__collapsible_open').slideDown();
-        
-    }
-    
-    $('.js__collapsible_list.nufin-faqs > li > div').slideUp(0);
-    
-    $('.js__collapsible_list.nufin-faqs > li > h5').on('click', do_toggle_faqs);
 
-    function do_toggle_faqs(e){
-
-        var open = "js__collapsible_opened";
-        var thisCollapsible = $(this).siblings('div');
-        var allCollapsibles = $('.js__collapsible_list.nufin-faqs > li > div');
-        var otherCollapsibles = $(allCollapsibles).not(thisCollapsible);
-
-        $(otherCollapsibles).removeClass(open);
-        $(otherCollapsibles).slideUp();
-
-        if( !$(thisCollapsible).hasClass(open) ){
-            $(thisCollapsible).addClass(open);
-            $(thisCollapsible).slideDown();
-        } else {
-            $(thisCollapsible).removeClass(open);
-            $(thisCollapsible).slideUp();
-        }
-        
-    }    
-});
+    });
 })(jQuery, this);

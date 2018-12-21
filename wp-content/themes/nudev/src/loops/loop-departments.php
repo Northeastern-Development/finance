@@ -17,7 +17,9 @@
     $res = get_posts($args);
     $format_depts = '
         <li>
-            <i class="material-icons">arrow_forwards</i><h4><a href="%s" title="Click to view department">%s</a></h4>
+            <a href="%s" title="Click to view department">
+                <i class="material-icons">arrow_forwards</i><h4>%s</h4>
+            </a>
         </li>
     ';
 

@@ -294,7 +294,9 @@
                 cursor: pointer;
                 padding: 10px 0;
                 border-bottom: 1px solid $brand_colors-grayW;
-                
+                > div {
+                    cursor: initial;
+                }
             }
         }
         section.fullwidth {
@@ -304,13 +306,6 @@
         section.hero.hero-image {
             background-size: cover;
             background-position: center;
-            // > div {
-            //     background-color: transparentize($brand_colors-black, 0.5); // ( fixes unreadable text over light bgs )
-            //     padding: 10px; // ( fix low visibility )
-            //     h1, h3 {
-            //         text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-            //     }
-            // }
         }
 
         > section.related-tasks {
@@ -318,6 +313,8 @@
                 > li {
                     i {
                         color: $brand_colors-red;
+                        vertical-align: middle;
+                        margin-right: 5px;
                     }
                 }
             }
@@ -338,10 +335,8 @@
             > ul {
                 @include ul_grid_cols(2);
                 li {
-                    margin: 0 auto;
+                    margin: 0 20px 20px 0;
                     border-bottom: 1px solid $brand_colors-grayW;
-                    margin-right: 20px;
-                    padding: 10px 0;
                     &:nth-child(2n){
                         margin-right: 0;
                     }
@@ -350,7 +345,12 @@
                         vertical-align: middle;
                     }
                     i {
-                        color: $brand_colors-red;
+                    }
+                    > a {
+                        display: block;
+                        &:hover > i.material-icons{
+                            color: $brand_colors-red;
+                        }
                     }
                 }
             }

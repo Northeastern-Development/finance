@@ -18,38 +18,22 @@ class SetupTheme
         $this->enqueue_styles();
         $this->enqueue_scripts();
     }
+
     function enqueue_scripts(){
-        // Always Loaded
+        /**
+         *  Always Loaded Scripts
+         */
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), '2.2.0', false);
         wp_enqueue_script('magnificjs', get_template_directory_uri() . '/js/lib/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('theme', get_template_directory_uri() . '/js/scripts-min.js',  array('jquery'), '1.0.0', true);
-
-
-        // Conditionally Loaded
-        if( is_page_template( 'templates/template-tasks.php') ){
-            wp_enqueue_script('taskspage', get_template_directory_uri() . '/js/tasks.js', array('jquery'), '1.0.0');
-        }
-        if( is_page_template( 'templates/template-forms.php') ){
-            wp_enqueue_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('jquery'), '1.0.0');
-        }
-        if( is_page_template( 'templates/template-homepage.php') ){
-            wp_enqueue_script('deadlines', get_template_directory_uri() . '/js/deadlines.js', array('jquery'), '1.0.0');
-        }
-        if( 
-            is_page_template('templates/template-financial_statements.php')
-            || is_page_template('templates/template-tools-index.php')
-            || is_page_template('templates/template-tool-detail.php')
-            || is_page_template('templates/template-discounts.php')
-            || is_page_template('templates/template-forms.php')
-            || is_page_template('templates/template-departments-detail.php')
-            // || is_page_template('templates/template-tasks.php')
-         ){
-            wp_enqueue_script('reusables', get_template_directory_uri() . '/js/reusables.js', array('jquery'), '1.0.0');
-        }
-        if( is_page_template( 'templates/template-glossary.php') ){
-            wp_enqueue_script('glossary', get_template_directory_uri() . '/js/glossary.js', array('jquery'), '1.0.0');
-        }
+        /**
+         *  Conditionally Loaded Scripts
+         */
+        if(is_page_template('templates/template-tasks.php')){ wp_enqueue_script('taskspage', get_template_directory_uri() . '/js/tasks.js', array('theme'), '1.0.0'); }
+        if(is_page_template('templates/template-forms.php')){ wp_enqueue_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('theme'), '1.0.0'); }
+        if(is_page_template('templates/template-homepage.php')){ wp_enqueue_script('deadlines', get_template_directory_uri() . '/js/deadlines.js', array('theme'), '1.0.0'); }
+        if( is_page_template( 'templates/template-glossary.php') ){ wp_enqueue_script('glossary', get_template_directory_uri() . '/js/glossary.js', array('theme'), '1.0.0');}
     }
     function enqueue_styles(){
         // Always Loaded

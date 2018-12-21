@@ -356,7 +356,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
             > div.theFilter > ul {
                 display: flex;
                 flex: 1 0 100%;
-                flex-flow: row wrap;
+                flex-flow: column wrap;
                 li {
                     flex: 1 0 auto;
                     width: calc(33% - 15px);

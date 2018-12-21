@@ -80,7 +80,7 @@
             }
          ?>
     </section>
-    <section>
+    <section class="heretohelp">
         <?php 
              // heretohelp,
              if( !empty($fields['helpers']) ){
@@ -89,7 +89,7 @@
          ?>
     </section>
 
-    <section class="fullwidth nobg">
+    <section>
         <?php
             // HelpfulLinks,
             if( $fields['use_pre-footer'] == '1' ){
