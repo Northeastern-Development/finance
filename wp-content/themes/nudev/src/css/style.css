@@ -553,6 +553,9 @@ input[type="search"] {
   div.main,
   main {
     width: 100%; }
+    div.main ul.js__collapsible_list li,
+    main ul.js__collapsible_list li {
+      cursor: pointer; }
     div.main > section.hero,
     main > section.hero {
       width: 100%; }

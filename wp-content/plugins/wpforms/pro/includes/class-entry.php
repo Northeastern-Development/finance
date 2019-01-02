@@ -152,6 +152,33 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	}
 
 	/**
+	 * Get last entry.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @param int $form_id
+	 *
+	 * @return mixed object or null
+	 */
+	public function get_last( $form_id ) {
+
+		global $wpdb;
+
+		if ( empty( $form_id ) ) {
+			return false;
+		}
+
+		$last = $wpdb->get_row(
+			$wpdb->prepare(
+				"SELECT * FROM {$this->table_name} WHERE `form_id` = %d ORDER BY {$this->primary_key} DESC LIMIT 1;",
+				absint( $form_id )
+			)
+		);
+
+		return $last;
+	}
+
+	/**
 	 * Mark all entries read for a form.
 	 *
 	 * @since 1.1.6
@@ -176,26 +203,56 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	}
 
 	/**
+	 * Get next entries count.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @param int $row_id
+	 * @param int $form_id
+	 *
+	 * @return int
+	 */
+	public function get_next_count( $row_id, $form_id ) {
+
+		global $wpdb;
+
+		if ( empty( $form_id ) ) {
+			return 0;
+		}
+
+		$prev_count = $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name} WHERE `form_id` = %d AND {$this->primary_key} > %d ORDER BY {$this->primary_key} ASC;",
+				absint( $form_id ),
+				absint( $row_id )
+			)
+		);
+
+		return absint( $prev_count );
+	}
+
+	/**
 	 * Get previous entries count.
 	 *
+	 * @since 1.5.0 Changed return type to always be an integer.
 	 * @since 1.1.5
 	 *
 	 * @param int $row_id
 	 * @param int $form_id
 	 *
-	 * @return mixed object or null
+	 * @return int
 	 */
 	public function get_prev_count( $row_id, $form_id ) {
 
 		global $wpdb;
 
 		if ( empty( $row_id ) || empty( $form_id ) ) {
-			return false;
+			return 0;
 		}
 
 		$prev_count = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name} WHERE `form_id` = %d AND {$this->primary_key} < %d ORDER BY {$this->primary_key};",
+				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name} WHERE `form_id` = %d AND {$this->primary_key} < %d ORDER BY {$this->primary_key} ASC;",
 				absint( $form_id ),
 				absint( $row_id )
 			)

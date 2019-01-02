@@ -153,9 +153,9 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.3.8
 	 *
-	 * @param array $attributes
-	 * @param array $field
-	 * @param array $form_data
+	 * @param array $attributes Field attributes.
+	 * @param array $field      Field data and settings.
+	 * @param array $form_data  Form data and settings.
 	 *
 	 * @return array
 	 */
@@ -227,8 +227,8 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.3.8
 	 *
-	 * @param array $form_data
-	 * @param array $entry
+	 * @param array $form_data Form data and settings.
+	 * @param array $entry     Submitted entry values.
 	 *
 	 * @return array
 	 */
@@ -254,8 +254,8 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.3.8
 	 *
-	 * @param array $errors
-	 * @param array $form_data
+	 * @param array $errors    List of errors.
+	 * @param array $form_data Form data and settings.
 	 *
 	 * @return array
 	 */
@@ -285,7 +285,7 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.3.8
 	 *
-	 * @param array $form_data
+	 * @param array $form_data Form data and settings.
 	 */
 	public function process_field_visibility( $form_data ) {
 
@@ -337,10 +337,10 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.1.0
 	 *
-	 * @param boolean $process
-	 * @param array $fields
-	 * @param array $form_data
-	 * @param int $id
+	 * @param boolean $process   Whether to process the logic or not.
+	 * @param array   $fields    List of submitted fields.
+	 * @param array   $form_data Form data and settings.
+	 * @param int     $id        Notification ID.
 	 *
 	 * @return boolean
 	 */
@@ -388,10 +388,10 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.4.8
 	 *
-	 * @param boolean $process
-	 * @param array $fields
-	 * @param array $form_data
-	 * @param int $id
+	 * @param boolean $process   Whether to process the logic or not.
+	 * @param array   $fields    List of submitted fields.
+	 * @param array   $form_data Form data and settings.
+	 * @param int     $id        Confirmation ID.
 	 *
 	 * @return boolean
 	 */
@@ -483,8 +483,8 @@ class WPForms_Conditional_Logic_Fields {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $field
-	 * @param array $form_data
+	 * @param array $field     Field data and settings.
+	 * @param array $form_data Form data and settings.
 	 *
 	 * @return boolean
 	 */

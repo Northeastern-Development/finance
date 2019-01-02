@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Rating field.
  *
@@ -21,7 +22,7 @@ class WPForms_Rating_Text extends WPForms_Field {
 		$this->name  = esc_html__( 'Rating', 'wpforms' );
 		$this->type  = 'rating';
 		$this->icon  = 'fa-star';
-		$this->order = 21;
+		$this->order = 210;
 		$this->group = 'fancy';
 
 		// Define additional field properties.
@@ -38,7 +39,7 @@ class WPForms_Rating_Text extends WPForms_Field {
 	 *
 	 * @param array $properties Field properties.
 	 * @param array $field      Field settings.
-	 * @param array $form_data  Form data.
+	 * @param array $form_data  Form data and settings.
 	 *
 	 * @return array
 	 */
@@ -110,18 +111,20 @@ class WPForms_Rating_Text extends WPForms_Field {
 
 			if ( 'entry-table' === $context ) {
 				// For the entry list table, lighten the scale display.
-				return sprintf( '%s <span style="color:#ccc;">(%d/%d)</span>',
-					str_repeat( $emoji, absint( $field['value'] ) ),
-					absint( $field['value'] ),
-					absint( $field['scale'] )
-				);
-			} else {
-				return sprintf( '%s (%d/%d)',
+				return sprintf(
+					'%s <span style="color:#ccc;">(%d/%d)</span>',
 					str_repeat( $emoji, absint( $field['value'] ) ),
 					absint( $field['value'] ),
 					absint( $field['scale'] )
 				);
 			}
+
+			return sprintf(
+				'%s (%d/%d)',
+				str_repeat( $emoji, absint( $field['value'] ) ),
+				absint( $field['value'] ),
+				absint( $field['scale'] )
+			);
 		}
 
 		return $val;
@@ -135,15 +138,18 @@ class WPForms_Rating_Text extends WPForms_Field {
 	 * @param array $field Field settings.
 	 */
 	public function field_options( $field ) {
-
-		// -------------------------------------------------------------------//
-		// Basic field options.
-		// -------------------------------------------------------------------//
+		/*
+		 * Basic field options.
+		 */
 
 		// Options open markup.
-		$this->field_option( 'basic-options', $field, array(
-			'markup' => 'open',
-		) );
+		$this->field_option(
+			'basic-options',
+			$field,
+			array(
+				'markup' => 'open',
+			)
+		);
 
 		// Label.
 		$this->field_option( 'label', $field );
@@ -182,27 +188,39 @@ class WPForms_Rating_Text extends WPForms_Field {
 			),
 			false
 		);
-		$this->field_element( 'row', $field, array(
-			'slug'    => 'scale',
-			'content' => $lbl . $fld,
-		) );
+		$this->field_element(
+			'row',
+			$field,
+			array(
+				'slug'    => 'scale',
+				'content' => $lbl . $fld,
+			)
+		);
 
 		// Required toggle.
 		$this->field_option( 'required', $field );
 
 		// Options close markup.
-		$this->field_option( 'basic-options', $field, array(
-			'markup' => 'close',
-		) );
+		$this->field_option(
+			'basic-options',
+			$field,
+			array(
+				'markup' => 'close',
+			)
+		);
 
-		// --------------------------------------------------------------------//
-		// Advanced field options.
-		// --------------------------------------------------------------------//
+		/*
+		 * Advanced field options.
+		 */
 
 		// Options open markup.
-		$this->field_option( 'advanced-options', $field, array(
-			'markup' => 'open',
-		) );
+		$this->field_option(
+			'advanced-options',
+			$field,
+			array(
+				'markup' => 'open',
+			)
+		);
 
 		// Icon.
 		$lbl = $this->field_element(
@@ -230,10 +248,14 @@ class WPForms_Rating_Text extends WPForms_Field {
 			),
 			false
 		);
-		$this->field_element( 'row', $field, array(
-			'slug'    => 'icon',
-			'content' => $lbl . $fld,
-		) );
+		$this->field_element(
+			'row',
+			$field,
+			array(
+				'slug'    => 'icon',
+				'content' => $lbl . $fld,
+			)
+		);
 
 		// Icon size.
 		$lbl = $this->field_element(
@@ -260,10 +282,14 @@ class WPForms_Rating_Text extends WPForms_Field {
 			),
 			false
 		);
-		$this->field_element( 'row', $field, array(
-			'slug'    => 'icon_size',
-			'content' => $lbl . $fld,
-		) );
+		$this->field_element(
+			'row',
+			$field,
+			array(
+				'slug'    => 'icon_size',
+				'content' => $lbl . $fld,
+			)
+		);
 
 		// Icon color picker.
 		$lbl = $this->field_element(
@@ -286,11 +312,15 @@ class WPForms_Rating_Text extends WPForms_Field {
 			),
 			false
 		);
-		$this->field_element( 'row', $field, array(
-			'slug'    => 'icon_color',
-			'content' => $lbl . $fld,
-			'class'   => 'color-picker-row',
-		) );
+		$this->field_element(
+			'row',
+			$field,
+			array(
+				'slug'    => 'icon_color',
+				'content' => $lbl . $fld,
+				'class'   => 'color-picker-row',
+			)
+		);
 
 		// Hide label.
 		$this->field_option( 'label_hide', $field );
@@ -299,9 +329,13 @@ class WPForms_Rating_Text extends WPForms_Field {
 		$this->field_option( 'css', $field );
 
 		// Options close markup.
-		$this->field_option( 'advanced-options', $field, array(
-			'markup' => 'close',
-		) );
+		$this->field_option(
+			'advanced-options',
+			$field,
+			array(
+				'markup' => 'close',
+			)
+		);
 	}
 
 	/**
@@ -376,7 +410,7 @@ class WPForms_Rating_Text extends WPForms_Field {
 	 *
 	 * @param array $field      Field settings.
 	 * @param array $deprecated Deprecated, don't use.
-	 * @param array $form_data  Form data.
+	 * @param array $form_data  Form data and settings.
 	 */
 	public function field_display( $field, $deprecated, $form_data ) {
 
@@ -397,7 +431,8 @@ class WPForms_Rating_Text extends WPForms_Field {
 		// Generate each rating icon/element.
 		for ( $i = 1; $i <= $scale; $i++ ) {
 
-			printf( '<label class="wpforms-field-rating-item choice-%d" for="wpforms-%d-field_%d_%d">',
+			printf(
+				'<label class="wpforms-field-rating-item choice-%d" for="wpforms-%d-field_%d_%d">',
 				$i,
 				absint( $form_data['id'] ),
 				$field['id'],
@@ -407,17 +442,27 @@ class WPForms_Rating_Text extends WPForms_Field {
 				// Hidden label for screen readers.
 				echo '<span class="wpforms-screen-reader-element">';
 					/* translators: %1$s - rating value; %2$s - rating scale. */
-					printf( esc_html__( 'Rate %1$d out of %2$d', 'wpform' ), $i, $scale );
+					printf( esc_html__( 'Rate %1$d out of %2$d', 'wpforms' ), $i, $scale );
 				echo '</span>';
 
 				// Primary field.
-				$primary['id']            = sprintf( 'wpforms-%d-field_%d_%d',
+				$primary['id'] = sprintf(
+					'wpforms-%d-field_%d_%d',
 					absint( $form_data['id'] ),
 					$field['id'],
 					$i
 				);
+
 				$primary['attr']['value'] = $i;
-				printf( '<input type="radio" %s %s>',
+
+				if ( ! empty( $rating['default'] ) && $i === $rating['default'] ) {
+					$primary['attr']['checked'] = 'checked';
+				} else {
+					$primary['attr']['checked'] = '';
+				}
+
+				printf(
+					'<input type="radio" %s %s>',
 					wpforms_html_attributes( $primary['id'], $primary['class'], $primary['data'], $primary['attr'] ),
 					$primary['required']
 				);
@@ -432,13 +477,27 @@ class WPForms_Rating_Text extends WPForms_Field {
 	}
 
 	/**
+	 * @inheritdoc
+	 */
+	protected function get_field_populated_single_property_value( $raw_value, $input, $properties, $field ) {
+
+		if ( ! is_string( $raw_value ) ) {
+			return $properties;
+		}
+
+		$properties['inputs'][ $input ]['rating']['default'] = (int) $raw_value;
+
+		return $properties;
+	}
+
+	/**
 	 * Formats field.
 	 *
 	 * @since 1.4.4
 	 *
 	 * @param int   $field_id     Field ID.
 	 * @param array $field_submit Submitted field value.
-	 * @param array $form_data    Form data.
+	 * @param array $form_data    Form data and settings.
 	 */
 	public function format( $field_id, $field_submit, $form_data ) {
 
@@ -462,4 +521,5 @@ class WPForms_Rating_Text extends WPForms_Field {
 		);
 	}
 }
+
 new WPForms_Rating_Text();

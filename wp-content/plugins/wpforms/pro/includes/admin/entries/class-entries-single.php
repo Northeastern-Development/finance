@@ -497,8 +497,8 @@ class WPForms_Entries_Single {
 	 * Entry fields metabox.
 	 *
 	 * @since 1.1.5
-	 * @param object $entry
-	 * @param array $form_data
+	 * @param object $entry     Submitted entry values.
+	 * @param array  $form_data Form data and settings.
 	 */
 	public function details_fields( $entry, $form_data ) {
 
@@ -532,7 +532,7 @@ class WPForms_Entries_Single {
 
 						$field_value  = apply_filters( 'wpforms_html_field_value', wp_strip_all_tags( $field['value'] ), $field, $form_data, 'entry-single' );
 						$field_class  = sanitize_html_class( 'wpforms-field-' . $field['type'] );
-						$field_class .= empty( $field_value ) ? ' empty' : '';
+						$field_class .= wpforms_is_empty_string( $field_value )  ? ' empty' : '';
 						$field_style  = $hide_empty && empty( $field_value ) ? 'display:none;' : '';
 
 						echo '<div class="wpforms-entry-field ' . $field_class . '" style="' . $field_style . '">';
@@ -545,7 +545,7 @@ class WPForms_Entries_Single {
 
 							// Field value
 							echo '<p class="wpforms-entry-field-value">';
-								echo ! empty( $field_value ) ? nl2br( make_clickable( $field_value ) ) : esc_html__( 'Empty', 'wpforms' );
+								echo ! wpforms_is_empty_string( $field_value ) ? nl2br( make_clickable( $field_value ) ) : esc_html__( 'Empty', 'wpforms' );
 							echo '</p>';
 
 						echo '</div>';
@@ -564,8 +564,8 @@ class WPForms_Entries_Single {
 	 *
 	 * @since 1.1.6
 	 *
-	 * @param object $entry
-	 * @param array $form_data
+	 * @param object $entry     Submitted entry values.
+	 * @param array  $form_data Form data and settings.
 	 */
 	public function details_notes( $entry, $form_data ) {
 
@@ -678,8 +678,8 @@ class WPForms_Entries_Single {
 	 *
 	 * @since 1.1.6
 	 *
-	 * @param object $entry
-	 * @param array $form_data
+	 * @param object $entry     Submitted entry values.
+	 * @param array  $form_data Form data and settings.
 	 */
 	public function details_debug( $entry, $form_data ) {
 
@@ -721,7 +721,7 @@ class WPForms_Entries_Single {
 		<div id="wpforms-entry-details" class="postbox">
 
 			<h2 class="hndle">
-				<span><?php esc_html_e( 'Entry Details' , 'wpforms' ); ?></span>
+				<span><?php esc_html_e( 'Entry Details', 'wpforms' ); ?></span>
 			</h2>
 
 			<div class="inside">
@@ -833,8 +833,8 @@ class WPForms_Entries_Single {
 	 *
 	 * @since 1.2.6
 	 *
-	 * @param object $entry
-	 * @param array $form_data
+	 * @param object $entry     Submitted entry values.
+	 * @param array  $form_data Form data and settings.
 	 */
 	public function details_payment( $entry, $form_data ) {
 
@@ -978,8 +978,8 @@ class WPForms_Entries_Single {
 	 *
 	 * @since 1.1.5
 	 *
-	 * @param object $entry
-	 * @param array $form_data
+	 * @param object $entry     Submitted entry values.
+	 * @param array  $form_data Form data and settings.
 	 */
 	public function details_actions( $entry, $form_data ) {
 
@@ -1120,8 +1120,8 @@ class WPForms_Entries_Single {
 	 *
 	 * @since 1.3.3
 	 *
-	 * @param object $entry
-	 * @param array $form_data
+	 * @param object $entry     Submitted entry values.
+	 * @param array  $form_data Form data and settings.
 	 */
 	public function details_related( $entry, $form_data ) {
 

@@ -382,7 +382,7 @@ function wpforms_has_payment( $type = 'entry', $data = '' ) {
  *
  * @since 1.4.5
  *
- * @param array $form_data Form data.
+ * @param array $form_data Form data and settings.
  *
  * @return bool
  */

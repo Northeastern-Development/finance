@@ -11,6 +11,8 @@
  */
 class WPForms_Addons {
 
+	const SLUG = 'wpforms-addons';
+
 	/**
 	 * WPForms addons
 	 *
@@ -41,7 +43,7 @@ class WPForms_Addons {
 		$page = isset( $_GET['page'] ) ? $_GET['page'] : '';
 
 		// Only load if we are actually on the settings page.
-		if ( 'wpforms-addons' === $page ) {
+		if ( self::SLUG === $page ) {
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueues' ) );
 			add_action( 'wpforms_admin_page', array( $this, 'output' ) );
@@ -264,6 +266,7 @@ class WPForms_Addons {
 
 					echo '<div class="actions wpforms-clear">';
 
+						// Status.
 						if ( ! empty( $status ) && 'upgrade' !== $status ) {
 							echo '<div class="status">';
 								echo '<strong>' .
@@ -278,19 +281,20 @@ class WPForms_Addons {
 							$action_class = 'upgrade-button';
 						}
 
+						// Button.
 						echo '<div class="' . esc_attr( $action_class ) . '">';
 							if ( 'active' === $status ) {
-								echo '<button class="status-' . esc_attr( $status ) . '" data-plugin="' . esc_attr( $plugin_basename ) . '">';
+								echo '<button class="status-' . esc_attr( $status ) . '" data-plugin="' . esc_attr( $plugin_basename ) . '" data-type="addon">';
 									echo '<i class="fa fa-toggle-on" aria-hidden="true"></i>';
 									esc_html_e( 'Deactivate', 'wpforms' );
 								echo '</button>';
 							} elseif ( 'inactive' === $status ) {
-								echo '<button class="status-' . esc_attr( $status ) . '" data-plugin="' . esc_attr( $plugin_basename ) . '">';
+								echo '<button class="status-' . esc_attr( $status ) . '" data-plugin="' . esc_attr( $plugin_basename ) . '" data-type="addon">';
 									echo '<i class="fa fa-toggle-on fa-flip-horizontal" aria-hidden="true"></i>';
 									esc_html_e( 'Activate', 'wpforms' );
 								echo '</button>';
 							} elseif ( 'download' === $status ) {
-								echo '<button class="status-' . esc_attr( $status ) . '" data-plugin="' . esc_url( $addon['url'] ) . '">';
+								echo '<button class="status-' . esc_attr( $status ) . '" data-plugin="' . esc_url( $addon['url'] ) . '" data-type="addon">';
 									echo '<i class="fa fa-cloud-download" aria-hidden="true"></i>';
 									esc_html_e( 'Install Addon', 'wpforms' );
 								echo '</button>';

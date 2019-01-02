@@ -87,6 +87,9 @@ class WPForms_Entries_List {
 		// Setup screen options - this needs to run early.
 		add_action( 'load-wpforms_page_wpforms-entries', array( $this, 'screen_options' ) );
 		add_filter( 'set-screen-option', array( $this, 'screen_options_set' ), 10, 3 );
+
+		// Heartbeat doesn't pass $_GET parameters checked by $this->init() condition.
+		add_filter( 'heartbeat_received', array( $this, 'heartbeat_new_entries_check' ), 10, 3 );
 	}
 
 	/**
@@ -104,7 +107,7 @@ class WPForms_Entries_List {
 		if ( 'wpforms-entries' === $page && 'list' === $view ) {
 
 			// Load the classes that builds the entries table.
-			if ( ! class_exists( 'WP_List_Table' ) ) {
+			if ( ! class_exists( 'WP_List_Table', false ) ) {
 				require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 			}
 			require_once WPFORMS_PLUGIN_DIR . 'pro/includes/admin/entries/class-entries-list-table.php';
@@ -202,7 +205,7 @@ class WPForms_Entries_List {
 			'wpforms-flatpickr',
 			WPFORMS_PLUGIN_URL . 'assets/js/flatpickr.min.js',
 			array( 'jquery' ),
-			'2.0.5'
+			'2.3.4'
 		);
 
 		// CSS.
@@ -555,13 +558,17 @@ class WPForms_Entries_List {
 			$this->entries->form_id   = $this->form_id;
 			$this->entries->form_data = $form_data;
 			$this->entries->prepare_items();
+
+			$last_entry = wpforms()->entry->get_last( $this->form_id );
 			?>
 
 			<div class="wpforms-admin-content">
 
 				<?php do_action( 'wpforms_entry_list_title', $form_data, $this ); ?>
 
-				<form id="wpforms-entries-table" method="get" action="<?php echo admin_url( 'admin.php?page=wpforms-entries' ); ?>">
+				<form id="wpforms-entries-table" method="get"
+				      action="<?php echo admin_url( 'admin.php?page=wpforms-entries' ); ?>"
+				      <?php echo ( ! $this->is_list_filtered() && isset( $last_entry->entry_id ) ) ? 'data-last-entry-id="' . absint( $last_entry->entry_id ) . '"' : ''; ?>>
 
 					<input type="hidden" name="page" value="wpforms-entries"/>
 					<input type="hidden" name="view" value="list"/>
@@ -642,7 +649,7 @@ class WPForms_Entries_List {
 	 *
 	 * @since 1.1.6
 	 *
-	 * @param array $form_data
+	 * @param array $form_data Form data and settings.
 	 */
 	public function list_form_actions( $form_data ) {
 
@@ -817,6 +824,42 @@ class WPForms_Entries_List {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Check for new entries using Heartbeat API.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @param array  $response  The Heartbeat response.
+	 * @param array  $data      The $_POST data sent.
+	 * @param string $screen_id The screen id.
+	 *
+	 * @return array
+	 */
+	public function heartbeat_new_entries_check( $response, $data, $screen_id ) {
+
+		if ( 'wpforms_page_wpforms-entries' !== $screen_id ) {
+			return $response;
+		}
+
+		$entry_id = ! empty( $data['wpforms_new_entries_entry_id'] ) ? absint( $data['wpforms_new_entries_entry_id'] ) : 0;
+		$form_id  = ! empty( $data['wpforms_new_entries_form_id'] ) ? absint( $data['wpforms_new_entries_form_id'] ) : 0;
+
+		if ( empty( $form_id ) ) {
+			return $response;
+		}
+
+		$entries_count = wpforms()->entry->get_next_count( $entry_id, $form_id );
+
+		if ( empty( $entries_count ) ) {
+			return $response;
+		}
+
+		/* translators: %d - Number of form entries. */
+		$response['wpforms_new_entries_notification'] = esc_html( sprintf( _n( 'See %d new entry', 'See %d new entries', $entries_count, 'wpforms' ), $entries_count ) );
+
+		return $response;
 	}
 }
 

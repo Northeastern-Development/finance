@@ -54,7 +54,7 @@ class WPForms_Entries_Export {
 	public $form_id;
 
 	/**
-	 * Form data.
+	 * Form data and settings.
 	 *
 	 * @since 1.1.5
 	 * @var int
@@ -103,7 +103,7 @@ class WPForms_Entries_Export {
 				'payment-select',
 				'payment-total',
 				'signature',
-				'net_promoter_score'
+				'net_promoter_score',
 			)
 		);
 
@@ -187,6 +187,7 @@ class WPForms_Entries_Export {
 					'content_only' => true,
 				)
 			);
+
 			$this->fields = $this->form_data['fields'];
 		}
 
@@ -236,7 +237,7 @@ class WPForms_Entries_Export {
 		$allowed = $this->allowed_fields();
 		$data    = array();
 
-		if ( $this->is_single_entry() ) {
+		if ( $this->is_single_entry() ) :
 
 			// For single entry exports we have the needed fields already
 			// and no more queries are necessary.
@@ -250,7 +251,7 @@ class WPForms_Entries_Export {
 			$data[1]['date_gmt'] = date_i18n( $date_format, strtotime( $this->entry->date ) );
 			$data[1]['entry_id'] = absint( $this->entry->entry_id );
 
-		} else {
+		else :
 
 			// All or multiple entry export.
 			$args        = array(
@@ -275,7 +276,8 @@ class WPForms_Entries_Export {
 				$data[ $entry->entry_id ]['date_gmt'] = date_i18n( $date_format, strtotime( $entry->date ) );
 				$data[ $entry->entry_id ]['entry_id'] = absint( $entry->entry_id );
 			}
-		} // End if().
+
+		endif;
 
 		$data = apply_filters( 'wpforms_export_get_data', $data, $this->entry_type );
 

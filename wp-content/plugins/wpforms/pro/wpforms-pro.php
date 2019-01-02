@@ -17,6 +17,7 @@ class WPForms_Pro {
 		$this->constants();
 		$this->includes();
 
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 10 );
 		add_action( 'wpforms_loaded', array( $this, 'objects' ), 1 );
 		add_action( 'wpforms_loaded', array( $this, 'updater' ), 30 );
 		add_action( 'wpforms_install', array( $this, 'install' ), 10 );
@@ -32,6 +33,16 @@ class WPForms_Pro {
 		add_filter( 'wpforms_frontend_strings', array( $this, 'frontend_strings' ) );
 		add_action( 'admin_notices', array( $this, 'conditional_logic_addon_notice' ) );
 		add_action( 'wpforms_builder_print_footer_scripts', array( $this, 'builder_templates' ) );
+		add_filter( 'wpforms_email_footer_text', array( $this, 'form_notification_footer' ) );
+	}
+
+	/**
+	 * Loads the separate PRO plugin translation file.
+	 *
+	 * @since 1.5.0
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'wpforms', false, dirname( plugin_basename( WPFORMS_PLUGIN_FILE ) ) . '/pro/languages/' );
 	}
 
 	/**
@@ -68,12 +79,12 @@ class WPForms_Pro {
 	public function objects() {
 
 		// Global objects.
-		wpforms()->entry        = new WPForms_Entry_Handler;
-		wpforms()->entry_fields = new WPForms_Entry_Fields_Handler;
-		wpforms()->entry_meta   = new WPForms_Entry_Meta_Handler;
+		wpforms()->entry        = new WPForms_Entry_Handler();
+		wpforms()->entry_fields = new WPForms_Entry_Fields_Handler();
+		wpforms()->entry_meta   = new WPForms_Entry_Meta_Handler();
 
 		if ( is_admin() ) {
-			wpforms()->license = new WPForms_License;
+			wpforms()->license = new WPForms_License();
 		}
 	}
 
@@ -132,9 +143,9 @@ class WPForms_Pro {
 	public function install() {
 
 		$wpforms_install               = new stdClass();
-		$wpforms_install->entry        = new WPForms_Entry_Handler;
-		$wpforms_install->entry_fields = new WPForms_Entry_Fields_Handler;
-		$wpforms_install->entry_meta   = new WPForms_Entry_Meta_Handler;
+		$wpforms_install->entry        = new WPForms_Entry_Handler();
+		$wpforms_install->entry_fields = new WPForms_Entry_Fields_Handler();
+		$wpforms_install->entry_meta   = new WPForms_Entry_Meta_Handler();
 
 		// Entry tables.
 		$wpforms_install->entry->create_table();
@@ -147,7 +158,7 @@ class WPForms_Pro {
 	 *
 	 * @since 1.3.9
 	 *
-	 * @param array $tabs
+	 * @param array $tabs Admin area tabs list.
 	 *
 	 * @return array
 	 */
@@ -172,7 +183,7 @@ class WPForms_Pro {
 	 *
 	 * @since 1.3.9
 	 *
-	 * @param array $settings
+	 * @param array $settings Admin area settings list.
 	 *
 	 * @return array
 	 */
@@ -246,7 +257,7 @@ class WPForms_Pro {
 		$settings['general'] = wpforms_array_insert(
 			$settings['general'],
 			array(
-				'gdpr-disable-uuid' => array(
+				'gdpr-disable-uuid'    => array(
 					'id'   => 'gdpr-disable-uuid',
 					'name' => esc_html__( 'Disable User Cookies', 'wpforms' ),
 					'desc' => esc_html__( 'Check this to disable user tracking cookies (UUIDs). This will disable the Related Entries feature and the Form Abandonment/Geolocation addons.', 'wpforms' ),
@@ -270,12 +281,12 @@ class WPForms_Pro {
 	 *
 	 * @since 1.2.1
 	 *
-	 * @param array $fields
-	 * @param array $entry
-	 * @param int|string $form_id
-	 * @param mixed $form_data
+	 * @param array      $fields    List of form fields.
+	 * @param array      $entry     User submitted data.
+	 * @param int|string $form_id   Form ID.
+	 * @param array      $form_data Prepared form settings.
 	 */
-	public function entry_save( $fields, $entry, $form_id, $form_data = '' ) {
+	public function entry_save( $fields, $entry, $form_id, $form_data = array() ) {
 
 		// Check if form has entries disabled.
 		if ( isset( $form_data['settings']['disable_entries'] ) ) {
@@ -293,7 +304,6 @@ class WPForms_Pro {
 		$user_agent = ! empty( $_SERVER['HTTP_USER_AGENT'] ) ? substr( $_SERVER['HTTP_USER_AGENT'], 0, 256 ) : '';
 		$user_uuid  = ! empty( $_COOKIE['_wpfuuid'] ) ? $_COOKIE['_wpfuuid'] : '';
 		$date       = date( 'Y-m-d H:i:s' );
-		$entry_id   = false;
 
 		// If GDPR enhancements are enabled and user details are disabled
 		// globally or in the form settings, discard the IP and UA.
@@ -345,17 +355,17 @@ class WPForms_Pro {
 	 *
 	 * @since 1.2.1
 	 *
-	 * @param object $instance
+	 * @param \WPForms_Builder_Panel_Settings $instance Settings management panel instance.
 	 */
 	public function form_settings_general( $instance ) {
 
 		// Only provide this option if the user has configured payments.
 		if (
+			isset( $instance->form_data['settings']['disable_entries'] ) ||
 			(
 				empty( $instance->form_data['payments']['paypal_standard']['enable'] ) ||
 				empty( $instance->form_data['payments']['stripe']['enable'] )
-			) ||
-			isset( $instance->form_data['settings']['disable_entries'] )
+			)
 		) {
 			wpforms_panel_field(
 				'checkbox',
@@ -384,7 +394,7 @@ class WPForms_Pro {
 	 *
 	 * @since 1.2.1
 	 *
-	 * @param array $columns
+	 * @param array $columns List of table columns.
 	 *
 	 * @return array
 	 */
@@ -436,6 +446,7 @@ class WPForms_Pro {
 	 * Form notification settings, supports multiple notifications.
 	 *
 	 * @since 1.2.3
+	 *
 	 * @param object $settings
 	 */
 	public function form_settings_notifications( $settings ) {
@@ -873,7 +884,7 @@ class WPForms_Pro {
 	 *
 	 * @since 1.2.6
 	 *
-	 * @param array $strings
+	 * @param array  $strings List of strings.
 	 * @param object $form
 	 *
 	 * @return array
@@ -968,6 +979,44 @@ class WPForms_Pro {
 
 		<?php
 	}
-}
 
-new WPForms_Pro;
+	/**
+	 * Expired license notification in form notification email footer.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @param string $text Footer text.
+	 *
+	 * @return string
+	 */
+	public function form_notification_footer( $text ) {
+
+		$license = get_option( 'wpforms_license', array() );
+
+		if (
+			empty( $license['is_expired'] ) &&
+			empty( $license['is_disabled'] ) &&
+			empty( $license['is_invalid'] )
+		) {
+			return $text;
+		}
+
+		$notice = sprintf(
+			wp_kses(
+				/* translators: %1$s - WPForms.com Account dashboard URL */
+				__( 'Your WPForms license key has expired. In order to continue receiving support and plugin updates you must renew your license key. Please log in to <a href="%1$s" target="_blank" rel="noopener noreferrer">your WPForms.com account</a> to renew your license.', 'wpforms' ),
+				array(
+					'a'      => array(
+						'href'   => array(),
+						'target' => array(),
+						'rel'    => array(),
+					),
+				)
+			),
+			'https://wpforms.com/account/'
+		);
+
+		return $notice . '<br><br>' . $text;
+	}
+}
+new WPForms_Pro();

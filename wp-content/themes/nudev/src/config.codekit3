@@ -1943,11 +1943,11 @@
 		"oAP": "/loops/loop-forms.php",
 		"oF": 0
 		},
-	"/loops/loop-news-archive-refactored.php": {
+	"/loops/loop-newsevents.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/loops/loop-news-archive-refactored.php",
+		"oAP": "/loops/loop-newsevents.php",
 		"oF": 0
 		},
 	"/loops/loop-staff-departmenthead.php": {
@@ -2237,18 +2237,18 @@
 		"oAP": "/templates/template-homepage.php",
 		"oF": 0
 		},
-	"/templates/template-newsandevents-index.php": {
+	"/templates/template-newsevents-index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/templates/template-newsandevents-index.php",
+		"oAP": "/templates/template-newsevents-index.php",
 		"oF": 0
 		},
-	"/templates/template-newsandevents-item.php": {
+	"/templates/template-newsevents-item.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/templates/template-newsandevents-item.php",
+		"oAP": "/templates/template-newsevents-item.php",
 		"oF": 0
 		},
 	"/templates/template-overview.php": {

@@ -223,7 +223,7 @@ class WPForms_Entries_Table extends WP_List_Table {
 					$x ++;
 				}
 			}
-		} else {
+		} else if ( ! empty( $entry_columns ) ) {
 			foreach ( $entry_columns as $id ) {
 				// Check to make sure the field as not been removed.
 				if ( empty( $this->form_data['fields'][ $id ] ) ) {
@@ -267,7 +267,7 @@ class WPForms_Entries_Table extends WP_List_Table {
 
 		if (
 			! empty( $entry_fields[ $field_id ] ) &&
-			! empty( $entry_fields[ $field_id ]['value'] )
+			! wpforms_is_empty_string( $entry_fields[ $field_id ]['value'] )
 		) {
 
 			$value = $entry_fields[ $field_id ]['value'];
@@ -472,15 +472,28 @@ class WPForms_Entries_Table extends WP_List_Table {
 		?>
 
 		<script>
+			var wpforms_lang_code = '<?php echo sanitize_key( wpforms_get_language_code() ); ?>',
+				flatpickr_locale = {
+					rangeSeparator: ' - '
+				};
+
+			if (
+				Flatpickr !== 'undefined' &&
+				Flatpickr.hasOwnProperty( 'l10ns' ) &&
+				Flatpickr.l10ns.hasOwnProperty( wpforms_lang_code )
+			) {
+				flatpickr_locale = Flatpickr.l10ns[ wpforms_lang_code ];
+				// Rewrite separator for all locales to make filtering work.
+				flatpickr_locale.rangeSeparator = ' - ';
+			}
+
 			jQuery(".wpforms-filter-date-selector").flatpickr({
 				altInput: true,
 				altFormat: "M j, Y",
 				dateFormat: "Y-m-d",
+				locale: flatpickr_locale,
+				mode: "range",
 				<?php echo $default_date; ?>
-				locale: {
-					rangeSeparator: ' - '
-				},
-				mode: "range"
 			});
 		</script>
 

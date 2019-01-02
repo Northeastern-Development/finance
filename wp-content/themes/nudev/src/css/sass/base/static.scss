@@ -271,6 +271,12 @@
     div.main,
     main {
 
+        ul.js__collapsible_list {
+            li {
+                cursor: pointer;
+            }
+        }
+        
         width: 100%;
         > section.hero {
             width: 100%;

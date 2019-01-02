@@ -1,6 +1,57 @@
 # Change Log
 All notable changes to this project will be documented in this file, formatted via [this recommendation](http://keepachangelog.com/).
 
+## [1.5.0.4] - 2018-12-20
+### Changed
+- Dashboard widget improvements.
+
+### Fixed
+- Various typos.
+
+## [1.5.0.3] - 2018-12-06
+### Changed
+- Minor improvements to Gutenberg block for WordPress 5.0.
+
+### Fixed
+- Error when activating WPForms Pro if WPForms Lite is still activated.
+
+## [1.5.0.2] - 2018-12-03
+### Fixed
+- File Upload validation issue if max file size was defined.
+- Dashboard widget appearance on Windows.
+
+## [1.5.0.1] - 2018-11-28
+### Fixed
+- Required validation enforcement on Date Time fields.
+
+## [1.5.0] - 2018-11-28
+### IMPORTANT
+- Support for PHP 5.2 has been discontinued. If you are running PHP 5.2, you MUST upgrade PHP before installing WPForms 1.5. Failure to do that will disable WPForms core functionality.
+
+### Added
+- Dashboard widget with basic reporting.
+- WPForms Challenge: an interactive step-by-step guide to creating a form for new users.
+- Dynamic field population, available to enable from form settings.
+- New entries "heartbeat" notification on entries list screen.
+- "About Us" admin page (WPForms > About Us).
+- {user_first_name} and {user_last_name} Smart Tags.
+
+### Changed
+- Improved randomizing if field is configured to randomize items.
+- Improved file size validations with multiple uploads.
+- Improved i18n support.
+
+### Fixed
+- Form builder errors if user had Visual Editor disabled in profile.
+- Form builder Windows styling issues.
+- Form builder dynamic choices warning not always removing.
+- Form builder "Show Layout" CSS formatting.
+- reCAPTCHA compatibility when form is inside OptinMonster popup.
+- PHP errors if form does not contain entries.
+- Validation and formatting issues on some fields if submitted value is zero.
+- File upload javascript validation conflicting with multi-page forms.
+- Gutenberg block returning error if no forms have been created.
+
 ## [1.4.9] - 2018-09-18
 ### Added
 - Pirate Forms importer.
