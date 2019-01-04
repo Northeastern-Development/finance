@@ -3,38 +3,37 @@
  * ---
  * Menus
  */
-
 //Change this to which size you need your mobile nav
 $mobileNav: 1100px;
-
 #nu__mobile {
     display: none;
 }
-
-
 #nav-btn {
     display: none;
 }
-
-//main nav items in header
+// flex-wrapper around all nav items
 .nu__main-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    // display: flex;
+    // flex-flow: row wrap;
+    // align-items: center;
     height: 100%;
+    
+    // navlinks
+    >ul {
+        display: flex;
+        align-items: center;
+        
+        >li {
+            @include font-2b-l;
 
-    /*added*/
-    &>ul {
-        &>li {
-            @include font-1r-l;
             margin-right: ($gutter * 2);
             display: inline;
-
-            &>a {
-                color: $brand_colors-black;
-
-                &>span {
+            >a {
+                color: rgba(255, 255, 255, 0.8);
+                &:hover {
+                    color: rgba(255, 255, 255, 1);
+                }
+                >span {
                     //   border-bottom: 4px solid rgba(255,255,254,1.0);
                     border-bottom: 4px solid transparent;
                     padding-bottom: 27px;
@@ -51,7 +50,7 @@ $mobileNav: 1100px;
 
                     &:hover {
                         border-bottom: 4px solid $brand_colors-red;
-                        color: $brand_colors-grayW;
+                        color: $brand_colors-gray;
 
                         &:after {
                             color: $brand_colors-red;
@@ -60,7 +59,6 @@ $mobileNav: 1100px;
                     }
                 }
             }
-
             &:nth-child(2),
             &:nth-child(3),
             &:nth-child(4) {
@@ -76,13 +74,11 @@ $mobileNav: 1100px;
     }
 }
 
+
 //DESKTIOP NAV
 //dropdown panels
 $neumenu-list-zIndex: 11;
 $nicemnu-active-bgcolor: rgb(151, 151, 151);
-
-
-
 
 .verticle>.neumenu-item {
     display: block !important;
@@ -102,7 +98,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
     margin-top: 25px;
     display: none;
     box-shadow: 2px 2px 2px #ccc;
-    background-color: $brand_colors-white;
+    background-color: white;
     min-height: 100%;
 
     &>.neumenu {
@@ -113,7 +109,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
         &>.neumenu-item {
             display: inline-block;
             z-index: $neumenu-list-zIndex;
-            //   background-color: $brand_colors-white;
+            //   background-color: white;
             padding: 10px;
             margin-bottom: ($gutter/2);
 
@@ -123,7 +119,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
             &>h6 {
                 //PANEL TITLES/HEADER
-                color: $brand_colors-black;
+                color: black;
                 font-size: 16px;
                 line-height: 2em;
                 cursor: pointer;
@@ -132,13 +128,13 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
             &>p {
                 //ABOUT COPY LEFT BLOCK BELOW HEADER
-                color: $brand_colors-black;
+                color: black;
                 width: 80%;
             }
 
             &>a {
                 //ABOUT LEARN MORE LINK
-                color: $brand_colors-black;
+                color: black;
                 width: 80%;
                 text-decoration: none;
 
@@ -164,7 +160,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
                 display: none;
                 min-width: 100vw;
                 background-color: $nicemnu-active-bgcolor;
-                color: $brand_colors-black;
+                color: black;
                 min-height: 100%;
 
                 &.active {
@@ -212,7 +208,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
                 &>a {
                     &:hover {
-                        color: $brand_colors-white;
+                        color: white;
                     }
                 }
             }
@@ -220,17 +216,17 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
         &>h6 {
             //ABOUT BOXES PANEL
-            color: $brand_colors-black;
+            color: black;
             width: 18vw;
             height: 12vw;
-            background: $brand_colors-white;
+            background: white;
             display: table;
 
             &>a {
                 display: table-cell;
                 vertical-align: middle;
                 @include font-1r-c;
-                color: $brand_colors-black;
+                color: black;
 
                 &>span {
                     padding-bottom: 5px;
@@ -264,7 +260,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
     &>a {
         &>span {
             border-bottom: 4px solid $brand_colors-red !important;
-            color: $brand_colors-grayW;
+            color: $brand_colors-gray;
 
             &:after {
                 color: $brand_colors-red;
@@ -280,6 +276,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
     .neumenu-wrapper-inner {
         display: flex;
         flex-flow: row nowrap;
+        height: 166px;
         > div {
             width: 80%;
             display: flex;
@@ -287,11 +284,15 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
             padding: 15px;
         }
         > div:first-child {
-            background-color: $brand_colors-teal;
+            background-color: $brand_colors-teal--dark;
             color: white;
             width: 20%;
             flex-flow: column nowrap;
+            > h2 {
+                @include font-7r-c;
+            }
             h3 {
+                @include font-3b-c;
                 margin: 10px 0;
             }
             h3:not(:first-of-type){
@@ -318,12 +319,12 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
         // "back to topics"
         .removefilter {
-            border: 1px solid $brand_colors-white;
+            border: 1px solid white;
             padding: 5px 10px;
             cursor: pointer;
             &:hover {
                 color: $brand_colors-teal;
-                background-color: $brand_colors-white;
+                background-color: white;
             }
         }
 
@@ -429,13 +430,13 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
                         }
 
                         &:hover {
-                            color: $brand_colors-grayW;
+                            color: $brand_colors-gray;
                         }
 
                     }
 
                     .active {
-                        color: $brand_colors-grayW;
+                        color: $brand_colors-gray;
 
                         &:before {
                             content: '\e316' !important;
@@ -458,7 +459,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
                             &>a {
                                 &:hover {
-                                    color: $brand_colors-grayW;
+                                    color: $brand_colors-gray;
                                 }
                             }
                         }
@@ -494,7 +495,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
     }
 
     #nav-btn+span {
-        background-color: $brand_colors-black;
+        background-color: black;
         cursor: pointer;
         display: block;
         height: 2px;
@@ -510,7 +511,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
     #nav-btn+span::before,
     #nav-btn+span::after {
-        background-color: $brand_colors-black;
+        background-color: black;
         content: "";
         display: block;
         height: 2px;
@@ -603,7 +604,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
     }
 
     #nav-btn+span {
-        background-color: $brand_colors-black;
+        background-color: black;
         cursor: pointer;
         display: block;
         height: 2px;
@@ -617,7 +618,7 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
     #nav-btn+span::before,
     #nav-btn+span::after {
-        background-color: $brand_colors-black;
+        background-color: black;
         content: "";
         display: block;
         height: 2px;

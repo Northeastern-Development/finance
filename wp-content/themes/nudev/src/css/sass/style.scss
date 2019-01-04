@@ -1,8 +1,12 @@
 // Base
+@import 'base/fonts.scss';
+
 @import 'base/normalize.scss';
 @import 'base/vars.scss';
 @import 'base/mixins.scss';
-@import 'base/fonts.scss';
+
+
+
 @import 'base/nureset.scss';
 @import "base/static";
 @import "base/hover.scss";

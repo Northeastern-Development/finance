@@ -13,7 +13,6 @@
     $format_deadline = '
         <li>
             <h5>%s</h5>
-            <p>%s</p>
             <div>%s</div>
         </li>
     ';
@@ -22,26 +21,27 @@
             <h4>Upcoming Deadlines</h4>
             <ul class="home-deadlines-items">
     ';
-
+    $total = 0;
     foreach( $deadlines as $i => $deadline ){
         if( $i < 5 ){
-
-            if( $deadline['status'] == '1' && $deadline['date'] > date('Ymd') ){
-                
-                
+            if( $deadline['status'] == '1' && $deadline['date'] > date('Ymd') ){                
                 $content_deadline .= sprintf(
                     $format_deadline
                     ,date('M d' ,strtotime($deadline['date']))
-                    ,$deadline['title']
                     ,$deadline['excerpt']
                 );
-                
+                $total++;
             }
-            
         }
     }
-    $content_deadline .= '</ul></div>';
+    
+    $content_deadline .= '
+            </ul>
+        </div>
+        <div class="home-deadlines-bg"></div>
+    ';
 
-    echo $content_deadline;
-
+    if( $total > 0 ){
+        echo $content_deadline;
+    }
 ?>

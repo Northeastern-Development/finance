@@ -32,7 +32,7 @@ class SetupTheme
          */
         if(is_page_template('templates/template-tasks.php')){ wp_enqueue_script('taskspage', get_template_directory_uri() . '/js/tasks.js', array('theme'), '1.0.0'); }
         if(is_page_template('templates/template-forms.php')){ wp_enqueue_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('theme'), '1.0.0'); }
-        if(is_page_template('templates/template-homepage.php')){ wp_enqueue_script('deadlines', get_template_directory_uri() . '/js/deadlines.js', array('theme'), '1.0.0'); }
+        // if(is_page_template('templates/template-homepage.php')){ wp_enqueue_script('deadlines', get_template_directory_uri() . '/js/deadlines.js', array('theme'), '1.0.0'); }
         if( is_page_template( 'templates/template-glossary.php') ){ wp_enqueue_script('glossary', get_template_directory_uri() . '/js/glossary.js', array('theme'), '1.0.0');}
     }
     function enqueue_styles(){
@@ -51,39 +51,39 @@ class SetupTheme
 
         // Home Page
         if( is_page_template('templates/template-homepage.php') ){
-            wp_enqueue_style('homepage', get_template_directory_uri() . '/css/conditionals/css/homepage.css', 'theme', '1.0.0');
+            wp_enqueue_style('homepage', get_template_directory_uri() . '/css/homepage.css', 'theme', '1.0.0');
         }
         // Tools Page
         if( is_page_template('templates/template-tools-index.php') || is_page_template('templates/template-tool-detail.php') ){
-            wp_enqueue_style('tools', get_template_directory_uri() . '/css/conditionals/css/tools.css', array('theme'), '1.0.0');
+            wp_enqueue_style('tools', get_template_directory_uri() . '/css/tools.css', array('theme'), '1.0.0');
         }
         // Tasks Page
         if( is_page_template('templates/template-tasks.php') ){
-            wp_enqueue_style('tasks', get_template_directory_uri() . '/css/conditionals/css/tasks.css', array('theme'), '1.0.0');
+            wp_enqueue_style('tasks', get_template_directory_uri() . '/css/tasks.css', array('theme'), '1.0.0');
         }
         // Glossary Page
         if( is_page_template('templates/template-glossary.php') ){
-            wp_enqueue_style('glossary', get_template_directory_uri() . '/css/conditionals/css/glossary.css', array('theme'), '1.0.0');
+            wp_enqueue_style('glossary', get_template_directory_uri() . '/css/glossary.css', array('theme'), '1.0.0');
         }
         // Forms Page
         if( is_page_template('templates/template-forms.php') ){
-            wp_enqueue_style('forms-page', get_template_directory_uri() . '/css/conditionals/css/forms-page.css', array('theme'), '1.0.0');
+            wp_enqueue_style('forms-page', get_template_directory_uri() . '/css/forms-page.css', array('theme'), '1.0.0');
         }
         // Departments Index/Detail Pages
         if( is_page_template('templates/template-departments-detail.php') || is_page_template('templates/template-departments-index.php') ){
-            wp_enqueue_style('departments', get_template_directory_uri() . '/css/conditionals/css/departments.css', array('theme'), '1.0.0');
+            wp_enqueue_style('departments', get_template_directory_uri() . '/css/departments.css', array('theme'), '1.0.0');
         }
         // News and Events Page
         if( is_page_template('templates/template-newsevents-index.php') ){
-            wp_enqueue_style('newsevents', get_template_directory_uri() . '/css/conditionals/css/news-events.css', array('theme'), '1.0.0');
+            wp_enqueue_style('newsevents', get_template_directory_uri() . '/css/news-events.css', array('theme'), '1.0.0');
         }
         // Discounts
         if( is_page_template('templates/template-discounts.php') ){
-            wp_enqueue_style('discounts', get_template_directory_uri() . '/css/conditionals/css/discounts.css', array('theme'), '1.0.0');
+            wp_enqueue_style('discounts', get_template_directory_uri() . '/css/discounts.css', array('theme'), '1.0.0');
         }
         // Financial Statements
         if( is_page_template('templates/template-financial_statements.php') ){
-            wp_enqueue_style('financialstatements', get_template_directory_uri() . '/css/conditionals/css/financial-statements.css', array('theme'), '1.0.0');
+            wp_enqueue_style('financialstatements', get_template_directory_uri() . '/css/financial-statements.css', array('theme'), '1.0.0');
         }
     }
 }

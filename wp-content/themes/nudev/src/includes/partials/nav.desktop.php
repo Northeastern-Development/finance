@@ -1,10 +1,7 @@
 <?php 
 /**
  *  Desktop Nav
- * 
- * 
  */
-
 ?>
 <nav class="nu__main-nav" id="nu__main-nav-desktop">
     <ul>

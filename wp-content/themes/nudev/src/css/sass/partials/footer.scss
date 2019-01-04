@@ -27,7 +27,7 @@ footer {
                 list-style: none;
                 list-style-type: none;
                 display: flex;
-                border-bottom: 1px solid $brand_colors-grayW;
+                border-bottom: 1px solid $brand_colors-gray;
 
                 // footer sections
                 > li {
@@ -35,12 +35,12 @@ footer {
                     flex-basis: 0;
                     font-size: 1.3rem;
                     h5 {
-                        color: $brand_colors-grayW;
+                        color: $brand_colors-gray;
                     }
                     > ul {
                         list-style-type: none;
                         a {
-                            color: $brand_colors-white;
+                            color: white;
                         }
                     }
                     &:not(:first-child){

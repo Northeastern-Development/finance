@@ -1,0 +1,47 @@
+/* These are variables for the main navigation */
+@media only screen {
+  div.main > section > h2,
+  main > section > h2 {
+    text-align: left;
+    border-bottom: 1px solid black; }
+  div.main > section > div.task-options,
+  main > section > div.task-options {
+    text-align: center; }
+    div.main > section > div.task-options > h2,
+    main > section > div.task-options > h2 {
+      display: inline-block;
+      border-bottom: 1px solid black; }
+    div.main > section > div.task-options ul.task-options-list > li,
+    main > section > div.task-options ul.task-options-list > li {
+      padding: 10px 0;
+      border-bottom: 1px solid black;
+      cursor: pointer; }
+      div.main > section > div.task-options ul.task-options-list > li > ul,
+      main > section > div.task-options ul.task-options-list > li > ul {
+        cursor: initial;
+        display: block;
+        margin-left: 5%; }
+        div.main > section > div.task-options ul.task-options-list > li > ul > li,
+        main > section > div.task-options ul.task-options-list > li > ul > li {
+          margin: 0 auto;
+          margin-bottom: 20px; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
+          width: 25%;
+          margin: auto;
+          float: right; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar i.material-icons,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar i.material-icons {
+            color: #d41b2c; }
+      div.main > section > div.task-options ul.task-options-list > li > div h5, div.main > section > div.task-options ul.task-options-list > li > div img,
+      main > section > div.task-options ul.task-options-list > li > div h5,
+      main > section > div.task-options ul.task-options-list > li > div img {
+        display: inline-block;
+        margin: 0 auto; }
+      div.main > section > div.task-options ul.task-options-list > li > div img,
+      main > section > div.task-options ul.task-options-list > li > div img {
+        width: 32px;
+        height: 32px; }
+      div.main > section > div.task-options ul.task-options-list > li > div h5,
+      main > section > div.task-options ul.task-options-list > li > div h5 {
+        margin-left: 20px; } }

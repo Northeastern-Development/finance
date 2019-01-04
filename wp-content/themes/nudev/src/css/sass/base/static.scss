@@ -20,8 +20,8 @@
     div.main {
         margin: 0 auto;
         width: $wrapper-width;
-        background-color: $brand_colors-white;
-        color: $brand_colors-black;
+        background-color: white;
+        color: black;
         // inner container
         > section {
             position: relative;
@@ -31,25 +31,25 @@
             overflow: hidden;
         }
         > section.hero {
-            background: rgba($brand_colors-black, 1.0);
+            background: rgba(black, 1.0);
             width: $wrapper-width;
             margin: 0 0 ($gutter * 2) 0;
             overflow: hidden;
             > h1 {
-                color: rgba($brand_colors-white, 1.0);
+                color: rgba(white, 1.0);
                 text-align: center;
                 @include font-8l-c;
             }
             > div {
                 width: $content-width-narrow;
                 margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
-                color: rgba($brand_colors-white, 1.0);
+                color: rgba(white, 1.0);
             }
         }
         > section.intro {
             width: $content-width-narrow;
             margin: 0 auto;
-            border-bottom: solid rgba($brand_colors-black, 1.0) 1px;
+            border-bottom: solid rgba(black, 1.0) 1px;
     
             >h1 {
                 margin: 0 0 ($gutter / 2) 0;
@@ -299,7 +299,7 @@
             li {
                 cursor: pointer;
                 padding: 10px 0;
-                border-bottom: 1px solid $brand_colors-grayW;
+                border-bottom: 1px solid $brand_colors-gray;
                 > div {
                     cursor: initial;
                 }
@@ -332,7 +332,7 @@
             > .nu__prefooter {
                 > h2 {
                     text-align: left;
-                    border-bottom: 1px solid $brand_colors-black;
+                    border-bottom: 1px solid black;
                 }
             }
         }
@@ -342,7 +342,7 @@
                 @include ul_grid_cols(2);
                 li {
                     margin: 0 20px 20px 0;
-                    border-bottom: 1px solid $brand_colors-grayW;
+                    border-bottom: 1px solid $brand_colors-gray;
                     &:nth-child(2n){
                         margin-right: 0;
                     }

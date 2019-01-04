@@ -1,0 +1,166 @@
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/mixins.scss';
+
+@media only screen {
+
+
+
+    // Deadlines Feature:
+    div.main,
+    main {
+
+        section.hero {
+            position: relative;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            height: 770px;
+            > div:first-child {
+                width: calc(100% / 3);
+            }
+
+            a.nu__content_btn {
+                margin: 20px auto;
+                @include nu__button();
+                border: 1px solid white;
+                h4 {
+                    display: inline-block;
+                }
+                &:hover {
+                    border: 1px solid white;
+                    color: white;
+                    background-color: rgba(0,0,0, 0.3);
+                }
+            }
+            
+
+
+            div.home-deadlines-bg {
+                position: absolute;
+                width: 100%;
+                height: 150px;
+                bottom: 0;
+                left: 0;
+                background-color: $brand_colors-teal--dark;
+                z-index: 10;
+                margin: 0;
+            }
+            div.home-deadlines {
+                position: relative;
+                z-index: 11;
+                width: 80%;
+                text-align: left;
+                ul.home-deadlines-items {
+                    justify-content: center;
+                    li {
+                        height: 185px;
+                        background-color: white;
+                        color: black;
+                        padding: 20px;
+                        margin-bottom: 0;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        > h5, > p {
+                            @include font-3b-l;
+                        }
+                        > div > p {
+                            @include font-2l-l;
+                        }
+                    }
+                }
+                // 'upcoming deadlines' button
+                > h4 {
+                    padding: 5px 10px;
+                    display: inline-block;
+                    background-color: rgba(255,255,255, 0.6);
+                    color: black;
+                    text-transform: uppercase;
+                }
+                
+            } 
+            
+        }
+        
+    }
+        
+    
+    
+
+
+    // code here
+        
+    
+    .neumenu-wrapper-inner > div:not(:first-child) {
+        // border-bottom: 1px solid $brand_colors-gray;
+    }
+    .neumenu-wrapper-inner {
+        box-shadow: 2px 2px 2px #ccc;
+        
+    }
+
+    li[data-id="howdoi"] {
+        pointer-events: none;
+        > a {
+            pointer-events: none;
+        }
+    }
+
+    div.main,
+    main {
+        > section {
+
+            > a.nu__content_btn {
+                @include nu__button();
+            }
+
+        }
+
+        section.home-feat-tools,
+        section.home-feat-news {
+            padding: 0 20px;
+            margin-bottom: 30px;
+            > div {
+                display: flex;
+                flex-flow: row nowrap;
+                
+                > div {
+                    flex: 1 0 auto;
+                    width: calc(33% - 20px);
+                    justify-content: space-around;
+                    align-items: center;
+                    p {
+                        text-align: left;
+                        i.material-icons {
+                            vertical-align: middle;
+                            color: $brand_colors-red;
+                        }
+                    }
+                    &:not(:last-child){
+                        margin-right: 30px;
+                    }
+                    img {
+                        height: auto;
+                        object-fit: cover;
+                        max-height: 120px;
+                        width: 80%;
+                        margin: 0 auto 40px;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    section.hero {
+        a.nu__content_btn {
+            border: 1px solid white;
+            color: white;
+        }
+        > div:first-of-type{
+            text-align: center;
+        }
+    }
+        
+}

@@ -1,0 +1,14 @@
+@media only screen {
+  /* These are variables for the main navigation */
+  /**
+ * modules/mixins
+ * ---
+ */
+  main#financialstatements > section:nth-child(2) > ul {
+    flex-flow: row wrap; }
+    main#financialstatements > section:nth-child(2) > ul li {
+      flex: 1 0 calc(calc(100% / 1) - 20px); }
+    main#financialstatements > section:nth-child(2) > ul li {
+      border-bottom: 1px solid black;
+      padding: 10px 0;
+      padding-left: 20px; } }

@@ -1,0 +1,30 @@
+/* These are variables for the main navigation */
+@media only screen {
+  div.main > section .forms-category-relatedresources > li,
+  main > section .forms-category-relatedresources > li {
+    margin: 0 auto; }
+    div.main > section .forms-category-relatedresources > li i, div.main > section .forms-category-relatedresources > li a,
+    main > section .forms-category-relatedresources > li i,
+    main > section .forms-category-relatedresources > li a {
+      display: inline-block;
+      vertical-align: middle; }
+    div.main > section .forms-category-relatedresources > li i,
+    main > section .forms-category-relatedresources > li i {
+      color: #d41b2c;
+      margin-right: 15px; }
+  main#forms .forms-category > ul {
+    border-bottom: 1px solid #000;
+    margin-bottom: 40px;
+    padding: 10px; }
+    main#forms .forms-category > ul > li > div > a {
+      display: block; }
+      main#forms .forms-category > ul > li > div > a p, main#forms .forms-category > ul > li > div > a i {
+        display: inline-block;
+        width: auto;
+        margin: 0 auto; }
+    main#forms .forms-category > ul > ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      flex-flow: row wrap; }
+      main#forms .forms-category > ul > ul li {
+        flex: 1 0 100%; } }

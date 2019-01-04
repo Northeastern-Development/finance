@@ -54,11 +54,422 @@
 		"oAP": "/.fonts/FontAwesome.otf",
 		"oF": 0
 		},
-	"/.fonts/readme.txt": {
+	"/.fonts/Lato-Light.eot": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/.fonts/readme.txt",
+		"oAP": "/.fonts/Lato-Light.eot",
+		"oF": 0
+		},
+	"/.fonts/Lato-Light.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/Lato-Light.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/Lato-Light.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/Lato-Light.ttf",
+		"oF": 0
+		},
+	"/.fonts/Lato-Light.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/Lato-Light.woff",
+		"oF": 0
+		},
+	"/.fonts/Lato-Light.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/Lato-Light.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-100.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-100.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100italic.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100italic.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100italic.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-100italic.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-100italic.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100italic.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100italic.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100italic.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-100italic.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-100italic.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-300.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-300.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300italic.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300italic.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300italic.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-300italic.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-300italic.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300italic.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300italic.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300italic.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-300italic.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-300italic.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-700.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-700.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700italic.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700italic.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700italic.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-700italic.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-700italic.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700italic.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700italic.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700italic.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-700italic.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-700italic.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-900.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-900.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900italic.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900italic.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900italic.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-900italic.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-900italic.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900italic.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900italic.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900italic.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-900italic.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-900italic.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-italic.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-italic.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-italic.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-italic.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-italic.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-italic.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-italic.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-italic.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-italic.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-italic.woff2",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-regular.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-regular.eot",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-regular.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/lato-v14-latin-regular.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/lato-v14-latin-regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-regular.ttf",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-regular.woff",
+		"oF": 0
+		},
+	"/.fonts/lato-v14-latin-regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/.fonts/lato-v14-latin-regular.woff2",
 		"oF": 0
 		},
 	"/404.php": {
@@ -629,212 +1040,65 @@
 		"oAP": "/comments.php",
 		"oF": 0
 		},
-	"/css/conditionals/css/departments.css": {
+	"/css/departments.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/conditionals/css/departments-min.css",
+		"oAP": "/css/departments-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/conditionals/css/discounts.css": {
+	"/css/discounts.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/conditionals/css/discounts-min.css",
+		"oAP": "/css/discounts-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/conditionals/css/financial-statements.css": {
+	"/css/financial-statements.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/conditionals/css/financial-statements-min.css",
+		"oAP": "/css/financial-statements-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/conditionals/css/forms-page.css": {
+	"/css/forms-page.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/conditionals/css/forms-page-min.css",
+		"oAP": "/css/forms-page-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/conditionals/css/glossary.css": {
+	"/css/glossary.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/conditionals/css/glossary-min.css",
+		"oAP": "/css/glossary-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/conditionals/css/homepage.css": {
+	"/css/homepage.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/conditionals/css/homepage-min.css",
+		"oAP": "/css/homepage-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"/css/conditionals/css/news-events.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/news-events-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/conditionals/css/tasks.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/tasks-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/conditionals/css/tools.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/tools-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/conditionals/sass/departments.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/departments.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/discounts.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/discounts.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/financial-statements.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/financial-statements.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/forms-page.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/forms-page.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/glossary.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/glossary.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/homepage.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/homepage.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/news-events.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/news-events.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/tasks.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/tasks.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"/css/conditionals/sass/tools.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/conditionals/css/tools.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
 		},
 	"/css/lib/hover-min.css": {
 		"aP": 1,
@@ -853,6 +1117,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/lib/magnific-popup-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/news-events.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/news-events-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -944,6 +1218,123 @@
 		"oA": 1,
 		"oAP": "/css/sass/base/vars.css",
 		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/departments.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/departments.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/discounts.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/discounts.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/financial-statements.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/financial-statements.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/forms-page.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/forms-page.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/glossary.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/glossary.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/homepage.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/homepage.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/news-events.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/news-events.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/tasks.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/tasks.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/tools.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/tools.css",
+		"oF": 2,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1090,19 +1481,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/partials/wrapper.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/partials/wrapper.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/style.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1123,6 +1501,26 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/tasks.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/tasks-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/tools.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/tools-min.css",
 		"oF": 0,
 		"oS": 3
 		},

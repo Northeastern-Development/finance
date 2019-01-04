@@ -1,3 +1,108 @@
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
+/* lato-100 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: url("../.fonts/lato-v14-latin-100.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Hairline"), local("Lato-Hairline"), url("../.fonts/lato-v14-latin-100.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-100.woff2") format("woff2"), url("../.fonts/lato-v14-latin-100.woff") format("woff"), url("../.fonts/lato-v14-latin-100.ttf") format("truetype"), url("../.fonts/lato-v14-latin-100.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-100italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 100;
+  src: url("../.fonts/lato-v14-latin-100italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Hairline Italic"), local("Lato-HairlineItalic"), url("../.fonts/lato-v14-latin-100italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-100italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-100italic.woff") format("woff"), url("../.fonts/lato-v14-latin-100italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-100italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../.fonts/lato-v14-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light"), local("Lato-Light"), url("../.fonts/lato-v14-latin-300.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-300.woff2") format("woff2"), url("../.fonts/lato-v14-latin-300.woff") format("woff"), url("../.fonts/lato-v14-latin-300.ttf") format("truetype"), url("../.fonts/lato-v14-latin-300.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: url("../.fonts/lato-v14-latin-300italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light Italic"), local("Lato-LightItalic"), url("../.fonts/lato-v14-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-300italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-300italic.woff") format("woff"), url("../.fonts/lato-v14-latin-300italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-300italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../.fonts/lato-v14-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Regular"), local("Lato-Regular"), url("../.fonts/lato-v14-latin-regular.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-regular.woff2") format("woff2"), url("../.fonts/lato-v14-latin-regular.woff") format("woff"), url("../.fonts/lato-v14-latin-regular.ttf") format("truetype"), url("../.fonts/lato-v14-latin-regular.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../.fonts/lato-v14-latin-italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Italic"), local("Lato-Italic"), url("../.fonts/lato-v14-latin-italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-italic.woff") format("woff"), url("../.fonts/lato-v14-latin-italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../.fonts/lato-v14-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold"), local("Lato-Bold"), url("../.fonts/lato-v14-latin-700.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-700.woff2") format("woff2"), url("../.fonts/lato-v14-latin-700.woff") format("woff"), url("../.fonts/lato-v14-latin-700.ttf") format("truetype"), url("../.fonts/lato-v14-latin-700.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../.fonts/lato-v14-latin-700italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("../.fonts/lato-v14-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-700italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-700italic.woff") format("woff"), url("../.fonts/lato-v14-latin-700italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-700italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../.fonts/lato-v14-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black"), local("Lato-Black"), url("../.fonts/lato-v14-latin-900.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900.woff") format("woff"), url("../.fonts/lato-v14-latin-900.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  src: url("../.fonts/lato-v14-latin-900italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -303,35 +408,11 @@ template {
 [hidden] {
   display: none; }
 
-/**
-*
-*
-*   Variables
-*   
-*/
-/* These are variables for the header */
 /* These are variables for the main navigation */
 /**
  * modules/mixins
  * ---
  */
-@media only screen {
-  h1 {
-    font-size: 50px;
-    font-weight: 300;
-    line-height: 72px;
-    text-align: center; }
-  h2 {
-    font-size: 32px;
-    font-weight: 300;
-    line-height: 48px;
-    text-align: center; }
-  h3 {
-    font-size: 24px;
-    line-height: 32px;
-    text-align: center;
-    font-weight: 300; } }
-
 *,
 *:after,
 *:before {
@@ -373,11 +454,6 @@ input[type="search"] {
   font-size: inherit;
   line-height: inherit; }
 
-::selection {
-  background-color: #04A4CC;
-  color: white;
-  text-shadow: none; }
-
 @media only screen {
   div#nu__globalheader {
     width: 100%; }
@@ -391,7 +467,7 @@ input[type="search"] {
   div.main {
     margin: 0 auto;
     width: 100vw;
-    background-color: #fffffe;
+    background-color: white;
     color: black; }
     main > section,
     div.main > section {
@@ -408,17 +484,17 @@ input[type="search"] {
       overflow: hidden; }
       main > section.hero > h1,
       div.main > section.hero > h1 {
-        color: #fffffe;
+        color: white;
         text-align: center;
-        font-size: 50px;
+        font-size: 5.0rem;
         font-weight: 300;
-        line-height: 72px;
+        line-height: 7.2rem;
         text-align: center; }
       main > section.hero > div,
       div.main > section.hero > div {
         width: 50vw;
         margin: 1.75vw auto 2.1vw auto;
-        color: #fffffe; }
+        color: white; }
     main > section.intro,
     div.main > section.intro {
       width: 50vw;
@@ -442,7 +518,7 @@ input[type="search"] {
         margin: 1vw 10vw 0; }
       main > section.fullwidth a:hover,
       div.main > section.fullwidth a:hover {
-        border-bottom: solid #cc0000 1px;
+        border-bottom: solid #d41b2c 1px;
         color: inherit; }
     main > section,
     div.main > section {
@@ -465,7 +541,7 @@ input[type="search"] {
             border-bottom: none; }
           main > section ul > li h6 > a,
           div.main > section ul > li h6 > a {
-            border-bottom: solid #cc0000 1px; }
+            border-bottom: solid #d41b2c 1px; }
       main > section > ul.list,
       div.main > section > ul.list {
         display: block;
@@ -478,10 +554,10 @@ input[type="search"] {
           letter-spacing: 0; }
           main > section > ul.list > li a,
           div.main > section > ul.list > li a {
-            border-bottom: solid #cc0000 1px; }
+            border-bottom: solid #d41b2c 1px; }
           main > section > ul.list > li h6 > a,
           div.main > section > ul.list > li h6 > a {
-            border-bottom: solid #cc0000 1px; }
+            border-bottom: solid #d41b2c 1px; }
           main > section > ul.list > li > ul,
           div.main > section > ul.list > li > ul {
             list-style: circle;
@@ -589,7 +665,7 @@ input[type="search"] {
       background-position: center; }
     div.main > section.related-tasks > ul > li i,
     main > section.related-tasks > ul > li i {
-      color: #cc0000;
+      color: #d41b2c;
       vertical-align: middle;
       margin-right: 5px; }
     div.main > section > .nu__prefooter > h2,
@@ -619,13 +695,13 @@ input[type="search"] {
           display: block; }
           div.main > section.overview-depts > ul li > a:hover > i.material-icons,
           main > section.overview-depts > ul li > a:hover > i.material-icons {
-            color: #cc0000; }
+            color: #d41b2c; }
     div.main > section.heretohelp > ul > li > a:hover,
     main > section.heretohelp > ul > li > a:hover {
-      color: #cc0000; }
+      color: #d41b2c; }
       div.main > section.heretohelp > ul > li > a:hover i.material-icons,
       main > section.heretohelp > ul > li > a:hover i.material-icons {
-        color: #cc0000; }
+        color: #d41b2c; }
     div.main > section.heretohelp > ul > li > a > i.material-icons,
     main > section.heretohelp > ul > li > a > i.material-icons {
       vertical-align: middle;
@@ -655,7 +731,7 @@ input[type="search"] {
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #cc0000;
+    background: #d41b2c;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -668,7 +744,7 @@ input[type="search"] {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #cc0000;
+    background: #d41b2c;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
@@ -692,7 +768,7 @@ input[type="search"] {
 @media only screen {
   div.nu__prefooter {
     height: auto;
-    background: #fffffe;
+    background: white;
     width: 100%;
     margin: 0 0 0 0; }
     div.nu__prefooter .bg_tan {
@@ -730,7 +806,7 @@ input[type="search"] {
                 transform: scale(1.1);
                 transition: all .5s; }
             div.nu__prefooter > div > ul > li > a > p > i.material-icons {
-              color: #cc0000;
+              color: #d41b2c;
               vertical-align: middle; }
             div.nu__prefooter > div > ul > li > a > div.image {
               height: 245px;
@@ -760,7 +836,7 @@ input[type="search"] {
       color: black;
       padding: 0 1vw 0 1vw; }
       div.nu__prefooter.statblocks > div > ul > li > span {
-        color: #cc0000;
+        color: #d41b2c;
         line-height: 8.6rem; }
       div.nu__prefooter.statblocks > div > ul > li > p {
         text-align: center; } }
@@ -787,7 +863,7 @@ input[type="search"] {
  * 
  */
 header {
-  height: 80px;
+  height: 84px;
   width: 100%;
   position: fixed;
   left: 0;
@@ -797,7 +873,7 @@ header {
   background: white none repeat scroll 0 0;
   -moz-box-flex: 0; }
   header div#header {
-    height: 80px;
+    height: 100%;
     text-align: left;
     display: flex;
     align-items: center;
@@ -806,10 +882,13 @@ header {
     padding: 0 1.5vw;
     margin: 0 auto;
     position: relative;
-    border-bottom: 1px solid #979797; }
+    border-bottom: 1px solid #979797;
+    background-color: black; }
     header div#header .logo {
-      height: 100%; }
+      height: 100%;
+      width: 230px; }
       header div#header .logo svg {
+        filter: invert(1);
         height: 100%;
         max-width: 280px; }
 
@@ -825,39 +904,39 @@ header {
   display: none; }
 
 .nu__main-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-  /*added*/ }
-  .nu__main-nav > ul > li {
-    font-size: 14px;
-    color: #979797;
-    line-height: 28px;
-    text-align: left;
-    margin-right: 2vw;
-    display: inline; }
-    .nu__main-nav > ul > li > a {
-      color: black; }
-      .nu__main-nav > ul > li > a > span {
-        border-bottom: 4px solid transparent;
-        padding-bottom: 27px; }
-        .nu__main-nav > ul > li > a > span:after {
-          content: '\e5cf';
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          line-height: 2.5rem;
-          font-family: 'Material Icons';
-          font-size: 20px; }
-        .nu__main-nav > ul > li > a > span:hover {
-          border-bottom: 4px solid #cc0000;
-          color: #979797; }
-          .nu__main-nav > ul > li > a > span:hover:after {
-            color: #cc0000; }
-    .nu__main-nav > ul > li:nth-child(2) > a > span:after, .nu__main-nav > ul > li:nth-child(3) > a > span:after, .nu__main-nav > ul > li:nth-child(4) > a > span:after {
-      content: ''; }
+  height: 100%; }
+  .nu__main-nav > ul {
+    display: flex;
+    align-items: center; }
+    .nu__main-nav > ul > li {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+      text-align: left;
+      margin-right: 2vw;
+      display: inline; }
+      .nu__main-nav > ul > li > a {
+        color: rgba(255, 255, 255, 0.8); }
+        .nu__main-nav > ul > li > a:hover {
+          color: white; }
+        .nu__main-nav > ul > li > a > span {
+          border-bottom: 4px solid transparent;
+          padding-bottom: 27px; }
+          .nu__main-nav > ul > li > a > span:after {
+            content: '\e5cf';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 2.5rem;
+            font-family: 'Material Icons';
+            font-size: 20px; }
+          .nu__main-nav > ul > li > a > span:hover {
+            border-bottom: 4px solid #d41b2c;
+            color: #979797; }
+            .nu__main-nav > ul > li > a > span:hover:after {
+              color: #d41b2c; }
+      .nu__main-nav > ul > li:nth-child(2) > a > span:after, .nu__main-nav > ul > li:nth-child(3) > a > span:after, .nu__main-nav > ul > li:nth-child(4) > a > span:after {
+        content: ''; }
 
 .verticle > .neumenu-item {
   display: block !important; }
@@ -874,7 +953,7 @@ header {
   margin-top: 25px;
   display: none;
   box-shadow: 2px 2px 2px #ccc;
-  background-color: #fffffe;
+  background-color: white;
   min-height: 100%; }
   .neumenu-wrapper > .neumenu {
     float: left;
@@ -902,11 +981,11 @@ header {
         text-decoration: none; }
         .neumenu-wrapper > .neumenu > .neumenu-item > a:before {
           font-family: 'Material Icons';
-          color: #cc0000;
+          color: #d41b2c;
           content: '\e5c8';
           vertical-align: -20%;
-          font-size: 20px;
-          line-height: 32px;
+          font-size: 2.0rem;
+          line-height: 3.2rem;
           text-align: center;
           padding-right: 5px; }
         .neumenu-wrapper > .neumenu > .neumenu-item > a:hover {
@@ -943,24 +1022,24 @@ header {
       list-style-type: none;
       margin: 1vw 0 0 1vw; }
       .neumenu-sub-flex .neumenu-sub_box > ul > li {
-        font-size: 14px;
+        font-size: 1.4rem;
         color: #979797;
-        line-height: 28px;
+        line-height: 2.8rem;
         text-align: left;
         margin-bottom: 1vw; }
         .neumenu-sub-flex .neumenu-sub_box > ul > li > a:hover {
-          color: #fffffe; }
+          color: white; }
     .neumenu-sub-flex .neumenu-sub_box > h6 {
       color: black;
       width: 18vw;
       height: 12vw;
-      background: #fffffe;
+      background: white;
       display: table; }
       .neumenu-sub-flex .neumenu-sub_box > h6 > a {
         display: table-cell;
         vertical-align: middle;
-        font-size: 14px;
-        line-height: 28px;
+        font-size: 1.4rem;
+        line-height: 2.8rem;
         text-align: center;
         color: black; }
         .neumenu-sub-flex .neumenu-sub_box > h6 > a > span {
@@ -968,7 +1047,7 @@ header {
       .neumenu-sub-flex .neumenu-sub_box > h6:hover {
         background: green; }
         .neumenu-sub-flex .neumenu-sub_box > h6:hover > a > span {
-          border-bottom: 4px solid #cc0000; }
+          border-bottom: 4px solid #d41b2c; }
 
 .neumenu-sub-about {
   display: flex;
@@ -976,25 +1055,35 @@ header {
   justify-content: center; }
 
 .neu__active > a > span {
-  border-bottom: 4px solid #cc0000 !important;
+  border-bottom: 4px solid #d41b2c !important;
   color: #979797; }
   .neu__active > a > span:after {
-    color: #cc0000; }
+    color: #d41b2c; }
 
 .neumenu-wrapper-inner {
   display: flex;
-  flex-flow: row nowrap; }
+  flex-flow: row nowrap;
+  height: 166px; }
   .neumenu-wrapper-inner > div {
     width: 80%;
     display: flex;
     flex-flow: row nowrap;
     padding: 15px; }
   .neumenu-wrapper-inner > div:first-child {
-    background-color: #04a4cc;
+    background-color: #327c8a;
     color: white;
     width: 20%;
     flex-flow: column nowrap; }
+    .neumenu-wrapper-inner > div:first-child > h2 {
+      font-size: 3.4rem;
+      line-height: 4.8rem;
+      text-align: center;
+      font-weight: 400; }
     .neumenu-wrapper-inner > div:first-child h3 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      line-height: 3.2rem;
+      text-align: center;
       margin: 10px 0; }
     .neumenu-wrapper-inner > div:first-child h3:not(:first-of-type) {
       display: none; }
@@ -1007,20 +1096,20 @@ header {
       cursor: pointer;
       text-align: center; }
       .neumenu-wrapper-inner > div:not(:first-child) > div h4 {
-        font-size: 14px;
+        font-size: 1.4rem;
         color: #979797;
-        line-height: 28px;
+        line-height: 2.8rem;
         text-align: left; }
   .neumenu-wrapper-inner > div > div > ul {
     list-style-type: none;
     display: none; }
   .neumenu-wrapper-inner .removefilter {
-    border: 1px solid #fffffe;
+    border: 1px solid white;
     padding: 5px 10px;
     cursor: pointer; }
     .neumenu-wrapper-inner .removefilter:hover {
-      color: #04a4cc;
-      background-color: #fffffe; }
+      color: #52cfe5;
+      background-color: white; }
   .neumenu-wrapper-inner .taskicon {
     width: 32px;
     height: 32px;
@@ -1068,9 +1157,9 @@ header {
         padding: 0; }
         #nu__mobile > nav ul > li {
           margin: 0.5vw 0;
-          font-size: 14px;
+          font-size: 1.4rem;
           color: #979797;
-          line-height: 28px;
+          line-height: 2.8rem;
           text-align: left; }
           #nu__mobile > nav ul > li > a.toggle {
             display: block;
@@ -1079,8 +1168,8 @@ header {
               font-family: 'Material Icons';
               content: '\e313';
               float: right;
-              font-size: 20px;
-              line-height: 32px;
+              font-size: 2.0rem;
+              line-height: 3.2rem;
               text-align: center; }
             #nu__mobile > nav ul > li > a.toggle:hover {
               color: #979797; }
@@ -1095,9 +1184,9 @@ header {
           #nu__mobile > nav ul .inner.show {
             /*display: block;*/ }
           #nu__mobile > nav ul .inner > ul > li {
-            font-size: 14px;
+            font-size: 1.4rem;
             color: #979797;
-            line-height: 28px;
+            line-height: 2.8rem;
             text-align: left; }
             #nu__mobile > nav ul .inner > ul > li > a:hover {
               color: #979797; }
@@ -1246,7 +1335,7 @@ footer {
           footer > div#sitefooter > div > ul > li > ul {
             list-style-type: none; }
             footer > div#sitefooter > div > ul > li > ul a {
-              color: #fffffe; }
+              color: white; }
           footer > div#sitefooter > div > ul > li:not(:first-child) {
             flex-basis: 25%; }
           footer > div#sitefooter > div > ul > li:first-child {
@@ -2378,7 +2467,7 @@ div.main section.nu__president {
             color: rgba(0, 0, 0, 0.8); }
           main section.nu__president > div:nth-child(2) > p > a:hover,
           div.main section.nu__president > div:nth-child(2) > p > a:hover {
-            border-bottom: solid #cc0000 2px;
+            border-bottom: solid #d41b2c 2px;
             color: black; }
             main section.nu__president > div:nth-child(2) > p > a:hover > span,
             div.main section.nu__president > div:nth-child(2) > p > a:hover > span {
@@ -2402,7 +2491,7 @@ div.main section.nu__president {
         position: absolute;
         left: 1vw;
         bottom: 1vw;
-        color: #fffffe; }
+        color: white; }
         main section.nu__president > div:nth-child(1) > p > span,
         div.main section.nu__president > div:nth-child(1) > p > span {
           letter-spacing: 1px; }
@@ -2491,7 +2580,7 @@ div.main section.nu__filters {
           main section.nu__filters > div > ul > li.inshowmore > a:hover,
           div.main section.nu__filters > div > ul > li.inshowmore > a:hover {
             color: black;
-            border-bottom: solid #cc0000 2px; }
+            border-bottom: solid #d41b2c 2px; }
       main section.nu__filters > div > ul > li > a,
       div.main section.nu__filters > div > ul > li > a {
         padding: 0 20px 11px 20px;
@@ -2507,11 +2596,11 @@ div.main section.nu__filters {
         main section.nu__filters > div > ul > li > a.active,
         div.main section.nu__filters > div > ul > li > a.active {
           color: black;
-          border-bottom: solid #cc0000 4px; }
+          border-bottom: solid #d41b2c 4px; }
         main section.nu__filters > div > ul > li > a:hover,
         div.main section.nu__filters > div > ul > li > a:hover {
           color: black;
-          border-bottom: solid #cc0000 4px; }
+          border-bottom: solid #d41b2c 4px; }
 
 main section.nu__slt,
 div.main section.nu__slt {
@@ -2549,7 +2638,7 @@ div.main section.nu__slt {
           main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover,
           div.main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover {
             color: black;
-            border-bottom: solid #cc0000 2px; }
+            border-bottom: solid #d41b2c 2px; }
             main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover > span,
             div.main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover > span {
               color: black; }
@@ -2606,7 +2695,7 @@ div.main section.nu__team {
           main section.nu__team > article > div:nth-child(1) > p.contact > a:hover,
           div.main section.nu__team > article > div:nth-child(1) > p.contact > a:hover {
             color: black;
-            border-bottom: solid #cc0000 2px; }
+            border-bottom: solid #d41b2c 2px; }
             main section.nu__team > article > div:nth-child(1) > p.contact > a:hover > span,
             div.main section.nu__team > article > div:nth-child(1) > p.contact > a:hover > span {
               color: black; }

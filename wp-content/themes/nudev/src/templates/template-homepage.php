@@ -102,12 +102,15 @@
 
 
     <section class="hero" style="background-image: url(<?= $img[0]; ?>)">
+        
         <div>
             <h2>One Centralized Department</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi, harum nesciunt repudiandae vel unde neque! Consequuntur error quas, obcaecati recusandae, fugiat quis, unde modi voluptatibus minus aperiam tempore! Quasi.</p>    
             <a class="nu__content_btn" href="<?php echo get_permalink(3550); ?>">Learn More</a>
         </div>
-        <?php 
+
+        <?php
+            // will not output anything if there are no deadlines to show
             include(locate_template('loops/loop-deadlines.php'));
          ?>
     </section>

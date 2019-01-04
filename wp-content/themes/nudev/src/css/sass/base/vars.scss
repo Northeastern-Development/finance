@@ -1,65 +1,47 @@
-/**
-*
-*
-*   Variables
-*   
-*/
-
-// Typography
-
+// 
+// 
+// 
+//          Vars
+//
+// 
+// 
+//          Colors
+// Reds
+$brand_colors-red: rgb(212, 27, 44);
+$brand_colors-red--dark: rgb(148, 19, 32);
+$brand_colors-red--light: rgb(237, 31, 51);
+// Teals
+$brand_colors-teal: rgb(82, 207, 229);
+$brand_colors-teal--dark: rgb(50, 124, 138);
+// Grays
+$brand_colors-gray: rgb(151, 151, 151);
+$brand_colors-gray--dark: rgb(161, 153, 148);
+// Beige
+$brand_colors-beige: rgb(236, 230, 213);
+$brand_colors-beige--light: rgb(239, 235, 221); // unsure of this ( used in forms sidebar )
+// 
+// 
+//          Typography
+// 
+// 
 $font-family-base: 'Lato', sans-serif, FontAwesome;
 $font-size-base: 1.8rem;
 $line-height-base: 3rem;
-
-
-// Colors 
-
-$text-color: #000;
-$body-bg: #fff;
-$selection-bg: #04A4CC;
-
-$brand_colors: rgba(80, 152, 166, 1.0),
-rgba(231, 144, 61, 1.0),
-rgba(180, 196, 67, 1.0),
-rgba(247, 204, 72, 1.0);
-$white: rgba(255, 255, 255, 1.0);
-$black: rgba(0, 0, 0, 1.0);
-$red: rgba(204, 0, 0, 1.0);
-
-$text-color: rgba(0, 0, 0, 1.0);
-$body-bg: rgba(255, 255, 255, 1.0);
-
-
-$brand_colors-red: rgb(204, 0, 0); // regular red
-$brand_colors-redD: rgb(147, 0, 0); // dark red
-$brand_colors-redL: rgb(218, 52, 50); // light red
-$brand_colors-black: rgb(0, 0, 0); // black
-$brand_colors-white: rgb(255, 255, 254); // white
-$brand_colors-beige: rgb(236, 230, 213); // beige
-$brand_colors-grayW: rgb(151, 151, 151); // warm gray
-
-
-// EDIT!!!
-$brand_colors-teal: rgb(4, 164, 204); // some kinda blue
-
-
-
-// Grid Base
-
+// 
+// 
+//          Grid
+// 
+// 
 $wrapper-width: 100vw;  // ( why cant this be % instead of vw)
 $content-width: 71vw;   // ( why cant this be % instead of vw)
 $gutter: 1vw;           // ( why cant this be % instead of vw)
 $wrapper-margins: 0, (($wrapper-width - $content-width) / 2), 0, (($wrapper-width - $content-width) / 2);
-
-
 $padding-horizontal-base: 5px;
 $padding-vertical-base: 5px;
 $margin-horizontal-base: 5px;
 $margin-vertical-base: 5px;
 $margin-horizontal-large: 15px;
 $margin-vertical-large: 15px;
-
-
 $wrapper-width: 100vw;
 $content-width: 80vw;
 $content-width-super-narrow: 88vw;
@@ -70,10 +52,6 @@ $content-width-narrow: 50vw;
 $content-width-mid: 65vw;
 // $gutter: 30px;
 
-/* These are variables for the header */
-$header-width: 80vw;
-$header-height: 110px;
-$headerHeight: 80px;
 
 // ( this is the combined height of the global and site headers )
 // this number is only valid at the desktop breakpoint

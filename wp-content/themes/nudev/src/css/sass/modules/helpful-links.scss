@@ -5,7 +5,7 @@
 
     div.nu__prefooter {
         height: auto;
-        background: rgba($brand_colors-white, 1.0);
+        background: rgba(white, 1.0);
         // width: $wrapper-width;
         width: 100%;
         margin: 0 0 0 0;
@@ -20,7 +20,7 @@
 
 
         >p {
-            color: rgba($brand_colors-black, 1.0);
+            color: rgba(black, 1.0);
             margin: 0 auto 20px auto;
             // width: $content-width-wide;
         }
@@ -55,7 +55,7 @@
                         border-bottom: none;
                         &:hover,
                         &:focus {
-                            color: rgba($brand_colors-black, 1.0);
+                            color: rgba(black, 1.0);
                             
                             // zoom image when hovered over
                             > div.image > div {
@@ -94,14 +94,14 @@
 
         &.statblocks {
             &>p {
-                border-bottom: solid rgba($brand_colors-grayW, 1.0) 1px;
+                border-bottom: solid rgba($brand_colors-gray, 1.0) 1px;
             }
 
             &>div {
                 &>ul {
                     &>li {
                         text-align: center;
-                        color: rgba($brand_colors-black, 1.0);
+                        color: rgba(black, 1.0);
                         padding: 0 $gutter 0 $gutter;
 
                         &>span {

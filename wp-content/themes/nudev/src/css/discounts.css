@@ -1,0 +1,13 @@
+/* These are variables for the main navigation */
+/**
+ * modules/mixins
+ * ---
+ */
+@media only screen {
+  ul.discounts {
+    flex-flow: row wrap; }
+    ul.discounts li {
+      flex: 1 0 calc(calc(100% / 1) - 20px); }
+    ul.discounts li {
+      padding: 10px 0;
+      border-bottom: 1px solid black; } }
