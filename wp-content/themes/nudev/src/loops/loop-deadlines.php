@@ -13,13 +13,14 @@
     $format_deadline = '
         <li>
             <h5>%s</h5>
-            <div>%s</div>
+            %s
         </li>
     ';
     $content_deadline = '
-        <div class="home-deadlines">
-            <h4>Upcoming Deadlines</h4>
-            <ul class="home-deadlines-items">
+        <div class="deadlines">
+            <div>
+                <h4>Upcoming Deadlines</h4>
+                <ul class="deadlines-items">
     ';
     $total = 0;
     foreach( $deadlines as $i => $deadline ){
@@ -36,9 +37,9 @@
     }
     
     $content_deadline .= '
-            </ul>
+                </ul>
+            </div>
         </div>
-        <div class="home-deadlines-bg"></div>
     ';
 
     if( $total > 0 ){

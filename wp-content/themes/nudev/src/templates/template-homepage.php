@@ -23,9 +23,11 @@
     $format_tools = '
         <div>
             <a href="%s">
-                <img src="%s">
+                <figure><img src="%s"></figure>
                 <p>%s</p>
-                <p><i class="material-icons">arrow_forward</i>Learn more</p>
+                <div>
+                    <p><i class="material-icons">arrow_forward</i><span>Learn more</span></p>
+                </div>
             </a>
         </div>
     ';
@@ -60,10 +62,13 @@
     $format_news = '
         <div>
             <a href="%s" target="%s">
-                <img src="%s">
+                <figure><img src="%s"></figure>
+                <h5>%s</h5>
                 <h5>%s</h5>
                 <p>%s</p>
-                <p><i class="material-icons">arrow_forward</i>Learn more</p>
+                <div>
+                    <p><i class="material-icons">arrow_forward</i><span>Learn more</span></p>
+                </div>
             </a>
         </div>
     ';
@@ -84,6 +89,7 @@
             ,$target
             ,$fields['image']
             ,$rec->post_title
+            ,$fields['category']->post_title
             ,$fields['details']
         );
     }
@@ -107,14 +113,14 @@
         <div>
             <h2>One Centralized Department</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi, harum nesciunt repudiandae vel unde neque! Consequuntur error quas, obcaecati recusandae, fugiat quis, unde modi voluptatibus minus aperiam tempore! Quasi.</p>    
-            <a class="nu__content_btn" href="<?php echo get_permalink(3550); ?>">Learn More</a>
+            <a href="<?php echo get_permalink(3550); ?>"><h4 class="nu__content_btn">View All</h4></a>
         </div>
 
-        <?php
-            // will not output anything if there are no deadlines to show
-            include(locate_template('loops/loop-deadlines.php'));
-         ?>
     </section>
+    <?php
+        // will not output anything if there are no deadlines to show
+        include(locate_template('loops/loop-deadlines.php'));
+     ?>
 
     <section class="home-feat-tools fullwidth nobg">
         <h1>Tools</h1>
@@ -123,7 +129,7 @@
                 echo $content_tools;
             ?>
         </div>
-        <a class="nu__content_btn" href="<?php echo get_permalink(3183); ?>"><h4>View All</h4></a>
+        <a href="<?php echo get_permalink(3183); ?>"><h4 class="nu__content_btn">View All</h4></a>
     </section>
 
     <section class="home-feat-news fullwidth nobg">
@@ -133,7 +139,7 @@
                 echo $content_news;
              ?>
         </div>
-        <a class="nu__content_btn" href="<?php echo get_permalink(143); ?>"><h4>View All</h4></a>
+        <a href="<?php echo get_permalink(143); ?>"><h4 class="nu__content_btn">View All</h4></a>
     </section>
 
 

@@ -430,6 +430,12 @@
     line-height: 4.8rem;
     text-align: center;
 }
+@mixin font-7l-c {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    text-align: center;
+    font-weight: 300;
+}
 @mixin font-7r-c {
     font-size: 3.4rem;
     line-height: 4.8rem;

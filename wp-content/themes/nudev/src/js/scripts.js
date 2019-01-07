@@ -65,7 +65,6 @@ var Finance = {};
             _dropDownHandler : function(e){
                 e.preventDefault();
 
-
                 if( !$(this).parent().hasClass('neu__active') ){
                     $(this).parent().addClass('neu__active');
                 } else {

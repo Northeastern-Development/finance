@@ -15,6 +15,21 @@
     }
 
 
+    .nu__content_btn {
+        display: inline-block;
+        padding: 10px 30px;
+        margin: 20px auto;
+        border: 1px solid black;
+        color: black;
+        text-transform: uppercase;
+        @include font-2l-c;
+        &:hover {
+            background-color: rgba(0,0,0, 0.3);
+        }
+    }
+    
+
+
     // outer container
     main,
     div.main {
@@ -71,12 +86,12 @@
                 margin: $gutter 10vw 0;
             }
     
-            a {
-                &:hover {
-                    border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
-                    color: inherit;
-                }
-            }
+            // a {
+            //     &:hover {
+            //         border-bottom: solid rgba($brand_colors-red, 1.0) 1px;
+            //         color: inherit;
+            //     }
+            // }
         }
         > section {
             width: 50vw;

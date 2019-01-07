@@ -36,11 +36,18 @@ footer {
                     font-size: 1.3rem;
                     h5 {
                         color: $brand_colors-gray;
+                        @include font-1l-l;
+                        text-transform: uppercase;
                     }
                     > ul {
                         list-style-type: none;
                         a {
                             color: white;
+                            @include font-2b-l;
+                            &:hover {
+                                opacity: 0.6;
+                                border-bottom: 1px solid $brand_colors-red;
+                            }
                         }
                     }
                     &:not(:first-child){

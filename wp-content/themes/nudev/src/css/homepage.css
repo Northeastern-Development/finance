@@ -115,79 +115,88 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    height: 770px; }
+    height: 620px; }
     div.main section.hero > div:first-child,
     main section.hero > div:first-child {
-      width: calc(100% / 3); }
-    div.main section.hero a.nu__content_btn,
-    main section.hero a.nu__content_btn {
-      margin: 20px auto;
-      display: inline-block;
-      border: 1px solid black;
-      padding: 10px 30px;
-      text-transform: uppercase;
-      border: 1px solid white; }
-      div.main section.hero a.nu__content_btn:hover,
-      main section.hero a.nu__content_btn:hover {
-        color: #d41b2c;
-        border: 1px solid #d41b2c; }
-      div.main section.hero a.nu__content_btn h4,
-      main section.hero a.nu__content_btn h4 {
-        display: inline-block; }
-      div.main section.hero a.nu__content_btn:hover,
-      main section.hero a.nu__content_btn:hover {
-        border: 1px solid white;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.3); }
-    div.main section.hero div.home-deadlines-bg,
-    main section.hero div.home-deadlines-bg {
+      width: calc(100% / 3);
+      text-align: center; }
+      div.main section.hero > div:first-child > h2,
+      main section.hero > div:first-child > h2 {
+        font-size: 3.4rem;
+        line-height: 4.8rem;
+        text-align: center;
+        font-weight: 300; }
+      div.main section.hero > div:first-child > p,
+      div.main section.hero > div:first-child .nu__content_btn,
+      main section.hero > div:first-child > p,
+      main section.hero > div:first-child .nu__content_btn {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        text-align: center; }
+    div.main section.hero .nu__content_btn,
+    main section.hero .nu__content_btn {
+      border: 1px solid white;
+      color: white; }
+      div.main section.hero .nu__content_btn:hover,
+      main section.hero .nu__content_btn:hover {
+        border: 1px solid white; }
+  div.main div.deadlines,
+  main div.deadlines {
+    width: 100%;
+    background-color: #327c8a;
+    height: 150px;
+    position: relative; }
+    div.main div.deadlines > div,
+    main div.deadlines > div {
+      transform: translate(-50%, -50%);
       position: absolute;
-      width: 100%;
-      height: 150px;
-      bottom: 0;
-      left: 0;
-      background-color: #327c8a;
-      z-index: 10;
-      margin: 0; }
-    div.main section.hero div.home-deadlines,
-    main section.hero div.home-deadlines {
-      position: relative;
-      z-index: 11;
+      top: 0;
+      left: 50%;
       width: 80%;
-      text-align: left; }
-      div.main section.hero div.home-deadlines ul.home-deadlines-items,
-      main section.hero div.home-deadlines ul.home-deadlines-items {
-        justify-content: center; }
-        div.main section.hero div.home-deadlines ul.home-deadlines-items li,
-        main section.hero div.home-deadlines ul.home-deadlines-items li {
+      margin: 0 auto; }
+      div.main div.deadlines > div > ul,
+      main div.deadlines > div > ul {
+        display: flex;
+        flex-flow: row nowrap;
+        list-style-type: none;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2vw; }
+        div.main div.deadlines > div > ul > li,
+        main div.deadlines > div > ul > li {
+          flex: 1;
+          padding: 15px;
           height: 185px;
           background-color: white;
-          color: black;
-          padding: 20px;
-          margin-bottom: 0; }
-          div.main section.hero div.home-deadlines ul.home-deadlines-items li:last-child,
-          main section.hero div.home-deadlines ul.home-deadlines-items li:last-child {
+          margin-right: 1vw; }
+          div.main div.deadlines > div > ul > li:last-child,
+          main div.deadlines > div > ul > li:last-child {
             margin-right: 0; }
-          div.main section.hero div.home-deadlines ul.home-deadlines-items li > h5, div.main section.hero div.home-deadlines ul.home-deadlines-items li > p,
-          main section.hero div.home-deadlines ul.home-deadlines-items li > h5,
-          main section.hero div.home-deadlines ul.home-deadlines-items li > p {
+          div.main div.deadlines > div > ul > li > h5,
+          main div.deadlines > div > ul > li > h5 {
             font-size: 2.0rem;
             font-weight: 700;
             line-height: 3.2rem;
             text-align: left; }
-          div.main section.hero div.home-deadlines ul.home-deadlines-items li > div > p,
-          main section.hero div.home-deadlines ul.home-deadlines-items li > div > p {
+          div.main div.deadlines > div > ul > li > p,
+          main div.deadlines > div > ul > li > p {
             font-size: 1.6rem;
             font-weight: 300;
             line-height: 2.8rem;
             text-align: left; }
-      div.main section.hero div.home-deadlines > h4,
-      main section.hero div.home-deadlines > h4 {
+      div.main div.deadlines > div > h4,
+      main div.deadlines > div > h4 {
         padding: 5px 10px;
         display: inline-block;
         background-color: rgba(255, 255, 255, 0.6);
-        color: black;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        margin-bottom: 1vw;
+        font-size: 1.4rem;
+        color: #979797;
+        line-height: 2.8rem;
+        text-align: left;
+        color: black; }
   div.main div.neumenu-wrapper {
     display: block;
     position: relative; }
@@ -195,22 +204,22 @@
     pointer-events: none; }
     li[data-id="howdoi"] > a {
       pointer-events: none; }
-  div.main > section > a.nu__content_btn,
-  main > section > a.nu__content_btn {
-    display: inline-block;
-    border: 1px solid black;
-    padding: 10px 30px;
-    text-transform: uppercase; }
-    div.main > section > a.nu__content_btn:hover,
-    main > section > a.nu__content_btn:hover {
-      color: #d41b2c;
-      border: 1px solid #d41b2c; }
   div.main section.home-feat-tools,
   div.main section.home-feat-news,
   main section.home-feat-tools,
   main section.home-feat-news {
     padding: 0 20px;
-    margin-bottom: 30px; }
+    margin: 60px 0; }
+    div.main section.home-feat-tools > h1,
+    div.main section.home-feat-news > h1,
+    main section.home-feat-tools > h1,
+    main section.home-feat-news > h1 {
+      margin: 0 auto;
+      margin-bottom: 30px;
+      font-size: 3.4rem;
+      line-height: 4.8rem;
+      text-align: center;
+      font-weight: 300; }
     div.main section.home-feat-tools > div,
     div.main section.home-feat-news > div,
     main section.home-feat-tools > div,
@@ -225,10 +234,77 @@
         width: calc(33% - 20px);
         justify-content: space-around;
         align-items: center; }
+        div.main section.home-feat-tools > div > div a,
+        div.main section.home-feat-news > div > div a,
+        main section.home-feat-tools > div > div a,
+        main section.home-feat-news > div > div a {
+          display: inline-block;
+          width: 100%;
+          height: 100%; }
+          div.main section.home-feat-tools > div > div a figure,
+          div.main section.home-feat-news > div > div a figure,
+          main section.home-feat-tools > div > div a figure,
+          main section.home-feat-news > div > div a figure {
+            overflow: hidden; }
+          div.main section.home-feat-tools > div > div a img,
+          div.main section.home-feat-news > div > div a img,
+          main section.home-feat-tools > div > div a img,
+          main section.home-feat-news > div > div a img {
+            transition: transform 0.4s ease;
+            transform: scale(1); }
+          div.main section.home-feat-tools > div > div a:hover, div.main section.home-feat-tools > div > div a:focus,
+          div.main section.home-feat-news > div > div a:hover,
+          div.main section.home-feat-news > div > div a:focus,
+          main section.home-feat-tools > div > div a:hover,
+          main section.home-feat-tools > div > div a:focus,
+          main section.home-feat-news > div > div a:hover,
+          main section.home-feat-news > div > div a:focus {
+            border-bottom: 1px solid transparent; }
+            div.main section.home-feat-tools > div > div a:hover img, div.main section.home-feat-tools > div > div a:focus img,
+            div.main section.home-feat-news > div > div a:hover img,
+            div.main section.home-feat-news > div > div a:focus img,
+            main section.home-feat-tools > div > div a:hover img,
+            main section.home-feat-tools > div > div a:focus img,
+            main section.home-feat-news > div > div a:hover img,
+            main section.home-feat-news > div > div a:focus img {
+              transform: scale(1.1); }
+            div.main section.home-feat-tools > div > div a:hover > div p, div.main section.home-feat-tools > div > div a:focus > div p,
+            div.main section.home-feat-news > div > div a:hover > div p,
+            div.main section.home-feat-news > div > div a:focus > div p,
+            main section.home-feat-tools > div > div a:hover > div p,
+            main section.home-feat-tools > div > div a:focus > div p,
+            main section.home-feat-news > div > div a:hover > div p,
+            main section.home-feat-news > div > div a:focus > div p {
+              border-bottom: 1px solid #d41b2c; }
+          div.main section.home-feat-tools > div > div a > div,
+          div.main section.home-feat-news > div > div a > div,
+          main section.home-feat-tools > div > div a > div,
+          main section.home-feat-news > div > div a > div {
+            text-align: left; }
+            div.main section.home-feat-tools > div > div a > div > p,
+            div.main section.home-feat-news > div > div a > div > p,
+            main section.home-feat-tools > div > div a > div > p,
+            main section.home-feat-news > div > div a > div > p {
+              border-bottom: 1px solid transparent;
+              display: inline-block; }
+              div.main section.home-feat-tools > div > div a > div > p i, div.main section.home-feat-tools > div > div a > div > p span,
+              div.main section.home-feat-news > div > div a > div > p i,
+              div.main section.home-feat-news > div > div a > div > p span,
+              main section.home-feat-tools > div > div a > div > p i,
+              main section.home-feat-tools > div > div a > div > p span,
+              main section.home-feat-news > div > div a > div > p i,
+              main section.home-feat-news > div > div a > div > p span {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: inherit; }
         div.main section.home-feat-tools > div > div p,
         div.main section.home-feat-news > div > div p,
         main section.home-feat-tools > div > div p,
         main section.home-feat-news > div > div p {
+          font-size: 1.6rem;
+          font-weight: 300;
+          line-height: 2.8rem;
+          text-align: left;
           text-align: left; }
           div.main section.home-feat-tools > div > div p i.material-icons,
           div.main section.home-feat-news > div > div p i.material-icons,
@@ -245,13 +321,35 @@
         div.main section.home-feat-news > div > div img,
         main section.home-feat-tools > div > div img,
         main section.home-feat-news > div > div img {
-          height: auto;
+          width: auto;
+          height: 80px;
           object-fit: cover;
-          max-height: 120px;
-          width: 80%;
-          margin: 0 auto 40px; }
-  section.hero a.nu__content_btn {
-    border: 1px solid white;
-    color: white; }
-  section.hero > div:first-of-type {
-    text-align: center; } }
+          transform: scale(1); }
+  div.main section.home-feat-news > div > div > a > figure > img,
+  main section.home-feat-news > div > div > a > figure > img {
+    width: 100%;
+    height: 245px; }
+  div.main section.home-feat-news > div > div > a,
+  main section.home-feat-news > div > div > a {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    text-align: left; }
+    div.main section.home-feat-news > div > div > a h5,
+    main section.home-feat-news > div > div > a h5 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+      text-align: left; }
+    div.main section.home-feat-news > div > div > a h5:first-of-type,
+    main section.home-feat-news > div > div > a h5:first-of-type {
+      font-size: 2.0rem;
+      font-weight: 700;
+      line-height: 3.2rem;
+      text-align: left; }
+    div.main section.home-feat-news > div > div > a p,
+    main section.home-feat-news > div > div > a p {
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.8rem;
+      text-align: left; } }

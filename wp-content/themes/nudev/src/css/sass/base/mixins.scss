@@ -151,14 +151,3 @@
        flex: 1 0 calc(calc(100% / #{$num}) - 20px);
     }
 }
-
-@mixin nu__button(){
-    display: inline-block;
-    border: 1px solid black;
-    padding: 10px 30px;
-    text-transform: uppercase;
-    &:hover {
-        color: $brand_colors-red;
-        border: 1px solid $brand_colors-red;
-    }
-}
