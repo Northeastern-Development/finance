@@ -1,7 +1,5 @@
 var exceedsContainer = false;
 var Finance = {};
-
-
 (function ($, root, undefined) {
     $(function () {
 
@@ -66,7 +64,9 @@ var Finance = {};
         Finance.nav._init();
 
 
-
+        $('div#about').on('click', function(e){
+            e.preventDefault();
+        });
 
 
         //  TRENTS NAV THING HERE
@@ -253,6 +253,32 @@ var Finance = {};
                 $this.next().slideToggle(350);
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

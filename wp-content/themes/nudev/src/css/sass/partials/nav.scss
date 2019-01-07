@@ -1,377 +1,212 @@
-/**
- * partials/nav
- * ---
- * Menus
- */
-//Change this to which size you need your mobile nav
-$mobileNav: 1100px;
-#nu__mobile {
-    display: none;
-}
-#nav-btn {
-    display: none;
-}
-// flex-wrapper around all nav items
-.nu__main-nav {
-    // display: flex;
-    // flex-flow: row wrap;
-    // align-items: center;
-    height: 100%;
-    
-    // navlinks
-    >ul {
-        display: flex;
-        align-items: center;
-        
-        >li {
-            @include font-2b-l;
+// 
+//      Main Navigation
+// 
+@media only screen {
 
-            margin-right: ($gutter * 2);
-            display: inline;
-            >a {
-                color: rgba(255, 255, 255, 0.8);
-                &:hover {
-                    color: rgba(255, 255, 255, 1);
+    // top-level nav items 'full-height' (clickable top to bottom)
+    .nu__main-nav,
+    .nu__main-nav > ul,
+    .nu__main-nav > ul > li,
+    .nu__main-nav > ul > li > a {
+        height: 100%;
+    }
+    // Initial States
+    .nu__main-nav {
+        > ul {
+            > li {
+                margin-right: ($gutter * 2);
+                display: inline-block;
+                // nav links (text)
+                > a {
+                    height: 100%;
+                    display: inline-block;
+                    @include font-2b-l;
+                    color: rgba(255, 255, 255, 0.8);
+                    border-bottom: 5px solid transparent;
+                    &:hover {
+                        color: rgba(255, 255, 255, 1);
+                        border-bottom: 5px solid $brand_colors-red;
+                    }
+                    // vertically center link text within 100% height clickable area
+                    > span {
+                        line-height: 84px;
+                    }
                 }
-                >span {
-                    //   border-bottom: 4px solid rgba(255,255,254,1.0);
-                    border-bottom: 4px solid transparent;
-                    padding-bottom: 27px;
-
+            }
+            // nav items with children (dropdowns)
+            > li.has-children {
+                > a {
                     &:after {
                         content: '\e5cf';
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        line-height: 2.5rem;
                         font-family: 'Material Icons';
+                        vertical-align: middle;
                         font-size: 20px;
                     }
-
-                    &:hover {
-                        border-bottom: 4px solid $brand_colors-red;
-                        color: $brand_colors-gray;
-
-                        &:after {
-                            color: $brand_colors-red;
-                        }
-
-                    }
-                }
-            }
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(4) {
-                &>a {
-                    &>span {
-                        &:after {
-                            content: '';
-                        }
-                    }
                 }
             }
         }
     }
-}
-
-
-//DESKTIOP NAV
-//dropdown panels
-$neumenu-list-zIndex: 11;
-$nicemnu-active-bgcolor: rgb(151, 151, 151);
-
-.verticle>.neumenu-item {
-    display: block !important;
-}
-
-
-#about {
-    height: 18vw;
-}
-
-.neumenu-wrapper {
-    width: 100%;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: 10;
-    margin-top: 25px;
-    display: none;
-    box-shadow: 2px 2px 2px #ccc;
-    background-color: white;
-    min-height: 100%;
-
-    &>.neumenu {
-        float: left;
-        width: 20%;
-        height: auto;
-
-        &>.neumenu-item {
-            display: inline-block;
-            z-index: $neumenu-list-zIndex;
-            //   background-color: white;
-            padding: 10px;
-            margin-bottom: ($gutter/2);
-
-            &:first-of-type {
-                margin-top: 20px;
-            }
-
-            &>h6 {
-                //PANEL TITLES/HEADER
-                color: black;
-                font-size: 16px;
-                line-height: 2em;
-                cursor: pointer;
-                width: 80%;
-            }
-
-            &>p {
-                //ABOUT COPY LEFT BLOCK BELOW HEADER
-                color: black;
-                width: 80%;
-            }
-
-            &>a {
-                //ABOUT LEARN MORE LINK
-                color: black;
-                width: 80%;
-                text-decoration: none;
-
-                &:before {
-                    font-family: 'Material Icons';
-                    color: $brand_colors-red;
-                    content: '\e5c8';
-                    vertical-align: -20%;
-                    @include font-4-c;
-                    padding-right: 5px;
-                }
-
-                &:hover {
-                    text-decoration: none;
-
-                }
-            }
-
-
-            &>.neumenu-sub {
-                position: absolute;
-                z-index: ($neumenu-list-zIndex + 1);
-                display: none;
-                min-width: 100vw;
-                background-color: $nicemnu-active-bgcolor;
-                color: black;
-                min-height: 100%;
-
-                &.active {
-                    display: block;
-                }
-
-                &.first-sub {
-                    display: block;
-                }
-            }
-
-            &.active {
-                background-color: $nicemnu-active-bgcolor;
-                display: block;
-            }
-        }
-    }
-}
-
-
-
-.neumenu-sub-flex {
-    display: flex;
-    justify-content: space-between;
-    max-width: 78%;
-    height: 100%;
-    box-shadow: inset 8px 0 10px -6px rgba(0, 0, 0, .3);
-
-    .neumenu-sub_box {
-        position: relative;
-        margin-right: 5%;
-        flex: 1;
-
-        &:last-child {
-            margin-right: 0;
-        }
-
-        &>ul {
-            list-style-type: none;
-            margin: $gutter 0 0 $gutter;
-
-            &>li {
-                @include font-1r-l;
-                margin-bottom: $gutter;
-
-                &>a {
-                    &:hover {
-                        color: white;
-                    }
-                }
-            }
-        }
-
-        &>h6 {
-            //ABOUT BOXES PANEL
-            color: black;
-            width: 18vw;
-            height: 12vw;
-            background: white;
-            display: table;
-
-            &>a {
-                display: table-cell;
-                vertical-align: middle;
-                @include font-1r-c;
-                color: black;
-
-                &>span {
-                    padding-bottom: 5px;
-                }
-            }
-
-            &:hover {
-                background: green;
-
-                &>a {
-                    &>span {
-                        border-bottom: 4px solid $brand_colors-red;
-                    }
-                }
-            }
-        }
-
-    }
-}
-
-.neumenu-sub-about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-
-
-.neu__active {
-    &>a {
-        &>span {
-            border-bottom: 4px solid $brand_colors-red !important;
-            color: $brand_colors-gray;
-
-            &:after {
-                color: $brand_colors-red;
-            }
-        }
-    }
-}
-
-
-
-// CURRENT REFACTORING EDITS
-// div.neumenu-wrapper#howdoi {
-    .neumenu-wrapper-inner {
-        display: flex;
-        flex-flow: row nowrap;
-        height: 166px;
-        > div {
-            width: 80%;
+    // align sub-nav (initially hidden)
+    .neumenu-wrapper {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 11;
+        // flex-wrapper for two subnav panels
+        .neumenu-wrapper-inner {
             display: flex;
             flex-flow: row nowrap;
-            padding: 15px;
-        }
-        > div:first-child {
-            background-color: $brand_colors-teal--dark;
-            color: white;
-            width: 20%;
-            flex-flow: column nowrap;
-            > h2 {
-                @include font-7r-c;
+            background-color: white;
+            height: 166px;
+            // 20%wide left-panel
+            > div:first-child {
+                flex: 1 0 20%;
             }
-            h3 {
-                @include font-3b-c;
-                margin: 10px 0;
-            }
-            h3:not(:first-of-type){
-                display: none;
+            // 80%wide right-panel
+            > div:last-child{
+                flex: 1 0 80%;
             }
         }
-        > div:not(:first-child) {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-            align-items: center;
-            > div {
-                cursor: pointer;
-                text-align: center;
-                h4 {
-                    @include font-1r-l;
+    }
+    // Active States
+    .nu__main-nav {
+        // drop-down nav active state
+        li.neu__active {
+            > a {
+                color: white;
+                border-bottom: 5px solid $brand_colors-red;
+            }
+        }
+    }
+
+
+    // "howdoi" submenu only
+    .neumenu-wrapper#howdoi {
+        .neumenu-wrapper-inner {
+            > div:first-child {
+                background-color: $brand_colors-teal--dark;
+                color: white;
+                > h2 {
+                    @include font-7r-c;
+                }
+                > h3 {
+                    @include font-3b-c;
+                    &:not(:first-of-type){
+                        display: none;
+                    }
+                }
+                // back to topics button
+                .removefilter {
+                    border: 1px solid white;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    &:hover {
+                        color: $brand_colors-teal;
+                        background-color: white;
+                    }
                 }
             }
-        }
-        > div > div > ul {
-            list-style-type: none;
-            display: none;
-        }
-
-        // "back to topics"
-        .removefilter {
-            border: 1px solid white;
-            padding: 5px 10px;
-            cursor: pointer;
-            &:hover {
-                color: $brand_colors-teal;
-                background-color: white;
-            }
-        }
-
-        .taskicon {
-            width: 32px;
-            height: 32px;
-            display: inline-block;
-            object-fit: cover;
-        }
-
-
-        // (behavioral stuff)
-        &.isFiltered > div:first-child {
-            h3:not(:first-of-type){
-                display: block;
-            }
-            h3:first-of-type{
-                display: none;
-            }
-        }
-        &.isFiltered > div:not(:first-child){
-            justify-content: flex-start;
-            align-items: flex-start;
-            > div {
-                flex: 1 0 100%;
-            }
-            > div:not(.theFilter){
-                display: none;
-            }
-            > div.theFilter > ul {
+            // howdoi task categories etc...
+            > div:last-child {
                 display: flex;
-                flex: 1 0 100%;
-                flex-flow: column wrap;
-                li {
-                    flex: 1 0 auto;
-                    width: calc(33% - 15px);
-                    text-align: left;
-                    margin-right: 15px;
-                    margin-bottom: 15px;
+                justify-content: space-around;
+                align-items: center;
+                // a task category + icon (clickable, is a filter)
+                > div {
+                    cursor: pointer;
+                    text-align: center;
+                    > h4 {
+                        @include font-1r-l;
+                    }
+                    > ul {
+                        list-style-type: none;
+                        display: none;
+                    }
+                    // img/icon for task category
+                    > .taskicon {
+                        width: 32px;
+                        height: 32px;
+                        display: inline-block;
+                        object-fit: cover;
+                    }
                 }
             }
-            .taskicon {
-                display: none;
+            // (behavioral stuff)
+            &.isFiltered > div:first-child {
+                h3:not(:first-of-type){
+                    display: block;
+                }
+                h3:first-of-type{
+                    display: none;
+                }
+            }
+            &.isFiltered > div:not(:first-child){
+                justify-content: flex-start;
+                align-items: flex-start;
+                > div {
+                    flex: 1 0 100%;
+                }
+                > div:not(.theFilter){
+                    display: none;
+                }
+                > div.theFilter > ul {
+                    display: flex;
+                    flex: 1 0 100%;
+                    flex-flow: column wrap;
+                    li {
+                        flex: 1 0 auto;
+                        width: calc(33% - 15px);
+                        text-align: left;
+                        margin-right: 15px;
+                        margin-bottom: 15px;
+                    }
+                }
+                .taskicon {
+                    display: none;
+                }
             }
         }
     }
-// }
+    // "about" submenu only
+    .neumenu-wrapper#about {
+        .neumenu-wrapper-inner {
+            > div:last-child {
+                background-color: $brand_colors-gray;
+                > ul {
+                    height: 100%;
+                    list-style-type: none;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: space-around;
+                    > a {
+                        height: 75%;
+                        width: 25%;
+                        > li {
+                            width: 100%;
+                            height: 100%;
+                            background-color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+        
+    // Hide Mobile Nav
+    #nu__mobile {
+        display: none;
+    }
+    // Hide Mobile Nav Hamburger Button
+    #nav-btn {
+        display: none;
+    }
+} // end only screen media query
 
 
 
@@ -379,18 +214,30 @@ $nicemnu-active-bgcolor: rgb(151, 151, 151);
 
 
 
-// 
-// 
-// 
-// 
-// 
-//  MOBILE NAV BELOW
-// 
-// 
-// 
-// 
-// 
-@media only screen and (max-width: $mobileNav) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1100) {
 
     #nu__main-nav-desktop {
         display: none;

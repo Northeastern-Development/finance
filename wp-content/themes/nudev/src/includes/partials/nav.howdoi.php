@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * Partial: navigation sub-nav  "How Do I..."
+ */
     // 
     $args = array(
         'post_type'         =>  'tasks_categories',

@@ -95,10 +95,11 @@
 ?>
 <div role="main" class="main">
 
-
-    <?php 
-        include(locate_template('includes/partials/nav.howdoi.php'));
-     ?>
+    <div class="neumenu-wrapper" id="howdoi">
+        <?php 
+            include(locate_template('includes/partials/nav.howdoi.php'));
+        ?>
+    </div>
 
 
     <section class="hero" style="background-image: url(<?= $img[0]; ?>)">

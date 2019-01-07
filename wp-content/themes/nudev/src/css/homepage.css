@@ -188,8 +188,9 @@
         background-color: rgba(255, 255, 255, 0.6);
         color: black;
         text-transform: uppercase; }
-  .neumenu-wrapper-inner {
-    box-shadow: 2px 2px 2px #ccc; }
+  div.main div.neumenu-wrapper {
+    display: block;
+    position: relative; }
   li[data-id="howdoi"] {
     pointer-events: none; }
     li[data-id="howdoi"] > a {

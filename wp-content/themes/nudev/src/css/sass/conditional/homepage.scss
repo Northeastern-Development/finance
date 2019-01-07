@@ -87,17 +87,11 @@
         
     
     
-
-
-    // code here
-        
-    
-    .neumenu-wrapper-inner > div:not(:first-child) {
-        // border-bottom: 1px solid $brand_colors-gray;
-    }
-    .neumenu-wrapper-inner {
-        box-shadow: 2px 2px 2px #ccc;
-        
+    div.main {
+        div.neumenu-wrapper {
+            display: block;
+            position: relative;
+        }
     }
 
     li[data-id="howdoi"] {
