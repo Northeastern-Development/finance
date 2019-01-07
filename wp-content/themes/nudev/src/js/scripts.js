@@ -34,193 +34,55 @@ var Finance = {};
         }
         Finance.faqs._init();
         
-        
-        Finance.nav = {
 
-            wrapper: $('.neumenu-wrapper-inner'),
 
-            taskCats: $('.neumenu-wrapper-inner > div:not(:first-child) > div'),
-
-            toggler: $('.neumenu-wrapper-inner .removefilter'),
-
-            _init: function () {
-                // did click a category,
-                Finance.nav.taskCats.on('click', Finance.nav._filterTaskCats);
-                // did click 'back to topics'
-                Finance.nav.toggler.on('click', Finance.nav._unfilterTaskCats);
+        // Handle the Main Navigation:
+        Finance.Navigation = {
+            // vars
+            howdoi_wrapper : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner'),
+            howdoi_items : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
+            howdoi_reset: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
+            
+            toplvl_nochild : $('nav.nu__main-nav > ul > li:not(.has-children) > a'),
+            toplvl_haschild : $('nav.nu__main-nav > ul > li.has-children > a'),
+            
+            // init
+            _init : function(){
+                // code here...
+                Finance.Navigation.howdoi_items.on('click', Finance.Navigation._filterHandler);
+                Finance.Navigation.howdoi_reset.on('click', Finance.Navigation._unFilterHandler);
+                Finance.Navigation.toplvl_haschild.on('click', Finance.Navigation._dropDownHandler);
             },
-            _unfilterTaskCats: function (e) {
-
-                Finance.nav.wrapper.find('.theFilter').removeClass('theFilter');
-                Finance.nav.wrapper.removeClass('isFiltered');
-            },
-            _filterTaskCats: function (e) {
-
-                Finance.nav.wrapper.addClass('isFiltered');
+            // methods
+            _filterHandler : function(e){
+                Finance.Navigation.howdoi_wrapper.addClass('isFiltered');
                 $(this).addClass('theFilter');
-            }
-
-        }
-        Finance.nav._init();
-
-
-        $('div#about').on('click', function(e){
-            e.preventDefault();
-        });
-
-
-        //  TRENTS NAV THING HERE
-        (function ($) {
-            $.fn.extend({
-                "neumenu": function (parameters) {
-                    // default parameters
-                    var defaults = {
-                        pos: "list.bottom",
-                        classes: "active",
-                    }
-                    // combines defaults and parameters
-                    var options = $.extend({}, defaults, parameters);
-                    // extension main
-                    this.each(function () {
-                        // get [data-pos=...] attribute
-                        var pos = $(this).attr("data-pos");
-                        if (pos == undefined) {
-                            pos = options.pos;
-                        }
-
-                        // get [data-classes=...] attribute
-                        var classes = $(this).attr("data-classes");
-                        if (classes == undefined) {
-                            classes = options.classes;
-                        }
-
-                        // get .neumenu-list element
-                        var list = $(this);
-
-                        // each .neumenu-item element
-                        $(this).find(".neumenu-item").each(function () {
-
-
-                            // get .neumenu-sub element
-                            var sub = $(this).find(".neumenu-sub");
-                            if (sub.length == 0) return true;
-
-                            switch (pos) {
-                                case "list.right":
-                                    sub.css({
-                                        "top": 0,
-                                        "left": 0,
-                                        "margin-left": (list.outerWidth() - 1) + "%",
-                                        "height": '100%',
-                                        "border-left": "none"
-                                    });
-                                    break;
-
-                                case "list.left":
-                                    sub.css({
-                                        "top": 0,
-                                        "right": 0,
-                                        "margin-right": (list.outerWidth() - 1) + "px",
-                                        "height": list.outerHeight() + "px",
-                                        "border-right": "none"
-                                    });
-                                    break;
-
-                                case "list.bottom":
-                                    sub.css({
-                                        "left": 0,
-                                        "width": list.outerWidth() + "px"
-                                    });
-                                    break;
-
-                                case "list.top":
-                                    sub.css({
-                                        "left": 0,
-                                        "width": list.outerWidth() + "px",
-                                        "bottom": 0,
-                                        "margin-bottom": list.outerHeight() + "px",
-                                    });
-                                    break;
-                            }
-
-                            //CLICK EVENT
-                            $(this).on('click', function () {
-                                $('.neumenu-item, .neumenu-sub').removeClass('active')
-                                $(this).addClass("active");
-                                sub.addClass(classes);
-                            });
-
-                            //HOVER EVENT IF THEY WANT IT TO WORK ON HOVER INSTEAD OF CLICK
-                            // $(this).mouseenter(function () {
-                            //   $(this).addClass("active");
-                            //   sub.addClass(classes);
-                            //
-                            // });
-                            //
-                            // $(this).mouseleave(function () {
-                            //   $(this).removeClass("active");
-                            //   sub.removeClass(classes);
-                            // });
-                        });
-                    });
-                    // for chain-style code
-                    return this;
-                }
-            });
-        })($);
-
-
-
-
-        //DROPDOWN NAV WITH TAB PANEL
-        $('.nu__main-nav > ul > li.has-children ').on('click', function (e) {
-            //e.preventDefault();
-            var sub = $(this).attr('data-id');
-
-            if (!$(e.target).is("a")) { //was unable to click on any links within the dropdown nav panels. event was bubbling
+            },
+            _unFilterHandler : function(e){
+                Finance.Navigation.howdoi_wrapper.find('.theFilter').removeClass('theFilter');
+                Finance.Navigation.howdoi_wrapper.removeClass('isFiltered');
+            },
+            _dropDownHandler : function(e){
                 e.preventDefault();
+
+
+                if( !$(this).parent().hasClass('neu__active') ){
+                    $(this).parent().addClass('neu__active');
+                } else {
+                    $(this).parent().removeClass('neu__active');
+                }
+
+                $('li.has-children').find('.neumenu-wrapper').hide();
+                $('li.has-children.neu__active').find('.neumenu-wrapper').show();
             }
-
-
-            $('li.has-children').removeClass('neu__active'); //removes top nav active state class
-            $(this).addClass('neu__active'); //adds top nav active state class to items with drop down menu
-
-            if (sub == 'howdoi') {
-                $('#about, .first-sub').css({
-                    'display': 'none'
-                });
-                $('#howdoi, .first-sub').css({
-                    'display': 'block'
-                });
-            }
-            if (sub == 'about') {
-                $('#howdoi, .first-sub').css({
-                    'display': 'none'
-                });
-                $('#about, .first-sub').css({
-                    'display': 'block'
-                });
-            }
-        });
-
-        $('main').on('click touchend', function () {
-            $('li.has-children').removeClass('neu__active');
-            $('#howdoi, .first-sub').css({
-                'display': 'none'
-            });
-            $('#about, .first-sub').css({
-                'display': 'none'
-            });
-        });
+        }
+        Finance.Navigation._init();
 
 
 
 
-        $(".neumenu").neumenu(); //THIS CONTROLS TABBED MENU
 
-        $('#about > .neumenu > .neumenu-item').on('click', function (e) {
-            $('.neumenu-item').removeClass('active');
-        });
+
 
 
 

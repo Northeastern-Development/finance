@@ -7,13 +7,13 @@
     <ul>
         <li class="has-children" data-id="howdoi">
             <a href=""><span>How do I...</span></a>
-            <div class="neumenu-wrapper" id="howdoi">
-                <?php 
-                    if( !is_page_template('templates/template-homepage.php') ){
-                        include(__DIR__ . '/nav.howdoi.php');
-                    }
-                 ?>
-            </div>
+            <?php 
+                if( !is_page_template('templates/template-homepage.php') ) :
+                    echo '<div class="neumenu-wrapper" id="howdoi">';
+                    include(__DIR__ . '/nav.howdoi.php');
+                    echo '</div>';
+                endif;
+            ?>
         </li>
         
         <?php 

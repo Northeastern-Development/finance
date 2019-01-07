@@ -940,7 +940,11 @@ header {
     border-bottom: 5px solid #d41b2c; }
   .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child {
     background-color: #327c8a;
-    color: white; }
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child > h2 {
       font-size: 3.4rem;
       line-height: 4.8rem;

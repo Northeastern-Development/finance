@@ -87,6 +87,10 @@
             > div:first-child {
                 background-color: $brand_colors-teal--dark;
                 color: white;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
                 > h2 {
                     @include font-7r-c;
                 }
