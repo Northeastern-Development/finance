@@ -9,8 +9,6 @@
         max-width: $wrapper-width;
         max-width: 100%; // overriding 100vw
         width: 100%; // overriding 100vw
-
-
         margin-top: 128px;
     }
 
@@ -27,7 +25,18 @@
             background-color: rgba(0,0,0, 0.3);
         }
     }
-    
+
+
+    div.main,
+    main {
+        > section {
+            > h2 {
+                @include font-7l-l;
+                padding-bottom: 30px;
+                border-bottom: 1px solid black;
+            }
+        }
+    }
 
 
     // outer container
@@ -50,15 +59,21 @@
             width: $wrapper-width;
             margin: 0 0 ($gutter * 2) 0;
             overflow: hidden;
-            > h1 {
-                color: rgba(white, 1.0);
-                text-align: center;
-                @include font-8l-c;
-            }
             > div {
                 width: $content-width-narrow;
                 margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
                 color: rgba(white, 1.0);
+                // page title
+                > h1 {
+                    color: rgba(white, 1.0);
+                    text-align: center;
+                    @include font-7l-c;
+                }
+                // description
+                > h3 {
+                    @include font-3l-c;
+                }
+
             }
         }
         > section.intro {
@@ -311,12 +326,18 @@
         > section > ul.nufin-faqs {
             list-style-type: none;
             margin: 0;
+            margin-top: 30px;
             li {
                 cursor: pointer;
-                padding: 10px 0;
-                border-bottom: 1px solid $brand_colors-gray;
+                border-bottom: 1px solid transparentize(black, 0.5);
+                > h5 {
+                    @include font-3b-l;
+                    padding: 15px 0;
+                }
                 > div {
+                    @include font-2l-l;
                     cursor: initial;
+                    padding-bottom: 15px;
                 }
             }
         }
@@ -332,6 +353,7 @@
         > section.related-tasks {
             > ul {
                 > li {
+                    @include font-2l-l;
                     i {
                         color: $brand_colors-red;
                         vertical-align: middle;
@@ -342,15 +364,15 @@
         }
 
         
-        
-        > section {
-            > .nu__prefooter {
-                > h2 {
-                    text-align: left;
-                    border-bottom: 1px solid black;
-                }
-            }
-        }
+        // (replacing this and all other calls like it with something more static -- every main > section > h2 should work
+        // > section {
+        //     > .nu__prefooter {
+        //         > h2 {
+        //             text-align: left;
+        //             border-bottom: 1px solid black;
+        //         }
+        //     }
+        // }
         
         > section.overview-depts {
             > ul {

@@ -16,7 +16,7 @@
     if($prefooterFields['use_pre-footer'] == 1){	// if the page is using the pre-footer option
 		$prefooterBgColor = ($prefooterFields['background_color'] == ''?' bg_white':' bg_'.$prefooterFields['background_color']);
         if(isset($prefooterFields['pre-footer_image_block']) && $prefooterFields['pre-footer_image_block'] != ''){		// image blocks: image, title, description
-			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><h2>'.$prefooterFields['pre-footer_area_title'].'</h2><div><ul>';
+			$return_prefooter .= '<h2>'.$prefooterFields['pre-footer_area_title'].'</h2><div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><div><ul>';
             $guide = '
                 <li>
                     <a href="%s" title="%s"%s>

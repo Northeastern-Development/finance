@@ -1,38 +1,179 @@
 /* These are variables for the main navigation */
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
+/* lato-100 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: url("../.fonts/lato-v14-latin-100.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Hairline"), local("Lato-Hairline"), url("../.fonts/lato-v14-latin-100.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-100.woff2") format("woff2"), url("../.fonts/lato-v14-latin-100.woff") format("woff"), url("../.fonts/lato-v14-latin-100.ttf") format("truetype"), url("../.fonts/lato-v14-latin-100.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-100italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 100;
+  src: url("../.fonts/lato-v14-latin-100italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Hairline Italic"), local("Lato-HairlineItalic"), url("../.fonts/lato-v14-latin-100italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-100italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-100italic.woff") format("woff"), url("../.fonts/lato-v14-latin-100italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-100italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../.fonts/lato-v14-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light"), local("Lato-Light"), url("../.fonts/lato-v14-latin-300.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-300.woff2") format("woff2"), url("../.fonts/lato-v14-latin-300.woff") format("woff"), url("../.fonts/lato-v14-latin-300.ttf") format("truetype"), url("../.fonts/lato-v14-latin-300.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: url("../.fonts/lato-v14-latin-300italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light Italic"), local("Lato-LightItalic"), url("../.fonts/lato-v14-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-300italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-300italic.woff") format("woff"), url("../.fonts/lato-v14-latin-300italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-300italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../.fonts/lato-v14-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Regular"), local("Lato-Regular"), url("../.fonts/lato-v14-latin-regular.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-regular.woff2") format("woff2"), url("../.fonts/lato-v14-latin-regular.woff") format("woff"), url("../.fonts/lato-v14-latin-regular.ttf") format("truetype"), url("../.fonts/lato-v14-latin-regular.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../.fonts/lato-v14-latin-italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Italic"), local("Lato-Italic"), url("../.fonts/lato-v14-latin-italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-italic.woff") format("woff"), url("../.fonts/lato-v14-latin-italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../.fonts/lato-v14-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold"), local("Lato-Bold"), url("../.fonts/lato-v14-latin-700.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-700.woff2") format("woff2"), url("../.fonts/lato-v14-latin-700.woff") format("woff"), url("../.fonts/lato-v14-latin-700.ttf") format("truetype"), url("../.fonts/lato-v14-latin-700.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../.fonts/lato-v14-latin-700italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("../.fonts/lato-v14-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-700italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-700italic.woff") format("woff"), url("../.fonts/lato-v14-latin-700italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-700italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../.fonts/lato-v14-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black"), local("Lato-Black"), url("../.fonts/lato-v14-latin-900.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900.woff") format("woff"), url("../.fonts/lato-v14-latin-900.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  src: url("../.fonts/lato-v14-latin-900italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
 @media only screen {
   div.main > section > h2,
   main > section > h2 {
-    text-align: left;
     border-bottom: 1px solid black; }
-  div.main > section > div.task-options,
-  main > section > div.task-options {
-    text-align: center; }
-    div.main > section > div.task-options > h2,
-    main > section > div.task-options > h2 {
-      display: inline-block;
-      border-bottom: 1px solid black; }
-    div.main > section > div.task-options ul.task-options-list > li,
-    main > section > div.task-options ul.task-options-list > li {
-      padding: 10px 0;
-      border-bottom: 1px solid black;
-      cursor: pointer; }
-      div.main > section > div.task-options ul.task-options-list > li > ul,
-      main > section > div.task-options ul.task-options-list > li > ul {
-        cursor: initial;
-        display: block;
-        margin-left: 5%; }
-        div.main > section > div.task-options ul.task-options-list > li > ul > li,
-        main > section > div.task-options ul.task-options-list > li > ul > li {
-          margin: 0 auto;
-          margin-bottom: 20px; }
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
-          width: 25%;
-          margin: auto;
-          float: right; }
-          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar i.material-icons,
-          main > section > div.task-options ul.task-options-list > li > ul div.sidebar i.material-icons {
-            color: #d41b2c; }
+  div.main > section > div.task-options > h2,
+  main > section > div.task-options > h2 {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    text-align: left;
+    font-weight: 300;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black; }
+  div.main > section > div.task-options ul.task-options-list > li,
+  main > section > div.task-options ul.task-options-list > li {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer; }
+    div.main > section > div.task-options ul.task-options-list > li > ul,
+    main > section > div.task-options ul.task-options-list > li > ul {
+      cursor: initial;
+      display: block;
+      margin-left: 5%; }
+      div.main > section > div.task-options ul.task-options-list > li > ul > li,
+      main > section > div.task-options ul.task-options-list > li > ul > li {
+        margin: 0 auto;
+        margin-bottom: 20px; }
+      div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
+      main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
+        width: calc(100% / 3);
+        margin: auto;
+        margin-left: 20px;
+        float: right; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > img,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > img {
+          height: 245px;
+          width: 100%;
+          object-fit: cover; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4 {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 2.8rem;
+          text-align: left; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p {
+          font-size: 1.6rem;
+          font-weight: 300;
+          line-height: 2.8rem;
+          text-align: left; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 1.6rem;
+          font-weight: 300;
+          line-height: 2.8rem;
+          text-align: left;
+          line-height: inherit; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons {
+          color: #d41b2c; }
+    div.main > section > div.task-options ul.task-options-list > li > div,
+    main > section > div.task-options ul.task-options-list > li > div {
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.8rem;
+      text-align: left; }
       div.main > section > div.task-options ul.task-options-list > li > div h5, div.main > section > div.task-options ul.task-options-list > li > div img,
       main > section > div.task-options ul.task-options-list > li > div h5,
       main > section > div.task-options ul.task-options-list > li > div img {
@@ -44,4 +185,23 @@
         height: 32px; }
       div.main > section > div.task-options ul.task-options-list > li > div h5,
       main > section > div.task-options ul.task-options-list > li > div h5 {
-        margin-left: 20px; } }
+        margin-left: 20px;
+        font-size: 2.0rem;
+        font-weight: 700;
+        line-height: 3.2rem;
+        text-align: left; }
+  ul.task-options-list > li.js__tasks_viewable_steps > div > i.material-icons {
+    color: #d41b2c;
+    border-color: #d41b2c; }
+  ul.task-options-list > li > div > i.material-icons {
+    padding: 8px;
+    border-radius: 50%;
+    border: 1px solid #979797;
+    color: #979797; }
+  ul.task-options-list-item-suboptions > li > h5 {
+    font-weight: bold; }
+  ul.task-options-list-item-suboptions > li > p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    text-align: left; } }

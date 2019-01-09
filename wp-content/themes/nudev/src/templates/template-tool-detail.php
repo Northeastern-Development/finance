@@ -1,30 +1,36 @@
 <?php 
 /**
  * Template Name: Tool Detail
- * 
  */
-    
+    // get query vars
     $toolgrouping = get_query_var('toolgroup');
     $toolname = get_query_var('toolname');
-
+    // use query var to determine which tool is displayed
     $toolpost = get_page_by_path($toolname, ARRAY_A, 'tools');
-
+    // get fields for that tool
     $fields = get_fields($toolpost['ID']);
-
     $currentGrouping = [];
     $haveGroups = array_filter($fields['groupings'], function($grouping){
         if( !empty($grouping['group']) ){
             return $grouping;
         }
     });
-    if( $haveGroups ){
+    /**
+     *      Filtering Nav
+     */
+    if( !empty($haveGroups) ){
 
-        $groupSelectorGuide = '<li class="%s"><a href="%s">%s</a></li>';
-        $groupSelectorContent = '<ul class="tool-groupingnav">';
-
+        $groupSelectorGuide = '
+            <li class="%s">
+                <a href="%s">%s</a>
+            </li>
+        ';
+        $groupSelectorContent = '
+            <ul class="tool-groupingnav">
+        ';
+        // a 'grouping' is like 'use concur as full time employee'
         foreach( $fields['groupings'] as $grouping ){
             if( $grouping['status'] == 1 ){
-
                 // pass title to both the nav and the list
                 $groupSelectorContent .= sprintf(
                     $groupSelectorGuide
@@ -40,41 +46,45 @@
         }
         $groupSelectorContent .= '</ul>';
     }
-    // (main page content stuff here)
-    $groupContent = '<div class="tool-groups">';
+    /**
+     *      Page Content Setup
+     */
 
-    $groupContent_guide = '<h2>%s</h2><ul class="js__collapsible_list list">%s</ul>';
-
-    $infoblock_guide = '<li><h5>%s</h5><div>%s</div></li>';
-
-    if( !empty($currentGrouping['group']) ){
+        $format_group = '
+            <div class="tool-group">
+                <h4>%s</h4>
+                <ul>
+                    %s
+                </ul>
+            </div>
+        ';
+        $format_infoblocks = '<li><h5>%s</h5>%s</li>';
+        
         foreach( $currentGrouping['group'] as $group ){
-
-            $infoblock_string = '';
-            foreach( $group['information_blocks'] as $infoblock ){
-                if( $infoblock['status'] == 1){
-                    $infoblock_string .= sprintf(
-                        $infoblock_guide
-                        ,$infoblock['title']
-                        ,$infoblock['description']
-                    );
+            // check if 'this' grouping is active,
+            if( $group['status'] == 1 ){
+                // pre-stringify all the active infoblocks belonging to this grouping
+                foreach( $group['information_blocks'] as $infoblock ){
+                    if( $infoblock['status'] == 1 ){
+                        $content_infoblocks .= sprintf(
+                            $format_infoblocks
+                            ,$infoblock['title']
+                            ,$infoblock['description']
+                        );
+                    }
                 }
-            }
 
-            if($group['status'] == 1){
-                $groupContent .= sprintf(
-                    $groupContent_guide
+                $content_group .= sprintf(
+                    $format_group
                     ,$group['title']
-                    ,$infoblock_string
+                    ,$content_infoblocks
                 );
             }
-
-
         }
-    }
-    $groupContent .= '</div>';
+    /**
+     *      End Page Content Setup
+     */
 
-    
     get_header();
 ?>
 <main role="main">
@@ -95,7 +105,8 @@
     <section>
         <?php
             echo $groupSelectorContent;
-            echo $groupContent;
+            echo '<h2>'.$currentGrouping['title'].'</h2>';
+            echo $content_group;
         ?>
     </section>
 </main>

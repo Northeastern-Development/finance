@@ -1,28 +1,30 @@
 @import '../../sass/base/vars.scss';
+@import '../../sass/base/fonts.scss';
 @media only screen {
 
 
     div.main,
     main {
         > section {
-
+            // (the page title)
             > h2 {
-                text-align: left;
                 border-bottom: 1px solid black;
             }
 
 
             > div.task-options {
-                text-align: center;
+                // the solutions header (select solution based on method of payment etc)
                 > h2 {
-                    display: inline-block;
+                    @include font-7l-l;
+                    padding-bottom: 30px;
                     border-bottom: 1px solid black;
                 }
                 ul.task-options-list {
                     // any task option grouping
                     > li {
-                        padding: 10px 0;
-                        border-bottom: 1px solid black;
+                        margin-top: 30px;
+                        padding-bottom: 30px;
+                        border-bottom: 1px solid transparentize(black, 0.5);
                         cursor: pointer;
                         // the task option groupings sub-options (steps)
                         > ul {
@@ -33,12 +35,34 @@
                                 margin: 0 auto;
                                 margin-bottom: 20px;
                             }
+                            // in-solution 'sidebar' / 'callout'
                             div.sidebar {
-                                width: 25%;
+                                width: calc(100% / 3);
                                 margin: auto;
+                                margin-left: 20px;
                                 float: right;
-                                i.material-icons {
-                                    color: $brand_colors-red;
+                                > img {
+                                    height: 245px;
+                                    width: 100%;
+                                    object-fit: cover;
+                                }
+                                > h4 {
+                                    @include font-2b-l;
+                                }
+                                > p {
+                                    @include font-2l-l;
+                                }
+                                > a {
+                                    > i.material-icons,
+                                    > span{
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        @include font-2l-l;
+                                        line-height: inherit;
+                                    }
+                                    > i.material-icons {
+                                        color: $brand_colors-red;
+                                    }
                                 }
                             }
                         }
@@ -55,10 +79,44 @@
                             }
                             h5 {
                                 margin-left: 20px;
+                                @include font-3b-l;
                             }
+                            @include font-2l-l;
                         }
                     }
                 }
+            }
+        }
+    }
+
+    ul.task-options-list {
+        > li {
+            &.js__tasks_viewable_steps {
+                > div {
+                    > i.material-icons {
+                        color: $brand_colors-red;
+                        border-color: $brand_colors-red;
+                    }
+                }
+            }
+            > div{
+                > i.material-icons {
+                    padding: 8px; // centers checkmark within the circle border, all of which appx. 40px width and height
+                    border-radius: 50%;
+                    border: 1px solid $brand_colors-gray;
+                    color: $brand_colors-gray;
+                }
+            }
+        }
+    }
+
+    ul.task-options-list-item-suboptions {
+        > li {
+            > h5 {
+                font-weight: bold;
+            }
+            > p {
+                @include font-2l-l;
             }
         }
     }

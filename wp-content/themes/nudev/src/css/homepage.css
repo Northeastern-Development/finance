@@ -109,87 +109,52 @@
  * ---
  */
 @media only screen {
-  div.main section.hero,
-  main section.hero {
-    position: relative;
+  div.wrapper .neumenu-wrapper {
+    display: block;
+    position: relative; }
+  .wrapper li[data-id="howdoi"] > a {
+    pointer-events: none; }
+  div.wrapper section.hero {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     height: 620px; }
-    div.main section.hero > div:first-child,
-    main section.hero > div:first-child {
+    div.wrapper section.hero > div {
       width: calc(100% / 3);
       text-align: center; }
-      div.main section.hero > div:first-child > h2,
-      main section.hero > div:first-child > h2 {
+      div.wrapper section.hero > div > h2 {
         font-size: 3.4rem;
         line-height: 4.8rem;
         text-align: center;
         font-weight: 300; }
-      div.main section.hero > div:first-child > p,
-      div.main section.hero > div:first-child .nu__content_btn,
-      main section.hero > div:first-child > p,
-      main section.hero > div:first-child .nu__content_btn {
+      div.wrapper section.hero > div > p,
+      div.wrapper section.hero > div .nu__content_btn {
         font-size: 1.6rem;
         font-weight: 300;
         line-height: 2.8rem;
         text-align: center; }
-    div.main section.hero .nu__content_btn,
-    main section.hero .nu__content_btn {
-      border: 1px solid white;
-      color: white; }
-      div.main section.hero .nu__content_btn:hover,
-      main section.hero .nu__content_btn:hover {
+      div.wrapper section.hero > div .nu__content_btn {
+        color: white;
         border: 1px solid white; }
-  div.main div.deadlines,
-  main div.deadlines {
+        div.wrapper section.hero > div .nu__content_btn:hover {
+          color: white;
+          background-color: rgba(0, 0, 0, 0.4); }
+  div.wrapper div.deadlines {
     width: 100%;
-    background-color: #327c8a;
     height: 150px;
+    background-color: #327c8a;
     position: relative; }
-    div.main div.deadlines > div,
-    main div.deadlines > div {
+    div.wrapper div.deadlines > div {
       transform: translate(-50%, -50%);
       position: absolute;
       top: 0;
       left: 50%;
       width: 80%;
       margin: 0 auto; }
-      div.main div.deadlines > div > ul,
-      main div.deadlines > div > ul {
-        display: flex;
-        flex-flow: row nowrap;
-        list-style-type: none;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2vw; }
-        div.main div.deadlines > div > ul > li,
-        main div.deadlines > div > ul > li {
-          flex: 1;
-          padding: 15px;
-          height: 185px;
-          background-color: white;
-          margin-right: 1vw; }
-          div.main div.deadlines > div > ul > li:last-child,
-          main div.deadlines > div > ul > li:last-child {
-            margin-right: 0; }
-          div.main div.deadlines > div > ul > li > h5,
-          main div.deadlines > div > ul > li > h5 {
-            font-size: 2.0rem;
-            font-weight: 700;
-            line-height: 3.2rem;
-            text-align: left; }
-          div.main div.deadlines > div > ul > li > p,
-          main div.deadlines > div > ul > li > p {
-            font-size: 1.6rem;
-            font-weight: 300;
-            line-height: 2.8rem;
-            text-align: left; }
-      div.main div.deadlines > div > h4,
-      main div.deadlines > div > h4 {
-        padding: 5px 10px;
+      div.wrapper div.deadlines > div > h4 {
+        padding: 10px 20px;
         display: inline-block;
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.4);
         text-transform: uppercase;
         margin-bottom: 1vw;
         font-size: 1.4rem;
@@ -197,158 +162,122 @@
         line-height: 2.8rem;
         text-align: left;
         color: black; }
-  div.main div.neumenu-wrapper {
-    display: block;
-    position: relative; }
-  li[data-id="howdoi"] {
-    pointer-events: none; }
-    li[data-id="howdoi"] > a {
-      pointer-events: none; }
-  div.main section.home-feat-tools,
-  div.main section.home-feat-news,
-  main section.home-feat-tools,
-  main section.home-feat-news {
+      div.wrapper div.deadlines > div > ul {
+        display: flex;
+        flex-flow: row nowrap;
+        list-style-type: none;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2vw; }
+        div.wrapper div.deadlines > div > ul > li {
+          flex: 1;
+          padding: 15px;
+          height: 185px;
+          background-color: white;
+          margin-right: 1vw; }
+          div.wrapper div.deadlines > div > ul > li:last-child {
+            margin-right: 0; }
+          div.wrapper div.deadlines > div > ul > li > h5 {
+            font-size: 2.0rem;
+            font-weight: 700;
+            line-height: 3.2rem;
+            text-align: left; }
+          div.wrapper div.deadlines > div > ul > li > p {
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 2.8rem;
+            text-align: left; }
+  div.wrapper section.home-feat-tools,
+  div.wrapper section.home-feat-news {
     padding: 0 20px;
     margin: 60px 0; }
-    div.main section.home-feat-tools > h1,
-    div.main section.home-feat-news > h1,
-    main section.home-feat-tools > h1,
-    main section.home-feat-news > h1 {
-      margin: 0 auto;
-      margin-bottom: 30px;
+    div.wrapper section.home-feat-tools > h1,
+    div.wrapper section.home-feat-news > h1 {
       font-size: 3.4rem;
       line-height: 4.8rem;
       text-align: center;
       font-weight: 300; }
-    div.main section.home-feat-tools > div,
-    div.main section.home-feat-news > div,
-    main section.home-feat-tools > div,
-    main section.home-feat-news > div {
+    div.wrapper section.home-feat-tools > div,
+    div.wrapper section.home-feat-news > div {
       display: flex;
       flex-flow: row nowrap; }
-      div.main section.home-feat-tools > div > div,
-      div.main section.home-feat-news > div > div,
-      main section.home-feat-tools > div > div,
-      main section.home-feat-news > div > div {
-        flex: 1 0 auto;
-        width: calc(33% - 20px);
-        justify-content: space-around;
-        align-items: center; }
-        div.main section.home-feat-tools > div > div a,
-        div.main section.home-feat-news > div > div a,
-        main section.home-feat-tools > div > div a,
-        main section.home-feat-news > div > div a {
+      div.wrapper section.home-feat-tools > div > div,
+      div.wrapper section.home-feat-news > div > div {
+        flex: 1;
+        margin-right: 1vw; }
+        div.wrapper section.home-feat-tools > div > div:last-child,
+        div.wrapper section.home-feat-news > div > div:last-child {
+          margin-right: 0; }
+        div.wrapper section.home-feat-tools > div > div > a,
+        div.wrapper section.home-feat-news > div > div > a {
           display: inline-block;
           width: 100%;
           height: 100%; }
-          div.main section.home-feat-tools > div > div a figure,
-          div.main section.home-feat-news > div > div a figure,
-          main section.home-feat-tools > div > div a figure,
-          main section.home-feat-news > div > div a figure {
+          div.wrapper section.home-feat-tools > div > div > a > figure,
+          div.wrapper section.home-feat-news > div > div > a > figure {
             overflow: hidden; }
-          div.main section.home-feat-tools > div > div a img,
-          div.main section.home-feat-news > div > div a img,
-          main section.home-feat-tools > div > div a img,
-          main section.home-feat-news > div > div a img {
-            transition: transform 0.4s ease;
-            transform: scale(1); }
-          div.main section.home-feat-tools > div > div a:hover, div.main section.home-feat-tools > div > div a:focus,
-          div.main section.home-feat-news > div > div a:hover,
-          div.main section.home-feat-news > div > div a:focus,
-          main section.home-feat-tools > div > div a:hover,
-          main section.home-feat-tools > div > div a:focus,
-          main section.home-feat-news > div > div a:hover,
-          main section.home-feat-news > div > div a:focus {
-            border-bottom: 1px solid transparent; }
-            div.main section.home-feat-tools > div > div a:hover img, div.main section.home-feat-tools > div > div a:focus img,
-            div.main section.home-feat-news > div > div a:hover img,
-            div.main section.home-feat-news > div > div a:focus img,
-            main section.home-feat-tools > div > div a:hover img,
-            main section.home-feat-tools > div > div a:focus img,
-            main section.home-feat-news > div > div a:hover img,
-            main section.home-feat-news > div > div a:focus img {
-              transform: scale(1.1); }
-            div.main section.home-feat-tools > div > div a:hover > div p, div.main section.home-feat-tools > div > div a:focus > div p,
-            div.main section.home-feat-news > div > div a:hover > div p,
-            div.main section.home-feat-news > div > div a:focus > div p,
-            main section.home-feat-tools > div > div a:hover > div p,
-            main section.home-feat-tools > div > div a:focus > div p,
-            main section.home-feat-news > div > div a:hover > div p,
-            main section.home-feat-news > div > div a:focus > div p {
-              border-bottom: 1px solid #d41b2c; }
-          div.main section.home-feat-tools > div > div a > div,
-          div.main section.home-feat-news > div > div a > div,
-          main section.home-feat-tools > div > div a > div,
-          main section.home-feat-news > div > div a > div {
+            div.wrapper section.home-feat-tools > div > div > a > figure > img,
+            div.wrapper section.home-feat-news > div > div > a > figure > img {
+              object-fit: cover;
+              transform: scale(1);
+              transition: transform 0.4s ease; }
+          div.wrapper section.home-feat-tools > div > div > a:hover > figure > img,
+          div.wrapper section.home-feat-news > div > div > a:hover > figure > img {
+            transform: scale(1.1); }
+          div.wrapper section.home-feat-tools > div > div > a:hover > div > p,
+          div.wrapper section.home-feat-news > div > div > a:hover > div > p {
+            border-bottom: 1px solid #d41b2c; }
+          div.wrapper section.home-feat-tools > div > div > a > p,
+          div.wrapper section.home-feat-news > div > div > a > p {
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 2.8rem;
             text-align: left; }
-            div.main section.home-feat-tools > div > div a > div > p,
-            div.main section.home-feat-news > div > div a > div > p,
-            main section.home-feat-tools > div > div a > div > p,
-            main section.home-feat-news > div > div a > div > p {
+          div.wrapper section.home-feat-tools > div > div > a > div,
+          div.wrapper section.home-feat-news > div > div > a > div {
+            text-align: left; }
+            div.wrapper section.home-feat-tools > div > div > a > div > p,
+            div.wrapper section.home-feat-news > div > div > a > div > p {
+              display: inline-block;
               border-bottom: 1px solid transparent;
-              display: inline-block; }
-              div.main section.home-feat-tools > div > div a > div > p i, div.main section.home-feat-tools > div > div a > div > p span,
-              div.main section.home-feat-news > div > div a > div > p i,
-              div.main section.home-feat-news > div > div a > div > p span,
-              main section.home-feat-tools > div > div a > div > p i,
-              main section.home-feat-tools > div > div a > div > p span,
-              main section.home-feat-news > div > div a > div > p i,
-              main section.home-feat-news > div > div a > div > p span {
+              font-size: 1.6rem;
+              font-weight: 300;
+              line-height: 2.8rem;
+              text-align: left; }
+              div.wrapper section.home-feat-tools > div > div > a > div > p > i,
+              div.wrapper section.home-feat-tools > div > div > a > div > p > span,
+              div.wrapper section.home-feat-news > div > div > a > div > p > i,
+              div.wrapper section.home-feat-news > div > div > a > div > p > span {
+                line-height: inherit;
                 display: inline-block;
-                vertical-align: middle;
-                line-height: inherit; }
-        div.main section.home-feat-tools > div > div p,
-        div.main section.home-feat-news > div > div p,
-        main section.home-feat-tools > div > div p,
-        main section.home-feat-news > div > div p {
-          font-size: 1.6rem;
-          font-weight: 300;
-          line-height: 2.8rem;
-          text-align: left;
-          text-align: left; }
-          div.main section.home-feat-tools > div > div p i.material-icons,
-          div.main section.home-feat-news > div > div p i.material-icons,
-          main section.home-feat-tools > div > div p i.material-icons,
-          main section.home-feat-news > div > div p i.material-icons {
-            vertical-align: middle;
-            color: #d41b2c; }
-        div.main section.home-feat-tools > div > div:not(:last-child),
-        div.main section.home-feat-news > div > div:not(:last-child),
-        main section.home-feat-tools > div > div:not(:last-child),
-        main section.home-feat-news > div > div:not(:last-child) {
-          margin-right: 30px; }
-        div.main section.home-feat-tools > div > div img,
-        div.main section.home-feat-news > div > div img,
-        main section.home-feat-tools > div > div img,
-        main section.home-feat-news > div > div img {
-          width: auto;
-          height: 80px;
-          object-fit: cover;
-          transform: scale(1); }
-  div.main section.home-feat-news > div > div > a > figure > img,
-  main section.home-feat-news > div > div > a > figure > img {
+                vertical-align: middle; }
+              div.wrapper section.home-feat-tools > div > div > a > div > p i.material_icons,
+              div.wrapper section.home-feat-news > div > div > a > div > p i.material_icons {
+                color: #d41b2c; }
+  .wrapper section.home-feat-tools > div > div > a > figure img {
+    width: auto;
+    height: 80px;
+    object-fit: cover;
+    transform: scale(1); }
+  .wrapper section.home-feat-news > div > div > a > figure > img {
     width: 100%;
     height: 245px; }
-  div.main section.home-feat-news > div > div > a,
-  main section.home-feat-news > div > div > a {
+  .wrapper section.home-feat-news > div > div > a {
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 2.8rem;
     text-align: left; }
-    div.main section.home-feat-news > div > div > a h5,
-    main section.home-feat-news > div > div > a h5 {
+    .wrapper section.home-feat-news > div > div > a h5 {
       font-size: 1.6rem;
       font-weight: 700;
       line-height: 2.8rem;
       text-align: left; }
-    div.main section.home-feat-news > div > div > a h5:first-of-type,
-    main section.home-feat-news > div > div > a h5:first-of-type {
+    .wrapper section.home-feat-news > div > div > a h5:first-of-type {
       font-size: 2.0rem;
       font-weight: 700;
       line-height: 3.2rem;
       text-align: left; }
-    div.main section.home-feat-news > div > div > a p,
-    main section.home-feat-news > div > div > a p {
+    .wrapper section.home-feat-news > div > div > a p {
       font-size: 1.6rem;
       font-weight: 300;
       line-height: 2.8rem;

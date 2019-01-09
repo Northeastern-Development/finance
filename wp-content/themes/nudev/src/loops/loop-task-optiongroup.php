@@ -55,7 +55,7 @@
         %s
         <h4>%s</h4>
         %s
-        <a target="%s" href="%s"><i class="material-icons">arrow_forward</i>%s</a>
+        <a target="%s" href="%s"><i class="material-icons">arrow_forward</i><span>%s</span></a>
     ';
 
 
@@ -116,7 +116,8 @@
         // after all the bits are compiled, bring them all together as a complete option grouping
         $content_option .= sprintf(
             $format_option
-            ,( !empty($option['icon']) ) ? '<img class="taskoption-icon" src="'.$option['icon'].'">' : null
+            // ,( !empty($option['icon']) ) ? '<img class="taskoption-icon" src="'.$option['icon'].'">' : null
+            ,'<i class="material-icons">check</i>'
             ,$option['title']
             ,$option['description']
             , ( !empty($content_relatedfiles) ) ? '<ul class="list"><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null

@@ -1,0 +1,1 @@
+!function(i,o,l){i(function(){Finance.Tools={wrapper:i("div.tool-group"),collapse_initially:i("div.tool-group > ul"),_init:function(){Finance.Tools.collapse_initially.slideUp(0),Finance.Tools.wrapper.on("click",Finance.Tools._toggleCollapse)},_toggleCollapse:function(o){i(this).find("> ul").slideDown()}},Finance.Tools._init()})}(jQuery,this);

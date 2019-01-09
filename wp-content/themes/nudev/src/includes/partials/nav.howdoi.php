@@ -21,6 +21,7 @@
             <img class="taskicon" src="%s">
             <h4>%s</h4>
             <ul>
+                <li><h4>%s</h4></li>
                 %s
             </ul> 
         </div>
@@ -69,6 +70,7 @@
         $content_cats .= sprintf(
             $format_cats
             ,$fields['icon']
+            ,$cat->post_title
             ,$cat->post_title
             ,$content_tasks
         );

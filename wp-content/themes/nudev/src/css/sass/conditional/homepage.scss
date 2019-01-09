@@ -1,201 +1,243 @@
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/mixins.scss';
+
 // 
 // 
 //  
 @media only screen {
 
-    
-    
-    
-    div.main,
-    main {
-        // HERO
-        section.hero {
+    // over-ride howdoi wrapper to visible if in the main wrapper
+    div.wrapper {
+        .neumenu-wrapper {
+            display: block;
             position: relative;
+        }
+    }
+
+    // disable pointer events on the howdoi dropdown in the nav 
+    // (because its been replaced by the one in the body)
+    .wrapper {
+        li[data-id="howdoi"] {
+            >a {
+                pointer-events: none;
+            }
+        }
+    }
+
+    // hero section
+    div.wrapper {
+        section.hero {
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-around;
             height: 620px;
-            > div:first-child {
+
+            // vertically centered hero content
+            >div {
                 width: calc(100% / 3);
                 text-align: center;
-                > h2 {
+
+                >h2 {
                     @include font-7l-c;
                 }
-                > p,
+                >p,
                 .nu__content_btn {
                     @include font-2l-c;
                 }
-            }
-            .nu__content_btn {
-                border: 1px solid white;
-                color: white;
-                &:hover {
+                .nu__content_btn {
+                    color: white;
                     border: 1px solid white;
+                    &:hover {
+                        color: white;
+                        background-color: transparentize(black, 0.6);
+                        
+                    }
                 }
             }
         }
+    }
+
+    // deadlines section
+    div.wrapper {
         div.deadlines {
             width: 100%;
-            background-color: $brand_colors-teal--dark;
             height: 150px;
+            background-color: $brand_colors-teal--dark;
             position: relative;
-            > div{
-                transform: translate(-50%, -50%);    
+
+            // deadlines content wrapper (transformed as a group)
+            >div {
+                transform: translate(-50%, -50%);
                 position: absolute;
                 top: 0;
                 left: 50%;
                 width: 80%;
                 margin: 0 auto;
-                > ul {
+
+                // 'upcoming deadlines' subtitle
+                >h4 {
+                    padding: 10px 20px;
+                    display: inline-block;
+                    background-color: transparentize(white, 0.6);
+                    text-transform: uppercase;
+                    margin-bottom: $gutter;
+                    @include font-1r-l;
+                    color: black;
+                }
+
+                // deadlines items wrapper
+                >ul {
                     display: flex;
                     flex-flow: row nowrap;
                     list-style-type: none;
                     justify-content: space-between;
                     align-items: center;
                     margin-bottom: ($gutter * 2);
-                    > li {
+
+                    >li {
                         flex: 1;
                         padding: 15px;
                         height: 185px;
                         background-color: white;
                         margin-right: $gutter;
-                        &:last-child{
+
+                        &:last-child {
                             margin-right: 0;
                         }
 
-                        > h5 {
+                        >h5 {
                             @include font-3b-l;
                         }
-                        > p {
+
+                        >p {
                             @include font-2l-l;
                         }
                     }
                 }
-                > h4 {
-                    padding: 5px 10px;
-                    display: inline-block;
-                    background-color: rgba(255,255,255, 0.6);
-                    text-transform: uppercase;
-                    margin-bottom: $gutter;
-                    @include font-1r-l;
-                    color: black;
-                }
             }
         }
     }
-        
-    
-    
-    div.main {
-        div.neumenu-wrapper {
-            display: block;
-            position: relative;
-        }
-    }
 
-    li[data-id="howdoi"] {
-        pointer-events: none;
-        > a {
-            pointer-events: none;
-        }
-    }
-
-    div.main,
-    main {
- 
+    // tools & news sections
+    div.wrapper {
 
         section.home-feat-tools,
         section.home-feat-news {
             padding: 0 20px;
             margin: 60px 0;
-            > h1 {
-                margin: 0 auto;
-                margin-bottom: 30px;
+
+            // section titles
+            >h1 {
                 @include font-7l-c;
             }
-            > div {
+
+            // tools/news items wrapper
+            >div {
                 display: flex;
                 flex-flow: row nowrap;
-                
-                > div {
-                    a {
+
+                // tool/news item
+                >div {
+                    flex: 1;
+                    margin-right: $gutter;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    // 100%/100% clickable area link
+                    >a {
                         display: inline-block;
                         width: 100%;
                         height: 100%;
-                        figure {
+
+                        >figure {
                             overflow: hidden;
+
+                            >img {
+                                object-fit: cover;
+                                transform: scale(1);
+                                transition: transform 0.4s ease;
+                            }
                         }
-                        img {
-                            transition: transform 0.4s ease;
-                            transform: scale(1);
-                        }
-                        &:hover,
-                        &:focus {
-                            border-bottom: 1px solid transparent;
-                            img {
+
+                        &:hover {
+                            >figure>img {
                                 transform: scale(1.1);
                             }
-                            > div {
-                                p {
-                                    border-bottom: 1px solid $brand_colors-red;
-                                }
+
+                            >div>p {
+                                border-bottom: 1px solid $brand_colors-red;
                             }
                         }
-                        > div {
+
+                        // 'short description'
+                        >p {
+                            @include font-2l-l;
+                        }
+
+                        // learn more button
+                        >div {
                             text-align: left;
-                            > p {
-                                border-bottom: 1px solid transparent;
+
+                            >p {
                                 display: inline-block;
-                                i, span {
+                                border-bottom: 1px solid transparent;
+                                @include font-2l-l;
+
+                                // material icon & 'learn more' text
+                                >i,
+                                >span {
+                                    line-height: inherit;
                                     display: inline-block;
                                     vertical-align: middle;
-                                    line-height: inherit;
+                                }
+
+                                i.material_icons {
+                                    color: $brand_colors-red;
                                 }
                             }
                         }
-                    }
-                    flex: 1 0 auto;
-                    width: calc(33% - 20px);
-                    justify-content: space-around;
-                    align-items: center;
-                    p {
-                        @include font-2l-l;
-                        text-align: left;
-                        i.material-icons {
-                            vertical-align: middle;
-                            color: $brand_colors-red;
-                        }
-                    }
-                    &:not(:last-child){
-                        margin-right: 30px;
-                    }
-                    img {
-                        width: auto;
-                        height: 80px;
-                        object-fit: cover;
-                        transform: scale(1);
                     }
                 }
             }
-            
         }
+    }
 
+    // tools section only
+    .wrapper {
+        section.home-feat-tools {
+            >div>div>a>figure {
+                img {
+                    width: auto;
+                    height: 80px;
+                    object-fit: cover;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    // news section only
+    .wrapper {
         section.home-feat-news {
             >div>div>a>figure>img {
-               width: 100%;
-               height: 245px;
+                width: 100%;
+                height: 245px;
             }
+
             >div>div>a {
                 @include font-2l-l;
+
                 h5 {
                     @include font-2b-l;
                 }
+
                 h5:first-of-type {
                     @include font-3b-l;
                 }
+
                 p {
                     @include font-2l-l;
                 }

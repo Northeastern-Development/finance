@@ -136,7 +136,10 @@
                     }
                 }
             }
-            // (behavioral stuff)
+            // 
+            //      Behavior
+            // 
+            // reveal 'select task' and 'back to topics' button
             &.isFiltered > div:first-child {
                 h3:not(:first-of-type){
                     display: block;
@@ -145,30 +148,51 @@
                     display: none;
                 }
             }
+            // on click a task category (is filtered); hide all other categories
             &.isFiltered > div:not(:first-child){
                 justify-content: flex-start;
                 align-items: flex-start;
+                // every task-items wrapper (hidden or not)
                 > div {
                     flex: 1 0 100%;
+                    padding: 40px;
                 }
+                // hide other task items wrappers
                 > div:not(.theFilter){
                     display: none;
                 }
+                // hide the task category header (replicated in the revealed list, for alignment)
+                > div.theFilter {
+                    > h4 {
+                        display: none;
+                    }
+                }
+                // show this task items wrapper
                 > div.theFilter > ul {
                     display: flex;
-                    flex: 1 0 100%;
-                    flex-flow: column wrap;
+                    flex-flow: row wrap;
                     li {
-                        flex: 1 0 auto;
-                        width: calc(33% - 15px);
                         text-align: left;
-                        margin-right: 15px;
-                        margin-bottom: 15px;
+                        flex: 1 0 calc(33% - 30px);
+                        margin: 0 30px 20px 0;
+                        max-width: calc(33% - 30px);
+                        &:nth-child(3n){
+                            margin-right: 0;
+                        }
+                        // (restyle the duplicate task category title inside the newly revealed list of tasks)
+                        > h4 {
+                            @include font-1r-l;
+                            text-transform: uppercase;
+                        }
                     }
                 }
                 .taskicon {
                     display: none;
                 }
+            }
+            // if a category is clicked and we enter 'task view' -- the wrapper now adjusts height to content
+            &.isFiltered {
+                height: auto;
             }
         }
     }
