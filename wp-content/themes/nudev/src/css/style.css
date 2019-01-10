@@ -484,6 +484,8 @@ input[type="search"] {
     font-weight: 300;
     padding-bottom: 30px;
     border-bottom: 1px solid black; }
+  section ul {
+    list-style-type: none; }
   main,
   div.main {
     margin: 0 auto;
@@ -547,23 +549,23 @@ input[type="search"] {
     div.main > section {
       width: 50vw;
       margin: 1.7vw auto 0 auto; }
-      main > section ul,
-      div.main > section ul {
+      main > section > ul,
+      div.main > section > ul {
         display: flex;
         flex-direction: row;
         margin: 1vw auto 0;
         list-style: none;
         list-style-type: none; }
-        main > section ul > li,
-        div.main > section ul > li {
+        main > section > ul > li,
+        div.main > section > ul > li {
           flex: 1;
           margin: 0 1vw 1vw 0;
           text-align: left; }
-          main > section ul > li a,
-          div.main > section ul > li a {
+          main > section > ul > li a,
+          div.main > section > ul > li a {
             border-bottom: none; }
-          main > section ul > li h6 > a,
-          div.main > section ul > li h6 > a {
+          main > section > ul > li h6 > a,
+          div.main > section > ul > li h6 > a {
             border-bottom: solid #d41b2c 1px; }
       main > section > ul.list,
       div.main > section > ul.list {
@@ -698,17 +700,6 @@ input[type="search"] {
     main section.hero.hero-image {
       background-size: cover;
       background-position: center; }
-    div.main > section.related-tasks > ul > li,
-    main > section.related-tasks > ul > li {
-      font-size: 1.6rem;
-      font-weight: 300;
-      line-height: 2.8rem;
-      text-align: left; }
-      div.main > section.related-tasks > ul > li i,
-      main > section.related-tasks > ul > li i {
-        color: #d41b2c;
-        vertical-align: middle;
-        margin-right: 5px; }
     div.main > section.overview-depts > ul,
     main > section.overview-depts > ul {
       flex-flow: row wrap; }
@@ -722,7 +713,8 @@ input[type="search"] {
         div.main > section.overview-depts > ul li:nth-child(2n),
         main > section.overview-depts > ul li:nth-child(2n) {
           margin-right: 0; }
-        div.main > section.overview-depts > ul li i, div.main > section.overview-depts > ul li h4,
+        div.main > section.overview-depts > ul li i,
+        div.main > section.overview-depts > ul li h4,
         main > section.overview-depts > ul li i,
         main > section.overview-depts > ul li h4 {
           display: inline-block;
@@ -2496,6 +2488,7 @@ div.main section.nu__filters {
   div.main section.nu__filters > div > ul {
     width: 94vw;
     border-bottom: solid #979797 2px;
+    display: flex;
     flex-wrap: wrap;
     height: 40px;
     overflow: hidden; }

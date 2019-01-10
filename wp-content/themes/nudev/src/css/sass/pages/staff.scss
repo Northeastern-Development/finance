@@ -145,6 +145,7 @@ div.main{
      & > div > ul{
        width: $content-width-wide;
       border-bottom: solid rgba($brand_colors-gray,1.0) 2px;
+      display: flex;
       flex-wrap: wrap;
       height: 40px;
       overflow: hidden;

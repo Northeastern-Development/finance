@@ -1,7 +1,9 @@
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
 @media only screen {
 
 
-    @import '../../sass/base/vars.scss';
 
     section#glossary {
 
@@ -38,54 +40,37 @@
         }
         
         div.glossary-content {
+            
             > ul {
+                
                 position: relative;
                 min-height: 30px; // provide space to h2 (letter) if there are no items
+                margin-top: 30px;
                 h2 {
-                    // position: absolute;
-                    // top: 0;
-                    // left: 0;
+                    @include font-7l-l;
                 }
                 li {
-                    // margin-left: 40px;
+                    padding-bottom: 30px;
+                    margin-left: 32px;
+                    @include font-2l-l;
+                    > h6 {
+                        @include font-3b-l;
+                    }
                 }
             }
         }   
     }
+    section#glossary {
 
+        div.glossary-jumpnav.js__glossnav_sticky {
+            position: fixed;
+            top: 128px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50vw;
+        }
 
-
-    // #glossary ul {
-    //     list-style-type: none;
-    // }
-
-    // .glossary-jumpnav {
-    //     position: fixed;
-    //     background-color: white;
-    //     width: 80%;
-    //     display: flex;
-    //     text-align: center;
-    //     margin: 0 auto;
-    //     padding: 20px;
-
-    //     span {
-    //         flex: 1 0 auto;
-    //         color: lightgrey;
-
-    //         a {
-    //             color: black;
-    //             font-weight: bold;
-    //         }
-    //     }
-    // }
-
-    // .glossary-content {
-    //     padding-top: 80px;
-    // }
-
-
-
-
+    }
 
 
 

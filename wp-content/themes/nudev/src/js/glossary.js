@@ -1,28 +1,53 @@
-Glossary = {
+// the main js file (scripts.js, which is tagged 'theme') is a dependency of this and all conditionally loaded script files,
+// var Finance = {} is available and must not be overwritten due to scripts in the main js file
+(function ($, root, undefined) {
+    $(function () {
 
-    headheight : $('header').height() + $('div#nu__globalheader').height(),
-    jumpnav : $('.glossary-jumpnav'),
-    jumplinks : $('.glossary-jumpnav a'),
-    initoffset : $('section#glossary').offset().top,
-    list : $('.glossary-content'),
-    
-    _init : function(){
-        $(window).on('scroll load', Glossary._scrollHandler);
 
-        Glossary.jumplinks.on('click', Glossary._jumpHandler);
-        
-    },
-    _jumpHandler : function(e){
-        e.preventDefault();
-        var dest = Glossary.list.find('ul'+e.target.hash).offset().top;
-        $(window).scrollTop( dest - Glossary.headheight - Glossary.jumpnav.height() - 40 );
-    },
-    _scrollHandler : function(e){
-        if( $(window).scrollTop() >= Glossary.initoffset - Glossary.headheight ){
-            Glossary.jumpnav.addClass('js__jumpnav-fixed');
-        } else {
-            Glossary.jumpnav.removeClass('js__jumpnav-fixed');
-        }
-    },
-}
-Glossary._init();
+
+        Finance.Glossary = {
+
+            offsetHeader : $('div#nu__globalheader').outerHeight() + $('header.header').outerHeight(),
+
+            offsetHeroAndHeader : $('div#nu__globalheader').outerHeight() + $('header.header').outerHeight() + $('section.hero').outerHeight(),
+
+            offsetHero : $('section.hero').outerHeight(),
+
+            jumpNav : $('div.glossary-jumpnav'),
+
+            jumpLinks : $('div.glossary-jumpnav > span > a'),
+
+            
+            _init : function(){
+                $(window).on('scroll', Finance.Glossary._scrollHandler );
+                $(window).on('load', Finance.Glossary._loadHandler );
+                Finance.Glossary.jumpLinks.on('click', Finance.Glossary._jumpHandler);
+                
+            },
+            _loadHandler : function(e){
+                // check where we have scrolled to and do stuff
+            },
+            _scrollHandler : function(e){
+                if( $(window).scrollTop() >= Finance.Glossary.offsetHero ){
+                    Finance.Glossary.jumpNav.addClass('js__glossnav_sticky');
+                } else {
+                    Finance.Glossary.jumpNav.removeClass('js__glossnav_sticky');
+                }
+            },
+            _jumpHandler : function(e){
+
+                e.preventDefault();
+
+                var jumpFrom = $(this).attr('href');
+                var jumpTo = $('div.glossary-content > ul'+jumpFrom).offset().top;
+
+                $('html, body').scrollTop(jumpTo - Finance.Glossary.offsetHeader - 120);
+                
+            }
+            
+        };
+        Finance.Glossary._init();
+
+
+    });
+})(jQuery, this);

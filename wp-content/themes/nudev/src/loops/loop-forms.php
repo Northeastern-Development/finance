@@ -55,8 +55,8 @@
     // set empty content var
     $content = '';
     $format_category = '
+        <h2>%s</h2>
         <div class="forms-category">
-            <h2>%s</h2>
             %s
         </div>
     ';
@@ -78,7 +78,7 @@
     
     $format_files = '
         <a href="%s" title="click to open this file in a new tab" target="_blank">
-            <i class="material-icons">cloud_download</i> <p>%s</p>
+            <i class="material-icons">cloud_download</i><span>%s</span>
         </a>
     ';
 

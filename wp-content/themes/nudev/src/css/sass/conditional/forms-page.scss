@@ -1,6 +1,8 @@
 @import '../../sass/base/vars.scss';
-
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
 @media only screen {
+
     div.main,
     main {
         > section {
@@ -22,35 +24,68 @@
 
 
 
-    main#forms {
-        .forms-category {
+    div.main,
+    main {
+
+
+        div.forms-category {
+            margin: 30px 0;
             > ul {
-                border-bottom: 1px solid #000;
-                margin-bottom: 40px;
-                padding: 10px;
                 > li {
-                    > div {
-                        > a {
-                            display: block;
-                            p, i {
-                                display: inline-block;
-                                width: auto;
-                                margin: 0 auto;
-                            }
+                    border-bottom: 1px solid transparentize(black, 0.5);
+                    > h4 {
+                        @include font-3b-l;
+                        position: relative;
+                        &:after {
+                            content: '\e313';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            display: inline-block;
+                            font-family: 'Material Icons';
                         }
                     }
-                }
+                    // collapsible field content (initially hidden)
+                    >div {
+                        @include font-2l-l;
+                        margin-top: 15px;
 
-                // 
-                > ul {
-                    padding-left: 20px; // just roughing
-                    list-style-type: disc;
-                    flex-flow: row wrap;
-                    li {
-                        flex: 1 0 100%;
+                        > h4 {
+                            @include font-2b-l;
+                            margin-top: 15px;
+                        }
+
+                        > a {
+                            display: block;
+                            i.material-icons,
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                line-height: inherit;
+                                border-bottom: 1px solid transparent;
+                            }
+                            i.material-icons {
+                                padding-right: 5px;
+                            }
+                            &:hover {
+                                i.material-icons,
+                                span {
+                                    color: $brand_colors-red;
+                                    border-bottom: 1px solid $brand_colors-red;
+                                }
+                            }
+                        }
+                        
                     }
                 }
             }
-        }   
+
+        }
+        
+        
     }
+    
+    
+    
+    
 }

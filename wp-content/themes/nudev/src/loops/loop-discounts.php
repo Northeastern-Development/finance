@@ -31,29 +31,44 @@ $args = array(
 $discounts = get_posts($args);
 
 $content = '';
-$catsguide = '<h2>%s</h2><ul class="js__collapsible_list discounts">';
-$itemsguide = '<li><h5>%s</h5><div>%s</div></li>';
-// For Each Active Category,
+
+$format_category = '
+    <h2>%s</h2>
+        <ul class="discounts js__collapsible_list">
+';
+
+$format_item = '
+    <li>
+        <h5>%s</h5>
+        <div>%s</div>
+    </li>
+';
+
 foreach( $categories as $category ){
-    // Write the Cat. as a Header
+
+    // write category title as section heading, open an UL, then write the items into it
     $content .= sprintf(
-        $catsguide
+        $format_category
         ,$category->post_title
     );
-    // For Each Post
+    
+    // for each discount item
     foreach( $discounts as $discount ){
-        // Get Post Fields
+        // get item fields
         $fields = get_fields($discount);
-        // Get Post Category Field & Match Against This Active Category
+        // check item category is within 'this' category
         if( $category->post_title == $fields['category']->post_title ){
-            // Write This Posts Fields into The Page!
+        
+            // write the title and description into the UL opened by the category,
             $content .= sprintf(
-                $itemsguide
+                $format_item
                 ,$discount->post_title
                 ,$fields['description']
             );
         }
+
     }
+    // then close that UL and begin a new category loop w/ new heading and new UL
     $content .= '</ul>';
 }
 
