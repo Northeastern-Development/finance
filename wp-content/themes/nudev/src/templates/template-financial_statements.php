@@ -5,12 +5,12 @@
 
     $fields = get_fields($post->ID);
     // Files Section (required)
-    $content = '<ul>';
+    $content = '';
 
     $guide = '
-        <li>
-            <a target="_blank" title="Click to Download (opens in a new window)" href="%s"><i class="material-icons">arrow_forwards</i>%s</a>
-        </li>
+        <a target="_blank" title="Click to Download (opens in a new window)" href="%s">
+            <i class="material-icons">arrow_forwards</i><span>%s</span>
+        </a>
     ';
 
     foreach( $fields['files'] as $file ){
@@ -20,7 +20,7 @@
             ,$file['name']
         );
     }
-    $content .= '</ul>';
+    $content .= '';
 get_header();
 ?>
 <main id="financialstatements" role="main">
