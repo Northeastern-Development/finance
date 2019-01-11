@@ -41,16 +41,30 @@
         <li class="has-children" data-id="about"><a href=""><span>About</span></a>
             <div class="neumenu-wrapper" id="about">
                 <div class="neumenu-wrapper-inner">
+
                     <div>
-                        <h6>Who we are</h6>
+                        <h3>Who we are</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend mauris vel.</p>
-                        <a href="<?php echo get_permalink( get_page_by_path('overview') ) ?>">Learn More</a>
+                        <a class="neu__iconlink" href="<?php echo get_permalink( get_page_by_path('overview') ) ?>"><i class="material-icons">arrow_forward</i><span>Learn More</span></a>
                     </div>
+                    
                     <div>
                         <ul>
-                            <a href="<?php get_permalink( get_page_by_path('overview') ); ?>"><li><span>Overview</span></li></a>
-                            <a href="<?php get_permalink( get_page_by_path('staff') ); ?>"><li><span>Department &amp; Staff Information</span></li></a>
-                            <a href="<?php get_permalink( get_page_by_path('contact-us') ); ?>"><li><span>Contact Us</span></li></a>
+                            <a href="<?php echo get_permalink( get_page_by_path('overview') ); ?>" title="Navigate to the ____ page">
+                                <li>
+                                    <span>Overview</span>
+                                </li>
+                            </a>
+                            <a href="<?php echo get_permalink( get_page_by_path('staff') ); ?>" title="Navigate to the ____ page">
+                                <li>
+                                    <span>Department &amp; Staff Information</span>
+                                </li>
+                            </a>
+                            <a href="<?php echo get_permalink( get_page_by_path('contact-us') ); ?>" title="Navigate to the ____ page">
+                                <li>
+                                    <span>Contact Us</span>
+                                </li>
+                            </a>
                         </ul>
                     </div>
                 </div>

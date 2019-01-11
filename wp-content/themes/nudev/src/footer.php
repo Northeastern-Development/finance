@@ -25,21 +25,21 @@
                         <li>
                             <h5>Quick Links</h5>
                             <ul>
-                                <li><a title="" target="_blank" href="<?php echo get_permalink(3557); ?>">Policies</a></li>
-                                <li><a title="" target="_blank" href="<?php echo get_permalink(143); ?>">News and Updates</a></li>
-                                <li><a title="" target="_blank" href="<?php echo get_permalink(3239); ?>">Employee Discounts</a></li>
-                                <li><a title="" target="_blank" href="<?php echo get_permalink(3167); ?>">Financial Statements</a></li>
-                                <li><a title="" target="_blank" href="<?php echo get_permalink(3103); ?>">Glossary</a></li>
-                                <li><a title="" target="_blank" href="<?php echo get_permalink(3259); ?>">Contact</a></li>
+                                <li><a title="View the NU Policies Page [will open in a new tab or window]" target="_blank" href="https://www.northeastern.edu/">Policies</a></li>
+                                <li><a title="View the News and Updates Page" href="<?php echo get_permalink(143); ?>">News and Updates</a></li>
+                                <li><a title="View the Employee Discounts Page" href="<?php echo get_permalink(3239); ?>">Employee Discounts</a></li>
+                                <li><a title="View the Financial Statements Page" href="<?php echo get_permalink(3167); ?>">Financial Statements</a></li>
+                                <li><a title="View the Glossary Page" href="<?php echo get_permalink(3103); ?>">Glossary</a></li>
+                                <li><a title="View the Contact Us Page" href="<?php echo get_permalink(3259); ?>">Contact</a></li>
                             </ul>
                         </li>
 
                         <li>
                             <h5>Links to Other Departments</h5>
                             <ul>
-                                <li><a href="https://www.northeastern.edu/" title="" target="_blank">Payroll/HR</a></li>
-                                <li><a href="https://www.northeastern.edu/" title="" target="_blank">Student Finance</a></li>
-                                <li><a href="https://www.northeastern.edu/" title="" target="_blank">Research Funding</a></li>
+                                <li><a href="https://www.northeastern.edu/" title="View the Payroll Site [will open in a new tab or window]" target="_blank">Payroll/HR</a></li>
+                                <li><a href="https://www.northeastern.edu/" title="View the Student Finance Site [will open in a new tab or window]" target="_blank">Student Finance</a></li>
+                                <li><a href="https://www.northeastern.edu/" title="View the Research Funding Site [will open in a new tab or window]" target="_blank">Research Funding</a></li>
                             </ul>
                         </li>
 

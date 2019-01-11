@@ -113,7 +113,7 @@
         <div>
             <h2>One Centralized Department</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi, harum nesciunt repudiandae vel unde neque! Consequuntur error quas, obcaecati recusandae, fugiat quis, unde modi voluptatibus minus aperiam tempore! Quasi.</p>    
-            <a href="<?php echo get_permalink(3550); ?>"><h4 class="nu__content_btn">View All</h4></a>
+            <a href="<?php echo get_permalink( get_page_by_path('about-us') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
         </div>
 
     </section>
@@ -129,7 +129,7 @@
                 echo $content_tools;
             ?>
         </div>
-        <a href="<?php echo get_permalink(3183); ?>"><h4 class="nu__content_btn">View All</h4></a>
+        <a title="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
     </section>
 
     <section class="home-feat-news fullwidth nobg">
@@ -139,7 +139,7 @@
                 echo $content_news;
              ?>
         </div>
-        <a href="<?php echo get_permalink(143); ?>"><h4 class="nu__content_btn">View All</h4></a>
+        <a href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
     </section>
 
 

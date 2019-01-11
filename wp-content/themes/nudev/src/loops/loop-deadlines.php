@@ -25,7 +25,7 @@
     $total = 0;
     foreach( $deadlines as $i => $deadline ){
         if( $i < 5 ){
-            if( $deadline['status'] == '1' && $deadline['date'] > date('Ymd') ){                
+            if( $deadline['status'] == '1' && $deadline['date'] >= date('Ymd') ){                
                 $content_deadline .= sprintf(
                     $format_deadline
                     ,date('M d' ,strtotime($deadline['date']))

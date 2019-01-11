@@ -10,10 +10,10 @@
 
     $departments = '';
     
+    
     // If there is no $filter then we must be on the siteurl/staff page, viewing senior leadership
     if( $filter == '' )
     {
-        // get active departments
         $args = array(
             'post_type' => 'departments',
             'posts_per_page' => -1,
@@ -26,10 +26,8 @@
             )
         );
         $depts = get_posts($args);
-
         foreach($depts as $d)
         {
-			// get dept head for each dept
 			$args = array(
 				"post_type" => "staff"
 				,"posts_per_page" => -1
@@ -40,11 +38,7 @@
 				)
 			);
             $manager = get_posts($args);
-
-            // get fields for the dept head
             $managerFields = get_fields($manager[0]->ID);
-
-            // set sprintf guide for department head
             $guide = '
                 <article>
                     <div>
@@ -57,28 +51,32 @@
                     </div>
                 </article>
             ';
-            
-            // write sprintf content for dept head
 			$department = sprintf(
                 $guide
                 ,$managerFields['headshot']['url']
 				,$manager[0]->post_title
 				,$managerFields['title']
-				,$managerFields['description'] // NO LIMIT SET ON DESCRIPTION LENGTH ( but if limit is set, no way to expand it! )
-				,( isset($managerFields['phone']) && $managerFields['phone'] != '' ) ? '<a href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$managerFields['phone'].'</a><br />' : ''
-                // if the url field is set (but it shouldnt be afaik) then we always open that URL in a new tab
-                ,( !empty($managerFields['url']) ) ? '<a href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />' : null
-                // this filter for 'strategy' is no longer required, and it can be removed ( always show view leadership button ) ( also let strategy appear in the staff filter! )
-				,($d->post_title != 'Strategy') ? '<a href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><span>&#xE7EF;</span> View Leadership</a>' : ''
+				,$managerFields['description']
+				,(!empty($managerFields['phone'])) ? '<a class="neu__iconlink" href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><i class="material-icons">phone</i><span>'.$managerFields['phone'].'</span></a><br />' : null
+                ,(!empty($managerFields['url'])) ? '<a class="neu__iconlink" href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a><br />' : null
+				,'<a class="neu__iconlink" href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><i class="material-icons">people</i><span>View Leadership</span></a>'
             );
 			$departments .= '<section class="nu__slt">'.$department.'</section>';
 		}
     }
-    /**
-     * Has Department Filter, i.e.  siteurl/staff/department
-     */
+
+
+
+
+
+
+    
+    // department filter set (query var) -- only show data relevent to that department
+    // this code will run on the staff page when a filter other than senior leadership is clicked
+    // it can also be run on the department detail page ( must be manually set / passed ) 
     else
     {
+    
         // get the department matching the filter (by name)
         $args = array(
             'post_type' => 'departments',
@@ -105,7 +103,7 @@
                 <article>
                     <div>
                         <p class="description">%s%s</p>
-                        <p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /></p>
+                        <p class="contact"><a class="neu__iconlink" href="tel:%s" title="Call %s"><i class="material-icons">phone</i><span>%s</span></a><br /></p>
                         <p>%s</p>
                     </div>
                     <div>
@@ -123,7 +121,7 @@
 			,$managerFields['phone']
 			,strtolower($dept[0]->post_title)
             ,$managerFields['phone']
-            ,( !empty($managerFields['url']) ) ? '<a href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />' : null
+            ,( !empty($managerFields['url']) ) ? '<a class="neu__iconlink" href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a><br />' : null
 			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
@@ -151,7 +149,21 @@
         // if there is a sub-type, open the team list with that heading
 		$departments .= '<section class="nu__team-list">'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
 
-		$guide = '<li><div style="background-image: url(%s)"></div><p><span>%s</span><br />%s</p><p>%s</p><p>%s</p><p>%s</p>%s</li>';
+        $guide = '
+            <li>
+                <div style="background-image: url(%s)"></div>
+                <p>
+                    <span>%s</span><br />
+                    <span>%s</span><br />
+                </p>
+                <p>%s</p>
+                
+                <p>%s</p>
+                <p>%s</p>
+                %s
+
+            </li>
+        ';
         
         // loop remaining staff members
 		foreach($members as $member){
@@ -169,10 +181,10 @@
 				,$fields['headshot']['url']
 				,trim($member->post_title)
                 ,trim($fields['title'])
-                ,( isset($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
-                ,( isset($fields['phone']) ) ? '<a href="tel:'. $fields['phone'] .'">'.$fields['phone'].'</a>' : null
-                ,( isset($fields['email']) ) ? '<a href="mailto:'. $fields['email'] .'">e-mail</a>' : null
-                ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="Click to view profile" class="js__bio">View Profile</a>' : null // if we are on the department detail page... show the learn more buttton
+                ,( !empty($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
+                ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'. $fields['phone'] .'"><i class="material-icons">phone</i><span>'.$fields['phone'].'</span></a>' : null
+                ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'. $fields['email'] .'"><i class="material-icons">email</i><span>email</span></a>' : null
+                ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="Click to view profile" class="js__bio">View Profile</a>' : null
 			);
 		}
 		$departments .= "</ul></section>";

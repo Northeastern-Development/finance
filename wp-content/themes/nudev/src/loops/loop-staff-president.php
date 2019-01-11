@@ -34,9 +34,9 @@
                 <h3>Office of the President</h3>
                 <p>%s</p>
                 <p>
-                    <a href="tel:%s" title="Call the Office of the President"><span>&#xE0B0;</span> %s</a>
+                    <a class="neu__iconlink" href="tel:%s" title="Call the Office of the President"><i class="material-icons">phone</i><span>%s</span></a>
                     <br />
-                    <a href="%s" title="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a>
+                    <a class="neu__iconlink" href="%s" title="Visit website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a>
                 </p>
             </div>
         </section>

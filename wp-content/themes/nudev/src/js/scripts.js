@@ -5,28 +5,45 @@ var Finance = {};
 
 
         Finance.faqs = {
+            triggers : $('.js__collapsible_list > li > h5'),
             questions :  $('.js__collapsible_list > li'),
             answers :  $('.js__collapsible_list > li > div'),
             _init : function(){
                 $(window).on('load', Finance.faqs._loadHandler);
-                Finance.faqs.questions.on('click', Finance.faqs._clickHandler);
+                Finance.faqs.triggers.on('click', Finance.faqs._clickHandler);
             },
             _loadHandler : function(e){
                 Finance.faqs.answers.slideUp(0);
             },
             _clickHandler : function(e){
+
+                // the "trigger h5" has an :after for the chevron,
+                // we need to flip that upside down
+
+
                 //  (possible to easily tighten this up)
                 var open = "js__collapsible_opened";
-                var thisAnswer = $(this).find('div');
+                var thisAnswer = $(this).siblings('div');
                 var otherAnswers = Finance.faqs.answers.not(thisAnswer);
                 
                 $(otherAnswers).removeClass(open);
                 $(otherAnswers).slideUp();
                 
+
+                Finance.faqs.triggers.removeClass('js__collapsible_triggered');
+                
+                // expand
                 if( !$(thisAnswer).hasClass(open) ){
+                    
+                    $(this).addClass('js__collapsible_triggered');
+                    
                     $(thisAnswer).addClass(open);
                     $(thisAnswer).slideDown();
-                } else {
+                }
+                // collapse
+                else {
+                    $(this).removeClass('js__collapsible_triggered');
+
                     $(thisAnswer).removeClass(open);
                     $(thisAnswer).slideUp();
                 }
@@ -65,13 +82,24 @@ var Finance = {};
             _dropDownHandler : function(e){
                 e.preventDefault();
 
+                // remove active state from 'other' dropdowns
+                $(this).parent().siblings('.has-children').removeClass('neu__active');
+                
+                // check if this dropdown is active & toggle the state
                 if( !$(this).parent().hasClass('neu__active') ){
                     $(this).parent().addClass('neu__active');
                 } else {
                     $(this).parent().removeClass('neu__active');
                 }
 
+                // hide all the dropdowns
                 $('li.has-children').find('.neumenu-wrapper').hide();
+                // reset the howdoi filter if it is active
+                $('li.has-children').find('.isFiltered').removeClass('isFiltered');
+                $('li.has-children').find('.theFilter').removeClass('theFilter');
+                
+
+                // reveal the 'active' dropdown
                 $('li.has-children.neu__active').find('.neumenu-wrapper').show();
             }
         }

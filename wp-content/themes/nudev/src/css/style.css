@@ -651,12 +651,49 @@ input[type="search"] {
     margin: 0 10vw; } }
 
 @media only screen {
+  body a.neu__iconlink {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    text-align: left; }
+    body a.neu__iconlink > i.material-icons,
+    body a.neu__iconlink > span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: inherit;
+      border-bottom: 1px solid transparent; }
+    body a.neu__iconlink:hover > i.material-icons,
+    body a.neu__iconlink:hover > span {
+      color: #d41b2c;
+      border-bottom: 1px solid #d41b2c; }
+    body a.neu__iconlink > i.material-icons {
+      font-family: "Material Icons";
+      padding-right: 15px; }
   div.main,
   main {
     width: 100%; }
-    div.main ul.js__collapsible_list li,
-    main ul.js__collapsible_list li {
-      cursor: pointer; }
+    div.main ul.js__collapsible_list > li > h5,
+    main ul.js__collapsible_list > li > h5 {
+      cursor: pointer;
+      font-size: 2.0rem;
+      font-weight: 700;
+      line-height: 3.2rem;
+      text-align: left;
+      position: relative; }
+      div.main ul.js__collapsible_list > li > h5:after,
+      main ul.js__collapsible_list > li > h5:after {
+        transition: transform 0.4s ease;
+        content: '\e313';
+        position: absolute;
+        transform: rotate(0deg);
+        right: 0;
+        display: inline-block;
+        font-family: 'Material Icons'; }
+      div.main ul.js__collapsible_list > li > h5.js__collapsible_triggered:after,
+      main ul.js__collapsible_list > li > h5.js__collapsible_triggered:after {
+        transform: rotate(180deg); }
     div.main > section.hero,
     main > section.hero {
       width: 100%; }
@@ -959,7 +996,7 @@ header {
       display: flex;
       flex-flow: row nowrap;
       background-color: white;
-      height: 166px; }
+      min-height: 166px; }
       .neumenu-wrapper .neumenu-wrapper-inner > div:first-child {
         flex: 1 0 20%; }
       .neumenu-wrapper .neumenu-wrapper-inner > div:last-child {
@@ -981,30 +1018,41 @@ header {
       font-weight: 400; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child > h3 {
       font-size: 2.0rem;
-      font-weight: 700;
       line-height: 3.2rem;
-      text-align: center; }
+      text-align: center;
+      margin-bottom: 15px; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child > h3:not(:first-of-type) {
         display: none; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child .removefilter {
       border: 1px solid white;
-      padding: 5px 10px;
+      padding: 5px 15px;
+      font-size: 2.0rem;
+      font-weight: 300;
+      line-height: 3.2rem;
+      text-align: center;
+      text-transform: uppercase;
       cursor: pointer; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child .removefilter:hover {
-        color: #52cfe5;
-        background-color: white; }
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); }
   .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div {
       cursor: pointer;
       text-align: center; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > h4 {
+        border-bottom: 1px solid transparent;
         font-size: 1.4rem;
         color: #979797;
         line-height: 2.8rem;
         text-align: left; }
+        .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > h4 > i.material-icons {
+          vertical-align: middle;
+          display: inline-block;
+          color: #d41b2c; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > ul {
         list-style-type: none;
         display: none; }
@@ -1013,6 +1061,8 @@ header {
         height: 32px;
         display: inline-block;
         object-fit: cover; }
+      .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div:hover > h4 {
+        border-bottom: 1px solid #d41b2c; }
   .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:first-child h3:not(:first-of-type) {
     display: block; }
   .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:first-child h3:first-of-type {
@@ -1022,7 +1072,8 @@ header {
     align-items: flex-start; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div {
       flex: 1 0 100%;
-      padding: 40px; }
+      padding: 40px;
+      cursor: default; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div:not(.theFilter) {
       display: none; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > h4 {
@@ -1042,11 +1093,29 @@ header {
           color: #979797;
           line-height: 2.8rem;
           text-align: left;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          cursor: default; }
+        .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a i.material-icons {
+          color: #d41b2c;
+          padding: 0; }
+        .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a:hover > span {
+          color: black; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) .taskicon {
       display: none; }
   .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered {
     height: auto; }
+  .neumenu-wrapper#about .neumenu-wrapper-inner > div:first-child {
+    padding: 15px; }
+    .neumenu-wrapper#about .neumenu-wrapper-inner > div:first-child > h3 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      line-height: 3.2rem;
+      text-align: left; }
+    .neumenu-wrapper#about .neumenu-wrapper-inner > div:first-child > p {
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.8rem;
+      text-align: left; }
   .neumenu-wrapper#about .neumenu-wrapper-inner > div:last-child {
     background-color: #979797; }
     .neumenu-wrapper#about .neumenu-wrapper-inner > div:last-child > ul {
@@ -2395,27 +2464,6 @@ div.main section.nu__president {
         text-align: left;
         margin-right: 1vw;
         margin-bottom: 0.4vw; }
-        main section.nu__president > div:nth-child(2) > p > a,
-        div.main section.nu__president > div:nth-child(2) > p > a {
-          border: none;
-          line-height: 4rem;
-          position: relative;
-          overflow: hidden;
-          padding: 0 0 0 25px; }
-          main section.nu__president > div:nth-child(2) > p > a > span,
-          div.main section.nu__president > div:nth-child(2) > p > a > span {
-            position: absolute;
-            left: 0;
-            top: 8px;
-            line-height: 10px;
-            color: rgba(0, 0, 0, 0.8); }
-          main section.nu__president > div:nth-child(2) > p > a:hover,
-          div.main section.nu__president > div:nth-child(2) > p > a:hover {
-            border-bottom: solid #d41b2c 2px;
-            color: black; }
-            main section.nu__president > div:nth-child(2) > p > a:hover > span,
-            div.main section.nu__president > div:nth-child(2) > p > a:hover > span {
-              color: black; }
     main section.nu__president > div:nth-child(1),
     div.main section.nu__president > div:nth-child(1) {
       background: black;
@@ -2566,27 +2614,6 @@ div.main section.nu__slt {
         main section.nu__slt > article > div:nth-child(2) > p.nametitle,
         div.main section.nu__slt > article > div:nth-child(2) > p.nametitle {
           margin-bottom: 0.5vw; }
-        main section.nu__slt > article > div:nth-child(2) > p.contact > a,
-        div.main section.nu__slt > article > div:nth-child(2) > p.contact > a {
-          line-height: 4rem;
-          border: none;
-          position: relative;
-          padding: 0 0 0 25px;
-          overflow: hidden; }
-          main section.nu__slt > article > div:nth-child(2) > p.contact > a > span,
-          div.main section.nu__slt > article > div:nth-child(2) > p.contact > a > span {
-            position: absolute;
-            left: 0;
-            top: 8px;
-            line-height: 10px;
-            color: rgba(0, 0, 0, 0.8); }
-          main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover,
-          div.main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover {
-            color: black;
-            border-bottom: solid #d41b2c 2px; }
-            main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover > span,
-            div.main section.nu__slt > article > div:nth-child(2) > p.contact > a:hover > span {
-              color: black; }
       main section.nu__slt > article > div:nth-child(1),
       div.main section.nu__slt > article > div:nth-child(1) {
         float: right;
@@ -2623,27 +2650,6 @@ div.main section.nu__team {
         main section.nu__team > article > div:nth-child(1) > p.nametitle,
         div.main section.nu__team > article > div:nth-child(1) > p.nametitle {
           margin-bottom: 0.5vw; }
-        main section.nu__team > article > div:nth-child(1) > p.contact > a,
-        div.main section.nu__team > article > div:nth-child(1) > p.contact > a {
-          line-height: 4rem;
-          border: none;
-          position: relative;
-          padding: 0 0 0 25px;
-          overflow: hidden; }
-          main section.nu__team > article > div:nth-child(1) > p.contact > a > span,
-          div.main section.nu__team > article > div:nth-child(1) > p.contact > a > span {
-            position: absolute;
-            left: 0;
-            top: 8px;
-            line-height: 10px;
-            color: rgba(0, 0, 0, 0.8); }
-          main section.nu__team > article > div:nth-child(1) > p.contact > a:hover,
-          div.main section.nu__team > article > div:nth-child(1) > p.contact > a:hover {
-            color: black;
-            border-bottom: solid #d41b2c 2px; }
-            main section.nu__team > article > div:nth-child(1) > p.contact > a:hover > span,
-            div.main section.nu__team > article > div:nth-child(1) > p.contact > a:hover > span {
-              color: black; }
       main section.nu__team > article > div:nth-child(2),
       div.main section.nu__team > article > div:nth-child(2) {
         float: right;

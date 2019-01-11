@@ -30,8 +30,8 @@
 
     div.main,
     main {
-        >section {
-            >h2 {
+        > section {
+            > h2 {
                 @include font-7l-l;
                 padding-bottom: 30px;
                 border-bottom: 1px solid black;
@@ -308,12 +308,58 @@
 
 @media only screen {
 
+    body {
+        // consistently style icons + links for email and phone (or fax etc)
+        // a > i+span
+        a.neu__iconlink {
+            display: inline-block;
+            margin-right: 30px;
+            @include font-2l-l;
+            > i.material-icons,
+            > span {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: inherit;
+                border-bottom: 1px solid transparent;
+            }
+            &:hover {
+                > i.material-icons,
+                > span {
+                    color: $brand_colors-red;
+                    border-bottom: 1px solid $brand_colors-red;
+                }
+            }
+            > i.material-icons {
+                font-family: "Material Icons";
+                padding-right: 15px;
+            }
+        }
+    }
+    
     div.main,
     main {
+        
+
 
         ul.js__collapsible_list {
-            li {
+            > li > h5 {
                 cursor: pointer;
+                @include font-3b-l;
+                position: relative;
+                &:after {
+                    transition: transform 0.4s ease;
+                    content: '\e313';
+                    position: absolute;
+                    transform: rotate(0deg);
+                    right: 0;
+                    display: inline-block;
+                    font-family: 'Material Icons';
+                }
+                &.js__collapsible_triggered {
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+                }
             }
         }
 

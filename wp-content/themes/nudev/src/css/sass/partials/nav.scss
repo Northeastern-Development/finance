@@ -58,7 +58,7 @@
             display: flex;
             flex-flow: row nowrap;
             background-color: white;
-            height: 166px;
+            min-height: 166px;
             // 20%wide left-panel
             > div:first-child {
                 flex: 1 0 20%;
@@ -95,7 +95,8 @@
                     @include font-7r-c;
                 }
                 > h3 {
-                    @include font-3b-c;
+                    @include font-3r-c;
+                    margin-bottom: 15px;
                     &:not(:first-of-type){
                         display: none;
                     }
@@ -103,17 +104,20 @@
                 // back to topics button
                 .removefilter {
                     border: 1px solid white;
-                    padding: 5px 10px;
+                    padding: 5px 15px;
+                    @include font-3l-c;
+                    text-transform: uppercase;
                     cursor: pointer;
                     &:hover {
-                        color: $brand_colors-teal;
-                        background-color: white;
+                        color: white;    
+                        background-color: transparentize(black, 0.5);
                     }
                 }
             }
             // howdoi task categories etc...
             > div:last-child {
                 display: flex;
+                flex-flow: row wrap;
                 justify-content: space-around;
                 align-items: center;
                 // a task category + icon (clickable, is a filter)
@@ -121,7 +125,13 @@
                     cursor: pointer;
                     text-align: center;
                     > h4 {
+                        border-bottom: 1px solid transparent;
                         @include font-1r-l;
+                        > i.material-icons {
+                            vertical-align: middle;
+                            display: inline-block;
+                            color: $brand_colors-red;
+                        }
                     }
                     > ul {
                         list-style-type: none;
@@ -133,6 +143,11 @@
                         height: 32px;
                         display: inline-block;
                         object-fit: cover;
+                    }
+                    &:hover {
+                        > h4 {
+                            border-bottom: 1px solid $brand_colors-red;
+                        }
                     }
                 }
             }
@@ -156,6 +171,7 @@
                 > div {
                     flex: 1 0 100%;
                     padding: 40px;
+                    cursor: default;
                 }
                 // hide other task items wrappers
                 > div:not(.theFilter){
@@ -183,6 +199,18 @@
                         > h4 {
                             @include font-1r-l;
                             text-transform: uppercase;
+                            cursor: default;
+                        }
+                        > a {
+                            i.material-icons {
+                                color: $brand_colors-red;
+                                padding: 0;
+                            }
+                            &:hover {
+                                > span {
+                                    color: black;
+                                }
+                            }
                         }
                     }
                 }
@@ -196,9 +224,20 @@
             }
         }
     }
+
+    
     // "about" submenu only
     .neumenu-wrapper#about {
         .neumenu-wrapper-inner {
+            > div:first-child {
+                padding: 15px;
+                > h3 {
+                    @include font-3b-l;
+                }
+                > p {
+                    @include font-2l-l;
+                }
+            }
             > div:last-child {
                 background-color: $brand_colors-gray;
                 > ul {

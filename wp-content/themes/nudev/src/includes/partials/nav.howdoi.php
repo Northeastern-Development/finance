@@ -19,7 +19,7 @@
     $format_cats = '
         <div>
             <img class="taskicon" src="%s">
-            <h4>%s</h4>
+            <h4>%s<i class="material-icons">chevron_right</i></h4>
             <ul>
                 <li><h4>%s</h4></li>
                 %s
@@ -28,7 +28,7 @@
     ';
     $format_tasks = '
         <li>
-            <a href="%s">%s</a>
+            <a class="neu__iconlink" title="Navigate to this Task\'s Detail Page" href="%s"><span>%s</span><i class="material-icons">chevron_right</i></a>
         </li>
     ';
     $content_cats = '';

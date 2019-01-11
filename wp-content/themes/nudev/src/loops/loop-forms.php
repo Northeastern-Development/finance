@@ -64,7 +64,7 @@
     $format_form = '
         <ul class="js__collapsible_list list">
             <li>
-                <h4>%s</h4>
+                <h5>%s</h5>
                 <div>
                     %s
                     %s
@@ -85,7 +85,7 @@
     $format_blocks = '<h4>%s</h4>%s';
     $format_relresources = '
         <li>
-            <i class="material-icons">arrow_forward</i><a target="%s" href="%s" title="View this Related Resource">%s</a>
+            <a class="neu__iconlink" target="%s" href="%s" title="View this Related Resource"><i class="material-icons">arrow_forward</i><span>%s</span></a>
         </li>
     ';
 

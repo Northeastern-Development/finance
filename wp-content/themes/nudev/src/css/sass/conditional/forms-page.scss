@@ -5,44 +5,30 @@
 
     div.main,
     main {
-        > section {
-            .forms-category-relatedresources {
-                > li {
-                    margin: 0 auto;
-                    i, a {
-                        display: inline-block;
-                        vertical-align: middle;
-                    }
-                    i {
-                        color: $brand_colors-red;
-                        margin-right: 15px;
-                    }
-                }
-            }
-        }
-    }
-
-
-
-    div.main,
-    main {
 
 
         div.forms-category {
             margin: 30px 0;
             > ul {
                 > li {
+                    margin-bottom: 15px;
+                    padding-bottom: 15px;
                     border-bottom: 1px solid transparentize(black, 0.5);
-                    > h4 {
-                        @include font-3b-l;
+                    > h5 {
                         position: relative;
-                        &:after {
-                            content: '\e313';
-                            position: absolute;
-                            top: 0;
-                            right: 0;
+                        &:before {
                             display: inline-block;
-                            font-family: 'Material Icons';
+                            content: '\e5c8';
+                            font-family: "Material Icons";
+                            color: $brand_colors-red;
+                            transform: rotate(0deg);
+                            transition: transform 0.4s ease;
+                            margin-right: 15px;
+                        }
+                        &.js__collapsible_triggered {
+                            &:before {
+                                transform: rotate(90deg);
+                            }
                         }
                     }
                     // collapsible field content (initially hidden)
@@ -50,7 +36,7 @@
                         @include font-2l-l;
                         margin-top: 15px;
 
-                        > h4 {
+                        h4 {
                             @include font-2b-l;
                             margin-top: 15px;
                         }

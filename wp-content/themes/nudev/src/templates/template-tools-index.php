@@ -22,7 +22,9 @@
     $guide ='
         <li class="tools-grid-tool">
             <a href="%s" title="%s">
-                <figure style="background-image: url(%s)" title="Tool feat img"></figure>
+                <figure>
+                    <img src="%s">
+                </figure>
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>

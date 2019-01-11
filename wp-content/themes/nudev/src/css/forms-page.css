@@ -109,39 +109,29 @@
  * ---
  */
 @media only screen {
-  div.main > section .forms-category-relatedresources > li,
-  main > section .forms-category-relatedresources > li {
-    margin: 0 auto; }
-    div.main > section .forms-category-relatedresources > li i, div.main > section .forms-category-relatedresources > li a,
-    main > section .forms-category-relatedresources > li i,
-    main > section .forms-category-relatedresources > li a {
-      display: inline-block;
-      vertical-align: middle; }
-    div.main > section .forms-category-relatedresources > li i,
-    main > section .forms-category-relatedresources > li i {
-      color: #d41b2c;
-      margin-right: 15px; }
   div.main div.forms-category,
   main div.forms-category {
     margin: 30px 0; }
     div.main div.forms-category > ul > li,
     main div.forms-category > ul > li {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
-      div.main div.forms-category > ul > li > h4,
-      main div.forms-category > ul > li > h4 {
-        font-size: 2.0rem;
-        font-weight: 700;
-        line-height: 3.2rem;
-        text-align: left;
+      div.main div.forms-category > ul > li > h5,
+      main div.forms-category > ul > li > h5 {
         position: relative; }
-        div.main div.forms-category > ul > li > h4:after,
-        main div.forms-category > ul > li > h4:after {
-          content: '\e313';
-          position: absolute;
-          top: 0;
-          right: 0;
+        div.main div.forms-category > ul > li > h5:before,
+        main div.forms-category > ul > li > h5:before {
           display: inline-block;
-          font-family: 'Material Icons'; }
+          content: '\e5c8';
+          font-family: "Material Icons";
+          color: #d41b2c;
+          transform: rotate(0deg);
+          transition: transform 0.4s ease;
+          margin-right: 15px; }
+        div.main div.forms-category > ul > li > h5.js__collapsible_triggered:before,
+        main div.forms-category > ul > li > h5.js__collapsible_triggered:before {
+          transform: rotate(90deg); }
       div.main div.forms-category > ul > li > div,
       main div.forms-category > ul > li > div {
         font-size: 1.6rem;
@@ -149,8 +139,8 @@
         line-height: 2.8rem;
         text-align: left;
         margin-top: 15px; }
-        div.main div.forms-category > ul > li > div > h4,
-        main div.forms-category > ul > li > div > h4 {
+        div.main div.forms-category > ul > li > div h4,
+        main div.forms-category > ul > li > div h4 {
           font-size: 1.6rem;
           font-weight: 700;
           line-height: 2.8rem;
