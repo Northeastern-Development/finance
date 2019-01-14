@@ -151,7 +151,7 @@
     li {
         flex: 1 1 calc(calc(100% / #{$num}) - #{$margin});
         margin: #{$margin} #{$margin} 0 0;
-        
+
         // these nth of type chains attempt to get a evenly spaced grid with varying numbers of items
         // if the grid has dangling last row it should fill out
         &:nth-of-type(#{$num}n) {

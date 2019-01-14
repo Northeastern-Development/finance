@@ -426,11 +426,10 @@ html {
 
 body {
   font-family: "Lato", sans-serif, FontAwesome;
-  font-size: 1.8rem;
-  line-height: 3rem;
-  font-weight: 400;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.8rem;
+  text-align: left;
   min-height: 100%;
   display: flex;
   flex-direction: column; }
@@ -1001,7 +1000,7 @@ header {
         display: none; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:first-child .removefilter {
       border: 1px solid white;
-      padding: 5px 15px;
+      padding: 10px 30px;
       font-size: 2.0rem;
       font-weight: 300;
       line-height: 3.2rem;
@@ -1015,19 +1014,21 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    padding: 40px 20px; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div {
       cursor: pointer;
       text-align: center; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > h4 {
         border-bottom: 1px solid transparent;
         font-size: 1.4rem;
-        color: #979797;
         line-height: 2.8rem;
-        text-align: left; }
-        .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > h4 > i.material-icons {
+        text-align: center; }
+        .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > h4:after {
+          content: '\e315';
+          font-size: 20px;
+          font-family: "Material Icons";
           vertical-align: middle;
-          display: inline-block;
           color: #d41b2c; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div > ul {
         list-style-type: none;
@@ -1036,6 +1037,7 @@ header {
         width: 32px;
         height: 32px;
         display: inline-block;
+        margin-bottom: 30px;
         object-fit: cover; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner > div:last-child > div:hover > h4 {
         border-bottom: 1px solid #d41b2c; }
@@ -1048,7 +1050,6 @@ header {
     align-items: flex-start; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div {
       flex: 1 0 100%;
-      padding: 40px;
       cursor: default; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div:not(.theFilter) {
       display: none; }
@@ -1056,14 +1057,13 @@ header {
       display: none; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul {
       display: flex;
-      flex-flow: row wrap; }
+      flex-flow: column wrap;
+      max-height: 216px; }
       .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li {
         text-align: left;
-        flex: 1 0 calc(33% - 30px);
-        margin: 0 30px 20px 0;
-        max-width: calc(33% - 30px); }
-        .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li:nth-child(3n) {
-          margin-right: 0; }
+        flex: 1;
+        max-width: calc(33% - 30px);
+        margin-bottom: 20px; }
         .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > h4 {
           font-size: 1.4rem;
           color: #979797;
@@ -1071,11 +1071,19 @@ header {
           text-align: left;
           text-transform: uppercase;
           cursor: default; }
-        .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a i.material-icons {
-          color: #d41b2c;
-          padding: 0; }
-        .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a:hover > span {
-          color: black; }
+        .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a {
+          font-size: 1.4rem;
+          font-weight: 700;
+          line-height: 2.4rem;
+          text-align: left; }
+          .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a:after {
+            content: '\e315';
+            font-size: 20px;
+            font-family: "Material Icons";
+            vertical-align: middle;
+            color: #d41b2c; }
+          .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) > div.theFilter > ul li > a:hover {
+            border-bottom: 1px solid #d41b2c; }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered > div:not(:first-child) .taskicon {
       display: none; }
   .neumenu-wrapper#howdoi .neumenu-wrapper-inner.isFiltered {
@@ -2390,8 +2398,8 @@ main section > article > div#contentarea {
 .gallery-caption {
   margin: 0;
   padding: 0 5px 5px;
-  font-size: 1.8rem;
-  line-height: 3rem; }
+  font-size: 1.6rem;
+  line-height: 2.8rem; }
 
 /**
  * partials/utils

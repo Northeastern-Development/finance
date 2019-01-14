@@ -1,10 +1,6 @@
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/mixins.scss';
-
-// 
-// 
-//  
 @media only screen {
 
     // over-ride howdoi wrapper to visible if in the main wrapper
@@ -125,7 +121,7 @@
         section.home-feat-tools,
         section.home-feat-news {
             padding: 0 20px;
-            margin: 60px 0;
+            margin: 60px auto;
 
             // section titles
             >h1 {

@@ -190,7 +190,7 @@
   div.wrapper section.home-feat-tools,
   div.wrapper section.home-feat-news {
     padding: 0 20px;
-    margin: 60px 0; }
+    margin: 60px auto; }
     div.wrapper section.home-feat-tools > h1,
     div.wrapper section.home-feat-news > h1 {
       font-size: 3.4rem;

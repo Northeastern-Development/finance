@@ -18,14 +18,10 @@ html {
 
 body {
     font-family: $font-family-base;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    font-weight: 400;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    @include font-2l-l;
+    min-height: 100%; // required to stick footer to the bottom of the page
+    display: flex; // required to stick footer to the bottom of the page
+    flex-direction: column; // required to stick footer to the bottom of the page
 }
 
 img {

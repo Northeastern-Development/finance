@@ -84,6 +84,8 @@
     // "howdoi" submenu only
     .neumenu-wrapper#howdoi {
         .neumenu-wrapper-inner {
+            // instructions / back to cats
+            // teal section
             > div:first-child {
                 background-color: $brand_colors-teal--dark;
                 color: white;
@@ -104,7 +106,7 @@
                 // back to topics button
                 .removefilter {
                     border: 1px solid white;
-                    padding: 5px 15px;
+                    padding: 10px 30px;
                     @include font-3l-c;
                     text-transform: uppercase;
                     cursor: pointer;
@@ -114,22 +116,26 @@
                     }
                 }
             }
-            // howdoi task categories etc...
+
+            // task categories wrapper
             > div:last-child {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-around;
                 align-items: center;
-                // a task category + icon (clickable, is a filter)
+                padding: 40px 20px;
+                // task category items
                 > div {
                     cursor: pointer;
                     text-align: center;
                     > h4 {
                         border-bottom: 1px solid transparent;
-                        @include font-1r-l;
-                        > i.material-icons {
+                        @include font-1r-c;
+                        &:after {
+                            content: '\e315';
+                            font-size: 20px;
+                            font-family: "Material Icons";
                             vertical-align: middle;
-                            display: inline-block;
                             color: $brand_colors-red;
                         }
                     }
@@ -142,6 +148,7 @@
                         width: 32px;
                         height: 32px;
                         display: inline-block;
+                        margin-bottom: 30px;
                         object-fit: cover;
                     }
                     &:hover {
@@ -170,7 +177,7 @@
                 // every task-items wrapper (hidden or not)
                 > div {
                     flex: 1 0 100%;
-                    padding: 40px;
+                    // padding: 40px;
                     cursor: default;
                 }
                 // hide other task items wrappers
@@ -186,15 +193,19 @@
                 // show this task items wrapper
                 > div.theFilter > ul {
                     display: flex;
-                    flex-flow: row wrap;
+                    flex-flow: column wrap;
+                    max-height: 216px;
                     li {
                         text-align: left;
-                        flex: 1 0 calc(33% - 30px);
-                        margin: 0 30px 20px 0;
+                        flex: 1;
                         max-width: calc(33% - 30px);
-                        &:nth-child(3n){
-                            margin-right: 0;
-                        }
+                        margin-bottom: 20px;
+                        // flex: 1 0 calc(33% - 30px);
+                        // // margin: 0 30px 20px 0;
+                        // // max-width: calc(33% - 30px);
+                        // // &:nth-child(3n){
+                        // //     margin-right: 0;
+                        // // }
                         // (restyle the duplicate task category title inside the newly revealed list of tasks)
                         > h4 {
                             @include font-1r-l;
@@ -202,14 +213,16 @@
                             cursor: default;
                         }
                         > a {
-                            i.material-icons {
+                            @include font-1b-l;
+                            &:after {
+                                content: '\e315';
+                                font-size: 20px;
+                                font-family: "Material Icons";
+                                vertical-align: middle;
                                 color: $brand_colors-red;
-                                padding: 0;
                             }
                             &:hover {
-                                > span {
-                                    color: black;
-                                }
+                                border-bottom: 1px solid $brand_colors-red;
                             }
                         }
                     }
