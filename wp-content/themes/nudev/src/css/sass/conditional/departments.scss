@@ -15,6 +15,9 @@
                 text-align: center;
                 border-bottom: none;
             }
+            > div {
+                margin-bottom: 15px;
+            }
         }
 
         // next section is the 'related tasks'
@@ -22,14 +25,9 @@
         > section:nth-of-type(4)
         {
             > ul {
-                @include ul_grid_cols(2);
-                > li {
-                    margin: 0 auto;
-                    margin-right: 20px;
-                    margin-bottom: 20px;
-                    &:nth-child(2n){
-                        margin-right: 0px;
-                    }    
+                @include ul_grid_cols(2, 15px);
+                i.material-icons {
+                    color: $brand_colors-red;
                 }
             }
         }

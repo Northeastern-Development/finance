@@ -8,6 +8,15 @@
 
     main#financialstatements {
 
+
+        > section:last-of-type {
+            h2 {
+                text-align: center;
+                border-bottom: 1px solid transparent;
+                padding-bottom: 15px;
+            }
+        }
+
         a {
             display: block;
             width: 100%;

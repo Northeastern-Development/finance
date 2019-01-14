@@ -27,7 +27,6 @@ get_header();
 
     <?php 
         $fields = get_fields($post_id);
-        include(locate_template('includes/pagehero.php'));
         echo PageHero::return_pagehero($fields);
      ?>
 
@@ -53,7 +52,7 @@ get_header();
         ?>
     </section>
 
-    <section>
+    <section class="fullwidth nobg">
         <?php 
             // HelpfulLinks,
             if( $fields['use_pre-footer'] == '1' ){

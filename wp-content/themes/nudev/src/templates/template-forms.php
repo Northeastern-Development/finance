@@ -9,7 +9,6 @@
 <main class="main" id="forms">
     
     <?php 
-        include(locate_template('includes/pagehero.php'));
         echo PageHero::return_pagehero($fields);
      ?>
     

@@ -7,7 +7,7 @@
     
     $guide = '
         <li>
-            <i class="material-icons">arrow_forward</i><a href="%s" target="_blank" title="View this Related Task">%s</a>
+            <a class="neu__iconlink" href="%s" target="_blank" title="View this Related Task"><i class="material-icons">arrow_forward</i><span>%s</span></a>
         </li>
     ';
     

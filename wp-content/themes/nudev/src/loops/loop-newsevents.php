@@ -12,7 +12,7 @@ class NUNewsArchive{
 
     // initialize
     function __construct(){
-        $this->pageMax = 4;
+        $this->pageMax = 6;
         $this->paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $this->getData();
         $this->pagination = $this->paginate();
@@ -80,29 +80,43 @@ class NUNewsArchive{
         }
 
         if( $b['type'] == 'event' ){
-            $format_event = '<p>%s</p><p>%s</p><p>%s</p><p>%s</p>';
+            
+            $format_event = '
+                <p>
+                    Event begins <span>%s</span> at <span>%s</span>
+                </p>
+                <p>
+                    Event ends <span>%s</span> at <span>%s</span>
+                </p>
+            ';
+
             $content_event = '';
             $content_event .= sprintf(
                 $format_event
-                ,'Start Date: ' . $b['start_date']
-                ,'End Date: ' . $b['end_date']
-                ,'Start Time: ' . $b['start_time']
-                ,'End Time: ' . $b['end_time']
+                ,$b['start_date']
+                ,$b['start_time']
+                ,$b['end_date']
+                ,$b['end_time']
             );
         }
 
         $guide = '
-            <a href="%s" target="%s" title="View News / Event Item">
-                <li>
+            <li>
+                <a href="%s" target="%s" title="View News / Event Item">
+                    <figure>
+                        <img src="%s">
+                    </figure>
                     <div>
                         <h3>%s</h3>
-                        <h6>Posted on: %s</h6>
-                        <h6>In Category: %s</h6>
-                        <p>Details: %s</p>
-                        %s    
+                        <h6>%s</h6>
+                        <p>%s</p>
+                        %s
+                        <p>
+                            <i class="material-icons">arrow_forward</i><span>Learn More</span>
+                        </p>
                     </div>
-                </li>
-            </a>
+                </a>
+            </li>
         ';
 
 
@@ -110,8 +124,9 @@ class NUNewsArchive{
             $guide
             ,$the_permalink
             ,$target
+            ,$b['image']
             ,$a->post_title
-            ,date_format(date_create($a->post_date),"m/d/Y")
+            // ,date_format(date_create($a->post_date),"m/d/Y") // (depricated posted on from view)
             ,$b['category']->post_title
             ,str_replace( ['<p>', '</p>'], ['<span>', '</span>'], $b['details'])
             ,( $b['type'] == 'event' ) ? $content_event : null

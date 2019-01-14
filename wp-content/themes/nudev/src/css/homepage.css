@@ -213,6 +213,24 @@
           display: inline-block;
           width: 100%;
           height: 100%; }
+          div.wrapper section.home-feat-tools > div > div > a > div > p > i.material-icons,
+          div.wrapper section.home-feat-tools > div > div > a > div > p > span,
+          div.wrapper section.home-feat-news > div > div > a > div > p > i.material-icons,
+          div.wrapper section.home-feat-news > div > div > a > div > p > span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: inherit;
+            border-bottom: 1px solid transparent; }
+          div.wrapper section.home-feat-tools > div > div > a > div > p:hover > i.material-icons,
+          div.wrapper section.home-feat-tools > div > div > a > div > p:hover > span,
+          div.wrapper section.home-feat-news > div > div > a > div > p:hover > i.material-icons,
+          div.wrapper section.home-feat-news > div > div > a > div > p:hover > span {
+            color: #d41b2c;
+            border-bottom: 1px solid #d41b2c; }
+          div.wrapper section.home-feat-tools > div > div > a > div > p > i.material-icons,
+          div.wrapper section.home-feat-news > div > div > a > div > p > i.material-icons {
+            font-family: "Material Icons";
+            padding-right: 15px; }
           div.wrapper section.home-feat-tools > div > div > a > figure,
           div.wrapper section.home-feat-news > div > div > a > figure {
             overflow: hidden; }

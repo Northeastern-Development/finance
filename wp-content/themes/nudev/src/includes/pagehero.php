@@ -3,60 +3,53 @@
  * Include:
  *  Render the Page Hero, Title and Description if available
  */
-
-
-
 //  Get : hero images
-$imgs = get_fields(3472)['hero_images'];
-if( !empty($imgs) ){
-    // if there is one image
-    if( count($imgs) == 1 ){
-        $img = wp_get_attachment_image_src($imgs[0]['image'], 'full');
-    }
-    // if there are multiple images
-    if( count($imgs) > 1 ){
-        $img = wp_get_attachment_image_src($imgs[ mt_rand(0, count($imgs) - 1) ]['image'], 'full');
-    }
+// $imgs = get_fields(3472)['hero_images'];
+// if( !empty($imgs) ){
+//     // if there is one image
+//     if( count($imgs) == 1 ){
+//         $img = wp_get_attachment_image_src($imgs[0]['image'], 'full');
+//     }
+//     // if there are multiple images
+//     if( count($imgs) > 1 ){
+//         $img = wp_get_attachment_image_src($imgs[ mt_rand(0, count($imgs) - 1) ]['image'], 'full');
+//     }
 
-    // sprintf format string
-    $format_hero = '
-        <section class="hero hero-image" style="background-image: url(%s)">
-            <div>
-                %s
-                %s
-            </div>
-        </section>
-    ';
+//     // sprintf format string
+//     $format_hero = '
+//         <section class="hero hero-image" style="background-image: url(%s)">
+//             <div>
+//                 %s
+//                 %s
+//             </div>
+//         </section>
+//     ';
 
-    // check for a specified title to override the default
-    if( empty($base_title) ){
-        $base_title = $post->post_title;
-    }
-    // Get : CMS registered title
-    $title = ( !empty($fields['hero_title']) ) ? '<h1>'.$fields['hero_title'].'</h1>' : '<h1>'.$base_title.'</h1>';
+//     // check for a specified title to override the default
+//     if( empty($base_title) ){
+//         $base_title = $post->post_title;
+//     }
+//     // Get : CMS registered title
+//     $title = ( !empty($fields['hero_title']) ) ? '<h1>'.$fields['hero_title'].'</h1>' : '<h1>'.$base_title.'</h1>';
     
-    // Get : CMS registered description
-    $description = ( !empty($fields['hero_description']) ) ? '<h3>'.$fields['hero_description'].'</h3>' : null ;
+//     // Get : CMS registered description
+//     $description = ( !empty($fields['hero_description']) ) ? '<h3>'.$fields['hero_description'].'</h3>' : null ;
 
-    // Set : sprintf
-    $content_hero = sprintf(
-        $format_hero
-        ,$img[0]
-        ,$title
-        ,$description
-    );
+//     // Set : sprintf
+//     $content_hero = sprintf(
+//         $format_hero
+//         ,$img[0]
+//         ,$title
+//         ,$description
+//     );
 
-    // Write : sprintf
-    // echo $content_hero;
-}
+//     // Write : sprintf
+//     // echo $content_hero;
+// }
 ?>
 <?php 
 class PageHero
 {
-    function __construct(){
-
-    }
-
     /**
      * return formatted string for a page hero
      *

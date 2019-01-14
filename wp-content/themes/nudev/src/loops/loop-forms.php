@@ -55,8 +55,8 @@
     // set empty content var
     $content = '';
     $format_category = '
-        <h2>%s</h2>
         <div class="forms-category">
+            <h2>%s</h2>
             %s
         </div>
     ';
@@ -77,7 +77,7 @@
     ';
     
     $format_files = '
-        <a href="%s" title="click to open this file in a new tab" target="_blank">
+        <a class="neu__iconlink" href="%s" title="click to open this file in a new tab" target="_blank">
             <i class="material-icons">cloud_download</i><span>%s</span>
         </a>
     ';
@@ -103,7 +103,7 @@
             $fields = get_fields($form);
 
             // Verify: Form belongs to category && Form is Active
-            if( $category->post_title == $fields['category']->post_title && $fields['status'] == '1'){
+            if( $category->post_name == $fields['category']->post_name && $fields['status'] == '1'){
                 
                 // Set: format string for file downloads
                 $content_files = '';
@@ -126,8 +126,8 @@
 
                 // Set: format string for related resources
                 $content_relresources = '
+                    <h4>Related Resources</h4>
                     <ul class="forms-category-relatedresources list">
-                        <h4>Related Resources</h4>
                 ';
                 foreach( $fields['related_resources'] as $relresource ){
                     $ifExt = ( $related_resource['external_link'] == 1 ) ? '_blank' : '_self'; 

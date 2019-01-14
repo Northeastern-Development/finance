@@ -1040,6 +1040,26 @@
 		"oAP": "/comments.php",
 		"oF": 0
 		},
+	"/css/about.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/about-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/contact.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/contact-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/departments.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1217,6 +1237,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/css/sass/base/vars.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/about.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/sass/conditional/about.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/contact.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/sass/conditional/contact.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2606,6 +2652,13 @@
 		"oAP": "/templates/__OLD/template-staff.php.disabled",
 		"oF": 0
 		},
+	"/templates/template-about.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-about.php",
+		"oF": 0
+		},
 	"/templates/template-contact.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2674,13 +2727,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-newsevents-item.php",
-		"oF": 0
-		},
-	"/templates/template-overview.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/templates/template-overview.php",
 		"oF": 0
 		},
 	"/templates/template-page-hero-config.php": {

@@ -5,17 +5,8 @@
 
 @media only screen {
 
-
-    .tools-grid {
-        flex-flow: row wrap;
-        li {
-            flex: 1 0 auto;
-            width: 30%;
-        }
-        
-    }
-
     ul.tools-grid {
+        @include ul_grid_cols(3, 30px);
         li.tools-grid-tool {
             > a {
                 figure {

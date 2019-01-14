@@ -3,6 +3,8 @@
  * Initialize Theme
  */
 require_once('classes/class.setuptheme.php');
+// Pagehero Singleton
+include_once('includes/pagehero.php');
 
 
 function seoUrl($string) {

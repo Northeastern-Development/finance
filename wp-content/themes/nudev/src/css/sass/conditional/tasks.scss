@@ -1,5 +1,6 @@
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
 @media only screen {
 
 
@@ -9,6 +10,12 @@
             // (the page title)
             > h2 {
                 border-bottom: 1px solid black;
+            }
+            &.related-tasks {
+                margin-bottom: 40px;
+                i.material-icons {
+                    color: $brand_colors-red;
+                }
             }
 
 
@@ -22,8 +29,8 @@
                 ul.task-options-list {
                     // any task option grouping
                     > li {
-                        margin-top: 30px;
-                        padding-bottom: 30px;
+                        margin-top: 15px;
+                        padding-bottom: 15px;
                         border-bottom: 1px solid transparentize(black, 0.5);
                         cursor: pointer;
                         // the task option groupings sub-options (steps)
@@ -69,6 +76,18 @@
                         
                         // the task option grouping main info (title, description, icon etc)
                         > div {
+                            position: relative;
+                            &:after {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                font-size: 20px;
+                                transition: transform 0.4s ease;
+                                content: '\e313';
+                                transform: rotate(0deg);
+                                display: inline-block;
+                                font-family: 'Material Icons';
+                            }
                             h5, img {
                                 display: inline-block;
                                 margin: 0 auto;
@@ -81,7 +100,25 @@
                                 margin-left: 20px;
                                 @include font-3b-l;
                             }
+                            > p {
+                                margin: 15px 0;
+                            }
                             @include font-2l-l;
+
+                            &:hover {
+                                > h5 {
+                                    border-bottom: 1px solid $brand_colors-red;
+                                }
+                            }
+                            
+                        }
+                        &.js__tasks_viewable_steps {
+                            > div {
+                                &:after {
+                                    transform: rotate(180deg);
+                                    color: $brand_colors-red;
+                                }
+                            }
                         }
                     }
                 }

@@ -21,8 +21,14 @@
     );
     $pres = get_posts($args);
 
-    $fields = get_fields($pres[0]->ID);    
+    $fields = get_fields($pres[0]->ID);
 
+
+    if( get_page_template_slug($post_id) == "templates/template-about.php" ){
+        $visit_or_email = '<a class="neu__iconlink" href="%s" title="email the President" target="_blank"><i class="material-icons">email</i><span>email</span></a>';
+    } else {   
+        $visit_or_email = '<a class="neu__iconlink" href="%s" title="Visit website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a>';
+    }
     // (empty div is a darkened overlay)
     $guide = '
         <section class="nu__president">
@@ -31,12 +37,12 @@
                 <p><span>%s</span><br />President</p>
             </div>
             <div>
-                <h3>Office of the President</h3>
+                <h3>%s</h3>
                 <p>%s</p>
                 <p>
                     <a class="neu__iconlink" href="tel:%s" title="Call the Office of the President"><i class="material-icons">phone</i><span>%s</span></a>
                     <br />
-                    <a class="neu__iconlink" href="%s" title="Visit website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a>
+                    %s
                 </p>
             </div>
         </section>
@@ -45,11 +51,15 @@
 	$president = sprintf(
 		$guide
 		,$fields['headshot']['url']
-		,$pres[0]->post_title
+        ,$pres[0]->post_title
+        // ,$main_heading
+        ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "One Centralized Department" : "Office of the President"
 		,$fields['description']
 		,$fields['phone']
-		,$fields['phone']
-		,$fields['url']
+        ,$fields['phone']
+        ,$visit_or_email
+        // ,$fields['url']
+        
 	);
 
 	echo $president;

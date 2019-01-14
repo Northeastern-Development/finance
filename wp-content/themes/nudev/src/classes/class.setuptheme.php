@@ -81,6 +81,14 @@ class SetupTheme
         if( is_page_template('templates/template-discounts.php') ){
             wp_enqueue_style('discounts', get_template_directory_uri() . '/css/discounts.css', array('theme'), '1.0.0');
         }
+        // About
+        if ( is_page_template('templates/template-about.php') ) {
+            wp_enqueue_style('about-us', get_template_directory_uri() . '/css/about.css', array('theme'), '1.0.0');
+        }
+        // Contact
+        if (is_page_template('templates/template-contact.php')) {
+            wp_enqueue_style('contact', get_template_directory_uri() . '/css/contact.css', array('theme'), '1.0.0');
+        }
         // Financial Statements
         if( is_page_template('templates/template-financial_statements.php') ){
             wp_enqueue_style('financialstatements', get_template_directory_uri() . '/css/financial-statements.css', array('theme'), '1.0.0');

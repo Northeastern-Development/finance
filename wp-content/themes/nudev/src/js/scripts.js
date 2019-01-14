@@ -52,59 +52,56 @@ var Finance = {};
         Finance.faqs._init();
         
 
+        Finance.Nav = {
 
-        // Handle the Main Navigation:
-        Finance.Navigation = {
-            // vars
-            howdoi_wrapper : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner'),
-            howdoi_items : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
-            howdoi_reset: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
-            
-            toplvl_nochild : $('nav.nu__main-nav > ul > li:not(.has-children) > a'),
-            toplvl_haschild : $('nav.nu__main-nav > ul > li.has-children > a'),
-            
-            // init
+            parentlinks : $('nav.nu__main-nav > ul > li.has-children > a'),
+            categories : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
+            backtocats: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
+            // tasks : $(),
+             
             _init : function(){
-                // code here...
-                Finance.Navigation.howdoi_items.on('click', Finance.Navigation._filterHandler);
-                Finance.Navigation.howdoi_reset.on('click', Finance.Navigation._unFilterHandler);
-                Finance.Navigation.toplvl_haschild.on('click', Finance.Navigation._dropDownHandler);
+                $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
+                Finance.Nav.parentlinks.on('click', Finance.Nav._didClickDropdown);
+                Finance.Nav.categories.on('click', Finance.Nav._didClickCategory);
+                Finance.Nav.backtocats.on('click', Finance.Nav._didClickBackToCats);
             },
-            // methods
-            _filterHandler : function(e){
-                Finance.Navigation.howdoi_wrapper.addClass('isFiltered');
+            _didClickBackToCats : function(){
+                Finance.Nav.categories.removeClass('theFilter');
+                Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
+            },
+            _didClickCategory : function(e){
+
+                $(this).parents('.neumenu-wrapper-inner').addClass('isFiltered');
                 $(this).addClass('theFilter');
             },
-            _unFilterHandler : function(e){
-                Finance.Navigation.howdoi_wrapper.find('.theFilter').removeClass('theFilter');
-                Finance.Navigation.howdoi_wrapper.removeClass('isFiltered');
-            },
-            _dropDownHandler : function(e){
-                e.preventDefault();
+            _didClickOutsideNav : function(e){
 
-                // remove active state from 'other' dropdowns
-                $(this).parent().siblings('.has-children').removeClass('neu__active');
-                
-                // check if this dropdown is active & toggle the state
-                if( !$(this).parent().hasClass('neu__active') ){
-                    $(this).parent().addClass('neu__active');
-                } else {
-                    $(this).parent().removeClass('neu__active');
+                if( $('div#nu__globalheader, div#header').has(e.target).length === 0 ){
+                    // clicked outside nav; if nav open then close dropdowns
+                    $('li.has-children.neu__active').removeClass('neu__active');
+                    Finance.Nav._collapseDropdowns();
                 }
-
-                // hide all the dropdowns
+            },
+            _collapseDropdowns : function(){
                 $('li.has-children').find('.neumenu-wrapper').hide();
-                // reset the howdoi filter if it is active
                 $('li.has-children').find('.isFiltered').removeClass('isFiltered');
                 $('li.has-children').find('.theFilter').removeClass('theFilter');
-                
-
-                // reveal the 'active' dropdown
+            },
+            _didClickDropdown : function(e){
+                e.stopPropagation();
+                e.preventDefault();
+                // remove active state from 'other' dropdowns
+                $(this).parent().siblings('li.has-children').removeClass('neu__active');
+                // toggle this dropdown state
+                $(this).parent().toggleClass('neu__active');
+                // collapse all dropdowns
+                Finance.Nav._collapseDropdowns();
+                // expand active dropdown
                 $('li.has-children.neu__active').find('.neumenu-wrapper').show();
             }
+            
         }
-        Finance.Navigation._init();
-
+        Finance.Nav._init();
 
 
 

@@ -504,7 +504,8 @@ input[type="search"] {
       background: black;
       width: 100vw;
       margin: 0 0 2vw 0;
-      overflow: hidden; }
+      overflow: hidden;
+      padding: 60px 0; }
       main > section.hero > div,
       div.main > section.hero > div {
         width: 50vw;
@@ -534,17 +535,14 @@ input[type="search"] {
         margin: 0 0 0.5vw 0; }
     main > section.fullwidth,
     div.main > section.fullwidth {
-      width: 100vw;
-      margin: 1.7vw auto 0 auto;
+      width: 90%;
+      margin: 30px 5% 0;
       padding: 1vw 0 0;
       background: #ece6d5;
       text-align: center; }
       main > section.fullwidth > h4,
       div.main > section.fullwidth > h4 {
         text-align: center; }
-      main > section.fullwidth > ul,
-      div.main > section.fullwidth > ul {
-        margin: 1vw 10vw 0; }
     main > section,
     div.main > section {
       width: 50vw;
@@ -586,11 +584,7 @@ input[type="search"] {
           main > section > ul.list > li > ul,
           div.main > section > ul.list > li > ul {
             list-style: circle;
-            margin: 0 0 0 1vw; }
-    main > section:last-child,
-    div.main > section:last-child {
-      margin: 1.7vw auto 0 auto;
-      padding-bottom: 1.5vw; } }
+            margin: 0 0 0 1vw; } }
 
 @media only screen and (max-width: 1280px) {
   div.main section.hero {
@@ -600,7 +594,8 @@ input[type="search"] {
   div.main section.intro > h1 {
     margin: 0 0 7.5px 0; }
   div.main section.fullwidth {
-    margin: 25.5px auto 0 auto;
+    width: 90%;
+    margin: 30px 5% 0;
     padding: 15px 0 0; }
     div.main section.fullwidth > h4 {
       text-align: center; }
@@ -671,6 +666,8 @@ input[type="search"] {
     body a.neu__iconlink > i.material-icons {
       font-family: "Material Icons";
       padding-right: 15px; }
+  body header .neumenu-wrapper {
+    box-shadow: 1px 1px 5px #979797; }
   div.main,
   main {
     width: 100%; }
@@ -730,48 +727,22 @@ input[type="search"] {
           text-align: left;
           cursor: initial;
           padding-bottom: 15px; }
-    div.main section.fullwidth,
-    main section.fullwidth {
-      width: 100%; }
     div.main section.hero.hero-image,
     main section.hero.hero-image {
       background-size: cover;
       background-position: center; }
-    div.main > section.overview-depts > ul,
-    main > section.overview-depts > ul {
-      flex-flow: row wrap; }
-      div.main > section.overview-depts > ul li,
-      main > section.overview-depts > ul li {
-        flex: 1 0 calc(calc(100% / 2) - 20px); }
-      div.main > section.overview-depts > ul li,
-      main > section.overview-depts > ul li {
-        margin: 0 20px 20px 0;
-        border-bottom: 1px solid #979797; }
-        div.main > section.overview-depts > ul li:nth-child(2n),
-        main > section.overview-depts > ul li:nth-child(2n) {
-          margin-right: 0; }
-        div.main > section.overview-depts > ul li i,
-        div.main > section.overview-depts > ul li h4,
-        main > section.overview-depts > ul li i,
-        main > section.overview-depts > ul li h4 {
-          display: inline-block;
-          vertical-align: middle; }
-        div.main > section.overview-depts > ul li > a,
-        main > section.overview-depts > ul li > a {
-          display: block; }
-          div.main > section.overview-depts > ul li > a:hover > i.material-icons,
-          main > section.overview-depts > ul li > a:hover > i.material-icons {
-            color: #d41b2c; }
-    div.main > section.heretohelp > ul > li > a:hover,
-    main > section.heretohelp > ul > li > a:hover {
-      color: #d41b2c; }
-      div.main > section.heretohelp > ul > li > a:hover i.material-icons,
-      main > section.heretohelp > ul > li > a:hover i.material-icons {
-        color: #d41b2c; }
-    div.main > section.heretohelp > ul > li > a > i.material-icons,
-    main > section.heretohelp > ul > li > a > i.material-icons {
-      vertical-align: middle;
-      margin-right: 5px; }
+    div.main > section.heretohelp > ul > li > h4,
+    main > section.heretohelp > ul > li > h4 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+      text-align: left; }
+    div.main > section.heretohelp > ul > li > p,
+    main > section.heretohelp > ul > li > p {
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.8rem;
+      text-align: left; }
     div.main > section.heretohelp > ul > li figure,
     main > section.heretohelp > ul > li figure {
       width: 100%;
@@ -780,13 +751,18 @@ input[type="search"] {
       background-size: cover; }
     div.main section.related-tasks > ul,
     main section.related-tasks > ul {
+      display: flex;
       flex-flow: row wrap; }
       div.main section.related-tasks > ul li,
       main section.related-tasks > ul li {
-        flex: 1 0 calc(calc(100% / 2) - 20px); }
-      div.main section.related-tasks > ul > li,
-      main section.related-tasks > ul > li {
-        margin: 0 auto 20px; } }
+        flex: 1 1 calc(calc(100% / 2) - 15px);
+        margin: 15px 15px 0 0; }
+        div.main section.related-tasks > ul li:nth-of-type(2n),
+        main section.related-tasks > ul li:nth-of-type(2n) {
+          margin-right: 0; }
+        div.main section.related-tasks > ul li:last-of-type:nth-of-type(even),
+        main section.related-tasks > ul li:last-of-type:nth-of-type(even) {
+          margin-right: 0; } }
 
 @media only screen {
   /* Shutter Out Horizontal */

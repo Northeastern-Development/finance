@@ -1,22 +1,25 @@
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/mixins.scss';
+
 @media only screen {
 
 
-    ul.discounts > li{
-        > h5 {
-            @include font-3b-l;
-        }
-        // discount description
-        > div {
-            @include font-2l-l;
-            > ul {
-                list-style-type: disc;
-                display: inline-block;
+    ul.discounts {
+        @include ul_grid_cols(1);
+        > li {
+            border-bottom: 1px solid transparentize(black, 0.5);
+            padding: 15px 0;
+            >h5 {
+                @include font-3b-l;
+            }
+
+            // discount description
+            >div {
+                @include font-2l-l;
             }
         }
     }
-    
-    
+
+
 }

@@ -45,7 +45,6 @@
     <?php
         // page hero
         $fields = get_fields($post_id);          
-        include(locate_template('includes/pagehero.php'));
         echo PageHero::return_pagehero($fields, $task->post_title, get_fields($task)['description']);
 
         $fields = get_fields($task); // (inefficient)

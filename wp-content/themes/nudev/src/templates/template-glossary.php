@@ -68,7 +68,6 @@
 <main role="main">
     <?php 
         $fields = get_fields($post_id);
-        include(locate_template('includes/pagehero.php'));
         echo PageHero::return_pagehero($fields);
      ?>
 

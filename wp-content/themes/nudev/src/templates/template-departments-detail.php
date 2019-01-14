@@ -137,7 +137,6 @@
             // get fields for the generic department page ( verify 'use hero', nothing else )
             $fields = get_fields($post_id);
             if( $fields['use_hero'] == '1' ){
-                include(locate_template('includes/pagehero.php'));
                 echo PageHero::return_pagehero($fields, $department[0]->post_title);
             }
         ?>

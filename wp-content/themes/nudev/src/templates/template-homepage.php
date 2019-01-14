@@ -22,7 +22,7 @@
     $content_tools = '';
     $format_tools = '
         <div>
-            <a href="%s">
+            <a href="%s" title="View this Tool">
                 <figure><img src="%s"></figure>
                 <p>%s</p>
                 <div>
@@ -47,7 +47,13 @@
         'posts_per_page' => 3
         ,'post_type' => 'newsevents-items'
         ,'meta_query' => array(
-            array(
+            'relation' => 'AND'
+            ,array(
+                'key' => 'featured'
+                ,'value' => '1'
+                ,'compare' => '='
+            )
+            ,array(
                 'key' => 'status',
                 'value' => '1',
                 'compare' => '='
