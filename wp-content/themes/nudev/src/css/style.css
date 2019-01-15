@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * modules/fonts
  * ---
@@ -583,7 +584,11 @@ input[type="search"] {
           main > section > ul.list > li > ul,
           div.main > section > ul.list > li > ul {
             list-style: circle;
-            margin: 0 0 0 1vw; } }
+            margin: 0 0 0 1vw; }
+    main > section:last-child,
+    div.main > section:last-child {
+      margin: 1.7vw auto 0 auto;
+      padding-bottom: 1.5vw; } }
 
 @media only screen and (max-width: 1280px) {
   div.main section.hero {
@@ -821,47 +826,55 @@ input[type="search"] {
     div.nu__prefooter > div {
       width: 100%;
       height: inherit;
-      margin: 0 auto 0 auto; }
+      margin: 0 auto 30px auto; }
       div.nu__prefooter > div > ul {
         display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        list-style: none;
-        list-style-type: none; }
+        flex-flow: row wrap; }
+        div.nu__prefooter > div > ul li {
+          flex: 1 1 calc(calc(100% / 3) - 30px);
+          margin: 30px 30px 0 0; }
+          div.nu__prefooter > div > ul li:nth-of-type(3n) {
+            margin-right: 0; }
+          div.nu__prefooter > div > ul li:last-of-type:nth-of-type(even) {
+            margin-right: 0; }
         div.nu__prefooter > div > ul > li {
           text-align: left;
-          flex-grow: 1;
-          flex: 1;
-          min-height: 200px;
-          margin: 0 1vw 1vw 0; }
-          div.nu__prefooter > div > ul > li:last-child {
-            margin: 0 0 2vw 0; }
+          min-height: 200px; }
           div.nu__prefooter > div > ul > li > a {
             display: block;
             width: 100%;
             height: 100%;
             border-bottom: none; }
+            div.nu__prefooter > div > ul > li > a > p:last-of-type span {
+              line-height: inherit; }
+              div.nu__prefooter > div > ul > li > a > p:last-of-type span:before {
+                vertical-align: middle;
+                font-size: 20px;
+                content: '\e5c8';
+                font-family: "Material Icons";
+                color: #d41b2c;
+                padding-right: 15px; }
             div.nu__prefooter > div > ul > li > a:hover, div.nu__prefooter > div > ul > li > a:focus {
               color: black; }
+              div.nu__prefooter > div > ul > li > a:hover > p:last-of-type span, div.nu__prefooter > div > ul > li > a:focus > p:last-of-type span {
+                border-bottom: 1px solid #d41b2c; }
               div.nu__prefooter > div > ul > li > a:hover > div.image > div, div.nu__prefooter > div > ul > li > a:focus > div.image > div {
-                transform: scale(1.1);
-                transition: all .5s; }
+                transform: scale(1.1); }
             div.nu__prefooter > div > ul > li > a > p > i.material-icons {
               color: #d41b2c;
               vertical-align: middle; }
             div.nu__prefooter > div > ul > li > a > div.image {
               height: 245px;
               margin: 0 0 10px 0;
-              overflow: hidden;
               position: relative;
+              overflow: hidden;
               width: 100%; }
               div.nu__prefooter > div > ul > li > a > div.image > div {
                 position: absolute;
+                transition: transform 0.4s ease;
+                transform: scale(1);
                 width: 100%;
                 height: 100%;
-                transform: scale(1);
-                transition: all .5s;
-                background: black;
                 background-position: center center !important;
                 background-repeat: no-repeat !important;
                 background-size: cover !important; }
@@ -2413,10 +2426,6 @@ main section > article > div#contentarea {
 .clear:after {
   clear: both; }
 
-.reset-box {
-  padding: 0;
-  margin: 0; }
-
 /*
  * departments
  */
@@ -3065,69 +3074,68 @@ main#staff section.stafflist {
 #staffbio {
   background: white;
   margin: 10px 10vw 0 10vw;
-  padding-bottom: 0;
-  padding: 1vw 0 1vw 0; }
+  position: relative;
+  padding: 60px; }
   #staffbio > div.contact {
+    padding: 0 30px;
     overflow: hidden;
-    display: flex; }
-    #staffbio > div.contact > div {
-      width: 34vw;
-      margin: 0 1vw 0 0;
-      flex-basis: auto;
-      order: 1; }
-      #staffbio > div.contact > div > h2 {
-        font-size: 2.4rem;
-        line-height: 3.2rem;
-        font-weight: 700;
-        margin: 10px 0 10px 0; }
-      #staffbio > div.contact > div > h3 {
-        font-size: 2.0rem;
-        line-height: 3.2rem;
-        font-weight: 700;
-        text-transform: none;
-        margin: 0 0 10px 0; }
-        #staffbio > div.contact > div > h3:before {
-          display: none; }
-      #staffbio > div.contact > div > h4 {
-        font-size: 1.6rem;
-        line-height: 3rem;
-        font-weight: 300;
-        text-transform: none;
-        margin: 0 0 10px 0;
-        clear: both; }
-        #staffbio > div.contact > div > h4:before {
-          display: none; }
-        #staffbio > div.contact > div > h4 div.kri__more-link {
-          border-bottom: 1px solid #cc0000;
-          float: left; }
-          #staffbio > div.contact > div > h4 div.kri__more-link > a.email:before, #staffbio > div.contact > div > h4 div.kri__more-link > a.phone:before {
-            width: auto;
-            background: none;
-            font-family: 'Material Icons';
-            padding: 0 10px 0 0;
-            margin: 0 0 0 0;
-            display: block;
-            float: left;
-            line-height: 3rem;
-            height: 26px; }
-          #staffbio > div.contact > div > h4 div.kri__more-link > a.email:before {
-            content: '\e0be'; }
-          #staffbio > div.contact > div > h4 div.kri__more-link > a.phone:before {
-            content: '\e551'; }
-      #staffbio > div.contact > div:nth-of-type(2) {
-        width: 15vw;
-        height: 15vw;
-        margin: 0 0 0 0;
-        background: black;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        order: 2; }
-  #staffbio > div.about > h3 {
-    font-size: 2.0rem;
-    line-height: 3.2rem;
-    font-weight: 700;
-    margin: 30px 0 5px 0; }
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    #staffbio > div.contact > div > h2, #staffbio > div.contact > div > h3 {
+      margin-bottom: 15px; }
+    #staffbio > div.contact > div > h2 {
+      font-size: 3.4rem;
+      line-height: 4.8rem;
+      text-align: left;
+      font-weight: 300; }
+    #staffbio > div.contact > div > h3 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      line-height: 3.2rem;
+      text-align: left; }
+    #staffbio > div.contact > div > p:first-of-type > a {
+      border-bottom: 1px solid transparent; }
+      #staffbio > div.contact > div > p:first-of-type > a:before {
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: ""; }
+      #staffbio > div.contact > div > p:first-of-type > a:hover {
+        color: #d41b2c; }
+      #staffbio > div.contact > div > p:first-of-type > a:hover {
+        border-bottom: 1px solid #d41b2c; }
+    #staffbio > div.contact > div > p:last-of-type > a {
+      border-bottom: 1px solid transparent; }
+      #staffbio > div.contact > div > p:last-of-type > a:before {
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: ""; }
+      #staffbio > div.contact > div > p:last-of-type > a:hover {
+        color: #d41b2c; }
+      #staffbio > div.contact > div > p:last-of-type > a:hover {
+        border-bottom: 1px solid #d41b2c; }
+    #staffbio > div.contact > figure {
+      width: calc(100% / 3);
+      overflow: hidden; }
+      #staffbio > div.contact > figure > img {
+        width: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform 0.4s ease; }
+      #staffbio > div.contact > figure:hover > img {
+        transform: scale(1.1); }
+  #staffbio > div.about {
+    margin-top: 30px; }
+    #staffbio > div.about > h3 {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 30px; }
 
 @media only screen and (max-width: 1280px) {
   main#staff section.departmenthead {
@@ -3365,7 +3373,9 @@ main#staff section.stafflist {
           main#staff section.stafflist > div > ul > li a div {
             height: 85vw;
             width: 100vw; }
-          main#staff section.stafflist > div > ul > li a > h3, main#staff section.stafflist > div > ul > li a h4, main#staff section.stafflist > div > ul > li a span {
+          main#staff section.stafflist > div > ul > li a > h3,
+          main#staff section.stafflist > div > ul > li a h4,
+          main#staff section.stafflist > div > ul > li a span {
             margin-left: 10px; }
           main#staff section.stafflist > div > ul > li:nth-child(1n+1) {
             margin: 0 auto 3vw auto; }

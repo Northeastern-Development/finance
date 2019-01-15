@@ -82,12 +82,14 @@ class NUNewsArchive{
         if( $b['type'] == 'event' ){
             
             $format_event = '
-                <p>
-                    Event begins <span>%s</span> at <span>%s</span>
-                </p>
-                <p>
-                    Event ends <span>%s</span> at <span>%s</span>
-                </p>
+                <div class="neu__news_event_time">
+                    <p>
+                        Event begins <span>%s</span> at <span>%s</span>
+                    </p>
+                    <p>
+                        Event ends <span>%s</span> at <span>%s</span>
+                    </p>
+                </div>
             ';
 
             $content_event = '';

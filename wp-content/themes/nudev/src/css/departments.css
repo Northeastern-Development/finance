@@ -109,27 +109,56 @@
 
 /* These are variables for the main navigation */
 @media only screen {
+  div.main .js__bio.neu__iconlink,
+  main .js__bio.neu__iconlink {
+    border-bottom: 1px solid transparent; }
+    div.main .js__bio.neu__iconlink:before,
+    main .js__bio.neu__iconlink:before {
+      content: "\e7fd";
+      font-family: "Material Icons";
+      font-size: 20px;
+      vertical-align: middle;
+      padding-right: 15px; }
+    div.main .js__bio.neu__iconlink:hover,
+    main .js__bio.neu__iconlink:hover {
+      border-bottom: 1px solid #d41b2c; }
+      div.main .js__bio.neu__iconlink:hover:before,
+      main .js__bio.neu__iconlink:hover:before {
+        color: #d41b2c; }
+  div.main > section:nth-of-type(2),
   main > section:nth-of-type(2) {
     text-align: center; }
+    div.main > section:nth-of-type(2) > h2,
     main > section:nth-of-type(2) > h2 {
       text-align: center;
       border-bottom: none; }
+    div.main > section:nth-of-type(2) > div,
     main > section:nth-of-type(2) > div {
       margin-bottom: 15px; }
+  div.main > section:nth-of-type(3) > ul,
+  div.main > section:nth-of-type(4) > ul,
   main > section:nth-of-type(3) > ul,
   main > section:nth-of-type(4) > ul {
     display: flex;
     flex-flow: row wrap; }
+    div.main > section:nth-of-type(3) > ul li,
+    div.main > section:nth-of-type(4) > ul li,
     main > section:nth-of-type(3) > ul li,
     main > section:nth-of-type(4) > ul li {
       flex: 1 1 calc(calc(100% / 2) - 15px);
       margin: 15px 15px 0 0; }
+      div.main > section:nth-of-type(3) > ul li:nth-of-type(2n),
+      div.main > section:nth-of-type(4) > ul li:nth-of-type(2n),
       main > section:nth-of-type(3) > ul li:nth-of-type(2n),
       main > section:nth-of-type(4) > ul li:nth-of-type(2n) {
         margin-right: 0; }
+      div.main > section:nth-of-type(3) > ul li:last-of-type:nth-of-type(even),
+      div.main > section:nth-of-type(4) > ul li:last-of-type:nth-of-type(even),
       main > section:nth-of-type(3) > ul li:last-of-type:nth-of-type(even),
       main > section:nth-of-type(4) > ul li:last-of-type:nth-of-type(even) {
         margin-right: 0; }
+    div.main > section:nth-of-type(3) > ul i.material-icons,
+    div.main > section:nth-of-type(4) > ul i.material-icons,
     main > section:nth-of-type(3) > ul i.material-icons,
     main > section:nth-of-type(4) > ul i.material-icons {
       color: #d41b2c; } }

@@ -16,23 +16,24 @@
                 padding-bottom: 15px;
             }
         }
-
-        a {
-            display: block;
-            width: 100%;
-            border-bottom: 1px solid transparentize(black, 0.5);
-            padding: 15px 0;
-            > i.material-icons,
-            > span {
-                vertical-align: middle;
-                display: inline-block;
-                line-height: inherit;
-            }
-            > i.material-icons {
-                color: $brand_colors-red;
-            }
-            &:hover {
-                border-bottom: 1px solid $brand_colors-red;
+        > section:nth-of-type(2){
+            >a {
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid transparentize(black, 0.5);
+                padding: 15px 0;
+                > i.material-icons,
+                > span {
+                    vertical-align: middle;
+                    display: inline-block;
+                    line-height: inherit;
+                }
+                > i.material-icons {
+                    color: $brand_colors-red;
+                }
+                &:hover {
+                    border-bottom: 1px solid $brand_colors-red;
+                }
             }
         }
 

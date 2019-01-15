@@ -125,11 +125,10 @@
       border-bottom: 1px solid black; }
     div.main div.forms-category > ul,
     main div.forms-category > ul {
-      margin-bottom: 30px; }
+      margin: 15px 0; }
       div.main div.forms-category > ul > li,
       main div.forms-category > ul > li {
-        margin-top: 30px;
-        padding-bottom: 15px;
+        padding: 15px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
         div.main div.forms-category > ul > li > h5,
         main div.forms-category > ul > li > h5 {
@@ -140,7 +139,7 @@
           text-align: left; }
           div.main div.forms-category > ul > li > h5:before,
           main div.forms-category > ul > li > h5:before {
-            display: inline-block;
+            vertical-align: middle;
             content: '\e5c8';
             font-family: "Material Icons";
             color: #d41b2c;

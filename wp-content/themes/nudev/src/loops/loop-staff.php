@@ -102,7 +102,8 @@
             <section class="nu__team">
                 <article>
                     <div>
-                        <p class="description">%s%s</p>
+                        <p class="description">%s</p>
+                        <p>%s</p>
                         <p class="contact"><a class="neu__iconlink" href="tel:%s" title="Call %s"><i class="material-icons">phone</i><span>%s</span></a><br /></p>
                         <p>%s</p>
                     </div>
@@ -117,7 +118,7 @@
 		$department = sprintf(
 			$guide
 			,wp_trim_words($managerFields['description'], 55, ' ...') // need to trim this to excerpt length
-            ,( $currentPage === 'department-detail' ) ? '<div class="kri__more-link"><a title="Click here to read more" class="js__bio" href="/staff/bio/'.$manager[0]->post_name.'">Read More</a></div>' : null // if we are on the department detail page... show the learn more buttton
+            ,( $currentPage === 'department-detail' ) ? '<a title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink" href="/staff/bio/'.$manager[0]->post_name.'">View Full Profile</a>' : null 
 			,$managerFields['phone']
 			,strtolower($dept[0]->post_title)
             ,$managerFields['phone']
@@ -184,7 +185,7 @@
                 ,( !empty($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
                 ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'. $fields['phone'] .'"><i class="material-icons">phone</i><span>'.$fields['phone'].'</span></a>' : null
                 ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'. $fields['email'] .'"><i class="material-icons">email</i><span>email</span></a>' : null
-                ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="Click to view profile" class="js__bio">View Profile</a>' : null
+                ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink">View Full Profile</a>' : null
 			);
 		}
 		$departments .= "</ul></section>";

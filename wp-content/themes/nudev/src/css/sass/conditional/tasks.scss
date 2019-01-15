@@ -147,10 +147,38 @@
         }
     }
 
+
+    // LETS DO SOME FANCY BULLETS HUH
     ul.task-options-list-item-suboptions {
+        position: relative;
+        &:before {
+            content: '';
+            width: 1px;
+            background-color: $brand_colors-gray;
+            height: 100%;
+            display: inline-block;
+            position: absolute;
+            left: -24px;
+            opacity: 0.3;
+        }
         > li {
+            position: relative;
+            &:before {
+                left: -30px;
+                position: absolute;
+                display: inline-block;
+                content: '';
+                top: 7px;
+                width: 12px;
+                background-color: lighten($brand_colors-gray, 25%);
+                height: 12px;
+                border-radius: 50%;
+            }
+
+
+
             > h5 {
-                font-weight: bold;
+                @include font-2b-l;
             }
             > p {
                 @include font-2l-l;

@@ -113,17 +113,17 @@
     text-align: center;
     border-bottom: 1px solid transparent;
     padding-bottom: 15px; }
-  main#financialstatements a {
+  main#financialstatements > section:nth-of-type(2) > a {
     display: block;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     padding: 15px 0; }
-    main#financialstatements a > i.material-icons,
-    main#financialstatements a > span {
+    main#financialstatements > section:nth-of-type(2) > a > i.material-icons,
+    main#financialstatements > section:nth-of-type(2) > a > span {
       vertical-align: middle;
       display: inline-block;
       line-height: inherit; }
-    main#financialstatements a > i.material-icons {
+    main#financialstatements > section:nth-of-type(2) > a > i.material-icons {
       color: #d41b2c; }
-    main#financialstatements a:hover {
+    main#financialstatements > section:nth-of-type(2) > a:hover {
       border-bottom: 1px solid #d41b2c; } }

@@ -16,10 +16,10 @@ $format_overlay = '
         <div>
             <h2>%s</h2>
             <h3>%s</h3>
-            <h4><div class="kri__more-link">%s</div></h4>
-            <h4><div class="kri__more-link">%s</div></h4>
+            <p>%s</p>
+            <p>%s</p>
         </div>
-        <div style="background: url(%s)"></div>
+        <figure><img src="%s"></figure>
     </div>
     <div class="about">
         <h3>About</h3>
@@ -30,8 +30,8 @@ $content_overlay = sprintf(
     $format_overlay
     ,$res->post_title
     , ( !empty($fields['title']) ) ? $fields['title'] : null
-    , ( !empty($fields['email']) ) ? '<a href="'.$fields['email'].'" title="Send an email" class="email">' . $fields['email'] . '</a>' : null
-    , ( !empty($fields['phone']) ) ? '<a href="tel:'.$fields['phone'].'" title="Call" class="phone">' . $fields['phone'] . '</a>' : null
+    , ( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="'.$fields['email'].'" title="Send an email" class="email">' . $fields['email'] . '</a>' : null
+    , ( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'.$fields['phone'].'" title="Call" class="phone">' . $fields['phone'] . '</a>' : null
     , $fields['headshot']['url']
     , $fields['description']
 );

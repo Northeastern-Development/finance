@@ -131,6 +131,13 @@
       html body ul.newsandevents > div.pagination:last-of-type {
         top: 100%;
         bottom: auto; }
+    html body ul.newsandevents > li > a > div .neu__news_event_time {
+      margin-top: 15px; }
+      html body ul.newsandevents > li > a > div .neu__news_event_time > p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 2.4rem;
+        text-align: left; }
     html body ul.newsandevents > li > a > div > p:last-of-type > span,
     html body ul.newsandevents > li > a > div > p:last-of-type > i.material-icons {
       font-size: 1.6rem;
@@ -146,6 +153,7 @@
       font-size: 20px;
       padding-right: 15px; }
     html body ul.newsandevents > li > a > figure {
+      margin-bottom: 15px;
       overflow: hidden; }
       html body ul.newsandevents > li > a > figure > img {
         transform: scale(1);

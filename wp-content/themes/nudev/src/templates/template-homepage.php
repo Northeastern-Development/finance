@@ -26,7 +26,7 @@
                 <figure><img src="%s"></figure>
                 <p>%s</p>
                 <div>
-                    <p><i class="material-icons">arrow_forward</i><span>Learn more</span></p>
+                    <p><span>Learn more</span></p>
                 </div>
             </a>
         </div>
@@ -73,7 +73,7 @@
                 <h5>%s</h5>
                 <p>%s</p>
                 <div>
-                    <p><i class="material-icons">arrow_forward</i><span>Learn more</span></p>
+                    <p><span>Learn more</span></p>
                 </div>
             </a>
         </div>
@@ -129,7 +129,7 @@
      ?>
 
     <section class="home-feat-tools fullwidth nobg">
-        <h1>Tools</h1>
+        <h2>Tools</h2>
         <div>
             <?php 
                 echo $content_tools;
@@ -139,7 +139,7 @@
     </section>
 
     <section class="home-feat-news fullwidth nobg">
-        <h1>Latest Updates</h1>
+        <h2>Latest Updates</h2>
         <div>
             <?php 
                 echo $content_news;

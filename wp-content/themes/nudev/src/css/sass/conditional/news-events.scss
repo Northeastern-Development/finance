@@ -24,6 +24,12 @@
         > li {
             > a {
                 > div {
+                    .neu__news_event_time {
+                        margin-top: 15px;
+                        > p {
+                            @include font-1l-l;
+                        }
+                    }
                     > p:last-of-type{
                         > span,
                         > i.material-icons {
@@ -41,6 +47,7 @@
                     }
                 }
                 > figure {
+                    margin-bottom: 15px;
                     overflow: hidden;
                     > img {
                         transform: scale(1);

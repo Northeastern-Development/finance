@@ -26,17 +26,16 @@
             }
             // the form wrapper
             > ul {
-                margin-bottom: 30px;
+                margin: 15px 0;
                 // 
                 > li {
-                    margin-top: 30px;
-                    padding-bottom: 15px;
+                    padding: 15px 0;
                     border-bottom: 1px solid transparentize(black, 0.5);
                     > h5 {
                         position: relative;
                         @include font-3b-l;
                         &:before {
-                            display: inline-block;
+                            vertical-align: middle;
                             content: '\e5c8';
                             font-family: "Material Icons";
                             color: $brand_colors-red;

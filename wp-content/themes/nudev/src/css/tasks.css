@@ -230,10 +230,36 @@
     border-radius: 50%;
     border: 1px solid #979797;
     color: #979797; }
-  ul.task-options-list-item-suboptions > li > h5 {
-    font-weight: bold; }
-  ul.task-options-list-item-suboptions > li > p {
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 2.8rem;
-    text-align: left; } }
+  ul.task-options-list-item-suboptions {
+    position: relative; }
+    ul.task-options-list-item-suboptions:before {
+      content: '';
+      width: 1px;
+      background-color: #979797;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      left: -24px;
+      opacity: 0.3; }
+    ul.task-options-list-item-suboptions > li {
+      position: relative; }
+      ul.task-options-list-item-suboptions > li:before {
+        left: -30px;
+        position: absolute;
+        display: inline-block;
+        content: '';
+        top: 7px;
+        width: 12px;
+        background-color: #d7d7d7;
+        height: 12px;
+        border-radius: 50%; }
+      ul.task-options-list-item-suboptions > li > h5 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+        text-align: left; }
+      ul.task-options-list-item-suboptions > li > p {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        text-align: left; } }

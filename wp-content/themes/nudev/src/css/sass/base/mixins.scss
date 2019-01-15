@@ -4,148 +4,14 @@
  */
 
 
-@mixin reset-box {
-    padding: 0;
-    margin: 0;
-}
 
 
-
-// this will be a mixin for the hover state of most blocks to include:
-// a red arrow after the title
-// a slight scaling of the background image
-
-@mixin block-group {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-@mixin block-item-default {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: scale(1);
-    transition: all .5s;
-    background: rgba(black, 1.0);
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-}
-
-@mixin block-item-hover {
-    transform: scale(1.1);
-    transition: all .5s; // BAD PRACTICE OMG
-}
-
-@mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
-    // Configured in Step 1
-    $top-crop: 0;
-    $bottom-crop: 24;
-    $crop-font-size: 20;
-    $crop-line-height: 3.2;
-
-    // Apply values to calculate em-based margins that work with any font size
-    $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-    $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-
-    // Mixin output
-    line-height: $line-height;
-
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 0;
-    }
-
-    &::before {
-        margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
-    }
-
-    &::after {
-        margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
-    }
-}
-
-@mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
-    // Configured in Step 1
-    $top-crop: 0;
-    $bottom-crop: 34;
-    $crop-font-size: 20;
-    $crop-line-height: 3.2;
-
-    // Apply values to calculate em-based margins that work with any font size
-    $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-    $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-
-    // Mixin output
-    line-height: $line-height;
-
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 0;
-    }
-
-    &::before {
-        margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
-    }
-
-    &::after {
-        margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
-    }
-}
-
-
-// this will handle adding a red arrow to the end of a link or other item
-// in some cases they may start hidden and reveal on hover
-
-@mixin action-arrow {
-    >span {
-        // &:after{
-        @include font-7-c;
-        color: rgba($brand_colors-red, 1.0);
-        //content: '\E8E4';
-        // vertical-align: -20%;
-        // padding: 0 0 0 0;
-        // display: inline-block;
-        // width: auto;
-        // position: relative;
-        // top: 13px;
-        // height: 20px;
-        // line-height: 35px;
-        line-height: 0;
-        // overflow: hidden;
-        vertical-align: middle;
-        padding-top: 9px;
-    }
-
-    @media only screen and (max-width: 959px) {
-        >span {
-            @include font-4-c;
-            //top:7px;
-            padding-top: 6px;
-        }
-    }
-}
-
-@mixin action-arrow-hidden {
-    &>span {
-        opacity: 0.0;
-    }
-}
-
-@mixin action-arrow-shown {
-    &>span {
-        opacity: 1.0;
-    }
-}
-
-@mixin ul_grid_cols($num, $margin : 30px) {
+// Used on <ul> elements creating a flexbox-based grid of <li> elements
+// Defaults are 3-columns with 30px margins,
+// Accepts 2 arguments : # of columns and margin (specify units)
+// This mixin needs a little more development though. There are bugs with 'dangling' last rows.
+// Generally speaking it works great though, especially for 1, 2 and 3 columns
+@mixin ul_grid_cols($num : 3, $margin : 30px) {
     display: flex;
     flex-flow: row wrap;
     li {
@@ -163,5 +29,37 @@
 
         // alternatively, we can use a max width to leave the items dangling and retain a squared grid
         // max-width: calc( 100% / #{$num} - 30px);
+    }
+}
+
+
+@mixin neu__iconlink( $side : 'left', $icon : "\e5c8") {
+    border-bottom: 1px solid transparent;
+    @if( $side == 'left' ){
+        &:before {
+            padding-right: 15px;
+            font-size: 20px;
+            font-family: "Material Icons";
+            vertical-align: middle;
+            content: $icon;
+        }
+        &:hover {
+            color: $brand_colors-red;
+        }
+    }
+    @if( $side == 'right' ){
+        &:after {
+            padding-left: 15px;
+            font-size: 20px;
+            font-family: "Material Icons";
+            vertical-align: middle;
+            content: $icon;
+        }
+        &:hover {
+            color: $brand_colors-red;
+        }
+    }
+    &:hover {
+        border-bottom: 1px solid $brand_colors-red;
     }
 }

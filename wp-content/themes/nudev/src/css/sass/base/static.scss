@@ -21,7 +21,6 @@
         color: black;
         text-transform: uppercase;
         @include font-2l-c;
-
         &:hover {
             background-color: rgba(0, 0, 0, 0.3);
         }
@@ -175,12 +174,10 @@
         }
 
         
-        // this is way too broadly applied to be used!!!
-        // depricated but not fully tested
-        // >section:last-child {
-        //     margin: ($gutter * 1.7) auto 0 auto;
-        //     padding-bottom: ($gutter * 1.5);
-        // }
+        >section:last-child {
+            margin: ($gutter * 1.7) auto 0 auto;
+            padding-bottom: ($gutter * 1.5);
+        }
 
         
     }

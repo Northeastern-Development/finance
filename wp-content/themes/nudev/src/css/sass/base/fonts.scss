@@ -251,6 +251,12 @@
     line-height: 2.4rem;
     text-align: left;
 }
+@mixin font-1l-c {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+    text-align: center;
+}
 
 
 @mixin font-1r-l {

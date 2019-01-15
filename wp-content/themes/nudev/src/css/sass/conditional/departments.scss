@@ -5,8 +5,25 @@
 @media only screen {
 
     
-
+    div.main,
     main {
+
+        .js__bio.neu__iconlink {
+            border-bottom: 1px solid transparent;
+            &:before{
+                content: "\e7fd";
+                font-family: "Material Icons";
+                font-size: 20px;
+                vertical-align: middle;
+                padding-right: 15px;
+            }
+            &:hover {
+                border-bottom: 1px solid $brand_colors-red;
+                &:before {
+                    color: $brand_colors-red;
+                }
+            }
+        }
 
         // First Section Below Hero: (hardcoded heading)
         > section:nth-of-type(2){
