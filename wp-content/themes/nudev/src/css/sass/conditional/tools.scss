@@ -5,6 +5,14 @@
 
 @media only screen {
 
+    
+    main > section:nth-of-type(2){
+        > p {
+            @include font-3l-c;
+        }
+    }
+    
+
     ul.tools-grid {
         @include ul_grid_cols(3, 30px);
         li.tools-grid-tool {
@@ -14,13 +22,17 @@
                 }
                 .neu__iconlink {
                     @include neu__iconlink($hover : 0);
+                    &:before{
+                        color: $brand_colors-red;
+                    }
                 }
                 &:hover {
                     .neu__iconlink {
                         border-bottom: 1px solid $brand_colors-red;
-                        &:before{
-                            color: $brand_colors-red;
-                        }
+                        
+                    }
+                    .neu__bgimg > div {
+                        transform: scale(1.1);
                     }
                 }
             }
@@ -32,24 +44,91 @@
             ul.tool-groupingnav {
                 text-align: center;
                 margin-bottom: 30px;
+                display: block;
+                position: relative;
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    display: block;
+                    content: '';
+                    height: 1px;
+                    background-color: black;
+                    z-index: 10;
+                }
                 li {
-                    border-bottom: 1px solid black;
+                    display: inline-block;
                     text-align: center;
-                    margin: 0 auto;
+                    margin: 0 30px;
+                    position: relative;
+
+                    // ( BEST GUESS, UNAPPROVED HOVER STATE )
+                    // &:not(.tool-grouping-active):hover {
+                    //     font-weight: bold;
+                    //     &:after {
+                    //         position: absolute;
+                    //         bottom: -1px;
+                    //         left: -15px;
+                    //         width: calc(100% + 30px);
+                    //         display: block;
+                    //         content: '';
+                    //         height: 3px;
+                    //         background-color: $brand_colors-red;
+                    //         z-index: 11;
+                    //     }
+                    // }
+                    
+                    
                     a {
                         text-align: center;
+                        text-transform: uppercase;
                     }
                     &.tool-grouping-active {
-                        border-bottom: 2px solid $brand_colors-red;
+                        font-weight: bold;
+                        &:after {
+                            position: absolute;
+                            bottom: -1px;
+                            left: -15px;
+                            width: calc(100% + 30px);
+                            display: block;
+                            content: '';
+                            height: 3px;
+                            background-color: $brand_colors-red;
+                            z-index: 11;
+                        }
                     }
+                    
                 }
             }
 
             .tool-group {
-                margin-top: 40px;
+                position: relative;
+                border-bottom: 1px solid transparentize(black, 0.5);
+                > h4{
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        font-size: 20px;
+                        transition: transform 0.4s ease;
+                        content: '\e313';
+                        transform: rotate(0deg);
+                        display: inline-block;
+                        font-family: 'Material Icons';
+                    }
+                }
+                &.js__tool_expanded > h4 {
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+                }
+                margin-bottom: 30px;
                 > h4 {
                     @include font-3b-l;
-                    border-bottom: 1px solid transparentize(black, 0.5);
+                    cursor: pointer;
+                    padding: 15px 0;
                 }
                 > ul {
                     margin-left: 30px;
@@ -59,7 +138,6 @@
                         >h5 {
                             @include font-2b-l;
                         }
-                        padding: 10px 0;
                         margin-bottom: 20px;
                         flex: 1 0 100%;
                     }

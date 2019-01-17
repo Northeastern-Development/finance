@@ -12,12 +12,24 @@
             padding: 15px 0;
             >h5 {
                 @include font-3b-l;
+                margin-bottom: 15px;
             }
 
             // discount description
             >div {
                 @include font-2l-l;
+                ul {
+                    list-style-type: disc;
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 2.4rem;
+                    li {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
             }
+            
         }
     }
 
