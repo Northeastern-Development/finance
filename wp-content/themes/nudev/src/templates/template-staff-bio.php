@@ -19,7 +19,7 @@ $format_overlay = '
             <p>%s</p>
             <p>%s</p>
         </div>
-        <figure><img src="%s"></figure>
+        <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
     </div>
     <div class="about">
         <h3>About</h3>

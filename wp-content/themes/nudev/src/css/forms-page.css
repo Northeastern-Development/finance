@@ -1,4 +1,4 @@
-/* These are variables for the main navigation */
+@charset "UTF-8";
 /**
  * modules/fonts
  * ---
@@ -109,9 +109,6 @@
  * ---
  */
 @media only screen {
-  div.main section:nth-of-type(2) > h2,
-  main section:nth-of-type(2) > h2 {
-    margin-bottom: 30px; }
   div.main div.forms-category,
   main div.forms-category {
     margin-bottom: 30px; }
@@ -139,6 +136,7 @@
           text-align: left; }
           div.main div.forms-category > ul > li > h5:before,
           main div.forms-category > ul > li > h5:before {
+            display: inline-block;
             vertical-align: middle;
             content: '\e5c8';
             font-family: "Material Icons";
@@ -156,9 +154,26 @@
           line-height: 2.8rem;
           text-align: left;
           margin-top: 15px; }
-          div.main div.forms-category > ul > li > div a.neu__iconlink,
-          main div.forms-category > ul > li > div a.neu__iconlink {
-            display: block; }
+          div.main div.forms-category > ul > li > div > p > a.neu__iconlink,
+          main div.forms-category > ul > li > div > p > a.neu__iconlink {
+            border-bottom: 1px solid transparent;
+            line-height: inherit;
+            display: inline-block; }
+            div.main div.forms-category > ul > li > div > p > a.neu__iconlink:before,
+            main div.forms-category > ul > li > div > p > a.neu__iconlink:before {
+              display: inline-block;
+              padding-right: 15px;
+              font-size: 20px;
+              font-family: "Material Icons";
+              vertical-align: middle;
+              content: "";
+              line-height: inherit; }
+            div.main div.forms-category > ul > li > div > p > a.neu__iconlink:hover,
+            main div.forms-category > ul > li > div > p > a.neu__iconlink:hover {
+              color: #d41b2c; }
+            div.main div.forms-category > ul > li > div > p > a.neu__iconlink:hover,
+            main div.forms-category > ul > li > div > p > a.neu__iconlink:hover {
+              border-bottom: 1px solid #d41b2c; }
           div.main div.forms-category > ul > li > div h4,
           main div.forms-category > ul > li > div h4 {
             font-size: 1.6rem;
@@ -168,15 +183,36 @@
             margin-top: 15px; }
           div.main div.forms-category > ul > li > div > ul,
           main div.forms-category > ul > li > div > ul {
+            list-style-type: none;
             display: flex;
             flex-flow: row wrap; }
             div.main div.forms-category > ul > li > div > ul li,
             main div.forms-category > ul > li > div > ul li {
               flex: 1 1 calc(calc(100% / 2) - 15px);
-              margin: 15px 15px 0 0; }
+              margin: 0 15px 15px 0; }
               div.main div.forms-category > ul > li > div > ul li:nth-of-type(2n),
               main div.forms-category > ul > li > div > ul li:nth-of-type(2n) {
                 margin-right: 0; }
               div.main div.forms-category > ul > li > div > ul li:last-of-type:nth-of-type(even),
               main div.forms-category > ul > li > div > ul li:last-of-type:nth-of-type(even) {
-                margin-right: 0; } }
+                margin-right: 0; }
+            div.main div.forms-category > ul > li > div > ul .neu__iconlink,
+            main div.forms-category > ul > li > div > ul .neu__iconlink {
+              border-bottom: 1px solid transparent;
+              line-height: inherit;
+              display: inline-block; }
+              div.main div.forms-category > ul > li > div > ul .neu__iconlink:before,
+              main div.forms-category > ul > li > div > ul .neu__iconlink:before {
+                display: inline-block;
+                padding-right: 15px;
+                font-size: 20px;
+                font-family: "Material Icons";
+                vertical-align: middle;
+                content: "";
+                line-height: inherit; }
+              div.main div.forms-category > ul > li > div > ul .neu__iconlink:hover,
+              main div.forms-category > ul > li > div > ul .neu__iconlink:hover {
+                color: #d41b2c; }
+              div.main div.forms-category > ul > li > div > ul .neu__iconlink:hover,
+              main div.forms-category > ul > li > div > ul .neu__iconlink:hover {
+                border-bottom: 1px solid #d41b2c; } }

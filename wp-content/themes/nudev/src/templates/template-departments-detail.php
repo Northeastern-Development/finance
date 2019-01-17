@@ -37,9 +37,11 @@
         $format_department
         ,'<h2>Our Mission</h2>'
         ,( !empty($fields['overview']) ) ? '<div>'.$fields['overview'].'</div>' : null
-        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'.$fields['phone'].'"><i class="material-icons">phone</i><span>'.$fields['phone'].'</span></a>' : null
-        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'.$fields['email'].'"><i class="material-icons">email</i><span>email</span></a>' : null
+        ,( !empty($fields['phone']) ) ? '<p><a class="neu__iconlink" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a></p>' : null
+        ,( !empty($fields['email']) ) ? '<p><a class="neu__iconlink" href="mailto:'.$fields['email'].'">email</a></p>' : null
     );
+
+    
     $args = array(
         'post_type' => 'tasks',
         'posts_per_page' => -1,
@@ -64,9 +66,7 @@
     if( !empty($tasks) ){
         $format_related_tasks = '
             <li>
-                <a class="neu__iconlink" href="%s">
-                    <i class="material-icons">arrow_forward</i><span>%s</span>
-                </a>
+                <a class="neu__iconlink" href="%s">%s</a>
             </li>
         ';
         $content_related_tasks = '
@@ -110,9 +110,7 @@
     if( !empty($forms) ){
         $format_related_forms = '
             <li>
-                <a class="neu__iconlink" href="%s">
-                    <i class="material-icons">arrow_forward</i><span>%s</span>
-                </a>
+                <a class="neu__iconlink" href="%s">%s</a>
             </li>
         ';
         $content_related_forms = '<h2>Related Forms</h2><ul>';
@@ -140,28 +138,23 @@
                 echo PageHero::return_pagehero($fields, $department[0]->post_title);
             }
         ?>
-        <section>
-            <?php 
-                echo $content_department;
-            ?>
-        </section>
-        <section>
-            <?php 
-                echo $content_related_tasks;
-             ?>
-        </section>
-        <section>
-            <?php 
-                echo $content_related_forms;
-             ?>
-        </section>
-        <section>
-            <h2><?php echo $department[0]->post_title ?> Team</h2>
-        </section>
+
         <?php 
-            $filter = get_query_var('department');
-            include locate_template('loops/loop-staff.php');
-        ?>
+
+            if( !empty($content_department) ){
+                echo '<section>'.$content_department.'</section>';
+            }
+
+            if( !empty($content_related_tasks) ){
+                echo '<section>'.$content_related_tasks.'</section>';
+            }
+            
+            if( !empty($content_related_forms) ){
+                echo '<section>'.$content_related_forms.'</section>';
+            }
+            include locate_template('loops/loop-department-staff.php');
+            
+         ?>
     </main>
 <?php 
     get_footer();

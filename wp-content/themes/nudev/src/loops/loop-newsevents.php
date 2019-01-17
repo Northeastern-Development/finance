@@ -105,17 +105,13 @@ class NUNewsArchive{
         $guide = '
             <li>
                 <a href="%s" target="%s" title="View News / Event Item">
-                    <figure>
-                        <img src="%s">
-                    </figure>
+                    <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
                     <div>
                         <h3>%s</h3>
                         <h6>%s</h6>
                         <p>%s</p>
                         %s
-                        <p>
-                            <i class="material-icons">arrow_forward</i><span>Learn More</span>
-                        </p>
+                        <p class="neu__iconlink">Learn More</p>
                     </div>
                 </a>
             </li>

@@ -86,49 +86,62 @@
 		$deptFields = get_fields($dept[0]->ID);
 
         // get the department head for this department
+        // 
 		$args = array(
 			 "post_type" => "staff"
 			,"posts_per_page" => -1
 			,'meta_query' => array(
 				 'relation' => 'AND'
-				,array("key"=>"department","value"=>'"'. $dept[0]->ID .'"',"compare"=>"LIKE")
-				,array("key"=>"department_head","value"=>"1","compare"=>"=")
+                ,array(
+                    "key"=>"department"
+                    ,"value"=>'"'. $dept[0]->ID .'"'
+                    ,"compare"=>"LIKE"
+                )
+                ,array(
+                    "key"=>"department_head"
+                    ,"value"=>"1"
+                    ,"compare"=>"="
+                )
 			)
-		);
-		$manager = get_posts($args);
-        $managerFields = get_fields($manager[0]->ID);
-        // set guide for writing the department head
-        $guide = '
-            <section class="nu__team">
-                <article>
-                    <div>
-                        <p class="description">%s</p>
-                        <p>%s</p>
-                        <p class="contact"><a class="neu__iconlink" href="tel:%s" title="Call %s"><i class="material-icons">phone</i><span>%s</span></a><br /></p>
-                        <p>%s</p>
-                    </div>
-                    <div>
-                        <div style="background-image: url(%s);"></div>
-                        <p><span>%s</span><br />%s</p>
-                    </div>
-                </article>
-            </section>
-        ';
-        // write department head first, above the team
-		$department = sprintf(
-			$guide
-			,wp_trim_words($managerFields['description'], 55, ' ...') // need to trim this to excerpt length
-            ,( $currentPage === 'department-detail' ) ? '<a title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink" href="/staff/bio/'.$manager[0]->post_name.'">View Full Profile</a>' : null 
-			,$managerFields['phone']
-			,strtolower($dept[0]->post_title)
-            ,$managerFields['phone']
-            ,( !empty($managerFields['url']) ) ? '<a class="neu__iconlink" href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a><br />' : null
-			,$managerFields['headshot']['url']
-			,$manager[0]->post_title
-			,$managerFields['title']
-		);
-		$departments .= $department;
+        );
+        $manager = get_posts($args);
 
+        // If we found a Department Head for this Department...
+        if( !empty($manager) ){
+            
+            $managerFields = get_fields($manager[0]->ID);
+            // set guide for writing the department head
+            $guide = '
+                <section class="nu__team">
+                    <article>
+                        <div>
+                            <p class="description">%s</p>
+                            <p>%s</p>
+                            <p class="contact"><a class="neu__iconlink" href="tel:%s" title="Call %s">%s</a></p>
+                            <p>%s</p>
+                        </div>
+                        <div>
+                            <div style="background-image: url(%s);"></div>
+                            <p><span>%s</span><br />%s</p>
+                        </div>
+                    </article>
+                </section>
+            ';
+            // write department head first, above the team
+            $department = sprintf(
+                $guide
+                ,wp_trim_words($managerFields['description'], 55, ' ...') // need to trim this to excerpt length
+                ,( $currentPage === 'department-detail' ) ? '<a title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink" href="/staff/bio/'.$manager[0]->post_name.'">View Full Profile</a>' : null 
+                ,$managerFields['phone']
+                ,strtolower($dept[0]->post_title)
+                ,$managerFields['phone']
+                ,( !empty($managerFields['url']) ) ? '<a class="neu__iconlink" href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank">Visit website</a>' : null
+                ,$managerFields['headshot']['url']
+                ,$manager[0]->post_title
+                ,$managerFields['title']
+            );
+            $departments .= $department;
+        }
 
         // get team members that have been organized by sub-type
 		$args = array(
@@ -158,11 +171,9 @@
                     <span>%s</span><br />
                 </p>
                 <p>%s</p>
-                
                 <p>%s</p>
                 <p>%s</p>
                 %s
-
             </li>
         ';
         
@@ -183,8 +194,8 @@
 				,trim($member->post_title)
                 ,trim($fields['title'])
                 ,( !empty($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
-                ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'. $fields['phone'] .'"><i class="material-icons">phone</i><span>'.$fields['phone'].'</span></a>' : null
-                ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'. $fields['email'] .'"><i class="material-icons">email</i><span>email</span></a>' : null
+                ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'. $fields['phone'] .'">'.$fields['phone'].'</a>' : null
+                ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'. $fields['email'] .'">email</a>' : null
                 ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink">View Full Profile</a>' : null
 			);
 		}

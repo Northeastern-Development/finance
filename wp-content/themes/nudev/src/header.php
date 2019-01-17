@@ -39,9 +39,10 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-		<link href="//www.google-analytics.com" rel="dns-prefetch">
+        <link href="//www.google-analytics.com" rel="dns-prefetch">
+        
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/font-awesome.min.css">
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<?php wp_head(); ?>
     </head>    

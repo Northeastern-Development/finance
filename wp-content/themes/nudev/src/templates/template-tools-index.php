@@ -22,13 +22,11 @@
     $guide ='
         <li class="tools-grid-tool">
             <a href="%s" title="%s">
-                <figure>
-                    <img src="%s">
-                </figure>
+                <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>
-                <p><i class="material-icons">arrow_forward</i><span>Learn More</span></p>
+                <p class="neu__iconlink">Learn More</p>
             </a>
         </li>
     ';

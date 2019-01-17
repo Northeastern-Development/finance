@@ -1,4 +1,3 @@
-/* These are variables for the main navigation */
 /**
  * modules/fonts
  * ---
@@ -126,102 +125,107 @@
     font-weight: 300;
     padding-bottom: 30px;
     border-bottom: 1px solid black; }
-  div.main > section > div.task-options ul.task-options-list > li,
-  main > section > div.task-options ul.task-options-list > li {
-    margin-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    cursor: pointer; }
-    div.main > section > div.task-options ul.task-options-list > li > ul,
-    main > section > div.task-options ul.task-options-list > li > ul {
-      cursor: initial;
-      display: block;
-      margin-left: 5%; }
-      div.main > section > div.task-options ul.task-options-list > li > ul > li,
-      main > section > div.task-options ul.task-options-list > li > ul > li {
-        margin: 0 auto;
-        margin-bottom: 20px; }
-      div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
-      main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
-        width: calc(100% / 3);
-        margin: auto;
-        margin-left: 20px;
-        float: right; }
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > img,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > img {
-          height: 245px;
-          width: 100%;
-          object-fit: cover; }
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4 {
-          font-size: 1.6rem;
-          font-weight: 700;
-          line-height: 2.8rem;
-          text-align: left; }
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p {
-          font-size: 1.6rem;
-          font-weight: 300;
-          line-height: 2.8rem;
-          text-align: left; }
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span {
-          display: inline-block;
-          vertical-align: middle;
-          font-size: 1.6rem;
-          font-weight: 300;
-          line-height: 2.8rem;
-          text-align: left;
-          line-height: inherit; }
-        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
-        main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons {
-          color: #d41b2c; }
-    div.main > section > div.task-options ul.task-options-list > li > div,
-    main > section > div.task-options ul.task-options-list > li > div {
-      position: relative;
-      font-size: 1.6rem;
-      font-weight: 300;
-      line-height: 2.8rem;
-      text-align: left; }
-      div.main > section > div.task-options ul.task-options-list > li > div:after,
-      main > section > div.task-options ul.task-options-list > li > div:after {
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 20px;
-        transition: transform 0.4s ease;
-        content: '\e313';
-        transform: rotate(0deg);
-        display: inline-block;
-        font-family: 'Material Icons'; }
-      div.main > section > div.task-options ul.task-options-list > li > div h5, div.main > section > div.task-options ul.task-options-list > li > div img,
-      main > section > div.task-options ul.task-options-list > li > div h5,
-      main > section > div.task-options ul.task-options-list > li > div img {
-        display: inline-block;
-        margin: 0 auto; }
-      div.main > section > div.task-options ul.task-options-list > li > div img,
-      main > section > div.task-options ul.task-options-list > li > div img {
-        width: 32px;
-        height: 32px; }
-      div.main > section > div.task-options ul.task-options-list > li > div h5,
-      main > section > div.task-options ul.task-options-list > li > div h5 {
-        margin-left: 20px;
-        font-size: 2.0rem;
-        font-weight: 700;
-        line-height: 3.2rem;
+  div.main > section > div.task-options ul.task-options-list,
+  main > section > div.task-options ul.task-options-list {
+    list-style-type: none; }
+    div.main > section > div.task-options ul.task-options-list > li,
+    main > section > div.task-options ul.task-options-list > li {
+      margin-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      cursor: pointer; }
+      div.main > section > div.task-options ul.task-options-list > li > ul,
+      main > section > div.task-options ul.task-options-list > li > ul {
+        list-style-type: none;
+        cursor: initial;
+        display: block;
+        margin-left: 5%; }
+        div.main > section > div.task-options ul.task-options-list > li > ul > li,
+        main > section > div.task-options ul.task-options-list > li > ul > li {
+          margin: 0 auto;
+          margin-bottom: 20px; }
+        div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
+        main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
+          width: calc(100% / 3);
+          margin: auto;
+          margin-left: 20px;
+          float: right; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > img,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > img {
+            height: 245px;
+            width: 100%;
+            object-fit: cover; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 2.8rem;
+            text-align: left; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p {
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 2.8rem;
+            text-align: left; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 2.8rem;
+            text-align: left;
+            line-height: inherit; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons {
+            color: #d41b2c; }
+      div.main > section > div.task-options ul.task-options-list > li > div,
+      main > section > div.task-options ul.task-options-list > li > div {
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
         text-align: left; }
-      div.main > section > div.task-options ul.task-options-list > li > div > p,
-      main > section > div.task-options ul.task-options-list > li > div > p {
-        margin: 15px 0; }
-      div.main > section > div.task-options ul.task-options-list > li > div:hover > h5,
-      main > section > div.task-options ul.task-options-list > li > div:hover > h5 {
-        border-bottom: 1px solid #d41b2c; }
-    div.main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after,
-    main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after {
-      transform: rotate(180deg);
-      color: #d41b2c; }
+        div.main > section > div.task-options ul.task-options-list > li > div:after,
+        main > section > div.task-options ul.task-options-list > li > div:after {
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 20px;
+          transition: transform 0.4s ease;
+          content: '\e313';
+          transform: rotate(0deg);
+          display: inline-block;
+          font-family: 'Material Icons'; }
+        div.main > section > div.task-options ul.task-options-list > li > div h5, div.main > section > div.task-options ul.task-options-list > li > div img,
+        main > section > div.task-options ul.task-options-list > li > div h5,
+        main > section > div.task-options ul.task-options-list > li > div img {
+          display: inline-block;
+          margin: 0 auto; }
+        div.main > section > div.task-options ul.task-options-list > li > div img,
+        main > section > div.task-options ul.task-options-list > li > div img {
+          width: 32px;
+          height: 32px; }
+        div.main > section > div.task-options ul.task-options-list > li > div h5,
+        main > section > div.task-options ul.task-options-list > li > div h5 {
+          margin-left: 20px;
+          border-bottom: 1px solid transparent;
+          font-size: 2.0rem;
+          font-weight: 700;
+          line-height: 3.2rem;
+          text-align: left; }
+        div.main > section > div.task-options ul.task-options-list > li > div > p,
+        main > section > div.task-options ul.task-options-list > li > div > p {
+          margin: 15px 0; }
+        div.main > section > div.task-options ul.task-options-list > li > div:hover > h5,
+        main > section > div.task-options ul.task-options-list > li > div:hover > h5 {
+          border-bottom: 1px solid #d41b2c; }
+      div.main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after,
+      main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after {
+        transform: rotate(180deg);
+        color: #d41b2c; }
   ul.task-options-list > li.js__tasks_viewable_steps > div > i.material-icons {
     color: #d41b2c;
     border-color: #d41b2c; }

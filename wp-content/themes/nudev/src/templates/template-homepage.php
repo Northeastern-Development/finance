@@ -11,7 +11,13 @@
         'posts_per_page' => 3
         ,'post_type' => 'tools'
         ,'meta_query' => array(
-            array(
+            'relation' => 'AND'
+            ,array(
+                'key' => 'featured'
+                ,'value' => '1'
+                ,'compare' => '='
+            )
+            ,array(
                 'key' => 'status',
                 'value' => '1',
                 'compare' => '='
@@ -21,15 +27,15 @@
     $res = get_posts($args);
     $content_tools = '';
     $format_tools = '
-        <div>
+        <li>
             <a href="%s" title="View this Tool">
-                <figure><img src="%s"></figure>
+                <div><div style="background-image: url(%s)"></div></div>
                 <p>%s</p>
                 <div>
                     <p><span>Learn more</span></p>
                 </div>
             </a>
-        </div>
+        </li>
     ';
     foreach ($res as $i => $rec) {
         $fields = get_fields($rec);
@@ -66,9 +72,9 @@
     
     $content_news = '';
     $format_news = '
-        <div>
+        <li>
             <a href="%s" target="%s">
-                <figure><img src="%s"></figure>
+                <div><div style="background-image: url(%s)"></div></div>
                 <h5>%s</h5>
                 <h5>%s</h5>
                 <p>%s</p>
@@ -76,7 +82,7 @@
                     <p><span>Learn more</span></p>
                 </div>
             </a>
-        </div>
+        </li>
     ';
     foreach ($res as $i => $rec) {
         $fields = get_fields($rec);
@@ -105,7 +111,7 @@
     
     get_header();
 ?>
-<div role="main" class="main">
+<main role="main" class="main">
 
     <div class="neumenu-wrapper" id="howdoi">
         <?php 
@@ -130,28 +136,28 @@
 
     <section class="home-feat-tools fullwidth nobg">
         <h2>Tools</h2>
-        <div>
+        <ul>
             <?php 
                 echo $content_tools;
             ?>
-        </div>
+        </ul>
         <a title="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
     </section>
 
     <section class="home-feat-news fullwidth nobg">
         <h2>Latest Updates</h2>
-        <div>
+        <ul>
             <?php 
                 echo $content_news;
              ?>
-        </div>
+        </ul>
         <a href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
     </section>
 
 
 
 
-</div>
+</main>
 <?php 
     get_footer();
  ?>

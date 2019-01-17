@@ -21,7 +21,9 @@
             <li>
                 <a href="%s" title="Click to view department">
                     <h3>%s</h3>
-                    <img src="%s">
+                    <div class="neu__bgimg">
+                        <div style="background-image: url(%s)"></div>
+                    </div>
                 </a>
             </li>
         ';
@@ -39,9 +41,7 @@
 
         $format_depts = '
             <li>
-                <a class="neu__iconlink" href="%s" title="Click to view %s Department">
-                    <i class="material-icons">arrow_forward</i><span>%s</span>
-                </a>
+                <a class="neu__iconlink" href="%s" title="Click to view %s Department">%s</a>
             </li>
         ';
 

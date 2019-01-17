@@ -1050,6 +1050,13 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/about.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/css/about.css.map",
+		"oF": 0
+		},
 	"/css/contact.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1248,18 +1255,8 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/css/sass/conditional/about.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/conditional/about-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/css/sass/conditional/about.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1268,18 +1265,8 @@
 		"oA": 0,
 		"oAP": "/css/about.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
-		},
-	"/css/sass/conditional/contact.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/sass/conditional/contact-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/css/sass/conditional/contact.scss": {
 		"aP": 0,
@@ -1562,16 +1549,16 @@
 		"uL": 1
 		},
 	"/css/sass/style.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
-		"ma": 0,
+		"ma": 1,
 		"oA": 0,
 		"oAP": "/css/style.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"/css/style.css": {
@@ -1583,6 +1570,13 @@
 		"oAP": "/css/style-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/css/style.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/css/style.css.map",
+		"oF": 0
 		},
 	"/css/tasks.css": {
 		"aP": 1,
@@ -2418,6 +2412,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-deadlines.php",
+		"oF": 0
+		},
+	"/loops/loop-department-staff.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-department-staff.php",
 		"oF": 0
 		},
 	"/loops/loop-departments.php": {

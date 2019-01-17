@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * modules/mixins
  * ---
@@ -107,24 +108,118 @@
   src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
   /* Legacy iOS */ }
 
-/* These are variables for the main navigation */
 @media only screen {
   div.main .js__bio.neu__iconlink,
   main .js__bio.neu__iconlink {
-    border-bottom: 1px solid transparent; }
+    border-bottom: 1px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
     div.main .js__bio.neu__iconlink:before,
     main .js__bio.neu__iconlink:before {
-      content: "\e7fd";
-      font-family: "Material Icons";
+      display: inline-block;
+      padding-right: 15px;
       font-size: 20px;
+      font-family: "Material Icons";
       vertical-align: middle;
-      padding-right: 15px; }
+      content: "";
+      line-height: inherit; }
+    div.main .js__bio.neu__iconlink:hover,
+    main .js__bio.neu__iconlink:hover {
+      color: #d41b2c; }
     div.main .js__bio.neu__iconlink:hover,
     main .js__bio.neu__iconlink:hover {
       border-bottom: 1px solid #d41b2c; }
-      div.main .js__bio.neu__iconlink:hover:before,
-      main .js__bio.neu__iconlink:hover:before {
+  div.main section.nu__team > article > div:first-child p.contact .neu__iconlink,
+  main section.nu__team > article > div:first-child p.contact .neu__iconlink {
+    border-bottom: 1px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
+    div.main section.nu__team > article > div:first-child p.contact .neu__iconlink:before,
+    main section.nu__team > article > div:first-child p.contact .neu__iconlink:before {
+      display: inline-block;
+      padding-right: 15px;
+      font-size: 20px;
+      font-family: "Material Icons";
+      vertical-align: middle;
+      content: "";
+      line-height: inherit; }
+    div.main section.nu__team > article > div:first-child p.contact .neu__iconlink:hover,
+    main section.nu__team > article > div:first-child p.contact .neu__iconlink:hover {
+      color: #d41b2c; }
+    div.main section.nu__team > article > div:first-child p.contact .neu__iconlink:hover,
+    main section.nu__team > article > div:first-child p.contact .neu__iconlink:hover {
+      border-bottom: 1px solid #d41b2c; }
+  div.main section.nu__team > article > div:first-child p:last-child,
+  main section.nu__team > article > div:first-child p:last-child {
+    border-bottom: 1px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
+    div.main section.nu__team > article > div:first-child p:last-child:before,
+    main section.nu__team > article > div:first-child p:last-child:before {
+      display: inline-block;
+      padding-right: 15px;
+      font-size: 20px;
+      font-family: "Material Icons";
+      vertical-align: middle;
+      content: "";
+      line-height: inherit; }
+    div.main section.nu__team > article > div:first-child p:last-child:hover,
+    main section.nu__team > article > div:first-child p:last-child:hover {
+      color: #d41b2c; }
+    div.main section.nu__team > article > div:first-child p:last-child:hover,
+    main section.nu__team > article > div:first-child p:last-child:hover {
+      border-bottom: 1px solid #d41b2c; }
+  div.main section.nu__team-list > h3,
+  main section.nu__team-list > h3 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    text-align: center;
+    text-align: center;
+    border-bottom: 1px solid transparent; }
+  div.main section.nu__team-list > ul,
+  main section.nu__team-list > ul {
+    justify-content: center; }
+    div.main section.nu__team-list > ul > li p:nth-last-child(2),
+    main section.nu__team-list > ul > li p:nth-last-child(2) {
+      border-bottom: 1px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      div.main section.nu__team-list > ul > li p:nth-last-child(2):before,
+      main section.nu__team-list > ul > li p:nth-last-child(2):before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      div.main section.nu__team-list > ul > li p:nth-last-child(2):hover,
+      main section.nu__team-list > ul > li p:nth-last-child(2):hover {
         color: #d41b2c; }
+      div.main section.nu__team-list > ul > li p:nth-last-child(2):hover,
+      main section.nu__team-list > ul > li p:nth-last-child(2):hover {
+        border-bottom: 1px solid #d41b2c; }
+    div.main section.nu__team-list > ul > li p:nth-last-child(3),
+    main section.nu__team-list > ul > li p:nth-last-child(3) {
+      border-bottom: 1px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      div.main section.nu__team-list > ul > li p:nth-last-child(3):before,
+      main section.nu__team-list > ul > li p:nth-last-child(3):before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      div.main section.nu__team-list > ul > li p:nth-last-child(3):hover,
+      main section.nu__team-list > ul > li p:nth-last-child(3):hover {
+        color: #d41b2c; }
+      div.main section.nu__team-list > ul > li p:nth-last-child(3):hover,
+      main section.nu__team-list > ul > li p:nth-last-child(3):hover {
+        border-bottom: 1px solid #d41b2c; }
   div.main > section:nth-of-type(2),
   main > section:nth-of-type(2) {
     text-align: center; }
@@ -135,10 +230,51 @@
     div.main > section:nth-of-type(2) > div,
     main > section:nth-of-type(2) > div {
       margin-bottom: 15px; }
+    div.main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink,
+    main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink {
+      border-bottom: 1px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      div.main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink:before,
+      main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink:before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      div.main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink:hover,
+      main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink:hover {
+        color: #d41b2c; }
+      div.main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink:hover,
+      main > section:nth-of-type(2) > p:last-of-type > .neu__iconlink:hover {
+        border-bottom: 1px solid #d41b2c; }
+    div.main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink,
+    main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink {
+      border-bottom: 1px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      div.main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink:before,
+      main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink:before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      div.main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink:hover,
+      main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink:hover {
+        color: #d41b2c; }
+      div.main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink:hover,
+      main > section:nth-of-type(2) > p:nth-last-of-type(2) > .neu__iconlink:hover {
+        border-bottom: 1px solid #d41b2c; }
   div.main > section:nth-of-type(3) > ul,
   div.main > section:nth-of-type(4) > ul,
   main > section:nth-of-type(3) > ul,
   main > section:nth-of-type(4) > ul {
+    list-style-type: none;
     display: flex;
     flex-flow: row wrap; }
     div.main > section:nth-of-type(3) > ul li,
@@ -146,7 +282,7 @@
     main > section:nth-of-type(3) > ul li,
     main > section:nth-of-type(4) > ul li {
       flex: 1 1 calc(calc(100% / 2) - 15px);
-      margin: 15px 15px 0 0; }
+      margin: 0 15px 15px 0; }
       div.main > section:nth-of-type(3) > ul li:nth-of-type(2n),
       div.main > section:nth-of-type(4) > ul li:nth-of-type(2n),
       main > section:nth-of-type(3) > ul li:nth-of-type(2n),
@@ -157,8 +293,31 @@
       main > section:nth-of-type(3) > ul li:last-of-type:nth-of-type(even),
       main > section:nth-of-type(4) > ul li:last-of-type:nth-of-type(even) {
         margin-right: 0; }
-    div.main > section:nth-of-type(3) > ul i.material-icons,
-    div.main > section:nth-of-type(4) > ul i.material-icons,
-    main > section:nth-of-type(3) > ul i.material-icons,
-    main > section:nth-of-type(4) > ul i.material-icons {
-      color: #d41b2c; } }
+    div.main > section:nth-of-type(3) > ul .neu__iconlink,
+    div.main > section:nth-of-type(4) > ul .neu__iconlink,
+    main > section:nth-of-type(3) > ul .neu__iconlink,
+    main > section:nth-of-type(4) > ul .neu__iconlink {
+      border-bottom: 1px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      div.main > section:nth-of-type(3) > ul .neu__iconlink:before,
+      div.main > section:nth-of-type(4) > ul .neu__iconlink:before,
+      main > section:nth-of-type(3) > ul .neu__iconlink:before,
+      main > section:nth-of-type(4) > ul .neu__iconlink:before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      div.main > section:nth-of-type(3) > ul .neu__iconlink:hover,
+      div.main > section:nth-of-type(4) > ul .neu__iconlink:hover,
+      main > section:nth-of-type(3) > ul .neu__iconlink:hover,
+      main > section:nth-of-type(4) > ul .neu__iconlink:hover {
+        color: #d41b2c; }
+      div.main > section:nth-of-type(3) > ul .neu__iconlink:hover,
+      div.main > section:nth-of-type(4) > ul .neu__iconlink:hover,
+      main > section:nth-of-type(3) > ul .neu__iconlink:hover,
+      main > section:nth-of-type(4) > ul .neu__iconlink:hover {
+        border-bottom: 1px solid #d41b2c; } }

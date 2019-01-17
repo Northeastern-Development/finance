@@ -6,16 +6,6 @@
     div.main,
     main {
 
-        // the forms section 
-        section:nth-of-type(2){
-
-            > h2 {
-                margin-bottom: 30px;
-            }
-            
-        }
-
-
         div.forms-category {
             margin-bottom: 30px;
             // form category title
@@ -35,6 +25,7 @@
                         position: relative;
                         @include font-3b-l;
                         &:before {
+                            display: inline-block;
                             vertical-align: middle;
                             content: '\e5c8';
                             font-family: "Material Icons";
@@ -53,8 +44,10 @@
                     >div {
                         @include font-2l-l;
                         margin-top: 15px;
-                        a.neu__iconlink {
-                            display: block;
+
+                        // files to download
+                        > p > a.neu__iconlink {
+                            @include neu__iconlink($icon : "\e2c0");
                         }
                         h4 {
                             @include font-2b-l;
@@ -63,6 +56,10 @@
                         // related resources list
                         > ul {
                             @include ul_grid_cols(2, 15px);
+
+                            .neu__iconlink{
+                                @include neu__iconlink;
+                            }
                         }
                     }
                 }

@@ -116,98 +116,37 @@
     }
 
     // tools & news sections
-    div.wrapper {
-
-        section.home-feat-tools,
-        section.home-feat-news {
-            padding: 0 20px;
-            margin: 60px auto;
-
-            // section titles
-            >h2 {
-                @include font-7l-c;
-                border-bottom: 1px solid transparent;
-            }
-
-            // tools/news items wrapper
-            >div {
-                display: flex;
-                flex-flow: row nowrap;
-                margin-bottom: 30px;
-                // tool/news item
-                >div {
-                    flex: 1;
-                    margin-right: $gutter;
-
-                    &:last-child {
-                        margin-right: 0;
+    .home-feat-tools,
+    .home-feat-news {
+        padding: 0 20px;
+        margin: 60px auto;
+        // section titles
+        >h2 {
+            @include font-7l-c;
+            border-bottom: 1px solid transparent;
+        }
+        // tools/news items wrapper
+        >ul {
+            @include ul_grid_cols(3, 30px);
+            // tool/news item
+            >li {
+                >a {
+                    >div:first-of-type {
+                        @include neu__bgimg();
                     }
-
-                    // 100%/100% clickable area link
-                    >a {
-                        display: inline-block;
-                        width: 100%;
-                        height: 100%;
-
-                        // "Learn More" w/ arrow
-                        > div > p > span {
+                    &:hover {
+                        >div>div {
+                            transform: scale(1.1);
+                        }
+                    }
+                    > div > p:last-child > span {
+                        @include neu__iconlink($hover: 0);
+                    }
+                    &:hover {
+                        > div > p:last-child > span {
+                            border-bottom: 1px solid $brand_colors-red;
                             &:before {
-                                content: "\e5c8";
-                                font-family: "Material Icons";
-                                vertical-align: middle;
-                                line-height: inherit;
-                                font-size: 20px;
                                 color: $brand_colors-red;
-                                padding-right: 15px;
-                            }
-                        }
-                        
-                        >figure {
-                            overflow: hidden;
-                            margin-bottom: 15px;
-
-                            >img {
-                                object-fit: cover;
-                                transform: scale(1);
-                                transition: transform 0.4s ease;
-                            }
-                        }
-                        
-                        &:hover {
-                            >figure>img {
-                                transform: scale(1.1);
-                            }
-
-                            >div>p {
-                                border-bottom: 1px solid $brand_colors-red;
-                            }
-                        }
-
-                        // 'short description'
-                        >p {
-                            @include font-2l-l;
-                        }
-
-                        // learn more button
-                        >div {
-                            text-align: left;
-
-                            >p {
-                                display: inline-block;
-                                border-bottom: 1px solid transparent;
-                                @include font-2l-l;
-
-                                // material icon & 'learn more' text
-                                >i,
-                                >span {
-                                    line-height: inherit;
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                }
-
-                                i.material_icons {
-                                    color: $brand_colors-red;
-                                }
                             }
                         }
                     }
@@ -217,14 +156,14 @@
     }
 
     // tools section only
-    .wrapper {
+    div.wrapper {
         section.home-feat-tools {
-            >div>div>a>figure {
-                img {
-                    width: auto;
+            >ul>li>a {
+                > div:first-of-type {
+                    width: calc(200% / 3);
+                    margin: 0 auto;
+                    margin-bottom: 15px;
                     height: 80px;
-                    object-fit: cover;
-                    transform: scale(1);
                 }
             }
         }
@@ -233,12 +172,12 @@
     // news section only
     .wrapper {
         section.home-feat-news {
-            >div>div>a>figure>img {
+            >ul>li>a>div:first-of-type {
                 width: 100%;
                 height: 245px;
             }
-
-            >div>div>a {
+            
+            >ul>li>a {
                 @include font-2l-l;
 
                 h5 {

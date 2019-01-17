@@ -26,32 +26,31 @@
         }
     }
 
+    .neu__bgimg {
+        @include neu__bgimg( $height : 245px );
+    }
+
 
     div.main,
     main {
         > section {
+            // Large Section Headings
             > h2 {
                 @include font-7l-l;
                 padding-bottom: 30px;
+                margin-bottom: 30px;
                 border-bottom: 1px solid black;
             }
         }
     }
 
-
-    section ul {
-        list-style-type: none;
-    }
-
-
-
     // outer container
     main,
     div.main {
-        margin: 0 auto;
-        width: $wrapper-width;
-        background-color: white;
-        color: black;
+        // margin: 0 auto;
+        // width: $wrapper-width;
+        // background-color: white;
+        // color: black;
 
         // inner container
         >section {
@@ -218,7 +217,7 @@
             margin: ($gutter * 1.7) auto 0 auto;
 
             >ul {
-                width: $content-width-wide;
+                width: $content-width-wide; // depricate this madness asap
                 margin: $gutter auto 0;
 
                 >li {
@@ -258,7 +257,7 @@
         }
 
         section {
-            width: $content-width-960;
+            width: $content-width-960;  // try to depricate this madness
 
             >ul:not(.nu__grid-filters-options, .nu__grid) {
                 flex-wrap: wrap;
@@ -316,32 +315,6 @@
 @media only screen {
 
     body {
-        // consistently style icons + links for email and phone (or fax etc)
-        // a > i+span
-        a.neu__iconlink {
-            display: inline-block;
-            margin-right: 30px;
-            @include font-2l-l;
-            > i.material-icons,
-            > span {
-                display: inline-block;
-                vertical-align: middle;
-                line-height: inherit;
-                border-bottom: 1px solid transparent;
-            }
-            &:hover {
-                > i.material-icons,
-                > span {
-                    color: $brand_colors-red;
-                    border-bottom: 1px solid $brand_colors-red;
-                }
-            }
-            > i.material-icons {
-                font-family: "Material Icons";
-                padding-right: 15px;
-            }
-        }
-
 
         header .neumenu-wrapper {
             box-shadow: 1px 1px 5px $brand_colors-gray;
@@ -350,9 +323,6 @@
     
     div.main,
     main {
-        
-
-
         
 
 
@@ -423,6 +393,7 @@
             background-size: cover;
             background-position: center;
         }
+
         > section.heretohelp {
             >ul {
                 >li {
@@ -431,13 +402,6 @@
                     }
                     > p {
                         @include font-2l-l;
-                    }
-
-                    figure {
-                        width: 100%;
-                        height: 200px;
-                        background-position: center;
-                        background-size: cover;
                     }
                 }
             }

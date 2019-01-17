@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * modules/mixins
  * ---
@@ -107,37 +108,108 @@
   src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
   /* Legacy iOS */ }
 
-/* These are variables for the main navigation */
 @media only screen {
+  main > section:nth-of-type(2) .neu__iconlink,
+  div.main > section:nth-of-type(2) .neu__iconlink {
+    border-bottom: 1px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
+    main > section:nth-of-type(2) .neu__iconlink:before,
+    div.main > section:nth-of-type(2) .neu__iconlink:before {
+      display: inline-block;
+      padding-right: 15px;
+      font-size: 20px;
+      font-family: "Material Icons";
+      vertical-align: middle;
+      content: "";
+      line-height: inherit; }
+    main > section:nth-of-type(2) .neu__iconlink:hover,
+    div.main > section:nth-of-type(2) .neu__iconlink:hover {
+      color: #d41b2c; }
+    main > section:nth-of-type(2) .neu__iconlink:hover,
+    div.main > section:nth-of-type(2) .neu__iconlink:hover {
+      border-bottom: 1px solid #d41b2c; }
   main > section:nth-of-type(2) > p,
   div.main > section:nth-of-type(2) > p {
     margin: 15px 0; }
+  main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink,
+  div.main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink {
+    border-bottom: 1px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
+    main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:before,
+    div.main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:before {
+      display: inline-block;
+      padding-right: 15px;
+      font-size: 20px;
+      font-family: "Material Icons";
+      vertical-align: middle;
+      content: "";
+      line-height: inherit; }
+    main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:hover,
+    div.main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:hover {
+      color: #d41b2c; }
+    main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:hover,
+    div.main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:hover {
+      border-bottom: 1px solid #d41b2c; }
+  main > section:nth-of-type(3) > p:last-child .neu__iconlink,
+  div.main > section:nth-of-type(3) > p:last-child .neu__iconlink {
+    border-bottom: 1px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
+    main > section:nth-of-type(3) > p:last-child .neu__iconlink:before,
+    div.main > section:nth-of-type(3) > p:last-child .neu__iconlink:before {
+      display: inline-block;
+      padding-right: 15px;
+      font-size: 20px;
+      font-family: "Material Icons";
+      vertical-align: middle;
+      content: "";
+      line-height: inherit; }
+    main > section:nth-of-type(3) > p:last-child .neu__iconlink:hover,
+    div.main > section:nth-of-type(3) > p:last-child .neu__iconlink:hover {
+      color: #d41b2c; }
+    main > section:nth-of-type(3) > p:last-child .neu__iconlink:hover,
+    div.main > section:nth-of-type(3) > p:last-child .neu__iconlink:hover {
+      border-bottom: 1px solid #d41b2c; }
   main > section:nth-of-type(3) > p,
   div.main > section:nth-of-type(3) > p {
     margin: 15px 0; }
-  main > section:nth-of-type(3) a.neu__iconlink,
-  div.main > section:nth-of-type(3) a.neu__iconlink {
-    display: block; }
-    main > section:nth-of-type(3) a.neu__iconlink:last-of-type i.material-icons,
-    div.main > section:nth-of-type(3) a.neu__iconlink:last-of-type i.material-icons {
-      color: #d41b2c; }
   main > section:last-child,
   div.main > section:last-child {
     margin-bottom: 30px; }
+    main > section:last-child .neu__iconlink,
+    div.main > section:last-child .neu__iconlink {
+      border-bottom: 1px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      main > section:last-child .neu__iconlink:before,
+      div.main > section:last-child .neu__iconlink:before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      main > section:last-child .neu__iconlink:hover,
+      div.main > section:last-child .neu__iconlink:hover {
+        color: #d41b2c; }
+      main > section:last-child .neu__iconlink:hover,
+      div.main > section:last-child .neu__iconlink:hover {
+        border-bottom: 1px solid #d41b2c; }
     main > section:last-child > ul,
     div.main > section:last-child > ul {
+      list-style-type: none;
       display: flex;
       flex-flow: row wrap; }
       main > section:last-child > ul li,
       div.main > section:last-child > ul li {
         flex: 1 1 calc(calc(100% / 2) - 15px);
-        margin: 15px 15px 0 0; }
+        margin: 0 15px 15px 0; }
         main > section:last-child > ul li:nth-of-type(2n),
         div.main > section:last-child > ul li:nth-of-type(2n) {
           margin-right: 0; }
         main > section:last-child > ul li:last-of-type:nth-of-type(even),
         div.main > section:last-child > ul li:last-of-type:nth-of-type(even) {
-          margin-right: 0; }
-      main > section:last-child > ul > li > i.material-icons,
-      div.main > section:last-child > ul > li > i.material-icons {
-        color: #d41b2c; } }
+          margin-right: 0; } }

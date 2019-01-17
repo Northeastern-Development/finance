@@ -31,6 +31,10 @@ img {
     vertical-align: middle;
 }
 
+// set lists to have no bullets by default
+body ul {
+    list-style-type: none;
+}
 
 // CHECK THIS HAS A PURPOSE
 a {

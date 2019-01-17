@@ -30,41 +30,15 @@
                             @include font-1l-l;
                         }
                     }
-                    > p:last-of-type{
-                        > span,
-                        > i.material-icons {
-                            @include font-2l-l;
-                            vertical-align: middle;
-                            display: inline-block;
-                            line-height: inherit;
-                            border-bottom: 1px solid transparent;
-                        }
-                        i.material-icons {
-                            color: $brand_colors-red;
-                            font-size: 20px;
-                            padding-right: 15px;
-                        }
-                    }
-                }
-                > figure {
-                    margin-bottom: 15px;
-                    overflow: hidden;
-                    > img {
-                        transform: scale(1);
-                        transition: transform 0.4s ease;
-                        object-fit: cover;
-                        max-height: 245px;
-                        width: 100%;
+                    > p.neu__iconlink{
+                        @include neu__iconlink($hover : 0);
                     }
                 }
                 &:hover {
-                    figure > img {
-                        transform: scale(1.1);
-                    }
-                    > div > p:last-of-type {
-                        > span,
-                        > i.material-icons {
-                            border-bottom: 1px solid $brand_colors-red;
+                    p.neu__iconlink{
+                        border-bottom: 1px solid $brand_colors-red;
+                        &:before{
+                            color: $brand_colors-red;
                         }
                     }
                 }

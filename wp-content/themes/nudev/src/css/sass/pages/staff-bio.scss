@@ -237,21 +237,8 @@ main#staff {
                 }
             }
         }
-        > figure {
-            width: calc(100% / 3);
-            overflow: hidden;
-            > img {
-               width: 100%; 
-               object-fit: cover;
-               transform: scale(1);
-               transition: transform 0.4s ease;
-               
-            }
-            &:hover {
-                > img {
-                    transform: scale(1.1);
-                }
-            }
+        div.neu__bgimg {
+            max-width: 50%;
         }
     }
 

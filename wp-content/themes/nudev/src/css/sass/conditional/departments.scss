@@ -8,22 +8,42 @@
     div.main,
     main {
 
+        
         .js__bio.neu__iconlink {
-            border-bottom: 1px solid transparent;
-            &:before{
-                content: "\e7fd";
-                font-family: "Material Icons";
-                font-size: 20px;
-                vertical-align: middle;
-                padding-right: 15px;
+            @include neu__iconlink( $icon : "\e7fd");
+        }
+
+        section.nu__team > article > div:first-child  {
+            p.contact .neu__iconlink {
+                @include neu__iconlink($icon : "\e551");
             }
-            &:hover {
-                border-bottom: 1px solid $brand_colors-red;
-                &:before {
-                    color: $brand_colors-red;
+            p:last-child {
+                @include neu__iconlink;
+            }
+        }
+
+
+        section.nu__team-list {
+            > h3 {
+                @include font-3b-c;
+                text-align: center;
+                border-bottom: 1px solid transparent;
+            }
+            > ul {
+                justify-content: center;
+                > li {
+                    p:nth-last-child(2){
+                        @include neu__iconlink($icon : "\e551");
+                    }
+                    p:nth-last-child(3){
+                        @include neu__iconlink($icon : "\e0be");
+                    }       
                 }
             }
         }
+
+
+
 
         // First Section Below Hero: (hardcoded heading)
         > section:nth-of-type(2){
@@ -35,6 +55,14 @@
             > div {
                 margin-bottom: 15px;
             }
+
+            > p:last-of-type > .neu__iconlink {
+                @include neu__iconlink($icon : "\e0be");
+            }
+            > p:nth-last-of-type(2) > .neu__iconlink {
+                @include neu__iconlink($icon : "\e551");
+            }
+            
         }
 
         // next section is the 'related tasks'
@@ -43,8 +71,9 @@
         {
             > ul {
                 @include ul_grid_cols(2, 15px);
-                i.material-icons {
-                    color: $brand_colors-red;
+
+                .neu__iconlink {
+                    @include neu__iconlink();
                 }
             }
         }

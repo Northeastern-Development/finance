@@ -1,4 +1,4 @@
-/* These are variables for the main navigation */
+@charset "UTF-8";
 /**
  * modules/fonts
  * ---
@@ -111,12 +111,13 @@
 @media only screen {
   html body ul.newsandevents {
     margin: 40px 5%;
+    list-style-type: none;
     display: flex;
     flex-flow: row wrap;
     position: relative; }
     html body ul.newsandevents li {
       flex: 1 1 calc(calc(100% / 3) - 30px);
-      margin: 30px 30px 0 0; }
+      margin: 0 30px 30px 0; }
       html body ul.newsandevents li:nth-of-type(3n) {
         margin-right: 0; }
       html body ul.newsandevents li:last-of-type:nth-of-type(even) {
@@ -138,31 +139,19 @@
         font-weight: 300;
         line-height: 2.4rem;
         text-align: left; }
-    html body ul.newsandevents > li > a > div > p:last-of-type > span,
-    html body ul.newsandevents > li > a > div > p:last-of-type > i.material-icons {
-      font-size: 1.6rem;
-      font-weight: 300;
-      line-height: 2.8rem;
-      text-align: left;
-      vertical-align: middle;
-      display: inline-block;
+    html body ul.newsandevents > li > a > div > p.neu__iconlink {
+      border-bottom: 1px solid transparent;
       line-height: inherit;
-      border-bottom: 1px solid transparent; }
-    html body ul.newsandevents > li > a > div > p:last-of-type i.material-icons {
-      color: #d41b2c;
-      font-size: 20px;
-      padding-right: 15px; }
-    html body ul.newsandevents > li > a > figure {
-      margin-bottom: 15px;
-      overflow: hidden; }
-      html body ul.newsandevents > li > a > figure > img {
-        transform: scale(1);
-        transition: transform 0.4s ease;
-        object-fit: cover;
-        max-height: 245px;
-        width: 100%; }
-    html body ul.newsandevents > li > a:hover figure > img {
-      transform: scale(1.1); }
-    html body ul.newsandevents > li > a:hover > div > p:last-of-type > span,
-    html body ul.newsandevents > li > a:hover > div > p:last-of-type > i.material-icons {
-      border-bottom: 1px solid #d41b2c; } }
+      display: inline-block; }
+      html body ul.newsandevents > li > a > div > p.neu__iconlink:before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+    html body ul.newsandevents > li > a:hover p.neu__iconlink {
+      border-bottom: 1px solid #d41b2c; }
+      html body ul.newsandevents > li > a:hover p.neu__iconlink:before {
+        color: #d41b2c; } }

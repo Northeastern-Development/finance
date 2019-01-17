@@ -32,34 +32,16 @@ $line-height-base: 2.8rem;
 //          Grid
 // 
 // 
-$wrapper-width: 100vw;  // ( why cant this be % instead of vw)
-$content-width: 71vw;   // ( why cant this be % instead of vw)
+$wrapper-width: 100vw;              // widely used
+$content-width: 80vw;               // widely used
 $gutter: 1vw;           // ( why cant this be % instead of vw)
 $wrapper-margins: 0, (($wrapper-width - $content-width) / 2), 0, (($wrapper-width - $content-width) / 2);
-$padding-horizontal-base: 5px;
-$padding-vertical-base: 5px;
-$margin-horizontal-base: 5px;
-$margin-vertical-base: 5px;
-$margin-horizontal-large: 15px;
-$margin-vertical-large: 15px;
+$content-width-wide: 94vw;          // this is used
+$content-width-700: 92vw;           // this is used
+$content-width-narrow: 50vw;        // this is used
+$content-width-960: 96vw;           // used (barely)
 
 
-
-$wrapper-width: 100vw;
-$content-width: 80vw;
-$content-width-super-narrow: 88vw;
-$content-width-wide: 94vw;
-$content-width-960: 96vw;
-$content-width-700: 92vw;
-$content-width-narrow: 50vw;
-$content-width-mid: 65vw;
-
-
-
-// ( this is the combined height of the global and site headers )
-// this number is only valid at the desktop breakpoint
-$main_offset_top: 124px;
-
-
-/* These are variables for the main navigation */
+// This was used on the "brochure" download link in KRI
+// I believe this has been totally depricated
 $navigation-height: 50px;

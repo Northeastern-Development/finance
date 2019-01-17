@@ -27,6 +27,7 @@
                     border-bottom: 1px solid black;
                 }
                 ul.task-options-list {
+                    list-style-type: none;
                     // any task option grouping
                     > li {
                         margin-top: 15px;
@@ -35,6 +36,7 @@
                         cursor: pointer;
                         // the task option groupings sub-options (steps)
                         > ul {
+                            list-style-type: none;
                             cursor: initial;
                             display: block;
                             margin-left: 5%;
@@ -98,6 +100,7 @@
                             }
                             h5 {
                                 margin-left: 20px;
+                                border-bottom: 1px solid transparent;
                                 @include font-3b-l;
                             }
                             > p {

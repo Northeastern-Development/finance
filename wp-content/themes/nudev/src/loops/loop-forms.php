@@ -77,15 +77,13 @@
     ';
     
     $format_files = '
-        <a class="neu__iconlink" href="%s" title="click to open this file in a new tab" target="_blank">
-            <i class="material-icons">cloud_download</i><span>%s</span>
-        </a>
+        <p><a class="neu__iconlink" href="%s" title="click to open this file in a new tab" target="_blank">%s</a></p>
     ';
 
     $format_blocks = '<h4>%s</h4>%s';
     $format_relresources = '
         <li>
-            <a class="neu__iconlink" target="%s" href="%s" title="View this Related Resource"><i class="material-icons">arrow_forward</i><span>%s</span></a>
+            <p><a class="neu__iconlink" target="%s" href="%s" title="View this Related Resource">%s</a>
         </li>
     ';
 

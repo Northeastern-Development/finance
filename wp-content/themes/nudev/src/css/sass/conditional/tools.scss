@@ -9,43 +9,17 @@
         @include ul_grid_cols(3, 30px);
         li.tools-grid-tool {
             > a {
-                figure {
-                    width: 100%;
-                    height: 220px;
-                    margin-bottom: 15px;
-                    overflow: hidden;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transform: scale(1);
-                        transition: transform 0.4s ease;
-                    }
-                }
                 > h5 {
                     @include font-3b-l;
                 }
-                > p {
-                    @include font-2l-l;
-                    > i.material-icons,
-                    > span {
-                        display: inline-block;
-                        vertical-align: middle;
-                        line-height: inherit;
-                    }
-                    > i.material-icons {
-                        color: $brand_colors-red;
-                        padding-right: 15px;
-                    }
+                .neu__iconlink {
+                    @include neu__iconlink($hover : 0);
                 }
                 &:hover {
-                    > figure > img {
-                        transform: scale(1.1);
-                    }
-                    > p {
-                        > i.material-icons,
-                        > span {
-                            border-bottom: 1px solid $brand_colors-red;
+                    .neu__iconlink {
+                        border-bottom: 1px solid $brand_colors-red;
+                        &:before{
+                            color: $brand_colors-red;
                         }
                     }
                 }

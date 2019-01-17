@@ -2,21 +2,6 @@
 /**
  *  Desktop Nav
  */
-    // ( Top Level Nav Links (not dropdowns) )
-    $nav_links = array(
-        'Forms' => get_permalink( get_page_by_path('forms') ),
-        'Tools' => get_permalink( get_page_by_path('tools') ),
-        'Expense Codes' => 'https://www.northeastern.edu/'
-    );
-    $format_nav_links = '<li><a href="%s"><span>%s</span></a></li>';
-    $content_nav_links = '';
-    foreach( $nav_links as $title => $permalink ){
-        $content_nav_links .= sprintf(
-            $format_nav_links
-            ,$permalink
-            ,$title
-        );
-    }
 ?>
 <nav class="nu__main-nav" id="nu__main-nav-desktop">
     <ul>
@@ -30,12 +15,10 @@
                 endif;
             ?>
         </li>
-        
-        <?php 
-            echo $content_nav_links;
-         ?>
-        
-        
+
+        <li><a title="Click to open the Forms Page" href="<?php echo get_permalink( get_page_by_path('forms') ); ?>"><span>Forms</span></a></li>
+        <li><a title="Click to open the Tools Page" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><span>Tools</span></a></li>
+        <li><a target="_blank" title="Click to open the Expense Codes Page [will open in a new tab or window]" href="https://prod-web.neu.edu/wasapp/Banner/Finance/secure/searchAccount.do?q=AccountCode"><span>Expense Codes</span></a></li>
 
         <li class="has-children" data-id="about"><a href=""><span>About</span></a>
             <div class="neumenu-wrapper" id="about">
@@ -44,7 +27,7 @@
                     <div>
                         <h3>Who we are</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend mauris vel.</p>
-                        <a class="neu__iconlink" href="<?php echo get_permalink( get_page_by_path('about') ) ?>"><i class="material-icons">arrow_forward</i><span>Learn More</span></a>
+                        <a class="neu__iconlink" href="<?php echo get_permalink( get_page_by_path('about') ) ?>">Learn More</a>
                     </div>
                     
                     <div>
@@ -54,7 +37,7 @@
                                     <span>Overview</span>
                                 </li>
                             </a>
-                            <a href="<?php echo get_permalink( get_page_by_path('staff') ); ?>" title="Navigate to the ____ page">
+                            <a href="<?php echo get_permalink( get_page_by_path('about') ); ?>" title="Navigate to the ____ page">
                                 <li>
                                     <span>Department &amp; Staff Information</span>
                                 </li>
