@@ -14,11 +14,49 @@
         }
 
         section.nu__team > article > div:first-child  {
-            p.contact .neu__iconlink {
-                @include neu__iconlink($icon : "\e551");
+            > p.description {
+                margin-bottom: 15px;
             }
-            p:last-child {
-                @include neu__iconlink;
+            > p {
+                > a.neu__iconlink {
+                    &.neu__iconlink-phone{
+                        @include neu__iconlink( $icon : "\e551" );
+                    }
+                    &.neu__iconlink-email{
+                        @include neu__iconlink( $icon : "\e0be" );
+                    }
+                    &.neu__iconlink-url{
+                        @include neu__iconlink(  );
+                    }
+                }
+            }
+        }
+
+
+        // Department Head (only)
+        section.nu__team {
+            div.neu__bgimg {
+                position: relative;
+                &:hover {
+                    > div {
+                        transform: scale(1.1);
+                    }
+                }
+                > p {
+                    > span {
+                        @include font-2b-l;
+                    }
+                    @include font-2l-l;
+                    width: 100%;
+                    background: linear-gradient(0deg, rgba(black, 0.6) 0%, rgba(black, 0) 100%);
+                    bottom: 0;
+                    left: 0;
+                    color: white;
+                    position: absolute;
+                    margin: 0;
+                    margin-bottom: 0;
+                    padding: 15px;
+                }
             }
         }
 
@@ -32,19 +70,32 @@
             > ul {
                 justify-content: center;
                 > li {
-                    p:nth-last-child(2){
+                    > div.neu__bgimg {
+                        &:hover {
+                            > div {
+                                transform: scale(1.1);                                
+                            }
+                        }
+                    }
+                    > p {
+                        margin: 0;
+                        > span:first-of-type {
+                            @include font-3b-l;
+                        }
+                    }
+                    p:nth-last-child(3) a.neu__iconlink{
                         @include neu__iconlink($icon : "\e551");
                     }
-                    p:nth-last-child(3){
+                    p:nth-last-child(2) a.neu__iconlink{
                         @include neu__iconlink($icon : "\e0be");
-                    }       
+                    }
                 }
             }
         }
 
 
 
-
+        // OUR MISSION SECTION
         // First Section Below Hero: (hardcoded heading)
         > section:nth-of-type(2){
             text-align: center;
@@ -56,16 +107,22 @@
                 margin-bottom: 15px;
             }
 
-            > p:last-of-type > .neu__iconlink {
+            > a.neu__iconlink {
+                margin-right: 45px;
+            }
+
+            > a:last-of-type.neu__iconlink {
                 @include neu__iconlink($icon : "\e0be");
             }
-            > p:nth-last-of-type(2) > .neu__iconlink {
+
+            > a:nth-last-of-type(2).neu__iconlink{
                 @include neu__iconlink($icon : "\e551");
             }
             
+            
         }
 
-        // next section is the 'related tasks'
+        // next section is the 'related tasks' && 'related forms'
         > section:nth-of-type(3),
         > section:nth-of-type(4)
         {
@@ -74,6 +131,9 @@
 
                 .neu__iconlink {
                     @include neu__iconlink();
+                    &:before {
+                        color: $brand_colors-red;
+                    }
                 }
             }
         }

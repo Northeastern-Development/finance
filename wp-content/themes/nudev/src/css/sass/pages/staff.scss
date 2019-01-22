@@ -314,8 +314,8 @@ $www: ($content-width-narrow - 2vw - $ww);
     
                         &>p {
                             //   @include font-2r-l;
-                            margin: 10px 0 0 0;
-                            margin-bottom: ($gutter / 2);
+                            // margin: 10px 0 0 0;
+                            // margin-bottom: ($gutter / 2);
     
                             &>span {
                                 // @include font-2b-l;
@@ -400,25 +400,25 @@ $www: ($content-width-narrow - 2vw - $ww);
                         width: $ww;
     
                         &>div {
-                            width: 100%;
-                            height: $ww;
+                            // width: 100%;
+                            // height: $ww;
                             background: rgba(black, 1.0);
                             background-position: center center !important;
                             background-repeat: no-repeat !important;
                             background-size: cover !important;
                         }
     
-                        &>p {
-                            //  @include font-2r-l;
-                            line-height: 2.2rem;
-                            margin: 10px 0 0 0;
-                            margin-bottom: ($gutter / 2);
+                        // &>p {
+                        //     //  @include font-2r-l;
+                        //     line-height: 2.2rem;
+                        //     margin: 10px 0 0 0;
+                        //     margin-bottom: ($gutter / 2);
     
-                            &>span {
-                                //    @include font-2b-l;
-                                line-height: 2.2rem;
-                            }
-                        }
+                        //     &>span {
+                        //         //    @include font-2b-l;
+                        //         line-height: 2.2rem;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -452,26 +452,26 @@ $www: ($content-width-narrow - 2vw - $ww);
                     }
     
                     &>div {
-                        height: $ww;
-                        width: $ww;
+                        // height: $ww;
+                        // width: $ww;
                         background: rgba(black, 1.0);
                         background-position: center center !important;
                         background-repeat: no-repeat !important;
                         background-size: cover !important;
                     }
     
-                    &>p {
-                        width: $ww;
-                        //    @include font-2r-l;
-                        line-height: 2.2rem;
-                        margin: 10px 0 0 0;
-                        margin-bottom: ($gutter / 2);
+                    // &>p {
+                    //     width: $ww;
+                    //     //    @include font-2r-l;
+                    //     line-height: 2.2rem;
+                    //     margin: 10px 0 0 0;
+                    //     margin-bottom: ($gutter / 2);
     
-                        &>span {
-                            //  @include font-2b-l;
-                            line-height: 2.2rem;
-                        }
-                    }
+                    //     &>span {
+                    //         //  @include font-2b-l;
+                    //         line-height: 2.2rem;
+                    //     }
+                    // }
                 }
             }
         }
@@ -1226,7 +1226,7 @@ $www: ($content-width-narrow - 2vw - $ww);
 
                     &>div {
                         //   width: 100%;
-                        height: $ww;
+                        // height: $ww;
                         //   background: rgba(black,1.0);
                         //   background-position: center center !important;
                         //   background-repeat: no-repeat !important;
@@ -1373,8 +1373,8 @@ $www: ($content-width-narrow - 2vw - $ww);
                 }
 
                 &>div {
-                    height: $ww;
-                    width: $ww;
+                    // height: $ww;
+                    // width: $ww;
                     // background: rgba(black,1.0);
                     // background-position: center center !important;
                     // background-repeat: no-repeat !important;
@@ -1779,8 +1779,8 @@ $www: ($content-width-narrow - 2vw - $ww);
                 //   margin: 0 2vw 2vw 0;
                 // }
                 &>div {
-                    height: $ww;
-                    width: $ww;
+                    // height: $ww;
+                    // width: $ww;
                     // background: rgba(black,1.0);
                     // background-position: center center !important;
                     // background-repeat: no-repeat !important;

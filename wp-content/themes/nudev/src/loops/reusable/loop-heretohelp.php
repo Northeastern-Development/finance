@@ -12,8 +12,7 @@
 
     $guide = '
         <li class="h2h-items-item">
-            <figure style="background-image:url(%s)"></figure>
-            %s
+            <div class="neu__bgimg"><div style="background-image:url(%s)"></div></div>
             %s
             %s
             %s
@@ -42,12 +41,21 @@
         $content .= sprintf(
             $guide
             ,$subfields['headshot']['url']
-            , (isset($helper['helper']->post_title)) ? '<h4>'.$helper['helper']->post_title.'</h4>' : null // post_title is name of staff member
-            , (isset( $subfields['department'][0] )) ? '<p>'.$subfields['department']->post_title.'</p>' : null // associated department
-            , (isset( $subfields['title'] )) ? '<p>'.$subfields['title'].'</p>' : null // staff member official title (not post title)
-            , (isset( $subfields['expert_at'] )) ? '<p>'.$subfields['expert_at'].'</p>' : null // expert at
-            , (isset( $subfields['phone'] )) ? '<a class="neu__iconlink" href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank"><i class="material-icons">phone</i><span>'.$subfields['phone'].'</span></a>' : null // phone #
-            , (isset( $subfields['email'] )) ? '<a class="neu__iconlink" href="mailto:'.$subfields['email'].'?subject='.$subject.'"><i class="material-icons">email</i><span>email</span></a>' : null // email
+            , (isset($helper['helper']->post_title)) 
+                ? '<h4>'.$helper['helper']->post_title.'</h4>' 
+                : null // post_title is name of staff member
+            , (isset( $subfields['department'][0] )) 
+                ? '<p>'.$subfields['department']->post_title.'</p>' 
+                : null // associated department
+            , (isset( $subfields['title'] )) 
+                ? '<p>'.$subfields['title'].'</p>' 
+                : null // staff member official title (not post title)
+            , (isset( $subfields['phone'] )) 
+                ? '<a class="neu__iconlink" href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank">'.$subfields['phone'].'</a>' 
+                : null // phone #
+            , (isset( $subfields['email'] )) 
+                ? '<a class="neu__iconlink" href="mailto:'.$subfields['email'].'?subject='.$subject.'">email</a>' 
+                : null // email
         );
     }
     // close out the ul and the section

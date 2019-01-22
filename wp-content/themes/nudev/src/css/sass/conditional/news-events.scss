@@ -25,13 +25,19 @@
             > a {
                 > div {
                     .neu__news_event_time {
-                        margin-top: 15px;
+                        margin-bottom: 15px;
                         > p {
                             @include font-1l-l;
                         }
                     }
+                    > p:nth-last-of-type(2){
+                        margin-bottom: 15px;
+                    }
                     > p.neu__iconlink{
                         @include neu__iconlink($hover : 0);
+                        &:before {
+                            color: $brand_colors-red;
+                        }
                     }
                 }
                 &:hover {

@@ -21,6 +21,12 @@
             > div:last-child {
                 > h3{
                     @include font-7l-l;
+                    border-bottom: 1px solid black;
+                }
+            }
+            > div:first-of-type{
+                > p > span {
+                    @include font-2b-l;
                 }
             }
         }
@@ -33,7 +39,7 @@
                 margin: 0 auto;
                 text-align: center;
                 border-bottom: none;
-                padding-bottom: none;
+                padding-bottom: 0;
             }
             
             > ul {

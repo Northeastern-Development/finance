@@ -115,7 +115,7 @@
   main#financialstatements > section:nth-of-type(2) > a {
     display: block;
     width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.67);
     padding: 15px 0; }
     main#financialstatements > section:nth-of-type(2) > a > i.material-icons,
     main#financialstatements > section:nth-of-type(2) > a > span {

@@ -28,8 +28,8 @@
             margin-right: 0;
         }
 
-        // alternatively, we can use a max width to leave the items dangling and retain a squared grid
-        // max-width: calc( 100% / #{$num} - 30px);
+        // optionally, we can use a max width to leave the items dangling and retain a squared grid
+        max-width: calc( 100% / #{$num} - #{$margin});
     }
 }
 

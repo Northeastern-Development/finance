@@ -15,8 +15,8 @@
 
     .nu__content_btn {
         display: inline-block;
-        padding: 10px 30px;
-        margin: 20px auto;
+        padding: 5px 45px;
+        margin: 0px auto;
         border: 1px solid black;
         color: black;
         text-transform: uppercase;
@@ -38,7 +38,7 @@
             > h2 {
                 @include font-7l-l;
                 padding-bottom: 15px;
-                margin-bottom: 30px;
+                margin-bottom: 15px;
                 border-bottom: 1px solid black;
             }
         }
@@ -64,16 +64,13 @@
         >section.hero {
             background: rgba(black, 1.0);
             width: $wrapper-width;
-            // margin: 0 0 ($gutter * 2) 0;
             margin: 0;
             overflow: hidden;
-            padding: 60px 0;
-
             >div {
                 width: $content-width-narrow;
-                margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+                // margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+                margin: 60px auto;
                 color: rgba(white, 1.0);
-
                 // page title
                 >h1 {
                     color: rgba(white, 1.0);
@@ -374,12 +371,27 @@
             margin-top: 30px;
 
             li {
-                cursor: pointer;
                 border-bottom: 1px solid transparentize(black, 0.5);
 
                 >h5 {
                     @include font-3b-l;
-                    padding: 15px 0;
+                    margin: 15px 0;
+                    > span {
+                        border-bottom: 1px solid transparent;
+                    }
+                    &:hover {
+                        &:after { // carrot becomes red
+                            color: $brand_colors-red;
+                        }
+                        > span { // text is underlined
+                            border-bottom: 1px solid $brand_colors-red;
+                        }
+                    }
+                    &.js__collapsible_triggered{
+                        &:after { // carrot becomes red
+                            color: $brand_colors-red;
+                        }
+                    }              
                 }
 
                 >div {
@@ -401,8 +413,11 @@
                     > h4 {
                         @include font-2b-l;
                     }
-                    > p {
-                        @include font-2l-l;
+                    > a.neu__iconlink {
+                        @include neu__iconlink($icon : "\e551");
+                    }
+                    > a.neu__iconlink:last-of-type {
+                        @include neu__iconlink($icon : "\e0be");
                     }
                 }
             }
@@ -411,6 +426,14 @@
         section.related-tasks {
             >ul {
                 @include ul_grid_cols(2, 15px);
+                > li {
+                    .neu__iconlink {
+                        @include neu__iconlink();
+                        &:before {
+                            color: $brand_colors-red;
+                        }
+                    }
+                }
             }
         }
     }

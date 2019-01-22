@@ -87,6 +87,7 @@
             // instructions / back to cats
             // teal section
             > div:first-child {
+                padding: 30px;
                 background-color: $brand_colors-teal--dark;
                 color: white;
                 display: flex;
@@ -106,7 +107,9 @@
                 // back to topics button
                 .removefilter {
                     border: 1px solid white;
-                    padding: 10px 30px;
+                    // padding: 10px 30px;
+                    color: white;
+                    margin: 0;
                     @include font-3l-c;
                     text-transform: uppercase;
                     cursor: pointer;
@@ -123,7 +126,7 @@
                 flex-flow: row wrap;
                 justify-content: space-around;
                 align-items: center;
-                padding: 40px 20px;
+                padding: 30px;
                 // task category items
                 > div {
                     cursor: pointer;
@@ -237,7 +240,7 @@
     .neumenu-wrapper#about {
         .neumenu-wrapper-inner {
             > div:first-child {
-                padding: 15px;
+                padding: 30px;
                 > h3 {
                     @include font-3b-l;
                 }

@@ -206,7 +206,8 @@
     main > section:last-child > ul li,
     div.main > section:last-child > ul li {
       flex: 1 1 calc(calc(100% / 2) - 15px);
-      margin: 0 15px 15px 0; }
+      margin: 0 15px 15px 0;
+      max-width: calc( 100% / 2 - 15px); }
       main > section:last-child > ul li:nth-of-type(2n),
       div.main > section:last-child > ul li:nth-of-type(2n) {
         margin-right: 0; }

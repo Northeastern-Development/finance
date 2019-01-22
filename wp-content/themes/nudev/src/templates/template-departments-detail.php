@@ -37,8 +37,8 @@
         $format_department
         ,'<h2>Our Mission</h2>'
         ,( !empty($fields['overview']) ) ? '<div>'.$fields['overview'].'</div>' : null
-        ,( !empty($fields['phone']) ) ? '<p><a class="neu__iconlink" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a></p>' : null
-        ,( !empty($fields['email']) ) ? '<p><a class="neu__iconlink" href="mailto:'.$fields['email'].'">email</a></p>' : null
+        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
+        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'.$fields['email'].'">email</a>' : null
     );
 
     

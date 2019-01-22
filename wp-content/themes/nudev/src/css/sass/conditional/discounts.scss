@@ -18,6 +18,12 @@
             // discount description
             >div {
                 @include font-2l-l;
+                a {
+                    border-bottom: 1px solid black;
+                    &:hover {
+                        border-bottom: 1px solid $brand_colors-red;
+                    }
+                }
                 ul {
                     list-style-type: disc;
                     margin: 0;

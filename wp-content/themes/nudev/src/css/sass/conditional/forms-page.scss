@@ -47,11 +47,14 @@
 
                         // files to download
                         > p > a.neu__iconlink {
-                            @include neu__iconlink($icon : "\e2c0");
+                            @include neu__iconlink($icon : "\e2c4");
+                            &:before {
+                                color: $brand_colors-red;
+                            }
                         }
                         h4 {
                             @include font-2b-l;
-                            margin-top: 15px;
+                            margin: 15px 0;
                         }
                         // related resources list
                         > ul {
@@ -59,6 +62,9 @@
 
                             .neu__iconlink{
                                 @include neu__iconlink;
+                                &:before {
+                                    color: $brand_colors-red;
+                                }
                             }
                         }
                     }

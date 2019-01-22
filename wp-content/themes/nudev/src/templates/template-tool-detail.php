@@ -9,12 +9,14 @@
     $toolpost = get_page_by_path($toolname, ARRAY_A, 'tools');
     // get fields for that tool
     $fields = get_fields($toolpost['ID']);
-    $currentGrouping = [];
+    // 
     $haveGroups = array_filter($fields['groupings'], function($grouping){
         if( !empty($grouping['group']) ){
             return $grouping;
         }
     });
+
+
     /**
      *      Filtering Nav
      */
@@ -29,6 +31,10 @@
             <ul class="tool-groupingnav">
         ';
         // a 'grouping' is like 'use concur as full time employee'
+        // unsets var
+        $currentGrouping = [];
+
+
         foreach( $fields['groupings'] as $grouping ){
             if( $grouping['status'] == 1 ){
                 // pass title to both the nav and the list
@@ -39,13 +45,14 @@
                     ,$grouping['title']
                 );
             }
-            //
             if( seoUrl($grouping['title']) == $toolgrouping ){
                 $currentGrouping = $grouping;
             }
         }
         $groupSelectorContent .= '</ul>';
     }
+
+
     /**
      *      Page Content Setup
      */
@@ -64,6 +71,7 @@
             // check if 'this' grouping is active,
             if( $group['status'] == 1 ){
                 // pre-stringify all the active infoblocks belonging to this grouping
+                $content_infoblocks = '';
                 foreach( $group['information_blocks'] as $infoblock ){
                     if( $infoblock['status'] == 1 ){
                         $content_infoblocks .= sprintf(

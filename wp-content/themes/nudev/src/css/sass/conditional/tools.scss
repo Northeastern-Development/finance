@@ -20,6 +20,9 @@
                 > h5 {
                     @include font-3b-l;
                 }
+                > p:first-of-type {
+                    margin-bottom: 15px;
+                }
                 .neu__iconlink {
                     @include neu__iconlink($hover : 0);
                     &:before{
@@ -105,12 +108,16 @@
             .tool-group {
                 position: relative;
                 border-bottom: 1px solid transparentize(black, 0.5);
+                &:first-of-type{
+                    margin-top: 30px;
+                }
+                
                 > h4{
                     position: relative;
+                    padding: 15px 0;
                     &:after {
                         position: absolute;
                         right: 0;
-                        top: 0;
                         font-size: 20px;
                         transition: transform 0.4s ease;
                         content: '\e313';
@@ -124,11 +131,10 @@
                         transform: rotate(180deg);
                     }
                 }
-                margin-bottom: 30px;
                 > h4 {
                     @include font-3b-l;
                     cursor: pointer;
-                    padding: 15px 0;
+                    // padding: 15px 0;
                 }
                 > ul {
                     margin-left: 30px;

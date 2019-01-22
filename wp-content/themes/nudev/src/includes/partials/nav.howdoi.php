@@ -81,7 +81,7 @@
         <h2>How Do I...</h2>
         <h3>(Select Topic)</h3>
         <h3>(Select Task)</h3>
-        <h3 class="removefilter">Back to Topics</h3>
+        <h3 class="removefilter nu__content_btn">Back to Topics</h3>
     </div>
     <div>
         <?php 

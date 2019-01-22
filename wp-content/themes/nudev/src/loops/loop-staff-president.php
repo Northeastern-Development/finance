@@ -24,11 +24,7 @@
     $fields = get_fields($pres[0]->ID);
 
 
-    if( get_page_template_slug($post_id) == "templates/template-about.php" ){
-        $visit_or_email = '<a class="neu__iconlink" href="%s" title="email the President" target="_blank">email</a>';
-    } else {   
-        $visit_or_email = '<a class="neu__iconlink" href="%s" title="Visit website [will open in new window]" target="_blank">Visit website</a>';
-    }
+    
     // (empty div is a darkened overlay)
     $guide = '
         <section class="nu__president">
@@ -39,11 +35,6 @@
             <div>
                 <h3>%s</h3>
                 <p>%s</p>
-                <p>
-                    <a class="neu__iconlink" href="tel:%s" title="Call the Office of the President">%s</a>
-                    <br />
-                    %s
-                </p>
             </div>
         </section>
     ';
@@ -54,12 +45,7 @@
         ,$pres[0]->post_title
         ,$fields['title']
         ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "One Centralized Department" : "Office of the President"
-		,$fields['description']
-		,$fields['phone']
-        ,$fields['phone']
-        ,$visit_or_email
-        // ,$fields['url']
-        
+        ,$fields['description']
 	);
 
 	echo $president;

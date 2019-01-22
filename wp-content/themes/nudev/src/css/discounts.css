@@ -114,7 +114,8 @@
     flex-flow: row wrap; }
     ul.discounts li {
       flex: 1 1 calc(calc(100% / 1) - 30px);
-      margin: 0 30px 30px 0; }
+      margin: 0 30px 30px 0;
+      max-width: calc( 100% / 1 - 30px); }
       ul.discounts li:nth-of-type(1n) {
         margin-right: 0; }
       ul.discounts li:last-of-type:nth-of-type(even) {
@@ -133,6 +134,10 @@
         font-weight: 300;
         line-height: 2.8rem;
         text-align: left; }
+        ul.discounts > li > div a {
+          border-bottom: 1px solid black; }
+          ul.discounts > li > div a:hover {
+            border-bottom: 1px solid #d41b2c; }
         ul.discounts > li > div ul {
           list-style-type: disc;
           margin: 0;

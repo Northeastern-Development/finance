@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * modules/fonts
  * ---
@@ -127,10 +128,11 @@
     border-bottom: 1px solid black; }
   div.main > section > div.task-options ul.task-options-list,
   main > section > div.task-options ul.task-options-list {
+    margin-top: 30px;
     list-style-type: none; }
     div.main > section > div.task-options ul.task-options-list > li,
     main > section > div.task-options ul.task-options-list > li {
-      margin-top: 15px;
+      margin-top: 30px;
       padding-bottom: 15px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.5);
       cursor: pointer; }
@@ -146,6 +148,8 @@
           margin-bottom: 20px; }
         div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
         main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
+          position: relative;
+          z-index: 11;
           width: calc(100% / 3);
           margin: auto;
           margin-left: 20px;
@@ -167,20 +171,29 @@
             font-weight: 300;
             line-height: 2.8rem;
             text-align: left; }
-          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
-          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span,
-          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
-          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > span {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 1.6rem;
-            font-weight: 300;
-            line-height: 2.8rem;
-            text-align: left;
-            line-height: inherit; }
-          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons,
-          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a > i.material-icons {
-            color: #d41b2c; }
+          div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a,
+          main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a {
+            border-bottom: 1px solid transparent;
+            line-height: inherit;
+            display: inline-block; }
+            div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before,
+            main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before {
+              display: inline-block;
+              padding-right: 15px;
+              font-size: 20px;
+              font-family: "Material Icons";
+              vertical-align: middle;
+              content: "";
+              line-height: inherit; }
+            div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:hover,
+            main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:hover {
+              color: #d41b2c; }
+            div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:hover,
+            main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:hover {
+              border-bottom: 1px solid #d41b2c; }
+            div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before,
+            main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before {
+              color: #d41b2c; }
       div.main > section > div.task-options ul.task-options-list > li > div,
       main > section > div.task-options ul.task-options-list > li > div {
         position: relative;
@@ -226,6 +239,10 @@
       main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after {
         transform: rotate(180deg);
         color: #d41b2c; }
+  ul.task-options-list a {
+    border-bottom: 1px solid #000; }
+    ul.task-options-list a:hover {
+      border-bottom: 1px solid #d41b2c; }
   ul.task-options-list > li.js__tasks_viewable_steps > div > i.material-icons {
     color: #d41b2c;
     border-color: #d41b2c; }

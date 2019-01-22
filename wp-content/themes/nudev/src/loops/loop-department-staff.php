@@ -47,8 +47,9 @@
                             %s
                             %s
                             %s
+                            %s
                         </div>
-                        <div>
+                        <div class="neu__bgimg">
                             <div style="background-image: url(%s);"></div>
                             <p><span>%s</span><br />%s</p>
                         </div>
@@ -67,10 +68,13 @@
                     ? '<p><a class="js__bio neu__iconlink" href="/staff/bio/'.$depthead[0]->post_name.'">View Full Profile</a></p>' 
                     : null
                 ,( !empty($depthead_fields['phone']) ) 
-                    ? '<p class="contact"><a class="neu__iconlink" href="tel:'.$depthead_fields['phone'].'" title="Call '.$department[0]->post_title.'">'.$depthead_fields['phone'].'</a></p>' 
+                    ? '<p><a class="neu__iconlink neu__iconlink-phone" href="tel:'.$depthead_fields['phone'].'" title="Call '.$department[0]->post_title.'">'.$depthead_fields['phone'].'</a></p>' 
+                    : null
+                ,( !empty($depthead_fields['email']) ) 
+                    ? '<p><a class="neu__iconlink neu__iconlink-email" href="mailto:'.$depthead_fields['email'].'" title="E-Mail '.$department[0]->post_title.'">email</a></p>' 
                     : null
                 ,( !empty($depthead_fields['url']) )
-                    ? '<p><a class="neu__iconlink" href="'.$depthead_fields['url'].'" title="Visit '.strtolower($depthead_fields['department']->post_title ).'" target="_blank">Visit Website</a></p>'
+                    ? '<p><a class="neu__iconlink neu__iconlink-url" href="'.$depthead_fields['url'].'" title="Visit '.strtolower($depthead_fields['department']->post_title ).'" target="_blank">Visit Website</a></p>'
                     : null
                 ,$depthead_fields['headshot']['url']
                 ,$depthead[0]->post_title
@@ -112,7 +116,7 @@
             
             $format_deptstaff = '
                 <li>
-                    <div style="background-image: url(%s)"></div>
+                    <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
                     <p>
                         <span>%s</span><br />
                         <span>%s</span><br />

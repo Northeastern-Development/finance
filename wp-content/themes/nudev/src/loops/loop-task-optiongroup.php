@@ -50,16 +50,9 @@
         </li>
     ';
     
-    // the sidebar
-    $format_sidebar = '
-        %s
-        <h4>%s</h4>
-        %s
-        <a class="neu__iconlink" target="%s" href="%s"><i class="material-icons">arrow_forward</i><span>%s</span></a>
-    ';
-
 
     // Each : Options Grouping
+    // (for each solution)
     foreach( $fields['options_group'] as $option ){
         // each option has its own related files and sidebar
         $content_relatedfiles = '';
@@ -76,16 +69,27 @@
                 );
             }
         }
-        // Get : (if) sidebar
+        // If the Sidebar is Enabled (for this "solution")
         if( $option['use_sidebar'] ){
+
+            $target = ( $option['sidebar']['external'] ) ? '_blank' : '_self';
+            
+            // the sidebar
+            $format_sidebar = '
+                %s
+                <h4>%s</h4>
+                %s
+                %s
+            ';
+
             $content_sidebar .= sprintf(
                 $format_sidebar
                 ,( $option['sidebar']['image'] ) ? '<img src="'.$option['sidebar']['image'].'">' : null
                 ,$option['sidebar']['title']
                 ,$option['sidebar']['description']
-                ,( $option['sidebar']['external'] ) ? '_blank' : null
-                ,$option['sidebar']['link']
-                ,$option['sidebar']['link_name']
+                , ( !empty($option['sidebar']['link']) ) // if we have a link to reference; render the link
+                    ? '<a class="neu__iconlink" target="'.$target.'" href="'.$option['sidebar']['link'].'">'.$option['sidebar']['link_name'].'</a>'
+                    : null
             );
         }
         
@@ -93,6 +97,7 @@
         $content_suboption = '';
 
         // compile all suboptions into a string
+        // (for each "step")
         foreach( $option['sub_options'] as $suboption ){
 
             // if is video suboption

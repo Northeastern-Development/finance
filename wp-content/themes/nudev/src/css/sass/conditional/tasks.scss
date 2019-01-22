@@ -27,10 +27,11 @@
                     border-bottom: 1px solid black;
                 }
                 ul.task-options-list {
+                    margin-top: 30px;
                     list-style-type: none;
                     // any task option grouping
                     > li {
-                        margin-top: 15px;
+                        margin-top: 30px;
                         padding-bottom: 15px;
                         border-bottom: 1px solid transparentize(black, 0.5);
                         cursor: pointer;
@@ -46,6 +47,8 @@
                             }
                             // in-solution 'sidebar' / 'callout'
                             div.sidebar {
+                                position: relative;
+                                z-index: 11;
                                 width: calc(100% / 3);
                                 margin: auto;
                                 margin-left: 20px;
@@ -62,14 +65,8 @@
                                     @include font-2l-l;
                                 }
                                 > a {
-                                    > i.material-icons,
-                                    > span{
-                                        display: inline-block;
-                                        vertical-align: middle;
-                                        @include font-2l-l;
-                                        line-height: inherit;
-                                    }
-                                    > i.material-icons {
+                                    @include neu__iconlink();
+                                    &:before {
                                         color: $brand_colors-red;
                                     }
                                 }
@@ -130,6 +127,12 @@
     }
 
     ul.task-options-list {
+        a {
+            border-bottom: 1px solid #000;
+            &:hover {
+                border-bottom: 1px solid $brand_colors-red;
+            }
+        }
         > li {
             &.js__tasks_viewable_steps {
                 > div {
@@ -177,9 +180,6 @@
                 height: 12px;
                 border-radius: 50%;
             }
-
-
-
             > h5 {
                 @include font-2b-l;
             }
@@ -187,5 +187,6 @@
                 @include font-2l-l;
             }
         }
+        
     }
 }

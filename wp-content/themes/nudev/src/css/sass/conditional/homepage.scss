@@ -13,7 +13,7 @@
 
     // disable pointer events on the howdoi dropdown in the nav 
     // (because its been replaced by the one in the body)
-    .wrapper {
+    header {
         li[data-id="howdoi"] {
             >a {
                 pointer-events: none;
@@ -35,9 +35,12 @@
             >div {
                 width: calc(100% / 3);
                 text-align: center;
-
+                > p {
+                    margin-bottom: 30px;
+                }
                 >h2 {
                     @include font-7l-c;
+                    margin-bottom: 30px;
                 }
                 >p,
                 .nu__content_btn {
@@ -77,11 +80,13 @@
                 >h4 {
                     padding: 10px 20px;
                     display: inline-block;
-                    background-color: transparentize(white, 0.6);
+                    background-color: transparentize(white, 0.4);
                     text-transform: uppercase;
                     margin-bottom: $gutter;
                     @include font-1r-l;
                     color: black;
+                    position: absolute;
+                    bottom: 100%;
                 }
 
                 // deadlines items wrapper
@@ -115,38 +120,45 @@
         }
     }
 
-    // tools & news sections
-    .home-feat-tools,
-    .home-feat-news {
-        padding: 0 20px;
-        margin: 60px auto;
-        // section titles
-        >h2 {
-            @include font-7l-c;
-            border-bottom: 1px solid transparent;
-        }
-        // tools/news items wrapper
-        >ul {
-            @include ul_grid_cols(3, 30px);
-            // tool/news item
-            >li {
-                >a {
-                    >div:first-of-type {
-                        @include neu__bgimg();
-                    }
-                    &:hover {
-                        >div>div {
-                            transform: scale(1.1);
+    div.wrapper {
+        // tools & news sections
+        .home-feat-tools,
+        .home-feat-news {
+            padding: 0;
+            margin: 60px auto;
+            // section titles
+            >h2 {
+                @include font-7l-c;
+                border-bottom: 1px solid transparent;
+                border: none;
+            }
+            // tools/news items wrapper
+            >ul {
+                margin-top: 0;
+                @include ul_grid_cols(3, 30px);
+                // tool/news item
+                >li {
+                    >a {
+                        >div:first-of-type {
+                            @include neu__bgimg();
                         }
-                    }
-                    > div > p:last-child > span {
-                        @include neu__iconlink($hover: 0);
-                    }
-                    &:hover {
-                        > div > p:last-child > span {
-                            border-bottom: 1px solid $brand_colors-red;
-                            &:before {
-                                color: $brand_colors-red;
+                        &:hover {
+                            >div>div {
+                                transform: scale(1.1);
+                            }
+                        }
+                        > p:first-of-type{
+                            margin-bottom: 15px;
+                        }
+                        > p:last-child > span {
+                            @include neu__iconlink($hover: 0);
+                        }
+                        &:hover {
+                            > p:last-child > span {
+                                border-bottom: 1px solid $brand_colors-red;
+                                &:before {
+                                    color: $brand_colors-red;
+                                }
                             }
                         }
                     }
