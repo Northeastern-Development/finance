@@ -97,7 +97,9 @@
             ,$target
             ,$fields['image']
             ,$rec->post_title
-            ,$fields['category']->post_title
+            ,( get_fields( $fields['category']->ID )['status'] == true )
+                ? $fields['category']->post_title
+                : null
             ,strip_tags($fields['details'])
         );
     }
@@ -130,25 +132,34 @@
         include(locate_template('loops/loop-deadlines.php'));
      ?>
 
-    <section class="home-feat-tools fullwidth nobg">
-        <h2>Tools</h2>
-        <ul>
-            <?php 
-                echo $content_tools;
-            ?>
-        </ul>
-        <a title="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
-    </section>
-
-    <section class="home-feat-news fullwidth nobg">
-        <h2>Latest Updates</h2>
-        <ul>
-            <?php 
-                echo $content_news;
-             ?>
-        </ul>
-        <a href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
-    </section>
+    <?php 
+        if( !empty($content_tools) ) :
+     ?>
+        <section class="home-feat-tools fullwidth nobg">
+            <h2>Tools</h2>
+            <ul>
+                <?php 
+                    echo $content_tools;
+                ?>
+            </ul>
+            <a title="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
+        </section>
+    <?php 
+        endif;
+        if( !empty($content_news) ) :
+     ?>
+        <section class="home-feat-news fullwidth nobg">
+            <h2>Latest Updates</h2>
+            <ul>
+                <?php 
+                    echo $content_news;
+                ?>
+            </ul>
+            <a href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
+        </section>
+    <?php 
+        endif;
+     ?>
 
 
 

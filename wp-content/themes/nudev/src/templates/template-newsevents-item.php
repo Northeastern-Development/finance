@@ -26,15 +26,15 @@
         wp_redirect( home_url() );
     }
 
+    // This Latest Update's Fields
     $the_fields = get_fields($posts[0]);
 
-
-    // check news/event type (is event)
+    $content_update = '';
+    // This Latest Update is a EVENT
     if( $the_fields['type'] == 'event' ){
-        $format_event = '<p>%s</p><p>%s</p><p>%s</p><p>%s</p>';
-        $content_event = '';
-        $content_event .= sprintf(
-            $format_event
+        $format_update = '<p>%s</p><p>%s</p><p>%s</p><p>%s</p>';
+        $content_update .= sprintf(
+            $format_update
             ,'Start Date: ' . $the_fields['start_date']
             ,'End Date: ' . $the_fields['end_date']
             ,'Start Time: ' . $the_fields['start_time']
@@ -42,38 +42,29 @@
         );   
     }
 
-    $content_item = '';
-    $format_item = '
-        <div>
-            <p>Type: %s</p>
-            <p>Category: %s</p>
-            <p>Details: </p>
-            <p>%s</p>
-            <div>
-                %s
-            </div>
-        </div>
-    ';
-    $content_item .= sprintf(
-        $format_item
-        ,$the_fields['type']
-        ,$the_fields['category']->post_title
-        ,str_replace( ['<p>', '</p>'], ['<span>', '</span>'], $the_fields['details'])
-        ,( $the_fields['type'] == 'event' ) ? $content_event : null
-
-    );
-
+    // This Latest Update is a NEWS item
+    else if( $the_fields['type'] == 'news') {
+        $format_update = '
+            <h1>%s</h1>
+            <h3>%s</h3>
+            <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
+            <div>%s</div>
+        ';
+        $content_update = sprintf(
+            $format_update
+            ,$posts[0]->post_title
+            ,( get_fields($the_fields['category']->ID)['status'] == true )
+                ? $the_fields['category']->post_title
+                : null
+            ,$the_fields['image']
+            ,$the_fields['details']
+        );   
+    }
     get_header();
  ?>
- <main role="main">
-
-    <?php 
-        $fields = get_fields($post_id);
-        echo PageHero::return_pagehero($fields, $posts[0]->post_title);
-     ?>
-     
+ <main role="main">     
      <section>
-         <?php echo $content_item; ?>
+         <?php echo $content_update; ?>
      </section>
  </main>
 <?php 

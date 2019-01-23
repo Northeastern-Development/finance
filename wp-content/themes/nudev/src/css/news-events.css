@@ -109,6 +109,30 @@
  * ---
  */
 @media only screen {
+  body.news-events-item div.main > section > h1,
+  body.news-events-item main > section > h1 {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    text-align: left;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 15px; }
+  body.news-events-item div.main > section > h3,
+  body.news-events-item main > section > h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 15px; }
+  body.news-events-item div.main > section > div.neu__bgimg,
+  body.news-events-item main > section > div.neu__bgimg {
+    margin-bottom: 60px;
+    width: 100%; }
+  body.news-events-item div.main > section > div:not(.neu__bgimg):last-of-type,
+  body.news-events-item main > section > div:not(.neu__bgimg):last-of-type {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 60px; }
   html body ul.newsandevents {
     margin: 40px 5%;
     list-style-type: none;

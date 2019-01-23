@@ -176,6 +176,7 @@
         justify-content: space-between;
         align-items: center; }
         div.wrapper div.deadlines > div > ul > li {
+          max-width: calc(100% / 5);
           flex: 1;
           padding: 15px;
           height: 185px;

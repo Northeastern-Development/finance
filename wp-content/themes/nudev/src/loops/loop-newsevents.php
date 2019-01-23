@@ -117,14 +117,15 @@ class NUNewsArchive{
             </li>
         ';
 
-
         $return = sprintf(
             $guide
             ,$the_permalink
             ,$target
             ,$b['image']
             ,$a->post_title
-            ,$b['category']->post_title
+            ,( get_fields($b['category']->ID)['status'] == true )
+                ? $b['category']->post_title
+                : null
             ,strip_tags($b['details'])
             ,( $b['type'] == 'event' ) ? $content_event : null
         );

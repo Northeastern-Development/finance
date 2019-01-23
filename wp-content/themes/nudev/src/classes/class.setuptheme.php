@@ -74,7 +74,7 @@ class SetupTheme
             wp_enqueue_style('departments', get_template_directory_uri() . '/css/departments.css', array('theme'), '1.0.0');
         }
         // News and Events Page
-        if( is_page_template('templates/template-newsevents-index.php') ){
+        if( is_page_template('templates/template-newsevents-index.php') || is_page_template('templates/template-newsevents-item.php') ){
             wp_enqueue_style('newsevents', get_template_directory_uri() . '/css/news-events.css', array('theme'), '1.0.0');
         }
         // Discounts
