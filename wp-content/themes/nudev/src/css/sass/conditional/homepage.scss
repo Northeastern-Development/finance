@@ -102,7 +102,9 @@
                         height: 185px;
                         background-color: white;
                         margin-right: $gutter;
-
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: center;
                         &:last-child {
                             margin-right: 0;
                         }

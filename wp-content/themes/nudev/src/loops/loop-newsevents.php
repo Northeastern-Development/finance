@@ -124,9 +124,8 @@ class NUNewsArchive{
             ,$target
             ,$b['image']
             ,$a->post_title
-            // ,date_format(date_create($a->post_date),"m/d/Y") // (depricated posted on from view)
             ,$b['category']->post_title
-            ,str_replace( ['<p>', '</p>'], ['<span>', '</span>'], $b['details'])
+            ,strip_tags($b['details'])
             ,( $b['type'] == 'event' ) ? $content_event : null
         );
 

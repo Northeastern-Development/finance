@@ -33,7 +33,7 @@
                     > li {
                         margin-top: 30px;
                         padding-bottom: 15px;
-                        border-bottom: 1px solid transparentize(black, 0.5);
+                        border-bottom: 1px solid transparentize(black, 0.8);
                         cursor: pointer;
                         // the task option groupings sub-options (steps)
                         > ul {
@@ -87,15 +87,12 @@
                                 display: inline-block;
                                 font-family: 'Material Icons';
                             }
-                            h5, img {
+                            > h5, > i {
                                 display: inline-block;
-                                margin: 0 auto;
-                            }
-                            img {
-                                width: 32px;
-                                height: 32px;
+                                vertical-align: middle;
                             }
                             h5 {
+                                margin: 0 auto;
                                 margin-left: 20px;
                                 border-bottom: 1px solid transparent;
                                 @include font-3b-l;
@@ -110,10 +107,19 @@
                                     border-bottom: 1px solid $brand_colors-red;
                                 }
                             }
-                            
+                            > i.material-icons {
+                                padding: 8px; // centers checkmark within the circle border, all of which appx. 40px width and height
+                                border-radius: 50%;
+                                border: 1px solid $brand_colors-gray;
+                                color: $brand_colors-gray;
+                            }   
                         }
                         &.js__tasks_viewable_steps {
                             > div {
+                                > i.material-icons {
+                                    color: $brand_colors-red;
+                                    border-color: $brand_colors-red;
+                                }
                                 &:after {
                                     transform: rotate(180deg);
                                     color: $brand_colors-red;
@@ -125,34 +131,6 @@
             }
         }
     }
-
-    ul.task-options-list {
-        a {
-            border-bottom: 1px solid #000;
-            &:hover {
-                border-bottom: 1px solid $brand_colors-red;
-            }
-        }
-        > li {
-            &.js__tasks_viewable_steps {
-                > div {
-                    > i.material-icons {
-                        color: $brand_colors-red;
-                        border-color: $brand_colors-red;
-                    }
-                }
-            }
-            > div{
-                > i.material-icons {
-                    padding: 8px; // centers checkmark within the circle border, all of which appx. 40px width and height
-                    border-radius: 50%;
-                    border: 1px solid $brand_colors-gray;
-                    color: $brand_colors-gray;
-                }
-            }
-        }
-    }
-
 
     // LETS DO SOME FANCY BULLETS HUH
     ul.task-options-list-item-suboptions {

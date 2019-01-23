@@ -134,7 +134,7 @@
     main > section > div.task-options ul.task-options-list > li {
       margin-top: 30px;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       cursor: pointer; }
       div.main > section > div.task-options ul.task-options-list > li > ul,
       main > section > div.task-options ul.task-options-list > li > ul {
@@ -212,17 +212,14 @@
           transform: rotate(0deg);
           display: inline-block;
           font-family: 'Material Icons'; }
-        div.main > section > div.task-options ul.task-options-list > li > div h5, div.main > section > div.task-options ul.task-options-list > li > div img,
-        main > section > div.task-options ul.task-options-list > li > div h5,
-        main > section > div.task-options ul.task-options-list > li > div img {
+        div.main > section > div.task-options ul.task-options-list > li > div > h5, div.main > section > div.task-options ul.task-options-list > li > div > i,
+        main > section > div.task-options ul.task-options-list > li > div > h5,
+        main > section > div.task-options ul.task-options-list > li > div > i {
           display: inline-block;
-          margin: 0 auto; }
-        div.main > section > div.task-options ul.task-options-list > li > div img,
-        main > section > div.task-options ul.task-options-list > li > div img {
-          width: 32px;
-          height: 32px; }
+          vertical-align: middle; }
         div.main > section > div.task-options ul.task-options-list > li > div h5,
         main > section > div.task-options ul.task-options-list > li > div h5 {
+          margin: 0 auto;
           margin-left: 20px;
           border-bottom: 1px solid transparent;
           font-size: 2.0rem;
@@ -235,22 +232,20 @@
         div.main > section > div.task-options ul.task-options-list > li > div:hover > h5,
         main > section > div.task-options ul.task-options-list > li > div:hover > h5 {
           border-bottom: 1px solid #d41b2c; }
+        div.main > section > div.task-options ul.task-options-list > li > div > i.material-icons,
+        main > section > div.task-options ul.task-options-list > li > div > i.material-icons {
+          padding: 8px;
+          border-radius: 50%;
+          border: 1px solid #979797;
+          color: #979797; }
+      div.main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div > i.material-icons,
+      main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div > i.material-icons {
+        color: #d41b2c;
+        border-color: #d41b2c; }
       div.main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after,
       main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after {
         transform: rotate(180deg);
         color: #d41b2c; }
-  ul.task-options-list a {
-    border-bottom: 1px solid #000; }
-    ul.task-options-list a:hover {
-      border-bottom: 1px solid #d41b2c; }
-  ul.task-options-list > li.js__tasks_viewable_steps > div > i.material-icons {
-    color: #d41b2c;
-    border-color: #d41b2c; }
-  ul.task-options-list > li > div > i.material-icons {
-    padding: 8px;
-    border-radius: 50%;
-    border: 1px solid #979797;
-    color: #979797; }
   ul.task-options-list-item-suboptions {
     position: relative; }
     ul.task-options-list-item-suboptions:before {

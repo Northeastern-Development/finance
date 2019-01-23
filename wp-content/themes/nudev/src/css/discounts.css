@@ -108,41 +108,54 @@
  * ---
  */
 @media only screen {
-  ul.discounts {
-    list-style-type: none;
+  div.wrapper main > section > h2,
+  div.wrapper div.main > section > h2 {
+    margin-bottom: 0; }
+    div.wrapper main > section > h2:not(:first-of-type),
+    div.wrapper div.main > section > h2:not(:first-of-type) {
+      margin-top: 30px; }
+  div.wrapper main > section ul.discounts,
+  div.wrapper div.main > section ul.discounts {
     display: flex;
-    flex-flow: row wrap; }
-    ul.discounts li {
-      flex: 1 1 calc(calc(100% / 1) - 30px);
-      margin: 0 30px 30px 0;
-      max-width: calc( 100% / 1 - 30px); }
-      ul.discounts li:nth-of-type(1n) {
-        margin-right: 0; }
-      ul.discounts li:last-of-type:nth-of-type(even) {
-        margin-right: 0; }
-    ul.discounts > li {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-      padding: 15px 0; }
-      ul.discounts > li > h5 {
+    flex-flow: row wrap;
+    list-style-type: none;
+    align-items: center;
+    margin: 0; }
+    div.wrapper main > section ul.discounts > li,
+    div.wrapper div.main > section ul.discounts > li {
+      flex: 1 0 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 15px 0;
+      margin-bottom: 0; }
+      div.wrapper main > section ul.discounts > li > h5,
+      div.wrapper div.main > section ul.discounts > li > h5 {
         font-size: 2.0rem;
         font-weight: 700;
         line-height: 3.2rem;
-        text-align: left;
-        margin-bottom: 15px; }
-      ul.discounts > li > div {
+        text-align: left; }
+        div.wrapper main > section ul.discounts > li > h5:hover:after,
+        div.wrapper div.main > section ul.discounts > li > h5:hover:after {
+          color: #d41b2c; }
+      div.wrapper main > section ul.discounts > li a,
+      div.wrapper div.main > section ul.discounts > li a {
+        color: #d41b2c; }
+        div.wrapper main > section ul.discounts > li a:hover,
+        div.wrapper div.main > section ul.discounts > li a:hover {
+          border-bottom: 2px solid #d41b2c; }
+      div.wrapper main > section ul.discounts > li > div,
+      div.wrapper div.main > section ul.discounts > li > div {
         font-size: 1.6rem;
         font-weight: 300;
         line-height: 2.8rem;
-        text-align: left; }
-        ul.discounts > li > div a {
-          border-bottom: 1px solid black; }
-          ul.discounts > li > div a:hover {
-            border-bottom: 1px solid #d41b2c; }
-        ul.discounts > li > div ul {
+        text-align: left;
+        margin-top: 15px; }
+        div.wrapper main > section ul.discounts > li > div ul,
+        div.wrapper div.main > section ul.discounts > li > div ul {
           list-style-type: disc;
           margin: 0;
           padding: 0;
           padding-left: 2.4rem; }
-          ul.discounts > li > div ul li {
+          div.wrapper main > section ul.discounts > li > div ul li,
+          div.wrapper div.main > section ul.discounts > li > div ul li {
             margin: 0;
             padding: 0; } }

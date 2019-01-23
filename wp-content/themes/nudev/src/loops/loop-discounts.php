@@ -34,7 +34,7 @@ $content = '';
 
 $format_category = '
     <h2>%s</h2>
-        <ul class="discounts js__collapsible_list">
+        <ul class="discounts js__collapsible_list list">
 ';
 
 $format_item = '

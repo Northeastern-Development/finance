@@ -41,7 +41,7 @@
             $format_tools
             ,get_permalink($rec) . seoUrl($fields['groupings'][0]['title'])
             ,$fields['image']
-            ,$fields['short_description']
+            ,strip_tags($fields['short_description'])
         );
     }
     // end get tools post data
@@ -75,7 +75,7 @@
                 <div><div style="background-image: url(%s)"></div></div>
                 <h5>%s</h5>
                 <h5>%s</h5>
-                %s
+                <p>%s</p>
                 <p><span>Learn more</span></p>
             </a>
         </li>
@@ -98,7 +98,7 @@
             ,$fields['image']
             ,$rec->post_title
             ,$fields['category']->post_title
-            ,$fields['details']
+            ,strip_tags($fields['details'])
         );
     }
     // end get news post data

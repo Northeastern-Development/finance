@@ -112,6 +112,7 @@
                         ,$file['filename']
                     );
                 }
+                
                 // Set: format string for information blocks
                 $content_blocks = '';
                 foreach( $fields['information_blocks'] as $infoblock ){
@@ -121,22 +122,25 @@
                         ,$infoblock['details']
                     );
                 }
-
-                // Set: format string for related resources
-                $content_relresources = '
-                    <h4>Related Resources</h4>
-                    <ul class="forms-category-relatedresources list">
-                ';
-                foreach( $fields['related_resources'] as $relresource ){
-                    $ifExt = ( $related_resource['external_link'] == 1 ) ? '_blank' : '_self'; 
-                    $content_relresources .= sprintf(
-                        $format_relresources
-                        ,$ifExt
-                        ,$relresource['link']
-                        ,$relresource['title']
-                    );
+                $content_relresources = '';
+                // If there are related resources to show
+                if( !empty($fields['related_resources']) ){
+                    // Set: format string for related resources
+                    $content_relresources = '
+                        <h4>Related Resources</h4>
+                        <ul class="forms-category-relatedresources list">
+                    ';
+                    foreach( $fields['related_resources'] as $relresource ){
+                        $ifExt = ( $related_resource['external_link'] == 1 ) ? '_blank' : '_self'; 
+                        $content_relresources .= sprintf(
+                            $format_relresources
+                            ,$ifExt
+                            ,$relresource['link']
+                            ,$relresource['title']
+                        );
+                    }
+                    $content_relresources .= '</ul>';
                 }
-                $content_relresources .= '</ul>';
 
                 // Set: format string combining all form elements into a complete form
                 $content_form .= sprintf(

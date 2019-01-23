@@ -4,40 +4,61 @@
 
 @media only screen {
 
-
-    ul.discounts {
-        @include ul_grid_cols(1);
-        > li {
-            border-bottom: 1px solid transparentize(black, 0.5);
-            padding: 15px 0;
-            >h5 {
-                @include font-3b-l;
-                margin-bottom: 15px;
-            }
-
-            // discount description
-            >div {
-                @include font-2l-l;
-                a {
-                    border-bottom: 1px solid black;
-                    &:hover {
-                        border-bottom: 1px solid $brand_colors-red;
+    div.wrapper {
+        main,
+        div.main {
+            > section {
+                > h2 {
+                    margin-bottom: 0;
+                    &:not(:first-of-type){
+                        margin-top: 30px;
                     }
                 }
-                ul {
-                    list-style-type: disc;
+                ul.discounts {
+                    display: flex;
+                    flex-flow: row wrap;
+                    list-style-type: none;
+                    align-items: center;
                     margin: 0;
-                    padding: 0;
-                    padding-left: 2.4rem;
-                    li {
-                        margin: 0;
-                        padding: 0;
+                    > li {
+                        flex: 1 0 100%;
+                        border-bottom: 1px solid transparentize(black, 0.8);
+                        padding: 15px 0;
+                        margin-bottom: 0;
+                        >h5 {
+                            @include font-3b-l;
+                            &:hover {
+                                &:after {
+                                    color: $brand_colors-red;
+                                }
+                            }
+                        }
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+            
+                        // discount description
+                        >div {
+                            @include font-2l-l;
+                            margin-top: 15px;
+                            ul {
+                                list-style-type: disc;
+                                margin: 0;
+                                padding: 0;
+                                padding-left: 2.4rem;
+                                li {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                        
                     }
                 }
             }
-            
         }
     }
-
-
 }

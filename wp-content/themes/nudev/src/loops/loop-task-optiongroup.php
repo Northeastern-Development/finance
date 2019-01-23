@@ -3,10 +3,15 @@
  * Tasks Options Groups & Sub Fields
  */
     $fields = get_fields($task); // (inefficient!)
+
+    $solution_heading = '';
+    if( !empty($fields['sub_title']) ){
+        $solution_heading = '<h2>'.$fields['sub_title'].'</h2>';
+    }
     
     $content_option = '
         <div class="task-options">
-            <h2>'.$fields['sub_title'].'</h2>
+            '.$solution_heading.'
             <ul class="list task-options-list js__tasks_solutions">
     ';
 
@@ -121,7 +126,6 @@
         // after all the bits are compiled, bring them all together as a complete option grouping
         $content_option .= sprintf(
             $format_option
-            // ,( !empty($option['icon']) ) ? '<img class="taskoption-icon" src="'.$option['icon'].'">' : null
             ,'<i class="material-icons">check</i>'
             ,$option['title']
             ,$option['description']

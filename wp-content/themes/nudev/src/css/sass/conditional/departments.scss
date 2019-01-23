@@ -89,6 +89,16 @@
                     p:nth-last-child(2) a.neu__iconlink{
                         @include neu__iconlink($icon : "\e0be");
                     }
+                    .neu__iconlink {
+                        &:before {
+                            color: black;
+                        }
+                        &:hover {
+                            &:before {
+                                color: $brand_colors-red;
+                            }
+                        }
+                    }
                 }
             }
         }

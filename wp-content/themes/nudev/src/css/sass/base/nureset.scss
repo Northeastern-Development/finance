@@ -52,6 +52,12 @@ a {
         text-decoration: none;
     }
 }
+section p a:not(.neu__iconlink){
+    color: $brand_colors-red;
+    &:hover {
+        border-bottom: 2px solid $brand_colors-red;
+    }
+}
 
 input[type="text"],
 input[type="search"] {

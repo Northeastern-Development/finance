@@ -104,14 +104,13 @@
                     
                 }
             }
+            > h2 {
+                margin-bottom: 0;
+            }
 
             .tool-group {
                 position: relative;
-                border-bottom: 1px solid transparentize(black, 0.5);
-                &:first-of-type{
-                    margin-top: 30px;
-                }
-                
+                border-bottom: 1px solid transparentize(black, 0.8);
                 > h4{
                     position: relative;
                     padding: 15px 0;
@@ -124,6 +123,11 @@
                         transform: rotate(0deg);
                         display: inline-block;
                         font-family: 'Material Icons';
+                    }
+                    &:hover {
+                        &:after {
+                            color: $brand_colors-red;
+                        }
                     }
                 }
                 &.js__tool_expanded > h4 {
