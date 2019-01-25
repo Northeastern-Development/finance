@@ -47,7 +47,7 @@
         $format_update = '
             <h1>%s</h1>
             <h3>%s</h3>
-            <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
+            <img src="%s">
             <div>%s</div>
         ';
         $content_update = sprintf(
@@ -64,6 +64,16 @@
  ?>
  <main role="main">     
      <section>
+
+        <p class="neu__prevpage ">
+            <?php 
+                //  Replace this quick/dirty javascript history go call with a more robust solution
+                //  Add a query string into the index page on the items so that when you click a news item and navigate to its detail page you pass the page number of the pagination
+                // into the url -- where we can look to see what page we were on in the index and go "back" to that page view
+             ?>
+            <a class="neu__iconlink" title="Back to all News and Events" href="javascript:history.go(-1)">Back</a>
+        </p>
+        
          <?php echo $content_update; ?>
      </section>
  </main>

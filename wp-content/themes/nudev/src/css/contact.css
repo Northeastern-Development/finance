@@ -111,7 +111,7 @@
 @media only screen {
   main > section:nth-of-type(2) .neu__iconlink,
   div.main > section:nth-of-type(2) .neu__iconlink {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     line-height: inherit;
     display: inline-block; }
     main > section:nth-of-type(2) .neu__iconlink:before,
@@ -128,13 +128,13 @@
       color: #d41b2c; }
     main > section:nth-of-type(2) .neu__iconlink:hover,
     div.main > section:nth-of-type(2) .neu__iconlink:hover {
-      border-bottom: 1px solid #d41b2c; }
+      border-bottom: 2px solid #d41b2c; }
   main > section:nth-of-type(2) > p,
   div.main > section:nth-of-type(2) > p {
     margin: 15px 0; }
   main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink,
   div.main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     line-height: inherit;
     display: inline-block; }
     main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:before,
@@ -151,10 +151,10 @@
       color: #d41b2c; }
     main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:hover,
     div.main > section:nth-of-type(3) > p:nth-last-child(2) .neu__iconlink:hover {
-      border-bottom: 1px solid #d41b2c; }
+      border-bottom: 2px solid #d41b2c; }
   main > section:nth-of-type(3) > p:last-child .neu__iconlink,
   div.main > section:nth-of-type(3) > p:last-child .neu__iconlink {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     line-height: inherit;
     display: inline-block; }
     main > section:nth-of-type(3) > p:last-child .neu__iconlink:before,
@@ -171,7 +171,7 @@
       color: #d41b2c; }
     main > section:nth-of-type(3) > p:last-child .neu__iconlink:hover,
     div.main > section:nth-of-type(3) > p:last-child .neu__iconlink:hover {
-      border-bottom: 1px solid #d41b2c; }
+      border-bottom: 2px solid #d41b2c; }
   main > section:nth-of-type(3) > p,
   div.main > section:nth-of-type(3) > p {
     margin: 15px 0; }
@@ -180,7 +180,7 @@
     color: #d41b2c; }
   main > section:last-child .neu__iconlink,
   div.main > section:last-child .neu__iconlink {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     line-height: inherit;
     display: inline-block; }
     main > section:last-child .neu__iconlink:before,
@@ -197,7 +197,7 @@
       color: #d41b2c; }
     main > section:last-child .neu__iconlink:hover,
     div.main > section:last-child .neu__iconlink:hover {
-      border-bottom: 1px solid #d41b2c; }
+      border-bottom: 2px solid #d41b2c; }
   main > section:last-child > ul,
   div.main > section:last-child > ul {
     list-style-type: none;

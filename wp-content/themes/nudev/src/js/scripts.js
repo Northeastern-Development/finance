@@ -27,7 +27,7 @@ var Finance = {};
                 var otherAnswers = Finance.faqs.answers.not(thisAnswer);
                 
                 $(otherAnswers).removeClass(open);
-                $(otherAnswers).slideUp();
+                $(otherAnswers).slideUp(200);
                 
 
                 Finance.faqs.triggers.removeClass('js__collapsible_triggered');
@@ -38,14 +38,14 @@ var Finance = {};
                     $(this).addClass('js__collapsible_triggered');
                     
                     $(thisAnswer).addClass(open);
-                    $(thisAnswer).slideDown();
+                    $(thisAnswer).slideDown(200);
                 }
                 // collapse
                 else {
                     $(this).removeClass('js__collapsible_triggered');
 
                     $(thisAnswer).removeClass(open);
-                    $(thisAnswer).slideUp();
+                    $(thisAnswer).slideUp(200);
                 }
             }
         }
@@ -55,6 +55,7 @@ var Finance = {};
         Finance.Nav = {
 
             parentlinks : $('nav.nu__main-nav > ul > li.has-children > a'),
+            dropdowns : $('nav.nu__main-nav > ul > li.has-children'),
             categories : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
             backtocats: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
             // tasks : $(),
@@ -70,15 +71,13 @@ var Finance = {};
                 Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
             },
             _didClickCategory : function(e){
-
                 $(this).parents('.neumenu-wrapper-inner').addClass('isFiltered');
                 $(this).addClass('theFilter');
             },
             _didClickOutsideNav : function(e){
-
                 if( $('div#nu__globalheader, div#header').has(e.target).length === 0 ){
                     // clicked outside nav; if nav open then close dropdowns
-                    $('li.has-children.neu__active').removeClass('neu__active');
+                    // $('li.has-children.neu__active').removeClass('neu__active');
                     Finance.Nav._collapseDropdowns();
                 }
             },
@@ -86,20 +85,40 @@ var Finance = {};
                 $('li.has-children').find('.neumenu-wrapper').hide();
                 $('li.has-children').find('.isFiltered').removeClass('isFiltered');
                 $('li.has-children').find('.theFilter').removeClass('theFilter');
+
+                Finance.Nav.dropdowns.removeClass('neu__showme');
             },
             _didClickDropdown : function(e){
                 e.stopPropagation();
                 e.preventDefault();
-                // remove active state from 'other' dropdowns
-                $(this).parent().siblings('li.has-children').removeClass('neu__active');
-                // toggle this dropdown state
-                $(this).parent().toggleClass('neu__active');
-                // collapse all dropdowns
-                Finance.Nav._collapseDropdowns();
-                // expand active dropdown
-                $('li.has-children.neu__active').find('.neumenu-wrapper').show();
+
+                // if the other dropdown is visible,
+                if( !$(this).parent().siblings('.has-children').find('.neumenu-wrapper').is(':hidden') ){
+                    // hide the other dropdown
+                    $(this).parent().siblings('.has-children').find('.neumenu-wrapper').hide();
+                }
+
+                // if the other dropdown has a showme class
+                if( $(this).parent().siblings('.has-children').hasClass('neu__showme') ){
+                    $(this).parent().siblings('.has-children').removeClass('neu__showme');
+                }
+
+                // if this dropdown is hidden,
+                if( $(this).parent().find('.neumenu-wrapper').is(':hidden') ){
+                    // show this dropdown
+                    $(this).parent().find('.neumenu-wrapper').show();
+                    // when this dropdown is shown; apply a showme class
+                    $(this).parent().addClass('neu__showme');
+                }
+                // if this dropdown is visible,
+                else {
+                    // hide this dropdown
+                    $(this).parent().find('.neumenu-wrapper').hide();
+                    // when this dropdown is hidden, remove the showme class
+                    $(this).parent().removeClass('neu__showme');
+                }
+                
             }
-            
         }
         Finance.Nav._init();
 

@@ -26,9 +26,9 @@
                 }
                 Finance.Tasks.steps.parent().each(function(index, el){
                     if ($(el).hasClass(isOpen)) {
-                        $(el).find('.js__tasks_steps').slideDown();
+                        $(el).find('.js__tasks_steps').slideDown(200);
                     } else {
-                        $(el).find('.js__tasks_steps').slideUp();
+                        $(el).find('.js__tasks_steps').slideUp(200);
                     }
                 });
             }

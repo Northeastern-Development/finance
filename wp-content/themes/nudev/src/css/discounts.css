@@ -130,9 +130,9 @@
       div.wrapper main > section ul.discounts > li > h5,
       div.wrapper div.main > section ul.discounts > li > h5 {
         font-size: 2.0rem;
-        font-weight: 700;
         line-height: 3.2rem;
-        text-align: left; }
+        text-align: left;
+        font-weight: 400; }
         div.wrapper main > section ul.discounts > li > h5:hover:after,
         div.wrapper div.main > section ul.discounts > li > h5:hover:after {
           color: #d41b2c; }

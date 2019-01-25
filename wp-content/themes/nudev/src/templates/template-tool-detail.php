@@ -24,7 +24,7 @@
 
         $groupSelectorGuide = '
             <li class="%s">
-                <a href="%s">%s</a>
+                <a href="%s" title="Filter to show information about %s ">%s</a>
             </li>
         ';
         $groupSelectorContent = '
@@ -43,6 +43,7 @@
                     ,( seoUrl($grouping['title']) == $toolgrouping  ) ? 'tool-grouping-active' : null
                     ,get_permalink($toolpost['ID']) . seoUrl($grouping['title'])
                     ,$grouping['title']
+                    ,$grouping['title']
                 );
             }
             if( seoUrl($grouping['title']) == $toolgrouping ){
@@ -59,8 +60,8 @@
 
         $format_group = '
             <div class="tool-group">
-                <h4>%s</h4>
-                <ul>
+                <h4 title="Toggle dropdown for %s">%s</h4>
+                <ul class="neu__fancy_bullets">
                     %s
                 </ul>
             </div>
@@ -84,6 +85,7 @@
 
                 $content_group .= sprintf(
                     $format_group
+                    ,$group['title']
                     ,$group['title']
                     ,$content_infoblocks
                 );

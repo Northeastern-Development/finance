@@ -54,7 +54,7 @@
                 ? '<a class="neu__iconlink" href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank">'.$subfields['phone'].'</a>' 
                 : null // phone #
             , (isset( $subfields['email'] )) 
-                ? '<a class="neu__iconlink" href="mailto:'.$subfields['email'].'?subject='.$subject.'">email</a>' 
+                ? '<a title="Click to email '.$helper['helper']->post_title.'" class="neu__iconlink" href="mailto:'.$subfields['email'].'?subject='.$subject.'">email</a>' 
                 : null // email
         );
     }

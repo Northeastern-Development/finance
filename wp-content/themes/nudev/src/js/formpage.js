@@ -15,11 +15,11 @@ $(function () {
             $(this).next('.js__collapsible_hiddenarea').addClass('js__collapsible_open');
         }
 
-        $('.js__collapsible .js__collapsible_hiddenarea').slideUp();
+        $('.js__collapsible .js__collapsible_hiddenarea').slideUp(200);
  
 
 
-        $(this).next('.js__collapsible_hiddenarea.js__collapsible_open').slideDown();
+        $(this).next('.js__collapsible_hiddenarea.js__collapsible_open').slideDown(200);
 
     }
     

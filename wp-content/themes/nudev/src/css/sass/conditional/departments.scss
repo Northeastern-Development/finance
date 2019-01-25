@@ -1,157 +1,231 @@
 @import '../../sass/base/mixins.scss';
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/vars.scss';
+// Grid Vars
 
-@media only screen {
+$width : 90vw;
+$col : 6;
+$space: 2vw;
 
-    
-    div.main,
-    main {
+div.main,
+main {
+    .js__bio.neu__iconlink {
+        @include neu__iconlink($icon: "\e7fd");
+    }
 
-        
-        .js__bio.neu__iconlink {
-            @include neu__iconlink( $icon : "\e7fd");
-        }
+    section.nu__team>article {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
 
-        section.nu__team > article > div:first-child  {
-            > p.description {
+        // written content
+        >div:first-child {
+            >h3 {
+                @include font-3b-l;
+            }
+
+            >h6 {
+                @include font-2b-l;
                 margin-bottom: 15px;
             }
-            > p {
-                > a.neu__iconlink {
-                    &.neu__iconlink-phone{
-                        @include neu__iconlink( $icon : "\e551" );
+
+            >p.description {
+                margin-bottom: 15px;
+            }
+
+            >p {
+                >a.neu__iconlink {
+                    &.neu__iconlink-phone {
+                        @include neu__iconlink($icon: "\e551");
                     }
-                    &.neu__iconlink-email{
-                        @include neu__iconlink( $icon : "\e0be" );
+
+                    &.neu__iconlink-email {
+                        @include neu__iconlink($icon: "\e0be");
                     }
-                    &.neu__iconlink-url{
-                        @include neu__iconlink(  );
+
+                    &.neu__iconlink-url {
+                        @include neu__iconlink();
                     }
                 }
             }
         }
 
-
-        // Department Head (only)
-        section.nu__team {
-            div.neu__bgimg {
-                position: relative;
-                &:hover {
-                    > div {
-                        transform: scale(1.1);
-                    }
-                }
-                > p {
-                    > span {
-                        @include font-2b-l;
-                    }
-                    @include font-2l-l;
-                    width: 100%;
-                    background: linear-gradient(0deg, rgba(black, 0.6) 0%, rgba(black, 0) 100%);
-                    bottom: 0;
-                    left: 0;
-                    color: white;
-                    position: absolute;
-                    margin: 0;
-                    margin-bottom: 0;
-                    padding: 15px;
-                }
-            }
+        // the headshot
+        >div.neu__bgimg {
+            flex: none;
+            width: (($width - (($col - 1) * $space)) / $col);
+            height: (($width - (($col - 1) * $space)) / $col);
         }
+    }
 
-
-        section.nu__team-list {
-            > h3 {
-                @include font-3b-c;
-                text-align: center;
-                border-bottom: 1px solid transparent;
-            }
-            > ul {
-                justify-content: center;
-                > li {
-                    > div.neu__bgimg {
-                        &:hover {
-                            > div {
-                                transform: scale(1.1);                                
-                            }
-                        }
-                    }
-                    > p {
-                        margin: 0;
-                        > span:first-of-type {
-                            @include font-3b-l;
-                        }
-                    }
-                    p:nth-last-child(3) a.neu__iconlink{
-                        @include neu__iconlink($icon : "\e551");
-                    }
-                    p:nth-last-child(2) a.neu__iconlink{
-                        @include neu__iconlink($icon : "\e0be");
-                    }
-                    .neu__iconlink {
-                        &:before {
-                            color: black;
-                        }
-                        &:hover {
-                            &:before {
-                                color: $brand_colors-red;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-
-
-        // OUR MISSION SECTION
-        // First Section Below Hero: (hardcoded heading)
-        > section:nth-of-type(2){
+    section.nu__team-list {
+        >h3 {
+            @include font-3b-c;
             text-align: center;
-            > h2 {
-                text-align: center;
-                border-bottom: none;
-            }
-            > div {
-                margin-bottom: 15px;
-            }
-
-            > a.neu__iconlink {
-                margin-right: 45px;
-            }
-
-            > a:last-of-type.neu__iconlink {
-                @include neu__iconlink($icon : "\e0be");
-            }
-
-            > a:nth-last-of-type(2).neu__iconlink{
-                @include neu__iconlink($icon : "\e551");
-            }
-            
-            
+            border-bottom: 2px solid transparent;
         }
+        width: $width;
+        // Staff Members
+        >ul {
+            width: $width;
+            display: block;
+            text-align: left;
 
-        // next section is the 'related tasks' && 'related forms'
-        > section:nth-of-type(3),
-        > section:nth-of-type(4)
-        {
-            > ul {
-                @include ul_grid_cols(2, 15px);
+            >li {
+                float: left;
+                width: (($width - (($col - 1) * $space)) / $col);
+                margin: 0 $space $space 0;
+
+                &:nth-child(#{$col}n) {
+                    margin-right: 0;
+                }
+
+                >div.neu__bgimg {
+                    height: (($width - (($col - 1) * $space)) / $col);
+                }
+
+                >p {
+                    margin: 0;
+
+                    >span:first-of-type {
+                        @include font-3b-l;
+                    }
+                }
+                p:first-of-type {
+                    margin-bottom: 15px;
+                }
+
+                p:nth-last-child(3) a.neu__iconlink {
+                    @include neu__iconlink($icon: "\e551");
+                }
+
+                p:nth-last-child(2) a.neu__iconlink {
+                    @include neu__iconlink($icon: "\e0be");
+                }
 
                 .neu__iconlink {
-                    @include neu__iconlink();
                     &:before {
-                        color: $brand_colors-red;
+                        color: black;
+                    }
+
+                    &:hover {
+                        &:before {
+                            color: $brand_colors-red;
+                        }
                     }
                 }
             }
         }
-        
+    }
+
+
+
+    // "our mission" / main section (not an optional section)
+    >section.dept_main {
+        text-align: center;
+
+        >h2 {
+            text-align: center;
+            border-bottom: none;
+        }
+
+        >div {
+            margin-bottom: 15px;
+        }
+
+        >a.neu__iconlink {
+            margin-right: 45px;
+        }
+
+        >a:last-of-type.neu__iconlink {
+            @include neu__iconlink($icon: "\e0be");
+        }
+
+        >a:nth-last-of-type(2).neu__iconlink {
+            @include neu__iconlink($icon: "\e551");
+        }
+    }
+
+
+    
+    > section.dept_relforms,
+    > section.dept_reltasks {
+        > ul {
+            @include ul_grid_cols(2, $margin : 15px);
+            > li {
+                position: relative;
+                @include neu__iconlink($hover : 0);
+                padding-left: 30px;
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    top: auto;
+                    color: $brand_colors-red;
+                }
+                > a {
+                    border-bottom: 2px solid transparent;
+                    &:hover {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
+                }
+            }
+        }
+    }
+
+
+    > section.dept_reltasks {
+
+    }
+    > section.dept_relforms {
         
     }
 
     
     
-    
 }
+
+
+    
+    
+    
+    
+    
+
+
+
+
+// THIS IS NOT FING WORKING
+// HAVE SEAN EXPLAIN THIS
+// IT ONLY DOESNT WORK WHEN YOU INTERPOLATE THE VARIABLE -- I DO GET 4 COLUMNS; BUT I DONT GET THE NTH CHILD TO WORK
+
+
+
+// @media only screen and (max-width: 720px){
+    
+//     $width : 90vw;
+//     $col : 4;
+//     $space: 2vw;
+
+//     div.main,
+//     main {
+//         > section.nu__team-list {
+
+//             > ul {
+
+//                 > li {
+//                     width: (($width - (($col - 1) * $space)) / $col);
+//                     margin: 0 $space $space 0;
+//                     &:nth-child(#{$col}n) {
+//                         margin-right: 0;
+//                     }
+//                     > div.neu__bgimg {
+//                         height: (($width - (($col - 1) * $space)) / $col);
+//                     }
+
+//                 }
+                
+//             }
+
+//         }
+//     }
+// }

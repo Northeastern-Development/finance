@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * modules/mixins
  * ---
@@ -110,17 +111,28 @@
 @media only screen {
   main#financialstatements > section:last-of-type h2 {
     text-align: center;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     padding-bottom: 15px; }
   main#financialstatements > section:nth-of-type(2) > a {
     display: block;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.67);
     padding: 15px 0; }
-    main#financialstatements > section:nth-of-type(2) > a > i.material-icons,
     main#financialstatements > section:nth-of-type(2) > a > span {
-      vertical-align: middle;
-      display: inline-block;
-      line-height: inherit; }
-    main#financialstatements > section:nth-of-type(2) > a > i.material-icons {
-      color: #d41b2c; } }
+      border-bottom: 2px solid transparent;
+      line-height: inherit;
+      display: inline-block; }
+      main#financialstatements > section:nth-of-type(2) > a > span:before {
+        display: inline-block;
+        padding-right: 15px;
+        font-size: 20px;
+        font-family: "Material Icons";
+        vertical-align: middle;
+        content: "";
+        line-height: inherit; }
+      main#financialstatements > section:nth-of-type(2) > a > span:hover {
+        color: #d41b2c; }
+      main#financialstatements > section:nth-of-type(2) > a > span:hover {
+        border-bottom: 2px solid #d41b2c; }
+      main#financialstatements > section:nth-of-type(2) > a > span:before {
+        color: #d41b2c; } }

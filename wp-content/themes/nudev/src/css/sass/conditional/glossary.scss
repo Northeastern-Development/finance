@@ -1,6 +1,7 @@
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/mixins.scss';
+
 @media only screen {
 
 
@@ -17,17 +18,24 @@
             justify-content: space-around;
             background-color: white;
             z-index: 10;
-            padding: 10px 0;
+            padding: 0;
+            border-bottom: 2px solid $brand_colors-gray;
             span {
                 text-align: center;
                 flex: 1 0 auto;
-                border-bottom: 2px solid $brand_colors-gray;
-                &:hover {
-                    border-bottom: 2px solid $brand_colors-red;
-                }
+                color: $brand_colors-gray;
             }
             a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                font-weight: 400;
                 z-index: 11;
+                border-bottom: 2px solid transparent;
+                &:hover {
+                    color: $brand_colors-red;
+                    border-bottom: 2px solid $brand_colors-red;
+                }
             }
 
             &.js__jumpnav-fixed {
@@ -38,28 +46,45 @@
                 width: 50vw;
             }
         }
-        
+
         div.glossary-content {
-            
-            > ul {
-                
+
+            >ul {
+
                 position: relative;
                 min-height: 30px; // provide space to h2 (letter) if there are no items
                 margin-top: 30px;
-                h2 {
-                    @include font-7l-l;
-                }
+
                 li {
                     padding-bottom: 30px;
-                    margin-left: 32px;
                     @include font-2l-l;
-                    > h6 {
+
+                    h2 {
+                        @include font-7l-l;
+                        color: $brand_colors-gray;
+                    }
+
+                    &:not(:first-of-type) {
+                        // margin-left: 30px;
+                        font-weight: 400;
+                    }
+
+                    >h6 {
                         @include font-3b-l;
                     }
+
+                    &:first-of-type:not(:last-child) {
+                        >h2 {
+                            color: black;
+                        }
+                    }
+
+
                 }
             }
-        }   
+        }
     }
+
     section#glossary {
 
         div.glossary-jumpnav.js__glossnav_sticky {

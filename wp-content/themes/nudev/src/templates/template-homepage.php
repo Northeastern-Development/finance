@@ -28,7 +28,7 @@
     $content_tools = '';
     $format_tools = '
         <li>
-            <a href="%s" title="View this Tool">
+            <a href="%s" title="View %s">
                 <div><div style="background-image: url(%s)"></div></div>
                 <p>%s</p>
                 <p><span>Learn more</span></p>
@@ -40,6 +40,7 @@
         $content_tools .= sprintf(
             $format_tools
             ,get_permalink($rec) . seoUrl($fields['groupings'][0]['title'])
+            ,$rec->post_title
             ,$fields['image']
             ,strip_tags($fields['short_description'])
         );
@@ -71,7 +72,7 @@
     $content_news = '';
     $format_news = '
         <li>
-            <a href="%s" target="%s">
+            <a href="%s" target="%s" title="View %s">
                 <div><div style="background-image: url(%s)"></div></div>
                 <h5>%s</h5>
                 <h5>%s</h5>
@@ -95,6 +96,7 @@
             $format_news
             ,$the_permalink
             ,$target
+            ,$rec->post_title
             ,$fields['image']
             ,$rec->post_title
             ,( get_fields( $fields['category']->ID )['status'] == true )
@@ -123,7 +125,7 @@
         <div>
             <h2>One Centralized Department</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi, harum nesciunt repudiandae vel unde neque! Consequuntur error quas, obcaecati recusandae, fugiat quis, unde modi voluptatibus minus aperiam tempore! Quasi.</p>    
-            <a href="<?php echo get_permalink( get_page_by_path('about-us') ); ?>"><h4 class="nu__content_btn">Learn More</h4></a>
+            <a title="View the About Page" href="<?php echo get_permalink( get_page_by_path('about') ); ?>"><h4 class="nu__content_btn">Learn More</h4></a>
         </div>
 
     </section>
@@ -155,7 +157,7 @@
                     echo $content_news;
                 ?>
             </ul>
-            <a href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
+            <a title="View all News and Events" href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
         </section>
     <?php 
         endif;

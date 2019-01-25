@@ -20,10 +20,10 @@
         <li>
             <div>
                 %s
-                <h5>%s</h5>
+                <h5 title="Toggle dropdown for %s">%s</h5>
                 %s
             </div>
-            <ul class="list task-options-list-item-suboptions js__tasks_steps">
+            <ul class="list task-options-list-item-suboptions js__tasks_steps neu__fancy_bullets">
                 %s
                 %s
                 %s
@@ -51,7 +51,7 @@
     // related files as a list
     $format_relatedfiles = '
         <li>
-            <h5><a target="_blank" href="%s">%s</a></h5>
+            <h5><a title="Click to download %s" target="_blank" href="%s">%s</a></h5>
         </li>
     ';
     
@@ -69,6 +69,7 @@
             foreach( $option['related_files'] as $file){
                 $content_relatedfiles .= sprintf(
                     $format_relatedfiles
+                    ,$file['title']
                     ,$file['file']['url']
                     ,$file['title']
                 );
@@ -78,6 +79,7 @@
         if( $option['use_sidebar'] ){
 
             $target = ( $option['sidebar']['external'] ) ? '_blank' : '_self';
+            $actiontext = ( !empty($option['sidebar']['link_name']) ) ? $option['sidebar']['link_name'] : 'Action to Take';
             
             // the sidebar
             $format_sidebar = '
@@ -93,7 +95,7 @@
                 ,$option['sidebar']['title']
                 ,$option['sidebar']['description']
                 , ( !empty($option['sidebar']['link']) ) // if we have a link to reference; render the link
-                    ? '<a class="neu__iconlink" target="'.$target.'" href="'.$option['sidebar']['link'].'">'.$option['sidebar']['link_name'].'</a>'
+                    ? '<a title="Go to '.$option['sidebar']['link_name'].'" class="neu__iconlink" target="'.$target.'" href="'.$option['sidebar']['link'].'">'.$actiontext.'</a>'
                     : null
             );
         }
@@ -127,6 +129,7 @@
         $content_option .= sprintf(
             $format_option
             ,'<i class="material-icons">check</i>'
+            ,$option['title']
             ,$option['title']
             ,$option['description']
             , ( !empty($content_relatedfiles) ) ? '<ul class="list"><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null

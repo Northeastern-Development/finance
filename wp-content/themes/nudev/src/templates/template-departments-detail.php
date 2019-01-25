@@ -37,8 +37,8 @@
         $format_department
         ,'<h2>Our Mission</h2>'
         ,( !empty($fields['overview']) ) ? '<div>'.$fields['overview'].'</div>' : null
-        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
-        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'.$fields['email'].'">email</a>' : null
+        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
+        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a>' : null
     );
 
     
@@ -66,7 +66,7 @@
     if( !empty($tasks) ){
         $format_related_tasks = '
             <li>
-                <a class="neu__iconlink" href="%s">%s</a>
+                <a class="neu__iconlink" href="%s" title="View %s">%s</a>
             </li>
         ';
         $content_related_tasks = '
@@ -78,6 +78,7 @@
             $content_related_tasks .= sprintf(
                 $format_related_tasks
                 ,site_url('/tasks/').$category.'/'.$task->post_name
+                ,$task->post_title
                 ,$task->post_title
             );
             
@@ -110,7 +111,7 @@
     if( !empty($forms) ){
         $format_related_forms = '
             <li>
-                <a class="neu__iconlink" href="%s">%s</a>
+                <a class="neu__iconlink" href="%s" title="View %s">%s</a>
             </li>
         ';
         $content_related_forms = '<h2>Related Forms</h2><ul>';
@@ -119,6 +120,7 @@
             $content_related_forms .= sprintf(
                 $format_related_forms
                 ,site_url().'/forms/'
+                ,$form->post_title
                 ,$form->post_title
             );
         }
@@ -142,15 +144,15 @@
         <?php 
 
             if( !empty($content_department) ){
-                echo '<section>'.$content_department.'</section>';
+                echo '<section class="dept_main">'.$content_department.'</section>';
             }
 
             if( !empty($content_related_tasks) ){
-                echo '<section>'.$content_related_tasks.'</section>';
+                echo '<section class="dept_reltasks">'.$content_related_tasks.'</section>';
             }
             
             if( !empty($content_related_forms) ){
-                echo '<section>'.$content_related_forms.'</section>';
+                echo '<section class="dept_relforms">'.$content_related_forms.'</section>';
             }
             include locate_template('loops/loop-department-staff.php');
             

@@ -43,7 +43,7 @@
     foreach( $alphabet as $letter => $array )
     {
         // each letter is a h2 within an ul
-        $contents .= '<ul id="'.$letter.'" class="list"><h2>'.strtoupper($letter).'</h2>';
+        $contents .= '<ul id="'.$letter.'" class="list"><li><h2>'.strtoupper($letter).'</h2></li>';
         // if letter has posts
         if( !empty($array) ){
             foreach( $array as $info ){
@@ -54,7 +54,7 @@
                 );
             }
             // jumpnav letter is active
-            $jumpnav .= '<span><a href="#'.$letter.'">'.strtoupper($letter).'</a></span>';
+            $jumpnav .= '<span><a title="Scroll the page to letter '.strtoupper($letter).'" href="#'.$letter.'">'.strtoupper($letter).'</a></span>';
         }
         // letter has no posts
         else {

@@ -17,9 +17,9 @@
     $cats = get_posts($args);
 
     $format_cats = '
-        <div>
+        <div title="View tasks in the %s category">
             <img class="taskicon" src="%s">
-            <h4>%s</h4>
+            <h4><span>%s</span></h4>
             <ul>
                 <li><h4>%s</h4></li>
                 %s
@@ -28,7 +28,7 @@
     ';
     $format_tasks = '
         <li>
-            <a title="Navigate to this Task\'s Detail Page" href="%s">%s</a>
+            <a title="View %s" href="%s"><span>%s</span></a>
         </li>
     ';
     $content_cats = '';
@@ -61,6 +61,7 @@
         foreach( $tasks as $i => $task ){
             $content_tasks .= sprintf(
                 $format_tasks
+                ,$task->post_title
                 ,site_url('/tasks/') . $cat->post_name.'/'.$task->post_name
                 ,$task->post_title
             );
@@ -69,6 +70,7 @@
         // SET CATS STRING
         $content_cats .= sprintf(
             $format_cats
+            ,$cat->post_title
             ,$fields['icon']
             ,$cat->post_title
             ,$cat->post_title
@@ -81,7 +83,7 @@
         <h2>How Do I...</h2>
         <h3>(Select Topic)</h3>
         <h3>(Select Task)</h3>
-        <h3 class="removefilter nu__content_btn">Back to Topics</h3>
+        <h3 title="View Task Categories" class="removefilter nu__content_btn">Back to Topics</h3>
     </div>
     <div>
         <?php 

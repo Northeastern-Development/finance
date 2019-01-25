@@ -138,10 +138,11 @@
       cursor: pointer; }
       div.main > section > div.task-options ul.task-options-list > li > ul,
       main > section > div.task-options ul.task-options-list > li > ul {
+        margin-top: 15px;
         list-style-type: none;
+        overflow-y: hidden;
         cursor: initial;
-        display: block;
-        margin-left: 5%; }
+        display: block; }
         div.main > section > div.task-options ul.task-options-list > li > ul > li,
         main > section > div.task-options ul.task-options-list > li > ul > li {
           margin: 0 auto;
@@ -162,7 +163,7 @@
           div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4,
           main > section > div.task-options ul.task-options-list > li > ul div.sidebar > h4 {
             font-size: 1.6rem;
-            font-weight: 700;
+            font-weight: 400;
             line-height: 2.8rem;
             text-align: left; }
           div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > p,
@@ -173,7 +174,7 @@
             text-align: left; }
           div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a,
           main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a {
-            border-bottom: 1px solid transparent;
+            border-bottom: 2px solid transparent;
             line-height: inherit;
             display: inline-block; }
             div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before,
@@ -190,7 +191,7 @@
               color: #d41b2c; }
             div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:hover,
             main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:hover {
-              border-bottom: 1px solid #d41b2c; }
+              border-bottom: 2px solid #d41b2c; }
             div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before,
             main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before {
               color: #d41b2c; }
@@ -205,7 +206,7 @@
         main > section > div.task-options ul.task-options-list > li > div:after {
           position: absolute;
           right: 0;
-          top: 0;
+          top: 5px;
           font-size: 20px;
           transition: transform 0.4s ease;
           content: '\e313';
@@ -221,17 +222,20 @@
         main > section > div.task-options ul.task-options-list > li > div h5 {
           margin: 0 auto;
           margin-left: 20px;
-          border-bottom: 1px solid transparent;
+          border-bottom: 2px solid transparent;
           font-size: 2.0rem;
-          font-weight: 700;
           line-height: 3.2rem;
-          text-align: left; }
+          text-align: left;
+          font-weight: 400; }
         div.main > section > div.task-options ul.task-options-list > li > div > p,
         main > section > div.task-options ul.task-options-list > li > div > p {
           margin: 15px 0; }
         div.main > section > div.task-options ul.task-options-list > li > div:hover > h5,
         main > section > div.task-options ul.task-options-list > li > div:hover > h5 {
-          border-bottom: 1px solid #d41b2c; }
+          border-bottom: 2px solid #d41b2c; }
+        div.main > section > div.task-options ul.task-options-list > li > div:hover:after,
+        main > section > div.task-options ul.task-options-list > li > div:hover:after {
+          color: #d41b2c; }
         div.main > section > div.task-options ul.task-options-list > li > div > i.material-icons,
         main > section > div.task-options ul.task-options-list > li > div > i.material-icons {
           padding: 8px;
@@ -244,38 +248,4 @@
         border-color: #d41b2c; }
       div.main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after,
       main > section > div.task-options ul.task-options-list > li.js__tasks_viewable_steps > div:after {
-        transform: rotate(180deg);
-        color: #d41b2c; }
-  ul.task-options-list-item-suboptions {
-    position: relative; }
-    ul.task-options-list-item-suboptions:before {
-      content: '';
-      width: 1px;
-      background-color: #979797;
-      height: 100%;
-      display: inline-block;
-      position: absolute;
-      left: -24px;
-      opacity: 0.3; }
-    ul.task-options-list-item-suboptions > li {
-      position: relative; }
-      ul.task-options-list-item-suboptions > li:before {
-        left: -30px;
-        position: absolute;
-        display: inline-block;
-        content: '';
-        top: 7px;
-        width: 12px;
-        background-color: #d7d7d7;
-        height: 12px;
-        border-radius: 50%; }
-      ul.task-options-list-item-suboptions > li > h5 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        line-height: 2.8rem;
-        text-align: left; }
-      ul.task-options-list-item-suboptions > li > p {
-        font-size: 1.6rem;
-        font-weight: 300;
-        line-height: 2.8rem;
-        text-align: left; } }
+        transform: rotate(180deg); } }

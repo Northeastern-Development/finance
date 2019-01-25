@@ -9,6 +9,21 @@
         div.main,
         main {
             > section {
+
+                > p.neu__prevpage {
+                    margin-bottom: 30px;
+                    > a {
+                        @include neu__iconlink($icon : "\e5cb");
+                        &:before {
+                            padding-right: 5px;
+                            position: relative;
+                            color: $brand_colors-red;
+                            bottom: 1px;
+                        }
+                    }
+
+                }
+                
                 > h1 {
                     @include font-7l-l;
                     margin: 0;
@@ -19,13 +34,17 @@
                     margin: 0;
                     margin-bottom: 15px;
                 }
-                > div.neu__bgimg {
-                    margin-bottom: 60px;
+                >img {
                     width: 100%;
+                    height: auto;
+                    margin-bottom: 15px;
                 }
                 > div:not(.neu__bgimg):last-of-type{
                     border-bottom: 1px solid transparentize(black, 0.8);
                     padding-bottom: 60px;
+                    > p {
+                        margin-bottom: 15px;
+                    }
                 }
             }
         }
@@ -53,6 +72,23 @@
         > li {
             > a {
                 > div {
+                    
+                    > h3 {
+                        @include font-3b-l;
+                        @include font-3b-l;
+                        &:after {
+                            font-family: "Material Icons";
+                            content: "\e5cc";
+                            color: $brand_colors-red;
+                            font-size: 20px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            opacity: 0;
+                        }
+                    }
+                    > h6 {
+                        @include font-2b-l;
+                    }
                     .neu__news_event_time {
                         margin-bottom: 15px;
                         > p {
@@ -70,8 +106,16 @@
                     }
                 }
                 &:hover {
+                    > .neu__bgimg {
+                        > div {
+                          transform: scale(1.1);  
+                        }
+                    }
+                    > div > h3:after {
+                        opacity: 1;
+                    }
                     p.neu__iconlink{
-                        border-bottom: 1px solid $brand_colors-red;
+                        border-bottom: 2px solid $brand_colors-red;
                         &:before{
                             color: $brand_colors-red;
                         }

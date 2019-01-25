@@ -8,14 +8,15 @@
     $content = '';
 
     $guide = '
-        <a target="_blank" title="Click to Download (opens in a new window)" href="%s">
-            <i class="material-icons">arrow_forwards</i><span>%s</span>
+        <a target="_blank" title="Download %s (opens in a new window)" href="%s">
+            <span>%s</span>
         </a>
     ';
 
     foreach( $fields['files'] as $file ){
         $content .= sprintf(
             $guide
+            ,$file['name']
             ,$file['file']
             ,$file['name']
         );

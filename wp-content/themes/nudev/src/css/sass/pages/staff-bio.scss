@@ -212,7 +212,7 @@ main#staff {
         padding: 0 30px;
         overflow: hidden;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         // contact info wrapper
         >div {
@@ -238,11 +238,19 @@ main#staff {
             }
         }
         div.neu__bgimg {
-            max-width: 50%;
+            // ALL THIS CODE IS SO IT MATCHES THE EXACT DIMENSIONS OF THE IMAGE IN THE MAIN BODY
+            $width : 90vw;
+            $col : 6;
+            $space: 2vw;
+            flex: none;
+            width: (($width - (($col - 1) * $space)) / $col);
+            height: (($width - (($col - 1) * $space)) / $col);
+            margin: 0;
         }
     }
 
     >div.about {
+        padding: 0 30px;
         margin-top: 30px;
         >h3 {
             @include font-5l-c;

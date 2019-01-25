@@ -131,10 +131,25 @@
       font-weight: 700;
       line-height: 3.2rem;
       text-align: left; }
+      ul.tools-grid li.tools-grid-tool > a > h5:after {
+        font-family: "Material Icons";
+        content: "\e5cc";
+        color: #d41b2c;
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        opacity: 0; }
+    ul.tools-grid li.tools-grid-tool > a:hover > h5:after {
+      opacity: 1; }
+    ul.tools-grid li.tools-grid-tool > a > h6 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+      text-align: left; }
     ul.tools-grid li.tools-grid-tool > a > p:first-of-type {
       margin-bottom: 15px; }
     ul.tools-grid li.tools-grid-tool > a .neu__iconlink {
-      border-bottom: 1px solid transparent;
+      border-bottom: 2px solid transparent;
       line-height: inherit;
       display: inline-block; }
       ul.tools-grid li.tools-grid-tool > a .neu__iconlink:before {
@@ -148,7 +163,7 @@
       ul.tools-grid li.tools-grid-tool > a .neu__iconlink:before {
         color: #d41b2c; }
     ul.tools-grid li.tools-grid-tool > a:hover .neu__iconlink {
-      border-bottom: 1px solid #d41b2c; }
+      border-bottom: 2px solid #d41b2c; }
     ul.tools-grid li.tools-grid-tool > a:hover .neu__bgimg > div {
       transform: scale(1.1); }
   main section ul.tool-groupingnav, div.main section ul.tool-groupingnav {
@@ -171,21 +186,14 @@
       text-align: center;
       margin: 0 30px;
       position: relative; }
-      main section ul.tool-groupingnav li a, div.main section ul.tool-groupingnav li a {
+      main section ul.tool-groupingnav li > a, div.main section ul.tool-groupingnav li > a {
+        display: inline-block;
+        margin-bottom: 5px;
         text-align: center;
         text-transform: uppercase; }
       main section ul.tool-groupingnav li.tool-grouping-active, div.main section ul.tool-groupingnav li.tool-grouping-active {
-        font-weight: bold; }
-        main section ul.tool-groupingnav li.tool-grouping-active:after, div.main section ul.tool-groupingnav li.tool-grouping-active:after {
-          position: absolute;
-          bottom: -1px;
-          left: -15px;
-          width: calc(100% + 30px);
-          display: block;
-          content: '';
-          height: 3px;
-          background-color: #d41b2c;
-          z-index: 11; }
+        font-weight: bold;
+        border-bottom: 3px solid #d41b2c; }
   main section > h2, div.main section > h2 {
     margin-bottom: 0; }
   main section .tool-group, div.main section .tool-group {
@@ -193,7 +201,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
     main section .tool-group > h4, div.main section .tool-group > h4 {
       position: relative;
-      padding: 15px 0; }
+      padding: 15px 0;
+      cursor: pointer;
+      font-size: 2.0rem;
+      line-height: 3.2rem;
+      text-align: left;
+      font-weight: 400; }
       main section .tool-group > h4:after, div.main section .tool-group > h4:after {
         position: absolute;
         right: 0;
@@ -207,14 +220,7 @@
         color: #d41b2c; }
     main section .tool-group.js__tool_expanded > h4:after, div.main section .tool-group.js__tool_expanded > h4:after {
       transform: rotate(180deg); }
-    main section .tool-group > h4, div.main section .tool-group > h4 {
-      font-size: 2.0rem;
-      font-weight: 700;
-      line-height: 3.2rem;
-      text-align: left;
-      cursor: pointer; }
     main section .tool-group > ul, div.main section .tool-group > ul {
-      margin-left: 30px;
       font-size: 1.6rem;
       font-weight: 300;
       line-height: 2.8rem;
@@ -225,6 +231,6 @@
         flex: 1 0 100%; }
         main section .tool-group > ul > li > h5, div.main section .tool-group > ul > li > h5 {
           font-size: 1.6rem;
-          font-weight: 700;
+          font-weight: 400;
           line-height: 2.8rem;
           text-align: left; } }

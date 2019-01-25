@@ -101,7 +101,7 @@
             // margin: ($gutter * 1.7) auto 0 auto;
             width: 90%;
             margin: 30px 5% 0;
-            // padding: $gutter 0 0;
+            padding: $gutter 0 0;
             background: rgba($brand_colors-beige, 1.0);
             text-align: center;
 
@@ -116,7 +116,8 @@
 
         >section {
             width: 50vw;
-            margin: ($gutter * 1.7) auto 0 auto;
+            // margin: ($gutter * 1.7) auto 0 auto;
+            margin: 30px auto 0;
 
             >ul {
                 display: flex;
@@ -174,6 +175,7 @@
         >section:last-child {
             // margin: ($gutter * 1.7) auto 0 auto;
             // padding-bottom: ($gutter * 1.5);
+            margin-bottom: 60px;
         }
 
         
@@ -311,6 +313,41 @@
 // ADDITIONAL TWEAKS AS I NEED THEM BELOW:
 
 @media only screen {
+    // LETS DO SOME FANCY BULLETS HUH
+    ul.neu__fancy_bullets {
+        position: relative;
+        padding-left: 30px;
+        &:before {
+            content: '';
+            width: 1px;
+            background-color: $brand_colors-gray;
+            height: 100%;
+            display: inline-block;
+            position: absolute;
+            left: 8px;
+            opacity: 0.3;
+        }
+        > li {
+            position: relative;
+            &:before {
+                left: -27px;
+                position: absolute;
+                display: inline-block;
+                content: '';
+                top: 7px;
+                width: 12px;
+                background-color: lighten($brand_colors-gray, 25%);
+                height: 12px;
+                border-radius: 50%;
+            }
+            > h5 {
+                @include font-2r-l;
+            }
+            > p {
+                @include font-2l-l;
+            }
+        }
+    }
 
     body {
 
@@ -377,14 +414,14 @@
                     @include font-3b-l;
                     margin: 15px 0;
                     > span {
-                        border-bottom: 1px solid transparent;
+                        border-bottom: 2px solid transparent;
                     }
                     &:hover {
                         &:after { // carrot becomes red
                             color: $brand_colors-red;
                         }
                         > span { // text is underlined
-                            border-bottom: 1px solid $brand_colors-red;
+                            border-bottom: 2px solid $brand_colors-red;
                         }
                     }
                     &.js__collapsible_triggered{
@@ -415,6 +452,11 @@
                     }
                     > a.neu__iconlink {
                         @include neu__iconlink($icon : "\e551");
+                        &:hover {
+                            &:before {
+                                color: black;
+                            }
+                        }
                     }
                     > a.neu__iconlink:last-of-type {
                         @include neu__iconlink($icon : "\e0be");

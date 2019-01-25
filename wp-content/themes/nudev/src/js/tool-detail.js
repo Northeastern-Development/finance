@@ -33,9 +33,9 @@
 
                 Finance.Tools.wrappers.each(function(index,el){
                     if( $(el).hasClass('js__tool_expanded') ){
-                        $(el).find('ul').slideDown();
+                        $(el).find('ul').slideDown(200);
                     } else {
-                        $(el).find('ul').slideUp();
+                        $(el).find('ul').slideUp(200);
                         
                     }
                 });

@@ -19,6 +19,26 @@
             > a {
                 > h5 {
                     @include font-3b-l;
+                    &:after {
+                        font-family: "Material Icons";
+                        content: "\e5cc";
+                        color: $brand_colors-red;
+                        font-size: 20px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        opacity: 0;
+                    }
+                }
+                &:hover {
+                    > h5 {
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+                > h6 {
+                    
+                    @include font-2b-l;
                 }
                 > p:first-of-type {
                     margin-bottom: 15px;
@@ -31,7 +51,7 @@
                 }
                 &:hover {
                     .neu__iconlink {
-                        border-bottom: 1px solid $brand_colors-red;
+                        border-bottom: 2px solid $brand_colors-red;
                         
                     }
                     .neu__bgimg > div {
@@ -60,6 +80,7 @@
                     background-color: black;
                     z-index: 10;
                 }
+
                 li {
                     display: inline-block;
                     text-align: center;
@@ -83,23 +104,26 @@
                     // }
                     
                     
-                    a {
+                    > a {
+                        display: inline-block;
+                        margin-bottom: 5px;
                         text-align: center;
                         text-transform: uppercase;
                     }
                     &.tool-grouping-active {
                         font-weight: bold;
-                        &:after {
-                            position: absolute;
-                            bottom: -1px;
-                            left: -15px;
-                            width: calc(100% + 30px);
-                            display: block;
-                            content: '';
-                            height: 3px;
-                            background-color: $brand_colors-red;
-                            z-index: 11;
-                        }
+                        border-bottom: 3px solid $brand_colors-red;
+                        // &:after {
+                        //     position: absolute;
+                        //     bottom: -1px;
+                        //     left: -15px;
+                        //     width: calc(100% + 30px);
+                        //     display: block;
+                        //     content: '';
+                        //     height: 3px;
+                        //     background-color: $brand_colors-red;
+                        //     z-index: 11;
+                        // }
                     }
                     
                 }
@@ -114,6 +138,8 @@
                 > h4{
                     position: relative;
                     padding: 15px 0;
+                    cursor: pointer;
+                    @include font-3r-l;
                     &:after {
                         position: absolute;
                         right: 0;
@@ -135,18 +161,12 @@
                         transform: rotate(180deg);
                     }
                 }
-                > h4 {
-                    @include font-3b-l;
-                    cursor: pointer;
-                    // padding: 15px 0;
-                }
                 > ul {
-                    margin-left: 30px;
                     @include font-2l-l;
                     flex-flow: row wrap;
                     > li {
                         >h5 {
-                            @include font-2b-l;
+                            @include font-2r-l;
                         }
                         margin-bottom: 20px;
                         flex: 1 0 100%;

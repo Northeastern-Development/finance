@@ -64,7 +64,7 @@
     $format_form = '
         <ul class="js__collapsible_list list">
             <li>
-                <h5>%s</h5>
+                <h5 title="Toggle the %s dropdown">%s</h5>
                 <div>
                     %s
                     %s
@@ -77,7 +77,7 @@
     ';
     
     $format_files = '
-        <p><a class="neu__iconlink" href="%s" title="click to open this file in a new tab" target="_blank">%s</a></p>
+        <p><a class="neu__iconlink" href="%s" title="Download %s" target="_blank">%s</a></p>
     ';
 
     $format_blocks = '<h4>%s</h4>%s';
@@ -109,7 +109,12 @@
                     $content_files .= sprintf(
                         $format_files
                         ,$file['file']
-                        ,$file['filename']
+                        ,( !empty($file['filename']) ) // TITLE ATTR
+                            ? $file['filename']
+                            : 'this file'
+                        ,( !empty($file['filename']) ) // TEXT
+                            ? $file['filename']
+                            : 'Download'
                     );
                 }
                 
@@ -145,6 +150,7 @@
                 // Set: format string combining all form elements into a complete form
                 $content_form .= sprintf(
                     $format_form
+                    ,$form->post_title
                     ,$form->post_title
                     ,$content_files
                     ,$content_blocks
