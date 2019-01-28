@@ -609,7 +609,7 @@ footer{
   #approach,
 
   footer > div#sitefooter > div,
-  header > div#header,
+//   header > div#header,
   footer > div#nu__global-footer > div {
   width:90%;
   margin:0 auto;
@@ -1095,7 +1095,7 @@ footer{
 @media only screen and (max-width: 600px) {
   header {
     & > div#header{
-      max-width:90vw;
+    //   max-width:90vw;
       & .logo {
         & a {
           & img {

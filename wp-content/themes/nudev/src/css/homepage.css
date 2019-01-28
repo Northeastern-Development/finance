@@ -108,12 +108,10 @@
  * modules/mixins
  * ---
  */
+/*
+*   Homepage   
+*/
 @media only screen {
-  div.wrapper .neumenu-wrapper {
-    display: block;
-    position: relative; }
-  header li[data-id="howdoi"] > a {
-    pointer-events: none; }
   div.wrapper section.hero {
     background-size: cover;
     background-position: center;
@@ -121,190 +119,209 @@
     flex-flow: column nowrap;
     justify-content: space-around;
     height: 620px; }
-    div.wrapper section.hero > div {
-      width: calc(100% / 3);
+    div.wrapper section.hero > div > p {
+      margin-bottom: 30px; }
+    div.wrapper section.hero > div > h2 {
+      font-size: 3.4rem;
+      line-height: 4.8rem;
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 30px; }
+    div.wrapper section.hero > div > p,
+    div.wrapper section.hero > div .nu__content_btn {
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.8rem;
       text-align: center; }
-      div.wrapper section.hero > div > p {
-        margin-bottom: 30px; }
-      div.wrapper section.hero > div > h2 {
-        font-size: 3.4rem;
-        line-height: 4.8rem;
-        text-align: center;
-        font-weight: 300;
-        margin-bottom: 30px; }
-      div.wrapper section.hero > div > p,
-      div.wrapper section.hero > div .nu__content_btn {
-        font-size: 1.6rem;
-        font-weight: 300;
-        line-height: 2.8rem;
-        text-align: center; }
-      div.wrapper section.hero > div .nu__content_btn {
+    div.wrapper section.hero > div .nu__content_btn {
+      color: white;
+      border: 1px solid white; }
+      div.wrapper section.hero > div .nu__content_btn:hover {
         color: white;
-        border: 1px solid white; }
-        div.wrapper section.hero > div .nu__content_btn:hover {
-          color: white;
-          background-color: rgba(0, 0, 0, 0.4); }
-  div.wrapper div.deadlines {
-    width: 100%;
-    height: 150px;
-    background-color: #327c8a;
-    position: relative; }
-    div.wrapper div.deadlines > div {
-      transform: translate(-50%, -50%);
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 80%;
-      margin: 0 auto; }
-      div.wrapper div.deadlines > div > h4 {
+        background-color: rgba(0, 0, 0, 0.4); } }
+
+@media only screen {
+  div.wrapper main div#howdoi {
+    display: none; }
+  div.wrapper > main > section.hero > div {
+    text-align: center;
+    width: 90%; }
+  div.wrapper > main > div.deadlines {
+    background-color: #327c8a; }
+    div.wrapper > main > div.deadlines > div {
+      text-align: center;
+      position: relative; }
+      div.wrapper > main > div.deadlines > div > h4 {
         padding: 10px 20px;
         display: inline-block;
         background-color: rgba(255, 255, 255, 0.6);
         text-transform: uppercase;
-        margin-bottom: 1vw;
         font-size: 1.4rem;
         color: #979797;
         line-height: 2.8rem;
         text-align: left;
         font-weight: 400;
         color: black;
-        position: absolute;
         letter-spacing: 1px;
-        bottom: 100%; }
-      div.wrapper div.deadlines > div > ul {
-        display: flex;
-        flex-flow: row nowrap;
-        list-style-type: none;
-        justify-content: flex-start;
-        align-items: center; }
-        div.wrapper div.deadlines > div > ul > li {
-          max-width: calc(100% / 5);
-          flex: 1;
+        margin-top: 30px; }
+      div.wrapper > main > div.deadlines > div > ul {
+        padding: 30px; }
+        div.wrapper > main > div.deadlines > div > ul > li {
           padding: 15px;
-          height: 185px;
-          background-color: white;
-          margin-right: 1vw;
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: center; }
-          div.wrapper div.deadlines > div > ul > li:last-child {
-            margin-right: 0; }
-          div.wrapper div.deadlines > div > ul > li > h5 {
+          margin: 15px 0;
+          background-color: white; }
+          div.wrapper > main > div.deadlines > div > ul > li > h5 {
             font-size: 2.0rem;
             font-weight: 700;
             line-height: 3.2rem;
             text-align: left; }
-          div.wrapper div.deadlines > div > ul > li > p {
+          div.wrapper > main > div.deadlines > div > ul > li > p {
             font-size: 1.6rem;
             font-weight: 300;
             line-height: 2.8rem;
             text-align: left; }
-  div.wrapper .home-feat-tools,
-  div.wrapper .home-feat-news {
-    padding: 0;
-    margin: 60px auto; }
-    div.wrapper .home-feat-tools > h2,
-    div.wrapper .home-feat-news > h2 {
+  div.wrapper .home-feat-news,
+  div.wrapper .home-feat-tools {
+    margin: 60px auto;
+    padding: 0; }
+    div.wrapper .home-feat-news > h2,
+    div.wrapper .home-feat-tools > h2 {
       font-size: 3.4rem;
       line-height: 4.8rem;
       text-align: center;
       font-weight: 300;
-      border-bottom: 2px solid transparent;
       border: none; }
-    div.wrapper .home-feat-tools > ul,
-    div.wrapper .home-feat-news > ul {
-      margin-top: 0;
-      list-style-type: none;
-      display: flex;
-      flex-flow: row wrap; }
-      div.wrapper .home-feat-tools > ul li,
-      div.wrapper .home-feat-news > ul li {
-        flex: 1 1 calc(calc(100% / 3) - 30px);
-        margin: 0 30px 30px 0;
-        max-width: calc( 100% / 3 - 30px); }
-        div.wrapper .home-feat-tools > ul li:nth-of-type(3n),
-        div.wrapper .home-feat-news > ul li:nth-of-type(3n) {
-          margin-right: 0; }
-        div.wrapper .home-feat-tools > ul li:last-of-type:nth-of-type(even),
-        div.wrapper .home-feat-news > ul li:last-of-type:nth-of-type(even) {
-          margin-right: 0; }
-      div.wrapper .home-feat-tools > ul > li > a > div:first-of-type,
-      div.wrapper .home-feat-news > ul > li > a > div:first-of-type {
-        flex: 1;
-        height: 245px;
-        overflow: hidden;
-        margin-bottom: 15px;
-        text-align: center;
-        background-color: black; }
-        div.wrapper .home-feat-tools > ul > li > a > div:first-of-type > div,
-        div.wrapper .home-feat-news > ul > li > a > div:first-of-type > div {
-          width: 101%;
-          height: 101%;
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          transform: scale(1);
-          transition: transform 0.4s ease; }
-      div.wrapper .home-feat-tools > ul > li > a > p:first-of-type,
-      div.wrapper .home-feat-news > ul > li > a > p:first-of-type {
-        margin-bottom: 15px; }
-      div.wrapper .home-feat-tools > ul > li > a > p:last-child > span,
-      div.wrapper .home-feat-news > ul > li > a > p:last-child > span {
-        border-bottom: 2px solid transparent;
-        line-height: inherit;
-        display: inline-block; }
-        div.wrapper .home-feat-tools > ul > li > a > p:last-child > span:before,
-        div.wrapper .home-feat-news > ul > li > a > p:last-child > span:before {
-          display: inline-block;
-          padding-right: 15px;
-          font-size: 20px;
-          font-family: "Material Icons";
-          vertical-align: middle;
-          content: "";
-          line-height: inherit; }
-        div.wrapper .home-feat-tools > ul > li > a > p:last-child > span:before,
-        div.wrapper .home-feat-news > ul > li > a > p:last-child > span:before {
-          color: #d41b2c; }
-      div.wrapper .home-feat-tools > ul > li > a:hover > p:last-child > span,
-      div.wrapper .home-feat-news > ul > li > a:hover > p:last-child > span {
-        border-bottom: 2px solid #d41b2c; }
-  div.wrapper section.home-feat-tools > ul > li > a > div:first-of-type {
-    width: calc(200% / 3);
-    margin: 0 auto;
-    margin-bottom: 15px;
-    height: 80px; }
-  div.wrapper section.home-feat-news > ul > li > a > div:first-of-type {
+    div.wrapper .home-feat-news > ul,
+    div.wrapper .home-feat-tools > ul {
+      flex-flow: column nowrap;
+      margin: 0 auto; }
+      div.wrapper .home-feat-news > ul > li,
+      div.wrapper .home-feat-tools > ul > li {
+        margin: 30px 0; }
+        div.wrapper .home-feat-news > ul > li > a > p:first-of-type,
+        div.wrapper .home-feat-tools > ul > li > a > p:first-of-type {
+          margin-bottom: 15px; }
+        div.wrapper .home-feat-news > ul > li > a > p:last-child > span,
+        div.wrapper .home-feat-tools > ul > li > a > p:last-child > span {
+          border-bottom: 2px solid transparent;
+          line-height: inherit;
+          display: inline-block; }
+          div.wrapper .home-feat-news > ul > li > a > p:last-child > span:before,
+          div.wrapper .home-feat-tools > ul > li > a > p:last-child > span:before {
+            display: inline-block;
+            padding-right: 15px;
+            font-size: 20px;
+            font-family: "Material Icons";
+            vertical-align: middle;
+            content: "";
+            line-height: inherit; }
+          div.wrapper .home-feat-news > ul > li > a > p:last-child > span:before,
+          div.wrapper .home-feat-tools > ul > li > a > p:last-child > span:before {
+            color: #d41b2c; }
+        div.wrapper .home-feat-news > ul > li > a > div,
+        div.wrapper .home-feat-tools > ul > li > a > div {
+          flex: 1;
+          height: 245px;
+          overflow: hidden;
+          margin-bottom: 15px;
+          text-align: center;
+          background-color: black; }
+          div.wrapper .home-feat-news > ul > li > a > div > div,
+          div.wrapper .home-feat-tools > ul > li > a > div > div {
+            width: 101%;
+            height: 101%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: scale(1);
+            transition: transform 0.4s ease; }
+        div.wrapper .home-feat-news > ul > li > a:hover > p:last-child > span,
+        div.wrapper .home-feat-tools > ul > li > a:hover > p:last-child > span {
+          border-bottom: 2px solid #d41b2c; }
+  div.wrapper .home-feat-news > ul > li > a > div:first-of-type {
     width: 100%;
     height: 245px; }
-    div.wrapper section.home-feat-news > ul > li > a > div:first-of-type:hover > div {
+    div.wrapper .home-feat-news > ul > li > a > div:first-of-type:hover > div {
       transform: scale(1.1); }
-  div.wrapper section.home-feat-news > ul > li > a {
+  div.wrapper .home-feat-news > ul > li > a h5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    text-align: left; }
+  div.wrapper .home-feat-news > ul > li > a h5:first-of-type {
+    font-size: 2.0rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    text-align: left; }
+    div.wrapper .home-feat-news > ul > li > a h5:first-of-type:after {
+      font-family: "Material Icons";
+      content: "\e5cc";
+      color: #d41b2c;
+      font-size: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      opacity: 0; }
+  div.wrapper .home-feat-news > ul > li > a p {
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 2.8rem;
     text-align: left; }
-    div.wrapper section.home-feat-news > ul > li > a h5 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 2.8rem;
-      text-align: left; }
-    div.wrapper section.home-feat-news > ul > li > a h5:first-of-type {
-      font-size: 2.0rem;
-      font-weight: 700;
-      line-height: 3.2rem;
-      text-align: left; }
-      div.wrapper section.home-feat-news > ul > li > a h5:first-of-type:after {
-        font-family: "Material Icons";
-        content: "\e5cc";
-        color: #d41b2c;
-        font-size: 20px;
-        display: inline-block;
-        vertical-align: middle;
-        opacity: 0; }
-    div.wrapper section.home-feat-news > ul > li > a p {
-      font-size: 1.6rem;
-      font-weight: 300;
-      line-height: 2.8rem;
-      text-align: left; }
-    div.wrapper section.home-feat-news > ul > li > a:hover h5:first-of-type:after {
-      opacity: 1; } }
+  div.wrapper .home-feat-news > ul > li > a:hover h5:first-of-type:after {
+    opacity: 1; }
+  div.wrapper .home-feat-tools > ul > li > a > div:first-of-type {
+    width: calc(200% / 3);
+    margin: 0 auto;
+    margin-bottom: 15px;
+    height: 80px; } }
+
+@media only screen and (min-width: 960px) {
+  div.wrapper main div#howdoi {
+    position: relative;
+    display: block; }
+  header li[data-id="howdoi"] > a {
+    pointer-events: none; }
+  div.wrapper .home-feat-tools > ul,
+  div.wrapper .home-feat-news > ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap; }
+    div.wrapper .home-feat-tools > ul li,
+    div.wrapper .home-feat-news > ul li {
+      flex: 1 1 calc(calc(100% / 3) - 30px);
+      margin: 0 30px 30px 0;
+      max-width: calc( 100% / 3 - 30px); }
+      div.wrapper .home-feat-tools > ul li:nth-of-type(3n),
+      div.wrapper .home-feat-news > ul li:nth-of-type(3n) {
+        margin-right: 0; }
+      div.wrapper .home-feat-tools > ul li:last-of-type:nth-of-type(even),
+      div.wrapper .home-feat-news > ul li:last-of-type:nth-of-type(even) {
+        margin-right: 0; }
+  div.wrapper > main > section.hero > div {
+    width: calc(100% / 3); }
+  div.wrapper > main div.deadlines {
+    position: relative;
+    height: 150px; }
+    div.wrapper > main div.deadlines > div {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      width: 80%; }
+      div.wrapper > main div.deadlines > div > h4 {
+        position: absolute;
+        margin: 0;
+        left: 0;
+        bottom: 100%; }
+      div.wrapper > main div.deadlines > div > ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0; }
+        div.wrapper > main div.deadlines > div > ul > li {
+          max-width: 20%;
+          height: 185px;
+          margin-right: 30px; }
+          div.wrapper > main div.deadlines > div > ul > li:last-child {
+            margin-right: 0; } }

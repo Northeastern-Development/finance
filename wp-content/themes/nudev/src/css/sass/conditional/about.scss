@@ -147,3 +147,26 @@ main {
 }
 
 
+@media only screen and (max-width: $nav_bp_dt){
+
+    div.wrapper {
+        > main {
+            > section.nu__president {
+                > div {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            > section:last-child {
+                > ul {
+                    > li {
+                        flex: 1 1 100%;
+                        max-width: none;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+}

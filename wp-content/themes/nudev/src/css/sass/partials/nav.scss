@@ -1,53 +1,45 @@
-$nav_bp_dt : 1024px;
-
 @media only screen {
-
-    // TOTALLY disable mobile nav (for now)
-    #nu__mobile {
-        display: none;
-    }
-    
-
-    // Hide Desktop Nav ( Until BP )
-    #nu__main-nav-desktop {
-        display: none;
-    }
 
     // top-level nav items 'full-height' (clickable top to bottom)
     .nu__main-nav,
-    .nu__main-nav > ul,
-    .nu__main-nav > ul > li,
-    .nu__main-nav > ul > li > a {
+    .nu__main-nav>ul,
+    .nu__main-nav>ul>li,
+    .nu__main-nav>ul>li>a {
         height: 100%;
     }
+
     // Initial States
     .nu__main-nav {
-        > ul {
-            > li {
+        >ul {
+            >li {
                 margin-right: ($gutter * 2);
                 display: inline-block;
+
                 // nav links (text)
-                > a {
+                >a {
                     height: 100%;
                     display: inline-block;
                     @include font-2b-l;
                     color: rgba(255, 255, 255, 0.8);
                     border-bottom: 5px solid transparent;
+
                     &:hover {
                         color: rgba(255, 255, 255, 1);
                         border-bottom: 5px solid $brand_colors-red;
                     }
+
                     // vertically center link text within 100% height clickable area
-                    > span {
+                    >span {
                         line-height: 84px;
                     }
                 }
             }
+
             // nav items with children (dropdowns)
-            > li.has-children {
-                > a {
+            >li.has-children {
+                >a {
                     &:after {
-                        content: '\e5cf';  // carrot down
+                        content: '\e5cf'; // carrot down
                         font-family: 'Material Icons';
                         vertical-align: middle;
                         font-size: 20px;
@@ -56,6 +48,7 @@ $nav_bp_dt : 1024px;
             }
         }
     }
+
     // align sub-nav (initially hidden)
     .neumenu-wrapper {
         display: none;
@@ -63,39 +56,46 @@ $nav_bp_dt : 1024px;
         left: 0;
         width: 100%;
         z-index: 11;
+
         // flex-wrapper for two subnav panels
         .neumenu-wrapper-inner {
             display: flex;
             flex-flow: row nowrap;
             background-color: white;
             min-height: 166px;
+
             // 20%wide left-panel
-            > div:first-child {
+            >div:first-child {
                 flex: 1 0 20%;
             }
+
             // 80%wide right-panel
-            > div:last-child{
+            >div:last-child {
                 flex: 1 0 80%;
             }
         }
     }
+
     // Active States
     .nu__main-nav {
+
         // drop-down nav active state
         li.neu__active,
         li.neu__showme {
-            > a {
+            >a {
                 color: white;
                 border-bottom: 5px solid $brand_colors-red;
             }
         }
     }
+
     // "howdoi" submenu only
     .neumenu-wrapper#howdoi {
         .neumenu-wrapper-inner {
+
             // instructions / back to cats
             // teal section
-            > div:first-child {
+            >div:first-child {
                 padding: 30px;
                 background-color: $brand_colors-teal--dark;
                 color: white;
@@ -103,16 +103,20 @@ $nav_bp_dt : 1024px;
                 flex-flow: column nowrap;
                 align-items: center;
                 justify-content: center;
-                > h2 {
+
+                >h2 {
                     @include font-7r-c;
                 }
-                > h3 {
+
+                >h3 {
                     @include font-3r-c;
                     margin-bottom: 15px;
-                    &:not(:first-of-type){
+
+                    &:not(:first-of-type) {
                         display: none;
                     }
                 }
+
                 // back to topics button
                 .removefilter {
                     border: 1px solid white;
@@ -122,33 +126,39 @@ $nav_bp_dt : 1024px;
                     @include font-3l-c;
                     text-transform: uppercase;
                     cursor: pointer;
+
                     &:hover {
-                        color: white;    
+                        color: white;
                         background-color: transparentize(black, 0.5);
                     }
                 }
             }
 
             // task categories wrapper
-            > div:last-child {
+            >div:last-child {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-around;
                 align-items: flex-start;
                 padding: 30px;
+
                 // task category items
-                > div {
-                    &:not(.theFilter){
+                >div {
+                    &:not(.theFilter) {
                         max-width: calc(20% - 15px);
                         margin-right: 15px;
+
                         &:last-of-type {
                             margin-right: 0;
                         }
                     }
+
                     cursor: pointer;
                     text-align: center;
-                    > h4 {
+
+                    >h4 {
                         @include font-1r-c;
+
                         &:after {
                             content: '\e315';
                             font-size: 20px;
@@ -156,79 +166,94 @@ $nav_bp_dt : 1024px;
                             vertical-align: middle;
                             color: $brand_colors-red;
                         }
-                        > span {
+
+                        >span {
                             border-bottom: 2px solid transparent;
                         }
                     }
-                    > ul {
+
+                    >ul {
                         list-style-type: none;
                         display: none;
                     }
+
                     // img/icon for task category
-                    > .taskicon {
+                    >.taskicon {
                         width: 36px;
                         height: 36px;
                         display: inline-block;
                         margin-bottom: 15px;
                     }
+
                     &:hover {
-                        > h4 > span {
+                        >h4>span {
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
                 }
             }
+
             // 
             //      Behavior
             // 
             // reveal 'select task' and 'back to topics' button
-            &.isFiltered > div:first-child {
-                h3:not(:first-of-type){
+            &.isFiltered>div:first-child {
+                h3:not(:first-of-type) {
                     display: block;
                 }
-                h3:first-of-type{
+
+                h3:first-of-type {
                     display: none;
                 }
             }
+
             // on click a task category (is filtered); hide all other categories
-            &.isFiltered > div:not(:first-child){
+            &.isFiltered>div:not(:first-child) {
                 justify-content: flex-start;
                 align-items: flex-start;
+
                 // every task-items wrapper (hidden or not)
-                > div {
+                >div {
                     flex: 1 0 100%;
                     // padding: 40px;
                     cursor: default;
                 }
+
                 // hide other task items wrappers
-                > div:not(.theFilter){
+                >div:not(.theFilter) {
                     display: none;
                 }
+
                 // hide the task category header (replicated in the revealed list, for alignment)
-                > div.theFilter {
-                    > h4 {
+                >div.theFilter {
+                    >h4 {
                         display: none;
                     }
                 }
+
                 // show this task items wrapper
-                > div.theFilter > ul {
+                >div.theFilter>ul {
                     display: flex;
                     flex-flow: column wrap;
                     max-height: 216px;
+
                     li {
                         text-align: left;
                         // flex: 1;
                         max-width: calc(33% - 30px);
                         margin-bottom: 20px;
+
                         // (restyle the duplicate task category title inside the newly revealed list of tasks)
-                        > h4 {
+                        >h4 {
                             @include font-1r-l;
                             text-transform: uppercase;
                             cursor: default;
                         }
-                        > a {
+
+                        >a {
                             @include font-1r-l;
                             color: black;
+
                             &:after {
                                 content: '\e315';
                                 font-size: 20px;
@@ -236,319 +261,209 @@ $nav_bp_dt : 1024px;
                                 vertical-align: middle;
                                 color: $brand_colors-red;
                             }
-                            > span {
+
+                            >span {
                                 border-bottom: 2px solid transparent;
                             }
+
                             &:hover {
-                                > span {
+                                >span {
                                     border-bottom: 2px solid $brand_colors-red;
                                 }
                             }
                         }
                     }
                 }
+
                 .taskicon {
                     display: none;
                 }
             }
+
             // if a category is clicked and we enter 'task view' -- the wrapper now adjusts height to content
             &.isFiltered {
                 height: auto;
             }
         }
     }
+
     // About Submenu
-    li.has-children[data-id="about"]{
+    li.has-children[data-id="about"] {
         position: relative;
     }
+
     .neumenu-wrapper#about {
         right: -50%;
         top: calc(100% + 1px);
         left: auto;
         width: auto;
         box-shadow: none;
-        > .neumenu-wrapper-inner { // should match ul on .edu
+
+        >.neumenu-wrapper-inner {
+            // should match ul on .edu
             min-height: 0;
             flex-flow: column wrap;
             background-color: #1f1f1f;
             border: 1px solid $brand_colors-gray;
             border-top: none;
-            > a {   // should match li on .edu
+
+            >a {
+                // should match li on .edu
                 color: transparentize(white, 0.2);
                 line-height: 50px;
                 white-space: nowrap;
                 display: block;
                 padding: 0 30px;
-                &:not(:last-child){
+
+                &:not(:last-child) {
                     border-bottom: 1px solid $brand_colors-gray;
                 }
-                
+
                 &:hover {
                     background-color: $brand_colors-beige;
                     color: black;
                 }
             }
         }
-    }        
-    
-
-    // WHATS THIS?!
-    .no-scroll {
-        overflow: hidden;
     }
-} // end only screen media query
-@media only screen and (max-width: 1024) {
-    
-    
+}
+
+// end only screen media query
+
+
+@media only screen {
+
+
     #nu__mobile {
-        
-        top: 124px;
+        position: absolute;
+        top: 84px;
+        left: 0;
         width: 100%;
-        background-color: #fff;
-        &>nav {
-            width: 97vw;
+        background-color: #1f1f1f;
+
+        > nav {
             position: relative;
-            margin: 0 auto;
-            padding-bottom: 35vw; // WHY?
-            padding: 20px 1.5vw; // (1.5vw padding on the sides is consistent with the rest of the nav)
-            ul {
-                list-style: none;
-                padding: 0;
 
-                &>li {
-                    margin: ($gutter / 2) 0;
-                    @include font-1r-l;
+            > ul {
+                display: inline-block;
+                width: 100%;
 
-                    &>a.toggle {
-                        // width: 100%;
-                        display: block;
-                        transition: background .3s ease;
-
-                        &:before {
-                            font-family: 'Material Icons';
-                            content: '\e313';
-                            float: right;
-                            @include font-4-c;
-                        }
-
-                        &:hover {
-                            color: $brand_colors-gray;
-                        }
-
-                    }
-
-                    .active {
-                        color: $brand_colors-gray;
-
-                        &:before {
-                            content: '\e316' !important;
-                        }
-                    }
-                }
-
-                & .inner {
-                    padding-left: ($gutter / 2);
-                    overflow: hidden;
-                    display: none;
-
-                    &.show {
-                        /*display: block;*/
-                    }
-
-                    &>ul {
-                        &>li {
-                            @include font-1r-l;
-
-                            &>a {
-                                &:hover {
-                                    color: $brand_colors-gray;
-                                }
+                li {
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        width: 100%;
+                        line-height: 50px;
+                        padding: 0 30px;
+                        color: white;
+                        &.toggle {
+                            &:after {
+                                content: "\e313";
+                                font-family: "Material Icons";
+                                position: absolute;
+                                right: 30px;
                             }
                         }
+                        &.active {
+                            background-color: $brand_colors-beige;
+                            color: black;
+                        }
                     }
+                    &:hover {
+                        > a {
+                            background-color: $brand_colors-beige;
+                            color: black;
+                        }
+                    }
+                    > ul.inner {
+                        display: none;
+                        overflow: hidden;
+                        padding: 0 2.5%;
+                    }
+                    
+                    
                 }
+                
             }
+            
+        }
+        
+    }
+
+
+
+    label#neu__navicon-label {
+
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+
+        &:before,
+        &:after {
+            font-family: "Material Icons";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        &:before {
+            content: "\e5cd"; // times
+        }
+
+        &:after {
+            content: "\e3c7 "; // navicon
+            display: block;
         }
     }
-    //HAMBURGER BUTTON
-    #nav-btn {
-        cursor: pointer;
-        height: 56px;
-        opacity: 0;
+
+    input#neu__navicon {
         position: absolute;
-        right: 0;
-        width: 56px;
-        z-index: 100;
+        left: -9999px;
+    }
+
+    input#neu__navicon:checked {
+
+        ~label#neu__navicon-label {
+            &:before {
+                display: block;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        +#nu__mobile {
+            display: block;
+        }
 
     }
 
-    #nav-btn+label {
-        display: block;
-        height: 2px;
-        height: 56px;
-        left: 18px;
-        position: absolute;
-        right: 18px;
-        top: 44px;
-        width: 56px;
-    }
 
-    #nav-btn+span {
-        background-color: black;
-        cursor: pointer;
-        display: block;
-        height: 2px;
-        position: absolute;
-        right: 20px;
-        top: 51px;
-        width: 56px;
-        z-index: 99;
+
+    #nu__mobile {
         display: none;
-
-
     }
 
-    #nav-btn+span::before,
-    #nav-btn+span::after {
-        background-color: black;
-        content: "";
-        display: block;
-        height: 2px;
-        left: 0;
-        position: absolute;
-        width: 56px;
-    }
-
-    #nav-btn+span::before {
-        top: -6px;
-    }
-
-    #nav-btn+span::after {
-        bottom: -6px;
-    }
-
-    #nav-btn:checked+span {
-        background-color: #F5060A;
-    }
-
-    #nav-btn+span::before,
-    #nav-btn+span::after {
-        transition-delay: 0.2s, 0s;
-        transition-duration: 0.2s, 0.2s;
-    }
-
-    #nav-btn+span::before {
-        transition-property: top, transform;
-    }
-
-    #nav-btn+span::after {
-        transition-property: bottom, transform;
-    }
-
-    #nav-btn:checked+span {
-        background: none;
-    }
-
-    #nav-btn:checked+span::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-
-    #nav-btn:checked+span::after {
-        bottom: 0;
-        transform: rotate(-45deg);
-    }
-
-    #nav-btn:checked+span::before,
-    #nav-btn:checked+span::after {
-        transition-delay: 0s, 0.2s;
-    }
-
-    #nav-btn:checked~#nu__mobile {
-        left: 0px;
-        //opacity: 100;
-        display: block;
-        position: fixed;
-        visibility: 1;
-        z-index: 98;
-    }
-
-    #nav-btn:checked~nav ul {
-        transform: translate(-50%, -50%);
-    }
-
-    #nav-btn {
-        right: 0;
-        height: 56px;
-        width: 20px;
-    }
-
-    #nav-btn+span {
-        right: 0;
-    }
-
-    #nav-btn,
-    #nav-btn+span {
-        display: block;
-    }
-
-
-    #nav-btn+label {
-        height: 56px;
-        left: 18px;
-        position: absolute;
-        right: 18px;
-        top: 44px;
-        width: 20px;
-    }
-
-    #nav-btn+span {
-        background-color: black;
-        cursor: pointer;
-        display: block;
-        height: 2px;
-        position: absolute;
-
-        top: 41px;
-        width: 20px;
-        z-index: 99;
-
-    }
-
-    #nav-btn+span::before,
-    #nav-btn+span::after {
-        background-color: black;
-        content: "";
-        display: block;
-        height: 2px;
-        left: 0;
-        position: absolute;
-        width: 20px;
-    }
-
-    #nav-btn+span::before {
-        top: -5px;
-    }
-
-    #nav-btn+span::after {
-        bottom: -5px;
+    #nu__main-nav-desktop {
+        display: none;
     }
 
 }
-// Break from Mobile Nav to Desktop Nav ( @1024px currently )
-@media only screen and (min-width: $nav_bp_dt){
-    
-    // Hide Mobile Nav
-    #nu__mobile {
+
+@media only screen and (min-width: $nav_bp_dt) {
+
+    label#neu__navicon-label {
         display: none;
     }
-    // Hide Mobile Nav Hamburger Button
-    #nav-btn {
-        display: none;
-    }
-    // Reveal Desktop Nav
+
     #nu__main-nav-desktop {
         display: block;
     }
+
 
 }
