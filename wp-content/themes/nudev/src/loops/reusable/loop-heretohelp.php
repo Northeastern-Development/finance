@@ -51,10 +51,10 @@
                 ? '<p>'.$subfields['title'].'</p>' 
                 : null // staff member official title (not post title)
             , (isset( $subfields['phone'] )) 
-                ? '<a class="neu__iconlink" href="tel:'.$subfields['phone'].'" title="Click to dial number (may open new window)" target="_blank">'.$subfields['phone'].'</a>' 
+                ? '<a class="neu__iconlink" href="tel:'.$subfields['phone'].'" title="Call '.$helper['helper']->post_title.' (may open new window)" target="_blank">'.$subfields['phone'].'</a>' 
                 : null // phone #
             , (isset( $subfields['email'] )) 
-                ? '<a title="Click to email '.$helper['helper']->post_title.'" class="neu__iconlink" href="mailto:'.$subfields['email'].'?subject='.$subject.'">email</a>' 
+                ? '<a title="Email '.$helper['helper']->post_title.'" class="neu__iconlink" href="mailto:'.$subfields['email'].'?subject='.$subject.'">email</a>' 
                 : null // email
         );
     }

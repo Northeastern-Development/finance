@@ -21,6 +21,9 @@
 
             > div.task-options {
                 // the solutions header (select solution based on method of payment etc)
+                p {
+                    margin-bottom: 15px;
+                }
                 > h2 {
                     @include font-7l-l;
                     padding-bottom: 30px;
@@ -42,9 +45,18 @@
                             overflow-y: hidden;
                             cursor: initial;
                             display: block;
+
+                            // a 'step'
                             > li {
                                 margin: 0 auto;
                                 margin-bottom: 20px;
+
+                                > a.js__youtube {
+                                    @include neu__iconlink();
+                                    &:before {
+                                        color: $brand_colors-red;
+                                    }
+                                }
                             }
                             // in-solution 'sidebar' / 'callout'
                             div.sidebar {
@@ -69,6 +81,21 @@
                                     @include neu__iconlink();
                                     &:before {
                                         color: $brand_colors-red;
+                                    }
+                                }
+                            }
+                            ul.list {
+                                > li:first-child {
+                                    > h2 {
+                                        @include font-2r-l;
+                                    }
+                                }
+                                > li {
+                                    > a.neu__iconlink {
+                                        @include neu__iconlink($icon : "\e2c4");
+                                        &:before {
+                                            color: $brand_colors-red;
+                                        }
                                     }
                                 }
                             }

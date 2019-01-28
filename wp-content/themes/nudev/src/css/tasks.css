@@ -118,6 +118,9 @@
     div.main > section.related-tasks i.material-icons,
     main > section.related-tasks i.material-icons {
       color: #d41b2c; }
+  div.main > section > div.task-options p,
+  main > section > div.task-options p {
+    margin-bottom: 15px; }
   div.main > section > div.task-options > h2,
   main > section > div.task-options > h2 {
     font-size: 3.4rem;
@@ -147,6 +150,29 @@
         main > section > div.task-options ul.task-options-list > li > ul > li {
           margin: 0 auto;
           margin-bottom: 20px; }
+          div.main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube,
+          main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube {
+            border-bottom: 2px solid transparent;
+            line-height: inherit;
+            display: inline-block; }
+            div.main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:before,
+            main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:before {
+              display: inline-block;
+              padding-right: 15px;
+              font-size: 20px;
+              font-family: "Material Icons";
+              vertical-align: middle;
+              content: "";
+              line-height: inherit; }
+            div.main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:hover,
+            main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:hover {
+              color: #d41b2c; }
+            div.main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:hover,
+            main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:hover {
+              border-bottom: 2px solid #d41b2c; }
+            div.main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:before,
+            main > section > div.task-options ul.task-options-list > li > ul > li > a.js__youtube:before {
+              color: #d41b2c; }
         div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar,
         main > section > div.task-options ul.task-options-list > li > ul div.sidebar {
           position: relative;
@@ -195,6 +221,35 @@
             div.main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before,
             main > section > div.task-options ul.task-options-list > li > ul div.sidebar > a:before {
               color: #d41b2c; }
+        div.main > section > div.task-options ul.task-options-list > li > ul ul.list > li:first-child > h2,
+        main > section > div.task-options ul.task-options-list > li > ul ul.list > li:first-child > h2 {
+          font-size: 1.6rem;
+          font-weight: 400;
+          line-height: 2.8rem;
+          text-align: left; }
+        div.main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink,
+        main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink {
+          border-bottom: 2px solid transparent;
+          line-height: inherit;
+          display: inline-block; }
+          div.main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:before,
+          main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:before {
+            display: inline-block;
+            padding-right: 15px;
+            font-size: 20px;
+            font-family: "Material Icons";
+            vertical-align: middle;
+            content: "";
+            line-height: inherit; }
+          div.main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:hover,
+          main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:hover {
+            color: #d41b2c; }
+          div.main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:hover,
+          main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:hover {
+            border-bottom: 2px solid #d41b2c; }
+          div.main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:before,
+          main > section > div.task-options ul.task-options-list > li > ul ul.list > li > a.neu__iconlink:before {
+            color: #d41b2c; }
       div.main > section > div.task-options ul.task-options-list > li > div,
       main > section > div.task-options ul.task-options-list > li > div {
         position: relative;

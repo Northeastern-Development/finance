@@ -33,12 +33,21 @@
     
 
     // video should appear in a lightbox ( magnific popup )
-    // still isnt working properly
+    
+    // $format_the_video = '
+    //     <li>
+    //         <h5><a href="%s" class="js__youtube" title="Click to Open Video in Lightbox">%s</a></h5>
+    //     </li>
+    // ';
+
     $format_the_video = '
         <li>
-            <h5><a href="%s" class="js__youtube" title="Click to Open Video in Lightbox">%s</a></h5>
+            <h5>%s</h5>
+            <a href="%s" class="js__youtube neu__iconlink" target="View %s video in lightbox">View Video</a>
         </li>
     ';
+    
+    
 
     // basic sub-options as title + description
     $format_suboption = '
@@ -51,7 +60,7 @@
     // related files as a list
     $format_relatedfiles = '
         <li>
-            <h5><a title="Click to download %s" target="_blank" href="%s">%s</a></h5>
+            <a class="neu__iconlink" title="Click to download %s" target="_blank" href="%s">%s</a>
         </li>
     ';
     
@@ -69,9 +78,13 @@
             foreach( $option['related_files'] as $file){
                 $content_relatedfiles .= sprintf(
                     $format_relatedfiles
-                    ,$file['title']
+                    ,( !empty($file['title']) )
+                        ? $file['title']
+                        : 'This File'
                     ,$file['file']['url']
-                    ,$file['title']
+                    ,( !empty($file['title']) )
+                        ? $file['title']
+                        : 'Download'
                 );
             }
         }
@@ -111,6 +124,7 @@
             if( $suboption['use_video'] ){
                 $content_suboption .= sprintf(
                     $format_the_video
+                    ,$suboption['video']['title']
                     ,$suboption['video']['link']
                     ,$suboption['video']['title']
                 );
@@ -132,9 +146,9 @@
             ,$option['title']
             ,$option['title']
             ,$option['description']
-            , ( !empty($content_relatedfiles) ) ? '<ul class="list"><h2>Related Files</h2>'.$content_relatedfiles.'</ul>' : null
             , ( !empty($content_sidebar) ) ? '<div class="sidebar">'.$content_sidebar.'</div>' : null
             ,$content_suboption
+            , ( !empty($content_relatedfiles) ) ? '<ul class="list"><li><h2>Related Files</h2></li>'.$content_relatedfiles.'</ul>' : null
         );
         
     }

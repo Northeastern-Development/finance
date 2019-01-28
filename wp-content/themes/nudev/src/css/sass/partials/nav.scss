@@ -1,4 +1,3 @@
-// 
 $nav_bp_dt : 1024px;
 
 @media only screen {
@@ -300,7 +299,9 @@ $nav_bp_dt : 1024px;
 } // end only screen media query
 @media only screen and (max-width: 1024) {
     
+    
     #nu__mobile {
+        
         top: 124px;
         width: 100%;
         background-color: #fff;
@@ -534,9 +535,6 @@ $nav_bp_dt : 1024px;
     }
 
 }
-
-
-
 // Break from Mobile Nav to Desktop Nav ( @1024px currently )
 @media only screen and (min-width: $nav_bp_dt){
     

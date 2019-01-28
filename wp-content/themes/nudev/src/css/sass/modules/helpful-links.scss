@@ -27,27 +27,34 @@
             margin: 0 auto 30px auto;
 
             // the 'helpful links'
+            $width : 60vw;
+            $col : 3;
+            $space: 2vw;
             >ul {
-                @include ul_grid_cols(3, 30px);
-
+                // @include ul_grid_cols(3, 30px);
+                width: $width;
+                display: block;
+                text-align: left;
                 >li {
                     text-align: left;
-                    min-height: 200px;
-
+                    // min-height: 200px;
+                    flex: none;
+                    float: left;
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    margin: 0 $space $space 0;
+                    &:nth-child(#{$col}n) {
+                        margin-right: 0;
+                    }
                     >a {
                         display: block;
                         width: 100%;
                         height: 100%;
                         border-bottom: none;
                         > p:last-of-type span{
-                            line-height: inherit;
+                            @include neu__iconlink();
+                            border-bottom: 2px solid transparent;
                             &:before {
-                                vertical-align: middle;
-                                font-size: 20px;
-                                content: '\e5c8';
-                                font-family: "Material Icons";
                                 color: $brand_colors-red;
-                                padding-right: 15px;
                             }
                         }
 
@@ -56,20 +63,21 @@
 
                             > p:last-of-type span{
                                 border-bottom: 2px solid $brand_colors-red;
+                                color: $brand_colors-red;
                             }
                             
                             
-                            color: rgba(black, 1.0);
-                            // zoom image when hovered over
-                            >div.image>div {
-                                transform: scale(1.1);
-                            }
+                            // color: rgba(black, 1.0);
+                            // // zoom image when hovered over
+                            // >div.image>div {
+                            //     transform: scale(1.1);
+                            // }
                         }
 
-                        >p>i.material-icons {
-                            color: $brand_colors-red;
-                            vertical-align: middle;
-                        }
+                        // >p>i.material-icons {
+                        //     color: $brand_colors-red;
+                        //     vertical-align: middle;
+                        // }
 
                         >div.image {
                             height: 245px;
@@ -93,12 +101,13 @@
                         }
 
                         >h4 {
+                            @include font-2r-l;
                             &:before {
                                 display: none;
                             }
 
                             width: 90%;
-                            margin-bottom:3px;
+                            margin-bottom: 5px;
                         }
                     }
                 }
