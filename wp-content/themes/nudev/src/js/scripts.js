@@ -79,6 +79,13 @@ var Finance = {};
                     // clicked outside nav; if nav open then close dropdowns
                     // $('li.has-children.neu__active').removeClass('neu__active');
                     Finance.Nav._collapseDropdowns();
+
+                    // good place to help out the mobile nav too
+                    $('#neu__navicon').removeAttr('checked');
+                    $('#nu__mobile a.active').removeClass('active');
+                    $('#nu__mobile .show').hide();
+                    $('#nu__mobile .show').removeClass('show');
+
                 }
             },
             _collapseDropdowns : function(){

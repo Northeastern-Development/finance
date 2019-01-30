@@ -49,6 +49,11 @@
         }
 
         >section.hero {
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             background: rgba(black, 1.0);
             width: $wrapper-width;
             margin: 0;

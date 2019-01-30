@@ -6,6 +6,15 @@
 
     div.main,
     main {
+
+
+        > section:nth-of-type(2){
+            > p {
+                @include font-3l-c;
+            }
+        }
+        
+
         > section {
             // (the page title)
             > h2 {

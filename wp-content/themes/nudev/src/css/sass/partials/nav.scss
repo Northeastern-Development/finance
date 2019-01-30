@@ -1,4 +1,31 @@
-@media only screen {
+/*
+*
+*   Navigation
+*
+*/
+
+// Desktop Nav
+@media only screen and (min-width: $bp_dtnav) {
+
+    // hide mobile nav
+    #nu__mobile {
+        display: none;
+    }
+
+    // hide mobile navicon
+    label#neu__navicon-label {
+        display: none;
+    }
+    // hide checkbox without removing from dom
+    input#neu__navicon {
+        position: absolute;
+        left: -9999px;
+    }
+
+    // reveal destop nav
+    #nu__main-nav-desktop {
+        display: block;
+    }
 
     // top-level nav items 'full-height' (clickable top to bottom)
     .nu__main-nav,
@@ -328,98 +355,114 @@
     }
 }
 
-// end only screen media query
+// Mobile Nav
+@media only screen and (max-width: $bp_dtnav - 1) {
 
-
-@media only screen {
-
+    // Hide Desktop Nav
+    #nu__main-nav-desktop {
+        display: none;
+    }
 
     #nu__mobile {
+        display: none;
         position: absolute;
         top: 83px;
         left: 2.5%;
         width: 95%;
+    }
+
+    #nu__mobile>nav>ul {
         background-color: #1f1f1f;
+        border: 1px solid $brand_colors-gray;
+        border-top: none;
 
-        > nav {
-            position: relative;
-
-            > ul {
+        // consistent styling for all line items at every depth
+        li {
+            >a {
+                @include font-2r-l;
+                letter-spacing: 1px;
+                position: relative;
                 display: inline-block;
                 width: 100%;
+                line-height: 50px;
+                padding: 0 30px;
+                color: rgba(255, 255, 255, 0.8); // soft white links
+                border-bottom: 1px solid $brand_colors-gray;
 
-                > li {
-                    &:not(:first-of-type){
-                        border-top: 1px solid $brand_colors-gray;
-                    }
-                    &:last-of-type {
-                        > ul.inner {
-                            margin-bottom: -9px; // I HAVE NO IDEA WHY I NEED THIS, BUT WITHOUT IT THERES A DUMB SPACE AT THE BOTTOM
-                        }
+                &.toggle {
+                    &:after {
+                        content: "\e313";
+                        font-family: "Material Icons";
+                        position: absolute;
+                        right: 30px;
+                        transform: rotate(0deg);
+                        transition: transform 0.4s ease;
                     }
                 }
-                
-                li {
-                    
-                    a {
-                        position: relative;
-                        display: inline-block;
-                        width: 100%;
-                        line-height: 50px;
-                        padding: 0 30px;
-                        color: transparentize(white, 0.2);
-                        &.toggle {
-                            &:after {
-                                content: "\e313";
-                                font-family: "Material Icons";
-                                position: absolute;
-                                right: 30px;
-                                transform: rotate(0deg);
-                                transition: transform 0.4s ease;
-                            }
-                        }
-                        &.active {
-                            background-color: $brand_colors-beige;
-                            color: black;
-                            &:after {
-                                transform: rotate(180deg);
-                            }
-                        }
+
+                &.active {
+                    background-color: $brand_colors-beige;
+                    border-bottom: 1px solid #1f1f1f;
+                    color: black;
+
+                    &:after {
+                        transform: rotate(180deg);
                     }
-                    &:hover {
-                        > a {
-                            background-color: $brand_colors-beige;
-                            color: black;
-                        }
-                    }
-                    > ul.inner {
-                        display: none;
-                        overflow: hidden;
-                        > li {
-                            > a {
-                                padding-left: 45px;
-                            }
-                            > div.inner {
-                                > ul > li > a {
-                                    padding-left: 45px;
-                                }
-                            }
-                        }
-                    }
-                    
-                    
                 }
-                
+
+                // hover over line item
+                &:hover {
+                    background-color: $brand_colors-beige;
+                    color: black;
+                }
             }
-            
+
+            // dont overlap the containers border (hide border if overing over 'contact us'
+            &:last-of-type {
+                >a {
+                    &:hover {
+                        &:last-of-type {
+                            border-bottom: 1px solid transparent;
+                        }
+                    }
+                }
+            }
         }
-        
+
+    }
+
+    // iterate padding across dropdown depths to show levels
+    #nu__mobile>nav>ul>li {
+        >a {
+            padding-left: 5%;
+        }
+
+        ul.inner {
+            display: none;
+            overflow: hidden;
+
+            >li {
+                >a {
+                    padding-left: 10%;
+                }
+
+                >div.inner {
+                    >ul {
+                        >li {
+                            >a {
+                                padding-left: 15%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 
 
+    // style navicon & times
     label#neu__navicon-label {
-
         cursor: pointer;
         color: white;
         font-size: 24px;
@@ -454,7 +497,7 @@
 
     input#neu__navicon:checked {
 
-        ~ label#neu__navicon-label {
+        ~label#neu__navicon-label {
             &:before {
                 display: block;
             }
@@ -464,37 +507,9 @@
             }
         }
 
-        ~ #nu__mobile {
+        ~#nu__mobile {
             display: block;
         }
 
     }
-
-
-
-    #nu__mobile {
-        display: none;
-    }
-
-    #nu__main-nav-desktop {
-        display: none;
-    }
-
-}
-
-@media only screen and (min-width: $nav_bp_dt) {
-
-    #nu__mobile {
-        display: none;
-    }
-
-    label#neu__navicon-label {
-        display: none;
-    }
-
-    #nu__main-nav-desktop {
-        display: block;
-    }
-
-
 }

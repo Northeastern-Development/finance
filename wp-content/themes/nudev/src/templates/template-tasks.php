@@ -45,11 +45,17 @@
     <?php
         // page hero
         $fields = get_fields($post_id);          
-        echo PageHero::return_pagehero($fields, $task->post_title, get_fields($task)['description']);
+        // echo PageHero::return_pagehero($fields, $task->post_title, get_fields($task)['description']);
+        echo PageHero::return_pagehero($fields, $task->post_title, null);
 
         $fields = get_fields($task); // (inefficient)
     ?>
-  
+    <section>
+        <?php 
+            $blurb = get_fields($task)['description'];
+            echo $blurb;
+         ?>
+    </section>
    <section>
        <?php include(locate_template('loops/loop-task-optiongroup.php')); ?>
    </section>

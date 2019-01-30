@@ -20,6 +20,24 @@ function seoUrl($string) {
 }
 
 
+// this will disable the ability to preview items from the admin side
+function posts_review_hidden(){
+?>
+    <style>
+    #post-preview,
+    #view-post-btn,
+    span.view,
+    a.editor-post-preview{
+                    display: none !important;
+    }
+    </style>
+<?php
+}
+
+
+add_action('admin_footer','posts_review_hidden'); // remove the ability to preview from the admin side
+
+
 
 // require_once "modules/is-debug.php";
 
