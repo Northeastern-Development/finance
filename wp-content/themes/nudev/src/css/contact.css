@@ -217,3 +217,11 @@
     main > section:last-child > ul > li > a:before,
     div.main > section:last-child > ul > li > a:before {
       color: #d41b2c; } }
+
+@media only screen and (max-width: 600px) {
+  div.wrapper > main > section:last-child > ul > li {
+    flex: none;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px; } }

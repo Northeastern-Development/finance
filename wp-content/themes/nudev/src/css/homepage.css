@@ -143,9 +143,6 @@
 @media only screen {
   div.wrapper main div#howdoi {
     display: none; }
-  div.wrapper > main > section.hero > div {
-    text-align: center;
-    width: 90%; }
   div.wrapper > main > div.deadlines {
     background-color: #327c8a; }
     div.wrapper > main > div.deadlines > div {

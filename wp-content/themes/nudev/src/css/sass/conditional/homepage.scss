@@ -61,13 +61,6 @@
 
     div.wrapper {
         >main {
-            >section.hero {
-                >div {
-                    text-align: center;
-                    width: 90%;
-                }
-            }
-
             >div.deadlines {
                 background-color: $brand_colors-teal--dark;
 
@@ -214,6 +207,8 @@
         }
     }
 }
+
+
 
 @media only screen and (min-width:$nav_bp_dt) {
 

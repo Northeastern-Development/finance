@@ -336,9 +336,9 @@
 
     #nu__mobile {
         position: absolute;
-        top: 84px;
-        left: 0;
-        width: 100%;
+        top: 83px;
+        left: 2.5%;
+        width: 95%;
         background-color: #1f1f1f;
 
         > nav {
@@ -348,25 +348,42 @@
                 display: inline-block;
                 width: 100%;
 
+                > li {
+                    &:not(:first-of-type){
+                        border-top: 1px solid $brand_colors-gray;
+                    }
+                    &:last-of-type {
+                        > ul.inner {
+                            margin-bottom: -9px; // I HAVE NO IDEA WHY I NEED THIS, BUT WITHOUT IT THERES A DUMB SPACE AT THE BOTTOM
+                        }
+                    }
+                }
+                
                 li {
+                    
                     a {
                         position: relative;
                         display: inline-block;
                         width: 100%;
                         line-height: 50px;
                         padding: 0 30px;
-                        color: white;
+                        color: transparentize(white, 0.2);
                         &.toggle {
                             &:after {
                                 content: "\e313";
                                 font-family: "Material Icons";
                                 position: absolute;
                                 right: 30px;
+                                transform: rotate(0deg);
+                                transition: transform 0.4s ease;
                             }
                         }
                         &.active {
                             background-color: $brand_colors-beige;
                             color: black;
+                            &:after {
+                                transform: rotate(180deg);
+                            }
                         }
                     }
                     &:hover {
@@ -378,7 +395,16 @@
                     > ul.inner {
                         display: none;
                         overflow: hidden;
-                        padding: 0 2.5%;
+                        > li {
+                            > a {
+                                padding-left: 45px;
+                            }
+                            > div.inner {
+                                > ul > li > a {
+                                    padding-left: 45px;
+                                }
+                            }
+                        }
                     }
                     
                     
@@ -400,6 +426,7 @@
         width: 24px;
         height: 24px;
         position: relative;
+        margin-right: 15px;
 
         &:before,
         &:after {
@@ -427,7 +454,7 @@
 
     input#neu__navicon:checked {
 
-        ~label#neu__navicon-label {
+        ~ label#neu__navicon-label {
             &:before {
                 display: block;
             }
@@ -437,7 +464,7 @@
             }
         }
 
-        +#nu__mobile {
+        ~ #nu__mobile {
             display: block;
         }
 
@@ -456,6 +483,10 @@
 }
 
 @media only screen and (min-width: $nav_bp_dt) {
+
+    #nu__mobile {
+        display: none;
+    }
 
     label#neu__navicon-label {
         display: none;

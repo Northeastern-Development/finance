@@ -1,45 +1,23 @@
 @media only screen {
-
-
-
-
+    $width : 90vw;
+    $col : 3;
+    $space: 2vw;
     div.nu__prefooter {
-        height: auto;
-        background: rgba(white, 1.0);
-        width: 100%;
-        margin: 0 0 0 0;
-
-
-        .bg_tan {
-            background: rgba($brand_colors-beige, 1.0);
-            padding: 20px 0 0 0;
-        }
-
-
-        >p {
-            color: rgba(black, 1.0);
-            margin: 0 auto 20px auto;
-        }
-
         >div {
             width: 100%;
             height: inherit;
             margin: 0 auto 30px auto;
-
-            // the 'helpful links'
-            $width : 60vw;
-            $col : 3;
-            $space: 2vw;
             >ul {
-                // @include ul_grid_cols(3, 30px);
-                width: $width;
                 display: block;
+                width: $width;
                 text-align: left;
+                font-size: 0;
                 >li {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: initial;
                     text-align: left;
-                    // min-height: 200px;
                     flex: none;
-                    float: left;
                     width: (($width - (($col - 1) * $space)) / $col);
                     margin: 0 $space $space 0;
                     &:nth-child(#{$col}n) {
@@ -57,55 +35,18 @@
                                 color: $brand_colors-red;
                             }
                         }
-
                         &:hover,
                         &:focus {
-
                             > p:last-of-type span{
                                 border-bottom: 2px solid $brand_colors-red;
                                 color: $brand_colors-red;
                             }
-                            
-                            
-                            // color: rgba(black, 1.0);
-                            // // zoom image when hovered over
-                            // >div.image>div {
-                            //     transform: scale(1.1);
-                            // }
                         }
-
-                        // >p>i.material-icons {
-                        //     color: $brand_colors-red;
-                        //     vertical-align: middle;
-                        // }
-
-                        >div.image {
-                            height: 245px;
-                            margin: 0 0 10px 0;
-                            position: relative;
-                            overflow: hidden;
-                            width: 100%;
-
-                            >div {
-                                position: absolute;
-                                transition: transform 0.4s ease;
-                                transform: scale(1);
-                                width: 100%;
-                                height: 100%;
-                                background-position: center center !important;
-                                background-repeat: no-repeat !important;
-                                background-size: cover !important;
-
-                                // @include block-item-default;
-                            }
-                        }
-
                         >h4 {
                             @include font-2r-l;
                             &:before {
                                 display: none;
                             }
-
                             width: 90%;
                             margin-bottom: 5px;
                         }
@@ -113,113 +54,57 @@
                 }
             }
         }
+    }
+}
 
-        &.statblocks {
-            &>p {
-                border-bottom: solid rgba($brand_colors-gray, 1.0) 1px;
-            }
 
-            &>div {
-                &>ul {
-                    &>li {
-                        text-align: center;
-                        color: rgba(black, 1.0);
-                        padding: 0 $gutter 0 $gutter;
-
-                        &>span {
-                            color: rgba($brand_colors-red, 1.0);
-                            line-height: 8.6rem;
-                        }
-
-                        &>p {
-                            text-align: center;
+// A/R for FINANCE
+@media only screen and (max-width: 600px){
+    div.wrapper > main {
+        > section {
+            > .nu__prefooter {
+                > div {
+                    > ul {
+                        width: 100%;
+                        margin: 0;
+                        > li {
+                            display: block;
+                            width: 100%;
+                            margin: 0;
+                            margin-bottom: 20px;
                         }
                     }
                 }
             }
-        }
-    }
-
-
-
-
-}
-
-
-@media only screen and (max-width: 1280px) {
-    div.nu__prefooter {
-        &>p {}
-
-        &>div {
-            &>ul {
-                &>li {
-                    &>a {
-                        &>h4 {}
-                    }
-                }
-            }
-        }
-
-        &.statblocks {
-            &>div {
-                &>ul {
-                    &>li {
-                        &>span {}
-
-                        &>p {}
-                    }
-                }
-            }
-        }
+        }   
     }
 }
 
-
-@media only screen and (max-width: 959px) {
-    div.nu__prefooter {
-        &>p {}
-
-        &>div {
-            width: $content-width-960;  // try to depricate this madness
-
-            &>ul {
-                overflow: hidden;
-                display: block;
-                flex: none;
-
-                &>li {
-                    width: 100%;
-                }
-            }
-        }
-
-        &.statblocks {
-            &>div {
-                &>ul {
-                    &>li {
-                        min-height: inherit;
+@media only screen and (min-width: $nav_bp_dt){
+    
+    $width : 60vw;
+    $col : 3;
+    $space: 2vw;
+    
+    div.wrapper > main {
+        >section {
+            >.nu__prefooter {
+                > div {
+                    > ul {
+                        width: $width;
+                        > li {
+                            width: (($width - (($col - 1) * $space)) / $col);
+                            margin: 0 $space $space 0;
+                            &:nth-child(#{$col}n) {
+                                margin-right: 0;
+                            }
+                        }
                     }
                 }
             }
         }
     }
 
-
-}
-
-
-@media only screen and (max-width: 575px) {
-
-
-    &>div.nu__prefooter {
-        &>div {
-            width: $content-width-700;
-
-            &>ul {
-                overflow: hidden;
-            }
-        }
-    }
-
-
+    
+    
 }

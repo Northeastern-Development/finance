@@ -2,23 +2,24 @@
 @import '../../sass/base/mixins.scss';
 @import '../../sass/base/vars.scss';
 
-
 @media only screen {
 
-    
-    main > section:nth-of-type(2){
-        > p {
+
+    main>section:nth-of-type(2) {
+        >p {
             @include font-3l-c;
         }
     }
-    
+
 
     ul.tools-grid {
-        @include ul_grid_cols(3, 30px);
+        
+
         li.tools-grid-tool {
-            > a {
-                > h5 {
+            >a {
+                >h5 {
                     @include font-3b-l;
+
                     &:after {
                         font-family: "Material Icons";
                         content: "\e5cc";
@@ -29,117 +30,59 @@
                         opacity: 0;
                     }
                 }
+
                 &:hover {
-                    > h5 {
+                    >h5 {
                         &:after {
                             opacity: 1;
                         }
                     }
                 }
-                > h6 {
-                    
+
+                >h6 {
+
                     @include font-2b-l;
                 }
-                > p:first-of-type {
+
+                >p:first-of-type {
                     margin-bottom: 15px;
                 }
+
                 .neu__iconlink {
-                    @include neu__iconlink($hover : 0);
-                    &:before{
+                    @include neu__iconlink($hover: 0);
+
+                    &:before {
                         color: $brand_colors-red;
                     }
                 }
+
                 &:hover {
                     .neu__iconlink {
                         border-bottom: 2px solid $brand_colors-red;
-                        
+
                     }
-                    .neu__bgimg > div {
+
+                    .neu__bgimg>div {
                         transform: scale(1.1);
                     }
                 }
             }
         }
     }
-   
-    main, div.main {
+
+    main,
+    div.main {
         section {
-            ul.tool-groupingnav {
-                text-align: center;
-                margin-bottom: 30px;
-                display: block;
-                position: relative;
-                &:after {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    display: block;
-                    content: '';
-                    height: 1px;
-                    background-color: black;
-                    z-index: 10;
-                }
-
-                li {
-                    display: inline-block;
-                    text-align: center;
-                    margin: 0 30px;
-                    position: relative;
-
-                    // ( BEST GUESS, UNAPPROVED HOVER STATE )
-                    // &:not(.tool-grouping-active):hover {
-                    //     font-weight: bold;
-                    //     &:after {
-                    //         position: absolute;
-                    //         bottom: -1px;
-                    //         left: -15px;
-                    //         width: calc(100% + 30px);
-                    //         display: block;
-                    //         content: '';
-                    //         height: 3px;
-                    //         background-color: $brand_colors-red;
-                    //         z-index: 11;
-                    //     }
-                    // }
-                    
-                    
-                    > a {
-                        display: inline-block;
-                        margin-bottom: 5px;
-                        text-align: center;
-                        text-transform: uppercase;
-                    }
-                    &.tool-grouping-active {
-                        font-weight: bold;
-                        border-bottom: 3px solid $brand_colors-red;
-                        // &:after {
-                        //     position: absolute;
-                        //     bottom: -1px;
-                        //     left: -15px;
-                        //     width: calc(100% + 30px);
-                        //     display: block;
-                        //     content: '';
-                        //     height: 3px;
-                        //     background-color: $brand_colors-red;
-                        //     z-index: 11;
-                        // }
-                    }
-                    
-                }
-            }
-            > h2 {
-                margin-bottom: 0;
-            }
-
             .tool-group {
                 position: relative;
                 border-bottom: 1px solid transparentize(black, 0.8);
-                > h4{
+
+                >h4 {
                     position: relative;
                     padding: 15px 0;
                     cursor: pointer;
                     @include font-3r-l;
+
                     &:after {
                         position: absolute;
                         right: 0;
@@ -150,29 +93,125 @@
                         display: inline-block;
                         font-family: 'Material Icons';
                     }
+
                     &:hover {
                         &:after {
                             color: $brand_colors-red;
                         }
                     }
                 }
-                &.js__tool_expanded > h4 {
+
+                &.js__tool_expanded>h4 {
                     &:after {
                         transform: rotate(180deg);
                     }
                 }
-                > ul {
+
+                >ul {
                     @include font-2l-l;
                     flex-flow: row wrap;
-                    > li {
+
+                    >li {
                         >h5 {
                             @include font-2r-l;
                         }
+
                         margin-bottom: 20px;
                         flex: 1 0 100%;
                     }
                 }
             }
+        }
+    }
+
+}
+
+
+@media only screen {
+    div.wrapper > main {
+
+        > section {
+            > h2 {
+                margin-bottom: 0;
+            }
+            > ul.tool-groupingnav {
+                margin: 30px 0;
+                display: flex;
+                flex-flow: column nowrap;
+                text-align: center;
+                &:after {
+                    display: none;
+                }
+                > li {
+                    text-align: center;
+                    position: relative;
+                    flex: 1 0 100%;
+                    width: 100%;
+                    max-width: 480px;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                    border-bottom: 2px solid transparent;
+                    &:after {
+                        position: absolute;
+                        bottom: 2px;
+                        left: 0;
+                        content: '';
+                        display: inline-block;
+                        width: 100%;
+                        border-bottom: 1px solid black;
+                    }
+                    > a {
+                        margin: 0;
+                        border-bottom: 3px solid transparent;
+                        text-transform: uppercase;
+                        &:hover {
+                            font-weight: 400;
+                            border-bottom: 3px solid $brand_colors-red;
+                        }
+                    }
+                    &.tool-grouping-active {
+                        > a {
+                            border-bottom: 3px solid $brand_colors-red;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        > section {
+            > ul.tools-grid {
+
+                flex-flow: column nowrap;
+                li {
+                    flex: 1 0 100%;
+                    margin: 0;
+                    margin-bottom: 30px;
+                }
+                
+            }
+        }
+    } // end div.wrapper>main
+} // end smallest mq
+
+@media only screen and (min-width: $nav_bp_dt){
+    div.wrapper {
+        > main {
+            > section {
+                
+                > ul.tool-groupingnav {
+                    flex-flow: row nowrap;
+                    > li {
+                        flex: 1 0 auto;
+                    }
+                }
+
+                > ul.tools-grid {
+                    @include ul_grid_cols(3, 30px);
+                    
+                }
+                
+            }
+            
         }
     }
     

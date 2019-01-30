@@ -114,92 +114,52 @@
     font-weight: 300;
     line-height: 3.2rem;
     text-align: center; }
-  ul.tools-grid {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap; }
-    ul.tools-grid li {
-      flex: 1 1 calc(calc(100% / 3) - 30px);
-      margin: 0 30px 30px 0;
-      max-width: calc( 100% / 3 - 30px); }
-      ul.tools-grid li:nth-of-type(3n) {
-        margin-right: 0; }
-      ul.tools-grid li:last-of-type:nth-of-type(even) {
-        margin-right: 0; }
-    ul.tools-grid li.tools-grid-tool > a > h5 {
-      font-size: 2.0rem;
-      font-weight: 700;
-      line-height: 3.2rem;
-      text-align: left; }
-      ul.tools-grid li.tools-grid-tool > a > h5:after {
-        font-family: "Material Icons";
-        content: "\e5cc";
-        color: #d41b2c;
-        font-size: 20px;
-        display: inline-block;
-        vertical-align: middle;
-        opacity: 0; }
-    ul.tools-grid li.tools-grid-tool > a:hover > h5:after {
-      opacity: 1; }
-    ul.tools-grid li.tools-grid-tool > a > h6 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 2.8rem;
-      text-align: left; }
-    ul.tools-grid li.tools-grid-tool > a > p:first-of-type {
-      margin-bottom: 15px; }
-    ul.tools-grid li.tools-grid-tool > a .neu__iconlink {
-      border-bottom: 2px solid transparent;
-      line-height: inherit;
-      display: inline-block; }
-      ul.tools-grid li.tools-grid-tool > a .neu__iconlink:before {
-        display: inline-block;
-        padding-right: 15px;
-        font-size: 20px;
-        font-family: "Material Icons";
-        vertical-align: middle;
-        content: "";
-        line-height: inherit; }
-      ul.tools-grid li.tools-grid-tool > a .neu__iconlink:before {
-        color: #d41b2c; }
-    ul.tools-grid li.tools-grid-tool > a:hover .neu__iconlink {
-      border-bottom: 2px solid #d41b2c; }
-    ul.tools-grid li.tools-grid-tool > a:hover .neu__bgimg > div {
-      transform: scale(1.1); }
-  main section ul.tool-groupingnav, div.main section ul.tool-groupingnav {
-    text-align: center;
-    margin-bottom: 30px;
-    display: block;
-    position: relative; }
-    main section ul.tool-groupingnav:after, div.main section ul.tool-groupingnav:after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      display: block;
-      content: '';
-      height: 1px;
-      background-color: black;
-      z-index: 10; }
-    main section ul.tool-groupingnav li, div.main section ul.tool-groupingnav li {
+  ul.tools-grid li.tools-grid-tool > a > h5 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    text-align: left; }
+    ul.tools-grid li.tools-grid-tool > a > h5:after {
+      font-family: "Material Icons";
+      content: "\e5cc";
+      color: #d41b2c;
+      font-size: 20px;
       display: inline-block;
-      text-align: center;
-      margin: 0 30px;
-      position: relative; }
-      main section ul.tool-groupingnav li > a, div.main section ul.tool-groupingnav li > a {
-        display: inline-block;
-        margin-bottom: 5px;
-        text-align: center;
-        text-transform: uppercase; }
-      main section ul.tool-groupingnav li.tool-grouping-active, div.main section ul.tool-groupingnav li.tool-grouping-active {
-        font-weight: bold;
-        border-bottom: 3px solid #d41b2c; }
-  main section > h2, div.main section > h2 {
-    margin-bottom: 0; }
-  main section .tool-group, div.main section .tool-group {
+      vertical-align: middle;
+      opacity: 0; }
+  ul.tools-grid li.tools-grid-tool > a:hover > h5:after {
+    opacity: 1; }
+  ul.tools-grid li.tools-grid-tool > a > h6 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    text-align: left; }
+  ul.tools-grid li.tools-grid-tool > a > p:first-of-type {
+    margin-bottom: 15px; }
+  ul.tools-grid li.tools-grid-tool > a .neu__iconlink {
+    border-bottom: 2px solid transparent;
+    line-height: inherit;
+    display: inline-block; }
+    ul.tools-grid li.tools-grid-tool > a .neu__iconlink:before {
+      display: inline-block;
+      padding-right: 15px;
+      font-size: 20px;
+      font-family: "Material Icons";
+      vertical-align: middle;
+      content: "";
+      line-height: inherit; }
+    ul.tools-grid li.tools-grid-tool > a .neu__iconlink:before {
+      color: #d41b2c; }
+  ul.tools-grid li.tools-grid-tool > a:hover .neu__iconlink {
+    border-bottom: 2px solid #d41b2c; }
+  ul.tools-grid li.tools-grid-tool > a:hover .neu__bgimg > div {
+    transform: scale(1.1); }
+  main section .tool-group,
+  div.main section .tool-group {
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-    main section .tool-group > h4, div.main section .tool-group > h4 {
+    main section .tool-group > h4,
+    div.main section .tool-group > h4 {
       position: relative;
       padding: 15px 0;
       cursor: pointer;
@@ -207,7 +167,8 @@
       line-height: 3.2rem;
       text-align: left;
       font-weight: 400; }
-      main section .tool-group > h4:after, div.main section .tool-group > h4:after {
+      main section .tool-group > h4:after,
+      div.main section .tool-group > h4:after {
         position: absolute;
         right: 0;
         font-size: 20px;
@@ -216,21 +177,88 @@
         transform: rotate(0deg);
         display: inline-block;
         font-family: 'Material Icons'; }
-      main section .tool-group > h4:hover:after, div.main section .tool-group > h4:hover:after {
+      main section .tool-group > h4:hover:after,
+      div.main section .tool-group > h4:hover:after {
         color: #d41b2c; }
-    main section .tool-group.js__tool_expanded > h4:after, div.main section .tool-group.js__tool_expanded > h4:after {
+    main section .tool-group.js__tool_expanded > h4:after,
+    div.main section .tool-group.js__tool_expanded > h4:after {
       transform: rotate(180deg); }
-    main section .tool-group > ul, div.main section .tool-group > ul {
+    main section .tool-group > ul,
+    div.main section .tool-group > ul {
       font-size: 1.6rem;
       font-weight: 300;
       line-height: 2.8rem;
       text-align: left;
       flex-flow: row wrap; }
-      main section .tool-group > ul > li, div.main section .tool-group > ul > li {
+      main section .tool-group > ul > li,
+      div.main section .tool-group > ul > li {
         margin-bottom: 20px;
         flex: 1 0 100%; }
-        main section .tool-group > ul > li > h5, div.main section .tool-group > ul > li > h5 {
+        main section .tool-group > ul > li > h5,
+        div.main section .tool-group > ul > li > h5 {
           font-size: 1.6rem;
           font-weight: 400;
           line-height: 2.8rem;
           text-align: left; } }
+
+@media only screen {
+  div.wrapper > main > section > h2 {
+    margin-bottom: 0; }
+  div.wrapper > main > section > ul.tool-groupingnav {
+    margin: 30px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center; }
+    div.wrapper > main > section > ul.tool-groupingnav:after {
+      display: none; }
+    div.wrapper > main > section > ul.tool-groupingnav > li {
+      text-align: center;
+      position: relative;
+      flex: 1 0 100%;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      border-bottom: 2px solid transparent; }
+      div.wrapper > main > section > ul.tool-groupingnav > li:after {
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        content: '';
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid black; }
+      div.wrapper > main > section > ul.tool-groupingnav > li > a {
+        margin: 0;
+        border-bottom: 3px solid transparent;
+        text-transform: uppercase; }
+        div.wrapper > main > section > ul.tool-groupingnav > li > a:hover {
+          font-weight: 400;
+          border-bottom: 3px solid #d41b2c; }
+      div.wrapper > main > section > ul.tool-groupingnav > li.tool-grouping-active > a {
+        border-bottom: 3px solid #d41b2c;
+        font-weight: 400; }
+  div.wrapper > main > section > ul.tools-grid {
+    flex-flow: column nowrap; }
+    div.wrapper > main > section > ul.tools-grid li {
+      flex: 1 0 100%;
+      margin: 0;
+      margin-bottom: 30px; } }
+
+@media only screen and (min-width: 960px) {
+  div.wrapper > main > section > ul.tool-groupingnav {
+    flex-flow: row nowrap; }
+    div.wrapper > main > section > ul.tool-groupingnav > li {
+      flex: 1 0 auto; }
+  div.wrapper > main > section > ul.tools-grid {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap; }
+    div.wrapper > main > section > ul.tools-grid li {
+      flex: 1 1 calc(calc(100% / 3) - 30px);
+      margin: 0 30px 30px 0;
+      max-width: calc( 100% / 3 - 30px); }
+      div.wrapper > main > section > ul.tools-grid li:nth-of-type(3n) {
+        margin-right: 0; }
+      div.wrapper > main > section > ul.tools-grid li:last-of-type:nth-of-type(even) {
+        margin-right: 0; } }

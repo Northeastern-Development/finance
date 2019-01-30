@@ -10,8 +10,8 @@
     </a>
 </div>
 
-<label for="neu__navicon" id="neu__navicon-label"></label>
 <input type="checkbox" id="neu__navicon">
+<label for="neu__navicon" id="neu__navicon-label"></label>
 
 <?php 
     include(__DIR__ . '/partials/nav.mobile.php');

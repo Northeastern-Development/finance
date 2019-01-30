@@ -96,8 +96,8 @@
                     <?php 
                         $format_about_submenu_links = '<li><a href="%s">%s</a></li>';
                         $about_submenu_links = array(
-                            'Department &amp; Staff Information' => get_permalink( get_page_by_path('staff') ),
-                            'Contact Us' => get_permalink( get_page_by_path('contact-us') )
+                            'Department &amp; Staff Information' => get_permalink( get_page_by_path('about') ),
+                            'Contact Us' => get_permalink( get_page_by_path('contact') )
                         );
                         $content_about_submenu_links = '';
                         foreach( $about_submenu_links as $title => $permalink ){

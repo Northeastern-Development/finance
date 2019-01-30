@@ -146,7 +146,7 @@
             ,$option['title']
             ,$option['title']
             ,$option['description']
-            , ( !empty($content_sidebar) ) ? '<div class="sidebar">'.$content_sidebar.'</div>' : null
+            , ( !empty($content_sidebar) ) ? '<li class="sidebar">'.$content_sidebar.'</li>' : null
             ,$content_suboption
             , ( !empty($content_relatedfiles) ) ? '<ul class="list"><li><h2>Related Files</h2></li>'.$content_relatedfiles.'</ul>' : null
         );

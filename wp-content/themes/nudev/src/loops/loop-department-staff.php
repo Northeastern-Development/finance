@@ -115,13 +115,15 @@
             $format_deptstaff = '
                 <li>
                     <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
-                    <p>
-                        <span>%s</span><br />
-                        <span>%s</span><br />
-                    </p>
-                    <p>%s</p>
-                    <p>%s</p>
-                    <p>%s</p>
+                    <div>
+                        <p>
+                            <span>%s</span><br />
+                            <span>%s</span><br />
+                        </p>
+                        <p>%s</p>
+                        <p>%s</p>
+                        <p>%s</p>
+                    </div>
                 </li>
             ';
 

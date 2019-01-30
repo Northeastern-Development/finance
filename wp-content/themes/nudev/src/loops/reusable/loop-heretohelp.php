@@ -13,12 +13,14 @@
     $guide = '
         <li class="h2h-items-item">
             <div class="neu__bgimg"><div style="background-image:url(%s)"></div></div>
-            %s
-            %s
-            %s
-            %s
-            <br>
-            %s
+            <div>
+                %s
+                %s
+                %s
+                %s
+                <br>
+                %s
+            </div>
         </li>
     ';
 

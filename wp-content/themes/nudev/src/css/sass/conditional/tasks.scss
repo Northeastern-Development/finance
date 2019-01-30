@@ -19,7 +19,7 @@
             }
 
 
-            > div.task-options {
+            > .task-options {
                 // the solutions header (select solution based on method of payment etc)
                 p {
                     margin-bottom: 15px;
@@ -29,7 +29,7 @@
                     padding-bottom: 30px;
                     border-bottom: 1px solid black;
                 }
-                ul.task-options-list {
+                .task-options-list {
                     margin-top: 30px;
                     list-style-type: none;
                     // any task option grouping
@@ -59,13 +59,16 @@
                                 }
                             }
                             // in-solution 'sidebar' / 'callout'
-                            div.sidebar {
+                            .sidebar {
                                 position: relative;
                                 z-index: 11;
                                 width: calc(100% / 3);
                                 margin: auto;
                                 margin-left: 20px;
                                 float: right;
+                                &:before{
+                                    display: none;
+                                }
                                 > img {
                                     height: 245px;
                                     width: 100%;
@@ -156,6 +159,23 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    div.wrapper {
+        > main {
+            > section > .task-options > .task-options-list {
+                .task-options-list-item-suboptions {
+                    .sidebar {
+                        float: none;
+                        margin: 0 auto;
+                        margin-bottom: 20px;
+                        width: 100%;
                     }
                 }
             }
