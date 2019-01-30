@@ -5,7 +5,7 @@
 */
 
 // Desktop Nav
-@media only screen and (min-width: $bp_dtnav) {
+@media only screen and (min-width: $nav_bp_dt) {
 
     // hide mobile nav
     #nu__mobile {
@@ -356,7 +356,7 @@
 }
 
 // Mobile Nav
-@media only screen and (max-width: $bp_dtnav - 1) {
+@media only screen and (max-width: $nav_bp_dt - 1) {
 
     // Hide Desktop Nav
     #nu__main-nav-desktop {

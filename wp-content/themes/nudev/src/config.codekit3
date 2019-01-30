@@ -760,6 +760,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/base/static.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/base/static.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/base/vars.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -2361,7 +2374,7 @@
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 570563704.52171397
+	"lastBuiltDate": 570565566.40427804
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
