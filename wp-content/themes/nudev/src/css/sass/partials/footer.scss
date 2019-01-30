@@ -36,7 +36,7 @@ footer {
                     font-size: 1.3rem;
                     h5 {
                         color: $brand_colors-gray;
-                        @include font-1l-l;
+                        @include font-1l-c;
                         text-transform: uppercase;
                     }
                     > ul {
@@ -72,5 +72,11 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: $nav_bp_dt){
+    footer > div#sitefooter > div > ul > li > h5 {
+        text-align: left;
     }
 }

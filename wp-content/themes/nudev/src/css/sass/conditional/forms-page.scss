@@ -67,7 +67,20 @@
                         }
                         // related resources list
                         > ul {
-                            @include ul_grid_cols(2, 15px);
+                            display: inline-block;
+                            text-align: left;
+                            font-size: 0;
+                            width: 100%;
+                            > li {
+                                font-size: initial;
+                                display: inline-block;
+                                vertical-align: top;
+                                margin: 0 15px 15px 0;
+                                width: calc( 50% - 7.5px);
+                                &:nth-of-type(2n){
+                                    margin-right: 0;
+                                }
+                            }
 
                             .neu__iconlink{
                                 @include neu__iconlink;

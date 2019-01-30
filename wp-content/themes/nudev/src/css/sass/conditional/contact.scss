@@ -47,7 +47,21 @@
                 @include neu__iconlink();
             }
             > ul {
-                @include ul_grid_cols(2, 15px);
+                width: 100%;
+                display: inline-block;
+                font-size: 0;
+                text-align: left;
+                > li {
+                    font-size: initial;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 15px 15px 0;
+                    width: calc( 50% - 7.5px);
+                    &:nth-of-type(2n){
+                        margin-right: 0;
+                    }
+                }
+                
                 > li > a:before {
                     color: $brand_colors-red;
                 }

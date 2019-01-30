@@ -462,8 +462,19 @@
 
         section.related-tasks {
             >ul {
-                @include ul_grid_cols(2, 15px);
+                font-size: 0;
+                text-align: left;
+                display: inline-block;
                 > li {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: initial;
+                    margin: 0 15px 15px 0;
+                    width: calc( 50% - 7.5px);
+                    &:nth-of-type(2n){
+                        margin-right: 0;
+                    }
+
                     a.neu__iconlink {
                         @include neu__iconlink();
                         &:before {
@@ -564,7 +575,7 @@
         }
     }
 }
-@media only screen and (min-width: $nav_bp_dt){
+@media only screen and (min-width: 991px){
     $width : 60vw;
     $col : 3;
     $space: 2vw;

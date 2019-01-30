@@ -91,12 +91,23 @@ main {
         }
 
         >ul {
-            @include ul_grid_cols(3);
-
+            display: inline-block;
+            font-size: 0;
+            text-align: left;
+            width: 100%;
             >li {
+                font-size: initial;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 30px 30px 0;
+                width: calc( 100% / 3 - 20px);
+                &:nth-of-type(3n){
+                    margin-right: 0;
+                }
+                    
+                
                 position: relative;
                 overflow: hidden;
-                margin-bottom: 60px;
 
                 >a {
                     >h3>span {
@@ -148,9 +159,19 @@ main {
         > main {
             > section:last-child {
                 > ul {
-                    @include ul_grid_cols(2);
+                    display: inline-block;
+                    text-align: left;
+                    font-size: 0;
+                    width: 100%;
                     > li {
-                        
+                        font-size: initial;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin: 0 30px 30px 0;
+                        width: calc( 50% - 15px);
+                        &:nth-of-type(2n){
+                            margin-right: 0;
+                        }
                     }
                 }
             }

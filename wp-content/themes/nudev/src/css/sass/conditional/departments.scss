@@ -208,7 +208,20 @@
         section.dept_relforms,
         section.dept_reltasks {
             > ul {
-                @include ul_grid_cols(2, $margin: 15px);
+                display: inline-block;
+                text-align: left;
+                font-size: 0;
+                width: 100%;
+                > li {
+                    font-size: initial;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 15px 15px 0;
+                    width: calc( 50% - 7.5px);
+                    &:nth-of-type(2n){
+                        margin-right: 0;
+                    }
+                }
             }
         }
         section.nu__team {
@@ -261,7 +274,7 @@
     }
 }
 
-@media only screen and (min-width: $nav_bp_dt) {
+@media only screen and (min-width: 991px) {
     $width: 90vw;
     $space: 2vw;
     $col: 6;

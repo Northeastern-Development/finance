@@ -56,9 +56,22 @@
 
     html body ul.newsandevents {
         margin: 40px 0;
-
-        @include ul_grid_cols(3);
         position: relative;
+
+        display: inline-block;
+        text-align: left;
+        font-size: 0;
+        width: 100%;
+        > li {
+            font-size: initial;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 30px 30px 0;
+            width: calc( 100% / 3 - 20px);
+            &:nth-of-type(3n){
+                margin-right: 0;
+            }
+        }
 
         >div.pagination {
             position: absolute;
@@ -82,8 +95,6 @@
 
                     >h3 {
                         @include font-3b-l;
-                        @include font-3b-l;
-
                         &:after {
                             font-family: "Material Icons";
                             content: "\e5cc";
@@ -148,7 +159,20 @@
     div.wrapper > main {
         > section {
             > ul.newsandevents {
-                @include ul_grid_cols(2);
+                display: inline-block;
+                text-align: left;
+                font-size: 0;
+                width: 100%;
+                > li {
+                    font-size: initial;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 30px 30px 0;
+                    width: calc( 50% - 15px);
+                    &:nth-of-type(2n){
+                        margin-right: 0;
+                    }
+                }
             }
         }
     }

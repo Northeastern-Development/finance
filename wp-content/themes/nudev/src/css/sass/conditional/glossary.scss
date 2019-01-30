@@ -14,15 +14,17 @@
             position: relative;
             width: 100%;
             display: flex;
-            flex-flow: row nowrap;
+            flex-flow: row wrap;
             justify-content: space-around;
             background-color: white;
             z-index: 10;
             padding: 0;
             border-bottom: 2px solid $brand_colors-gray;
             span {
+                display: inline-block;
+                min-width: 20px;
                 text-align: center;
-                flex: 1 0 auto;
+                flex: 1 1 auto;
                 color: $brand_colors-gray;
             }
             a {
