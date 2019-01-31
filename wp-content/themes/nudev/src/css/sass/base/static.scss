@@ -1,4 +1,9 @@
 @media only screen {
+
+    html.nu__noscroll, html body.nu__noscroll {
+        overflow: hidden;
+        position: fixed;
+    }
     div#nu__globalheader {
         width: 100%; // overriding 100vw
     }

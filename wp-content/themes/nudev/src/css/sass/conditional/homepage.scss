@@ -315,3 +315,14 @@
         }
     }
 }
+
+@media only screen and (max-width: $bp_3cols){
+
+    div.wrapper .home-feat-news>ul>li, div.wrapper .home-feat-tools>ul>li {
+        width: auto;
+    }
+    div.wrapper .home-feat-tools>ul>li>a>div:first-of-type {
+        width: auto;
+    }
+
+}
