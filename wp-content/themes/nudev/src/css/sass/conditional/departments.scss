@@ -20,6 +20,24 @@
 
         >div {
             margin-bottom: 15px;
+            > div {
+                ul {
+                    a {
+                        color: $brand_colors-red;
+                        &:hover {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
+                    list-style-type: disc;
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 2.4rem;
+                    li {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
         }
 
         >a.neu__iconlink {
@@ -61,7 +79,7 @@
             }
 
             >h6 {
-                @include font-2b-l;
+                @include font-2r-l;
                 margin-bottom: 15px;
             }
 
@@ -93,8 +111,10 @@
         width: $width;
 
         >ul {
+            border-top: 1px solid black;
+            padding-top: 15px;
+            margin-top: 15px;
             width: $width;
-            margin-top: 30px;
             flex-flow: column nowrap;
             text-align: left;
 
@@ -227,6 +247,7 @@
         section.nu__team {
             >article {
                 width: 80%; // only at this breakpoint, constrain this section to be narrower than the grid below
+                width: 100%;
                 margin: 0 auto;
                 flex-flow: row nowrap;
                 justify-content: space-between;
@@ -328,4 +349,23 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: $bp__lg){
+    section.nu__team-list>ul>li>div:not(.neu__bgimg)>p:first-of-type>span:first-of-type,
+    section.nu__team>article>div:first-child>h3 {
+        @include font-2b-l;
+    }
+    section.nu__team>article>div:first-child>h6 {
+        @include font-2r-l;
+    }
+    
+}
+
+@media only screen and (max-width: $bp__md){
+    
+    main > section.nu__team {
+        width: 90%;
+    }
+    
 }

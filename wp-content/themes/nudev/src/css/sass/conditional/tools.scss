@@ -80,6 +80,7 @@
                 >h4 {
                     position: relative;
                     padding: 15px 0;
+                    padding-right: 20px;
                     cursor: pointer;
                     @include font-3r-l;
 
@@ -112,12 +113,27 @@
                     flex-flow: row wrap;
 
                     >li {
+                        margin-bottom: 20px;
+                        flex: 1 0 100%;
                         >h5 {
                             @include font-2r-l;
                         }
-
-                        margin-bottom: 20px;
-                        flex: 1 0 100%;
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        ul {
+                            list-style-type: disc;
+                            margin: 0;
+                            padding: 0;
+                            padding-left: 2.4rem;
+                            li {
+                                margin: 0;
+                                padding: 0;
+                            }
+                        }
                     }
                 }
             }
@@ -139,9 +155,10 @@
                 display: flex;
                 flex-flow: column nowrap;
                 text-align: center;
-                &:after {
-                    display: none;
-                }
+                border-bottom: 1px solid #000;
+                // &:after {
+                //     display: none;
+                // }
                 > li {
                     text-align: center;
                     position: relative;
@@ -149,29 +166,29 @@
                     width: 100%;
                     max-width: 480px;
                     margin: 0 auto;
-                    margin-bottom: 15px;
-                    border-bottom: 2px solid transparent;
-                    &:after {
-                        position: absolute;
-                        bottom: 2px;
-                        left: 0;
-                        content: '';
-                        display: inline-block;
-                        width: 100%;
-                        border-bottom: 1px solid black;
-                    }
+                    // margin-bottom: 15px;
+                    // border-bottom: 5px solid transparent;
+                    // &:after {
+                    //     position: absolute;
+                    //     bottom: 0px;
+                    //     left: 0;
+                    //     content: '';
+                    //     display: inline-block;
+                    //     width: 100%;
+                    //     border-bottom: 1px solid black;
+                    // }
                     > a {
                         margin: 0;
-                        border-bottom: 3px solid transparent;
-                        text-transform: uppercase;
+                        border-bottom: 5px solid transparent;
+                        // text-transform: uppercase;
                         &:hover {
                             font-weight: 400;
-                            border-bottom: 3px solid $brand_colors-red;
+                            border-bottom: 5px solid $brand_colors-red;
                         }
                     }
                     &.tool-grouping-active {
                         > a {
-                            border-bottom: 3px solid $brand_colors-red;
+                            border-bottom: 5px solid $brand_colors-red;
                             font-weight: 400;
                         }
                     }
@@ -256,3 +273,20 @@
     }
 }
 
+@media only screen and (max-width: $bp__lg){
+    ul.tools-grid li.tools-grid-tool>a>h5 {
+        @include font-2b-l;
+    }
+    main section .tool-group>h4 {
+        @include font-2b-l;
+    }
+}
+
+@media only screen and (max-width: $bp__md){
+    div.wrapper>main>section>ul.tool-groupingnav {
+        border-bottom: none;
+    }
+    div.wrapper>main>section>ul.tool-groupingnav>li {
+        border-bottom: 1px solid #000;
+    }
+}

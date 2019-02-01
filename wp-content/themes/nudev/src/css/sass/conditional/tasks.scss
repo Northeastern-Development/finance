@@ -9,12 +9,11 @@
 
 
         > section:nth-of-type(2){
-            > p {
+            p {
                 @include font-3l-c;
+                margin-bottom: 15px;
             }
         }
-        
-
         > section {
             // (the page title)
             > h2 {
@@ -26,8 +25,6 @@
                     color: $brand_colors-red;
                 }
             }
-
-
             > .task-options {
                 // the solutions header (select solution based on method of payment etc)
                 p {
@@ -116,10 +113,11 @@
                         // the task option grouping main info (title, description, icon etc)
                         > div {
                             position: relative;
+                            padding-right: 20px;
                             &:after {
                                 position: absolute;
                                 right: 0;
-                                top: 5px;
+                                top: 0;
                                 font-size: 20px;
                                 transition: transform 0.4s ease;
                                 content: '\e313';
@@ -155,7 +153,23 @@
                                 border-radius: 50%;
                                 border: 1px solid $brand_colors-gray;
                                 color: $brand_colors-gray;
-                            }   
+                            }
+                            ul {
+                                a {
+                                    color: $brand_colors-red;
+                                    &:hover {
+                                        border-bottom: 2px solid $brand_colors-red;
+                                    }
+                                }
+                                list-style-type: disc;
+                                margin: 0;
+                                padding: 0;
+                                padding-left: 2.4rem;
+                                li {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
                         }
                         &.js__tasks_viewable_steps {
                             > div {
@@ -172,8 +186,47 @@
                 }
             }
         }
+        > section .task-options-list-item-suboptions {
+            > li {
+                ul {
+                    a {
+                        color: $brand_colors-red;
+                        &:hover {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
+                    list-style-type: disc;
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 2.4rem;
+                    li {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
     }
 }
+@media only screen and (max-width: $bp__lg){
+    main>section>.task-options>h2 {
+        @include font-5l-l;
+        padding-bottom: 15px; // font size dropped so much the padding should too
+    }
+    main>section>.task-options .task-options-list>li>div h5 {
+        @include font-2b-l;
+    }
+}
+@media only screen and (max-width: $bp__md){
+    main>section:nth-of-type(2)>p {
+        @include font-2l-c;
+    }
+    main>section>.task-options>h2 {
+        @include font-3l-l;
+        padding-bottom: 15px; // font size dropped so much the padding should too
+    }
+}
+
 
 @media only screen and (max-width: 600px){
     div.wrapper {
@@ -190,4 +243,21 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: $bp__sm){
+    
+    main>section>.task-options .task-options-list>li>div {
+
+        > h5 {
+            margin-left: 0;
+        }
+
+        >i.material-icons {
+            padding: 5px;
+            font-size: 1.6rem;
+        }
+    }
+    
+    
 }

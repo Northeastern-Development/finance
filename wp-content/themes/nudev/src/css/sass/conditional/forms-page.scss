@@ -23,6 +23,22 @@
                 > li {
                     padding: 15px 0;
                     border-bottom: 1px solid transparentize(black, 0.8);
+                    ul {
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        list-style-type: disc;
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 2.4rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
                     > h5 {
                         position: relative;
                         @include font-3r-l;
@@ -48,6 +64,7 @@
                                 transform: rotate(90deg);
                             }
                         }
+                        
                     }
                     // collapsible field content (initially hidden)
                     >div {
@@ -57,6 +74,7 @@
                         // files to download
                         > p > a.neu__iconlink {
                             @include neu__iconlink($icon : "\e2c4");
+                            color: $brand_colors-red;
                             &:before {
                                 color: $brand_colors-red;
                             }
@@ -92,13 +110,20 @@
                     }
                 }
             }
-
-        }
-        
-        
+        } 
     }
-    
-    
-    
-    
+}
+
+@media only screen and (max-width: $bp__lg){
+    main div.forms-category>h2 {
+        @include font-5l-l;
+    }
+    main div.forms-category>ul>li>h5 {
+        @include font-2r-l;
+    }
+}
+@media only screen and (max-width: $bp__md){
+    main div.forms-category>h2 {
+        @include font-3l-l;
+    }
 }

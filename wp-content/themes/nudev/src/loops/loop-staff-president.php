@@ -47,7 +47,7 @@
             ,$fields['headshot']['url']
             ,$pres[0]->post_title
             ,$fields['title']
-            ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "One Centralized Department" : "Office of the President"
+            ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "Finance Division Leadership" : "Finance Division Leadership"
             ,$fields['description']
             , ( !empty($fields['phone']) )
                 ? '<a href="tel:'.$fields['phone'].'" title="Call '.$pres[0]->post_title.'" class="neu__iconlink neu__iconlink-phone">'.$fields['phone'].'</a>'

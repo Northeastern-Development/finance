@@ -131,7 +131,7 @@
             $department = sprintf(
                 $guide
                 ,wp_trim_words($managerFields['description'], 55, ' ...') // need to trim this to excerpt length
-                ,( $currentPage === 'department-detail' ) ? '<a title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink" href="/staff/bio/'.$manager[0]->post_name.'">View Full Profile</a>' : null 
+                ,( $currentPage === 'department-detail' ) ? '<a title="View full profile" class="js__bio neu__iconlink" href="/staff/bio/'.$manager[0]->post_name.'">View full profile</a>' : null 
                 ,$managerFields['phone']
                 ,strtolower($dept[0]->post_title)
                 ,$managerFields['phone']
@@ -196,7 +196,7 @@
                 ,( !empty($fields['expert_at'])) ? 'Expert at: '.$fields['expert_at'] : null
                 ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'. $fields['phone'] .'">'.$fields['phone'].'</a>' : null
                 ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="mailto:'. $fields['email'] .'">email</a>' : null
-                ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="View full Profile [Opens in an Overlay]" class="js__bio neu__iconlink">View Full Profile</a>' : null
+                ,( $currentPage === 'department-detail' && !empty($fields['description']) ) ? '<a href="/staff/bio/'.$member->post_name.'" title="View full profile" class="js__bio neu__iconlink">View full profile</a>' : null
 			);
 		}
 		$departments .= "</ul></section>";

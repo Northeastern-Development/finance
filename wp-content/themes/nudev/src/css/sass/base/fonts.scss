@@ -522,3 +522,18 @@
     line-height: 2.8rem;
     text-align: center;
 }
+
+
+
+@mixin font-hero-lg-c {
+    font-weight: 300;
+    font-size: 5rem;
+    line-height: 7.2rem;
+    text-align: center;
+}
+@mixin font-hero-md-c {
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 3.2rem;
+    text-align: center;
+}

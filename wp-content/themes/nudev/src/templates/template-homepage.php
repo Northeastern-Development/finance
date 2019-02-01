@@ -4,7 +4,9 @@
  */
 
     // 
-    $img = wp_get_attachment_image_src(3525, 'full');
+    // $img = wp_get_attachment_image_src(3525, 'full');
+
+    $img = site_url() . '/wp-content/uploads/hp-hero.jpg';
 
     // get tools posts data
     $args = array(
@@ -26,12 +28,20 @@
     );
     $res = get_posts($args);
     $content_tools = '';
+    // $format_tools = '
+    //     <li>
+    //         <a href="%s" title="View %s">
+    //             <div><div style="background-image: url(%s)"></div></div>
+    //             <p>%s</p>
+    //             <p><span>Learn more</span></p>
+    //         </a>
+    //     </li>
+    // ';
     $format_tools = '
         <li>
             <a href="%s" title="View %s">
                 <div><div style="background-image: url(%s)"></div></div>
-                <p>%s</p>
-                <p><span>Learn more</span></p>
+                <h5>%s</h5>
             </a>
         </li>
     ';
@@ -42,7 +52,7 @@
             ,get_permalink($rec) . seoUrl($fields['groupings'][0]['title'])
             ,$rec->post_title
             ,$fields['image']
-            ,strip_tags($fields['short_description'])
+            ,$rec->post_title
         );
     }
     // end get tools post data
@@ -102,7 +112,8 @@
             ,( get_fields( $fields['category']->ID )['status'] == true )
                 ? $fields['category']->post_title
                 : null
-            ,strip_tags($fields['details'])
+            // ,strip_tags($fields['details'])
+            ,strtok(strip_tags($fields['details']), '.').'.'        // kinda causes some issues if something like example inc. is the first sentence (or other reasons a period would be non-punctual)
         );
     }
     // end get news post data
@@ -120,11 +131,11 @@
     </div>
 
 
-    <section class="hero" style="background-image: url(<?= $img[0]; ?>)">
+    <section class="hero hero-image" style="background-image: url(<?= $img; ?>)">
         
         <div>
             <h2>One Centralized Department</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi, harum nesciunt repudiandae vel unde neque! Consequuntur error quas, obcaecati recusandae, fugiat quis, unde modi voluptatibus minus aperiam tempore! Quasi.</p>    
+            <p>Northeastern University’s Finance Division oversees all functions related to finance—from buying goods and services, to processing expense reports, to developing financial statements and managing student loans. The division’s wide-ranging services include financial strategy, auditing, treasury, accounting, and budgeting. Our mission is to help the university achieve ambitious goals through the sound stewardship of financial resources.</p>    
             <a title="View the About Page" href="<?php echo get_permalink( get_page_by_path('about') ); ?>"><h4 class="nu__content_btn">Learn More</h4></a>
         </div>
 

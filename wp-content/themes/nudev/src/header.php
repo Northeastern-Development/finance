@@ -19,7 +19,7 @@
 		<meta name="apple-touch-fullscreen" content="yes">
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta http-equiv="revisit" content="15 days" />
-		<meta http-equiv="robots" content="all" />
+		<!-- <meta http-equiv="robots" content="all" /> -->
 
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/favicon/apple-icon-57x57.png">

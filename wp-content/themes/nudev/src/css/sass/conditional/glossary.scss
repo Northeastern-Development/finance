@@ -57,7 +57,7 @@
                 min-height: 30px; // provide space to h2 (letter) if there are no items
                 margin-top: 30px;
 
-                li {
+                > li {
                     padding-bottom: 30px;
                     @include font-2l-l;
 
@@ -68,7 +68,7 @@
 
                     &:not(:first-of-type) {
                         // margin-left: 30px;
-                        font-weight: 400;
+                        // font-weight: 400;
                     }
 
                     >h6 {
@@ -80,7 +80,22 @@
                             color: black;
                         }
                     }
-
+                    ul {
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        list-style-type: disc;
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 2.4rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
 
                 }
             }
@@ -101,4 +116,18 @@
 
 
 
+}
+
+@media only screen and (max-width: $bp__lg){
+    section#glossary div.glossary-content>ul li:first-of-type:not(:last-child)>h2 {
+        @include font-5l-l;
+    }
+    section#glossary div.glossary-content>ul li>h6 {
+        @include font-2b-l;
+    }
+}
+@media only screen and (max-width: $bp__md){
+    section#glossary div.glossary-content>ul li:first-of-type:not(:last-child)>h2 {
+        @include font-3l-l;
+    }
 }

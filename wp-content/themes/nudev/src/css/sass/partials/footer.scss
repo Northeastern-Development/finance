@@ -12,7 +12,7 @@ footer {
         background: rgba(0, 0, 0, 1.0);
         color: rgba(255, 255, 255, 1.0);
         width: 100%;
-        padding: 20px 0 20px 0;
+        padding: 20px 0 0px 0;
         height: auto;
 
         // footer wrapper
@@ -23,7 +23,7 @@ footer {
 
             // footer sections wrapper
             > ul {
-                padding: 20px;
+                padding: 20px 20px 40px 20px;
                 list-style: none;
                 list-style-type: none;
                 display: flex;

@@ -18,7 +18,7 @@
 
     $format_cats = '
         <div title="View tasks in the %s category">
-            <img class="taskicon" src="%s">
+            <img class="taskicon" src="%s" alt="task category icon">
             <h4><span>%s</span></h4>
             <ul>
                 <li><h4>%s</h4></li>

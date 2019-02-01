@@ -45,7 +45,7 @@
     // This Latest Update is a NEWS item
     else if( $the_fields['type'] == 'news') {
         $format_update = '
-            <h1>%s</h1>
+            <h2>%s</h2>
             <h3>%s</h3>
             <img src="%s">
             <div>%s</div>

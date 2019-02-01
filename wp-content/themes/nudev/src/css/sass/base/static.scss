@@ -1,6 +1,33 @@
 @media only screen {
+    main>section>h2 {
+        @include font-7l-l;
+    }
+}
+@media only screen and (max-width: $bp__lg){
+    main>section>h2 {
+        @include font-5l-l;
+    }
+}
+@media only screen and (max-width: $bp__md){
+    main>section>h2 {
+        @include font-3l-l;
+        padding-bottom: 15px;
+    }
+}
 
-    html.nu__noscroll, html body.nu__noscroll {
+@media only screen {
+    main {
+        > section {
+            // Large Section Headings
+            > h2 {
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+
+    html.neu__noscroll, html body.neu__noscroll {
         overflow: hidden;
         position: fixed;
     }
@@ -12,9 +39,10 @@
         max-width: $wrapper-width;
         max-width: 100%; // overriding 100vw
         width: 100%; // overriding 100vw
-        margin-top: 128px;
+        margin-top: 124px;
     }
     .nu__content_btn {
+        letter-spacing: 1px;
         display: inline-block;
         padding: 5px 45px;
         margin: 0px auto;
@@ -29,18 +57,6 @@
     .neu__bgimg {
         @include neu__bgimg( $height : 245px );
     }
-    div.main,
-    main {
-        > section {
-            // Large Section Headings
-            > h2 {
-                @include font-7l-l;
-                padding-bottom: 15px;
-                margin-bottom: 15px;
-                border-bottom: 1px solid black;
-            }
-        }
-    }
     // outer container
     main,
     div.main {
@@ -51,6 +67,7 @@
             width: inherit;
             clear: both;
             overflow: hidden;
+           // 
         }
 
         >section.hero {
@@ -73,7 +90,7 @@
                 >h1 {
                     color: rgba(white, 1.0);
                     text-align: center;
-                    @include font-7l-c;
+                    @include font-hero-lg-c;
                 }
 
                 // description
@@ -98,6 +115,7 @@
             // width: $wrapper-width;
             // margin: ($gutter * 1.7) auto 0 auto;
             width: 90%;
+            width: 90vw;
             margin: 30px 5% 0;
             padding: $gutter 0 0;
             background: rgba($brand_colors-beige, 1.0);
@@ -113,7 +131,7 @@
         }
 
         >section {
-            width: 50vw;
+            // width: 50vw;
             width: 60vw;
             // margin: ($gutter * 1.7) auto 0 auto;
             margin: 30px auto 0;
@@ -180,6 +198,22 @@
         
     }
 }
+// Scale Hero Title & Description
+@media only screen and (max-width: $bp__lg){
+    main>section.hero>div>h1 {
+        @include font-hero-md-c;
+    }
+    main>section.hero>div>h3 {
+        @include font-2l-c;
+    }
+}
+@media only screen and (max-width: $bp__sm){
+    main>section.hero>div>h1 {
+        @include font-5l-c;
+    }
+}
+
+
 @media only screen and (max-width: 1280px) {
     $gutter: 15px;
 
@@ -328,7 +362,16 @@
             .js__bio.neu__iconlink {
                 @include neu__iconlink($icon: "\e7fd");
             }
+        
+            // default width for section elements directly within the main element (page wrapper)
+            > section {
+                // width: 90%;
+                &.hero {
+                    width: 100%;
+                }
+            }
         }
+        
     }
     
     // LETS DO SOME FANCY BULLETS HUH
@@ -384,6 +427,7 @@
                 cursor: pointer;
                 @include font-3b-l;
                 position: relative;
+                padding-right: 20px;
                 &:after {
                     transition: transform 0.4s ease;
                     content: '\e313';
@@ -405,6 +449,8 @@
 
         >section.hero {
             width: 100%;
+            margin-bottom: 30px;
+            max-height: calc(100vh - 124px);
         }
 
         >section.nobg {
@@ -425,9 +471,9 @@
             margin: 0;
             margin-top: 30px;
 
-            li {
+            > li {
                 border-bottom: 1px solid transparentize(black, 0.5);
-
+                
                 >h5 {
                     @include font-2r-l;
                     margin: 15px 0;
@@ -456,13 +502,30 @@
                     > p {
                         margin-bottom: 15px;
                     }
+                    ul {
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        list-style-type: disc;
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 2.4rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
                 }
             }
         }
 
         section.hero.hero-image {
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
 
         section.related-tasks {
@@ -603,5 +666,11 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: $bp__sm){
+    main > section {
+        width: 90%;
     }
 }

@@ -2,7 +2,7 @@
  * 
  */
 header {
-    height: 84px;
+    height: 80px;
     width: 100%;
     position: fixed;
     left: 0;
@@ -27,7 +27,6 @@ header {
             height: 100%;
             width: 230px;
             svg {
-                filter: invert(1); // ( TURNS THE BLACK LOGO INTO WHITE, DONT HAVE A WHITE ONE RN)
                 height: 100%;
                 max-width: 280px;
             }

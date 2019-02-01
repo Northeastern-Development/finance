@@ -49,4 +49,10 @@ $navigation-height: 50px;
 
 // Breakpoints
 $nav_bp_dt : 960px;
-$bp_3cols : 600px;
+// $bp_3cols : 600px;
+$bp_3cols : 620px;  // replace this with bp__md asap please
+
+// Breakpoints v2
+$bp__sm : 620px;
+$bp__md : 960px;
+$bp__lg : 1280px;

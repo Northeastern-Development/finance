@@ -25,9 +25,9 @@
                 }
 
                 >h1 {
-                    @include font-7l-l;
-                    margin: 0;
-                    margin-bottom: 15px;
+                    // @include font-7l-l;
+                    // margin: 0;
+                    // margin-bottom: 15px;
                 }
 
                 >h3 {
@@ -48,6 +48,22 @@
 
                     >p {
                         margin-bottom: 15px;
+                    }
+                    ul {
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        list-style-type: disc;
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 2.4rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                        }
                     }
                 }
             }
@@ -192,5 +208,11 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: $bp__lg){
+    html body ul.newsandevents>li>a>div>h3 {
+        @include font-2b-l;
     }
 }

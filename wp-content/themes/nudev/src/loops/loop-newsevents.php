@@ -127,7 +127,8 @@ class NUNewsArchive{
             ,( get_fields($b['category']->ID)['status'] == true )
                 ? $b['category']->post_title
                 : null
-            ,strip_tags($b['details'])
+            // ,strip_tags($b['details'])
+            ,strtok(strip_tags($b['details']), '.').'.'
             ,( $b['type'] == 'event' ) ? $content_event : null
         );
 

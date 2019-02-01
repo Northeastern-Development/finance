@@ -26,7 +26,6 @@
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>
-                <p class="neu__iconlink">Learn More</p>
             </a>
         </li>
     ';

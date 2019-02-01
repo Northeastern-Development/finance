@@ -62,3 +62,9 @@
         }
     }
 }
+
+@media only screen and (max-width: $bp__lg){
+    div.wrapper main>section ul.discounts>li>h5, div.wrapper div.main>section ul.discounts>li>h5 {
+        @include font-2r-l;
+    }
+}

@@ -85,6 +85,7 @@ var Finance = {};
                     $('#nu__mobile a.active').removeClass('active');
                     $('#nu__mobile .show').hide();
                     $('#nu__mobile .show').removeClass('show');
+                    $('html, body').removeClass('neu__noscroll');
 
                 }
             },
@@ -131,6 +132,23 @@ var Finance = {};
 
 
 
+        Finance.MobileNav = {
+
+            navicon : $('#neu__navicon-label'),
+            nav : $('#nu__mobile'),
+
+            _init : function(){
+
+                Finance.MobileNav.navicon.on('click', Finance.MobileNav._didClickNavicon);
+                
+            },
+            _didClickNavicon : function(e){
+                $('html, body').toggleClass('neu__noscroll');
+            }
+            
+            
+        }
+        Finance.MobileNav._init();
 
 
 

@@ -148,6 +148,8 @@
                 .removefilter {
                     border: 1px solid white;
                     // padding: 10px 30px;
+                    padding: 10px 0;
+                    width: 100%;
                     color: white;
                     margin: 0;
                     @include font-3l-c;
@@ -365,8 +367,13 @@
 
     #nu__mobile {
         display: none;
-        position: absolute;
-        top: 83px;
+        // position: absolute;
+        // top: 83px;
+        position: fixed;
+        top: 123px;
+        max-height: calc(100% - 127px);
+        overflow: auto;
+        
         left: 2.5%;
         width: 95%;
     }
@@ -379,12 +386,12 @@
         // consistent styling for all line items at every depth
         li {
             >a {
-                @include font-2r-l;
+                @include font-1r-l;
                 letter-spacing: 1px;
                 position: relative;
                 display: inline-block;
                 width: 100%;
-                line-height: 50px;
+                line-height: 44px;
                 padding: 0 30px;
                 color: rgba(255, 255, 255, 0.8); // soft white links
                 border-bottom: 1px solid $brand_colors-gray;
@@ -495,6 +502,8 @@
         left: -9999px;
     }
 
+
+    // Reveal Mobile nav if Navicon input is checked
     input#neu__navicon:checked {
 
         ~label#neu__navicon-label {
@@ -511,5 +520,23 @@
             display: block;
         }
 
+    }
+}
+
+
+@media only screen and (max-width: $bp__lg){
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
+        @include font-5r-c;
+    }
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h3 {
+        @include font-2b-c;
+    }
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child .removefilter {
+        @include font-2l-c;
+    }
+}
+@media only screen and (max-width: $bp__md){
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
+        @include font-3r-c;
     }
 }
