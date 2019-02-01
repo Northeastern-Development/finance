@@ -19,8 +19,7 @@
     $format_option = '
         <li>
             <div>
-                %s
-                <h5 title="Toggle dropdown for %s">%s</h5>
+                <h5 title="Toggle dropdown for %s">%s<span>%s</span></h5>
                 %s
             </div>
             <ul class="list task-options-list-item-suboptions js__tasks_steps neu__fancy_bullets">
@@ -142,8 +141,8 @@
         // after all the bits are compiled, bring them all together as a complete option grouping
         $content_option .= sprintf(
             $format_option
-            ,'<i class="material-icons">check</i>'
             ,$option['title']
+            ,'<i class="material-icons">check</i>'
             ,$option['title']
             ,$option['description']
             , ( !empty($content_sidebar) ) ? '<li class="sidebar">'.$content_sidebar.'</li>' : null

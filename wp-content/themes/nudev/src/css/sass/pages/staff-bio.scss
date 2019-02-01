@@ -753,3 +753,8 @@ main#staff {
     }
 
 }
+@media only screen and (max-width: $bp__sm){
+    #staffbio {
+        padding: 40px 20px;
+    }
+}
