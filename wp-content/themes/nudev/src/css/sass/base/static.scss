@@ -546,7 +546,14 @@
                         margin-right: 0;
                     }
 
-                    @include neu__iconlink();
+                    @include neu__iconlink($hover:0);
+                    border-bottom: none;
+                    a {
+                        border-bottom: 2px solid transparent;
+                        &:hover {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
                     padding-left: 30px;
                     &:before {
                         position: absolute;
