@@ -163,25 +163,10 @@
                         >p:first-of-type {
                             margin-bottom: 15px;
                         }
-
-                        >p:last-child>span {
-                            @include neu__iconlink($hover: 0);
-
-                            &:before {
-                                color: $brand_colors-red;
-                            }
-                        }
-
                         >div:first-of-type {
                             @include neu__bgimg;
                             width: 100%;
                             height: 245px;
-                        }
-
-                        &:hover {
-                            >p:last-child>span {
-                                border-bottom: 2px solid $brand_colors-red;
-                            }
                         }
                     }
                 }
@@ -195,6 +180,22 @@
                 }
                 p {
                     @include font-2l-l;
+                }
+                > p:last-of-type {
+                    position: relative;
+                    @include neu__iconlink($hover: 0);
+                    padding-left: 30px;
+                    &:before {
+                        color: $brand_colors-red;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                &:hover {
+                    > p:last-of-type {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
                 }
             }
         }

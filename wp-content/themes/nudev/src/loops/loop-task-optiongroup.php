@@ -22,7 +22,7 @@
                 <h5 title="Toggle dropdown for %s">%s<span>%s</span></h5>
                 %s
             </div>
-            <ul class="list task-options-list-item-suboptions js__tasks_steps neu__fancy_bullets">
+            <ul class="list task-options-list-item-suboptions %s neu__fancy_bullets">
                 %s
                 %s
                 %s
@@ -145,6 +145,7 @@
             ,'<i class="material-icons">check</i>'
             ,$option['title']
             ,$option['description']
+            ,( count($fields['options_group']) > 1 ) ? 'js__tasks_steps' : null
             , ( !empty($content_sidebar) ) ? '<li class="sidebar">'.$content_sidebar.'</li>' : null
             ,$content_suboption
             , ( !empty($content_relatedfiles) ) ? '<ul class="list"><li><h2>Related Files</h2></li>'.$content_relatedfiles.'</ul>' : null

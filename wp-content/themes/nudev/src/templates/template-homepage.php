@@ -87,7 +87,7 @@
                 <h5>%s</h5>
                 <h5>%s</h5>
                 <p>%s</p>
-                <p><span>Learn more</span></p>
+                <p><span>Learn more about %s</span></p>
             </a>
         </li>
     ';
@@ -112,8 +112,8 @@
             ,( get_fields( $fields['category']->ID )['status'] == true )
                 ? $fields['category']->post_title
                 : null
-            // ,strip_tags($fields['details'])
             ,strtok(strip_tags($fields['details']), '.').'.'        // kinda causes some issues if something like example inc. is the first sentence (or other reasons a period would be non-punctual)
+            ,$rec->post_title
         );
     }
     // end get news post data
@@ -155,7 +155,7 @@
                     echo $content_tools;
                 ?>
             </ul>
-            <a title="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
+            <a title="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All Tools</h4></a>
         </section>
     <?php 
         endif;
@@ -168,7 +168,7 @@
                     echo $content_news;
                 ?>
             </ul>
-            <a title="View all News and Events" href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All</h4></a>
+            <a title="View all News and Events" href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All Updates</h4></a>
         </section>
     <?php 
         endif;

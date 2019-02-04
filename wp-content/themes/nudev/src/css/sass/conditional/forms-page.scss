@@ -2,8 +2,6 @@
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/mixins.scss';
 @media only screen {
-
-    div.main,
     main {
 
         div.forms-category {
@@ -21,8 +19,25 @@
                 align-items: center;
                 // 
                 > li {
+                    position: relative;
                     padding: 15px 0;
+                    padding-left: 30px;
                     border-bottom: 1px solid transparentize(black, 0.8);
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: auto;
+                        content: '\e5c8';
+                        font-family: "Material Icons";
+                        color: $brand_colors-red;
+                        transform: rotate(0deg);
+                        transition: transform 0.4s ease;
+                    }
+                    &.js__collapsible_triggered {
+                        &:before {
+                            transform: rotate(90deg);
+                        }
+                    }
                     ul {
                         a {
                             color: $brand_colors-red;
@@ -42,29 +57,12 @@
                     > h5 {
                         position: relative;
                         @include font-3r-l;
-                        &:before {
-                            display: inline-block;
-                            vertical-align: middle;
-                            content: '\e5c8';
-                            font-family: "Material Icons";
-                            color: $brand_colors-red;
-                            transform: rotate(0deg);
-                            transition: transform 0.4s ease;
-                            margin-right: 15px;
-                            position: relative;
-                            bottom: 2px;
-                        }
+                        
                         &:hover {
                             &:after {
                                 color: $brand_colors-red;
                             }
                         }
-                        &.js__collapsible_triggered {
-                            &:before {
-                                transform: rotate(90deg);
-                            }
-                        }
-                        
                     }
                     // collapsible field content (initially hidden)
                     >div {
@@ -112,6 +110,10 @@
             }
         } 
     }
+    // Hidden Content Wrapper
+    // main > section > div.forms-category > ul > li > div {
+        // padding-left: 30px;
+    // }
 }
 
 @media only screen and (max-width: $bp__lg){
@@ -125,5 +127,14 @@
 @media only screen and (max-width: $bp__md){
     main div.forms-category>h2 {
         @include font-3l-l;
+    }
+}
+
+@media only screen and (max-width: $bp__sm){
+    // Hidden Content Wrapper
+    main > section > div.forms-category > ul > li > div {
+        position: relative;
+        left: -30px;
+        width: calc(100% + 30px);
     }
 }

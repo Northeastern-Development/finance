@@ -19,6 +19,9 @@
 
             &.related-tasks {
                 margin-bottom: 40px;
+                > ul {
+                    width: 100%;
+                }
 
                 i.material-icons {
                     color: $brand_colors-red;
@@ -64,7 +67,7 @@
 
                                 >a.js__youtube {
                                     @include neu__iconlink();
-
+                                    color: $brand_colors-red;
                                     &:before {
                                         color: $brand_colors-red;
                                     }
@@ -101,7 +104,7 @@
 
                                 >a {
                                     @include neu__iconlink();
-
+                                    color: $brand_colors-red;
                                     &:before {
                                         color: $brand_colors-red;
                                     }
@@ -118,6 +121,7 @@
                                 >li {
                                     >a.neu__iconlink {
                                         @include neu__iconlink($icon: "\e2c4");
+                                        color: $brand_colors-red;
 
                                         &:before {
                                             color: $brand_colors-red;
