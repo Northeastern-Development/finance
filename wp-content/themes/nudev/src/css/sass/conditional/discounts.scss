@@ -25,6 +25,11 @@
                         border-bottom: 1px solid transparentize(black, 0.8);
                         padding: 15px 0;
                         margin-bottom: 0;
+                        &.js__collapsible_triggered {
+                            > h5:after {
+                                transform: rotate(180deg);
+                            }
+                        }
                         >h5 {
                             @include font-3r-l;
                             &:hover {

@@ -30,6 +30,8 @@
     html.neu__noscroll, html body.neu__noscroll {
         overflow: hidden;
         position: fixed;
+        top: 0;
+        left: 0;
     }
     div#nu__globalheader {
         width: 100%; // overriding 100vw
@@ -58,16 +60,14 @@
         @include neu__bgimg( $height : 245px );
     }
     // outer container
-    main,
-    div.main {
+    main {
         // inner container
         >section {
             position: relative;
             margin: 0;
             width: inherit;
             clear: both;
-            overflow: hidden;
-           // 
+            // overflow: hidden;
         }
 
         >section.hero {
@@ -489,12 +489,13 @@
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
-                    &.js__collapsible_triggered{
-                        &:after { // carrot becomes red
-                            color: $brand_colors-red;
-                        }
-                    }              
                 }
+                &.js__collapsible_triggered{
+                    > h5:after { // carrot becomes red
+                        // color: $brand_colors-red;
+                        transform: rotate(180deg);
+                    }
+                }              
 
                 >div {
                     @include font-2l-l;
@@ -535,6 +536,7 @@
                 text-align: left;
                 display: inline-block;
                 > li {
+                    position: relative;
                     display: inline-block;
                     vertical-align: top;
                     font-size: initial;
@@ -544,14 +546,13 @@
                         margin-right: 0;
                     }
 
-                    a.neu__iconlink {
-                        @include neu__iconlink();
-                        &:before {
-                            color: $brand_colors-red;
-                        }
-                        > span {
-                            line-height: inherit;
-                        }
+                    @include neu__iconlink();
+                    padding-left: 30px;
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: $brand_colors-red;
                     }
                 }
             }
@@ -587,6 +588,7 @@
                 font-size: 0;
                 width: $width;
                 > li {
+                    vertical-align: top;
                     font-size: initial;
                     display: flex;
                     flex-flow: row nowrap;
@@ -626,7 +628,6 @@
     div.wrapper > main {
         section.heretohelp {
             > ul {
-                display: flex;
                 > li {
                     display: inline-block;
                     width: (($width - (($col - 1) * $space)) / $col);

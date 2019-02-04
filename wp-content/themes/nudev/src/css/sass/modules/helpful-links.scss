@@ -57,9 +57,26 @@
     }
 }
 
+@media only screen and (max-width: $bp__lg){
+    $width : 60vw;
+    $col : 3;
+    $space: 2vw;
+    div.nu__prefooter>div>ul {
+        width: $width;
+        > li {
+            &:nth-of-type(2){
+                margin-right: 0;
+            }
+            &:nth-of-type(3){
+                margin-right: $space;
+            }
+        }
+    }
+}
+
 
 // A/R for FINANCE
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: $bp__sm){
     div.wrapper > main {
         > section {
             > .nu__prefooter {
@@ -80,7 +97,7 @@
     }
 }
 
-@media only screen and (min-width: 991px){
+@media only screen and (min-width: $bp__lg){
     
     $width : 60vw;
     $col : 3;

@@ -5,70 +5,71 @@
 @media only screen {
 
     
-    main,
-    div.main {
+    main {
         
+        > section:not(.hero) {
+            > p {
+                margin-bottom: 15px; // should be a global but afraid to do that this late in the game
+                p {
+                    margin-bottom: 15px; // should be a global but afraid to do that this late in the game
+                }    
+            }
+        }
+
         > section:nth-of-type(2){
-            .neu__iconlink {
-                @include neu__iconlink($icon : "\e0be");
-            }
             > p {
-                margin: 15px 0;
-            }
-        } 
-
-        > section:nth-of-type(3){
-            > p:nth-last-child(2) {
-                .neu__iconlink {
-                    @include neu__iconlink($icon : "\e551");
+                @include neu__iconlink($hover : 0, $icon : "\e0be");
+                > a {
+                    border-bottom: 2px solid transparent;
                 }
-            }
-            > p:last-child {
-                .neu__iconlink{
-                    @include neu__iconlink();
-                }
-            }
-            > p {
-                margin: 15px 0;
-            }
-            
-        }
-
-        > section:nth-last-child(2){
-            p:last-child .neu__iconlink{
-                &:before{
-                    color: $brand_colors-red;
+                &:hover {
+                    &:before {
+                        color: $brand_colors-red;
+                    }
+                    > a {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
                 }
             }
         }
 
-        > section:last-child {
-            .neu__iconlink {
-                @include neu__iconlink();
-            }
+        // Contact Staff (department list)
+        > section:last-of-type {
             > ul {
-                width: 100%;
-                display: inline-block;
+                display: block;
                 font-size: 0;
                 text-align: left;
                 > li {
+                    position: relative;
                     font-size: initial;
                     display: inline-block;
                     vertical-align: top;
+                    width: calc(50% - 7.5px);
                     margin: 0 15px 15px 0;
-                    width: calc( 50% - 7.5px);
+                    padding-left: 30px;
+                    @include neu__iconlink($hover : 0 );
+                    border-bottom: none;
                     &:nth-of-type(2n){
                         margin-right: 0;
                     }
-                }
-                
-                > li > a:before {
-                    color: $brand_colors-red;
+                    
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: $brand_colors-red;
+                    }
+                    > a {
+                        border-bottom: 2px solid transparent;
+                    }
+                    &:hover {
+                        > a {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
                 }
             }
-            
-        }
-        
+        }        
     }
 }
 

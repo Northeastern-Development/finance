@@ -103,7 +103,8 @@
 
             $content_sidebar .= sprintf(
                 $format_sidebar
-                ,( $option['sidebar']['image'] ) ? '<img src="'.$option['sidebar']['image'].'">' : null
+                // ,( $option['sidebar']['image'] ) ? '<img src="'.$option['sidebar']['image'].'">' : null
+                ,( $option['sidebar']['image'] ) ? '<div style="background-image: url('.$option['sidebar']['image'].'"></div>' : null
                 ,$option['sidebar']['title']
                 ,$option['sidebar']['description']
                 , ( !empty($option['sidebar']['link']) ) // if we have a link to reference; render the link

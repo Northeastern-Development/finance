@@ -37,7 +37,7 @@
                         <li>
                             <h5>Links to Other Departments</h5>
                             <ul>
-                                <li><a href="https://www.northeastern.edu/hrm/resources/hr-payroll/index.html/" title="View the Payroll Site [will open in a new tab or window]" target="_blank">Payroll/HR</a></li>
+                                <li><a href="https://www.northeastern.edu/hrm/resources/hr-payroll/" title="View the Payroll Site [will open in a new tab or window]" target="_blank">Payroll/HR</a></li>
                                 <li><a href="https://studentfinance.northeastern.edu/" title="View the Student Finance Site [will open in a new tab or window]" target="_blank">Student Finance</a></li>
                                 <li><a href="http://www.northeastern.edu/research/raf/" title="View the Research Funding Site [will open in a new tab or window]" target="_blank">Research Funding</a></li>
                             </ul>

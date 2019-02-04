@@ -5,6 +5,9 @@
 
 div.main,
 main {
+    section.hero {
+        margin-bottom: 0;
+    }
 
     section.nu__president {
         margin: 0 auto;
@@ -65,9 +68,10 @@ main {
 
                 >p {
                     position: absolute;
-                    left: $gutter;
-                    bottom: $gutter;
+                    left: 15px;
+                    bottom: 15px;
                     color: rgba(white, 1.0);
+                    width: calc(100% - 30px);
 
                     >span {
                         @include font-2b-l;

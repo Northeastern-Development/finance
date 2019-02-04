@@ -1,6 +1,6 @@
 <?php 
 
-class CPTs
+class cpts
 {
     function __construct(){
         add_action('init', array($this, 'register_cpts'));

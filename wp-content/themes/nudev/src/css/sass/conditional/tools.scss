@@ -182,14 +182,14 @@
                         border-bottom: 5px solid transparent;
                         // text-transform: uppercase;
                         &:hover {
-                            font-weight: 400;
+                            // font-weight: 400;
                             border-bottom: 5px solid $brand_colors-red;
                         }
                     }
                     &.tool-grouping-active {
                         > a {
                             border-bottom: 5px solid $brand_colors-red;
-                            font-weight: 400;
+                            // font-weight: 400;
                         }
                     }
                 }

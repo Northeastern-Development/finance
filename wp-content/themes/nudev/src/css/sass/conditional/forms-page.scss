@@ -37,6 +37,9 @@
                         &:before {
                             transform: rotate(90deg);
                         }
+                        > h5:after {
+                            transform: rotate(180deg);
+                        }
                     }
                     ul {
                         a {
