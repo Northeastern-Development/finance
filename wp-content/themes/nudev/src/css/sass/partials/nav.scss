@@ -186,7 +186,7 @@
                     text-align: center;
 
                     >h4 {
-                        @include font-1r-c;
+                        @include font-2r-c;
 
                         &:after {
                             content: '\e315';
@@ -262,25 +262,24 @@
 
                 // show this task items wrapper
                 >div.theFilter>ul {
-                    display: flex;
-                    flex-flow: column wrap;
-                    max-height: 216px;
-
+                    display: block;
+                    column-count: 4;
                     li {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 90%;
                         text-align: left;
-                        // flex: 1;
-                        max-width: calc(33% - 30px);
-                        margin-bottom: 20px;
-
+                        padding: 10px 0;
                         // (restyle the duplicate task category title inside the newly revealed list of tasks)
                         >h4 {
-                            @include font-1r-l;
+                            @include font-2r-l;
+                            color: $brand_colors-gray;
                             text-transform: uppercase;
                             cursor: default;
                         }
 
                         >a {
-                            @include font-1r-l;
+                            @include font-2r-l;
                             color: black;
 
                             &:after {

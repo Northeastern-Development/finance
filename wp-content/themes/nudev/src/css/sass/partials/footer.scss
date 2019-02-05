@@ -1,82 +1,76 @@
 /**
- * partials/footer
- * ---
- */
+* partials/footer
+* ---
+*/
 
-footer {
-    flex: none;
-    position: relative;
-    z-index: 101;
-
-    > div#sitefooter {
+// Size Independent Styles
+@media only screen {
+    div#sitefooter {
         background: rgba(0, 0, 0, 1.0);
         color: rgba(255, 255, 255, 1.0);
-        width: 100%;
-        padding: 20px 0 0px 0;
-        height: auto;
-
-        // footer wrapper
         > div {
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-
-            // footer sections wrapper
             > ul {
-                padding: 20px 20px 40px 20px;
-                list-style: none;
-                list-style-type: none;
+                list-style-type: none; // (already set globally, but that may need to be removed)
                 display: flex;
+                // width: 94vw; // * to match the width of the globalfooter (vertical justification)
+                width: 100%;
+                margin: 0 auto;
                 border-bottom: 1px solid $brand_colors-gray;
-
-                // footer sections
+                padding: 20px 30px;
                 > li {
-                    flex-grow: 1;
-                    flex-basis: 0;
-                    font-size: 1.3rem;
-                    h5 {
-                        color: $brand_colors-gray;
-                        @include font-1l-c;
-                        text-transform: uppercase;
-                    }
-                    > ul {
-                        list-style-type: none;
-                        a {
-                            color: white;
-                            @include font-2b-l;
-                            &:hover {
-                                opacity: 0.6;
-                                border-bottom: 2px solid $brand_colors-red;
-                            }
-                        }
-                    }
-                    &:not(:first-child){
-                        flex-basis: 25%;
-                    }
-                    &:first-child {
-                        overflow: hidden;
+                    margin: 15px 0;
+                    &:first-of-type{
                         flex-basis: 50%;
-                        img {
-                            width: 200px;
-                            height: auto;
-                        }
-
                         svg {
                             width: 220px;
                         }
-
-                        > a {
-                            font-size: 0;
+                    }
+                    &:not(:first-of-type){
+                        flex-basis: 25%;
+                    }
+                    // labels for link groups
+                    > h5 {
+                        @include font-1l-c;
+                        color: $brand_colors-gray;
+                        text-transform: uppercase;
+                        text-align: left;
+                    }
+                    > ul {
+                        list-style-type: none; // (already set globally, but that may need to be removed)
+                        > li {
+                            > a {
+                                color: white;
+                                @include font-2b-l;
+                                &:hover {
+                                    opacity: 0.6;
+                                    border-bottom: 2px solid $brand_colors-red;
+                                }
+                            }
                         }
+                    }
+                }
+            }        
+        }
+    }
+}
+// Below lg
+@media only screen and (max-width: $bp__lg){} 
+// Below md
+@media only screen and (max-width: $bp__md){
+    div#sitefooter {
+        > div {
+            > ul {
+                flex-flow: column nowrap;
+                text-align: center;
+                > li {
+                    > h5 {
+                        text-align: center;
                     }
                 }
             }
         }
     }
-}
-
-@media only screen and (min-width: $nav_bp_dt){
-    footer > div#sitefooter > div > ul > li > h5 {
-        text-align: left;
-    }
+} 
+// Below sm
+@media only screen and (max-width: $bp__sm){
 }

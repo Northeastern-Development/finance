@@ -31,7 +31,7 @@ class SetupTheme
          *  Conditionally Loaded Scripts
          */
         if(is_page_template('templates/template-tasks.php')){ wp_enqueue_script('taskspage', get_template_directory_uri() . '/js/tasks.js', array('theme'), '1.0.0'); }
-        if(is_page_template('templates/template-forms.php')){ wp_enqueue_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('theme'), '1.0.0'); }
+        // if(is_page_template('templates/template-forms.php')){ wp_enqueue_script('formspage', get_template_directory_uri() . '/js/formpage.js', array('theme'), '1.0.0'); }
         if( is_page_template( 'templates/template-glossary.php') ){ wp_enqueue_script('glossary', get_template_directory_uri() . '/js/glossary.js', array('theme'), '1.0.0');}
         if( is_page_template( 'templates/template-tool-detail.php') ){ wp_enqueue_script('tooldetail', get_template_directory_uri() . '/js/tool-detail.js', array('theme'), '1.0.0');}
     }

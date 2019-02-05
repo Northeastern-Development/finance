@@ -12,7 +12,7 @@
 
     
     <section>
-        <h2>One Centralized Department</h2>
+        <h2>Finance Division</h2>
         <p><a class="neu__iconlink" title="Email Us at (one centralized department)" href="mailto:financehelp@northeastern.edu">email</a></p>
     </section>
 

@@ -5,17 +5,17 @@ var Finance = {};
 
 
         Finance.faqs = {
-            triggers : $('.js__collapsible_list > li > h5'),
-            questions :  $('.js__collapsible_list > li'),
-            answers :  $('.js__collapsible_list > li > div'),
-            _init : function(){
+            triggers: $('.js__collapsible_list > li > h5'),
+            questions: $('.js__collapsible_list > li'),
+            answers: $('.js__collapsible_list > li > div'),
+            _init: function () {
                 $(window).on('load', Finance.faqs._loadHandler);
                 Finance.faqs.triggers.on('click', Finance.faqs._clickHandler);
             },
-            _loadHandler : function(e){
+            _loadHandler: function (e) {
                 Finance.faqs.answers.slideUp(0);
             },
-            _clickHandler : function(e){
+            _clickHandler: function (e) {
 
                 // the "trigger h5" has an :after for the chevron,
                 // we need to flip that upside down
@@ -25,18 +25,18 @@ var Finance = {};
                 var open = "js__collapsible_opened";
                 var thisAnswer = $(this).siblings('div');
                 var otherAnswers = Finance.faqs.answers.not(thisAnswer);
-                
+
                 $(otherAnswers).removeClass(open);
                 $(otherAnswers).slideUp(200);
-                
+
 
                 Finance.faqs.questions.removeClass('js__collapsible_triggered');
-                
+
                 // expand
-                if( !$(thisAnswer).hasClass(open) ){
-                    
+                if (!$(thisAnswer).hasClass(open)) {
+
                     $(this).parent('li').addClass('js__collapsible_triggered');
-                    
+
                     $(thisAnswer).addClass(open);
                     $(thisAnswer).slideDown(200);
                 }
@@ -50,32 +50,32 @@ var Finance = {};
             }
         }
         Finance.faqs._init();
-        
+
 
         Finance.Nav = {
 
-            parentlinks : $('nav.nu__main-nav > ul > li.has-children > a'),
-            dropdowns : $('nav.nu__main-nav > ul > li.has-children'),
-            categories : $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
+            parentlinks: $('nav.nu__main-nav > ul > li.has-children > a'),
+            dropdowns: $('nav.nu__main-nav > ul > li.has-children'),
+            categories: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
             backtocats: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
             // tasks : $(),
-             
-            _init : function(){
+
+            _init: function () {
                 $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
                 Finance.Nav.parentlinks.on('click', Finance.Nav._didClickDropdown);
                 Finance.Nav.categories.on('click', Finance.Nav._didClickCategory);
                 Finance.Nav.backtocats.on('click', Finance.Nav._didClickBackToCats);
             },
-            _didClickBackToCats : function(){
+            _didClickBackToCats: function () {
                 Finance.Nav.categories.removeClass('theFilter');
                 Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
             },
-            _didClickCategory : function(e){
+            _didClickCategory: function (e) {
                 $(this).parents('.neumenu-wrapper-inner').addClass('isFiltered');
                 $(this).addClass('theFilter');
             },
-            _didClickOutsideNav : function(e){
-                if( $('div#nu__globalheader, div#header').has(e.target).length === 0 ){
+            _didClickOutsideNav: function (e) {
+                if ($('div#nu__globalheader, div#header').has(e.target).length === 0) {
                     // clicked outside nav; if nav open then close dropdowns
                     // $('li.has-children.neu__active').removeClass('neu__active');
                     Finance.Nav._collapseDropdowns();
@@ -89,30 +89,30 @@ var Finance = {};
 
                 }
             },
-            _collapseDropdowns : function(){
+            _collapseDropdowns: function () {
                 $('li.has-children').find('.neumenu-wrapper').hide();
                 $('li.has-children').find('.isFiltered').removeClass('isFiltered');
                 $('li.has-children').find('.theFilter').removeClass('theFilter');
 
                 Finance.Nav.dropdowns.removeClass('neu__showme');
             },
-            _didClickDropdown : function(e){
+            _didClickDropdown: function (e) {
                 e.stopPropagation();
                 e.preventDefault();
 
                 // if the other dropdown is visible,
-                if( !$(this).parent().siblings('.has-children').find('.neumenu-wrapper').is(':hidden') ){
+                if (!$(this).parent().siblings('.has-children').find('.neumenu-wrapper').is(':hidden')) {
                     // hide the other dropdown
                     $(this).parent().siblings('.has-children').find('.neumenu-wrapper').hide();
                 }
 
                 // if the other dropdown has a showme class
-                if( $(this).parent().siblings('.has-children').hasClass('neu__showme') ){
+                if ($(this).parent().siblings('.has-children').hasClass('neu__showme')) {
                     $(this).parent().siblings('.has-children').removeClass('neu__showme');
                 }
 
                 // if this dropdown is hidden,
-                if( $(this).parent().find('.neumenu-wrapper').is(':hidden') ){
+                if ($(this).parent().find('.neumenu-wrapper').is(':hidden')) {
                     // show this dropdown
                     $(this).parent().find('.neumenu-wrapper').show();
                     // when this dropdown is shown; apply a showme class
@@ -125,7 +125,7 @@ var Finance = {};
                     // when this dropdown is hidden, remove the showme class
                     $(this).parent().removeClass('neu__showme');
                 }
-                
+
             }
         }
         Finance.Nav._init();
@@ -134,33 +134,35 @@ var Finance = {};
 
         Finance.MobileNav = {
 
-            navicon : $('#neu__navicon-label'),
-            nav : $('#nu__mobile'),
+            navicon: $('#neu__navicon-label'),
+            nav: $('#nu__mobile'),
 
-            _init : function(){
+            _init: function () {
 
                 Finance.MobileNav.navicon.on('click', Finance.MobileNav._didClickNavicon);
-                
+
             },
-            _didClickNavicon : function(e){
+            _didClickNavicon: function (e) {
                 $('html, body').toggleClass('neu__noscroll');
             }
-            
-            
+
+
         }
         Finance.MobileNav._init();
 
+
+        
         Finance.Tasks = {
 
-            _init : function(){
+            _init: function () {
                 $(window).on('load', Finance.Tasks._doLoadHandler);
             },
 
-            _doLoadHandler : function(){
-                
+            _doLoadHandler: function () {
+
             }
 
-            
+
         }
         Finance.Tasks._init();
 
@@ -218,6 +220,8 @@ var Finance = {};
                 srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
             }
         });
+
+
         // Magnific Popup
         $(".js__bio").magnificPopup({
             // type: "iframe"

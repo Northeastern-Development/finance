@@ -41,7 +41,7 @@
                             transform: rotate(180deg);
                         }
                     }
-                    ul {
+                    ul:not(.forms-category-relatedresources) {
                         a {
                             color: $brand_colors-red;
                             &:hover {
