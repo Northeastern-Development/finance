@@ -38,7 +38,7 @@ $format_category = '
 ';
 
 $format_item = '
-    <li>
+    <li id="%s">
         <h5 title="Toggle dropdown item %s">%s</h5>
         <div>%s</div>
     </li>
@@ -62,6 +62,7 @@ foreach( $categories as $category ){
             // write the title and description into the UL opened by the category,
             $content .= sprintf(
                 $format_item
+                ,seoUrl($discount->post_title)
                 ,$discount->post_title
                 ,$discount->post_title
                 ,$fields['description']

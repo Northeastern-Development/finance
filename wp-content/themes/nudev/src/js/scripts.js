@@ -4,6 +4,29 @@ var Finance = {};
     $(function () {
 
 
+        Finance.JumpNav = {
+
+            _init : function(){
+                // on load wont work because collapsibles are open on load, and closed by a jquery function immediately after
+                // instead, on load is handled by the collapsibles loadhandler (Finance.faqs._loadHandler)
+                    // $(window).on('load', Finance.JumpNav._doHashHandler);]
+                // the on hash change event handler works when a hash is entered into the already loaded page
+                $(window).on('hashchange', Finance.JumpNav._doHashHandler);
+            },
+            _doHashHandler : function(e){
+                var hash = window.location.hash.substring(1);
+                if( !hash ){
+                    return;
+                }
+                var headheight = $('div#nu__globalheader').height() + $('header').height();
+                var baseoffset = $('#'+hash).offset().top;
+                $(window).scrollTop(baseoffset - headheight);
+            },
+        }
+        Finance.JumpNav._init();
+        
+
+
         Finance.faqs = {
             triggers: $('.js__collapsible_list > li > h5'),
             questions: $('.js__collapsible_list > li'),
@@ -14,6 +37,7 @@ var Finance = {};
             },
             _loadHandler: function (e) {
                 Finance.faqs.answers.slideUp(0);
+                Finance.JumpNav._doHashHandler();
             },
             _clickHandler: function (e) {
 
@@ -194,45 +218,6 @@ var Finance = {};
                 $this.addClass("active");
                 $this.next().slideToggle(350);
             }
-        });
-
-
-        $('.js__youtube').magnificPopup({
-            type: 'iframe',
-            iframe: {
-                markup: '<div class="mfp-iframe-scaler">' +
-                    '<div class="mfp-close"></div>' +
-                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-                    '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
-
-                patterns: {
-                    youtube: {
-                        index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
-
-                        id: 'v=', // String that splits URL in a two parts, second part should be %id%
-                        // Or null - full URL will be returned
-                        // Or a function that should return %id%, for example:
-                        // id: function(url) { return 'parsed id'; }
-
-                        src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
-                    }
-                },
-                srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
-            }
-        });
-
-
-        // Magnific Popup
-        $(".js__bio").magnificPopup({
-            // type: "iframe"
-            type: "ajax",
-            closeOnContentClick: false,
-            closeOnBgClick: false,
-            enableEscapeKey: false,
-            verticalFit: true,
-            removalDelay: 300,
-            mainClass: 'mfp-fade'
-
         });
     });
 })(jQuery, this);
