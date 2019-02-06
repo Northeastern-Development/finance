@@ -1,0 +1,120 @@
+@import '../../sass/base/mixins.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/vars.scss';
+
+@media only screen {
+    main > section > ul.deadlines {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        margin: 30px 0;
+        margin-bottom: 10px;
+        > li {
+            background-color: $brand_colors-gray;
+            padding: 15px;
+
+            flex: 0 0 calc(20% - 16px);
+            max-width: calc(20% - 16px);
+            margin: 0;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            &:nth-of-type(5n){
+                margin-right: 0;
+            }
+            
+            > h5 {
+                @include font-3b-l;
+            }
+            > p {
+                @include font-2l-l;
+            }
+        }
+    }
+    main > section > ul.deadlines-pagination {
+        margin: 0;
+        display: block;
+        text-align: center;
+        > li {
+            display: inline-block;
+            margin: 0 auto;
+            > a {
+                margin: 0 10px;
+                padding: 5px;
+                border-bottom: 2px solid transparent;
+                &:before,
+                &:after {
+                    font-family: "Material Icons";
+                    position: relative;
+                    top: 3px;
+                }
+                &:hover,
+                &.neu__activepage {
+                    color: $brand_colors-red;
+                    border-bottom: 2px solid $brand_colors-red;
+                }
+            }
+        }
+
+        > li#paginate-prev a {
+            &:before {
+                content: "\e5cb";
+            }
+        }
+        > li#paginate-next a {
+            &:after {
+                content: "\e5cc";
+            }
+        }
+        > li.neu__inactivelink > a {
+            color: $brand_colors-gray;
+            pointer-events: none;
+        }
+        
+    }   
+}
+@media only screen and (max-width: $bp__lg){
+    main > section > ul.deadlines {
+        > li {
+            flex-basis: calc( 25% - 15px  );
+            max-width: calc(25% - 15px);
+            &:nth-of-type(5n){
+                margin-right: 20px;
+            }
+            &:nth-of-type(4n){
+                margin-right: 0px;
+            }
+            > h5 {
+                @include font-2b-l;
+            }
+            > p {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: $bp__md){
+    main > section > ul.deadlines {
+        > li {
+            flex-basis: calc( 50% - 10px );
+            max-width: calc(50% - 10px);
+            &:nth-of-type(3n){
+                margin-right: 20px;
+            }
+            &:nth-of-type(2n){
+                margin-right: 0px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: $bp__sm){
+    main > section > ul.deadlines {
+        > li {
+            flex-basis: 100%;
+            max-width: 100%;
+            &:nth-of-type(3n){
+                margin-right: 0;
+            }
+        }
+    }
+}

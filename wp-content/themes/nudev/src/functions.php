@@ -105,6 +105,11 @@ if (function_exists('add_theme_support'))
 
 // add custom query tags here
 function myplugin_rewrite_tag() {
+
+    add_rewrite_tag( '%pagedd%', '([^&]+)' );    // Deadlines
+
+
+    
   add_rewrite_tag( '%team-filter%', '([^&]+)' );    // Staff
   add_rewrite_tag( '%show-bio%', '([^&]+)' );	    // Bio (staff lightbox)
   
@@ -121,6 +126,10 @@ add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
 // add custom rewrite rules here
 function custom_rewrite_rule() {
+    // 
+    add_rewrite_rule('^deadlines/page/([^/]*)?', 'index.php?page_id=4573&pagedd=$matches[1]', 'top');
+    // 
+    
     add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');
     add_rewrite_rule('^news-events/([^/]*)?', 'index.php?page_id=3286&newsitem=$matches[1]', 'top');
     add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page

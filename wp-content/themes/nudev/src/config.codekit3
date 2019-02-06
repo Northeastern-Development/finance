@@ -568,6 +568,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/deadlines.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/deadlines-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/departments.css": {
 		"aP": 1,
 		"bl": 0,
@@ -802,6 +812,19 @@
 		"oA": 0,
 		"oAP": "/css/contact.css",
 		"oF": 3,
+		"oS": 3,
+		"uL": 1
+		},
+	"/css/sass/conditional/deadlines.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/deadlines.css",
+		"oF": 2,
 		"oS": 3,
 		"uL": 1
 		},
@@ -1522,6 +1545,16 @@
 		"oAP": "/index.php",
 		"oF": 0
 		},
+	"/js/department-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/department-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/department.js": {
 		"ft": 64,
 		"ma": 0,
@@ -2239,6 +2272,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-contact.php",
+		"oF": 0
+		},
+	"/templates/template-deadlines.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-deadlines.php",
 		"oF": 0
 		},
 	"/templates/template-departments-detail.php": {
