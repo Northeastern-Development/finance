@@ -69,12 +69,21 @@
     div.wrapper {
         >main {
             >div.deadlines {
+                position: relative;
                 background-color: $brand_colors-teal--dark;
-
+                text-align: center;
+                > a:last-child {
+                    display: inline-block;
+                    margin: 0 auto;
+                    margin-bottom: 30px;
+                    cursor: pointer;
+                    > h4 {
+                        color: white;
+                        border-color: white;
+                    }
+                }
                 >div {
-                    text-align: center;
                     position: relative;
-
                     >h4 {
                         padding: 10px 20px;
                         display: inline-block;
@@ -297,7 +306,13 @@
 
             div.deadlines {
                 position: relative;
-                height: 150px;
+                height: 210px;
+                > a:last-child {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
                 > div {
                     position: absolute;
                     top: 0;
@@ -319,7 +334,7 @@
                         padding: 0;
     
                         > li {
-                            flex: 1 1 20%;
+                            flex: 0 1 calc(20% - 15px);
                             height: 185px;
                             // display: flex;
                             // flex-flow: column nowrap;
@@ -335,6 +350,7 @@
                         }
                     }
                 }
+                
             }
 
         }

@@ -39,6 +39,7 @@
     $content_deadline .= '
                 </ul>
             </div>
+            <a href="/deadlines"><h4 class="nu__content_btn">View all Deadlines</h4></a>
         </div>
     ';
 
