@@ -167,7 +167,7 @@ var Finance = {};
 
             },
             _didClickNavicon: function (e) {
-                $('html, body').toggleClass('neu__noscroll');
+                $('body').toggleClass('neu__noscroll');
             }
 
 

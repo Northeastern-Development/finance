@@ -24,7 +24,7 @@
     ';
     $total = 0;
     foreach( $deadlines as $i => $deadline ){
-        if( $i < 5 ){
+        if( $total < 5 ){
             if( $deadline['status'] == '1' && $deadline['date'] >= date('Ymd') ){                
                 $content_deadline .= sprintf(
                     $format_deadline
@@ -39,7 +39,7 @@
     $content_deadline .= '
                 </ul>
             </div>
-            <a href="/deadlines"><h4 class="nu__content_btn">View all Deadlines</h4></a>
+            <a href="/deadlines" title="View all deadlines" aria-label="View all deadlines"><h4 class="nu__content_btn">View all deadlines</h4></a>
         </div>
     ';
 

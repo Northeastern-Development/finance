@@ -233,4 +233,11 @@ main {
     main section.nu__president>div:nth-child(2)>h3 {
         @include font-3l-l;
     }
+
+}
+
+@media only screen and (max-width: $bp__sm){
+    main section.nu__president>div:nth-child(2)>h3 {
+        margin-right: 0;
+    }
 }

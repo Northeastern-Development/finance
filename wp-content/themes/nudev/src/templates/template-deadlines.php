@@ -24,7 +24,7 @@
     $start = ( ($pageNum * $max ) - $max);
     
     // get the ending index for this page (or stop at the total)
-    $end = ( ($start + $max) > $total ) ? $total : ( $start + $max + 1);
+    $end = ( ($start + $max) > $total ) ? $total : ( $start + $max );
     
     $content_deadlines = '<ul class="deadlines">';
     $format_deadline = '
@@ -57,15 +57,15 @@
         // (next button only appears if we are on a $pageNum smaller than $pagesNeeded)
         
         $prev = ( $pageNum > 1 ) 
-            ? '<li id="paginate-prev"><a href="/deadlines/page/'.($pageNum - 1).'">Prev</a></li>' 
+            ? '<li id="paginate-prev"><a title="View previous page" aria-label="View previous page" href="/deadlines/page/'.($pageNum - 1).'">Prev</a></li>' 
             : '<li class="neu__inactivelink" id="paginate-prev"><a href="/deadlines/page/'.($pageNum - 1).'">Prev</a></li>';
         $next = ( $pageNum < $pagesNeeded ) 
-            ? '<li id="paginate-next"><a href="/deadlines/page/'.($pageNum + 1).'">Next</a></li>' 
+            ? '<li id="paginate-next"><a title="View next page" aria-label="View next page" href="/deadlines/page/'.($pageNum + 1).'">Next</a></li>' 
             : '<li class="neu__inactivelink" id="paginate-next"><a href="/deadlines/page/'.($pageNum + 1).'">Next</a></li>';
         
         
     
-        $format_pagination = '<li><a class="%s" href="/deadlines/page/%s/">%s</a></li>';
+        $format_pagination = '<li><a class="%s" title="View page %s" aria-label="View page %s" href="/deadlines/page/%s/">%s</a></li>';
         
         $pagination = '<ul class="deadlines-pagination">' . $prev;
 
@@ -73,6 +73,8 @@
             $pagination .= sprintf(
                 $format_pagination
                 ,($i + 1 == $pageNum ) ? 'neu__activepage' : null
+                ,($i + 1)
+                ,($i + 1)
                 ,($i + 1)
                 ,($i + 1)
             );
