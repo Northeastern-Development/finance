@@ -68,7 +68,7 @@
     <nav>
         <ul>
             <li>
-                <a class="toggle js-mobile-nav parent" href="javascript:void(0);">How do I..</a>
+                <a class="toggle js-mobile-nav parent" href="javascript:void(0);">How Do I..</a>
                 <ul class="inner">
                     <?php echo $content_cats; ?>    
                 </ul>
@@ -77,14 +77,17 @@
                 $nav_links = array(
                     'Forms' => get_permalink( get_page_by_path('forms') ),
                     'Tools' => get_permalink( get_page_by_path('tools') ),
-                    'Expense Codes' => get_permalink( get_page_by_path('expense-codes') )
+                    'Banner Codes' => 'https://prod-web.neu.edu/wasapp/Banner/Finance/secure/searchAccount.do?q=AccountCode'
                 );
-                $format_nav_links = '<li><a href="%s">%s</a></li>';
+                $format_nav_links = '<li><a %s href="%s" aria-label="View the %s page" title="View the %s page">%s</a></li>';
                 $content_nav_links = '';
                 foreach( $nav_links as $title => $permalink ){
                     $content_nav_links .= sprintf(
                         $format_nav_links
+                        ,( $title === 'Banner Codes' ) ? 'target="_blank"' : null
                         ,$permalink
+                        ,$title
+                        ,$title
                         ,$title
                     );
                 }
@@ -94,7 +97,7 @@
                 <a class="toggle js-mobile-nav parent" href="javascript:void(0);">About</a>
                 <ul class="inner">
                     <?php 
-                        $format_about_submenu_links = '<li><a href="%s">%s</a></li>';
+                        $format_about_submenu_links = '<li><a href="%s" aria-label="View the %s page" title="View the %s page">%s</a></li>';
                         $about_submenu_links = array(
                             'Department &amp; Staff Information' => get_permalink( get_page_by_path('about') ),
                             'Contact Us' => get_permalink( get_page_by_path('contact') )
@@ -104,6 +107,8 @@
                             $content_about_submenu_links .= sprintf(
                                 $format_about_submenu_links
                                 ,$permalink
+                                ,$title
+                                ,$title
                                 ,$title
                             );
                         }

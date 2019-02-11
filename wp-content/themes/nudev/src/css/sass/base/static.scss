@@ -706,6 +706,8 @@ $width: 90vw;
                 display: flex;
                 flex-flow: row nowrap;
                 > div.neu__bgimg {
+                    width: 43vw;
+                    height: 43vw;
                     margin: 0;
                     margin-right: $space;
                 }

@@ -134,7 +134,7 @@
     <section class="hero hero-image" style="background-image: url(<?= $img; ?>)">
         
         <div>
-            <h2>One Centralized Department</h2>
+            <h2>A Centralized Organization</h2>
             <p>Northeastern University’s Finance Division oversees all functions related to finance—from buying goods and services, to processing expense reports, to developing financial statements and managing student loans. The division’s wide-ranging services include financial strategy, auditing, treasury, accounting, and budgeting. Our mission is to help the university achieve ambitious goals through the sound stewardship of financial resources.</p>    
             <a title="View the About Page" href="<?php echo get_permalink( get_page_by_path('about') ); ?>"><h4 class="nu__content_btn">Learn More</h4></a>
         </div>
