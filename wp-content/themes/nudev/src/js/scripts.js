@@ -14,6 +14,7 @@ var Finance = {};
                 $(window).on('hashchange', Finance.JumpNav._doHashHandler);
             },
             _doHashHandler : function(e){
+
                 var hash = window.location.hash.substring(1);
                 if( !hash ){
                     return;
@@ -173,22 +174,6 @@ var Finance = {};
 
         }
         Finance.MobileNav._init();
-
-
-        
-        Finance.Tasks = {
-
-            _init: function () {
-                $(window).on('load', Finance.Tasks._doLoadHandler);
-            },
-
-            _doLoadHandler: function () {
-
-            }
-
-
-        }
-        Finance.Tasks._init();
 
 
         //MOBILE ACCORDION NAV

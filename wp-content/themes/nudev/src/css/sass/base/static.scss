@@ -341,7 +341,8 @@
 
 
 // ADDITIONAL TWEAKS AS I NEED THEM BELOW:
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: $bp__sm){
     div.wrapper {
         >main {
             >section.hero {
@@ -566,7 +567,7 @@
         }
     }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: $bp__sm){
     div.wrapper > main {
 
         section.related-tasks {
@@ -584,99 +585,244 @@
     }
 }
 
+
+
+
+
+
+
+$space: 2vw;
+$width: 90vw;
+
+// largest breakpoint 6 columns
 @media only screen {
-    $space: 2vw;
-    $width : 90vw;
-    $col : 3;
-    div.wrapper > main {
-        section.heretohelp {
-            > ul {
+
+    $col: 6;
+
+    div.wrapper > main > section.heretohelp {
+        > h2 {
+            width: 60vw;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+        width: $width;
+        > ul {
+            width: $width;
+            display: block;
+            font-size: 0;
+            > li {
+                font-size: initial;
                 display: inline-block;
-                font-size: 0;
-                width: $width;
-                > li {
-                    vertical-align: top;
-                    font-size: initial;
-                    display: flex;
-                    flex-flow: row nowrap;
-                    margin: 0;
-                    margin-bottom: 30px;
-                    > div {
-                        width: (($width / 2) - $space);
-                        height: (($width / 2) - $space);
+                vertical-align: top;
+                // for grid
+                width: (($width - (($col - 1) * $space)) / $col);
+                margin: 0 $space $space 0;
+                // for grid
+                &:nth-child(#{$col}n) {
+                    margin-right: 0;
+                }
+                // bg img
+                > div.neu__bgimg {
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    height: (($width - (($col - 1) * $space)) / $col);
+                }
+                // content
+                > div:not(.neu__bgimg){
+                    > h4 {
+                        @include font-2r-l;
                     }
-                    > div.neu__bgimg {
-                        margin-right: $space;
+                    > a.neu__iconlink {
+                        @include neu__iconlink($icon : "\e551");
                     }
-                    > div:not(.neu__bgimg){
-                        > h4 {
-                            @include font-2r-l;
-                        }
-                        > a.neu__iconlink {
-                            @include neu__iconlink($icon : "\e551");
-                        }
-                        > a.neu__iconlink:last-of-type {
-                            @include neu__iconlink($icon : "\e0be");
-                        }
-                        > a.neu__iconlink:first-of-type {
-                            margin-top: 15px;
-                        }
+                    > a.neu__iconlink:last-of-type {
+                        @include neu__iconlink($icon : "\e0be");
+                    }
+                    > a.neu__iconlink:first-of-type {
+                        margin-top: 15px;
                     }
                 }
             }
         }
     }
 }
-@media only screen and (min-width: $bp_3cols){
-    $width: 90vw;
+
+// larger breakpoint 4 columns
+@media only screen and (max-width: $bp__lg){
+   
+    $col: 4;
+
+    div.wrapper > main > section.heretohelp {
+        > ul {
+            > li {
+                width: (($width - (($col - 1) * $space)) / $col);
+                &:nth-child(#{$col}n) {
+                    margin-right: 0;
+                }
+                > div.neu__bgimg {
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    height: (($width - (($col - 1) * $space)) / $col);
+                }
+            }
+        }
+    }
+}
+
+// middle breakpoint 3 columns
+@media only screen and (max-width: $bp__md){
+   
     $col: 3;
-    $space: 2vw;
 
-    div.wrapper > main {
-        section.heretohelp {
-            > ul {
-                > li {
-                    display: inline-block;
+    div.wrapper > main > section.heretohelp {
+        > ul {
+            > li {
+                width: (($width - (($col - 1) * $space)) / $col);
+                &:nth-child(4n){
+                    margin-right: $space;
+                }
+                &:nth-child(#{$col}n) {
+                    margin-right: 0;
+                }
+                > div.neu__bgimg {
                     width: (($width - (($col - 1) * $space)) / $col);
-                    margin: 0 $space $space 0;
-                    > div {
-                        width: auto;
-                        height: auto;
-                    }
-                    > div.neu__bgimg {
-                        width: (($width - (($col - 1) * $space)) / $col);
-                        height: (($width - (($col - 1) * $space)) / $col);
-                    }
+                    height: (($width - (($col - 1) * $space)) / $col);
                 }
             }
         }
     }
 }
-@media only screen and (min-width: 991px){
-    $width : 60vw;
-    $col : 3;
-    $space: 2vw;
-    div.wrapper > main {
-        section.heretohelp {
-            > ul {
-                width: $width;
-                > li {
-                    width: (($width - (($col - 1) * $space)) / $col);
-                    margin: 0 $space $space 0; 
 
-                    &:nth-child(#{$col}n) {
-                        margin-right: 0;
-                    }
+// smallest breakpoint becomes 1 column
+@media only screen and (max-width: $bp__sm){
+    $col: 1;
+    div.wrapper > main > section.heretohelp {
+        > h2 {
+            width: $width;
+        }
+        > ul {
+            > li {
+                width: (($width - (($col - 1) * $space)) / $col);
+                margin: 0;
+                margin-bottom: 30px;
+                display: flex;
+                flex-flow: row nowrap;
+                > div.neu__bgimg {
+                    margin: 0;
+                    margin-right: $space;
+                }
+                > div {
+                    flex: 1 1 43vw;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+// Here To Help Section:
+// @media only screen {
+//     $space: 2vw;
+//     $width : 90vw;
+//     $col : 3;
+//     div.wrapper > main {
+//         section.heretohelp {
+//             width: $width;
+//             > ul {
+//                 width: $width;
+//                 > li {
+//                     vertical-align: top;
+//                     font-size: initial;
+//                     display: flex;
+//                     flex-flow: row nowrap;
+//                     margin: 0 $space $space 0;
+//                     > div {
+//                         width: (($width / 2) - $space);
+//                         height: (($width / 2) - $space);
+//                     }
+//                     > div.neu__bgimg {
+//                         // margin-right: $space;
+//                     }
+//                     > div:not(.neu__bgimg){
+//                         > h4 {
+//                             @include font-2r-l;
+//                         }
+//                         > a.neu__iconlink {
+//                             @include neu__iconlink($icon : "\e551");
+//                         }
+//                         > a.neu__iconlink:last-of-type {
+//                             @include neu__iconlink($icon : "\e0be");
+//                         }
+//                         > a.neu__iconlink:first-of-type {
+//                             margin-top: 15px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media only screen and (min-width: $bp__sm){
+//     $width: 90vw;
+//     $col: 3;
+//     $space: 2vw;
+
+//     div.wrapper > main {
+//         section.heretohelp {
+//             width: $width;
+//             > ul {
+//                 width: $width;
+//                 > li {
+//                     width: (($width - (($col - 1) * $space)) / $col);
+//                     margin: 0 $space $space 0;
+//                     &:nth-child(#{$col}n) {
+//                         margin-right: 0;
+//                     }
+//                     > div {
+//                         width: auto;
+//                         height: auto;
+//                     }
+//                     > div.neu__bgimg {
+//                         width: (($width - (($col - 1) * $space)) / $col);
+//                         height: (($width - (($col - 1) * $space)) / $col);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// // full desktop heretohelps
+// @media only screen and (min-width: $bp__md){
+//     $width : 90vw;
+//     $col : 6;
+//     $space: 2vw;
+//     div.wrapper > main {
+//         section.heretohelp {
+//             // width: $width;
+//             > ul {
+//                 width: $width;
+//                 > li {
+//                     width: (($width - (($col - 1) * $space)) / $col);
+//                     margin: 0 $space $space 0;
+
+//                     &:nth-child(3n){
+//                         margin-right: 30px;
+//                     }
+//                     &:nth-child(#{$col}n) {
+//                         margin-right: 0;
+//                     }
                     
-                    > div.neu__bgimg {
-                        width: (($width - (($col - 1) * $space)) / $col);
-                        height: (($width - (($col - 1) * $space)) / $col);
-                    }
-                }
-            }
-        }
-    }
-}
+//                     > div.neu__bgimg {
+//                         width: (($width - (($col - 1) * $space)) / $col);
+//                         height: (($width - (($col - 1) * $space)) / $col);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 @media only screen and (max-width: $bp__sm){
     main > section {

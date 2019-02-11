@@ -8,7 +8,7 @@
     }
 
 
-    $content = '<h2>We are Here to Help</h2><ul class="h2h-items">';
+    $content = '<h2>We Are Here to Help</h2><ul class="h2h-items">';
 
     $guide = '
         <li class="h2h-items-item">

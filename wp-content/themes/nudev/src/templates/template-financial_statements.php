@@ -43,16 +43,6 @@ get_header();
             }
          ?>
     </section>
-
-    <section class="heretohelp">
-        <?php 
-            // heretohelp,
-            if( !empty($fields['helpers']) ){
-                include(locate_template('loops/reusable/loop-heretohelp.php'));
-            }
-        ?>
-    </section>
-
     <section class="fullwidth nobg">
         <?php 
             // HelpfulLinks,
@@ -61,6 +51,15 @@ get_header();
             }
          ?>
     </section>
+    <section class="heretohelp">
+        <?php 
+            // heretohelp,
+            if( !empty($fields['helpers']) ){
+                include(locate_template('loops/reusable/loop-heretohelp.php'));
+            }
+        ?>
+    </section>
+    
 </main>
 
 <?php

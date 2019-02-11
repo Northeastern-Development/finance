@@ -68,14 +68,6 @@
         ?>
    </section>
 
-   <section class="heretohelp">
-       <?php 
-            if( !empty($fields['helpers']) ){
-                include(locate_template('loops/reusable/loop-heretohelp.php'));
-            }
-         ?>
-   </section>
-
    <section>
        <?php 
             if( $fields['use_pre-footer'] == '1' ){
@@ -91,6 +83,14 @@
             }
        ?>
    </section>
+
+    <section class="heretohelp">
+        <?php 
+            if( !empty($fields['helpers']) ){
+                include(locate_template('loops/reusable/loop-heretohelp.php'));
+            }
+            ?>
+</section>
 </div>
 <?php
     get_footer();
