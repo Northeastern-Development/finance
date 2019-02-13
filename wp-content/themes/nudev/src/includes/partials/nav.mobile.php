@@ -77,7 +77,7 @@
                 $nav_links = array(
                     'Forms' => get_permalink( get_page_by_path('forms') ),
                     'Tools' => get_permalink( get_page_by_path('tools') ),
-                    'Banner Codes' => 'https://prod-web.neu.edu/wasapp/Banner/Finance/secure/searchAccount.do?q=AccountCode'
+                    'Banner Codes' => 'https://prod-web.neu.edu/wasapp/Banner/Finance/secure/index.jsp'
                 );
                 $format_nav_links = '<li><a %s href="%s" aria-label="View the %s page" title="View the %s page">%s</a></li>';
                 $content_nav_links = '';

@@ -36,8 +36,8 @@
         $format_department
         // ,( !empty($fields['overview']) ) ? '<h2>Our Mission</h2><div>'.$fields['overview'].'</div>' : null
         ,( !empty($fields['overview']) ) ? '<div>'.$fields['overview'].'</div>' : null
-        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
-        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a>' : null
+        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink neu__iconlink-phone" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
+        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink neu__iconlink-email" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a>' : null
     );
 
     

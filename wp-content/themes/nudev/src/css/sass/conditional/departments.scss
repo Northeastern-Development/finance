@@ -12,14 +12,19 @@
     section.dept_main {
         text-align: center;
 
-        >h2 {
-            text-align: center;
-            border-bottom: none;
-        }
+        // depricated (removed for now)
+        // >h2 {
+        //     text-align: center;
+        //     border-bottom: none;
+        // }
 
+        // blurb
         >div {
             margin-bottom: 15px;
             > div {
+                @include font-3l-c;
+                // i dont know why this is here;
+                // there shouldn't be a list in the blurb...
                 ul {
                     a {
                         color: $brand_colors-red;
@@ -39,15 +44,19 @@
             }
         }
 
+        // email & phone iconlinks
         >a.neu__iconlink {
+            display: inline-block;
             margin-right: 45px;
+            &:last-of-type {
+                margin-right: 0;
+            }
         }
-
-        >a:last-of-type.neu__iconlink {
+        >a.neu__iconlink.neu__iconlink-email {
             @include neu__iconlink($icon: "\e0be");
         }
 
-        >a:nth-last-of-type(2).neu__iconlink {
+        >a.neu__iconlink.neu__iconlink-phone {
             @include neu__iconlink($icon: "\e551");
         }
     }
@@ -217,7 +226,7 @@
     }
 }
 
-@media only screen and (min-width: $bp_3cols) {
+@media only screen and (min-width: $bp__sm) {
     $width: 90vw;
     $col: 3;
     $space: 2vw;
@@ -294,7 +303,7 @@
     }
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: $bp__md) {
     $width: 90vw;
     $space: 2vw;
     $col: 6;
@@ -362,9 +371,32 @@
 }
 
 @media only screen and (max-width: $bp__md){
+
+    main >section.dept_main {
+        > div > div {
+            @include font-2l-c;
+        }
+    }
     
     main > section.nu__team {
         width: 90%;
     }
     
+}
+
+@media only screen and (max-width: $bp__sm){
+    div.wrapper > main > section.dept_main {
+
+        display: flex;
+        flex-flow: column nowrap;
+        
+        > a.neu__iconlink {
+            margin: 0 auto;
+            margin-bottom: 15px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+    }
 }
