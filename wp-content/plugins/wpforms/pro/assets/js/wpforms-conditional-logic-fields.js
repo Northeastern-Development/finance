@@ -55,7 +55,7 @@
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param object $el the form
+		 * @param {object} el The form.
 		 */
 		resetHiddenFields: function( el ) {
 
@@ -95,8 +95,8 @@
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param element $el any element inside the targeted form.
-		 * @param bool $initial Inital run of processing.
+		 * @param {element} el Any element inside the targeted form.
+		 * @param {boolean} initial Initial run of processing.
 		 */
 		processConditionals: function( el, initial ) {
 
@@ -150,7 +150,14 @@
 
 							rule.value = '';
 
-							if ( rule.type === 'radio' || rule.type === 'checkbox' || rule.type === 'payment-multiple' || rule.type === 'rating' || rule.type === 'net_promoter_score' ) {
+							if (
+								rule.type === 'radio' ||
+								rule.type === 'checkbox' ||
+								rule.type === 'payment-multiple' ||
+								rule.type === 'payment-checkbox' ||
+								rule.type === 'rating' ||
+								rule.type === 'net_promoter_score'
+							) {
 								$check = $form.find( '#wpforms-'+formID+'-field_'+rule.field+'-container input:checked' );
 								if ( $check.length ) {
 									val = true;
@@ -164,7 +171,14 @@
 
 						} else {
 
-							if ( rule.type === 'radio' || rule.type === 'checkbox' || rule.type === 'payment-multiple' || rule.type === 'rating' || rule.type === 'net_promoter_score' ) {
+							if (
+								rule.type === 'radio' ||
+								rule.type === 'checkbox' ||
+								rule.type === 'payment-multiple' ||
+								rule.type === 'payment-checkbox' ||
+								rule.type === 'rating' ||
+								rule.type === 'net_promoter_score'
+							) {
 								$check = $form.find( '#wpforms-'+formID+'-field_'+rule.field+'-container input:checked' );
 								if ( $check.length ) {
 									$.each( $check, function() {
@@ -244,10 +258,18 @@
 				}
 
 				if ( ( pass && action === 'hide' ) || ( ! pass && action !== 'hide' ) ) {
-					$form.find( '#wpforms-'+formID+'-field_'+fieldID+'-container' ).hide().addClass( 'wpforms-conditional-hide' ).removeClass( 'wpforms-conditional-show' );
+					$form
+						.find( '#wpforms-'+formID+'-field_'+fieldID+'-container' )
+						.hide()
+						.addClass( 'wpforms-conditional-hide' )
+						.removeClass( 'wpforms-conditional-show' );
 					hidden = true;
 				} else {
-					$form.find( '#wpforms-'+formID+'-field_'+fieldID+'-container' ).show().removeClass( 'wpforms-conditional-hide' ).addClass( 'wpforms-conditional-show' );
+					$form
+						.find( '#wpforms-'+formID+'-field_'+fieldID+'-container' )
+						.show()
+						.removeClass( 'wpforms-conditional-hide' )
+						.addClass( 'wpforms-conditional-show' );
 				}
 
 				$( document ).trigger( 'wpformsProcessConditionalsField', [formID, fieldID, pass, action] );
@@ -267,13 +289,13 @@
 		},
 
 		/**
-		 * Escape text similiar to PHP htmlspecialchars.
+		 * Escape text similar to PHP htmlspecialchars().
 		 *
 		 * @since 1.0.5
 		 *
-		 * @param string $text
+		 * @param {string} text
 		 *
-		 * @return string
+		 * @return string|boolean
 		 */
 		escapeText: function( text ) {
 

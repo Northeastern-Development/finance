@@ -1,0 +1,102 @@
+/* 
+*
+*      Contact
+*
+*/
+@import '../../sass/base/mixins.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/vars.scss';
+
+@media only screen {
+
+    
+    main {
+        
+        > section:not(.hero) {
+            > p {
+                margin-bottom: 15px; // should be a global but afraid to do that this late in the game
+                p {
+                    margin-bottom: 15px; // should be a global but afraid to do that this late in the game
+                }    
+            }
+        }
+
+        > section:nth-of-type(2){
+            > p {
+                @include neu__iconlink($hover : 0, $icon : "\e0be");
+                > a {
+                    border-bottom: 2px solid transparent;
+                }
+                &:hover {
+                    &:before {
+                        color: $brand_colors-red;
+                    }
+                    > a {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
+                }
+            }
+        }
+
+        // Contact Staff (department list)
+        > section:last-of-type {
+            > ul {
+                display: block;
+                font-size: 0;
+                text-align: left;
+                > li {
+                    position: relative;
+                    font-size: initial;
+                    display: inline-block;
+                    vertical-align: top;
+                    width: calc(50% - 7.5px);
+                    margin: 0 15px 15px 0;
+                    padding-left: 30px;
+                    @include neu__iconlink($hover : 0 );
+                    border-bottom: none;
+                    &:nth-of-type(2n){
+                        margin-right: 0;
+                    }
+                    
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: $brand_colors-red;
+                    }
+                    > a {
+                        border-bottom: 2px solid transparent;
+                    }
+                    &:hover {
+                        > a {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+
+    div.wrapper > main {
+
+        // "Contact Staff" (department list)
+        > section:last-child {
+            > ul {
+                > li {
+                    flex: none;
+                    max-width: none;
+                    width: 100%;
+                    margin: 0;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        
+    }
+    
+    
+}

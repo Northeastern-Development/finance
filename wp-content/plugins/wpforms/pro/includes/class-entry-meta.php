@@ -22,6 +22,7 @@ class WPForms_Entry_Meta_Handler extends WPForms_DB {
 
 		$this->table_name  = $wpdb->prefix . 'wpforms_entry_meta';
 		$this->primary_key = 'id';
+		$this->type        = 'entry_meta';
 	}
 
 	/**

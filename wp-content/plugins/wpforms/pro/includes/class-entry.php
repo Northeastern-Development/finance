@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Entry DB class
+ * Entry DB class.
  *
  * @package    WPForms
  * @author     WPForms
@@ -22,6 +22,7 @@ class WPForms_Entry_Handler extends WPForms_DB {
 
 		$this->table_name  = $wpdb->prefix . 'wpforms_entries';
 		$this->primary_key = 'entry_id';
+		$this->type        = 'entries';
 	}
 
 	/**
@@ -80,7 +81,7 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.1.6
 	 *
-	 * @param int|string $row_id Row ID.
+	 * @param int $row_id Entry ID.
 	 *
 	 * @return bool False if the record could not be deleted, true otherwise.
 	 */
@@ -98,8 +99,8 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.1.5
 	 *
-	 * @param int $row_id
-	 * @param int $form_id
+	 * @param int $row_id  Entry ID.
+	 * @param int $form_id Form ID.
 	 *
 	 * @return mixed object or null
 	 */
@@ -127,8 +128,8 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.1.5
 	 *
-	 * @param int $row_id
-	 * @param int $form_id
+	 * @param int $row_id  Entry ID.
+	 * @param int $form_id Form ID.
 	 *
 	 * @return mixed object or null
 	 */
@@ -156,9 +157,9 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @param int $form_id
+	 * @param int $form_id Form ID.
 	 *
-	 * @return mixed object or null
+	 * @return mixed Object from DB values or null.
 	 */
 	public function get_last( $form_id ) {
 
@@ -170,7 +171,10 @@ class WPForms_Entry_Handler extends WPForms_DB {
 
 		$last = $wpdb->get_row(
 			$wpdb->prepare(
-				"SELECT * FROM {$this->table_name} WHERE `form_id` = %d ORDER BY {$this->primary_key} DESC LIMIT 1;",
+				"SELECT * FROM {$this->table_name}
+				WHERE `form_id` = %d
+				ORDER BY {$this->primary_key} DESC
+				LIMIT 1;",
 				absint( $form_id )
 			)
 		);
@@ -183,7 +187,7 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.1.6
 	 *
-	 * @param int $form_id
+	 * @param int $form_id Form ID.
 	 *
 	 * @return bool
 	 */
@@ -207,8 +211,8 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @param int $row_id
-	 * @param int $form_id
+	 * @param int $row_id  Entry ID.
+	 * @param int $form_id Form ID.
 	 *
 	 * @return int
 	 */
@@ -222,7 +226,9 @@ class WPForms_Entry_Handler extends WPForms_DB {
 
 		$prev_count = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name} WHERE `form_id` = %d AND {$this->primary_key} > %d ORDER BY {$this->primary_key} ASC;",
+				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name}
+				WHERE `form_id` = %d AND {$this->primary_key} > %d
+				ORDER BY {$this->primary_key} ASC;",
 				absint( $form_id ),
 				absint( $row_id )
 			)
@@ -237,8 +243,8 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 * @since 1.5.0 Changed return type to always be an integer.
 	 * @since 1.1.5
 	 *
-	 * @param int $row_id
-	 * @param int $form_id
+	 * @param int $row_id  Entry ID.
+	 * @param int $form_id Form ID.
 	 *
 	 * @return int
 	 */
@@ -252,7 +258,9 @@ class WPForms_Entry_Handler extends WPForms_DB {
 
 		$prev_count = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name} WHERE `form_id` = %d AND {$this->primary_key} < %d ORDER BY {$this->primary_key} ASC;",
+				"SELECT COUNT({$this->primary_key}) FROM {$this->table_name}
+				WHERE `form_id` = %d AND {$this->primary_key} < %d
+				ORDER BY {$this->primary_key} ASC;",
 				absint( $form_id ),
 				absint( $row_id )
 			)
@@ -266,8 +274,8 @@ class WPForms_Entry_Handler extends WPForms_DB {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $args
-	 * @param bool $count
+	 * @param array $args  Redefine query parameters by providing own arguments.
+	 * @param bool  $count Whether to just count entries or get the list of them. True to just count.
 	 *
 	 * @return array|int
 	 */
@@ -340,7 +348,7 @@ class WPForms_Entry_Handler extends WPForms_DB {
 			if ( is_array( $args[ $key ] ) && ! empty( $args[ $key ] ) ) {
 				$ids = implode( ',', array_map( 'intval', $args[ $key ] ) );
 			} else {
-				$ids = intval( $args[ $key ] );
+				$ids = (int) $args[ $key ];
 			}
 
 			$where[ 'arg_' . $key ] = "`{$key}` IN ( {$ids} )";

@@ -100,6 +100,7 @@ class WPForms_Entries_Export {
 				'likert_scale',
 				'payment-single',
 				'payment-multiple',
+				'payment-checkbox',
 				'payment-select',
 				'payment-total',
 				'signature',

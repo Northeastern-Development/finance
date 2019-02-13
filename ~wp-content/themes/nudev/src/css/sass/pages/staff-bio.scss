@@ -1,0 +1,760 @@
+/*
+ * Marketing
+ */
+
+body.page-template-template-staff {
+    & h4 {
+        letter-spacing: inherit;
+    }
+}
+
+main#staff {
+
+    $columns: 5;
+
+
+    section.departmenthead {
+        width: 48vw;
+        margin: 30px auto 0 auto;
+
+        display: flex;
+
+        &>div {
+            width: 31vw;
+            float: left;
+            margin: 0 2vw 0 0;
+            flex-basis: auto;
+            order: 1;
+
+            &>h3 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                font-weight: 700;
+            }
+
+            &>h4 {
+                font-size: 2.0rem;
+                line-height: 3.2rem;
+                font-weight: 700;
+                text-transform: none;
+                margin: 10px 0 10px 0;
+
+                &:before {
+                    display: none;
+                }
+            }
+
+            &>div.kri__more-link {
+                border-bottom: 1px solid #cc0000;
+                float: left;
+
+                &>a {
+
+                    // padding: 0 0 4px 0;
+                    &:before {
+                        display: block;
+                        float: left;
+                        font-family: 'Material Icons';
+                        content: '\e5c8';
+                        padding: 4px 10px 0 0;
+                        // border-bottom: 1px solid #cc0000;
+                        line-height: 2.2rem;
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                width: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                height: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                margin: 0 0 0 0;
+                background: rgba(0, 0, 0, 1.0);
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+                order: 2;
+            }
+        }
+    }
+
+
+
+    section.stafflist {
+
+
+
+        width: $wrapper-width;
+        margin: 0 auto 0 auto;
+        overflow: hidden;
+        padding: 0 0 ($gutter * 3) 0;
+
+        &>div {
+            overflow: hidden;
+            width: $content_width;
+            margin: 0 auto 0 auto;
+            padding: ($gutter * 2) 0 0 0;
+            text-align: center;
+
+            &>h2 {
+                width: $content_width;
+                border-bottom: none;
+                margin: 0 auto 0 auto;
+                font-size: 3.4rem;
+                letter-spacing: 2px;
+                line-height: 4.8rem;
+            }
+
+            &>ul {
+                overflow: hidden;
+                width: $content_width;
+                margin: ($gutter * 2) auto 0 auto;
+                list-style: none;
+                list-style-type: none;
+
+                display: flex;
+                flex-wrap: wrap;
+
+                &>li {
+                    $width: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                    width: $width;
+                    // height: auto;
+                    // min-height:470px;
+                    //border:1px solid red;
+                    // height: (($content_width - ($gutter * ($columns - 22))) / $columns);
+                    //float: left;
+                    //margin: 0 $gutter $gutter 0;
+                    //position: relative;
+
+                    display: flex;
+                    margin: 0 $gutter $gutter 0;
+                    //width: 100%;
+
+
+                    &>a {
+                        clear: both;
+
+                        &:hover {
+                            color: rgba(0, 0, 0, 1.0);
+
+                            &>span {
+                                color: #cc0000;
+                            }
+                        }
+
+                        &>h3 {
+                            font-size: 1.6rem;
+                            line-height: 2.2rem;
+                            font-weight: 700;
+                            text-align: left;
+                            margin: 10px 0 0 0;
+                        }
+
+                        &>h4 {
+                            font-size: 1.8rem;
+                            line-height: 2.2rem;
+                            font-weight: 400;
+                            // font-size: 1.6rem;
+                            // line-height: 2.2rem;
+                            // font-weight: 300;
+                            text-transform: none;
+                            text-align: left;
+                            margin: 0 0 0 0;
+
+                            &:before {
+                                display: none;
+                            }
+                        }
+
+                        &>span {
+                            float: left;
+                            font-size: 1.6rem;
+                            line-height: 2.2rem;
+                            font-weight: 300;
+                            text-transform: none;
+                            text-align: left;
+                            font-family: "Lato", sans-serif, "Material Icons";
+                            margin: 0 0 10px 0;
+
+                            &:before {
+                                content: '\E5D4';
+                                padding: 5px 5px 0 5px;
+                                display: block;
+                                line-height: 1.6rem;
+                                float: left;
+                            }
+                        }
+
+                        &>div {
+                            width: $width;
+                            height: $width;
+                            background: rgba(0, 0, 0, 1.0);
+                            background-position: center center !important;
+                            background-repeat: no-repeat !important;
+                            background-size: cover !important;
+                        }
+                    }
+
+                    &:nth-child(#{$columns}n+#{$columns}) {
+                        margin: 0 0 $gutter 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Magnific Popup Content (inner) wrapper
+#staffbio {
+    background: rgba(255, 255, 255, 1.0);
+    margin: 10px 10vw 0 10vw;
+    position: relative;
+    padding: 60px;
+    >div.contact {
+        padding: 0 30px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        // contact info wrapper
+        >div {
+            > h2, > h3 {
+                margin-bottom: 15px;
+            }
+            // Name
+            >h2 {
+                @include font-7l-l;
+            }
+            // Title
+            >h3 {
+                @include font-3b-l;
+            }
+            // Contact Info (iconlinks)
+            > p{
+                &:first-of-type > a {
+                    @include neu__iconlink('left', '\e0be');
+                }
+                &:last-of-type > a {
+                    @include neu__iconlink('left', '\e551');
+                }
+            }
+        }
+        div.neu__bgimg {
+            // ALL THIS CODE IS SO IT MATCHES THE EXACT DIMENSIONS OF THE IMAGE IN THE MAIN BODY
+            $width : 90vw;
+            $col : 6;
+            $space: 2vw;
+            flex: none;
+            width: (($width - (($col - 1) * $space)) / $col);
+            height: (($width - (($col - 1) * $space)) / $col);
+            margin: 0;
+        }
+    }
+
+    >div.about {
+        padding: 0 30px;
+        margin-top: 30px;
+        >h3 {
+            @include font-5l-c;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    main#staff {
+
+        $columns: 5;
+
+
+        section.departmenthead {
+            width: 48vw;
+            flex-direction: column;
+
+
+            display: flex;
+
+            &>div {
+                width: 48vw;
+                float: none;
+                margin: 0 auto;
+
+                order: 2;
+
+                &>h3 {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    font-weight: 700;
+                }
+
+                &>h4 {
+                    font-size: 2.0rem;
+                    line-height: 3.2rem;
+                    font-weight: 700;
+                    text-transform: none;
+                    margin: 10px 0 10px 0;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &>a {
+                    border-bottom: 1px solid #cc0000;
+
+                    // padding: 0 0 4px 0;
+                    &:before {
+                        display: block;
+                        float: left;
+                        font-family: 'Material Icons';
+                        content: '\e5c8';
+
+                        border-bottom: 1px solid #cc0000;
+                        line-height: 2.2rem;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    width: 48vw;
+                    height: 41vw;
+                    order: 1;
+
+                }
+            }
+        }
+
+        section.stafflist {
+
+            $columns: 4;
+
+            width: $wrapper-width;
+            margin: 0 auto 0 auto;
+            overflow: hidden;
+            padding: 0 0 ($gutter * 3) 0;
+
+            &>div {
+                overflow: hidden;
+                width: $content_width;
+                margin: 0 auto 0 auto;
+                padding: ($gutter * 2) 0 0 0;
+                text-align: center;
+
+                &>h2 {
+                    width: $content_width;
+                    border-bottom: none;
+                    margin: 0 auto 0 auto;
+                    font-size: 3.4rem;
+                    letter-spacing: 2px;
+                    line-height: 4.8rem;
+                }
+
+                &>ul {
+                    overflow: hidden;
+                    width: $content_width;
+                    margin: ($gutter * 2) auto 0 auto;
+                    list-style: none;
+                    list-style-type: none;
+
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    &>li {
+                        $width: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                        width: $width;
+                        // height: auto;
+                        // min-height:470px;
+                        //border:1px solid red;
+                        // height: (($content_width - ($gutter * ($columns - 22))) / $columns);
+                        //float: left;
+                        //margin: 0 $gutter $gutter 0;
+                        //position: relative;
+
+                        display: flex;
+                        margin: 0 $gutter $gutter 0;
+                        //width: 100%;
+
+
+                        &>a {
+                            clear: both;
+
+                            &:hover {
+                                color: rgba(0, 0, 0, 1.0);
+
+                                &>span {
+                                    color: #cc0000;
+                                }
+                            }
+
+                            &>h3 {
+                                font-size: 1.2rem;
+                                line-height: 2.2rem;
+                                font-weight: 700;
+                                text-align: left;
+                                margin: 10px 0 0 0;
+                            }
+
+                            &>h4 {
+                                font-size: 1.4rem;
+                                line-height: 2.2rem;
+                                font-weight: 400;
+                                // font-size: 1.6rem;
+                                // line-height: 2.2rem;
+                                // font-weight: 300;
+                                text-transform: none;
+                                text-align: left;
+                                margin: 0 0 0 0;
+
+                                &:before {
+                                    display: none;
+                                }
+                            }
+
+                            &>span {
+                                float: left;
+                                font-size: 1.6rem;
+                                line-height: 2.2rem;
+                                font-weight: 300;
+                                text-transform: none;
+                                text-align: left;
+                                font-family: "Lato", sans-serif, "Material Icons";
+                                margin: 0 0 10px 0;
+
+                                &:before {
+                                    content: '\E5D4';
+                                    padding: 5px 5px 0 5px;
+                                    display: block;
+                                    line-height: 1.6rem;
+                                    float: left;
+                                }
+                            }
+
+                            &>div {
+                                width: $width;
+                                height: $width;
+                                background: rgba(0, 0, 0, 1.0);
+                                background-position: center center !important;
+                                background-repeat: no-repeat !important;
+                                background-size: cover !important;
+                            }
+                        }
+
+                        &:nth-child(#{$columns}n+#{$columns}) {
+                            margin: 0 $gutter $gutter 0;
+                        }
+
+                        &:nth-child(4n+4) {
+                            margin: 0 0 $gutter 0;
+                        }
+
+                        &:nth-child(5n+5) {
+                            margin: 0 $gutter $gutter 0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+    main#staff {
+
+        $columns: 3;
+
+
+        section.departmenthead {
+            width: 71vw;
+
+            &>div {
+                width: 71vw;
+
+                &>h3 {}
+
+                &>h4 {}
+
+                &>a {}
+
+                &:nth-of-type(2) {
+                    width: 71vw;
+                    height: 57vw;
+                    // width: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                    // height: (($content_width - ($gutter * ($columns - 1))) / $columns);
+
+                }
+            }
+        }
+
+
+
+        section.stafflist {
+
+            $columns: 2;
+
+
+            &>div {
+
+                &>h2 {}
+
+                &>ul {
+
+                    &>li {
+                        $width: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                        width: $width;
+                        height: auto;
+
+                        margin: 0 $gutter $gutter 0;
+
+                        &>a {
+
+                            &>h3 {}
+
+                            &>h4 {}
+
+                            &>span {}
+
+                            &>div {
+                                width: $width;
+                                height: $width;
+
+                            }
+                        }
+
+                        &:nth-child(#{$columns}n+#{$columns}) {
+                            margin: 0 0 $gutter 0;
+                        }
+
+                        // &:nth-child(2n+2){
+                        //   margin: 0 0 $gutter 0;
+                        // }
+                        // &:nth-child(3n+3){
+                        //   margin: 0 $gutter $gutter 0;
+                        // }
+                        // &:nth-child(4n+4){
+                        //   margin: 0 $gutter $gutter 0;
+                        // }
+                        // &:nth-child(5n+5){
+                        //   margin: 0 0 $gutter 0;
+                        // }
+
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 990px) {
+    main#staff {
+
+        section.departmenthead {
+            width: 90vw;
+
+            &>div {
+                width: 90vw;
+
+                &>h3 {}
+
+                &>h4 {}
+
+                &>a {}
+
+                &:nth-of-type(2) {
+                    width: 90vw;
+                    height: 71vw;
+                    // width: (($content_width - ($gutter * ($columns - 1))) / $columns);
+                    // height: (($content_width - ($gutter * ($columns - 1))) / $columns);
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    main#staff {
+        $columns: 1;
+        section.stafflist {
+            &>div {
+                width: 90vw;
+                &>ul {
+                    width: 90vw;
+                    &>li {
+                        width: 90vw;
+                        height: auto;
+                        margin: 0 $gutter $gutter 0;
+                        &>a {
+                            &>div {
+                                width: 90vw;
+                                height: 90vw;
+                            }
+                        }
+                        &:nth-child(#{$columns}n+#{$columns}) {
+                            margin: 0 0 $gutter 0;
+                        }
+                        &:nth-child(5n+5) {
+                            margin: 0 $gutter ($gutter * 3) auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #staffbio {
+        background: rgba(255, 255, 255, 1.0);
+        margin: 10px 10vw 0 10vw;
+        padding-bottom: 0;
+        padding: $gutter 0 $gutter 0;
+        &>div.contact {
+            overflow: hidden;
+            flex-direction: column;
+            &>div {
+                // width: 70vw;
+                margin: 0 $gutter 0 0;
+                order: 2;
+                &>h2 {
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                    font-weight: 700;
+                    margin: 10px 0 10px 0;
+                }
+                &>h3 {
+                    font-size: 1.6rem;
+                    line-height: 2.8rem;
+                    font-weight: 700;
+                    text-transform: none;
+                    margin: 0 0 10px 0;
+                    &:before {
+                        display: none;
+                    }
+                }
+                &>h4 {
+                    font-size: 1.2rem;
+                    line-height: 2.6rem;
+                    font-weight: 300;
+                    text-transform: none;
+                    margin: 0 0 10px 0;
+                    clear: both;
+                    &:before {
+                        display: none;
+                    }
+                    &>a {
+                        border-bottom: 1px solid #cc0000;
+                        &.email:before,
+                        &.phone:before {
+                            width: auto;
+                            background: none;
+                            font-family: 'Material Icons';
+                            padding: 0 10px 0 0;
+                            margin: 0 0 0 0;
+                            display: none;
+                            float: left;
+                            line-height: 3rem;
+                            height: 26px;
+                            border-bottom: 1px solid #cc0000;
+                        }
+                        &.email {
+                            &:before {
+                                content: '\e0be';
+                            }
+                        }
+                        &.phone {
+                            &:before {
+                                content: '\e551'
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(2) {
+                    width: 15vw;
+                    height: 15vw;
+                    margin: 0 0 0 0;
+                    background: rgba(0, 0, 0, 1.0);
+                    // float:right;
+                    background-position: center center !important;
+                    background-repeat: no-repeat !important;
+                    background-size: cover !important;
+                    order: 1;
+                }
+            }
+        }
+        &>div.about {
+            &>h3 {
+                font-size: 2.0rem;
+                line-height: 3.2rem;
+                font-weight: 700;
+                margin: 30px 0 5px 0;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+
+    main#staff {
+        $columns: 1;
+
+        section.stafflist {
+            width: 100%;
+            &>div {
+                width: 100%;
+                &>ul {
+                    width: 100%;
+                    &>li {
+                        width: 100%;
+                        & a {
+                            & div {
+                                height: 85vw;
+                                width: 100vw;
+                            }
+                            &>h3,
+                            h4,
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+                        &:nth-child(#{$columns}n+#{$columns}) {
+                            margin: 0 auto ($gutter * 3) auto;
+                        }
+                    }
+                }
+                & h2 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $bp__md){
+
+    #staffbio {
+        padding: 40px;
+    }
+    
+    #staffbio>div.contact {
+
+        flex-flow: column wrap;
+        >div:nth-of-type(2) {
+            order: 1;
+            margin: 0 auto;    
+            width: 50vw;
+            height: 50vw;
+            max-width: 245px;
+            max-height: 245px;
+        }
+        >div:not(.neu__bgimg){
+            order: 2;
+            max-width: 100%;
+        }
+    }
+
+}
+@media only screen and (max-width: $bp__sm){
+    #staffbio {
+        padding: 40px 20px;
+    }
+}

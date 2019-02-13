@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Multiple item payment field.
+ * Payment Radio Field.
  *
  * @package    WPForms
  * @author     WPForms
@@ -70,20 +70,17 @@ class WPForms_Field_Payment_Multiple extends WPForms_Field {
 		// choices enabled, and exclude the entry table display. Lastly,
 		// provides a filter to disable fancy display.
 		if (
-			! empty( $field['value'] ) &&
-			'payment-multiple' === $field['type'] &&
-			! empty( $field['image'] ) &&
 			'entry-table' !== $context &&
+			'payment-multiple' === $field['type'] &&
+			! empty( $field['value'] ) &&
+			! empty( $field['image'] ) &&
 			apply_filters( 'wpforms_payment-multiple_field_html_value_images', true, $context )
 		) {
-
-			if ( ! empty( $field['image'] ) ) {
-				return sprintf(
-					'<span style="max-width:200px;display:block;margin:0 0 5px 0;"><img src="%s" style="max-width:100%%;display:block;margin:0;"></span>%s',
-					esc_url( $field['image'] ),
-					$value
-				);
-			}
+			return sprintf(
+				'<span style="max-width:200px;display:block;margin:0 0 5px 0;"><img src="%s" style="max-width:100%%;display:block;margin:0;"></span>%s',
+				esc_url( $field['image'] ),
+				$value
+			);
 		}
 
 		return $value;
@@ -156,7 +153,7 @@ class WPForms_Field_Payment_Multiple extends WPForms_Field {
 			$properties['input_container']['class'][] = 'wpforms-field-required';
 		}
 
-		// Custom properties if image choices is enabled.
+		// Custom properties if image choices are enabled.
 		if ( ! empty( $field['choices_images'] ) ) {
 
 			$properties['input_container']['class'][] = 'wpforms-image-choices';
@@ -186,8 +183,8 @@ class WPForms_Field_Payment_Multiple extends WPForms_Field {
 	 */
 	protected function get_field_populated_single_property_value( $raw_value, $input, $properties, $field ) {
 		/*
-		 * When the form is submitted we get from Fallback only values (prices).
-		 * As payment-multiple field doesn't support 'show_values' option -
+		 * When the form is submitted we get only values (prices) from the Fallback.
+		 * As payment-multiple (radio) field doesn't support 'show_values' option -
 		 * we should transform value into label to check against using general logic in parent method.
 		 */
 
@@ -475,4 +472,5 @@ class WPForms_Field_Payment_Multiple extends WPForms_Field {
 		);
 	}
 }
+
 new WPForms_Field_Payment_Multiple();

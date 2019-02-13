@@ -1,0 +1,218 @@
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
+
+// 
+@media only screen {
+    body.news-events-item {
+
+        div.main,
+        main {
+            >section {
+                >p.neu__prevpage {
+                    margin-bottom: 30px;
+
+                    >a {
+                        @include neu__iconlink($icon: "\e5cb");
+
+                        &:before {
+                            padding-right: 5px;
+                            position: relative;
+                            color: $brand_colors-red;
+                            bottom: 1px;
+                        }
+                    }
+                }
+
+                >h1 {
+                    // @include font-7l-l;
+                    // margin: 0;
+                    // margin-bottom: 15px;
+                }
+
+                >h3 {
+                    @include font-2b-l;
+                    margin: 0;
+                    margin-bottom: 15px;
+                }
+
+                >img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 15px;
+                }
+
+                >div:not(.neu__bgimg):last-of-type {
+                    border-bottom: 1px solid transparentize(black, 0.8);
+                    padding-bottom: 60px;
+
+                    >p {
+                        margin-bottom: 15px;
+                    }
+                    ul {
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        list-style-type: disc;
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 2.4rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    html body ul.newsandevents {
+        margin: 40px 0;
+        position: relative;
+
+        display: inline-block;
+        text-align: left;
+        font-size: 0;
+        width: 100%;
+        > li {
+            font-size: initial;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 30px 30px 0;
+            width: calc( 100% / 3 - 20px);
+            &:nth-of-type(3n){
+                margin-right: 0;
+            }
+        }
+
+        >div.pagination {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-size: initial;
+            &:first-of-type {
+                bottom: 100%;
+                top: auto;
+            }
+
+            &:last-of-type {
+                top: 100%;
+                bottom: auto;
+            }
+        }
+
+        >li {
+            >a {
+                >div {
+
+                    >h3 {
+                        @include font-3b-l;
+                        &:after {
+                            font-family: "Material Icons";
+                            content: "\e5cc";
+                            color: $brand_colors-red;
+                            font-size: 20px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            opacity: 0;
+                        }
+                    }
+
+                    >h6 {
+                        @include font-2b-l;
+                    }
+
+                    .neu__news_event_time {
+                        margin-bottom: 15px;
+
+                        >p {
+                            @include font-1l-l;
+                        }
+                    }
+
+                    >p:nth-last-of-type(2) {
+                        margin-bottom: 15px;
+                    }
+
+                    >p.neu__iconlink {
+                        @include neu__iconlink($hover: 0);
+
+                        &:before {
+                            color: $brand_colors-red;
+                        }
+                    }
+                }
+
+                &:hover {
+                    >.neu__bgimg {
+                        >div {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    >div>h3:after {
+                        opacity: 1;
+                    }
+
+                    p.neu__iconlink {
+                        border-bottom: 2px solid $brand_colors-red;
+
+                        &:before {
+                            color: $brand_colors-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $nav_bp_dt){
+    div.wrapper > main {
+        > section {
+            > ul.newsandevents {
+                display: inline-block;
+                text-align: left;
+                font-size: 0;
+                width: 100%;
+                > li {
+                    font-size: initial;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 30px 30px 0;
+                    width: calc( 50% - 15px);
+                    &:nth-of-type(2n){
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $bp_3cols){
+
+    div.wrapper > main {
+        > section {
+            > ul.newsandevents {
+                > li {
+                    max-width: none;
+                    width: 100%;
+                    flex: none;
+                    margin: 0;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $bp__lg){
+    html body ul.newsandevents>li>a>div>h3 {
+        @include font-2b-l;
+    }
+}

@@ -592,18 +592,23 @@ class WPForms_Conditional_Logic_Fields {
 							// non-text based fields that are not using empty checks.
 							if (
 								( ! in_array( $rule['operator'], array( 'e', '!e' ), true ) ) &&
-								( in_array( $form['fields'][ $rule_field ]['type'], array(
-									'select',
-									'checkbox',
-									'radio',
-									'payment-multiple',
-									'payment-select',
-								), true ) )
+								in_array(
+									$form['fields'][ $rule_field ]['type'],
+									array(
+										'select',
+										'checkbox',
+										'radio',
+										'payment-multiple',
+										'payment-checkbox',
+										'payment-select',
+									),
+									true
+								)
 							) {
 
-								if ( in_array( $form['fields'][ $rule_field ]['type'], array( 'payment-multiple', 'payment-select' ), true ) ) {
+								if ( in_array( $form['fields'][ $rule_field ]['type'], array( 'payment-multiple', 'payment-checkbox', 'payment-select' ), true ) ) {
 
-									// Payment multiple items values are different, they are the actual IDs.
+									// Payment items values are different, they are the actual IDs.
 									$val = $rule['value'];
 
 								} else {

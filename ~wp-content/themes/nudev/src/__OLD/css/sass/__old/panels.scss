@@ -1,0 +1,211 @@
+/**
+ * partials/multi-panel
+ * ---
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+ // partials
+ @import "partials/articles";
+
+
+main.single-panels{
+  margin-bottom: 0;
+
+  & > section{
+    margin: 0 0 0 0;
+    width: 100vw;
+    & > article{
+      width: 100%;
+      & > #contentarea{
+        position: absolute;
+        opacity: 0.0;
+      }
+      & div.panel{
+        &.author{
+          padding: $gutter 0 0 0;
+        }
+        & > div.sidenote{
+          position: absolute;
+          opacity: 0.0;
+          min-width: 12vw;
+          width: 12vw;
+          min-height: 12vw;
+          overflow: hidden;
+          background: none;
+          &.circle{
+            border-radius: 50%;
+            text-align: center;
+            display: table;
+            & > p{
+              display: table-cell;
+              vertical-align: middle;
+            }
+          }
+          & > iframe{
+            width: 30vw !important;
+            height: 20vw !important;
+          }
+          &.upper-left{
+            top: ($gutter * 2);
+            left: (nth($wrapper-margins, 2) / 2);
+          }
+          &.upper-right{
+            top: ($gutter * 2);
+            right: (nth($wrapper-margins, 4) / 2);
+          }
+          &.lower-left{
+            bottom: ($gutter * 2);
+            left: (nth($wrapper-margins, 2) / 2);
+          }
+          &.lower-right{
+            bottom: ($gutter * 2);
+            right: (nth($wrapper-margins, 4) / 2);
+          }
+        }
+        & > img{
+          width: 100%;
+          height: auto;
+        }
+        & > div.contentarea{
+          & > div.intro{
+            & > p{
+              font-size: 3rem;
+              line-height: 3.5rem;
+              margin: 0 0 ($gutter * 2);
+            }
+          }
+          & blockquote{
+            &.right{
+              float: right;
+              margin: $gutter (nth($wrapper-margins, 2) / 2) $gutter $gutter !important;
+            }
+            &.left{
+              float: left;
+              margin: $gutter $gutter $gutter (nth($wrapper-margins, 4) / 2) !important;
+            }
+          }
+          & > img{
+            margin: $gutter auto $gutter auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 1080px){
+
+  main.single-panels{
+    & > section{
+      & > article{
+        & > #contentarea{
+          position: relative;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 600px){
+
+  main.single-panels{
+    // margin-bottom: 0;
+    & > section{
+      // margin: 0 0 0 0;
+      // width: 100vw;
+      & > article{
+        // width: 100%;
+        & > #contentarea{
+          // position: relative;
+          // opacity: 0.0;
+        }
+        & div.panel{
+        //   &.author{
+        //     padding: $gutter 0 0 0;
+        //   }
+        //   & > div.sidenote{
+        //     position: absolute;
+        //     opacity: 0.0;
+        //     min-width: 12vw;
+        //     width: 12vw;
+        //     min-height: 12vw;
+        //     overflow: hidden;
+        //     background: none;
+        //     &.circle{
+        //       border-radius: 50%;
+        //       text-align: center;
+        //       display: table;
+        //       & > p{
+        //         display: table-cell;
+        //         vertical-align: middle;
+        //       }
+        //     }
+        //     & > iframe{
+        //       width: 30vw !important;
+        //       height: 20vw !important;
+        //     }
+        //     &.upper-left{
+        //       top: ($gutter * 2);
+        //       left: (nth($wrapper-margins, 2) / 2);
+        //     }
+        //     &.upper-right{
+        //       top: ($gutter * 2);
+        //       right: (nth($wrapper-margins, 4) / 2);
+        //     }
+        //     &.lower-left{
+        //       bottom: ($gutter * 2);
+        //       left: (nth($wrapper-margins, 2) / 2);
+        //     }
+        //     &.lower-right{
+        //       bottom: ($gutter * 2);
+        //       right: (nth($wrapper-margins, 4) / 2);
+        //     }
+        //   }
+        //   & > img{
+        //     width: 100%;
+        //     height: auto;
+        //   }
+          & > div.contentarea{
+            // & > div.intro{
+            //   & > p{
+            //     font-size: 3rem;
+            //     line-height: 3.5rem;
+            //     margin: 0 0 ($gutter * 2);
+            //   }
+            // }
+            & blockquote{
+              // min-height: 100px;
+              &.right{
+                float: none;
+                margin: 30px 0 30px 0 !important;
+              }
+              &.left{
+                float: none;
+                margin: 30px 0 30px 0 !important;
+              }
+            }
+            & > img{
+              margin: $gutter auto $gutter auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

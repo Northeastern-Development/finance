@@ -112,9 +112,6 @@ class WPForms_Entries_List {
 			}
 			require_once WPFORMS_PLUGIN_DIR . 'pro/includes/admin/entries/class-entries-list-table.php';
 
-			// Preview page check.
-			wpforms()->preview->form_preview_check();
-
 			// Processing and setup.
 			add_action( 'wpforms_entries_init', array( $this, 'process_export' ), 8, 1 );
 			add_action( 'wpforms_entries_init', array( $this, 'process_read' ), 8, 1 );
@@ -491,7 +488,7 @@ class WPForms_Entries_List {
 				'message' =>
 					sprintf(
 						wp_kses(
-							/* translators: %s - form builder page URL. */
+							/* translators: %s - WPForms Builder page. */
 							__( 'Whoops, you haven\'t created a form yet. Want to <a href="%s">give it a go</a>?', 'wpforms' ),
 							array(
 								'a' => array(
@@ -554,7 +551,7 @@ class WPForms_Entries_List {
 				return;
 			}
 
-			$this->entries            = new WPForms_Entries_Table;
+			$this->entries            = new WPForms_Entries_Table();
 			$this->entries->form_id   = $this->form_id;
 			$this->entries->form_data = $form_data;
 			$this->entries->prepare_items();
@@ -567,12 +564,12 @@ class WPForms_Entries_List {
 				<?php do_action( 'wpforms_entry_list_title', $form_data, $this ); ?>
 
 				<form id="wpforms-entries-table" method="get"
-				      action="<?php echo admin_url( 'admin.php?page=wpforms-entries' ); ?>"
+				      action="<?php echo esc_url( admin_url( 'admin.php?page=wpforms-entries' ) ); ?>"
 				      <?php echo ( ! $this->is_list_filtered() && isset( $last_entry->entry_id ) ) ? 'data-last-entry-id="' . absint( $last_entry->entry_id ) . '"' : ''; ?>>
 
 					<input type="hidden" name="page" value="wpforms-entries"/>
 					<input type="hidden" name="view" value="list"/>
-					<input type="hidden" name="form_id" value="<?php echo $this->form_id; ?>"/>
+					<input type="hidden" name="form_id" value="<?php echo esc_attr( $this->form_id ); ?>"/>
 
 					<?php $this->entries->views(); ?>
 
@@ -673,7 +670,7 @@ class WPForms_Entries_List {
 		);
 
 		// Preview Entry URL.
-		$preview_url = esc_url( wpforms()->preview->form_preview_url( $this->form_id ) );
+		$preview_url = esc_url( wpforms_get_form_preview_url( $this->form_id ) );
 
 		// Export Entry URL.
 		$export_url = wp_nonce_url(
@@ -863,4 +860,4 @@ class WPForms_Entries_List {
 	}
 }
 
-new WPForms_Entries_List;
+new WPForms_Entries_List();

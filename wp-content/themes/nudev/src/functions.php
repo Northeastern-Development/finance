@@ -127,7 +127,7 @@ add_action('init', 'myplugin_rewrite_tag', 10, 0);
 // add custom rewrite rules here
 function custom_rewrite_rule() {
     // 
-    add_rewrite_rule('^deadlines/page/([^/]*)?', 'index.php?page_id=4573&pagedd=$matches[1]', 'top');
+    add_rewrite_rule('^deadlines/page/([^/]*)?', 'index.php?page_id=4572&pagedd=$matches[1]', 'top');
     // 
     
     add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');

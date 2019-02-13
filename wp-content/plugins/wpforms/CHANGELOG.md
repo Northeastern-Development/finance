@@ -1,6 +1,22 @@
 # Change Log
 All notable changes to this project will be documented in this file, formatted via [this recommendation](http://keepachangelog.com/).
 
+## [1.5.1] - 2019-02-06
+### Added
+- Checkbox Items field (payment checkboxes).
+- Complete translations for Spanish, Italian, Japanese, and German.
+- Improved form builder education and workflows: install and activate any addon without ever leaving the form builder!
+- Smart Tag for referencing user meta data, `{user_meta key=""}`.
+
+### Changed
+- Removed limit on Entry Columns when customizing.
+- Improved support with LocoTranslate plugin.
+
+### Fixed
+- Entry counts getting off sync with entry heartbeat detection.
+- Typos, grammar, and other i18n related issues.
+- Created alias class for `WPForms` to prevent issue with namespacing introduced in 1.5.0.
+
 ## [1.5.0.4] - 2018-12-20
 ### Changed
 - Dashboard widget improvements.

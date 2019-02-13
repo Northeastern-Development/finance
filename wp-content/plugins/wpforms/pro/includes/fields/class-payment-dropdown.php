@@ -126,7 +126,7 @@ class WPForms_Field_Payment_Select extends WPForms_Field {
 	protected function get_field_populated_single_property_value( $raw_value, $input, $properties, $field ) {
 		/*
 		 * When the form is submitted we get from Fallback only values (prices).
-		 * As payment-multiple field doesn't support 'show_values' option -
+		 * As payment-dropdown field doesn't support 'show_values' option -
 		 * we should transform value into label to check against using general logic in parent method.
 		 */
 

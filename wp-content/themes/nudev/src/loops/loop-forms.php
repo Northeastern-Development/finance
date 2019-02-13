@@ -83,7 +83,7 @@
     $format_blocks = '<h4>%s</h4>%s';
     $format_relresources = '
         <li>
-            <p><a class="neu__iconlink" target="%s" href="%s" title="View this Related Resource">%s</a>
+            <p><a class="neu__iconlink" %s href="%s" title="View this Related Resource">%s</a>
         </li>
     ';
 
@@ -102,20 +102,24 @@
 
             // Verify: Form belongs to category && Form is Active
             if( $category->post_name == $fields['category']->post_name && $fields['status'] == '1'){
-                
+                $files = $fields['files'];
                 // Set: format string for file downloads
                 $content_files = '';
-                foreach( $fields['files'] as $file ){
-                    $content_files .= sprintf(
-                        $format_files
-                        ,$file['file']
-                        ,( !empty($file['filename']) ) // TITLE ATTR
-                            ? $file['filename']
-                            : 'this file'
-                        ,( !empty($file['filename']) ) // TEXT
-                            ? $file['filename']
-                            : 'Download'
-                    );
+                if( !is_null($files) && $files != '' ){
+                    foreach( $files as $file ){
+                        if( $file['file'] != '' ){
+                            $content_files .= sprintf(
+                                $format_files
+                                ,$file['file']
+                                ,( !empty($file['filename']) ) // TITLE ATTR
+                                    ? $file['filename']
+                                    : 'this file'
+                                ,( !empty($file['filename']) ) // TEXT
+                                    ? $file['filename']
+                                    : 'Download'
+                            );
+                        }
+                    }
                 }
                 
                 // Set: format string for information blocks
@@ -136,7 +140,7 @@
                         <ul class="forms-category-relatedresources list">
                     ';
                     foreach( $fields['related_resources'] as $relresource ){
-                        $ifExt = ( $related_resource['external_link'] == 1 ) ? '_blank' : '_self'; 
+                        $ifExt = ( $relresource['external_link'] == 1 ) ? 'target="_blank"' : ''; 
                         $content_relresources .= sprintf(
                             $format_relresources
                             ,$ifExt

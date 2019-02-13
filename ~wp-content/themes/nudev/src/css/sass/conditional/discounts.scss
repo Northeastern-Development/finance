@@ -1,0 +1,75 @@
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
+
+@media only screen {
+
+    div.wrapper {
+        main,
+        div.main {
+            > section {
+                > h2 {
+                    margin-bottom: 0;
+                    &:not(:first-of-type){
+                        margin-top: 30px;
+                    }
+                }
+                ul.discounts {
+                    display: flex;
+                    flex-flow: row wrap;
+                    list-style-type: none;
+                    align-items: center;
+                    margin: 0;
+                    > li {
+                        flex: 1 0 100%;
+                        border-bottom: 1px solid transparentize(black, 0.8);
+                        padding: 15px 0;
+                        margin-bottom: 0;
+                        &.js__collapsible_triggered {
+                            > h5:after {
+                                transform: rotate(180deg);
+                            }
+                        }
+                        >h5 {
+                            @include font-3r-l;
+                            &:hover {
+                                &:after {
+                                    color: $brand_colors-red;
+                                }
+                            }
+                        }
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+            
+                        // discount description
+                        >div {
+                            @include font-2l-l;
+                            margin-top: 15px;
+                            ul {
+                                list-style-type: disc;
+                                margin: 0;
+                                padding: 0;
+                                padding-left: 2.4rem;
+                                li {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $bp__lg){
+    div.wrapper main>section ul.discounts>li>h5, div.wrapper div.main>section ul.discounts>li>h5 {
+        @include font-2r-l;
+    }
+}

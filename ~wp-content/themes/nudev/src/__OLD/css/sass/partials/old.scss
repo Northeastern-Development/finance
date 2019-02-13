@@ -1,0 +1,388 @@
+/*
+ * homepage
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+
+
+
+
+  $columns: 3;
+
+
+
+  main#homepage{
+
+
+   .nu__full-hero {
+
+       & div {
+
+         & h2 {
+
+           & span {
+
+           }
+         }
+       }
+    }
+
+    & > section{
+
+
+
+      & > ul{
+
+        & > li{
+
+          &:nth-child(#{$columns}n+#{$columns}){
+
+          }
+          & h3{
+
+          }
+          &:not(.copy){
+            & > div:nth-of-type(1){
+
+            }
+          }
+          &.copy{
+
+          }
+          &.right{
+
+          }
+          &.dark{
+
+          }
+        }
+      }
+
+      &.dark{
+
+      }
+
+      &#intro,
+      &#collage,
+      &#contact{
+
+      }
+
+      &#intro{
+        & > h1{
+
+          & > span{
+
+          }
+        }
+        & > img {
+
+        }
+      }
+
+      &#collage {
+        & > img {
+
+        }
+      }
+
+      &#approach{
+
+        & > div{
+
+          &:nth-of-type(1){
+
+
+            & > h2{
+
+            }
+            /* 28px @ 700px increasing to 45px @ 1500px */
+            @media (min-width: 700px) {
+              h2 {
+                font-size: calc(1.75rem + ((1vw - 7px) * 2.125));
+                /* Where: * 2.125 = 100 * font_Size_Difference / viewport_Width_Difference */
+              }
+            }
+            /* Prevent font scaling beyond this breakpoint */
+            @media (min-width: 1500px) {
+              h2 {
+                font-size: 45px;
+              }
+            }
+
+
+            & > h4{
+
+            }
+
+          }
+          &:nth-of-type(2){
+
+            & > p{
+
+              &:last-child{
+
+              }
+              & > span{
+
+              }
+            }
+            /* 18px @ 700px increasing to 24px @ 1500px */
+            @media (min-width: 700px) {
+              p {
+                font-size: calc(1.125rem + ((1vw - 7px) * 0.75));
+                /* Where: * 0.75 = 100 * font_Size_Difference / viewport_Width_Difference */
+              }
+            }
+            /* Prevent font scaling beyond this breakpoint */
+            @media (min-width: 1500px) {
+              p {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
+
+      &#expertise{
+        & div {
+          //height:410px;
+          height:22.8vw;
+          float:left;
+          overflow:hidden;
+          & h3 {
+            font-weight:300;
+            font-size:3.4rem;
+            border-bottom:2px solid rgba(123, 119, 120, 1.0);
+            max-width:76%;
+            margin-left:8%;
+            margin-top:6%;
+            padding-bottom:3.7%;
+          }
+          /* 28px @ 700px increasing to 34px @ 1500px */
+            @media (min-width: 1100px) {
+              h3 {
+                font-size: calc(1.75rem + ((1vw - 7px) * 0.75));
+                /* Where: * 0.75 = 100 * font_Size_Difference / viewport_Width_Difference */
+              }
+            }
+            /* Prevent font scaling beyond this breakpoint */
+            @media (min-width: 1500px) {
+              h3 {
+                font-size: 34px;
+              }
+            }
+
+          & p {
+            max-width:76%;
+            margin-left:8%;
+            margin-top:3.7%;
+            font-weight:300;
+            font-size:2.4rem;
+
+          }
+          /* 18px @ 700px increasing to 24px @ 1500px */
+          @media (min-width: 700px) {
+            p {
+              font-size: calc(1.125rem + ((1vw - 7px) * 0.75));
+              /* Where: * 0.75 = 100 * font_Size_Difference / viewport_Width_Difference */
+            }
+          }
+          /* Prevent font scaling beyond this breakpoint */
+          @media (min-width: 1500px) {
+            p {
+              font-size: 24px;
+            }
+          }
+
+          &.nu__block-double {
+            width:33%;
+          }
+          &.nu__block-single {
+            width:32%;
+          }
+          &.nu__block-triple {
+            width:66%;
+            &:last-of-type {
+              width:67%;
+            }
+          }
+          &.nu__block_dark {
+            background:$black;
+            & h2 {
+              color:$white;
+              font-size:4.5rem;
+              max-width:74%;
+              margin:11% 0 0 11%;
+            }
+            /* 36px @ 1024px increasing to 45px @ 1800px */
+            @media (min-width: 1024px) {
+              h2 {
+                font-size: calc(2.25rem + ((1vw - 10.24px) * 1.1598));
+                /* Where: * 1.1598 = 100 * font_Size_Difference / viewport_Width_Difference */
+              }
+            }
+            /* Prevent font scaling beyond this breakpoint */
+            @media (min-width: 1800px) {
+              h2 {
+                font-size: 45px;
+              }
+            }
+            & p {
+              margin-left:11%;
+              & a {
+                color:$red;
+                font-weight:700;
+                font-size:2.4rem;
+                &:hover {
+                  color:$white;
+                }
+              }
+              /* 18px @ 1024px increasing to 24px @ 1800px */
+              @media (min-width: 1024px) {
+                a {
+                  font-size: calc(1.125rem + ((1vw - 10.24px) * 0.7732));
+                  /* Where: * 0.7732 = 100 * font_Size_Difference / viewport_Width_Difference */
+                }
+              }
+              /* Prevent font scaling beyond this breakpoint */
+              @media (min-width: 1800px) {
+                a {
+                  font-size: 24px;
+                }
+              }
+            }
+
+          }
+          &.nu__block-left {
+            margin-left:2%;
+          }
+          &.nu__block-top {
+            margin-top:2%;
+          }
+          &:nth-of-type(2) {
+            border-top:10px solid rgba(239,239,239,1);
+            border-right:10px solid rgba(239,239,239,1);
+            border-bottom:10px solid rgba(239,239,239,1);
+          }
+          &:nth-of-type(5) {
+            border-left:10px solid rgba(239,239,239,1);
+            border-right:10px solid rgba(239,239,239,1);
+            border-bottom:10px solid rgba(239,239,239,1);
+          }
+          &:nth-of-type(6) {
+            border-left:10px solid rgba(239,239,239,1);
+            border-top:10px solid rgba(239,239,239,1);
+            border-bottom:10px solid rgba(239,239,239,1);
+          }
+          &:nth-of-type(10) {
+            border-top:10px solid rgba(239,239,239,1);
+            border-right:10px solid rgba(239,239,239,1);
+            border-bottom:10px solid rgba(239,239,239,1);
+          }
+          &:nth-of-type(11) {
+            border-left:10px solid rgba(239,239,239,1);
+            border-right:10px solid rgba(239,239,239,1);
+            border-bottom:10px solid rgba(239,239,239,1);
+          }
+          &:nth-of-type(13) {
+            border-top:10px solid rgba(239,239,239,1);
+            border-right:10px solid rgba(239,239,239,1);
+            border-bottom:10px solid rgba(239,239,239,1);
+            & h3 {
+              margin-left:4%;
+              max-width:80%;
+            }
+            & p {
+              margin-left:4%;
+              max-width:80%;
+            }
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
+
+      &#contact{
+
+        & > div{
+
+          & > h2{
+
+          }
+          /* 28px @ 700px increasing to 45px @ 1500px */
+          @media (min-width: 700px) {
+            h2 {
+              font-size: calc(1.75rem + ((1vw - 7px) * 2.125));
+              /* Where: * 2.125 = 100 * font_Size_Difference / viewport_Width_Difference */
+            }
+          }
+          /* Prevent font scaling beyond this breakpoint */
+          @media (min-width: 1500px) {
+            h2 {
+              font-size: 45px;
+            }
+          }
+          & > div{
+
+            & p {
+
+              & a {
+
+                &.nu__form-submit {
+
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &#form{
+
+        & > div{
+
+          & form{
+
+            & .wpforms-field{
+
+            }
+            & div[data-field-id='0'],
+            & div[data-field-id='1'],
+            & div[data-field-id='3'],
+            & div[data-field-id='4'],
+            & div[data-field-id='5']{
+
+            }
+            & div[data-field-id='2']{
+
+              & > textarea{
+
+              }
+            }
+          }
+        }
+      }
+
+
+
+    }
+
+  }

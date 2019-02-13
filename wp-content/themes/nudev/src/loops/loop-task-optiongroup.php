@@ -42,7 +42,7 @@
     $format_the_video = '
         <li>
             <h5>%s</h5>
-            <a href="%s" class="js__youtube neu__iconlink" target="View %s video in lightbox">View Video</a>
+            <a href="%s" class="js__youtube neu__iconlink" title="View %s video in lightbox">View Video</a>
         </li>
     ';
     

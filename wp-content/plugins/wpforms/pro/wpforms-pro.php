@@ -308,11 +308,14 @@ class WPForms_Pro {
 		// If GDPR enhancements are enabled and user details are disabled
 		// globally or in the form settings, discard the IP and UA.
 		if (
-			wpforms_setting( 'gdpr', false ) &&
 			(
+				 wpforms_setting( 'gdpr', false ) &&
+				(
 				wpforms_setting( 'gdpr-disable-details', false ) ||
 				! empty( $form_data['settings']['disable_ip'] )
-			)
+				)
+			) ||
+			! apply_filters( 'wpforms_disable_entry_user_ip', '__return_false', $fields, $form_data )
 		) {
 			$user_agent = '';
 			$user_ip    = '';

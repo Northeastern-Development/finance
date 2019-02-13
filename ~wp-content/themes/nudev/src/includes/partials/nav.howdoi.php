@@ -1,0 +1,93 @@
+<?php 
+/**
+ * Partial: navigation sub-nav  "How Do I..."
+ */
+    // 
+    $args = array(
+        'post_type'         =>  'tasks_categories',
+        'posts_per_page'    =>  -1,
+        'meta_query'        => array(
+            array(
+                'key'       => 'status',
+                'value'     => '1',
+                'compare'   => '='
+            )
+        )
+    );
+    $cats = get_posts($args);
+
+    $format_cats = '
+        <div title="View tasks in the %s category">
+            <img class="taskicon" src="%s" alt="task category icon">
+            <h4><span>%s</span></h4>
+            <ul>
+                <li><h4>%s</h4></li>
+                %s
+            </ul> 
+        </div>
+    ';
+    $format_tasks = '
+        <li>
+            <a title="View %s" href="%s"><span>%s</span></a>
+        </li>
+    ';
+    $content_cats = '';
+    foreach ($cats as $i => $cat) {
+
+        $fields = get_fields($cat->ID);
+
+        // GET active tasks within this category
+        $args = array(
+            'post_type' => 'tasks',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'status',
+                    'value' => '1',
+                    'compare' => '='
+                ),
+                array(
+                    'key' => 'category',
+                    'value' => $cat->ID,
+                    'compare' => 'LIKE'
+                )
+            )
+        );
+        $tasks = get_posts($args);
+
+        // SET TASKS STRING
+        $content_tasks = '';
+        foreach( $tasks as $i => $task ){
+            $content_tasks .= sprintf(
+                $format_tasks
+                ,$task->post_title
+                ,site_url('/tasks/') . $cat->post_name.'/'.$task->post_name
+                ,$task->post_title
+            );
+        }
+
+        // SET CATS STRING
+        $content_cats .= sprintf(
+            $format_cats
+            ,$cat->post_title
+            ,$fields['icon']
+            ,$cat->post_title
+            ,$cat->post_title
+            ,$content_tasks
+        );
+    }
+?>
+<div class="neumenu-wrapper-inner">
+    <div>
+        <h2>How Do I...</h2>
+        <h3>(Select Topic)</h3>
+        <h3>(Select Task)</h3>
+        <h3 title="View Task Categories" class="removefilter nu__content_btn">Back to Topics</h3>
+    </div>
+    <div>
+        <?php 
+            echo $content_cats;
+        ?>
+    </div>
+</div>

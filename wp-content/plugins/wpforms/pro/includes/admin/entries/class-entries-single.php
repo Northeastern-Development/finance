@@ -995,10 +995,11 @@ class WPForms_Entries_Single {
 		// Print Entry URL
 		$print_url = add_query_arg(
 			array(
-				'wpforms_preview' => 'print',
-				'entry_id'        => absint( $entry->entry_id ),
+				'page'     => 'wpforms-entries',
+				'view'     => 'print',
+				'entry_id' => absint( $entry->entry_id ),
 			),
-			home_url()
+			admin_url( 'admin.php' )
 		);
 
 		// Export Entry URL

@@ -1,0 +1,143 @@
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
+@media only screen {
+    main {
+
+        div.forms-category {
+            margin-bottom: 30px;
+            // form category title
+            > h2 {
+                @include font-7l-l;
+                padding-bottom: 15px;
+                border-bottom: 1px solid black;
+            }
+            // the form wrapper
+            > ul {
+                // margin: 15px 0;
+                display: flex;
+                align-items: center;
+                // 
+                > li {
+                    position: relative;
+                    padding: 15px 0;
+                    padding-left: 30px;
+                    border-bottom: 1px solid transparentize(black, 0.8);
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: auto;
+                        content: '\e5c8';
+                        font-family: "Material Icons";
+                        color: $brand_colors-red;
+                        transform: rotate(0deg);
+                        transition: transform 0.4s ease;
+                    }
+                    &.js__collapsible_triggered {
+                        &:before {
+                            transform: rotate(90deg);
+                        }
+                        > h5:after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                    ul:not(.forms-category-relatedresources) {
+                        a {
+                            color: $brand_colors-red;
+                            &:hover {
+                                border-bottom: 2px solid $brand_colors-red;
+                            }
+                        }
+                        list-style-type: disc;
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 2.4rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                    > h5 {
+                        position: relative;
+                        @include font-3r-l;
+                        
+                        &:hover {
+                            &:after {
+                                color: $brand_colors-red;
+                            }
+                        }
+                    }
+                    // collapsible field content (initially hidden)
+                    >div {
+                        @include font-2l-l;
+                        margin-top: 15px;
+
+                        // files to download
+                        > p > a.neu__iconlink {
+                            @include neu__iconlink($icon : "\e2c4");
+                            color: $brand_colors-red;
+                            &:before {
+                                color: $brand_colors-red;
+                            }
+                        }
+                        h4 {
+                            @include font-2r-l;
+                            margin: 15px 0;
+                        }
+                        // related resources list
+                        > ul {
+                            display: inline-block;
+                            text-align: left;
+                            font-size: 0;
+                            width: 100%;
+                            > li {
+                                font-size: initial;
+                                display: inline-block;
+                                vertical-align: top;
+                                margin: 0 15px 15px 0;
+                                width: calc( 50% - 7.5px);
+                                &:nth-of-type(2n){
+                                    margin-right: 0;
+                                }
+                            }
+
+                            .neu__iconlink{
+                                @include neu__iconlink;
+                                &:before {
+                                    color: $brand_colors-red;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    // Hidden Content Wrapper
+    // main > section > div.forms-category > ul > li > div {
+        // padding-left: 30px;
+    // }
+}
+
+@media only screen and (max-width: $bp__lg){
+    main div.forms-category>h2 {
+        @include font-5l-l;
+    }
+    main div.forms-category>ul>li>h5 {
+        @include font-2r-l;
+    }
+}
+@media only screen and (max-width: $bp__md){
+    main div.forms-category>h2 {
+        @include font-3l-l;
+    }
+}
+
+@media only screen and (max-width: $bp__sm){
+    // Hidden Content Wrapper
+    main > section > div.forms-category > ul > li > div {
+        position: relative;
+        left: -30px;
+        width: calc(100% + 30px);
+    }
+}

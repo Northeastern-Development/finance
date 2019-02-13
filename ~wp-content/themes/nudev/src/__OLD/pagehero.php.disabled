@@ -1,0 +1,60 @@
+<?php
+/**
+ * Page Hero (bg img)
+ *  Notes:
+ *      for individual tool detail pages, title and description are not used,
+ *      instead, the hero contains only the post_title of that tool post
+ */
+
+    // get repeater field with hero images to be selected from
+    $images = get_fields(3472)['hero_images'];
+    // if we have any images
+    if( !empty($images) ){
+        // if over 1 image, randomize
+        if( count($images) > 1 ){
+            $hero_image = wp_get_attachment_image_src($images[mt_rand(0, count($images) - 1)]['image'], 'full');
+        }
+        // if just 1 image, dont randomize
+        else if( count($images) == 1 ){
+            $hero_image = wp_get_attachment_image_src($images[0]['image'], 'full');
+        }
+
+        // sprintf format for hero section
+        $format_hero = '
+            <section class="hero hero-image" style="background-image: url('.$hero_image[0].')">
+                <div>
+                    %s
+                    %s
+                </div>
+            </section>
+        ';
+        
+        // specific to the tool detail page, use the post_title determined within the template via query vars
+        if( is_page_template('templates/template-tool-detail.php') ){
+            $content_hero = sprintf(
+                $format_hero
+                ,( !empty($toolpost['post_title']) ) ? '<h1>'.$toolpost['post_title'].'</h1>' : null
+                ,null
+            );
+        }
+        // specific to the news detail page, use the post_title found in the $posts[0] object
+        // ( my gut is telling me if images are attached to news items in the index, they will be requested as the bg img of the detail page down the road )
+        if( is_page_template('templates/template-newsandevents-item.php') ){
+            $content_hero = sprintf(
+                $format_hero
+                ,( !empty($posts[0]->post_title) ) ? '<h1>'.$posts[0]->post_title.'</h1>' : null
+                ,null
+            );
+        }
+        // generally, use the dedicated hero_title and hero_description fields within the hero
+        else {   
+            $content_hero = sprintf(
+                $format_hero
+                ,( !empty($fields['hero_title'])  ) ? '<h1>'.$fields['hero_title'].'</h1>' : null
+                ,( !empty($fields['hero_description'])  ) ? '<h3>'.$fields['hero_description'].'</h3>' : null
+            );
+        }
+        // write hero into document
+        echo $content_hero;
+    }
+?>
