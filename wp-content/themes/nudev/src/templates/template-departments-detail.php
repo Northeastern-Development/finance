@@ -36,8 +36,8 @@
         $format_department
         // ,( !empty($fields['overview']) ) ? '<h2>Our Mission</h2><div>'.$fields['overview'].'</div>' : null
         ,( !empty($fields['overview']) ) ? '<div>'.$fields['overview'].'</div>' : null
-        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink neu__iconlink-phone" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
-        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink neu__iconlink-email" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a>' : null
+        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink neu__iconlink-phone" aria-label="Call '.$department[0]->post_title.'" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
+        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink neu__iconlink-email" aria-label="Call '.$department[0]->post_title.'" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a>' : null
     );
 
     
@@ -65,7 +65,7 @@
     if( !empty($tasks) ){
         $format_related_tasks = '
             <li>
-                <a class="neu__iconlink" href="%s" title="View %s">%s</a>
+                <a class="neu__iconlink" href="%s" title="View %s" aria-label="View %s">%s</a>
             </li>
         ';
         $content_related_tasks = '
@@ -77,6 +77,7 @@
             $content_related_tasks .= sprintf(
                 $format_related_tasks
                 ,site_url('/tasks/').$category.'/'.$task->post_name
+                ,$task->post_title
                 ,$task->post_title
                 ,$task->post_title
             );
@@ -110,7 +111,7 @@
     if( !empty($forms) ){
         $format_related_forms = '
             <li>
-                <a class="neu__iconlink" href="%s" title="View %s">%s</a>
+                <a class="neu__iconlink" href="%s" title="View %s" aria-label="View %s">%s</a>
             </li>
         ';
         $content_related_forms = '<h2>Related Forms</h2><ul>';
@@ -119,6 +120,7 @@
             $content_related_forms .= sprintf(
                 $format_related_forms
                 ,site_url().'/forms/'
+                ,$form->post_title
                 ,$form->post_title
                 ,$form->post_title
             );

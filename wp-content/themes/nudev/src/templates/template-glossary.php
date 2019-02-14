@@ -54,7 +54,7 @@
                 );
             }
             // jumpnav letter is active
-            $jumpnav .= '<span><a title="Scroll the page to letter '.strtoupper($letter).'" href="#'.$letter.'">'.strtoupper($letter).'</a></span>';
+            $jumpnav .= '<span><a title="Scroll the page to letter '.strtoupper($letter).'" aria-label="Scroll the page to letter '.strtoupper($letter).'" href="#'.$letter.'">'.strtoupper($letter).'</a></span>';
         }
         // letter has no posts
         else {

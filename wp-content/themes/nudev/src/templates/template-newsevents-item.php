@@ -47,7 +47,7 @@
         $format_update = '
             <h2>%s</h2>
             <h3>%s</h3>
-            <img src="%s">
+            <img src="%s" alt="%s">
             <div>%s</div>
         ';
         $content_update = sprintf(
@@ -57,6 +57,7 @@
                 ? $the_fields['category']->post_title
                 : null
             ,$the_fields['image']
+            ,$posts[0]->post_title
             ,$the_fields['details']
         );   
     }
@@ -71,7 +72,7 @@
                 //  Add a query string into the index page on the items so that when you click a news item and navigate to its detail page you pass the page number of the pagination
                 // into the url -- where we can look to see what page we were on in the index and go "back" to that page view
              ?>
-            <a class="neu__iconlink" title="Back to all News and Events" href="javascript:history.go(-1)">Back</a>
+            <a class="neu__iconlink" title="Back to all News and Events" aria-label="Back to all News and Events" href="javascript:history.go(-1)">Back</a>
         </p>
         
          <?php echo $content_update; ?>

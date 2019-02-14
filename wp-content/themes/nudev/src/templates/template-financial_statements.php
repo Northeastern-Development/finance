@@ -8,7 +8,7 @@
     $content = '';
 
     $guide = '
-        <a target="_blank" title="Download %s (opens in a new window)" href="%s">
+        <a target="_blank" title="Download %s (opens in a new window)" aria-label="Download %s" href="%s">
             <span>%s</span>
         </a>
     ';
@@ -16,6 +16,7 @@
     foreach( $fields['files'] as $file ){
         $content .= sprintf(
             $guide
+            ,$file['name']
             ,$file['name']
             ,$file['file']
             ,$file['name']

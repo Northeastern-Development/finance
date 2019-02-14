@@ -21,7 +21,7 @@
 
     $guide ='
         <li class="tools-grid-tool">
-            <a href="%s" title="%s">
+            <a href="%s" title="%s" aria-label="%s">
                 <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
                 <h5>%s</h5>
                 <h6>%s</h6>
@@ -47,7 +47,8 @@
         $content .= sprintf(
             $guide
             ,get_permalink($tool) . seoUrl($fields['groupings'][0]['title'])
-            ,'More information about ' . $tool->post_title
+            ,'View more information about ' . $tool->post_title
+            ,'View more information about ' . $tool->post_title
             ,$fields['image']
             ,$tool->post_title
             ,$fields['sub_title']

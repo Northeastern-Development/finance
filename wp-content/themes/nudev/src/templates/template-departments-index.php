@@ -17,7 +17,7 @@ $departments = get_posts($args);
 
 
 $format_department = '
-    <a href="%s"><h1>%s</h1></a>
+    <a href="%s" title="%s" aria-label="%s"><h1>%s</h1></a>
 ';
 $content_department = '';
 
@@ -26,6 +26,8 @@ foreach( $departments as $department ){
     $content_department .= sprintf(
         $format_department
         ,$permalink
+        ,$department->post_title
+        ,$department->post_title
         ,$department->post_title
     );
 }

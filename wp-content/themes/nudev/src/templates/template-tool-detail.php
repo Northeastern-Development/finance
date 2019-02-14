@@ -24,7 +24,7 @@
 
         $groupSelectorGuide = '
             <li class="%s">
-                <a href="%s" title="Filter to show information about %s ">%s</a>
+                <a href="%s" title="Filter to show information about %s" aria-label="Filter to show information about %s">%s</a>
             </li>
         ';
         $groupSelectorContent = '
@@ -42,6 +42,7 @@
                     $groupSelectorGuide
                     ,( seoUrl($grouping['title']) == $toolgrouping  ) ? 'tool-grouping-active' : null
                     ,get_permalink($toolpost['ID']) . seoUrl($grouping['title'])
+                    ,$grouping['title']
                     ,$grouping['title']
                     ,$grouping['title']
                 );
