@@ -5,7 +5,7 @@
 */
 
 // Desktop Nav
-@media only screen and (min-width: $nav_bp_dt) {
+@media only screen and (min-width: $bp__md) {
 
     // hide mobile nav
     #nu__mobile {
@@ -357,7 +357,7 @@
 }
 
 // Mobile Nav
-@media only screen and (max-width: $nav_bp_dt - 1) {
+@media only screen and (max-width: $bp__md) {
 
     // Hide Desktop Nav
     #nu__main-nav-desktop {
@@ -538,4 +538,16 @@
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
         @include font-3r-c;
     }
+}
+
+@media only screen and(max-width: $bp__sm){
+
+    header > div#header {
+        padding: 0;
+    }
+    header div#header .logo svg {
+        max-width: 180px;
+        margin-left: 15px;
+    }
+    
 }

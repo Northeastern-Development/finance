@@ -520,11 +520,11 @@
 		"oAP": "/category.php",
 		"oF": 0
 		},
-	"/classes/class.CPTs.php": {
+	"/classes/class.cpts.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/classes/class.CPTs.php",
+		"oAP": "/classes/class.cpts.php",
 		"oF": 0
 		},
 	"/classes/class.prefooter.php": {

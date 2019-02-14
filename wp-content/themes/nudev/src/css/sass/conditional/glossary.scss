@@ -8,25 +8,26 @@
 
     section#glossary {
 
-        // initial state in flow (not fixed until scrolled)
+        // alphabet jumpnav
         div.glossary-jumpnav {
-
             position: relative;
             width: 100%;
             display: flex;
             flex-flow: row wrap;
-            justify-content: space-around;
             background-color: white;
             z-index: 10;
-            padding: 0;
+            padding: 10px 0;
             border-bottom: 2px solid $brand_colors-gray;
+            // alphabet letter wrappers
             span {
                 display: inline-block;
                 min-width: 20px;
                 text-align: center;
-                flex: 1 1 auto;
+                flex: 0 1 auto;
                 color: $brand_colors-gray;
+                width: calc(100% / 26);
             }
+            // alphabet letter links (text)
             a {
                 display: inline-block;
                 width: 100%;
@@ -34,6 +35,7 @@
                 font-weight: 400;
                 z-index: 11;
                 border-bottom: 2px solid transparent;
+
                 &:hover {
                     color: $brand_colors-red;
                     border-bottom: 2px solid $brand_colors-red;
@@ -57,7 +59,7 @@
                 min-height: 30px; // provide space to h2 (letter) if there are no items
                 margin-top: 30px;
 
-                > li {
+                >li {
                     padding-bottom: 30px;
                     @include font-2l-l;
 
@@ -80,17 +82,21 @@
                             color: black;
                         }
                     }
+
                     ul {
                         a {
                             color: $brand_colors-red;
+
                             &:hover {
                                 border-bottom: 2px solid $brand_colors-red;
                             }
                         }
+
                         list-style-type: disc;
                         margin: 0;
                         padding: 0;
                         padding-left: 2.4rem;
+
                         li {
                             margin: 0;
                             padding: 0;
@@ -106,10 +112,10 @@
 
         div.glossary-jumpnav.js__glossnav_sticky {
             position: fixed;
-            top: 128px;
+            top: 124px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60vw;
+            width: 61vw; // need to extend width 1vw to hide all text visible behind it
         }
 
     }
@@ -118,16 +124,27 @@
 
 }
 
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
     section#glossary div.glossary-content>ul li:first-of-type:not(:last-child)>h2 {
         @include font-5l-l;
     }
+
     section#glossary div.glossary-content>ul li>h6 {
         @include font-2b-l;
     }
 }
-@media only screen and (max-width: $bp__md){
+
+@media only screen and (max-width: $bp__md) {
     section#glossary div.glossary-content>ul li:first-of-type:not(:last-child)>h2 {
         @include font-3l-l;
     }
+}
+
+@media only screen and (max-width: $bp__sm) {
+
+
+    section#glossary div.glossary-jumpnav.js__glossnav_sticky {
+        width: 90vw;
+    }
+
 }

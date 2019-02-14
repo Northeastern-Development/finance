@@ -25,7 +25,12 @@
                 
             },
             _loadHandler : function(e){
-                // check where we have scrolled to and do stuff
+                // if we load the screen scrolled past the hero stick the jumpnav
+                if( $(window).scrollTop() >= Finance.Glossary.offsetHero ){
+                    
+                    Finance.Glossary.jumpNav.addClass('js__glossnav_sticky');
+                }
+                
             },
             _scrollHandler : function(e){
                 if( $(window).scrollTop() >= Finance.Glossary.offsetHero ){
@@ -41,7 +46,7 @@
                 var jumpFrom = $(this).attr('href');
                 var jumpTo = $('div.glossary-content > ul'+jumpFrom).offset().top;
 
-                $('html, body').scrollTop(jumpTo - Finance.Glossary.offsetHeader - 120);
+                $('html, body').scrollTop(jumpTo - Finance.Glossary.offsetHeader - Finance.Glossary.jumpNav.outerHeight() );
                 
             }
             
