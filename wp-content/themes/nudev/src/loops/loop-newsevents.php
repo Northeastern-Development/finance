@@ -104,7 +104,7 @@ class NUNewsArchive{
 
         $guide = '
             <li>
-                <a href="%s" target="%s" title="View %s">
+                <a href="%s" target="%s" title="View %s" aria-label="View %s">
                     <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
                     <div>
                         <h3>%s</h3>
@@ -121,6 +121,7 @@ class NUNewsArchive{
             $guide
             ,$the_permalink
             ,$target
+            ,$a->post_title
             ,$a->post_title
             ,$b['image']
             ,$a->post_title

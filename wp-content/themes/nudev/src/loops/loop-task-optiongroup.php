@@ -42,7 +42,7 @@
     $format_the_video = '
         <li>
             <h5>%s</h5>
-            <a href="%s" class="js__youtube neu__iconlink" title="View %s video in lightbox">View Video</a>
+            <a href="%s" class="js__youtube neu__iconlink" title="View %s video in lightbox" aria-label="View %s video in lightbox">View Video</a>
         </li>
     ';
     
@@ -59,7 +59,7 @@
     // related files as a list
     $format_relatedfiles = '
         <li>
-            <a class="neu__iconlink" title="Click to download %s" target="_blank" href="%s">%s</a>
+            <a class="neu__iconlink" title="Click to download %s" aria-label="Click to download %s" target="_blank" href="%s">%s</a>
         </li>
     ';
     
@@ -77,6 +77,9 @@
             foreach( $option['related_files'] as $file){
                 $content_relatedfiles .= sprintf(
                     $format_relatedfiles
+                    ,( !empty($file['title']) )
+                        ? $file['title']
+                        : 'This File'
                     ,( !empty($file['title']) )
                         ? $file['title']
                         : 'This File'
@@ -108,7 +111,7 @@
                 ,$option['sidebar']['title']
                 ,$option['sidebar']['description']
                 , ( !empty($option['sidebar']['link']) ) // if we have a link to reference; render the link
-                    ? '<a title="Go to '.$option['sidebar']['link_name'].'" class="neu__iconlink" target="'.$target.'" href="'.$option['sidebar']['link'].'">'.$actiontext.'</a>'
+                    ? '<a title="Go to '.$option['sidebar']['link_name'].'" aria-label="Go to '.$option['sidebar']['link_name'].'" class="neu__iconlink" target="'.$target.'" href="'.$option['sidebar']['link'].'">'.$actiontext.'</a>'
                     : null
             );
         }
@@ -126,6 +129,7 @@
                     $format_the_video
                     ,$suboption['video']['title']
                     ,$suboption['video']['link']
+                    ,$suboption['video']['title']
                     ,$suboption['video']['title']
                 );
             }

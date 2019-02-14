@@ -77,13 +77,13 @@
     ';
     
     $format_files = '
-        <p><a class="neu__iconlink" href="%s" title="Download %s" target="_blank">%s</a></p>
+        <p><a class="neu__iconlink" href="%s" title="Download %s" aria-label="Download %s" target="_blank">%s</a></p>
     ';
 
     $format_blocks = '<h4>%s</h4>%s';
     $format_relresources = '
         <li>
-            <p><a class="neu__iconlink" %s href="%s" title="View this Related Resource">%s</a>
+            <p><a class="neu__iconlink" %s href="%s" title="View this Related Resource" aria-label="View this Related Resource">%s</a>
         </li>
     ';
 
@@ -111,6 +111,9 @@
                             $content_files .= sprintf(
                                 $format_files
                                 ,$file['file']
+                                ,( !empty($file['filename']) ) // TITLE ATTR
+                                    ? $file['filename']
+                                    : 'this file'
                                 ,( !empty($file['filename']) ) // TITLE ATTR
                                     ? $file['filename']
                                     : 'this file'

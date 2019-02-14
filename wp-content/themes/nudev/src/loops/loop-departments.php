@@ -20,7 +20,7 @@
         if( get_page_template_slug($post_id) == 'templates/template-about.php' ){
             $format_depts = '
                 <li>
-                    <a href="%s" title="View %s">
+                    <a href="%s" title="View %s" aria-label="View %s">
                         <div class="neu__bgimg">
                             <div style="background-image: url(%s)"></div>
                         </div>
@@ -34,6 +34,7 @@
                     $format_depts
                     ,get_permalink($rec->ID)
                     ,$rec->post_title
+                    ,$rec->post_title
                     ,$fields['featured_image']
                     ,$rec->post_title
                 );
@@ -43,7 +44,7 @@
     
             $format_depts = '
                 <li>
-                    <a class="neu__iconlink" href="%s" title="View %s Department">%s</a>
+                    <a class="neu__iconlink" href="%s" aria-label="View %s Department" title="View %s Department">%s</a>
                 </li>
             ';
     
@@ -51,6 +52,7 @@
                 $content_depts .= sprintf(
                     $format_depts
                     ,get_permalink($rec->ID)
+                    ,$rec->post_title
                     ,$rec->post_title
                     ,$rec->post_title
                 );

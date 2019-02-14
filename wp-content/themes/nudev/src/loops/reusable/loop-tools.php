@@ -25,7 +25,7 @@
 
     $content_tools = '<ul>';
 
-    $format_tools = '<li><a href="%s">%s</a></li>';
+    $format_tools = '<li><a href="%s" aria-label="View %s" title="View %s">%s</a></li>';
     foreach( $tools as $tool ){
 
         $fields = get_fields($tool);
@@ -33,6 +33,8 @@
         $content_tools .= sprintf(
             $format_tools
             ,site_url('/tools/') . $tool->post_name . '/' . seoUrl($fields['groupings'][0]['title'])
+            ,$tool->post_title
+            ,$tool->post_title
             ,$tool->post_title
         );
 

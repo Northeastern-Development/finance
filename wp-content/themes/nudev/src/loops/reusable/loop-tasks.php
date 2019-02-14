@@ -18,7 +18,7 @@ $args = array(
 $cats = get_posts($args);
 // Set : wrapper around loop, format strings
 $content_cats = '';
-$format_tasks = '<li><a href="%s">%s</a></li>';
+$format_tasks = '<li><a href="%s" title="%s" aria-label="%s">%s</a></li>';
 $format_cats = '<ul><h2>%s</h2>%s</ul>';
 // loop thru each task category
 foreach( $cats as $cat )
@@ -54,6 +54,8 @@ foreach( $cats as $cat )
         $content_tasks .= sprintf(
             $format_tasks
             ,site_url('/tasks/') . $cat->post_name.'/'.$task->post_name
+            ,$task->post_title
+            ,$task->post_title
             ,$task->post_title
         );
     }

@@ -50,10 +50,10 @@
             ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "Finance Division Leadership" : "Finance Division Leadership"
             ,$fields['description']
             , ( !empty($fields['phone']) )
-                ? '<a href="tel:'.$fields['phone'].'" title="Call '.$pres[0]->post_title.'" class="neu__iconlink neu__iconlink-phone">'.$fields['phone'].'</a>'
+                ? '<a href="tel:'.$fields['phone'].'" title="Call '.$pres[0]->post_title.'" aria-label="Call '.$pres[0]->post_title.'" class="neu__iconlink neu__iconlink-phone">'.$fields['phone'].'</a>'
                 : null
             , ( !empty($fields['email']) )
-                ? '<a href="mailto:'.$fields['email'].'" title="Email '.$pres[0]->post_title.'" class="neu__iconlink neu__iconlink-email">email</a>'
+                ? '<a href="mailto:'.$fields['email'].'" title="Email '.$pres[0]->post_title.'" aria-label="Email '.$pres[0]->post_title.'" class="neu__iconlink neu__iconlink-email">email</a>'
                 : null
         );
     

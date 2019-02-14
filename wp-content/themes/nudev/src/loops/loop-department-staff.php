@@ -64,16 +64,16 @@
                 ,$depthead[0]->post_title
                 ,$depthead_fields['title']
                 ,( !empty($depthead_fields['description']) )
-                    ? '<p><a title="View '.$depthead[0]->post_title.'\'s full profile" class="js__bio neu__iconlink" href="/staff/bio/'.$depthead[0]->post_name.'">View full profile</a></p>'
+                    ? '<p><a aria-label="View '.$depthead[0]->post_title.'\'s full profile" title="View '.$depthead[0]->post_title.'\'s full profile" class="js__bio neu__iconlink" href="/staff/bio/'.$depthead[0]->post_name.'">View full profile</a></p>'
                     : null
                 ,( !empty($depthead_fields['phone']) ) 
-                    ? '<p><a class="neu__iconlink neu__iconlink-phone" href="tel:'.$depthead_fields['phone'].'" title="Call '.$depthead[0]->post_title.'">'.$depthead_fields['phone'].'</a></p>' 
+                    ? '<p><a class="neu__iconlink neu__iconlink-phone" href="tel:'.$depthead_fields['phone'].'" aria-label="Call '.$depthead[0]->post_title.'" title="Call '.$depthead[0]->post_title.'">'.$depthead_fields['phone'].'</a></p>' 
                     : null
                 ,( !empty($depthead_fields['email']) ) 
-                    ? '<p><a class="neu__iconlink neu__iconlink-email" href="mailto:'.$depthead_fields['email'].'" title="Email '.$depthead[0]->post_title.'">email</a></p>' 
+                    ? '<p><a class="neu__iconlink neu__iconlink-email" href="mailto:'.$depthead_fields['email'].'" aria-label="Email '.$depthead[0]->post_title.'" title="Email '.$depthead[0]->post_title.'">email</a></p>' 
                     : null
                 ,( !empty($depthead_fields['url']) )
-                    ? '<p><a class="neu__iconlink neu__iconlink-url" href="'.$depthead_fields['url'].'" title="Visit '.strtolower($depthead_fields['department']->post_title ).'" target="_blank">Visit Website</a></p>'
+                    ? '<p><a class="neu__iconlink neu__iconlink-url" href="'.$depthead_fields['url'].'" aria-label="Visit '.strtolower($depthead_fields['department']->post_title ).'" title="Visit '.strtolower($depthead_fields['department']->post_title ).'" target="_blank">Visit Website</a></p>'
                     : null
                 ,$depthead_fields['headshot']['url']
                 
@@ -137,13 +137,13 @@
                     ,$staffmember->post_title
                     ,$staffmember_fields['title']
                     ,( !empty($staffmember_fields['phone']) ) 
-                        ? '<a class="neu__iconlink" href="tel:'.$staffmember_fields['phone'].'" title="Call '.$staffmember->post_title.'">'.$staffmember_fields['phone'].'</a>' 
+                        ? '<a class="neu__iconlink" href="tel:'.$staffmember_fields['phone'].'" aria-label="Call '.$staffmember->post_title.'" title="Call '.$staffmember->post_title.'">'.$staffmember_fields['phone'].'</a>' 
                         : null
                     ,( !empty($staffmember_fields['email']) )
-                        ? '<a class="neu__iconlink" href="mailto:'.$staffmember_fields['email'].'" title="Email '.$staffmember->post_title.'">email</a>'
+                        ? '<a class="neu__iconlink" href="mailto:'.$staffmember_fields['email'].'" aria-label="Email '.$staffmember->post_title.'" title="Email '.$staffmember->post_title.'">email</a>'
                         : null
                     ,( !empty($staffmember_fields['description']) )
-                        ? '<a class="neu__iconlink js__bio" href="/staff/bio/'.$staffmember->post_name.'" title="View '.$staffmember->post_title.'\'s full profile">View full profile</a>'
+                        ? '<a class="neu__iconlink js__bio" href="/staff/bio/'.$staffmember->post_name.'" aria-label="View '.$staffmember->post_title.'\'s full profile" title="View '.$staffmember->post_title.'\'s full profile">View full profile</a>'
                         : null
                 );
             }

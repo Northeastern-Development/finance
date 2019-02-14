@@ -57,9 +57,9 @@
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description']
-				,(!empty($managerFields['phone'])) ? '<a class="neu__iconlink" href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'"><i class="material-icons">phone</i><span>'.$managerFields['phone'].'</span></a><br />' : null
-                ,(!empty($managerFields['url'])) ? '<a class="neu__iconlink" href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a><br />' : null
-				,'<a class="neu__iconlink" href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team"><i class="material-icons">people</i><span>View Leadership</span></a>'
+				,(!empty($managerFields['phone'])) ? '<a class="neu__iconlink" href="tel:'.$managerFields['phone'].'" title="Call '.$manager[0]->post_title.'" aria-label="Call '.$manager[0]->post_title.'"><i class="material-icons">phone</i><span>'.$managerFields['phone'].'</span></a><br />' : null
+                ,(!empty($managerFields['url'])) ? '<a class="neu__iconlink" href="'.$managerFields['url'].'" title="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" aria-label="Visit '.strtolower($managerFields['department']->post_title ).' website [will open in new window]" target="_blank"><i class="material-icons">arrow_forward</i><span>Visit website</span></a><br />' : null
+				,'<a class="neu__iconlink" href="'.home_url().'/staff/'.str_replace(" ","-",strtolower($d->post_title)).'" title="Filter to show '.strtolower($d->post_title).' team" aria-label="Filter to show '.strtolower($d->post_title).' team"><i class="material-icons">people</i><span>View Leadership</span></a>'
             );
 			$departments .= '<section class="nu__slt">'.$department.'</section>';
 		}

@@ -26,7 +26,7 @@ $return = '';
 if( !empty($departments) ){
     $format_dept = '
         <li>
-            <a class="%s" href="%s" title="%s">%s <span>&#xE313;</span></a>
+            <a class="%s" href="%s" title="%s" aria-label="%s">%s <span>&#xE313;</span></a>
         </li>
     ';
     foreach ($departments as $dept) {
@@ -36,6 +36,7 @@ if( !empty($departments) ){
                 $format_dept
                 ,( $filter == $dept->post_name ) ? 'active' : null
                 ,site_url('/staff/' . $dept->post_name)
+                ,'Filter to show ' . $dept->post_title . ' team'
                 ,'Filter to show ' . $dept->post_title . ' team'
                 ,$dept->post_title
             );
