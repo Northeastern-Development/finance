@@ -1,6 +1,8 @@
 <?php 
 /**
  * Reusable Loop: Tools
+ * 
+ * ( not expressed in the theme )
  */
 
     $args = array(

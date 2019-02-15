@@ -1,5 +1,8 @@
 <?php 
-
+/**
+ *      Staff Loop for Department Detail Page
+ * 
+ */
     // determine currently loaded department
     $filter = get_query_var('department');
     // get the department post
@@ -51,7 +54,7 @@
                             %s
                         </div>
                         <div class="neu__bgimg">
-                            <div style="background-image: url(%s);"></div>
+                            <div style="background-image: url(%s);" aria-label="%s\'s profile picture"></div>
                         </div>
                     </article>
                 </section>
@@ -76,6 +79,7 @@
                     ? '<p><a class="neu__iconlink neu__iconlink-url" href="'.$depthead_fields['url'].'" aria-label="Visit '.strtolower($depthead_fields['department']->post_title ).'" title="Visit '.strtolower($depthead_fields['department']->post_title ).'" target="_blank">Visit Website</a></p>'
                     : null
                 ,$depthead_fields['headshot']['url']
+                ,$depthead[0]->post_title
                 
             );
             // verify department head content
@@ -114,7 +118,7 @@
             
             $format_deptstaff = '
                 <li>
-                    <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
+                    <div class="neu__bgimg"><div style="background-image: url(%s)" aria-label="%s\'s profile picture"></div></div>
                     <div>
                         <p>
                             <span>%s</span><br />
@@ -134,6 +138,7 @@
                 $content_deptstaff .= sprintf(
                     $format_deptstaff
                     ,$staffmember_fields['headshot']['url']
+                    ,$staffmember->post_title
                     ,$staffmember->post_title
                     ,$staffmember_fields['title']
                     ,( !empty($staffmember_fields['phone']) ) 

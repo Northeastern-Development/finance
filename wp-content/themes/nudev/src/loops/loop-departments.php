@@ -22,7 +22,7 @@
                 <li>
                     <a href="%s" title="View %s" aria-label="View %s">
                         <div class="neu__bgimg">
-                            <div style="background-image: url(%s)"></div>
+                            <div style="background-image: url(%s)" aria-label="%s image"></div>
                         </div>
                         <h3><span>%s</span></h3>
                     </a>
@@ -36,6 +36,7 @@
                     ,$rec->post_title
                     ,$rec->post_title
                     ,$fields['featured_image']
+                    ,$rec->post_title
                     ,$rec->post_title
                 );
             }

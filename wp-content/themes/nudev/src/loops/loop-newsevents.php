@@ -105,7 +105,7 @@ class NUNewsArchive{
         $guide = '
             <li>
                 <a href="%s" target="%s" title="View %s" aria-label="View %s">
-                    <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
+                    <div class="neu__bgimg"><div style="background-image: url(%s)" aria-label="%s image"></div></div>
                     <div>
                         <h3>%s</h3>
                         <h6>%s</h6>
@@ -124,6 +124,7 @@ class NUNewsArchive{
             ,$a->post_title
             ,$a->post_title
             ,$b['image']
+            ,$a->post_title
             ,$a->post_title
             ,( get_fields($b['category']->ID)['status'] == true )
                 ? $b['category']->post_title

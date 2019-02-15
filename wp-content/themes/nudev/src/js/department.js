@@ -32,8 +32,9 @@
         $(".js__bio").magnificPopup({
             // type: "iframe"
             type: "ajax",
+            closeMarkup: '<button title="%title%" aria-label="Close (Esc)" type="button" class="mfp-close">&#215;</button>            ',
             closeOnContentClick: false,
-            closeOnBgClick: false,
+            closeOnBgClick: true,
             enableEscapeKey: false,
             verticalFit: true,
             removalDelay: 300,

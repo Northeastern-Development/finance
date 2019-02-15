@@ -64,7 +64,7 @@
     $format_form = '
         <ul class="js__collapsible_list list" id="%s">
             <li>
-                <h5 title="Toggle the %s dropdown">%s</h5>
+                <h5 title="Toggle the %s dropdown" aria-label="Toggle the %s dropdown">%s</h5>
                 <div>
                     %s
                     %s
@@ -158,6 +158,7 @@
                 $content_form .= sprintf(
                     $format_form
                     ,seoUrl($form->post_title)
+                    ,$form->post_title
                     ,$form->post_title
                     ,$form->post_title
                     ,$content_files

@@ -7,7 +7,7 @@
     
     $guide = '
         <li>
-            <a class="neu__iconlink" href="%s" title="View this Related Task">%s</a>
+            <a class="neu__iconlink" href="%s" title="View this Related Task" aria-label="View this Related Task">%s</a>
         </li>
     ';
     
@@ -22,6 +22,7 @@
         $content .= sprintf(
             $guide
             , $modifiedurl
+            , $relTask['task']->post_title
             , $relTask['task']->post_title
         );
     }

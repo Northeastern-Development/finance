@@ -59,7 +59,7 @@ class PageHero
 
             // sprintf format string 
             $format_hero = '
-                <section class="hero hero-image" style="background-image: url(%s)">
+                <section class="hero hero-image" style="background-image: url(%s)" aria-label="%s hero image">
                     <div>
                         %s
                         %s
@@ -70,6 +70,7 @@ class PageHero
             $content_hero = sprintf(
                 $format_hero
                 ,$img[0]
+                ,$hero_title
                 ,( !empty($hero_title) ) ? '<h1>'.$hero_title.'</h1>' : null
                 ,( !empty($hero_description) ) ? '<h3>'.$hero_description.'</h3>' : null
             );

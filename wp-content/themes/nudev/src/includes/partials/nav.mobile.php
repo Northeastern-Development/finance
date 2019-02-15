@@ -20,7 +20,7 @@
     
     $format_cats = '
         <li>
-            <a class="toggle js-mobile-nav child" href="#">%s</a>
+            <a class="toggle js-mobile-nav child" href="javascript:;" title="Expand the %s task category" aria-label="Expand the %s task category">%s</a>
             <div class="inner">
                 <ul>
                     %s
@@ -28,7 +28,7 @@
             </div>
         </li>
     ';
-    $format_tasks = '<li><a href="%s">%s</a></li>';
+    $format_tasks = '<li><a href="%s" title="View the %s task" aria-label="View the %s task">%s</a></li>';
     foreach( $cats as $cat ){
         // get all active tasks within this category
         $args = array(
@@ -55,10 +55,14 @@
                 $format_tasks
                 ,site_url('/tasks/').$cat->post_name.'/'.$task->post_name
                 ,$task->post_title
+                ,$task->post_title
+                ,$task->post_title
             );
         }
         $content_cats .= sprintf(
             $format_cats
+            ,$cat->post_title
+            ,$cat->post_title
             ,$cat->post_title
             ,$content_tasks
         );
@@ -68,7 +72,7 @@
     <nav>
         <ul>
             <li>
-                <a class="toggle js-mobile-nav parent" href="javascript:void(0);">How Do I..</a>
+                <a class="toggle js-mobile-nav parent" href="javascript:;" title="Expand the Task Categories" aria-label="Expand the Task Categories">How Do I..</a>
                 <ul class="inner">
                     <?php echo $content_cats; ?>    
                 </ul>
@@ -94,7 +98,7 @@
                 echo $content_nav_links;
             ?>
             <li>
-                <a class="toggle js-mobile-nav parent" href="javascript:void(0);">About</a>
+                <a class="toggle js-mobile-nav parent" href="javascript:void(0);" title="Expand the About dropdown" aria-label="Expand the About dropdown">About</a>
                 <ul class="inner">
                     <?php 
                         $format_about_submenu_links = '<li><a href="%s" aria-label="View the %s page" title="View the %s page">%s</a></li>';

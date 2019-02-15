@@ -12,7 +12,7 @@
 
     $guide = '
         <li class="h2h-items-item">
-            <div class="neu__bgimg"><div style="background-image:url(%s)"></div></div>
+            <div class="neu__bgimg"><div style="background-image:url(%s)" aria-label="%s\'s profile picture"></div></div>
             <div>
                 %s
                 %s
@@ -43,6 +43,7 @@
         $content .= sprintf(
             $guide
             ,$subfields['headshot']['url']
+            ,$helper['helper']->post_title
             , (isset($helper['helper']->post_title)) 
                 ? '<h4>'.$helper['helper']->post_title.'</h4>' 
                 : null // post_title is name of staff member

@@ -18,8 +18,8 @@
     // the entire compiled option, including sidebar, related files, suboptions etc
     $format_option = '
         <li>
-            <div>
-                <h5 title="Toggle dropdown for %s">%s<span>%s</span></h5>
+            <div title="Toggle dropdown for %s" aria-label="Toggle dropdown for %s">
+                <h5>%s<span>%s</span></h5>
                 %s
             </div>
             <ul class="list task-options-list-item-suboptions %s neu__fancy_bullets">
@@ -106,8 +106,7 @@
 
             $content_sidebar .= sprintf(
                 $format_sidebar
-                // ,( $option['sidebar']['image'] ) ? '<img src="'.$option['sidebar']['image'].'">' : null
-                ,( $option['sidebar']['image'] ) ? '<div style="background-image: url('.$option['sidebar']['image'].'"></div>' : null
+                ,( $option['sidebar']['image'] ) ? '<div style="background-image: url('.$option['sidebar']['image'].'" aria-label="'.$option['sidebar']['title'].'"></div>' : null
                 ,$option['sidebar']['title']
                 ,$option['sidebar']['description']
                 , ( !empty($option['sidebar']['link']) ) // if we have a link to reference; render the link
@@ -146,6 +145,7 @@
         // after all the bits are compiled, bring them all together as a complete option grouping
         $content_option .= sprintf(
             $format_option
+            ,$option['title']
             ,$option['title']
             ,'<i class="material-icons">check</i>'
             ,$option['title']

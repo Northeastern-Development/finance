@@ -26,7 +26,7 @@
     $format_tools = '
         <li>
             <a href="%s" title="View %s" aria-label="View %s">
-                <div><div style="background-image: url(%s)"></div></div>
+                <div><div style="background-image: url(%s)" aria-label="%s image"></div></div>
                 <h5>%s</h5>
             </a>
         </li>
@@ -39,6 +39,7 @@
             ,$rec->post_title
             ,$rec->post_title
             ,$fields['image']
+            ,$rec->post_title
             ,$rec->post_title
         );
     }
@@ -70,7 +71,7 @@
     $format_news = '
         <li>
             <a href="%s" target="%s" title="View %s" aria-label="View %s">
-                <div><div style="background-image: url(%s)"></div></div>
+                <div><div style="background-image: url(%s)" aria-label="%s image"></div></div>
                 <h5>%s</h5>
                 <h5>%s</h5>
                 <p>%s</p>
@@ -96,6 +97,7 @@
             ,$rec->post_title
             ,$rec->post_title
             ,$fields['image']
+            ,$rec->post_title
             ,$rec->post_title
             ,( get_fields( $fields['category']->ID )['status'] == true )
                 ? $fields['category']->post_title

@@ -2,6 +2,9 @@
 /**
  * Reusable Loop: Tasks
  * Basic Tasks Query by Department
+ * 
+ *  Not expressed in the theme
+ * 
  */
 // get all active task categories
 $args = array(

@@ -29,7 +29,7 @@
         // (empty div is a darkened overlay)
         $guide = '
             <section class="nu__president">
-                <div style="background-image: url(%s);">
+                <div style="background-image: url(%s);" aria-label="%s\'s profile image">
                     <div></div>
                     <p><span>%s</span><br />%s</p>
                 </div>
@@ -45,6 +45,7 @@
         $president = sprintf(
             $guide
             ,$fields['headshot']['url']
+            ,$pres[0]->post_title
             ,$pres[0]->post_title
             ,$fields['title']
             ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "Finance Division Leadership" : "Finance Division Leadership"

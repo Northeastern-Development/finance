@@ -47,7 +47,7 @@
         $format_update = '
             <h2>%s</h2>
             <h3>%s</h3>
-            <img src="%s" alt="%s">
+            <img src="%s" alt="%s image" aria-label="%s image">
             <div>%s</div>
         ';
         $content_update = sprintf(
@@ -57,6 +57,7 @@
                 ? $the_fields['category']->post_title
                 : null
             ,$the_fields['image']
+            ,$posts[0]->post_title
             ,$posts[0]->post_title
             ,$the_fields['details']
         );   

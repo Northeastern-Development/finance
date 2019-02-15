@@ -28,7 +28,7 @@ function posts_review_hidden(){
     #view-post-btn,
     span.view,
     a.editor-post-preview{
-                    display: none !important;
+        display: none !important;
     }
     </style>
 <?php
@@ -105,35 +105,24 @@ if (function_exists('add_theme_support'))
 
 // add custom query tags here
 function myplugin_rewrite_tag() {
-
-    add_rewrite_tag( '%pagedd%', '([^&]+)' );    // Deadlines
-
-
-    
-  add_rewrite_tag( '%team-filter%', '([^&]+)' );    // Staff
-  add_rewrite_tag( '%show-bio%', '([^&]+)' );	    // Bio (staff lightbox)
-  
-  add_rewrite_tag( '%taskname%', '([^&]+)' );	    // Tasks
-  add_rewrite_tag( '%taskcat%', '([^&]+)' );	    // Tasks
-
-  add_rewrite_tag( '%newsitem%', '([^&]+)' );	    // News/Events Detail
-  add_rewrite_tag( '%department%', '([^&]+)' );	    // Department Detail
-  add_rewrite_tag( '%toolname%', '([^&]+)' );	    // Tools
-  add_rewrite_tag( '%toolgroup%', '([^&]+)' );	    // Tools
-    
+    add_rewrite_tag( '%pagedd%', '([^&]+)' );           // Deadlines
+    add_rewrite_tag( '%team-filter%', '([^&]+)' );      // Staff
+    add_rewrite_tag( '%show-bio%', '([^&]+)' );	        // Bio (staff lightbox)
+    add_rewrite_tag( '%taskname%', '([^&]+)' );	        // Tasks
+    add_rewrite_tag( '%taskcat%', '([^&]+)' );	        // Tasks
+    add_rewrite_tag( '%newsitem%', '([^&]+)' );	        // News/Events Detail
+    add_rewrite_tag( '%department%', '([^&]+)' );	    // Department Detail
+    add_rewrite_tag( '%toolname%', '([^&]+)' );	        // Tools
+    add_rewrite_tag( '%toolgroup%', '([^&]+)' );	    // Tools
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
 // add custom rewrite rules here
 function custom_rewrite_rule() {
-    // 
     add_rewrite_rule('^deadlines/page/([^/]*)?', 'index.php?page_id=4572&pagedd=$matches[1]', 'top');
-    // 
-    
     add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');
     add_rewrite_rule('^news-events/([^/]*)?', 'index.php?page_id=3286&newsitem=$matches[1]', 'top');
     add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page
-    // Finance Site (staff section) rewrite rules
     add_rewrite_rule('^staff/bio/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
     add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
     // Tasks:
@@ -177,29 +166,25 @@ function nudev_nav()
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 function special_nav_class($classes, $item){
 
-  $checkNav = array("affiliated-faculty","events","location");
+    $checkNav = array("affiliated-faculty","events","location");
 
-  foreach($checkNav as $cN){
-    $postCats = get_the_category();
-    if(strtolower($item->title) === $cN){
-      foreach($postCats as $pC){
-        $test = $pC;
-        if(strtolower($test->slug) === $cN){
-          $classes[] = 'current-menu-item';
+    foreach($checkNav as $cN){
+        $postCats = get_the_category();
+        if(strtolower($item->title) === $cN){
+            foreach($postCats as $pC){
+                $test = $pC;
+                if(strtolower($test->slug) === $cN){
+                    $classes[] = 'current-menu-item';
+                }
+            }
         }
-      }
     }
-  }
-
-  if(!get_query_var('s')){
-    if( in_array('current-menu-item', $classes) ){
-           $classes[] = 'active ';
+    if(!get_query_var('s')){
+        if( in_array('current-menu-item', $classes) ){
+                $classes[] = 'active ';
+        }
     }
-  }
-
-  return $classes;
-
-
+    return $classes;
 }
 
 // Async load

@@ -19,7 +19,7 @@ $format_overlay = '
             <p>%s</p>
             <p>%s</p>
         </div>
-        <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
+        <div class="neu__bgimg"><div style="background-image: url(%s)" aria-label="%s\'s profile picture"></div></div>
     </div>
     <div class="about">
         <h3>About</h3>
@@ -33,6 +33,7 @@ $content_overlay = sprintf(
     , ( !empty($fields['email']) ) ? '<a class="neu__iconlink" href="'.$fields['email'].'" aria-label="Email '.$res->post_title.'" title="Email '.$res->post_title.'" class="email">' . $fields['email'] . '</a>' : null
     , ( !empty($fields['phone']) ) ? '<a class="neu__iconlink" href="tel:'.$fields['phone'].'" aria-label="Call '.$res->post_title.'" title="Call '.$res->post_title.'" class="phone">' . $fields['phone'] . '</a>' : null
     , $fields['headshot']['url']
+    ,$res->post_title
     , $fields['description']
 );
 ?>

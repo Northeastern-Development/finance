@@ -61,7 +61,7 @@
 
         $format_group = '
             <div class="tool-group">
-                <h4 title="Toggle dropdown for %s">%s</h4>
+                <h4 title="Toggle dropdown for %s" aria-label="Toggle dropdown for %s">%s</h4>
                 <ul class="neu__fancy_bullets">
                     %s
                 </ul>
@@ -86,6 +86,7 @@
 
                 $content_group .= sprintf(
                     $format_group
+                    ,$group['title']
                     ,$group['title']
                     ,$group['title']
                     ,$content_infoblocks

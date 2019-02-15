@@ -22,7 +22,7 @@
     $guide ='
         <li class="tools-grid-tool">
             <a href="%s" title="%s" aria-label="%s">
-                <div class="neu__bgimg"><div style="background-image: url(%s)"></div></div>
+                <div class="neu__bgimg"><div style="background-image: url(%s)" aria-label="%s image"></div></div>
                 <h5>%s</h5>
                 <h6>%s</h6>
                 <p>%s</p>
@@ -50,6 +50,7 @@
             ,'View more information about ' . $tool->post_title
             ,'View more information about ' . $tool->post_title
             ,$fields['image']
+            ,$tool->post_title
             ,$tool->post_title
             ,$fields['sub_title']
             ,$fields['short_description']
