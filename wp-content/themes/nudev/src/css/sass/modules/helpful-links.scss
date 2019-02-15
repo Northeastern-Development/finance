@@ -44,7 +44,8 @@
                         }
 
                         &:hover,
-                        &:focus {
+                        &:focus,
+                        &:active {
                             >p:last-of-type span {
                                 border-bottom: 2px solid $brand_colors-red;
                                 color: $brand_colors-red;

@@ -140,7 +140,9 @@ main {
                         position: relative;
                     }
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         >h3>span {
                             // border-bottom: 2px solid $brand_colors-red;
 

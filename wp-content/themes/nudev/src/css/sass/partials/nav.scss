@@ -16,6 +16,7 @@
     label#neu__navicon-label {
         display: none;
     }
+
     // hide checkbox without removing from dom
     input#neu__navicon {
         position: absolute;
@@ -50,7 +51,9 @@
                     color: rgba(255, 255, 255, 0.8);
                     border-bottom: 5px solid transparent;
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         color: rgba(255, 255, 255, 1);
                         border-bottom: 5px solid $brand_colors-red;
                     }
@@ -156,7 +159,9 @@
                     text-transform: uppercase;
                     cursor: pointer;
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         color: white;
                         background-color: transparentize(black, 0.5);
                     }
@@ -214,7 +219,9 @@
                         margin-bottom: 15px;
                     }
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         >h4>span {
                             border-bottom: 2px solid $brand_colors-red;
                         }
@@ -264,12 +271,14 @@
                 >div.theFilter>ul {
                     display: block;
                     column-count: 4;
+
                     li {
                         display: inline-block;
                         vertical-align: top;
                         width: 90%;
                         text-align: left;
                         padding: 10px 0;
+
                         // (restyle the duplicate task category title inside the newly revealed list of tasks)
                         >h4 {
                             @include font-2r-l;
@@ -294,7 +303,9 @@
                                 border-bottom: 2px solid transparent;
                             }
 
-                            &:hover {
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 >span {
                                     border-bottom: 2px solid $brand_colors-red;
                                 }
@@ -347,7 +358,9 @@
                     border-bottom: 1px solid $brand_colors-gray;
                 }
 
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     background-color: $brand_colors-beige;
                     color: black;
                 }
@@ -372,7 +385,7 @@
         top: 123px;
         max-height: calc(100% - 127px);
         overflow: auto;
-        
+
         left: 2.5%;
         width: 95%;
     }
@@ -417,7 +430,9 @@
                 }
 
                 // hover over line item
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     background-color: $brand_colors-beige;
                     color: black;
                 }
@@ -426,7 +441,10 @@
             // dont overlap the containers border (hide border if overing over 'contact us'
             &:last-of-type {
                 >a {
-                    &:hover {
+
+                    &:hover,
+                    &:active,
+                    &:focus {
                         &:last-of-type {
                             border-bottom: 1px solid transparent;
                         }
@@ -523,31 +541,35 @@
 }
 
 
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
         @include font-5r-c;
     }
+
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h3 {
         @include font-2b-c;
     }
+
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child .removefilter {
         @include font-2l-c;
     }
 }
-@media only screen and (max-width: $bp__md){
+
+@media only screen and (max-width: $bp__md) {
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
         @include font-3r-c;
     }
 }
 
-@media only screen and(max-width: $bp__sm){
+@media only screen and(max-width: $bp__sm) {
 
-    header > div#header {
+    header>div#header {
         padding: 0;
     }
+
     header div#header .logo svg {
         max-width: 180px;
         margin-left: 15px;
     }
-    
+
 }

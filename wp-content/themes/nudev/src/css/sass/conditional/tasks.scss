@@ -19,7 +19,8 @@
 
             &.related-tasks {
                 margin-bottom: 40px;
-                > ul {
+
+                >ul {
                     width: 100%;
                 }
             }
@@ -64,6 +65,7 @@
                                 >a.js__youtube {
                                     @include neu__iconlink();
                                     color: $brand_colors-red;
+
                                     &:before {
                                         color: $brand_colors-red;
                                     }
@@ -104,6 +106,7 @@
                                 >a {
                                     @include neu__iconlink();
                                     color: $brand_colors-red;
+
                                     &:before {
                                         color: $brand_colors-red;
                                     }
@@ -154,7 +157,9 @@
                     a {
                         color: $brand_colors-red;
 
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
@@ -175,12 +180,13 @@
 
     main>section .task-options-list>li {
         &.js__tasks_viewable_steps {
-            > div > h5 {
+            >div>h5 {
                 &:after {
                     transform: rotate(180deg);
                 }
             }
         }
+
         // the task option grouping main info (title, description, icon etc)
         >div {
             position: relative;
@@ -233,9 +239,11 @@
 
             @include font-2l-l;
 
-            
 
-            &:hover {
+
+            &:hover,
+            &:active,
+            &:focus {
                 >h5 {
                     &:after {
                         // transform: rotate(180deg);

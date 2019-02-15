@@ -18,6 +18,7 @@
             z-index: 10;
             padding: 10px 0;
             border-bottom: 2px solid $brand_colors-gray;
+
             // alphabet letter wrappers
             span {
                 display: inline-block;
@@ -27,6 +28,7 @@
                 color: $brand_colors-gray;
                 width: calc(100% / 26);
             }
+
             // alphabet letter links (text)
             a {
                 display: inline-block;
@@ -36,7 +38,9 @@
                 z-index: 11;
                 border-bottom: 2px solid transparent;
 
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     color: $brand_colors-red;
                     border-bottom: 2px solid $brand_colors-red;
                 }
@@ -87,7 +91,9 @@
                         a {
                             color: $brand_colors-red;
 
-                            &:hover {
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 border-bottom: 2px solid $brand_colors-red;
                             }
                         }

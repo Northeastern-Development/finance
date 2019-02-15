@@ -3,12 +3,14 @@
         @include font-7l-l;
     }
 }
-@media only screen and (max-width: $bp__lg){
+
+@media only screen and (max-width: $bp__lg) {
     main>section>h2 {
         @include font-5l-l;
     }
 }
-@media only screen and (max-width: $bp__md){
+
+@media only screen and (max-width: $bp__md) {
     main>section>h2 {
         @include font-3l-l;
         padding-bottom: 15px;
@@ -17,9 +19,10 @@
 
 @media only screen {
     main {
-        > section {
+        >section {
+
             // Large Section Headings
-            > h2 {
+            >h2 {
                 padding-bottom: 15px;
                 margin-bottom: 15px;
                 border-bottom: 1px solid black;
@@ -27,15 +30,18 @@
         }
     }
 
-    html.neu__noscroll, html body.neu__noscroll {
+    html.neu__noscroll,
+    html body.neu__noscroll {
         overflow: hidden;
         position: fixed;
         top: 0;
         left: 0;
     }
+
     div#nu__globalheader {
         width: 100%; // overriding 100vw
     }
+
     div.wrapper {
         flex: 1 0 auto;
         max-width: $wrapper-width;
@@ -43,6 +49,7 @@
         width: 100%; // overriding 100vw
         margin-top: 124px;
     }
+
     .nu__content_btn {
         letter-spacing: 1px;
         display: inline-block;
@@ -52,15 +59,21 @@
         color: black;
         text-transform: uppercase;
         @include font-2l-c;
-        &:hover {
+
+        &:hover,
+        &:active,
+        &:focus {
             background-color: rgba(0, 0, 0, 0.3);
         }
     }
+
     .neu__bgimg {
-        @include neu__bgimg( $height : 245px );
+        @include neu__bgimg($height: 245px);
     }
+
     // outer container
     main {
+
         // inner container
         >section {
             position: relative;
@@ -81,11 +94,13 @@
             margin: 0;
             overflow: hidden;
             text-align: center;
+
             >div {
                 width: $content-width-narrow;
                 // margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
                 margin: 60px auto;
                 color: rgba(white, 1.0);
+
                 // page title
                 >h1 {
                     color: rgba(white, 1.0);
@@ -188,26 +203,29 @@
             }
         }
 
-        
+
         >section:last-child {
             // margin: ($gutter * 1.7) auto 0 auto;
             // padding-bottom: ($gutter * 1.5);
             margin-bottom: 60px;
         }
 
-        
+
     }
 }
+
 // Scale Hero Title & Description
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
     main>section.hero>div>h1 {
         @include font-hero-md-c;
     }
+
     main>section.hero>div>h3 {
         @include font-2l-c;
     }
 }
-@media only screen and (max-width: $bp__sm){
+
+@media only screen and (max-width: $bp__sm) {
     main>section.hero>div>h1 {
         @include font-5l-c;
     }
@@ -268,6 +286,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 959px) {
     div.main {
         section.hero {
@@ -287,7 +306,7 @@
         }
 
         section {
-            width: $content-width-960;  // try to depricate this madness
+            width: $content-width-960; // try to depricate this madness
 
             >ul:not(.nu__grid-filters-options, .nu__grid) {
                 flex-wrap: wrap;
@@ -304,6 +323,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 620px) {
     div.main {
         section.intro {
@@ -328,6 +348,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 440px) {
     div.main {
         section.fullwidth {
@@ -342,11 +363,11 @@
 
 // ADDITIONAL TWEAKS AS I NEED THEM BELOW:
 
-@media only screen and (max-width: $bp__sm){
+@media only screen and (max-width: $bp__sm) {
     div.wrapper {
         >main {
             >section.hero {
-                > div {
+                >div {
                     width: 90%;
                     text-align: center;
                 }
@@ -354,31 +375,35 @@
         }
     }
 }
+
 @media only screen {
-    
-    
+
+
     div.wrapper {
-        > main {
+        >main {
+
             // any el with these 2 classes must be a view profile button
             .js__bio.neu__iconlink {
                 @include neu__iconlink($icon: "\e7fd");
             }
-        
+
             // default width for section elements directly within the main element (page wrapper)
-            > section {
+            >section {
+
                 // width: 90%;
                 &.hero {
                     width: 100%;
                 }
             }
         }
-        
+
     }
-    
+
     // LETS DO SOME FANCY BULLETS HUH
     ul.neu__fancy_bullets {
         position: relative;
         padding-left: 30px;
+
         &:before {
             content: '';
             width: 1px;
@@ -389,8 +414,10 @@
             left: 8px;
             opacity: 0.3;
         }
-        > li {
+
+        >li {
             position: relative;
+
             &:before {
                 left: -27px;
                 position: absolute;
@@ -402,10 +429,12 @@
                 height: 12px;
                 border-radius: 50%;
             }
-            > h5 {
+
+            >h5 {
                 @include font-2r-l;
             }
-            > p {
+
+            >p {
                 @include font-2l-l;
             }
         }
@@ -417,18 +446,19 @@
             box-shadow: 1px 1px 5px $brand_colors-gray;
         }
     }
-    
+
     div.main,
     main {
-        
+
 
 
         ul.js__collapsible_list {
-            > li > h5 {
+            >li>h5 {
                 cursor: pointer;
                 @include font-3b-l;
                 position: relative;
                 padding-right: 20px;
+
                 &:after {
                     transition: transform 0.4s ease;
                     content: '\e313';
@@ -439,6 +469,7 @@
                     display: inline-block;
                     font-family: 'Material Icons';
                 }
+
                 &.js__collapsible_triggered {
                     &:after {
                         transform: rotate(180deg);
@@ -473,49 +504,65 @@
             margin: 0;
             margin-top: 30px;
 
-            > li {
+            >li {
                 border-bottom: 1px solid transparentize(black, 0.5);
-                
+
                 >h5 {
                     @include font-2r-l;
                     margin: 15px 0;
-                    > span {
+
+                    >span {
                         border-bottom: 2px solid transparent;
                     }
-                    &:hover {
-                        &:after { // carrot becomes red
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        &:after {
+                            // carrot becomes red
                             color: $brand_colors-red;
                         }
-                        > span { // text is underlined
+
+                        >span {
+                            // text is underlined
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
                 }
-                &.js__collapsible_triggered{
-                    > h5:after { // carrot becomes red
+
+                &.js__collapsible_triggered {
+                    >h5:after {
+                        // carrot becomes red
                         // color: $brand_colors-red;
                         transform: rotate(180deg);
                     }
-                }              
+                }
 
                 >div {
                     @include font-2l-l;
                     cursor: initial;
                     padding-bottom: 15px;
-                    > p {
+
+                    >p {
                         margin-bottom: 15px;
                     }
+
                     ul {
                         a {
                             color: $brand_colors-red;
-                            &:hover {
+
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 border-bottom: 2px solid $brand_colors-red;
                             }
                         }
+
                         list-style-type: disc;
                         margin: 0;
                         padding: 0;
                         padding-left: 2.4rem;
+
                         li {
                             margin: 0;
                             padding: 0;
@@ -536,26 +583,34 @@
                 font-size: 0;
                 text-align: left;
                 display: inline-block;
-                > li {
+
+                >li {
                     position: relative;
                     display: inline-block;
                     vertical-align: top;
                     font-size: initial;
                     margin: 0 15px 15px 0;
-                    width: calc( 50% - 7.5px);
-                    &:nth-of-type(2n){
+                    width: calc(50% - 7.5px);
+
+                    &:nth-of-type(2n) {
                         margin-right: 0;
                     }
 
                     @include neu__iconlink($hover:0);
                     border-bottom: none;
+
                     a {
                         border-bottom: 2px solid transparent;
-                        &:hover {
+
+                        &:hover,
+                        &:active,
+                        &:focus {
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
+
                     padding-left: 30px;
+
                     &:before {
                         position: absolute;
                         top: 0;
@@ -567,12 +622,13 @@
         }
     }
 }
-@media only screen and (max-width: $bp__sm){
-    div.wrapper > main {
+
+@media only screen and (max-width: $bp__sm) {
+    div.wrapper>main {
 
         section.related-tasks {
-            > ul {
-                > li {
+            >ul {
+                >li {
                     flex: none;
                     margin: 0;
                     margin-bottom: 15px;
@@ -599,45 +655,54 @@ $width: 90vw;
 
     $col: 6;
 
-    div.wrapper > main > section.heretohelp {
-        > h2 {
+    div.wrapper>main>section.heretohelp {
+        >h2 {
             width: 60vw;
             margin: 0 auto;
             margin-bottom: 30px;
         }
+
         width: $width;
-        > ul {
+
+        >ul {
             width: $width;
             display: block;
             font-size: 0;
-            > li {
+
+            >li {
                 font-size: initial;
                 display: inline-block;
                 vertical-align: top;
                 // for grid
                 width: (($width - (($col - 1) * $space)) / $col);
                 margin: 0 $space $space 0;
+
                 // for grid
                 &:nth-child(#{$col}n) {
                     margin-right: 0;
                 }
+
                 // bg img
-                > div.neu__bgimg {
+                >div.neu__bgimg {
                     width: (($width - (($col - 1) * $space)) / $col);
                     height: (($width - (($col - 1) * $space)) / $col);
                 }
+
                 // content
-                > div:not(.neu__bgimg){
-                    > h4 {
+                >div:not(.neu__bgimg) {
+                    >h4 {
                         @include font-2r-l;
                     }
-                    > a.neu__iconlink {
-                        @include neu__iconlink($icon : "\e551");
+
+                    >a.neu__iconlink {
+                        @include neu__iconlink($icon: "\e551");
                     }
-                    > a.neu__iconlink:last-of-type {
-                        @include neu__iconlink($icon : "\e0be");
+
+                    >a.neu__iconlink:last-of-type {
+                        @include neu__iconlink($icon: "\e0be");
                     }
-                    > a.neu__iconlink:first-of-type {
+
+                    >a.neu__iconlink:first-of-type {
                         margin-top: 15px;
                     }
                 }
@@ -647,18 +712,20 @@ $width: 90vw;
 }
 
 // larger breakpoint 4 columns
-@media only screen and (max-width: $bp__lg){
-   
+@media only screen and (max-width: $bp__lg) {
+
     $col: 4;
 
-    div.wrapper > main > section.heretohelp {
-        > ul {
-            > li {
+    div.wrapper>main>section.heretohelp {
+        >ul {
+            >li {
                 width: (($width - (($col - 1) * $space)) / $col);
+
                 &:nth-child(#{$col}n) {
                     margin-right: 0;
                 }
-                > div.neu__bgimg {
+
+                >div.neu__bgimg {
                     width: (($width - (($col - 1) * $space)) / $col);
                     height: (($width - (($col - 1) * $space)) / $col);
                 }
@@ -668,21 +735,24 @@ $width: 90vw;
 }
 
 // middle breakpoint 3 columns
-@media only screen and (max-width: $bp__md){
-   
+@media only screen and (max-width: $bp__md) {
+
     $col: 3;
 
-    div.wrapper > main > section.heretohelp {
-        > ul {
-            > li {
+    div.wrapper>main>section.heretohelp {
+        >ul {
+            >li {
                 width: (($width - (($col - 1) * $space)) / $col);
-                &:nth-child(4n){
+
+                &:nth-child(4n) {
                     margin-right: $space;
                 }
+
                 &:nth-child(#{$col}n) {
                     margin-right: 0;
                 }
-                > div.neu__bgimg {
+
+                >div.neu__bgimg {
                     width: (($width - (($col - 1) * $space)) / $col);
                     height: (($width - (($col - 1) * $space)) / $col);
                 }
@@ -692,26 +762,30 @@ $width: 90vw;
 }
 
 // smallest breakpoint becomes 1 column
-@media only screen and (max-width: $bp__sm){
+@media only screen and (max-width: $bp__sm) {
     $col: 1;
-    div.wrapper > main > section.heretohelp {
-        > h2 {
+
+    div.wrapper>main>section.heretohelp {
+        >h2 {
             width: $width;
         }
-        > ul {
-            > li {
+
+        >ul {
+            >li {
                 width: (($width - (($col - 1) * $space)) / $col);
                 margin: 0;
                 margin-bottom: 30px;
                 display: flex;
                 flex-flow: row nowrap;
-                > div.neu__bgimg {
+
+                >div.neu__bgimg {
                     width: 43vw;
                     height: 43vw;
                     margin: 0;
                     margin-right: $space;
                 }
-                > div {
+
+                >div {
                     flex: 1 1 43vw;
                 }
             }
@@ -719,115 +793,8 @@ $width: 90vw;
     }
 }
 
-
-
-
-
-// Here To Help Section:
-// @media only screen {
-//     $space: 2vw;
-//     $width : 90vw;
-//     $col : 3;
-//     div.wrapper > main {
-//         section.heretohelp {
-//             width: $width;
-//             > ul {
-//                 width: $width;
-//                 > li {
-//                     vertical-align: top;
-//                     font-size: initial;
-//                     display: flex;
-//                     flex-flow: row nowrap;
-//                     margin: 0 $space $space 0;
-//                     > div {
-//                         width: (($width / 2) - $space);
-//                         height: (($width / 2) - $space);
-//                     }
-//                     > div.neu__bgimg {
-//                         // margin-right: $space;
-//                     }
-//                     > div:not(.neu__bgimg){
-//                         > h4 {
-//                             @include font-2r-l;
-//                         }
-//                         > a.neu__iconlink {
-//                             @include neu__iconlink($icon : "\e551");
-//                         }
-//                         > a.neu__iconlink:last-of-type {
-//                             @include neu__iconlink($icon : "\e0be");
-//                         }
-//                         > a.neu__iconlink:first-of-type {
-//                             margin-top: 15px;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-// @media only screen and (min-width: $bp__sm){
-//     $width: 90vw;
-//     $col: 3;
-//     $space: 2vw;
-
-//     div.wrapper > main {
-//         section.heretohelp {
-//             width: $width;
-//             > ul {
-//                 width: $width;
-//                 > li {
-//                     width: (($width - (($col - 1) * $space)) / $col);
-//                     margin: 0 $space $space 0;
-//                     &:nth-child(#{$col}n) {
-//                         margin-right: 0;
-//                     }
-//                     > div {
-//                         width: auto;
-//                         height: auto;
-//                     }
-//                     > div.neu__bgimg {
-//                         width: (($width - (($col - 1) * $space)) / $col);
-//                         height: (($width - (($col - 1) * $space)) / $col);
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// // full desktop heretohelps
-// @media only screen and (min-width: $bp__md){
-//     $width : 90vw;
-//     $col : 6;
-//     $space: 2vw;
-//     div.wrapper > main {
-//         section.heretohelp {
-//             // width: $width;
-//             > ul {
-//                 width: $width;
-//                 > li {
-//                     width: (($width - (($col - 1) * $space)) / $col);
-//                     margin: 0 $space $space 0;
-
-//                     &:nth-child(3n){
-//                         margin-right: 30px;
-//                     }
-//                     &:nth-child(#{$col}n) {
-//                         margin-right: 0;
-//                     }
-                    
-//                     > div.neu__bgimg {
-//                         width: (($width - (($col - 1) * $space)) / $col);
-//                         height: (($width - (($col - 1) * $space)) / $col);
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-@media only screen and (max-width: $bp__sm){
-    main > section {
+@media only screen and (max-width: $bp__sm) {
+    main>section {
         width: 90%;
     }
 }

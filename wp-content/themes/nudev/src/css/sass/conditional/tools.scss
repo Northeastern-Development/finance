@@ -13,7 +13,7 @@
 
 
     ul.tools-grid {
-        
+
 
         li.tools-grid-tool {
             >a {
@@ -31,7 +31,9 @@
                     }
                 }
 
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     >h5 {
                         &:after {
                             opacity: 1;
@@ -56,7 +58,9 @@
                     }
                 }
 
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     .neu__iconlink {
                         border-bottom: 2px solid $brand_colors-red;
 
@@ -95,7 +99,9 @@
                         font-family: 'Material Icons';
                     }
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         &:after {
                             color: $brand_colors-red;
                         }
@@ -115,20 +121,27 @@
                     >li {
                         margin-bottom: 20px;
                         flex: 1 0 100%;
+
                         >h5 {
                             @include font-2r-l;
                         }
+
                         a {
                             color: $brand_colors-red;
-                            &:hover {
+
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 border-bottom: 2px solid $brand_colors-red;
                             }
                         }
+
                         ul {
                             list-style-type: disc;
                             margin: 0;
                             padding: 0;
                             padding-left: 2.4rem;
+
                             li {
                                 margin: 0;
                                 padding: 0;
@@ -144,28 +157,31 @@
 
 
 @media only screen {
-    div.wrapper > main {
+    div.wrapper>main {
 
-        > section {
-            > h2 {
+        >section {
+            >h2 {
                 margin-bottom: 0;
             }
-            > ul.tool-groupingnav {
+
+            >ul.tool-groupingnav {
                 margin: 30px 0;
                 display: flex;
                 flex-flow: column nowrap;
                 text-align: center;
                 border-bottom: 1px solid #000;
+
                 // &:after {
                 //     display: none;
                 // }
-                > li {
+                >li {
                     text-align: center;
                     position: relative;
                     flex: 1 0 100%;
                     width: 100%;
                     max-width: 480px;
                     margin: 0 auto;
+
                     // margin-bottom: 15px;
                     // border-bottom: 5px solid transparent;
                     // &:after {
@@ -177,17 +193,21 @@
                     //     width: 100%;
                     //     border-bottom: 1px solid black;
                     // }
-                    > a {
+                    >a {
                         margin: 0;
                         border-bottom: 5px solid transparent;
+
                         // text-transform: uppercase;
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             // font-weight: 400;
                             border-bottom: 5px solid $brand_colors-red;
                         }
                     }
+
                     &.tool-grouping-active {
-                        > a {
+                        >a {
                             border-bottom: 5px solid $brand_colors-red;
                             // font-weight: 400;
                         }
@@ -195,97 +215,113 @@
                 }
             }
         }
-        > section {
-            > ul.tools-grid {
+
+        >section {
+            >ul.tools-grid {
 
                 flex-flow: column nowrap;
+
                 li {
                     flex: 1 0 100%;
                     margin: 0;
                     margin-bottom: 30px;
                 }
-                
+
             }
         }
-    } // end div.wrapper>main
-} // end smallest mq
-@media only screen and (min-width: $bp_3cols){
+    }
+
+    // end div.wrapper>main
+}
+
+// end smallest mq
+@media only screen and (min-width: $bp_3cols) {
     div.wrapper {
-        > main {
-            > section {
-                > ul.tools-grid {
+        >main {
+            >section {
+                >ul.tools-grid {
                     display: inline-block;
                     text-align: left;
                     font-size: 0;
                     width: 100%;
-                    > li {
+
+                    >li {
                         font-size: initial;
                         display: inline-block;
                         vertical-align: top;
                         margin: 0 30px 30px 0;
-                        width: calc( 100% / 2 - 15px);
-                        &:nth-of-type(2n){
+                        width: calc(100% / 2 - 15px);
+
+                        &:nth-of-type(2n) {
                             margin-right: 0;
                         }
                     }
                 }
-                
+
             }
-            
+
         }
     }
 }
-@media only screen and (min-width: $nav_bp_dt){
+
+@media only screen and (min-width: $nav_bp_dt) {
     div.wrapper {
-        > main {
-            > section {
-                
-                > ul.tool-groupingnav {
+        >main {
+            >section {
+
+                >ul.tool-groupingnav {
                     flex-flow: row nowrap;
-                    > li {
+
+                    >li {
                         width: auto;
                         flex: 1 0 auto;
                     }
                 }
 
-                > ul.tools-grid {
+                >ul.tools-grid {
                     display: inline-block;
                     text-align: left;
                     font-size: 0;
                     width: 100%;
-                    > li {
+
+                    >li {
                         font-size: initial;
                         display: inline-block;
                         vertical-align: top;
                         margin: 0 30px 30px 0;
-                        width: calc( 100% / 3 - 20px);
-                        &:nth-of-type(3n){
+                        width: calc(100% / 3 - 20px);
+
+                        &:nth-of-type(3n) {
                             margin-right: 0;
-                        }&:nth-of-type(2n){
+                        }
+
+                        &:nth-of-type(2n) {
                             margin-right: 30px;
                         }
                     }
                 }
-                
+
             }
-            
+
         }
     }
 }
 
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
     ul.tools-grid li.tools-grid-tool>a>h5 {
         @include font-2b-l;
     }
+
     main section .tool-group>h4 {
         @include font-2b-l;
     }
 }
 
-@media only screen and (max-width: $bp__md){
+@media only screen and (max-width: $bp__md) {
     div.wrapper>main>section>ul.tool-groupingnav {
         border-bottom: none;
     }
+
     div.wrapper>main>section>ul.tool-groupingnav>li {
         border-bottom: 1px solid #000;
     }

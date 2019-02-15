@@ -61,6 +61,8 @@ $ltgray : rgba(240, 240, 240, 1);
                     top: 3px;
                 }
                 &:hover,
+                &:active,
+                &:focus,
                 &.neu__activepage {
                     color: $brand_colors-red;
                     border-bottom: 2px solid $brand_colors-red;

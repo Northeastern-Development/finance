@@ -49,17 +49,23 @@
                     >p {
                         margin-bottom: 15px;
                     }
+
                     ul {
                         a {
                             color: $brand_colors-red;
-                            &:hover {
+
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 border-bottom: 2px solid $brand_colors-red;
                             }
                         }
+
                         list-style-type: disc;
                         margin: 0;
                         padding: 0;
                         padding-left: 2.4rem;
+
                         li {
                             margin: 0;
                             padding: 0;
@@ -78,13 +84,15 @@
         text-align: left;
         font-size: 0;
         width: 100%;
-        > li {
+
+        >li {
             font-size: initial;
             display: inline-block;
             vertical-align: top;
             margin: 0 30px 30px 0;
-            width: calc( 100% / 3 - 20px);
-            &:nth-of-type(3n){
+            width: calc(100% / 3 - 20px);
+
+            &:nth-of-type(3n) {
                 margin-right: 0;
             }
         }
@@ -94,6 +102,7 @@
             left: 50%;
             transform: translate(-50%, 0);
             font-size: initial;
+
             &:first-of-type {
                 bottom: 100%;
                 top: auto;
@@ -111,6 +120,7 @@
 
                     >h3 {
                         @include font-3b-l;
+
                         &:after {
                             font-family: "Material Icons";
                             content: "\e5cc";
@@ -147,7 +157,9 @@
                     }
                 }
 
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     >.neu__bgimg {
                         >div {
                             transform: scale(1.1);
@@ -171,21 +183,23 @@
     }
 }
 
-@media only screen and (max-width: $nav_bp_dt){
-    div.wrapper > main {
-        > section {
-            > ul.newsandevents {
+@media only screen and (max-width: $nav_bp_dt) {
+    div.wrapper>main {
+        >section {
+            >ul.newsandevents {
                 display: inline-block;
                 text-align: left;
                 font-size: 0;
                 width: 100%;
-                > li {
+
+                >li {
                     font-size: initial;
                     display: inline-block;
                     vertical-align: top;
                     margin: 0 30px 30px 0;
-                    width: calc( 50% - 15px);
-                    &:nth-of-type(2n){
+                    width: calc(50% - 15px);
+
+                    &:nth-of-type(2n) {
                         margin-right: 0;
                     }
                 }
@@ -194,12 +208,12 @@
     }
 }
 
-@media only screen and (max-width: $bp_3cols){
+@media only screen and (max-width: $bp_3cols) {
 
-    div.wrapper > main {
-        > section {
-            > ul.newsandevents {
-                > li {
+    div.wrapper>main {
+        >section {
+            >ul.newsandevents {
+                >li {
                     max-width: none;
                     width: 100%;
                     flex: none;
@@ -211,7 +225,7 @@
     }
 }
 
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
     html body ul.newsandevents>li>a>div>h3 {
         @include font-2b-l;
     }

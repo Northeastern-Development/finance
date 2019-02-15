@@ -8,8 +8,9 @@
     div#sitefooter {
         background: rgba(0, 0, 0, 1.0);
         color: rgba(255, 255, 255, 1.0);
-        > div {
-            > ul {
+
+        >div {
+            >ul {
                 list-style-type: none; // (already set globally, but that may need to be removed)
                 display: flex;
                 // width: 94vw; // * to match the width of the globalfooter (vertical justification)
@@ -17,31 +18,41 @@
                 margin: 0 auto;
                 border-bottom: 1px solid $brand_colors-gray;
                 padding: 20px 30px;
-                > li {
+
+                >li {
                     margin: 15px 0;
-                    &:first-of-type{
+
+                    &:first-of-type {
                         flex-basis: 50%;
+
                         svg {
                             width: 220px;
                         }
                     }
-                    &:not(:first-of-type){
+
+                    &:not(:first-of-type) {
                         flex-basis: 25%;
                     }
+
                     // labels for link groups
-                    > h5 {
+                    >h5 {
                         @include font-1l-c;
                         color: $brand_colors-gray;
                         text-transform: uppercase;
                         text-align: left;
                     }
-                    > ul {
+
+                    >ul {
                         list-style-type: none; // (already set globally, but that may need to be removed)
-                        > li {
-                            > a {
+
+                        >li {
+                            >a {
                                 color: white;
                                 @include font-2b-l;
-                                &:hover {
+
+                                &:hover,
+                                &:active,
+                                &:focus {
                                     opacity: 0.6;
                                     border-bottom: 2px solid $brand_colors-red;
                                 }
@@ -49,28 +60,31 @@
                         }
                     }
                 }
-            }        
+            }
         }
     }
 }
+
 // Below lg
-@media only screen and (max-width: $bp__lg){} 
+@media only screen and (max-width: $bp__lg) {}
+
 // Below md
-@media only screen and (max-width: $bp__md){
+@media only screen and (max-width: $bp__md) {
     div#sitefooter {
-        > div {
-            > ul {
+        >div {
+            >ul {
                 flex-flow: column nowrap;
                 text-align: center;
-                > li {
-                    > h5 {
+
+                >li {
+                    >h5 {
                         text-align: center;
                     }
                 }
             }
         }
     }
-} 
-// Below sm
-@media only screen and (max-width: $bp__sm){
 }
+
+// Below sm
+@media only screen and (max-width: $bp__sm) {}

@@ -49,7 +49,9 @@
             line-height: inherit;
         }
         @if( $hover == 1 ){
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 color: $brand_colors-red;
             }
         }
@@ -65,13 +67,17 @@
             line-height: inherit;
         }
         @if( $hover == 1){
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 color: $brand_colors-red;
             }
         }
     }
     @if( $hover == 1){
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             border-bottom: 2px solid $brand_colors-red;
         }
     }

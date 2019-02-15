@@ -37,10 +37,11 @@
                     color: white;
                     border: 1px solid white;
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         color: white;
                         background-color: transparentize(black, 0.6);
-
                     }
                 }
             }
@@ -143,7 +144,9 @@
                     margin: 30px 0;
 
                     >a {
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             > div:first-of-type {
                                 >div {
                                     transform: scale(1.1);
@@ -204,7 +207,9 @@
                         border-bottom: 2px solid transparent;
                     }
                 }
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     > p:last-of-type span {
                         border-bottom: 2px solid $brand_colors-red;
                     }

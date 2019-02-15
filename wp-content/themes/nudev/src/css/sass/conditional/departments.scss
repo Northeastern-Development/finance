@@ -21,21 +21,28 @@
         // blurb
         >div {
             margin-bottom: 15px;
-            > div {
+
+            >div {
                 @include font-3l-c;
+
                 // i dont know why this is here;
                 // there shouldn't be a list in the blurb...
                 ul {
                     a {
                         color: $brand_colors-red;
-                        &:hover {
+
+                        &:hover,
+                        &:active,
+                        &:focus {
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
+
                     list-style-type: disc;
                     margin: 0;
                     padding: 0;
                     padding-left: 2.4rem;
+
                     li {
                         margin: 0;
                         padding: 0;
@@ -48,10 +55,12 @@
         >a.neu__iconlink {
             display: inline-block;
             margin-right: 45px;
+
             &:last-of-type {
                 margin-right: 0;
             }
         }
+
         >a.neu__iconlink.neu__iconlink-email {
             @include neu__iconlink($icon: "\e0be");
         }
@@ -172,7 +181,9 @@
                                 color: black;
                             }
 
-                            &:hover {
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 &:before {
                                     color: $brand_colors-red;
                                 }
@@ -195,6 +206,7 @@
 
     // Related Tasks && Related Forms
     div.wrapper {
+
         section.dept_relforms,
         section.dept_reltasks {
             >ul {
@@ -216,7 +228,9 @@
                     >a {
                         border-bottom: 2px solid transparent;
 
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             border-bottom: 2px solid $brand_colors-red;
                         }
                     }
@@ -233,25 +247,29 @@
 
     // adjust the staff grid (nu__team-list) up to 3 columns
     div.wrapper {
+
         section.dept_relforms,
         section.dept_reltasks {
-            > ul {
+            >ul {
                 display: inline-block;
                 text-align: left;
                 font-size: 0;
                 width: 100%;
-                > li {
+
+                >li {
                     font-size: initial;
                     display: inline-block;
                     vertical-align: top;
                     margin: 0 15px 15px 0;
-                    width: calc( 50% - 7.5px);
-                    &:nth-of-type(2n){
+                    width: calc(50% - 7.5px);
+
+                    &:nth-of-type(2n) {
                         margin-right: 0;
                     }
                 }
             }
         }
+
         section.nu__team {
             >article {
                 width: 80%; // only at this breakpoint, constrain this section to be narrower than the grid below
@@ -309,6 +327,7 @@
     $col: 6;
 
     div.wrapper {
+
         // department head
         section.nu__team {
             >article {
@@ -359,40 +378,43 @@
     }
 }
 
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
+
     section.nu__team-list>ul>li>div:not(.neu__bgimg)>p:first-of-type>span:first-of-type,
     section.nu__team>article>div:first-child>h3 {
         @include font-2b-l;
     }
+
     section.nu__team>article>div:first-child>h6 {
         @include font-2r-l;
     }
-    
+
 }
 
-@media only screen and (max-width: $bp__md){
+@media only screen and (max-width: $bp__md) {
 
-    main >section.dept_main {
-        > div > div {
+    main>section.dept_main {
+        >div>div {
             @include font-2l-c;
         }
     }
-    
-    main > section.nu__team {
+
+    main>section.nu__team {
         width: 90%;
     }
-    
+
 }
 
-@media only screen and (max-width: $bp__sm){
-    div.wrapper > main > section.dept_main {
+@media only screen and (max-width: $bp__sm) {
+    div.wrapper>main>section.dept_main {
 
         display: flex;
         flex-flow: column nowrap;
-        
-        > a.neu__iconlink {
+
+        >a.neu__iconlink {
             margin: 0 auto;
             margin-bottom: 15px;
+
             &:last-of-type {
                 margin-bottom: 0;
             }

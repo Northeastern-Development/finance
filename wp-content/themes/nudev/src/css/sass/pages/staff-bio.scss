@@ -132,7 +132,9 @@ main#staff {
                     &>a {
                         clear: both;
 
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             color: rgba(0, 0, 0, 1.0);
 
                             &>span {
@@ -208,39 +210,48 @@ main#staff {
     margin: 10px 10vw 0 10vw;
     position: relative;
     padding: 60px;
+
     >div.contact {
         padding: 0 30px;
         overflow: hidden;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+
         // contact info wrapper
         >div {
-            > h2, > h3 {
+
+            >h2,
+            >h3 {
                 margin-bottom: 15px;
             }
+
             // Name
             >h2 {
                 @include font-7l-l;
             }
+
             // Title
             >h3 {
                 @include font-3b-l;
             }
+
             // Contact Info (iconlinks)
-            > p{
-                &:first-of-type > a {
+            >p {
+                &:first-of-type>a {
                     @include neu__iconlink('left', '\e0be');
                 }
-                &:last-of-type > a {
+
+                &:last-of-type>a {
                     @include neu__iconlink('left', '\e551');
                 }
             }
         }
+
         div.neu__bgimg {
             // ALL THIS CODE IS SO IT MATCHES THE EXACT DIMENSIONS OF THE IMAGE IN THE MAIN BODY
-            $width : 90vw;
-            $col : 6;
+            $width: 90vw;
+            $col: 6;
             $space: 2vw;
             flex: none;
             width: (($width - (($col - 1) * $space)) / $col);
@@ -252,6 +263,7 @@ main#staff {
     >div.about {
         padding: 0 30px;
         margin-top: 30px;
+
         >h3 {
             @include font-5l-c;
             margin-bottom: 30px;
@@ -375,7 +387,9 @@ main#staff {
                         &>a {
                             clear: both;
 
-                            &:hover {
+                            &:hover,
+                            &:active,
+                            &:focus {
                                 color: rgba(0, 0, 0, 1.0);
 
                                 &>span {
@@ -577,24 +591,30 @@ main#staff {
 
     main#staff {
         $columns: 1;
+
         section.stafflist {
             &>div {
                 width: 90vw;
+
                 &>ul {
                     width: 90vw;
+
                     &>li {
                         width: 90vw;
                         height: auto;
                         margin: 0 $gutter $gutter 0;
+
                         &>a {
                             &>div {
                                 width: 90vw;
                                 height: 90vw;
                             }
                         }
+
                         &:nth-child(#{$columns}n+#{$columns}) {
                             margin: 0 0 $gutter 0;
                         }
+
                         &:nth-child(5n+5) {
                             margin: 0 $gutter ($gutter * 3) auto;
                         }
@@ -609,29 +629,35 @@ main#staff {
         margin: 10px 10vw 0 10vw;
         padding-bottom: 0;
         padding: $gutter 0 $gutter 0;
+
         &>div.contact {
             overflow: hidden;
             flex-direction: column;
+
             &>div {
                 // width: 70vw;
                 margin: 0 $gutter 0 0;
                 order: 2;
+
                 &>h2 {
                     font-size: 2rem;
                     line-height: 2.8rem;
                     font-weight: 700;
                     margin: 10px 0 10px 0;
                 }
+
                 &>h3 {
                     font-size: 1.6rem;
                     line-height: 2.8rem;
                     font-weight: 700;
                     text-transform: none;
                     margin: 0 0 10px 0;
+
                     &:before {
                         display: none;
                     }
                 }
+
                 &>h4 {
                     font-size: 1.2rem;
                     line-height: 2.6rem;
@@ -639,11 +665,14 @@ main#staff {
                     text-transform: none;
                     margin: 0 0 10px 0;
                     clear: both;
+
                     &:before {
                         display: none;
                     }
+
                     &>a {
                         border-bottom: 1px solid #cc0000;
+
                         &.email:before,
                         &.phone:before {
                             width: auto;
@@ -657,11 +686,13 @@ main#staff {
                             height: 26px;
                             border-bottom: 1px solid #cc0000;
                         }
+
                         &.email {
                             &:before {
                                 content: '\e0be';
                             }
                         }
+
                         &.phone {
                             &:before {
                                 content: '\e551'
@@ -669,6 +700,7 @@ main#staff {
                         }
                     }
                 }
+
                 &:nth-of-type(2) {
                     width: 15vw;
                     height: 15vw;
@@ -682,6 +714,7 @@ main#staff {
                 }
             }
         }
+
         &>div.about {
             &>h3 {
                 font-size: 2.0rem;
@@ -692,6 +725,7 @@ main#staff {
         }
     }
 }
+
 @media only screen and (max-width: 600px) {
 
     main#staff {
@@ -699,28 +733,35 @@ main#staff {
 
         section.stafflist {
             width: 100%;
+
             &>div {
                 width: 100%;
+
                 &>ul {
                     width: 100%;
+
                     &>li {
                         width: 100%;
+
                         & a {
                             & div {
                                 height: 85vw;
                                 width: 100vw;
                             }
+
                             &>h3,
                             h4,
                             span {
                                 margin-left: 10px;
                             }
                         }
+
                         &:nth-child(#{$columns}n+#{$columns}) {
                             margin: 0 auto ($gutter * 3) auto;
                         }
                     }
                 }
+
                 & h2 {
                     font-size: 2.5rem;
                 }
@@ -729,31 +770,34 @@ main#staff {
     }
 }
 
-@media only screen and (max-width: $bp__md){
+@media only screen and (max-width: $bp__md) {
 
     #staffbio {
         padding: 40px;
     }
-    
+
     #staffbio>div.contact {
 
         flex-flow: column wrap;
+
         >div:nth-of-type(2) {
             order: 1;
-            margin: 0 auto;    
+            margin: 0 auto;
             width: 50vw;
             height: 50vw;
             max-width: 245px;
             max-height: 245px;
         }
-        >div:not(.neu__bgimg){
+
+        >div:not(.neu__bgimg) {
             order: 2;
             max-width: 100%;
         }
     }
 
 }
-@media only screen and (max-width: $bp__sm){
+
+@media only screen and (max-width: $bp__sm) {
     #staffbio {
         padding: 40px 20px;
     }
