@@ -17,14 +17,14 @@
     $cats = get_posts($args);
 
     $format_cats = '
-        <div title="View tasks in the %s category" aria-label="View tasks in the %s category">
+        <a href="#" title="View tasks in the %s category" aria-label="View tasks in the %s category">
             <img class="taskicon" src="%s" alt="%s icon" aria-label="%s icon">
             <h4><span>%s</span></h4>
             <ul>
                 <li><h4>%s</h4></li>
                 %s
             </ul> 
-        </div>
+        </a>
     ';
     $format_tasks = '
         <li>
@@ -87,7 +87,7 @@
         <h2>How Do I...</h2>
         <h3>(Select Topic)</h3>
         <h3>(Select Task)</h3>
-        <h3 title="Return to viewing task categories" aria-label="Return to viewing task categories" class="removefilter nu__content_btn">Back to Topics</h3>
+        <a title="Return to viewing task categories" aria-label="Return to viewing task categories" class="removefilter nu__content_btn">Back to Topics</a>
     </div>
     <div>
         <?php 

@@ -126,7 +126,7 @@
         <div>
             <h2>A Centralized Organization</h2>
             <p>Northeastern University’s Finance Division oversees all functions related to finance—from buying goods and services, to processing expense reports, to developing financial statements and managing student loans. The division’s wide-ranging services include financial strategy, auditing, treasury, accounting, and budgeting. Our mission is to help the university achieve ambitious goals through the sound stewardship of financial resources.</p>    
-            <a title="View the About Page" aria-label="View the About Page" href="<?php echo get_permalink( get_page_by_path('about') ); ?>"><h4 class="nu__content_btn">Learn More</h4></a>
+            <a title="View the About Page" aria-label="View the About Page" class="nu__content_btn" href="<?php echo get_permalink( get_page_by_path('about') ); ?>">Learn More</a>
         </div>
 
     </section>
@@ -145,7 +145,7 @@
                     echo $content_tools;
                 ?>
             </ul>
-            <a title="View All Tools" aria-label="View All Tools" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>"><h4 class="nu__content_btn">View All Tools</h4></a>
+            <a title="View All Tools" aria-label="View All Tools" class="nu__content_btn" href="<?php echo get_permalink( get_page_by_path('tools') ); ?>">View All Tools</a>
         </section>
     <?php 
         endif;
@@ -158,7 +158,7 @@
                     echo $content_news;
                 ?>
             </ul>
-            <a title="View all News and Events" aria-label="View all News and Events" href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>"><h4 class="nu__content_btn">View All Updates</h4></a>
+            <a title="View all News and Events" class="nu__content_btn" aria-label="View all News and Events" href="<?php echo get_permalink( get_page_by_path('news-events') ); ?>">View All Updates</a>
         </section>
     <?php 
         endif;

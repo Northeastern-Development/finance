@@ -39,7 +39,7 @@
     $content_deadline .= '
                 </ul>
             </div>
-            <a href="/deadlines" title="View all deadlines" aria-label="View all deadlines"><h4 class="nu__content_btn">View all deadlines</h4></a>
+            <a href="/deadlines" class="nu__content_btn" title="View all deadlines" aria-label="View all deadlines">View all deadlines</a>
         </div>
     ';
 

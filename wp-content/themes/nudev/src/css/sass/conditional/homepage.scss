@@ -73,15 +73,13 @@
                 position: relative;
                 background-color: $brand_colors-teal--dark;
                 text-align: center;
-                > a:last-child {
+                > a.nu__content_btn {
                     display: inline-block;
                     margin: 0 auto;
                     margin-bottom: 30px;
                     cursor: pointer;
-                    > h4 {
-                        color: white;
-                        border-color: white;
-                    }
+                    color: white;
+                    border-color: white;
                 }
                 >div {
                     position: relative;
