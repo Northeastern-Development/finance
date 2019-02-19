@@ -17,18 +17,20 @@
     $cats = get_posts($args);
 
     $format_cats = '
-        <a href="#" title="View tasks in the %s category" aria-label="View tasks in the %s category">
-            <img class="taskicon" src="%s" alt="%s icon" aria-label="%s icon">
-            <h4><span>%s</span></h4>
+        <div>
+            <a href="javascript:void(0)" title="View tasks in the %s category" aria-label="View tasks in the %s category">
+                <img class="taskicon" src="%s" alt="%s icon" aria-label="%s icon">
+                <p><span>%s</span><i class="material-icons">&#xe5cc</i></p>
+            </a>
             <ul>
                 <li><h4>%s</h4></li>
                 %s
-            </ul> 
-        </a>
+            </ul>
+        </div> 
     ';
     $format_tasks = '
         <li>
-            <a title="View %s" aria-label="View %s" href="%s"><span>%s</span></a>
+            <a title="View %s" aria-label="View %s" href="%s"><p><span>%s</span><i class="material-icons">&#xe5cc</i></p></a>
         </li>
     ';
     $content_cats = '';
@@ -87,7 +89,7 @@
         <h2>How Do I...</h2>
         <h3>(Select Topic)</h3>
         <h3>(Select Task)</h3>
-        <a title="Return to viewing task categories" aria-label="Return to viewing task categories" class="removefilter nu__content_btn">Back to Topics</a>
+        <a href="javascript:void(0)" title="Return to viewing task categories" aria-label="Return to viewing task categories" class="removefilter nu__content_btn">Back to Topics</a>
     </div>
     <div>
         <?php 

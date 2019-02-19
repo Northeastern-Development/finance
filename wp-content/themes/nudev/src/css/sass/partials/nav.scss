@@ -1,7 +1,5 @@
 /*
-*
-*   Navigation
-*
+*   Nav
 */
 
 // Desktop Nav
@@ -28,7 +26,7 @@
         display: block;
     }
 
-    // top-level nav items 'full-height' (clickable top to bottom)
+    // force all top-level nav items height to 100%
     .nu__main-nav,
     .nu__main-nav>ul,
     .nu__main-nav>ul>li,
@@ -86,27 +84,203 @@
         left: 0;
         width: 100%;
         z-index: 11;
+        box-shadow: 1px 1px 5px $brand_colors-gray;
+    }
 
-        // flex-wrapper for two subnav panels
+    // underline hover for categories and tasks
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a>p,
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a>p {
+        >i {
+            display: inline;
+            vertical-align: middle;
+            color: $brand_colors-red;
+            font-size: 2rem;
+        }
+
+        >span {
+            @include font-2r-l;
+            border-bottom: 2px solid transparent;
+            display: inline;
+        }
+    }
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div,
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li {
+        > a {
+            &:hover,
+            &:focus,
+            &:active {
+                > p > span {
+                    border-bottom: 2px solid $brand_colors-red;
+                }
+            }
+        }
+
+    }
+
+
+    // "howdoi" menu
+    .neumenu-wrapper#howdoi {
         .neumenu-wrapper-inner {
             display: flex;
             flex-flow: row nowrap;
             background-color: white;
-            min-height: 166px;
 
-            // 20%wide left-panel
-            >div:first-child {
-                flex: 1 0 20%;
+            // left side
+            >div:first-of-type {
+                padding: 30px;
+                color: white;
+                background-color: $brand_colors-teal--dark;
+                flex-flow: column wrap;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20%;
+
+                >h2 {
+                    // 'how do i...'
+                    @include font-7r-c;
+                }
+
+                >h3 {
+                    // select topic / task
+                    @include font-3r-c;
+                }
+
+                // hide select task / back to topics
+                >h3:last-of-type,
+                >a {
+                    display: none;
+                }
+
+                // back top topics button
+                >a.nu__content_btn {
+                    @include font-3l-c;
+                    // padding: 10px;
+                    margin-top: 15px;
+                    color: white;
+                    border-color: white;
+                }
             }
 
-            // 80%wide right-panel
-            >div:last-child {
-                flex: 1 0 80%;
+            // right side
+            >div:last-of-type {
+                padding: 30px;
+                width: 80%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: flex-start;
+                justify-content: center;
+
+                // category buttons
+                >div {
+                    margin-right: 30px;
+                    width: calc(20% - calc(120px / 5));
+                    display: flex;
+                    flex-flow: column wrap;
+                    align-items: flex-start;
+                    justify-content: center;
+                    text-align: center;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    // button
+                    >a {
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+
+                        // icon
+                        >img {
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    // hidden menu of tasks
+                    >ul {
+                        display: none;
+                        column-count: 4;
+                        width: 100%;
+                        padding: 15px 0;
+
+                        >li {
+                            display: block;
+                            text-align: left;
+                            margin: 15px 0;
+
+                            >h4 {
+                                @include font-2r-l;
+                                text-transform: uppercase;
+                                color: $brand_colors-gray;
+                            }
+
+                            &:first-of-type {
+                                margin-top: 0;
+                            }
+
+                            >a {
+
+                                >span {
+                                    @include font-2r-l;
+
+                                    >i {
+                                        display: inline-block;
+                                        vertical-align: bottom;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // behavior for category is selected (pressed category button)
+            &.isFiltered {
+                >div:first-child {
+
+                    >h3:last-of-type,
+                    >a {
+                        display: block;
+                    }
+
+                    >a {
+                        cursor: pointer;
+                    }
+
+                    >h3:not(:last-of-type) {
+                        display: none;
+                    }
+                }
+
+                >div:last-child {
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    >div:not(.theFilter) {
+                        display: none;
+                    }
+
+                    >div.theFilter {
+                        width: 100%;
+                        margin-right: 0;
+
+                        >a {
+                            display: none;
+                        }
+
+                        >ul {
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }
 
-    // Active States
+
+    // Active States for top level nav
     .nu__main-nav {
 
         // drop-down nav active state
@@ -119,211 +293,7 @@
         }
     }
 
-    // "howdoi" submenu only
-    .neumenu-wrapper#howdoi {
-        .neumenu-wrapper-inner {
 
-            // instructions / back to cats
-            // teal section
-            >div:first-child {
-                padding: 30px;
-                background-color: $brand_colors-teal--dark;
-                color: white;
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: center;
-
-                >h2 {
-                    @include font-7r-c;
-                }
-
-                >h3 {
-                    @include font-3r-c;
-                    margin-bottom: 15px;
-                    &:not(:first-of-type) {
-                        display: none;
-                    }
-                }
-
-                // back to topics button
-                .removefilter {
-                    display: none;
-                    border: 1px solid white;
-                    padding: 10px 0;
-                    width: 100%;
-                    color: white;
-                    margin: 0;
-                    @include font-3l-c;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        color: white;
-                        background-color: transparentize(black, 0.5);
-                    }
-                }
-            }
-
-            // task categories wrapper
-            >div:last-child {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-around;
-                align-items: flex-start;
-                padding: 30px;
-
-                // task category items
-                >div {
-                    &:not(.theFilter) {
-                        max-width: calc(20% - 15px);
-                        margin-right: 15px;
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
-                    }
-
-                    cursor: pointer;
-                    text-align: center;
-
-                    >h4 {
-                        @include font-2r-c;
-
-                        &:after {
-                            content: '\e315';
-                            font-size: 20px;
-                            font-family: "Material Icons";
-                            vertical-align: middle;
-                            color: $brand_colors-red;
-                        }
-
-                        >span {
-                            border-bottom: 2px solid transparent;
-                        }
-                    }
-
-                    >ul {
-                        list-style-type: none;
-                        display: none;
-                    }
-
-                    // img/icon for task category
-                    >.taskicon {
-                        width: 36px;
-                        height: 36px;
-                        display: inline-block;
-                        margin-bottom: 15px;
-                    }
-
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        >h4>span {
-                            border-bottom: 2px solid $brand_colors-red;
-                        }
-                    }
-                }
-            }
-
-            // 
-            //      Behavior
-            // 
-            // reveal 'select task' and 'back to topics' button
-            &.isFiltered>div:first-child {
-                h3:not(:first-of-type),
-                .removefilter {
-                    display: block;
-                }
-
-                h3:first-of-type {
-                    display: none;
-                }
-            }
-
-            // on click a task category (is filtered); hide all other categories
-            &.isFiltered>div:not(:first-child) {
-                justify-content: flex-start;
-                align-items: flex-start;
-
-                // every task-items wrapper (hidden or not)
-                >div {
-                    flex: 1 0 100%;
-                    // padding: 40px;
-                    cursor: default;
-                }
-
-                // hide other task items wrappers
-                >div:not(.theFilter) {
-                    display: none;
-                }
-
-                // hide the task category header (replicated in the revealed list, for alignment)
-                >div.theFilter {
-                    >h4 {
-                        display: none;
-                    }
-                }
-
-                // show this task items wrapper
-                >div.theFilter>ul {
-                    display: block;
-                    column-count: 4;
-
-                    li {
-                        display: inline-block;
-                        vertical-align: top;
-                        width: 90%;
-                        text-align: left;
-                        padding: 10px 0;
-
-                        // (restyle the duplicate task category title inside the newly revealed list of tasks)
-                        >h4 {
-                            @include font-2r-l;
-                            color: $brand_colors-gray;
-                            text-transform: uppercase;
-                            cursor: default;
-                        }
-
-                        >a {
-                            @include font-2r-l;
-                            color: black;
-
-                            &:after {
-                                content: '\e315';
-                                font-size: 20px;
-                                font-family: "Material Icons";
-                                vertical-align: middle;
-                                color: $brand_colors-red;
-                            }
-
-                            >span {
-                                border-bottom: 2px solid transparent;
-                            }
-
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                >span {
-                                    border-bottom: 2px solid $brand_colors-red;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .taskicon {
-                    display: none;
-                }
-            }
-
-            // if a category is clicked and we enter 'task view' -- the wrapper now adjusts height to content
-            &.isFiltered {
-                height: auto;
-            }
-        }
-    }
 
     // About Submenu
     li.has-children[data-id="about"] {
@@ -541,22 +511,28 @@
 
 
 @media only screen and (max-width: $bp__lg) {
-    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
-        @include font-5r-c;
+    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child {
+        >h2 {
+            @include font-5r-c;
+        }
+
+        >h3 {
+            @include font-2b-c;
+
+        }
+
+        >a.removefilter {
+            @include font-2l-c;
+
+        }
     }
 
-    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h3 {
-        @include font-2b-c;
-    }
-
-    .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child .removefilter {
-        @include font-2l-c;
-    }
 }
 
 @media only screen and (max-width: $bp__md) {
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
         @include font-3r-c;
+        color: red;
     }
 }
 

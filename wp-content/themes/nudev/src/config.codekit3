@@ -1503,13 +1503,6 @@
 		"oAP": "/includes/partials/nav.desktop.php",
 		"oF": 0
 		},
-	"/includes/partials/nav.howdoi.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/includes/partials/nav.howdoi.php",
-		"oF": 0
-		},
 	"/includes/partials/nav.mobile.php": {
 		"cB": 0,
 		"ft": 8192,
