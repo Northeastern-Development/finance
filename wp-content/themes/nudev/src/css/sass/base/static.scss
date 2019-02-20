@@ -1,3 +1,13 @@
+
+.logo > a {
+    &:focus {
+        svg path{
+            fill: $brand_colors-red;
+        }
+    }
+}
+
+
 @media only screen {
     main>section>h2 {
         @include font-7l-l;
