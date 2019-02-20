@@ -135,10 +135,31 @@ var Finance = {};
 
                     // on blur the last dropdown item check that we are passing focus outside the dropdown
                     $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function(e){
+                        // if we are passing focus from the about dropdown last child (contact us) OUTSIDE the dropdown (to the body), then we need to close the nav
                         if( $(this).parent().find($(e.relatedTarget)).length == 0 ){
                             Finance.Focuser.dropdowns.find('.neumenu-wrapper').hide();
                         }
                     });
+
+                    $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').on('focus', function(e){
+
+                    });
+
+
+
+                    // normal HowdoI functionality below ( as a dropdown of the main nav, not as a independent section i.e. the homepage )
+                    $('li.has-children[data-id="howdoi"] > a').on('focus', function(e){
+
+                        // $(this).parent().addClass('neu__showme');
+                        
+                        // be sure all the howdoi menu items in <main> have default tabindex settings
+                        $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
+
+                        // set that focus to the howdoi menu in the <main>
+                        $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
+                        
+                    });
+                    
                 }
 
 
