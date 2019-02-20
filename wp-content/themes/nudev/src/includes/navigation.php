@@ -10,7 +10,7 @@
     </a>
 </div>
 
-<input type="checkbox" id="neu__navicon">
+<input type="checkbox" id="neu__navicon" tabindex="-1">
 <label for="neu__navicon" id="neu__navicon-label" title="Expand the mobile navigation dropdown" aria-label="Toggle the mobile navigation dropdown"></label>
 
 <?php 

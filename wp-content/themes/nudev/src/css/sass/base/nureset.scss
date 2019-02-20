@@ -68,3 +68,19 @@ input[type="search"] {
     font-size: inherit;
     line-height: inherit;
 }
+
+// skip nav to content for ADA
+a.skiptomaincontent {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    z-index: 9999;
+    padding: 2px 15px 2px 15px;
+    background: black;
+    color: white;
+    border: 1px solid $brand_colors-red;
+    &:focus {
+        top: 30px;
+        left: 30px;
+    }
+}
