@@ -25,6 +25,80 @@ var Finance = {};
                     }
                 });
 
+
+                // if we blur from the back to topics button back to the howdoi top level link,
+                // or if we blur from the last task to the forms top level link
+                // we have 'left' the howdoi nav and it must be reset to its initial state
+                $('#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li:last-of-type > a, #howdoi .neumenu-wrapper-inner>div:first-of-type > a').on('blur', function(e){
+                    
+                    // check if we have passed focus to the forms link or the howdoi link (top level)
+                    // if we have done either of those, we know we have left the howdoi nav
+                    if( $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').is(e.relatedTarget) || $('#nu__main-nav-desktop > ul > li:first-child > a').is(e.relatedTarget) ){
+
+                        // remove filtered view from categories
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                        // remove filtered view from wrapper
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                        // reset task view tabindex
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                        // reset back to topics tabindex
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                        // reset the category view tabindex
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                        
+                    }
+                    
+                });
+                // on the homepage we have different behaviors for blurring out of the task view
+                if( Finance.NavHandler.isHomepage ){
+
+                    // if we blur off the back to topics button
+                    $('#howdoi .neumenu-wrapper-inner>div:first-of-type > a').on('blur', function(e){
+
+                        // and focus is passed to 'about' (which it will be)
+                        if( $('#nu__main-nav-desktop > ul > li:last-child > a').is(e.relatedTarget) ){
+
+                            // send focus to the howdoi dropdown item
+                            $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
+                            // remove filtered view from categories
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                            // remove filtered view from wrapper
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                            // reset back to topics tabindex
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                            // reset task view tabindex
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                            // reset the category view tabindex
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                        }
+
+                    });
+
+
+                    // if we blur off the last task view item
+                    $('#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li:last-of-type > a').on('blur', function(e){
+
+                        // if we blur from the last task view item and focus is passed to the learn more button
+                        if( $('section.hero > div > a').is(e.relatedTarget) ){
+                            // pass focus to the forms top level link
+                            $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').focus();
+                            // remove filtered view from categories
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                            // remove filtered view from wrapper
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                            // reset back to topics tabindex
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                            // reset task view tabindex
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                            // reset the category view tabindex
+                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                        }
+                        
+                    });
+                }
+
+
+
                 // if focus leaves the howdoi on the homepage send focus to the forms nav link & reset tabindex to -1
                 if( Finance.NavHandler.isHomepage ){
 
@@ -32,7 +106,7 @@ var Finance = {};
                     $('main > #howdoi > div> div:last-child > div:first-child > a').on('blur', function(e){
                         if( $('li.has-children:last-child > a').is(e.relatedTarget) ){
                             $('main > #howdoi > div> div:last-child > div > a').attr('tabindex', '-1');
-                            $('.logo > a').focus();
+                            $('li.has-children:first-of-type > a').focus();
                         }
                     });
 
@@ -78,6 +152,16 @@ var Finance = {};
                     $(this).parent('li.has-children').find('.neumenu-wrapper').show();
                     // add showme
                     $(this).parent('li.has-children').addClass('neu__showme');
+
+                    if( $(this).parent().is('[data-id="howdoi"]') ){
+                        // reset back to topics tabindex
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '0');
+                        // reset task view tabindex
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '0');
+                        // reset the category view tabindex
+                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '0');
+
+                    }
                     
                 }
                 // is blurred
@@ -342,10 +426,26 @@ var Finance = {};
             _didClickBackToCats: function () {
                 Finance.Nav.categories.removeClass('theFilter');
                 Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
+
+
+                $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
+                // reset back to topics tabindex
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                // reset task view tabindex
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                // reset the category view tabindex
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                
             },
             _didClickCategory: function (e) {
                 $(this).parents('.neumenu-wrapper-inner').addClass('isFiltered');
                 $(this).addClass('theFilter');
+
+
+                // set tabindex of task items to 0 when entering a category view
+                $('#howdoi > div > div:first-child > a').attr('tabindex', '0');
+                $(this).find('a').attr('tabindex', '0');
+
             },
             _didClickOutsideNav: function (e) {
                 if ($('div#nu__globalheader, div#header').has(e.target).length === 0) {

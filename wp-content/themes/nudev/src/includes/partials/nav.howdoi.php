@@ -31,7 +31,7 @@
     ';
     $format_tasks = '
         <li>
-            <a title="View %s" aria-label="View %s" href="%s"><p><span>%s</span><i class="material-icons">&#xe5cc</i></p></a>
+            <a title="View %s" aria-label="View %s" href="%s" tabindex="%s"><p><span>%s</span><i class="material-icons">&#xe5cc</i></p></a>
         </li>
     ';
     $content_cats = '';
@@ -67,6 +67,7 @@
                 ,$task->post_title  // title
                 ,$task->post_title  // aria label
                 ,site_url('/tasks/') . $cat->post_name.'/'.$task->post_name // href
+                ,$check_tabindex
                 ,$task->post_title  // text
             );
         }
@@ -91,7 +92,7 @@
         <h2>How Do I...</h2>
         <h3>(Select Topic)</h3>
         <h3>(Select Task)</h3>
-        <a href="javascript:void(0)" title="Return to viewing task categories" aria-label="Return to viewing task categories" class="removefilter nu__content_btn">Back to Topics</a>
+        <a href="javascript:void(0)" tabindex="-1" title="Return to viewing task categories" aria-label="Return to viewing task categories" class="removefilter nu__content_btn">Back to Topics</a>
     </div>
     <div>
         <?php 
