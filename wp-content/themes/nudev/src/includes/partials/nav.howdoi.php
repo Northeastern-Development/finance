@@ -2,6 +2,7 @@
 /**
  * Partial: navigation sub-nav  "How Do I..."
  */
+    $check_tabindex = ( get_page_template_slug($post_id) == 'templates/template-homepage.php' ) ? '-1' : '0';
     // 
     $args = array(
         'post_type'         =>  'tasks_categories',
@@ -18,7 +19,7 @@
 
     $format_cats = '
         <div>
-            <a href="javascript:void(0)" title="View tasks in the %s category" aria-label="View tasks in the %s category" tabindex="0">
+            <a href="javascript:void(0)" title="View tasks in the %s category" aria-label="View tasks in the %s category" tabindex="%s">
                 <img class="taskicon" src="%s" alt="%s icon" aria-label="%s icon">
                 <p><span>%s</span><i class="material-icons">&#xe5cc</i></p>
             </a>
@@ -75,6 +76,7 @@
             $format_cats
             ,$cat->post_title   // title
             ,$cat->post_title   // aria label
+            ,$check_tabindex    // tabindex (if is homepage)
             ,$fields['icon']    // icon src
             ,$cat->post_title   // icon alt
             ,$cat->post_title   // icon aria

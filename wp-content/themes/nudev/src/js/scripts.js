@@ -22,11 +22,29 @@ var Finance = {};
                         Finance.NavHandler.dropdownPanels.hide();
                     }
                 });
-                
+
+                // if focus leaves the howdoi on the homepage send focus to the forms nav link & reset tabindex to -1
+                if( Finance.NavHandler.isHomepage ){
+
+                    // if focus is passed from the first howdoi back to about, redirect it to the logo and reset tabindex
+                    $('main > #howdoi > div> div:last-child > div:first-child > a').on('blur', function(e){
+                        if( $('li.has-children:last-child > a').is(e.relatedTarget) ){
+                            $('main > #howdoi > div> div:last-child > div > a').attr('tabindex', '-1');
+                            $('.logo > a').focus();
+                        }
+                    });
+
+                    $('main > #howdoi > div> div:last-child > div:last-child > a').on('blur', function(e){
+                        // if focus is passed to the learn more button we need to send it to the forms link instead
+                        // and reset the tabindex of the howdoi
+                        if( $('section.hero a.nu__content_btn').is( e.relatedTarget ) ){
+                            $('main > #howdoi > div> div:last-child > div > a').attr('tabindex', '-1');
+                            $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').focus();
+                        }
+                    });
+                }
             },
             _navInteractionHandler : function(e){
-
-                
 
                 e.stopPropagation();
                 
@@ -48,43 +66,38 @@ var Finance = {};
                 else if(e.type=="focus"){
                     $(this).data("justfocussed",true);
                     
-                    
-                    
-                    
                     // close all dropdowns
                     Finance.NavHandler.dropdownPanels.hide();
                     // open dropdown if available
                     $(this).parent('li.has-children').find('.neumenu-wrapper').show();
-                    
-                    
                 }
                 // is blurred
                 else {
-                    $(this).data("justfocussed",false);
 
+                    $(this).data("justfocussed",false);
                     
                     // close "other" dropdowns
                     $('#nu__main-nav-desktop > ul > li.has-children').not($(this).parent()).find('.neumenu-wrapper').hide();
 
+                    // if focus has NOT shifted to a sub-nav item
+                    // (note, on the homepage, there is no subnav to close and this will not affect the howdoi functionality afaik)
+                    if( $(this).parent().find(e.relatedTarget).length == 0 ){
+                        // we need to close all nav dropdowns
+                        Finance.NavHandler.dropdownPanels.hide();
+                    }
+
                     //  we are on the home page
                     if( Finance.NavHandler.isHomepage ){
 
-                        // if focus has NOT shifted to a sub-nav item, and the focus has not shifted to the howdoi in the body
-                        if( !$(this).parent().find(e.relatedTarget.length == 0) && !$('main > #howdoi').find(e.relatedTarget.length == 0) ){
-                            // we need to close all nav dropdowns
-                            Finance.NavHandler.dropdownPanels.hide();
-                        }
+                        // if we blur from the howdoi to the forms
+                        if( $(this).parent().is('[data-id="howdoi"]') && $(e.relatedTarget).is('#nu__main-nav-desktop > ul > li:nth-child(2) > a') ){
 
-                    }
-                    // we are not on the home page
-                    else {
-                        // if focus has NOT shifted to a sub-nav item
-                        if( $(this).parent().find(e.relatedTarget).length == 0 ){
-                            // we need to close all nav dropdowns
-                            Finance.NavHandler.dropdownPanels.hide();
+                            // set the tabindex of the real howdoi items to 0
+                            $('main > #howdoi > div> div:last-child > div > a').attr('tabindex', '0');
+                            // send focus to the real howdoi first link
+                            $('main > #howdoi > div> div:last-child > div:first-child > a').focus();
                         }
-                    }
-                    
+                    } 
                 }
             }
             
