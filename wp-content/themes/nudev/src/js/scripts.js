@@ -3,7 +3,9 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
-
+        /**
+         * 
+         */
         Finance.Focuser = {
 
             isHomepage: ($('main > div#howdoi').length) ? true : false,
@@ -11,147 +13,102 @@ var Finance = {};
             navItems: $('#nu__main-nav-desktop > ul > li > a'),
             dropdownItems: $('#nu__main-nav-desktop > ul > li.has-children .neumenu-wrapper-inner > a'),
             howdoiHomepageLinks: $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a'),
-            navItemsWithDropdowns : $('#nu__main-nav-desktop > ul > li.has-children').has('.neumenu-wrapper').find('>a'),
+            navItemsWithDropdowns: $('#nu__main-nav-desktop > ul > li.has-children').has('.neumenu-wrapper').find('>a'),
 
 
             _init: function () {
 
                 // on focus a nav item w/ a dropdown; reveal the dropdown
-                Finance.Focuser.navItemsWithDropdowns.on('focus', function(e){
+                Finance.Focuser.navItemsWithDropdowns.on('focus', function (e) {
+
                     // show this dropdown
                     $(this).parent().find('.neumenu-wrapper').show();
-
                 });
 
                 // on blur a nav item w/ a dropdown; (maybe) hide the dropdown
-                Finance.Focuser.navItemsWithDropdowns.on('blur', function(e){
-
-                    // if focus is not on a sub-item
-                    if( $(this).parent().find( $(e.relatedTarget)).length == 0 ) {
+                Finance.Focuser.navItemsWithDropdowns.on('blur', function (e) {
+                    // if focus is not on a sub-item (if focus is on a sub-item the menu will remain open)
+                    if ($(this).parent().find($(e.relatedTarget)).length == 0) {
                         // hide this dropdown
                         $(this).parent().find('.neumenu-wrapper').hide();
-                        // (if focus is on a sub-item the menu will remain open)
                     }
-                    
                 });
 
-
-
-                // if we are on the home page
+                // The Home Page ONLY
                 if (Finance.Focuser.isHomepage) {
 
 
-                    // when howdoi (top nav link) becomes focused,
+                    // Handle "HowDoI" Focus (top-level nav)
                     $('li.has-children[data-id="howdoi"] > a').on('focus', function (e) {
+                        
+                        // the howdoi menu is displaying categories
+                        if( $('main > #howdoi > div:last-of') ){
+
+                        }
+                        // howdoi menu is displaying tasks
+                        else {
+
+                        }
 
                         // be sure all the howdoi menu items in <main> have default tabindex settings
                         $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
-
                         // set that focus to the howdoi menu in the <main>
                         $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
-
                         // hide any open dropdowns
                         Finance.Focuser.dropdowns.find('.neumenu-wrapper').hide();
                         // remove the 'showme' class tagging the dropdown parent from all items
                         Finance.Focuser.navItems.parent().removeClass('neu__showme');
+
+                        
                     });
 
 
 
-                    // begin experimenting to remove code below
-                    
-                    // on focus the 'about' nav item
-                    $('li.has-children[data-id="about"] > a').on('focus', function(e){
-                        
-
-                        // if focus to the about menu item is coming from the first howdoi category, we are reverse tabbing and should be sent to the logo
-                        if( $(e.relatedTarget) == 'main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a' ){
-
-                            // <main> howdoi nav items removed from tabindex
-                            $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '-1');
-                            
-                            // focus sent to logo
+                    // Handle "About" Focus
+                    $('li.has-children[data-id="about"] > a').on('focus', function (e) {
+                        // if focus comes from the <main> howdoi...
+                        if ($('main > #howdoi').find(e.relatedTarget).length > 0) {
+                            // send focus to the logo
                             $('div#header .logo > a').focus();
                         }
-                        
-                        
-                        
-                        // if the <main> howdoi menu items tabindex is 0 (ready), set them to -1 and send focus to the logo
-                        // the howdoi menu items should only ever have tabindex 0 if focus is sent directly from the howdoi menu item 
-                        // if ($('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex') === '0') {
-                            
-                        //     // <main> howdoi nav items removed from tabindex
-                        //     $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '-1');
-
-                        //     // focus the logo
-                        //     $('div#header .logo > a').focus();
-                        // }
-
-                        
                     });
-                    
-                    // end experimenting to remove code below
-
-                    // when the about (top nav link) is focused
-                    // $('li.has-children[data-id="about"] > a').on('focus', function (e) {
-                    //     // if the <main> howdoi nav items have tabindex -1,
-                    //     if ($('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex') === '0') {
-
-                    //         // hide any open dropdowns
-                    //         Finance.Focuser.dropdowns.find('.neumenu-wrapper').hide();
-                    //         // remove the 'showme' class tagging the dropdown parent from all items
-                    //         Finance.Focuser.navItems.parent().removeClass('neu__showme');
-
-                    //         // <main> howdoi nav items removed from tabindex
-                    //         $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '-1');
-                    //         // focus the logo
-                    //         $('div#header .logo > a').focus();
-                    //     }
-                    // });
-
                     // when the hero button ( first <a> in the body) is focused
                     $('section.hero a.nu__content_btn').on('focus', function (e) {
-
                         // remove the 'showme' class tagging the dropdown parent from all items
                         Finance.Focuser.navItems.parent().removeClass('neu__showme');
-
                         // hide all the dropdowns
                         Finance.Focuser.dropdowns.find('.neumenu-wrapper').hide();
-
                         // if the howdoi in the <main> has tabindex, remove it from tabindex, and focus the forms top level nav link
                         if ($('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex') === '0') {
-
                             // reset the howdoi menu items to tabindex -1 
                             $('main > div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '-1');
                             // send focus to the forms top level nav item
                             $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').focus();
                         }
-
                     });
-
                 }
-                // if we are not on the home page
+                // NOT the Home Page
                 else {
 
                     // on blur the last dropdown item check that we are passing focus outside the dropdown
-                    $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function(e){
+                    $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function (e) {
                         // if we are passing focus from the about dropdown last child (contact us) OUTSIDE the dropdown (to the body), then we need to close the nav
-                        if( $(this).parent().find($(e.relatedTarget)).length == 0 ){
+                        if ($(this).parent().find($(e.relatedTarget)).length == 0) {
                             Finance.Focuser.dropdowns.find('.neumenu-wrapper').hide();
                         }
                     });
 
-                    $('#nu__main-nav-desktop > ul > li:not([data-id="howdoi"]) > a, .logo > a').on('focus', function(e){
+                    $('#nu__main-nav-desktop > ul > li:not([data-id="howdoi"]) > a, .logo > a').on('focus', function (e) {
                         $('li.has-children[data-id="howdoi"]').find('.neumenu-wrapper').hide();
                     });
 
 
 
                     // normal HowdoI functionality below ( as a dropdown of the main nav, not as a independent section i.e. the homepage )
-                    $('li.has-children[data-id="howdoi"] > a').on('focus', function(e){
+                    $('li.has-children[data-id="howdoi"] > a').on('focus', function (e) {
 
                         // if focus has been sent by the sub-menu
-                        if( $(this).parent().find( e.relatedTarget ).length > 0 ){
+                        if ($(this).parent().find(e.relatedTarget).length > 0) {
 
                             $('.logo > a').focus();
 
@@ -160,35 +117,13 @@ var Finance = {};
                         else {
                             // be sure all the howdoi menu items in <main> have default tabindex settings
                             $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
-    
+
                             // set that focus to the howdoi menu in the <main>
                             $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
                         }
-                        
-                        // $(this).parent().addClass('neu__showme');
-                        
-                        
                     });
-                    
                 }
-
-
-            },
-            // _didFocusNavItem: function (e) {
-            //     // remove the 'showme' class tagging the dropdown parent from all items
-            //     Finance.Focuser.navItems.parent().removeClass('neu__showme');
-            //     // add the showme class to tag the focused item ( will not go away while tabbing thru children )
-            //     $(this).parent('li').addClass('neu__showme');
-
-            //     // hide all the dropdowns
-            //     Finance.Focuser.dropdowns.find('.neumenu-wrapper').hide();
-
-            //     // reset dropdown item tabindex
-            //     Finance.Focuser.dropdownItems.attr('tabindex', '0');
-
-            //     // reveal the focused items hidden panel
-            //     $(this).parent('li.has-children').find('.neumenu-wrapper').show();
-            // }
+            }
         }
         Finance.Focuser._init();
 
@@ -198,8 +133,18 @@ var Finance = {};
 
 
 
+        /**
+         * 
+         */
+        Finance.HowDoI = {
+
+            _init: function () {
+
+            }
 
 
+        }
+        Finance.HowDoI._init();
 
 
 
@@ -212,7 +157,6 @@ var Finance = {};
             dropdowns: $('nav.nu__main-nav > ul > li.has-children'),
             categories: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:last-child > div'),
             backtocats: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
-            // tasks : $(),
 
             _init: function () {
                 $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
@@ -295,7 +239,7 @@ var Finance = {};
 
 
 
-        
+
 
         Finance.MobileNav = {
 
