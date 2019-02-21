@@ -18,19 +18,59 @@ var Finance = {};
 
             _init: function () {
 
-                // on focus a nav item w/ a dropdown; reveal the dropdown
-                Finance.Focuser.navItemsWithDropdowns.on('focus', function (e) {
+                Finance.Focuser.navItems.on('focus', function(){
 
-                    // show this dropdown
-                    $(this).parent().find('.neumenu-wrapper').show();
+                    Finance.Focuser.dropdowns.not( $(this).parent() ).find('.neumenu-wrapper').hide();
+                    
                 });
+
+                // on focus a nav item w/ a dropdown; reveal the dropdown
+                Finance.Focuser.navItemsWithDropdowns.on('focus click blur', function (e) {
+                    // 
+                    e.stopPropagation();
+                    // 
+                    if(e.type=="click"){
+                        // 
+                        if( $(this).data("justfocussed") ){
+                            $(this).data("justfocussed",false);
+                        }
+                        // 
+                        else {
+                            //I have been clicked on whilst in focus
+                            console.log("click");
+                            // if( !$(this).parent().find('.neumenu-wrapper').is(':hidden') ){
+                            //     $(this).parent().find('.neumenu-wrapper').hide();
+                            //     $(this).blur();
+                            // }
+                        }
+                    }
+                    // 
+                    else if(e.type=="focus"){
+                        //I have been focussed on (either by clicking on whilst blurred or by tabbing to)
+                        console.log("focus");
+                        $(this).data("justfocussed",true);
+
+                        $(this).parent().find('.neumenu-wrapper').show();
+                    }
+                    // 
+                    else {
+                        //I no longer have focus
+                        console.log("blur");
+                        $(this).data("justfocussed",false);
+                    }
+                    
+                });
+
+                
+
+
 
                 // on blur a nav item w/ a dropdown; (maybe) hide the dropdown
                 Finance.Focuser.navItemsWithDropdowns.on('blur', function (e) {
                     // if focus is not on a sub-item (if focus is on a sub-item the menu will remain open)
                     if ($(this).parent().find($(e.relatedTarget)).length == 0) {
                         // hide this dropdown
-                        $(this).parent().find('.neumenu-wrapper').hide();
+                        // $(this).parent().find('.neumenu-wrapper').hide();
                     }
                 });
 
@@ -98,30 +138,74 @@ var Finance = {};
                         }
                     });
 
-                    $('#nu__main-nav-desktop > ul > li:not([data-id="howdoi"]) > a, .logo > a').on('focus', function (e) {
+                    
+                    $('.logo > a').on('focus', function (e) {
                         $('li.has-children[data-id="howdoi"]').find('.neumenu-wrapper').hide();
                     });
 
 
+                    $('li.has-children[data-id="howdoi"] > a').on('focus', function(e){
+
+                        // what do?
+                        e.stopPropagation();
+                        // 
+                        if(e.type=="click"){
+                            // 
+                            if( $(this).data("justfocussed") ){
+                                $(this).data("justfocussed",false);
+                            }
+                            // 
+                            else {
+                                //I have been clicked on whilst in focus
+                                console.log("click");
+                            }
+                        }
+                        // 
+                        else if(e.type=="focus"){
+                            //I have been focussed on (either by clicking on whilst blurred or by tabbing to)
+                            console.log("focus");
+                            
+                            $(this).data("justfocussed",true);
+
+                            
+                            if( $(this).parent().find(e.relatedTarget).length > 0 ){
+                                $('.logo > a').focus();
+                            } else {
+                                // send the focus to the subnav....
+                                $(this).parent().find('.neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
+                                $(this).parent().find('.neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
+                            }
+
+                        }
+                        // 
+                        else {
+                            //I no longer have focus
+                            console.log("blur");
+                            $(this).data("justfocussed",false);
+
+                        }
+                        
+                    });
+
 
                     // normal HowdoI functionality below ( as a dropdown of the main nav, not as a independent section i.e. the homepage )
-                    $('li.has-children[data-id="howdoi"] > a').on('focus', function (e) {
+                    // $('li.has-children[data-id="howdoi"] > a').on('focus', function (e) {
 
-                        // if focus has been sent by the sub-menu
-                        if ($(this).parent().find(e.relatedTarget).length > 0) {
+                    //     // if focus has been sent by the sub-menu
+                    //     if ($(this).parent().find(e.relatedTarget).length > 0) {
 
-                            $('.logo > a').focus();
+                    //         $('.logo > a').focus();
 
-                        }
-                        // focus is coming from anywhere except the submenu
-                        else {
-                            // be sure all the howdoi menu items in <main> have default tabindex settings
-                            $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
+                    //     }
+                    //     // focus is coming from anywhere except the submenu
+                    //     else {
+                    //         // be sure all the howdoi menu items in <main> have default tabindex settings
+                    //         $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
 
-                            // set that focus to the howdoi menu in the <main>
-                            $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
-                        }
-                    });
+                    //         // set that focus to the howdoi menu in the <main>
+                    //         $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
+                    //     }
+                    // });
                 }
             }
         }
