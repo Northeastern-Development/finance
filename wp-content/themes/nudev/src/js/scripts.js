@@ -141,8 +141,8 @@ var Finance = {};
                         }
                     });
 
-                    $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').on('focus', function(e){
-
+                    $('#nu__main-nav-desktop > ul > li:not([data-id="howdoi"]) > a, .logo > a').on('focus', function(e){
+                        $('li.has-children[data-id="howdoi"]').find('.neumenu-wrapper').hide();
                     });
 
 
@@ -150,13 +150,23 @@ var Finance = {};
                     // normal HowdoI functionality below ( as a dropdown of the main nav, not as a independent section i.e. the homepage )
                     $('li.has-children[data-id="howdoi"] > a').on('focus', function(e){
 
+                        // if focus has been sent by the sub-menu
+                        if( $(this).parent().find( e.relatedTarget ).length > 0 ){
+
+                            $('.logo > a').focus();
+
+                        }
+                        // focus is coming from anywhere except the submenu
+                        else {
+                            // be sure all the howdoi menu items in <main> have default tabindex settings
+                            $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
+    
+                            // set that focus to the howdoi menu in the <main>
+                            $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
+                        }
+                        
                         // $(this).parent().addClass('neu__showme');
                         
-                        // be sure all the howdoi menu items in <main> have default tabindex settings
-                        $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div > a').attr('tabindex', '0');
-
-                        // set that focus to the howdoi menu in the <main>
-                        $('div#howdoi > .neumenu-wrapper-inner > div:last-child > div:first-child > a').focus();
                         
                     });
                     
