@@ -20,6 +20,8 @@ var Finance = {};
                     if( $(this).parent().find($(e.relatedTarget)).length == 0 ){
                         // close all dropdowns
                         Finance.NavHandler.dropdownPanels.hide();
+                        // remove showme
+                        Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     }
                 });
 
@@ -57,6 +59,8 @@ var Finance = {};
 
                         // close all dropdowns
                         Finance.NavHandler.dropdownPanels.hide();
+                        // remove showme
+                        Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                         // blur this nav item ( to enable clicking it again to focus and reveal its panel)
                         $(this).blur();
                         
@@ -68,8 +72,13 @@ var Finance = {};
                     
                     // close all dropdowns
                     Finance.NavHandler.dropdownPanels.hide();
+                    // remove showme
+                    Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     // open dropdown if available
                     $(this).parent('li.has-children').find('.neumenu-wrapper').show();
+                    // add showme
+                    $(this).parent('li.has-children').addClass('neu__showme');
+                    
                 }
                 // is blurred
                 else {
@@ -84,6 +93,8 @@ var Finance = {};
                     if( $(this).parent().find(e.relatedTarget).length == 0 ){
                         // we need to close all nav dropdowns
                         Finance.NavHandler.dropdownPanels.hide();
+                        // remove showme
+                        Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     }
 
                     //  we are on the home page
