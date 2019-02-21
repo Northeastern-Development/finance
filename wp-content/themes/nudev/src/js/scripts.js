@@ -22,6 +22,7 @@ var Finance = {};
                         Finance.NavHandler.dropdownPanels.hide();
                         // remove showme
                         Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
+                        
                     }
                 });
 
