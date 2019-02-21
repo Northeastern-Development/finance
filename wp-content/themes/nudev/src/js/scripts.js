@@ -3,6 +3,96 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
+
+
+        Finance.NavHandler = {
+
+            isHomepage: ($('main > div#howdoi').length > 0) ? true : false,
+            navItems: $('#nu__main-nav-desktop > ul > li > a'),
+            dropdownPanels : $('li.has-children > .neumenu-wrapper'),
+
+            _init : function(){
+
+                Finance.NavHandler.navItems.on('focus blur click', Finance.NavHandler._navInteractionHandler);
+
+                // if focus leaves the about dropdown menu, close it
+                $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function(e){
+                    if( $(this).parent().find($(e.relatedTarget)).length == 0 ){
+                        // close all dropdowns
+                        Finance.NavHandler.dropdownPanels.hide();
+                    }
+                });
+                
+            },
+            _navInteractionHandler : function(e){
+
+                
+
+                e.stopPropagation();
+                
+                if(e.type=="click"){
+                    if($(this).data("justfocussed")){
+                        $(this).data("justfocussed",false);
+                    }
+                    // is clicked while already focussed
+                    else {
+
+                        // close all dropdowns
+                        Finance.NavHandler.dropdownPanels.hide();
+                        // blur this nav item ( to enable clicking it again to focus and reveal its panel)
+                        $(this).blur();
+                        
+                    }
+                }
+                // is focussed only
+                else if(e.type=="focus"){
+                    $(this).data("justfocussed",true);
+                    
+                    
+                    
+                    
+                    // close all dropdowns
+                    Finance.NavHandler.dropdownPanels.hide();
+                    // open dropdown if available
+                    $(this).parent('li.has-children').find('.neumenu-wrapper').show();
+                    
+                    
+                }
+                // is blurred
+                else {
+                    $(this).data("justfocussed",false);
+
+                    
+                    // close "other" dropdowns
+                    $('#nu__main-nav-desktop > ul > li.has-children').not($(this).parent()).find('.neumenu-wrapper').hide();
+
+                    //  we are on the home page
+                    if( Finance.NavHandler.isHomepage ){
+
+                        // if focus has NOT shifted to a sub-nav item, and the focus has not shifted to the howdoi in the body
+                        if( !$(this).parent().find(e.relatedTarget.length == 0) && !$('main > #howdoi').find(e.relatedTarget.length == 0) ){
+                            // we need to close all nav dropdowns
+                            Finance.NavHandler.dropdownPanels.hide();
+                        }
+
+                    }
+                    // we are not on the home page
+                    else {
+                        // if focus has NOT shifted to a sub-nav item
+                        if( $(this).parent().find(e.relatedTarget).length == 0 ){
+                            // we need to close all nav dropdowns
+                            Finance.NavHandler.dropdownPanels.hide();
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+        Finance.NavHandler._init();
+        
+        
+        
         /**
          * 
          */
@@ -209,30 +299,7 @@ var Finance = {};
                 }
             }
         }
-        Finance.Focuser._init();
-
-
-
-
-
-
-
-        /**
-         * 
-         */
-        Finance.HowDoI = {
-
-            _init: function () {
-
-            }
-
-
-        }
-        Finance.HowDoI._init();
-
-
-
-
+        // Finance.Focuser._init();
 
 
         Finance.Nav = {

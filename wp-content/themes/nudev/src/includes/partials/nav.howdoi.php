@@ -18,7 +18,7 @@
 
     $format_cats = '
         <div>
-            <a href="javascript:void(0)" title="View tasks in the %s category" aria-label="View tasks in the %s category" tabindex="-1">
+            <a href="javascript:void(0)" title="View tasks in the %s category" aria-label="View tasks in the %s category" tabindex="0">
                 <img class="taskicon" src="%s" alt="%s icon" aria-label="%s icon">
                 <p><span>%s</span><i class="material-icons">&#xe5cc</i></p>
             </a>
