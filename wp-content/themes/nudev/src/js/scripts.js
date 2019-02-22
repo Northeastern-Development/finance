@@ -3,16 +3,15 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
+        /**
+         * 
+         */
         Finance.NavHandler = {
-
             isHomepage: ($('main > div#howdoi').length > 0) ? true : false,
             navItems: $('#nu__main-nav-desktop > ul > li > a'),
             dropdownPanels: $('li.has-children > .neumenu-wrapper'),
-
             _init: function () {
-
                 Finance.NavHandler.navItems.on('focus blur click', Finance.NavHandler._navInteractionHandler);
-
                 // if focus leaves the about dropdown menu, close it
                 $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function (e) {
                     if ($(this).parent().find($(e.relatedTarget)).length == 0) {
@@ -20,44 +19,29 @@ var Finance = {};
                         Finance.NavHandler.dropdownPanels.hide();
                         // remove showme
                         Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
-
                     }
                 });
-
-
                 // if we blur from the back to topics button back to the howdoi top level link,
                 // or if we blur from the last task to the forms top level link
                 // we have 'left' the howdoi nav and it must be reset to its initial state
                 $('#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li:last-of-type > a, #howdoi .neumenu-wrapper-inner>div:first-of-type > a').on('blur', function (e) {
-
                     // check if we have passed focus to the forms link or the howdoi link (top level)
                     // if we have done either of those, we know we have left the howdoi nav
                     if ($('#nu__main-nav-desktop > ul > li:nth-child(2) > a').is(e.relatedTarget) || $('#nu__main-nav-desktop > ul > li:first-child > a').is(e.relatedTarget)) {
                         Finance.NavHandler._resetHowdoiState();
                     }
-
                 });
-
-
                 // HomePage Only:
                 if (Finance.NavHandler.isHomepage) {
-
                     // if we blur off the back to topics button
                     $('#howdoi .neumenu-wrapper-inner>div:first-of-type > a').on('blur', function (e) {
-
                         // and focus is passed to 'about' (which it will be)
                         if ($('#nu__main-nav-desktop > ul > li:last-child > a').is(e.relatedTarget)) {
-
                             // send focus to the howdoi dropdown item
                             $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
-
                             Finance.NavHandler._resetHowdoiState();
-
                         }
-
                     });
-
-
                     // if we blur off the last task view item
                     $('#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li:last-of-type > a').on('blur', function (e) {
 
@@ -68,7 +52,6 @@ var Finance = {};
                             Finance.NavHandler._resetHowdoiState();
                         }
                     });
-
                     // if focus is passed from the first howdoi back to about, redirect it to the logo and reset tabindex
                     $('main > #howdoi > div> div:last-child > div:first-child > a').on('blur', function (e) {
                         if ($('li.has-children:last-child > a').is(e.relatedTarget)) {
@@ -76,7 +59,6 @@ var Finance = {};
                             $('li.has-children:first-of-type > a').focus();
                         }
                     });
-
                     $('main > #howdoi > div> div:last-child > div:last-child > a').on('blur', function (e) {
                         // if focus is passed to the learn more button we need to send it to the forms link instead
                         // and reset the tabindex of the howdoi
@@ -87,20 +69,19 @@ var Finance = {};
                     });
                 }
             },
+            /**
+             * 
+             * @param {event} e 
+             */
             _navInteractionHandler: function (e) {
-
                 e.stopPropagation();
-
                 if (e.type == "click") {
+                    // click fires before focus
                     if ($(this).data("justfocussed")) {
                         $(this).data("justfocussed", false);
-
-                        console.log('is clicked BEFORE focussed');
                     }
-                    // is clicked while already focussed
+                    // click fires on focused element
                     else {
-                        console.log('is clicked AFTER focussed');
-
                         // close all dropdowns
                         Finance.NavHandler.dropdownPanels.hide();
                         // remove showme
@@ -113,44 +94,30 @@ var Finance = {};
                 // is focussed only
                 else if (e.type == "focus") {
                     $(this).data("justfocussed", true);
-
-                    console.log('is focussed only');
-
                     // close all dropdowns
                     Finance.NavHandler.dropdownPanels.hide();
-
                     // remove all showmes
                     Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
-
                     Finance.NavHandler._resetHowdoiState();
-
                     // open this dropdown if available
                     $(this).parent('li.has-children').find('.neumenu-wrapper').show();
-
                     // add showme here
                     $(this).parent('li.has-children').addClass('neu__showme');
-
                     // if this is the howdoi menu
                     if ($(this).parent().is('[data-id="howdoi"]')) {
-
                         // set back to topics tabindex to 0
                         $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '0');
                         // set task view tabindex to 0
                         $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '0');
                         // set the category view tabindex to 0
                         $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '0');
-
                     }
-
                 }
                 // is blurred
                 else {
-
                     $(this).data("justfocussed", false);
-
                     // close "other" dropdowns
                     $('#nu__main-nav-desktop > ul > li.has-children').not($(this).parent()).find('.neumenu-wrapper').hide();
-
                     // if focus has NOT shifted to a sub-nav item
                     // (note, on the homepage, there is no subnav to close and this will not affect the howdoi functionality afaik)
                     if ($(this).parent().find(e.relatedTarget).length == 0) {
@@ -159,13 +126,10 @@ var Finance = {};
                         // remove this showme
                         Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     }
-
                     //  we are on the home page
                     if (Finance.NavHandler.isHomepage) {
-
                         // if we blur from the howdoi to the forms
                         if ($(this).parent().is('[data-id="howdoi"]') && $(e.relatedTarget).is('#nu__main-nav-desktop > ul > li:nth-child(2) > a')) {
-
                             // set the tabindex of the real howdoi items to 0
                             $('main > #howdoi > div> div:last-child > div > a').attr('tabindex', '0');
                             // send focus to the real howdoi first link
@@ -174,8 +138,6 @@ var Finance = {};
                     }
                 }
             },
-
-
             // resets the HowDoI menu to initial state ( removes filter classes, sets link tabindexes to -1 )
             _resetHowdoiState: function () {
                 // remove filtered view from categories
@@ -194,6 +156,11 @@ var Finance = {};
         Finance.NavHandler._init();
 
 
+
+
+        /**
+         * 
+         */
         Finance.Nav = {
 
             parentlinks: $('nav.nu__main-nav > ul > li.has-children > a'),
