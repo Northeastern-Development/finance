@@ -3,6 +3,11 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
+        // Safari 3.0+ "[object HTMLElementConstructor]" 
+        var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+        console.dir( isSafari );
+
+
 
 
         Finance.NavHandler = {
@@ -14,7 +19,7 @@ var Finance = {};
             _init : function(){
 
                 Finance.NavHandler.navItems.on('focus blur click', Finance.NavHandler._navInteractionHandler);
-
+                
                 // if focus leaves the about dropdown menu, close it
                 $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function(e){
                     if( $(this).parent().find($(e.relatedTarget)).length == 0 ){
@@ -36,23 +41,27 @@ var Finance = {};
                     // if we have done either of those, we know we have left the howdoi nav
                     if( $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').is(e.relatedTarget) || $('#nu__main-nav-desktop > ul > li:first-child > a').is(e.relatedTarget) ){
 
-                        // remove filtered view from categories
-                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
-                        // remove filtered view from wrapper
-                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
-                        // reset task view tabindex
-                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
-                        // reset back to topics tabindex
-                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
-                        // reset the category view tabindex
-                        $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                        Finance.NavHandler._resetHowdoiState();
+                        
+                        // // remove filtered view from categories
+                        // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                        // // remove filtered view from wrapper
+                        // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                        // // reset task view tabindex
+                        // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                        // // reset back to topics tabindex
+                        // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                        // // reset the category view tabindex
+                        // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
                         
                     }
                     
                 });
-                // on the homepage we have different behaviors for blurring out of the task view
-                if( Finance.NavHandler.isHomepage ){
 
+
+                // HomePage Only:
+                if( Finance.NavHandler.isHomepage ){
+                    
                     // if we blur off the back to topics button
                     $('#howdoi .neumenu-wrapper-inner>div:first-of-type > a').on('blur', function(e){
 
@@ -61,16 +70,19 @@ var Finance = {};
 
                             // send focus to the howdoi dropdown item
                             $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
+
+                            Finance.NavHandler._resetHowdoiState();
+
                             // remove filtered view from categories
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
-                            // remove filtered view from wrapper
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
-                            // reset back to topics tabindex
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
-                            // reset task view tabindex
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
-                            // reset the category view tabindex
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                            // // remove filtered view from wrapper
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                            // // reset back to topics tabindex
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                            // // reset task view tabindex
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                            // // reset the category view tabindex
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
                         }
 
                     });
@@ -83,25 +95,22 @@ var Finance = {};
                         if( $('section.hero > div > a').is(e.relatedTarget) ){
                             // pass focus to the forms top level link
                             $('#nu__main-nav-desktop > ul > li:nth-child(2) > a').focus();
+
+                            Finance.NavHandler._resetHowdoiState();
+
                             // remove filtered view from categories
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
-                            // remove filtered view from wrapper
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
-                            // reset back to topics tabindex
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
-                            // reset task view tabindex
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
-                            // reset the category view tabindex
-                            $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                            // // remove filtered view from wrapper
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                            // // reset back to topics tabindex
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                            // // reset task view tabindex
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                            // // reset the category view tabindex
+                            // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
                         }
                         
                     });
-                }
-
-
-
-                // if focus leaves the howdoi on the homepage send focus to the forms nav link & reset tabindex to -1
-                if( Finance.NavHandler.isHomepage ){
 
                     // if focus is passed from the first howdoi back to about, redirect it to the logo and reset tabindex
                     $('main > #howdoi > div> div:last-child > div:first-child > a').on('blur', function(e){
@@ -128,9 +137,12 @@ var Finance = {};
                 if(e.type=="click"){
                     if($(this).data("justfocussed")){
                         $(this).data("justfocussed",false);
+
+                        console.log('is clicked BEFORE focussed');
                     }
                     // is clicked while already focussed
                     else {
+                        console.log('is clicked AFTER focussed');
 
                         // close all dropdowns
                         Finance.NavHandler.dropdownPanels.hide();
@@ -145,21 +157,30 @@ var Finance = {};
                 else if(e.type=="focus"){
                     $(this).data("justfocussed",true);
                     
+                    console.log('is focussed only');
+                    
                     // close all dropdowns
                     Finance.NavHandler.dropdownPanels.hide();
-                    // remove showme
+
+                    // remove all showmes
                     Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
-                    // open dropdown if available
+
+                    Finance.NavHandler._resetHowdoiState();
+                    
+                    // open this dropdown if available
                     $(this).parent('li.has-children').find('.neumenu-wrapper').show();
-                    // add showme
+                    
+                    // add showme here
                     $(this).parent('li.has-children').addClass('neu__showme');
 
+                    // if this is the howdoi menu
                     if( $(this).parent().is('[data-id="howdoi"]') ){
-                        // reset back to topics tabindex
+                        
+                        // set back to topics tabindex to 0
                         $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '0');
-                        // reset task view tabindex
+                        // set task view tabindex to 0
                         $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '0');
-                        // reset the category view tabindex
+                        // set the category view tabindex to 0
                         $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '0');
 
                     }
@@ -178,7 +199,7 @@ var Finance = {};
                     if( $(this).parent().find(e.relatedTarget).length == 0 ){
                         // we need to close all nav dropdowns
                         Finance.NavHandler.dropdownPanels.hide();
-                        // remove showme
+                        // remove this showme
                         Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     }
 
@@ -195,6 +216,21 @@ var Finance = {};
                         }
                     } 
                 }
+            },
+
+
+            // resets the HowDoI menu to initial state ( removes filter classes, sets link tabindexes to -1 )
+            _resetHowdoiState : function(){
+                // remove filtered view from categories
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div').removeClass('theFilter');
+                // remove filtered view from wrapper
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner').removeClass('isFiltered');
+                // reset back to topics tabindex
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                // reset task view tabindex
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                // reset the category view tabindex
+                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
             }
             
         }
@@ -429,13 +465,15 @@ var Finance = {};
                 Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
 
 
-                $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
+                
                 // reset back to topics tabindex
-                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
                 // reset task view tabindex
-                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
                 // reset the category view tabindex
-                $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+
+                $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
                 
             },
             _didClickCategory: function (e) {
@@ -466,42 +504,6 @@ var Finance = {};
                     $('html, body').removeClass('neu__noscroll');
 
                 }
-            },
-            _didClickDropdown: function (e) {
-
-                // if the dropdown is already open, close it
-                // 
-
-
-
-                // e.stopPropagation();
-                // e.preventDefault();
-                // if the other dropdown is visible,
-                // if (!$(this).parent().siblings('.has-children').find('.neumenu-wrapper').is(':hidden')) {
-                //     // hide the other dropdown
-                //     $(this).parent().siblings('.has-children').find('.neumenu-wrapper').hide();
-                // }
-
-                // // if the other dropdown has a showme class
-                // if ($(this).parent().siblings('.has-children').hasClass('neu__showme')) {
-                //     $(this).parent().siblings('.has-children').removeClass('neu__showme');
-                // }
-
-                // // if this dropdown is hidden,
-                // if ($(this).parent().find('.neumenu-wrapper').is(':hidden')) {
-                //     // show this dropdown
-                //     $(this).parent().find('.neumenu-wrapper').show();
-                //     // when this dropdown is shown; apply a showme class
-                //     $(this).parent().addClass('neu__showme');
-                // }
-                // // if this dropdown is visible,
-                // else {
-                //     // hide this dropdown
-                //     $(this).parent().find('.neumenu-wrapper').hide();
-                //     // when this dropdown is hidden, remove the showme class
-                //     $(this).parent().removeClass('neu__showme');
-                // }
-
             }
         }
         Finance.Nav._init();
