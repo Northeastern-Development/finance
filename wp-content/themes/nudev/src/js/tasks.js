@@ -13,7 +13,7 @@
             _init : function(){
 
                 Finance.Tasks.steps.slideUp(0);
-                Finance.Tasks.solutions.find('>li>div').on('click', Finance.Tasks._clickHandler);
+                Finance.Tasks.solutions.find('>li>a').on('click', Finance.Tasks._clickHandler);
             },
             _clickHandler : function(e){
 

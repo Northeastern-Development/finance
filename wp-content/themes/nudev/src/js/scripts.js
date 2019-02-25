@@ -309,7 +309,7 @@ var Finance = {};
 
 
         Finance.faqs = {
-            triggers: $('.js__collapsible_list > li > h5'),
+            triggers: $('.js__collapsible_list > li > a'),
             questions: $('.js__collapsible_list > li'),
             answers: $('.js__collapsible_list > li > div'),
             _init: function () {

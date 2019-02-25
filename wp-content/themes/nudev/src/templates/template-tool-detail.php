@@ -61,7 +61,7 @@
 
         $format_group = '
             <div class="tool-group">
-                <h4 title="Toggle dropdown for %s" aria-label="Toggle dropdown for %s">%s</h4>
+                <a href="javascript:;" title="Toggle dropdown for %s" aria-label="Toggle dropdown for %s"><span>%s</span></a>
                 <ul class="neu__fancy_bullets">
                     %s
                 </ul>

@@ -4,14 +4,14 @@
 
 @media only screen {
 
-
+    // blurb
     main>section:nth-of-type(2) {
         >p {
             @include font-3l-c;
         }
     }
 
-
+    // Index Page
     ul.tools-grid {
 
 
@@ -74,85 +74,87 @@
         }
     }
 
-    main,
-    div.main {
-        section {
-            .tool-group {
-                position: relative;
-                border-bottom: 1px solid transparentize(black, 0.8);
+    main>section>.tool-group {
+        position: relative;
+        border-bottom: 1px solid transparentize(black, 0.8);
 
-                >h4 {
-                    position: relative;
-                    padding: 15px 0;
-                    padding-right: 20px;
-                    cursor: pointer;
-                    @include font-3r-l;
+        >a {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            padding: 15px 0;
+            padding-right: 20px;
+            cursor: pointer;
+            @include font-3r-l;
+            span {
+                border-bottom: 2px solid transparent;
+            }
 
-                    &:after {
-                        position: absolute;
-                        right: 0;
-                        font-size: 20px;
-                        transition: transform 0.4s ease;
-                        content: '\e313';
-                        transform: rotate(0deg);
-                        display: inline-block;
-                        font-family: 'Material Icons';
-                    }
+            &:after {
+                position: absolute;
+                right: 0;
+                font-size: 20px;
+                transition: transform 0.4s ease;
+                content: '\e313';
+                transform: rotate(0deg);
+                display: inline-block;
+                font-family: 'Material Icons';
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                span {
+                    border-bottom: 2px solid $brand_colors-red;
+                }
+                &:after {
+                    color: $brand_colors-red;
+                }
+            }
+        }
+
+        &.js__tool_expanded>a {
+            &:after {
+                transform: rotate(180deg);
+            }
+        }
+
+        >ul {
+            @include font-2l-l;
+            flex-flow: row wrap;
+
+            >li {
+                margin-bottom: 20px;
+                flex: 1 0 100%;
+
+                >h5 {
+                    @include font-2r-l;
+                }
+
+                a {
+                    color: $brand_colors-red;
 
                     &:hover,
                     &:active,
                     &:focus {
-                        &:after {
-                            color: $brand_colors-red;
-                        }
+                        border-bottom: 2px solid $brand_colors-red;
                     }
                 }
 
-                &.js__tool_expanded>h4 {
-                    &:after {
-                        transform: rotate(180deg);
-                    }
-                }
+                ul {
+                    list-style-type: disc;
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 2.4rem;
 
-                >ul {
-                    @include font-2l-l;
-                    flex-flow: row wrap;
-
-                    >li {
-                        margin-bottom: 20px;
-                        flex: 1 0 100%;
-
-                        >h5 {
-                            @include font-2r-l;
-                        }
-
-                        a {
-                            color: $brand_colors-red;
-
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                border-bottom: 2px solid $brand_colors-red;
-                            }
-                        }
-
-                        ul {
-                            list-style-type: disc;
-                            margin: 0;
-                            padding: 0;
-                            padding-left: 2.4rem;
-
-                            li {
-                                margin: 0;
-                                padding: 0;
-                            }
-                        }
+                    li {
+                        margin: 0;
+                        padding: 0;
                     }
                 }
             }
         }
     }
-
 }
 
 
@@ -182,17 +184,6 @@
                     max-width: 480px;
                     margin: 0 auto;
 
-                    // margin-bottom: 15px;
-                    // border-bottom: 5px solid transparent;
-                    // &:after {
-                    //     position: absolute;
-                    //     bottom: 0px;
-                    //     left: 0;
-                    //     content: '';
-                    //     display: inline-block;
-                    //     width: 100%;
-                    //     border-bottom: 1px solid black;
-                    // }
                     >a {
                         margin: 0;
                         border-bottom: 5px solid transparent;
@@ -312,7 +303,7 @@
         @include font-2b-l;
     }
 
-    main section .tool-group>h4 {
+    main section .tool-group>a {
         @include font-2b-l;
     }
 }

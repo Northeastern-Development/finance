@@ -64,7 +64,7 @@
     $format_form = '
         <ul class="js__collapsible_list list" id="%s">
             <li>
-                <h5 title="Toggle the %s dropdown" aria-label="Toggle the %s dropdown">%s</h5>
+                <a href="javascript:;" title="Toggle the %s dropdown" aria-label="Toggle the %s dropdown"><span>%s</span></a>
                 <div>
                     %s
                     %s

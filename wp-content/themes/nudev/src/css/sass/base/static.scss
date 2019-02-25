@@ -1,13 +1,3 @@
-
-.logo > a {
-    &:focus {
-        svg path{
-            fill: $brand_colors-red;
-        }
-    }
-}
-
-
 @media only screen {
     main>section>h2 {
         @include font-7l-l;
@@ -463,7 +453,7 @@
 
 
         ul.js__collapsible_list {
-            >li>h5 {
+            >li>a {
                 cursor: pointer;
                 @include font-3b-l;
                 position: relative;
@@ -508,7 +498,9 @@
             }
         }
 
-        // FAQ specific
+
+        
+        // FAQ Stuff
         >section>ul.nufin-faqs {
             list-style-type: none;
             margin: 0;
@@ -517,7 +509,8 @@
             >li {
                 border-bottom: 1px solid transparentize(black, 0.5);
 
-                >h5 {
+                >a {
+                    display: block;
                     @include font-2r-l;
                     margin: 15px 0;
 
@@ -541,7 +534,7 @@
                 }
 
                 &.js__collapsible_triggered {
-                    >h5:after {
+                    >a:after {
                         // carrot becomes red
                         // color: $brand_colors-red;
                         transform: rotate(180deg);
@@ -581,6 +574,14 @@
                 }
             }
         }
+        // END FAQ STUFF
+
+
+
+
+
+
+
 
         section.hero.hero-image {
             background-size: cover;

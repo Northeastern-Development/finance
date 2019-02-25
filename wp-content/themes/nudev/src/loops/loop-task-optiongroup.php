@@ -18,10 +18,10 @@
     // the entire compiled option, including sidebar, related files, suboptions etc
     $format_option = '
         <li>
-            <div title="Toggle dropdown for %s" aria-label="Toggle dropdown for %s">
+            <a href="javascript:;" title="Toggle dropdown for %s" aria-label="Toggle dropdown for %s">
                 <h5>%s<span>%s</span></h5>
                 %s
-            </div>
+            </a>
             <ul class="list task-options-list-item-suboptions %s neu__fancy_bullets">
                 %s
                 %s

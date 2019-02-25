@@ -22,7 +22,14 @@
                 width: 100%;
                 border-bottom: 1px solid transparentize(black, 0.33);
                 padding: 15px 0;
+
+                &:hover, &:focus, &:active {
+                    span {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
+                }
                 > span {
+                    border-bottom: 2px solid transparent;
                     @include neu__iconlink();
                     &:before {
                         color: $brand_colors-red;

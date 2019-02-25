@@ -180,7 +180,7 @@
 
     main>section .task-options-list>li {
         &.js__tasks_viewable_steps {
-            >div>h5 {
+            >a>h5 {
                 &:after {
                     transform: rotate(180deg);
                 }
@@ -188,7 +188,7 @@
         }
 
         // the task option grouping main info (title, description, icon etc)
-        >div {
+        >a {
             position: relative;
 
             h5 {
@@ -269,7 +269,7 @@
         padding-bottom: 15px; // font size dropped so much the padding should too
     }
 
-    main>section>.task-options .task-options-list>li>div h5 {
+    main>section>.task-options .task-options-list>li>a h5 {
         @include font-2b-l;
     }
 }
@@ -295,7 +295,7 @@
         padding-bottom: 15px;
     }
 
-    main>section>.task-options .task-options-list>li>div {
+    main>section>.task-options .task-options-list>li>a {
 
         >h5 {
             margin-left: 0;

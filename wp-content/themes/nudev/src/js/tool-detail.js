@@ -9,7 +9,7 @@
         Finance.Tools = {
 
             wrappers : $('div.tool-group'),
-            triggers : $('div.tool-group > h4'),
+            triggers : $('div.tool-group > a'),
             areas : $('div.tool-group > ul'),
             _init : function(){
 

@@ -39,7 +39,7 @@ $format_category = '
 
 $format_item = '
     <li id="%s">
-        <h5 title="Toggle dropdown item %s" aria-label="Toggle dropdown item %s">%s</h5>
+        <a href="javascript:;" title="Toggle dropdown item %s" aria-label="Toggle dropdown item %s"><span>%s</span></a>
         <div>%s</div>
     </li>
 ';
