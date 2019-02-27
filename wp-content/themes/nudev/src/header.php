@@ -47,6 +47,7 @@
 		<?php wp_head(); ?>
     </head>    
     <body <?php body_class(); ?>>
+    <a href="#maincontent" class="skiptomaincontent" title="Click here to skip to main content" aria-label="Click here to skip to main content">Skip to main content</a>
         <?php 
             // header/footer disabled on staff-bio template
             if( !is_page_template('templates/template-staff-bio.php') ) :
@@ -54,7 +55,7 @@
                 // if(function_exists("NUML_globalheader")){ NUML_globalheader(); }
                 // then the siteheader
          ?>
-        <?php if(function_exists("NUML_globalheader")){NUML_globalheader();} ?><a href="#maincontent" class="skiptomaincontent" title="Click here to skip to main content" aria-label="Click here to skip to main content">Skip to main content</a><header class="header clear" role="banner">
+        <?php if(function_exists("NUML_globalheader")){NUML_globalheader();} ?><header class="header clear" role="banner">
             <div id="header">
                 <?php require_once(dirname(__FILE__)."/includes/navigation.php"); ?>
             </div>
