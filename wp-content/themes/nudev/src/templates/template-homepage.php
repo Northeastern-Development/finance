@@ -121,7 +121,7 @@
     </div>
 
 
-    <section class="hero hero-image" style="background-image: url(<?= $img; ?>)">
+    <section class="hero hero-image" style="background-image: url(<?= $img; ?>)" aria-label="A Centralized Organization Hero Image">
         
         <div>
             <h2>A Centralized Organization</h2>

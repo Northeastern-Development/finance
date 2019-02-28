@@ -48,12 +48,11 @@
                         >li {
                             >a {
                                 color: white;
-                                @include font-2b-l;
-
+                                @include font-2r-l;
                                 &:hover,
                                 &:active,
                                 &:focus {
-                                    opacity: 0.6;
+                                    color: rgba(255, 255, 255, 0.6);
                                     border-bottom: 2px solid $brand_colors-red;
                                 }
                             }

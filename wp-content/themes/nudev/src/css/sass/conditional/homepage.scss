@@ -20,6 +20,7 @@
             >div {
                 width: 60vw;
                 >p {
+                    @include font-2l-c;
                     margin-bottom: 30px;
                 }
 
@@ -28,21 +29,9 @@
                     margin-bottom: 30px;
                 }
 
-                >p,
-                .nu__content_btn {
-                    @include font-2l-c;
-                }
-
-                .nu__content_btn {
+                a.nu__content_btn {
                     color: white;
                     border: 1px solid white;
-
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        color: white;
-                        background-color: transparentize(black, 0.6);
-                    }
                 }
             }
         }
@@ -73,14 +62,15 @@
                 position: relative;
                 background-color: $brand_colors-teal--dark;
                 text-align: center;
+                
+                // THESE SHOULD ALWAYS LOOK CONSISTENT NO NEED FOR THIS MUCH STYLING HERE
                 > a.nu__content_btn {
-                    display: inline-block;
-                    margin: 0 auto;
                     margin-bottom: 30px;
-                    cursor: pointer;
                     color: white;
                     border-color: white;
                 }
+
+                
                 >div {
                     position: relative;
                     >h4 {

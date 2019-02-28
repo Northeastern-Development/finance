@@ -144,6 +144,7 @@
                 >h3 {
                     // select topic / task
                     @include font-3r-c;
+                    margin-bottom: 15px;
                 }
 
                 // hide select task / back to topics
@@ -154,9 +155,6 @@
 
                 // back top topics button
                 >a.nu__content_btn {
-                    @include font-3l-c;
-                    // padding: 10px;
-                    margin-top: 15px;
                     color: white;
                     border-color: white;
                 }
@@ -521,10 +519,10 @@
 
         }
 
-        >a.removefilter {
-            @include font-2l-c;
+        // >a.removefilter {
+        //     @include font-2l-c;
 
-        }
+        // }
     }
 
 }

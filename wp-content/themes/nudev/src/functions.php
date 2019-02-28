@@ -611,37 +611,37 @@ function create_post_type_nudev()
 {
     register_taxonomy_for_object_type('category', 'nudev'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'nudev');
-    register_post_type('careers', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Careers', 'nudev'), // Rename these to suit
-            'singular_name' => __('Careers', 'nudev'),
-            'add_new' => __('Add New', 'nudev'),
-            'add_new_item' => __('Add New Career Opportunity', 'nudev'),
-            'edit' => __('Edit', 'nudev'),
-            'edit_item' => __('Edit Career Opportunity', 'nudev'),
-            'new_item' => __('New Career Opportunity', 'nudev'),
-            'view' => __('View Career Opportunities', 'nudev'),
-            'view_item' => __('View Career Opportunities', 'nudev'),
-            'search_items' => __('Search Career Opportunities', 'nudev'),
-            'not_found' => __('No Careers found', 'nudev'),
-            'not_found_in_trash' => __('No Careers found in Trash', 'nudev')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom nudev post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
+    // register_post_type('careers', // Register Custom Post Type
+    //     array(
+    //     'labels' => array(
+    //         'name' => __('Careers', 'nudev'), // Rename these to suit
+    //         'singular_name' => __('Careers', 'nudev'),
+    //         'add_new' => __('Add New', 'nudev'),
+    //         'add_new_item' => __('Add New Career Opportunity', 'nudev'),
+    //         'edit' => __('Edit', 'nudev'),
+    //         'edit_item' => __('Edit Career Opportunity', 'nudev'),
+    //         'new_item' => __('New Career Opportunity', 'nudev'),
+    //         'view' => __('View Career Opportunities', 'nudev'),
+    //         'view_item' => __('View Career Opportunities', 'nudev'),
+    //         'search_items' => __('Search Career Opportunities', 'nudev'),
+    //         'not_found' => __('No Careers found', 'nudev'),
+    //         'not_found_in_trash' => __('No Careers found in Trash', 'nudev')
+    //     ),
+    //     'public' => true,
+    //     'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+    //     'has_archive' => true,
+    //     'supports' => array(
+    //         'title',
+    //         'editor',
+    //         'excerpt',
+    //         'thumbnail'
+    //     ), // Go to Dashboard Custom nudev post for supports
+    //     'can_export' => true, // Allows export in Tools > Export
+    //     'taxonomies' => array(
+    //         'post_tag',
+    //         'category'
+    //     ) // Add Category and Post Tags support
+    // ));
 
 
     /**

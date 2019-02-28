@@ -50,16 +50,16 @@
         margin-top: 124px;
     }
 
-    .nu__content_btn {
-        letter-spacing: 1px;
-        display: inline-block;
-        padding: 5px 45px;
-        margin: 0px auto;
-        border: 1px solid black;
-        color: black;
-        text-transform: uppercase;
-        @include font-2l-c;
 
+
+    // "View All" and similar buttons
+    a.nu__content_btn {
+        @include font-2l-c;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 10px 30px;
+        color: black;
+        border: 1px solid black;
         &:hover,
         &:active,
         &:focus {
@@ -67,6 +67,9 @@
         }
     }
 
+
+
+    
     .neu__bgimg {
         @include neu__bgimg($height: 245px);
     }
