@@ -287,6 +287,12 @@
             > section.hero {
                 > div {
                     // width: calc(100% / 3);
+                    > p {
+                        margin-bottom: 15px;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
                 }
             }
         }

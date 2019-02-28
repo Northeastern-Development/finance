@@ -2,7 +2,6 @@
 /**
  * Template Name: Home Page
  */
-    $img = site_url() . '/wp-content/uploads/hp-hero.jpg';
     // get tools posts data
     $args = array(
         'posts_per_page' => 3
@@ -108,7 +107,49 @@
     }
     // end get news post data
     
+    
+    // $img = site_url() . '/wp-content/uploads/hp-hero.jpg';
+    
+    // Get Hero Space fields
 
+    $fields = get_fields($post_id);
+    $hero_image = $fields['hero_image'];
+    $hero_title = $fields['hero_title'];
+    $hero_description = $fields['hero_description'];
+    $link_text = $fields['link_text'];
+    $link_url = $fields['link_url'];
+    $link_ext = $fields['external_url'];
+
+    $format_hero = '
+        <section class="hero hero-image" style="background-image: url(%s)" aria-label="%s">
+            <div>
+                <h2>%s</h2>
+                %s
+                %s
+            </div>
+        </section>
+    ';
+
+    $format_link = '
+        <a href="%s" %s aria-label="View the %s page" title="View the %s page" class="nu__content_btn">%s</a>
+    ';
+    $content_link = sprintf(
+        $format_link
+        ,$link_url
+        ,( !empty($link_ext) ) ? 'target="_blank"' : ''
+        ,$hero_title
+        ,$hero_title
+        ,(!empty($link_text)) ? $link_text : 'Learn More'
+    );
+
+    $content_hero = sprintf(
+        $format_hero
+        ,$hero_image
+        ,$hero_title
+        ,$hero_title
+        ,( !empty($hero_description) ) ? '<p>' . $hero_description . '</p>': ''
+        ,$content_link
+    );
     
     get_header();
 ?>
@@ -120,16 +161,8 @@
         ?>
     </div>
 
+    <?php echo $content_hero; ?>
 
-    <section class="hero hero-image" style="background-image: url(<?= $img; ?>)" aria-label="A Centralized Organization Hero Image">
-        
-        <div>
-            <h2>A Centralized Organization</h2>
-            <p>Northeastern University’s Finance Division oversees all functions related to finance—from buying goods and services, to processing expense reports, to developing financial statements and managing student loans. The division’s wide-ranging services include financial strategy, auditing, treasury, accounting, and budgeting. Our mission is to help the university achieve ambitious goals through the sound stewardship of financial resources.</p>    
-            <a title="View the About Page" aria-label="View the About Page" class="nu__content_btn" href="<?php echo get_permalink( get_page_by_path('about') ); ?>">Learn More</a>
-        </div>
-
-    </section>
     <?php
         // will not output anything if there are no deadlines to show
         include(locate_template('loops/loop-deadlines.php'));
