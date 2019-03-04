@@ -39,7 +39,6 @@
             verticalFit: true,
             removalDelay: 300,
             mainClass: 'mfp-fade'
-
         });
 
         

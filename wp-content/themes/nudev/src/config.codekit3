@@ -638,16 +638,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/lib/hover-min-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/lib/hover-min-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/css/lib/hover-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -665,26 +655,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/lib/magnific-popup-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/lib/magnific-popup.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/lib/magnific-popup-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/news-events-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/news-events-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1100,16 +1070,6 @@
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
-		},
-	"/css/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/style-min-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/css/style.css": {
 		"aP": 1,
@@ -1585,23 +1545,13 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/js/lib/jquery.magnific-popup.min-min.js": {
+	"/js/lib/jquery.magnific-popup-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/lib/jquery.magnific-popup.min-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/js/lib/jquery.magnific-popup.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/lib/jquery.magnific-popup.min-min.js",
-		"oF": 0,
+		"oA": 1,
+		"oAP": "/js/lib/jquery.magnific-popup-min-min.js",
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},

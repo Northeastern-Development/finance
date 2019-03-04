@@ -54,6 +54,7 @@
 
     // "View All" and similar buttons
     a.nu__content_btn {
+        display: inline-block;
         @include font-2l-c;
         letter-spacing: 1px;
         text-transform: uppercase;
