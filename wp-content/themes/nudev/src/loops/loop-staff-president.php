@@ -22,6 +22,8 @@
     $pres = get_posts($args);
 
     if( !empty($pres) ){
+        $svptitle = get_fields($post_id)['svp_intro_title'];
+
         $fields = get_fields($pres[0]->ID);
     
         if( !empty($fields['status']) ){
@@ -48,7 +50,7 @@
                 ,$pres[0]->post_title
                 ,$pres[0]->post_title
                 ,$fields['title']
-                ,(get_page_template_slug($post_id) == "templates/template-about.php") ? "Finance Division Leadership" : "Finance Division Leadership"
+                ,( !empty($svptitle) ) ? $svptitle : "Finance Division Leadership"
                 ,$fields['description']
                 , ( !empty($fields['phone']) )
                     ? '<a href="tel:'.$fields['phone'].'" title="Call '.$pres[0]->post_title.'" aria-label="Call '.$pres[0]->post_title.'" class="neu__iconlink neu__iconlink-phone">'.$fields['phone'].'</a>'
