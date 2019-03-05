@@ -1,15 +1,22 @@
 <?php 
-/**
- * Important Deadlines Loop
- */
-
-    $deadlines = get_fields($post)['deadlines'];
-    
-    usort($deadlines, function($a, $b){
-        return $a['date'] <=> $b['date'];
-    });
-
-    // status, excerpt, link, external, start, end
+    /**
+     * Important Deadlines Loop
+     */
+    $args = array(
+        'post_type'     => 'deadlines'
+        ,'posts_per_page'   => 5
+        ,'meta_query'   => array(
+        array(
+            'key'       => 'status',
+            'value'     => '1',
+            'compare'   => '='
+            )
+        )
+        ,'orderby' => 'meta_value'
+        ,'meta_key' => 'date'
+        ,'order' => 'ASC'
+    );
+    $deadlines = get_posts($args);
     $format_deadline = '
         <li>
             <h5>%s</h5>
@@ -22,28 +29,24 @@
                 <h4>Upcoming Deadlines</h4>
                 <ul class="deadlines-items">
     ';
-    $total = 0;
-    foreach( $deadlines as $i => $deadline ){
-        if( $total < 5 ){
-            if( $deadline['status'] == '1' && $deadline['date'] >= date('Ymd') ){                
-                $content_deadline .= sprintf(
-                    $format_deadline
-                    ,date('M d' ,strtotime($deadline['date']))
-                    ,$deadline['excerpt']
-                );
-                $total++;
-            }
+    foreach( $deadlines as $deadline ){
+
+        $fields = get_fields($deadline);
+
+        if( $fields['date'] >= date('Ymd') ){
+
+            $content_deadline .= sprintf(
+                $format_deadline
+                ,date('M d' ,strtotime($fields['date']))
+                ,$fields['details']
+            );
         }
     }
-    
     $content_deadline .= '
                 </ul>
             </div>
             <a href="/deadlines" class="nu__content_btn" title="View all deadlines" aria-label="View all deadlines">View all deadlines</a>
         </div>
     ';
-
-    if( $total > 0 ){
-        echo $content_deadline;
-    }
+    echo $content_deadline;
 ?>

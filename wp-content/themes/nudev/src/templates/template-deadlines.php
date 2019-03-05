@@ -2,14 +2,21 @@
 /**
  * Template Name: Deadlines
  */
-
-    // Get the Deadlines Data
-    $home_id = get_page_by_path('home-page', OBJECT, 'page')->ID;
-    $deadlines = get_fields($home_id)['deadlines'];
-    usort($deadlines, function($a, $b){
-        return $a['date'] <=> $b['date'];
-    });
-    
+    $args = array(
+        'post_type'     => 'deadlines'
+        ,'posts_per_page'   => -1
+        ,'meta_query'   => array(
+        array(
+            'key'       => 'status',
+            'value'     => '1',
+            'compare'   => '='
+            )
+        )
+        ,'orderby' => 'meta_value'
+        ,'meta_key' => 'date'
+        ,'order' => 'ASC'
+    );
+    $deadlines = get_posts($args);
 
     // count total # of deadlines
     $total = count($deadlines);
@@ -35,11 +42,13 @@
     ';
     // loop thru this page of up to $max items
     for ($i=$start; $i < $end; $i++) {
-        if( $deadlines[$i]['status'] == '1' && $deadlines[$i]['date'] >= date('Ymd') ){
+        $fields = get_fields($deadlines[$i]);
+
+        if( $fields['status'] == '1' && $fields['date'] >= date('Ymd') ){
             $content_deadlines .= sprintf(
                 $format_deadline
-                ,date('M d' ,strtotime($deadlines[$i]['date']))
-                ,$deadlines[$i]['excerpt']
+                ,date('M d' ,strtotime($fields['date']))
+                ,$fields['details']
             );
         }
     }

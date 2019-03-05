@@ -3,38 +3,64 @@
  * Template Name: Financial Statements
  */
 
+    // get fields for this page
     $fields = get_fields($post->ID);
-    // Files Section (required)
-    $content = '';
+    
+    // get the hero
+    $hero = PageHero::return_pagehero($fields);
 
-    $guide = '
-        <a target="_blank" title="Download %s (opens in a new window)" aria-label="Download %s" href="%s">
-            <span>%s</span>
-        </a>
-    ';
+    // get financial statements posts
+    $args = array(
+        'post_type' => 'financial_statements'
+        ,'posts_per_page' => -1
+        ,'meta_query'   => array(
+            array(
+                'key'       => 'status',
+                'value'     => '1',
+                'compare'   => '='
+                )
+            )
+    );
+    $res = get_posts($args);
 
-    foreach( $fields['files'] as $file ){
-        $content .= sprintf(
-            $guide
-            ,$file['name']
-            ,$file['name']
-            ,$file['file']
-            ,$file['name']
-        );
+    if( !empty($res) ){
+        
+        $content_fstate = '<section>';
+        
+        // format string financial statement
+        $format_fstate = '
+            <a target="_blank" title="Download %s (opens in a new window)" aria-label="Download %s" href="%s">
+                <span>%s</span>
+            </a>
+        ';
+
+        foreach( $res as $rec ){
+
+            $fields = get_fields($rec);
+
+            $content_fstate .= sprintf(
+                $format_fstate
+                ,$rec->post_title
+                ,$rec->post_title
+                ,$fields['file']['url']
+                ,$rec->post_title
+            );
+        }
+
+        $content_fstate .= '</section>';
+
     }
-    $content .= '';
-get_header();
+
+    get_header();
 ?>
 <main id="financialstatements" role="main">
 
     <?php 
-        $fields = get_fields($post_id);
-        echo PageHero::return_pagehero($fields);
-     ?>
+        // echo the page hero
+        echo $hero;
 
-    <section>
-        <?= $content; ?>
-    </section>
+        echo $content_fstate;
+    ?>
 
     <section>
         <?php 

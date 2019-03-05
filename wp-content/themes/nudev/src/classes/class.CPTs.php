@@ -14,6 +14,59 @@ class cpts
         $this->reg_discounts_post_types();
         $this->reg_newsandevents_post_types();
         $this->reg_departments_post_type();
+        $this->reg_financial_statements_post_type();
+        $this->reg_deadlines_post_type();
+
+    }
+
+    function reg_deadlines_post_type(){
+        $labels = array(
+            'name' => __('Deadlines', 'nudev'), // Rename these to suit
+            'singular_name' => __('Deadline', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Deadline', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Deadline', 'nudev'),
+            'new_item' => __('New Deadline', 'nudev'),
+            'view' => __('View Deadline', 'nudev'),
+            'view_item' => __('View Deadline', 'nudev'),
+            'search_items' => __('Search Deadlines', 'nudev'),
+            'not_found' => __('No Deadlines found', 'nudev'),
+            'not_found_in_trash' => __('No Deadlines found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('deadlines', $args);
+    }
+
+    function reg_financial_statements_post_type(){
+        $labels = array(
+            'name' => __('Financial Statements', 'nudev'), // Rename these to suit
+            'singular_name' => __('Financial Statement', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Financial Statement', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Financial Statement', 'nudev'),
+            'new_item' => __('New Financial Statement', 'nudev'),
+            'view' => __('View Financial Statement', 'nudev'),
+            'view_item' => __('View Financial Statement', 'nudev'),
+            'search_items' => __('Search Financial Statements', 'nudev'),
+            'not_found' => __('No Financial Statements found', 'nudev'),
+            'not_found_in_trash' => __('No Financial Statements found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('financial_statements', $args);
     }
 
     function reg_departments_post_type(){
