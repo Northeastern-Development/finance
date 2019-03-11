@@ -6,10 +6,17 @@
         'post_type'     => 'deadlines'
         ,'posts_per_page'   => -1
         ,'meta_query'   => array(
-        array(
-            'key'       => 'status',
-            'value'     => '1',
-            'compare'   => '='
+            'relation' => 'AND'
+            ,array(
+                'key'       => 'status',
+                'value'     => '1',
+                'compare'   => '='
+            )
+            ,array(
+                'key' => 'date'
+                ,'compare' => '>='
+                ,'value' => date('Y-m-d')
+                ,'type' => 'DATE'
             )
         )
         ,'orderby' => 'meta_value'
@@ -43,14 +50,11 @@
     // loop thru this page of up to $max items
     for ($i=$start; $i < $end; $i++) {
         $fields = get_fields($deadlines[$i]);
-
-        if( $fields['status'] == '1' && $fields['date'] >= date('Ymd') ){
-            $content_deadlines .= sprintf(
-                $format_deadline
-                ,date('M d' ,strtotime($fields['date']))
-                ,$fields['details']
-            );
-        }
+        $content_deadlines .= sprintf(
+            $format_deadline
+            ,date('M d' ,strtotime($fields['date']))
+            ,$fields['details']
+        );
     }
     $content_deadlines .= '</ul>';
 

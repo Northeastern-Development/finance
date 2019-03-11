@@ -88,6 +88,12 @@
             $the_permalink = site_url('news-events/') . $rec->post_name;
             $target = '';
         }
+
+        if( !empty($fields['category']) && !get_fields($fields['category']->ID)['status'] == '1' ){
+            $news_category = $fields['category']->post_title;
+        } else {
+            $news_category = '';
+        }
         
         $content_news .= sprintf(
             $format_news
@@ -98,9 +104,7 @@
             ,$fields['image']
             ,$rec->post_title
             ,$rec->post_title
-            ,( get_fields( $fields['category']->ID )['status'] == true )
-                ? $fields['category']->post_title
-                : null
+            ,$news_category
             ,strtok(strip_tags($fields['details']), '.').'.'        // kinda causes some issues if something like example inc. is the first sentence (or other reasons a period would be non-punctual)
             ,$rec->post_title
         );
@@ -112,7 +116,7 @@
     
     // Get Hero Space fields
 
-    $fields = get_fields($post_id);
+    $fields = get_fields($post->ID);
     $hero_image = $fields['hero_image'];
     $hero_title = $fields['hero_title'];
     $hero_description = $fields['hero_description'];

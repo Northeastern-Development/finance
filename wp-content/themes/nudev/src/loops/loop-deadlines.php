@@ -6,16 +6,24 @@
         'post_type'     => 'deadlines'
         ,'posts_per_page'   => 5
         ,'meta_query'   => array(
-        array(
-            'key'       => 'status',
-            'value'     => '1',
-            'compare'   => '='
+            'relation' => 'AND'
+            ,array(
+                'key'       => 'status',
+                'value'     => '1',
+                'compare'   => '='
+            )
+            ,array(
+                'key' => 'date'
+                ,'compare' => '>='
+                ,'value' => date('Y-m-d')
+                ,'type' => 'DATE'
             )
         )
         ,'orderby' => 'meta_value'
         ,'meta_key' => 'date'
         ,'order' => 'ASC'
     );
+
     $deadlines = get_posts($args);
     $format_deadline = '
         <li>
@@ -33,14 +41,14 @@
 
         $fields = get_fields($deadline);
 
-        if( $fields['date'] >= date('Ymd') ){
+        // if( $fields['date'] >= date('Ymd') ){
 
             $content_deadline .= sprintf(
                 $format_deadline
                 ,date('M d' ,strtotime($fields['date']))
                 ,$fields['details']
             );
-        }
+        // }
     }
     $content_deadline .= '
                 </ul>
@@ -49,4 +57,5 @@
         </div>
     ';
     echo $content_deadline;
+
 ?>

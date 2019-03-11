@@ -2,7 +2,7 @@
 /**
  * Partial: navigation sub-nav  "How Do I..."
  */
-    $check_tabindex = ( get_page_template_slug($post_id) == 'templates/template-homepage.php' ) ? '-1' : '0';
+    $check_tabindex = ( get_page_template_slug($post->ID) == 'templates/template-homepage.php' ) ? '-1' : '0';
     // 
     $args = array(
         'post_type'         =>  'tasks_categories',
