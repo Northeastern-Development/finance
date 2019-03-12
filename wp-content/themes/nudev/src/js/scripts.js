@@ -11,7 +11,9 @@ var Finance = {};
             navItems: $('#nu__main-nav-desktop > ul > li > a'),
             dropdownPanels: $('li.has-children > .neumenu-wrapper'),
             _init: function () {
+                
                 Finance.NavHandler.navItems.on('focus blur click', Finance.NavHandler._navInteractionHandler);
+
                 // if focus leaves the about dropdown menu, close it
                 $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function (e) {
                     if ($(this).parent().find($(e.relatedTarget)).length == 0) {
@@ -74,8 +76,15 @@ var Finance = {};
              * @param {event} e 
              */
             _navInteractionHandler: function (e) {
+
+                
+                
                 e.stopPropagation();
+
                 if (e.type == "click") {
+
+                    // console.log('clicked on a nav item');
+                    
                     // click fires before focus
                     if ($(this).data("justfocussed")) {
                         $(this).data("justfocussed", false);
@@ -93,6 +102,9 @@ var Finance = {};
                 }
                 // is focussed only
                 else if (e.type == "focus") {
+
+                    // console.log( 'focused on a nav item ');
+                    
                     $(this).data("justfocussed", true);
                     // close all dropdowns
                     Finance.NavHandler.dropdownPanels.hide();
@@ -115,17 +127,27 @@ var Finance = {};
                 }
                 // is blurred
                 else {
+
+                    // console.log( 'blurred off a nav item ');
+                    
                     $(this).data("justfocussed", false);
+                    
                     // close "other" dropdowns
                     $('#nu__main-nav-desktop > ul > li.has-children').not($(this).parent()).find('.neumenu-wrapper').hide();
+                    
                     // if focus has NOT shifted to a sub-nav item
                     // (note, on the homepage, there is no subnav to close and this will not affect the howdoi functionality afaik)
                     if ($(this).parent().find(e.relatedTarget).length == 0) {
+
+                        // console.log('what is going on here');
+                        
                         // we need to close all nav dropdowns
-                        Finance.NavHandler.dropdownPanels.hide();
+                        // Finance.NavHandler.dropdownPanels.hide();
                         // remove this showme
-                        Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
+                        // Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     }
+
+
                     //  we are on the home page
                     if (Finance.NavHandler.isHomepage) {
                         // if we blur from the howdoi to the forms
@@ -170,7 +192,7 @@ var Finance = {};
 
             _init: function () {
                 $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
-                Finance.Nav.parentlinks.on('click', Finance.Nav._didClickDropdown);
+                // Finance.Nav.parentlinks.on('click', Finance.Nav._didClickDropdown);
                 Finance.Nav.categories.on('click', Finance.Nav._didClickCategory);
                 Finance.Nav.backtocats.on('click', Finance.Nav._didClickBackToCats);
             },

@@ -90,6 +90,7 @@
         >section.hero {
             min-height: 220px;
             display: flex;
+            flex-flow: column wrap;
             align-items: center;
             justify-content: center;
 
@@ -100,6 +101,7 @@
             text-align: center;
 
             >div {
+                flex: 0 1 auto;
                 width: $content-width-narrow;
                 // margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
                 margin: 60px auto;
@@ -603,7 +605,8 @@
                     position: relative;
                     display: inline-block;
                     vertical-align: top;
-                    font-size: initial;
+                    // font-size: initial;
+                    @include font-2l-l;
                     margin: 0 15px 15px 0;
                     width: calc(50% - 7.5px);
 

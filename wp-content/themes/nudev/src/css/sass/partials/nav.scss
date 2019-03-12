@@ -173,7 +173,7 @@
                 // category buttons
                 >div {
                     margin-right: 30px;
-                    width: calc(20% - calc(120px / 5));
+                    width: calc(20% - 24px);
                     display: flex;
                     flex-flow: column wrap;
                     align-items: flex-start;
