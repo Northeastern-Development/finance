@@ -5,6 +5,7 @@ var Finance = {};
 
         /**
          * 
+         * 
          */
         Finance.NavHandler = {
             isHomepage: ($('main > div#howdoi').length > 0) ? true : false,
