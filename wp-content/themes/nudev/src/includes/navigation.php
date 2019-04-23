@@ -17,3 +17,13 @@
     include(__DIR__ . '/partials/nav.mobile.php');
     include(__DIR__ . '/partials/nav.desktop.php');
  ?>
+
+
+
+<a href="javascript:;" id="neu__sitesearch-toggle"></a>
+<form id="neu__sitesearch-form" role="search" action="/search" method="get">
+    <label for="query"></label>
+    <button type="submit"></button>
+    <input type="text" placeholder="Search ..." name="query" id="query">
+    <button type="button" class="neu__sitesearch-closebutton"></button>
+</form>

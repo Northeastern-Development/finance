@@ -948,6 +948,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/css/sass/conditional/search.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/search.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/conditional/tasks.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -1129,6 +1142,16 @@
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
+		},
+	"/css/search.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/search-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/css/style.css": {
 		"aP": 1,
@@ -2477,6 +2500,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/template-page-hero-config.php",
+		"oF": 0
+		},
+	"/templates/template-search.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/template-search.php",
 		"oF": 0
 		},
 	"/templates/template-staff-bio.php": {
