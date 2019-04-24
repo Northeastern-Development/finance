@@ -28,14 +28,88 @@ var Finance = {};
             ,_doCloseSearchBar : function(e){
                 Search.form.removeClass('neu__sitesearch-form--shown');
             }
-                
         }
         Search._init();
         
         
         
         
+        NewNav = {
 
+            _init : function(){
+
+                // if click is outside the nav close dropdowns etc.
+                $(document).on('click', function(e){
+                    if( !$(e.target).closest('#nu__main-nav-desktop').length ){
+                        $('li.has-children').removeClass('neu__showme');
+                    }
+                });
+                
+                // if click is on a dropdown
+                // $('#nu__main-nav-desktop li.has-children').on('click', 'a[role="menuitem"]', NewNav._didClickNavItem);
+                
+                // ARIA
+                NewNav._doARIA();
+            }
+            /**
+             * 
+             */
+            ,_doARIA : function(){
+
+                $('header').on('focus', 'div.logo', function(e){
+                    $('li.has-children').removeClass('neu__showme');
+                    $('li.has-children > a[role="menuitem"]').attr('aria-expanded', 'false');
+                });
+                $('header').on('focus', 'a#neu__sitesearch-toggle', function(e){
+                    $('li.has-children').removeClass('neu__showme');
+                    $('li.has-children > a[role="menuitem"]').attr('aria-expanded', 'false');
+                });
+
+                // when we focus on a a nav item
+                $('#nu__main-nav-desktop > ul[role="menubar"]').on('focus', '>li > a[role="menuitem"]', function(e){
+
+                    // close 'other' dropdowns
+                    $(this).parent().siblings('li.has-children').removeClass('neu__showme');
+                    $(this).parent().siblings('li.has-children').attr('aria-expanded', 'false');
+                    
+                    // if this is a dropdown
+                    if( $(this).parent().hasClass('has-children') ){                        
+
+                        if( !$(this).parent().hasClass('neu__showme') ){
+                            // open the hidden menu
+                            $(this).attr('aria-expanded', 'true');
+                            $(this).parent().addClass('neu__showme');
+                        } else {
+                            // hide the hidden menu
+                            $(this).attr('aria-expanded', 'false');
+                            $(this).parent().removeClass('neu__showme');
+                        }
+
+                    }
+                    
+                });
+
+                
+                // end _doARIA
+            }
+            /**
+             * Clicked a Dropdown
+             */
+            ,_didClickNavItem : function(e){
+                // handle toggling dropdowns
+                if( $(this).siblings('ul[role="menu"], div.neumenu-wrapper').length ){
+                    if( !$(this).parent().hasClass('neu__showme') ){
+                        $(this).attr('aria-expanded', 'true');
+                        $(this).parent().addClass('neu__showme');
+                    } else {
+                        $(this).attr('aria-expanded', 'false');
+                        $(this).parent().removeClass('neu__showme');
+                    }
+                }
+                $(this).parent().siblings('li.has-children').removeClass('neu__showme');
+            }
+        }
+        NewNav._init();
 
         
         /**
@@ -211,7 +285,7 @@ var Finance = {};
             }
 
         }
-        Finance.NavHandler._init();
+        // Finance.NavHandler._init();
 
 
 
@@ -227,32 +301,18 @@ var Finance = {};
             backtocats: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
 
             _init: function () {
-                $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
-                // Finance.Nav.parentlinks.on('click', Finance.Nav._didClickDropdown);
+                // $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
                 Finance.Nav.categories.on('click', Finance.Nav._didClickCategory);
                 Finance.Nav.backtocats.on('click', Finance.Nav._didClickBackToCats);
             },
             _didClickBackToCats: function () {
                 Finance.Nav.categories.removeClass('theFilter');
                 Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
-
-
-
-                // reset back to topics tabindex
-                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
-                // reset task view tabindex
-                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
-                // reset the category view tabindex
-                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
-
                 $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
-
             },
             _didClickCategory: function (e) {
                 $(this).parents('.neumenu-wrapper-inner').addClass('isFiltered');
                 $(this).addClass('theFilter');
-
-
                 // set tabindex of task items to 0 when entering a category view
                 $('#howdoi > div > div:first-child > a').attr('tabindex', '0');
                 $(this).find('a').attr('tabindex', '0');

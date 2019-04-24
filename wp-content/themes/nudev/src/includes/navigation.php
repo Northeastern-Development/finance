@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 /**
  * Master Navigation Template
  *  See Partials for Mobile / Desktop
@@ -11,7 +11,7 @@
 </div>
 
 <input type="checkbox" id="neu__navicon" tabindex="-1">
-<label for="neu__navicon" id="neu__navicon-label" title="Expand the mobile navigation dropdown" aria-label="Toggle the mobile navigation dropdown"></label>
+<label for="neu__navicon" id="neu__navicon-label" title="Expand the mobile navigation dropdown" aria-label="Toggle the mobile navigation dropdown" tabindex="0"></label>
 
 <?php 
     include(__DIR__ . '/partials/nav.mobile.php');
@@ -20,10 +20,11 @@
 
 
 
-<a href="javascript:;" id="neu__sitesearch-toggle"></a>
-<form id="neu__sitesearch-form" role="search" action="/search" method="get">
-    <label for="query"></label>
-    <button type="submit"></button>
-    <input type="text" placeholder="Search ..." name="query" id="query">
-    <button type="button" class="neu__sitesearch-closebutton"></button>
+<a href="javascript:;" id="neu__sitesearch-toggle" title="Click to search all of Northeastern University's Office of Finance" aria-label="Click to search all of Northeastern University's Office of Finance"></a>
+
+<form id="neu__sitesearch-form" role="search" action="/search" method="get" tabindex="-1">
+    <label for="query" tabindex="-1"></label>
+    <button type="submit" tabindex="0" title="Click here or press enter to perform search" title="Click here or press enter to perform search"></button>
+    <input type="text" placeholder="Search ..." name="query" id="query" tabindex="0" title="Enter your search query here and press enter" aria-label="Enter your search query here and press enter">
+    <button type="button" class="neu__sitesearch-closebutton" tabindex="0" title="Click here to close the search form" title="Click here to close the search form"></button>
 </form>

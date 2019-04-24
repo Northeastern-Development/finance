@@ -7,7 +7,7 @@
 <main role="main" id="searchpage">
     
 <section>
-    <script>var NUGS_specificsite = 'finance.northeastern.edu'; var NUGS_title ='Northeastern University Finance Division';</script>
+    <script>var NUGS_specificsite = 'alumni.northeastern.edu'; var NUGS_title ='Northeastern University Finance Division';</script>
     <script src="https://search.northeastern.edu/nuglobalutils/requests/js/globalsearch.js"></script>
 </section>
 

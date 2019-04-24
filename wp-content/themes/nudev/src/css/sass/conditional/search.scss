@@ -1,6 +1,8 @@
 @media only screen {
 
 
+
+
     
     
     div.main>section>div#___gcse_0 div.gsc-webResult div.gsc-url-top,
@@ -14,7 +16,11 @@
         // display: none !important;
     }
     div.main>section>div#___gcse_0 div.gsc-webResult {
-        margin-bottom: 30px !important;
+        // margin-bottom: 30px !important;
+    }
+
+    .gs-web-image-box, .gs-promotion-image-box {
+        // margin: 6px 15px 15px 0 !important;
     }
 
     
@@ -25,6 +31,14 @@
 
     main#searchpage > section {
         width: 90%;
+    }
+    
+}
+
+@media only screen and (max-width: 480px){
+
+    .gsc-table-cell-thumbnail, .gsc-thumbnail {
+        // display: none;
     }
     
 }
