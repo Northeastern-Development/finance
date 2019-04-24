@@ -22,8 +22,13 @@
 <a href="javascript:;" id="neu__sitesearch-toggle" title="Click to search all of Northeastern University's Office of Finance" aria-label="Click to search all of Northeastern University's Office of Finance"></a>
 
 <form id="neu__sitesearch-form" role="search" action="/search" method="get" tabindex="-1">
-    <label for="query" tabindex="-1"></label>
-    <button type="submit" tabindex="0" title="Click here or press enter to perform search" title="Click here or press enter to perform search"></button>
-    <input type="text" placeholder="Search ..." name="query" id="query" tabindex="0" title="Enter your search query here and press enter" aria-label="Enter your search query here and press enter">
-    <button type="button" class="neu__sitesearch-closebutton" tabindex="0" title="Click here to close the search form" title="Click here to close the search form"></button>
+
+    <button tabindex="-1" type="submit" title="Click here or press enter to perform search" title="Click here or press enter to perform search"></button>
+
+    <label tabindex="-1" for="query" ></label>
+    
+    <input tabindex="-1" type="text" placeholder="Search ..." name="query" id="query" title="Enter your search query here and press enter" aria-label="Enter your search query here and press enter">
+    
+    <button tabindex="-1" type="button" class="neu__sitesearch-closebutton" title="Click here to close the search form" title="Click here to close the search form"></button>
+
 </form>
