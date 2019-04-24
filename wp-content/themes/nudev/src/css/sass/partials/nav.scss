@@ -49,6 +49,7 @@
         @media only screen and (min-width: $bp__md){
             &.neu__sitesearch-form--shown {
                 width: calc(100% - 320px);
+                max-width: 960px;
             }
         }
         // hide label visually, not from screen readers

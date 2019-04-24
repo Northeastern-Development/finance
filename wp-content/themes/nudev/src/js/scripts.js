@@ -28,7 +28,6 @@ var Finance = {};
             ,_doCloseSearchBar : function(e){
                 Search.form.removeClass('neu__sitesearch-form--shown');
             }
-                
         }
         Search._init();
         
