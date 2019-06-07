@@ -20,12 +20,23 @@ var Finance = {};
                         Search._doCloseSearchBar();
                     }
                 });
+
+                Search.form.on('blur', 'button', function(e){
+                    
+                    if( !$(e.relatedTarget).closest(Search.form).length ){
+                        Search._doCloseSearchBar();
+                    }
+                    
+                });
             }
             ,_doOpenSearchBar : function(e){
                 Search.form.addClass('neu__sitesearch-form--shown');
+
+                Search.form.find('button, input').attr('tabindex', '0');
                 Search.input.focus();
             }
             ,_doCloseSearchBar : function(e){
+                Search.form.find('button, input').attr('tabindex', '-1');
                 Search.form.removeClass('neu__sitesearch-form--shown');
             }
         }
