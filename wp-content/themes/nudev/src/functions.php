@@ -611,42 +611,42 @@ function create_post_type_nudev()
 {
     register_taxonomy_for_object_type('category', 'nudev'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'nudev');
-    // register_post_type('careers', // Register Custom Post Type
-    //     array(
-    //     'labels' => array(
-    //         'name' => __('Careers', 'nudev'), // Rename these to suit
-    //         'singular_name' => __('Careers', 'nudev'),
-    //         'add_new' => __('Add New', 'nudev'),
-    //         'add_new_item' => __('Add New Career Opportunity', 'nudev'),
-    //         'edit' => __('Edit', 'nudev'),
-    //         'edit_item' => __('Edit Career Opportunity', 'nudev'),
-    //         'new_item' => __('New Career Opportunity', 'nudev'),
-    //         'view' => __('View Career Opportunities', 'nudev'),
-    //         'view_item' => __('View Career Opportunities', 'nudev'),
-    //         'search_items' => __('Search Career Opportunities', 'nudev'),
-    //         'not_found' => __('No Careers found', 'nudev'),
-    //         'not_found_in_trash' => __('No Careers found in Trash', 'nudev')
-    //     ),
-    //     'public' => true,
-    //     'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-    //     'has_archive' => true,
-    //     'supports' => array(
-    //         'title',
-    //         'editor',
-    //         'excerpt',
-    //         'thumbnail'
-    //     ), // Go to Dashboard Custom nudev post for supports
-    //     'can_export' => true, // Allows export in Tools > Export
-    //     'taxonomies' => array(
-    //         'post_tag',
-    //         'category'
-    //     ) // Add Category and Post Tags support
-    // ));
+        // register_post_type('careers', // Register Custom Post Type
+        //     array(
+        //     'labels' => array(
+        //         'name' => __('Careers', 'nudev'), // Rename these to suit
+        //         'singular_name' => __('Careers', 'nudev'),
+        //         'add_new' => __('Add New', 'nudev'),
+        //         'add_new_item' => __('Add New Career Opportunity', 'nudev'),
+        //         'edit' => __('Edit', 'nudev'),
+        //         'edit_item' => __('Edit Career Opportunity', 'nudev'),
+        //         'new_item' => __('New Career Opportunity', 'nudev'),
+        //         'view' => __('View Career Opportunities', 'nudev'),
+        //         'view_item' => __('View Career Opportunities', 'nudev'),
+        //         'search_items' => __('Search Career Opportunities', 'nudev'),
+        //         'not_found' => __('No Careers found', 'nudev'),
+        //         'not_found_in_trash' => __('No Careers found in Trash', 'nudev')
+        //     ),
+        //     'public' => true,
+        //     'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        //     'has_archive' => true,
+        //     'supports' => array(
+        //         'title',
+        //         'editor',
+        //         'excerpt',
+        //         'thumbnail'
+        //     ), // Go to Dashboard Custom nudev post for supports
+        //     'can_export' => true, // Allows export in Tools > Export
+        //     'taxonomies' => array(
+        //         'post_tag',
+        //         'category'
+        //     ) // Add Category and Post Tags support
+        // ));
 
 
     /**
      * Staff CPT and Extras
-     */
+    */
     register_taxonomy_for_object_type('category', 'Staff'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'Staff');
     register_post_type('staff', // Register Custom Post Type
@@ -703,12 +703,12 @@ function create_post_type_nudev()
             if(gettype($depts) == "array"){ // they are in more than one dept
               $v = '';
               foreach($depts as $d){  // loop through and grab each department that this person is part of
-                $v .= ($v != ''?', '.$d:$d);
+                $v .= ( $v != ''?', '.get_the_title($d) : get_the_title($d) );
               }
               echo $v;
             }else{  // they are only in one dept
               // echo $depts[0];
-              echo $depts;
+              echo $depts->post_title;
             }
             break;
           case 'type':
@@ -727,24 +727,14 @@ function create_post_type_nudev()
 
         if ($typenow == $type)
         {
-            // get the full list of departments from the acf fields
-            //$field = get_field_object('field_5a5e2ca106a03');
-            //print_r($field['choices']);
-            // $values = $field['choices'];
+            $posts = get_posts(array(
+                'post_type' => 'departments'
+                ,'posts_per_page' => -1
+
+            ));
             $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
             $guide = '<option value="%s"%s>%s</option>';
-            // hardcoded values for now, there is an issue retrieving them again after the first filter
-            $values = array(
-                'Advancement' => 'Advancement'
-                ,'External Affairs' => 'External Affairs'
-                ,'Finance' => 'Finance'
-                ,'General Counsel' => 'General Counsel'
-                ,'Lifelong Learning Network' => 'Lifelong Learning Network'
-                ,'President' => 'President'
-                ,'Professional Advancement Network' => 'Professional Advancement Network'
-                ,'Provost' => 'Provost'
-                ,'Strategy' => 'Strategy'
-            );
+            $values = wp_list_pluck($posts, 'post_title', 'post_title');
         ?>
             <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Department', 'department'); ?></option>
         <?php
@@ -774,11 +764,10 @@ function create_post_type_nudev()
             $query->set('meta_query',array(
             array(
                 'key' => 'department'
-                ,'value' => $_GET['ADMIN_FILTER_FIELD_VALUE']
+                ,'value' => get_page_by_title($_GET['ADMIN_FILTER_FIELD_VALUE'], OBJECT, 'departments')->ID
                 ,'compare' => 'LIKE'
             )
             ));
-
         }
     }
 

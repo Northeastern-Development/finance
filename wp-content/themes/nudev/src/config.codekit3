@@ -580,7 +580,7 @@
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/classes/class.cpts.php",
+		"oAP": "/classes/class.CPTs.php",
 		"oF": 0
 		},
 	"/classes/class.prefooter.php": {

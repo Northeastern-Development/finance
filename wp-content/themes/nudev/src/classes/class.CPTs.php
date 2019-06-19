@@ -166,6 +166,7 @@ class cpts
             'menu_position' => null,
         );
         register_post_type('tasks_categories', $args);
+
         // Task Items
         $labels = array(
             'name' => __('Tasks', 'nudev'), // Rename these to suit
@@ -189,6 +190,97 @@ class cpts
             'menu_position' => null,
         );
         register_post_type('tasks', $args);
+
+
+        /**
+        *       Extensions 
+        */
+
+        // create a custom column for task topics
+        add_filter('manage_tasks_posts_columns', 'add_tasks_posts_columns');
+        function add_tasks_posts_columns( $columns ){
+            // add the custom column here
+            $slice1 = array_slice($columns, 0, 2, true);
+            $slice2 = array_slice($columns, 2, count($columns), true);
+            return array_merge($slice1,array('task_topic' => __ ( 'Task Topic' )),$slice2);
+        }
+
+        // write into the task topics column
+        add_action('manage_tasks_posts_custom_column', 'filter_tasks_posts_columns', 10, 2);
+        function filter_tasks_posts_columns( $column, $post_id){
+            // filter the custom column 'task_topic'
+            switch ($column) {
+                case 'task_topic':
+                    $cats = get_field('category', $post_id);
+                    if( gettype($cats) != 'array' ){
+                        echo $cats->post_title;
+                    }
+                    else {
+                        $return['cats'] = '';
+                        foreach( $cats as $cat ){
+                            $return['cats'] .= ( $return['cats'] != ''?' | '.get_the_title($cat) : get_the_title($cat) );
+                        }
+                        echo $return['cats'];
+                    }
+                break;
+            }
+        }
+
+        // add a topics filter
+        add_action('restrict_manage_posts', 'add_filter_tasks_by_topic');
+        function add_filter_tasks_by_topic(){
+            global $typenow;
+            $type = 'tasks';
+
+            if ($typenow == $type)
+            {
+                $posts = get_posts(array(
+                    'post_type' => 'tasks_categories'
+                    ,'posts_per_page' => -1
+
+                ));
+                $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
+                $guide = '<option value="%s"%s>%s</option>';
+                $values = wp_list_pluck($posts, 'post_title', 'post_title');
+            ?>
+                <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Topic', 'default'); ?></option>
+            <?php
+                foreach ($values as $label => $value)
+                {
+                    printf(
+                        $guide
+                        ,$value
+                        ,( ($value == $current_v) ? ' selected="selected" ' : '' )
+                        ,$label
+                    );
+                }
+            ?>
+                </select>
+            <?php
+            }
+        }
+        // handle the topics filter
+        add_filter('parse_query', 'do_filter_tasks_by_topic');
+        function do_filter_tasks_by_topic( $query ){
+            global $pagenow;
+            global $typenow;
+            $type = 'tasks';
+            if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != '')
+            {
+                // this is so that we can fuzzy find a match even if the profile is in more than 1 dept.
+                $query->set('meta_query',array(
+                    array(
+                        'key' => 'category'
+                        ,'value' => get_page_by_title($_GET['ADMIN_FILTER_FIELD_VALUE'], OBJECT, 'tasks_categories')->ID
+                        ,'compare' => 'LIKE'
+                    )
+                ));
+
+            }
+        }
+        /**
+        *       / Extensions
+        */
     }
 
     function reg_helpful_links_post_type(){
@@ -336,6 +428,113 @@ class cpts
             'menu_position' => null,
         );
         register_post_type('forms_categories', $args);
+        
+        /**
+        *       Extensions 
+        */
+
+        // create a custom column for forms categories
+        add_filter('manage_forms_posts_columns', 'add_forms_posts_columns');
+        function add_forms_posts_columns( $columns ){
+            // add the custom column here
+            $slice1 = array_slice($columns, 0, 2, true);
+            $slice2 = array_slice($columns, 2, count($columns), true);
+            return array_merge($slice1,array('form_category' => __ ( 'Form Category' )),$slice2);
+        }
+
+        // write into the forms categories column
+        add_action('manage_forms_posts_custom_column', 'filter_forms_posts_columns', 10, 2);
+        function filter_forms_posts_columns( $column, $post_id){
+            switch ($column) {
+                
+                case 'form_category':
+
+                    // get the category field return value
+                    // in this case; only one may be selected and it returns an ID
+                    $cats = get_field('category', $post_id);
+                    if( gettype($cats) != 'array' ){
+                        echo get_the_title($cats);
+                    }
+                    else {
+                        $return['cats'] = '';
+                        foreach( $cats as $cat ){
+                            $return['cats'] .= ( $return['cats'] != ''?' | '.get_the_title($cat) : get_the_title($cat) );
+                        }
+                        echo $return['cats'];
+                    }
+                    break;
+                
+                default:
+                    # code...
+                    break;
+            }
+        }
+        // add a categories filter
+        add_action('restrict_manage_posts', 'add_filter_forms_by_category');
+        function add_filter_forms_by_category(){
+            global $typenow;
+            $type = 'forms';
+
+            if ($typenow == $type)
+            {
+                $posts = get_posts(array(
+                    'post_type' => 'forms_categories'
+                    ,'posts_per_page' => -1
+                ));
+
+
+                $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
+                $guide = '<option value="%s"%s>%s</option>';
+                $values = wp_list_pluck($posts, 'post_name', 'post_name');
+            ?>
+                <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Category', 'default'); ?></option>
+            <?php
+                // foreach ($values as $label => $value)
+                // {
+                //     printf(
+                //         $guide
+                //         ,$value
+                //         ,( ($value == $current_v) ? ' selected="selected" ' : '' )
+                //         ,$label
+                //     );
+                // }
+                if( !empty($posts) ){
+                    foreach( $posts as $post ){
+                        printf(
+                            $guide
+                            ,$post->post_name
+                            ,( ($current_v == $post->post_name) ? 'selected=selected' : '' )
+                            ,$post->post_title
+                        );
+                    }
+                }
+            ?>
+                </select>
+            <?php
+            }
+        }
+        // handle the topics filter
+        add_filter('parse_query', 'do_filter_forms_by_category');
+        function do_filter_forms_by_category( $query ){
+            global $pagenow;
+            global $typenow;
+            $type = 'forms';
+
+            if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != '')
+            {
+                // this is so that we can fuzzy find a match even if the profile is in more than 1 dept.
+                $query->set('meta_query',array(
+                    array(
+                        'key' => 'category'
+                        ,'value' => get_page_by_path($_GET['ADMIN_FILTER_FIELD_VALUE'], OBJECT, 'forms_categories')->ID
+                        ,'compare' => 'LIKE'
+                    )
+                ));
+            }
+        }
+        /**
+        *       / Extensions
+        */
     }
 
     function reg_glossary_post_type(){
