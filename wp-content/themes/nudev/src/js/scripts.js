@@ -3,7 +3,6 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
-
         Search = {
 
             toggleOpen : $('#neu__sitesearch-toggle'),
