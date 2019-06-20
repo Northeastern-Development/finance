@@ -1555,6 +1555,14 @@
 		"oAP": "/includes/partials/nav.desktop.php",
 		"oF": 0
 		},
+	"/includes/partials/nav.desktop.php.BAK": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/includes/partials/nav.desktop.php.BAK",
+		"oF": 0
+		},
 	"/includes/partials/nav.howdoi.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1569,14 +1577,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/includes/partials/nav.mobile.php",
-		"oF": 0
-		},
-	"/includes/partials/~~nav.desktop.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/includes/partials/~~nav.desktop.php",
 		"oF": 0
 		},
 	"/includes/prefooter.php": {
@@ -1692,6 +1692,17 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"/js/scripts-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/scripts-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/js/scripts.js": {
 		"bF": 0,

@@ -603,6 +603,11 @@ add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
     Custom Post Types
 \*------------------------------------*/
 
+$staffFilters = get_posts(array(
+    'post_type' => 'departments'
+    ,'posts_per_page' => -1
+));
+
 require_once('classes/class.cpts.php');
 require_once('classes/class.prefooter.php');
 
@@ -642,6 +647,14 @@ function create_post_type_nudev()
         //         'category'
         //     ) // Add Category and Post Tags support
         // ));
+
+
+
+
+    // $staffFilters = get_posts(array(
+    //     'post_type' => 'departments'
+    //     ,'posts_per_page' => -1
+    // ));
 
 
     /**
@@ -723,18 +736,23 @@ function create_post_type_nudev()
     function staff_admin_posts_filter_restrict_manage_posts()
     {
         global $typenow;
+        global $staffFilters;
         $type = 'staff';
 
         if ($typenow == $type)
         {
-            $posts = get_posts(array(
-                'post_type' => 'departments'
-                ,'posts_per_page' => -1
-
-            ));
+            // $filters = get_posts(array(
+            //     'post_type' => 'departments'
+            //     ,'posts_per_page' => -1
+            // ));
+            
+            
             $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
             $guide = '<option value="%s"%s>%s</option>';
-            $values = wp_list_pluck($posts, 'post_title', 'post_title');
+
+            // print_r($staffFilters);
+
+            $values = wp_list_pluck($staffFilters, 'post_title', 'post_title');
         ?>
             <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Department', 'department'); ?></option>
         <?php

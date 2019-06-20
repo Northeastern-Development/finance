@@ -1,4 +1,12 @@
 <?php 
+$taskFilters = get_posts(array(
+    'post_type' => 'tasks_categories'
+    ,'posts_per_page' => -1
+));
+$formFilters = get_posts(array(
+    'post_type' => 'forms_categories'
+    ,'posts_per_page' => -1
+));
 
 class cpts
 {
@@ -230,18 +238,16 @@ class cpts
         add_action('restrict_manage_posts', 'add_filter_tasks_by_topic');
         function add_filter_tasks_by_topic(){
             global $typenow;
+
+            global $taskFilters;
+            
             $type = 'tasks';
 
             if ($typenow == $type)
             {
-                $posts = get_posts(array(
-                    'post_type' => 'tasks_categories'
-                    ,'posts_per_page' => -1
-
-                ));
                 $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
                 $guide = '<option value="%s"%s>%s</option>';
-                $values = wp_list_pluck($posts, 'post_title', 'post_title');
+                $values = wp_list_pluck($taskFilters, 'post_title', 'post_title');
             ?>
                 <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Topic', 'default'); ?></option>
             <?php
@@ -432,6 +438,7 @@ class cpts
         /**
         *       Extensions 
         */
+        
 
         // create a custom column for forms categories
         add_filter('manage_forms_posts_columns', 'add_forms_posts_columns');
@@ -473,40 +480,32 @@ class cpts
         add_action('restrict_manage_posts', 'add_filter_forms_by_category');
         function add_filter_forms_by_category(){
             global $typenow;
+            global $formFilters;
             $type = 'forms';
 
             if ($typenow == $type)
             {
-                $posts = get_posts(array(
-                    'post_type' => 'forms_categories'
-                    ,'posts_per_page' => -1
-                ));
-
-
                 $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
                 $guide = '<option value="%s"%s>%s</option>';
-                $values = wp_list_pluck($posts, 'post_name', 'post_name');
+
+                // $values = wp_list_pluck($formFilters, 'post_name', 'post_name');
+
+
+                $values = [];
+                foreach( $formFilters as $i => $obj ){
+                    $values[$obj->post_title] = $obj->post_name;
+                }              
             ?>
                 <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Category', 'default'); ?></option>
             <?php
-                // foreach ($values as $label => $value)
-                // {
-                //     printf(
-                //         $guide
-                //         ,$value
-                //         ,( ($value == $current_v) ? ' selected="selected" ' : '' )
-                //         ,$label
-                //     );
-                // }
-                if( !empty($posts) ){
-                    foreach( $posts as $post ){
-                        printf(
-                            $guide
-                            ,$post->post_name
-                            ,( ($current_v == $post->post_name) ? 'selected=selected' : '' )
-                            ,$post->post_title
-                        );
-                    }
+                foreach ($values as $label => $value)
+                {
+                    printf(
+                        $guide
+                        ,$value
+                        ,( ($value == $current_v) ? ' selected="selected" ' : '' )
+                        ,$label
+                    );
                 }
             ?>
                 </select>

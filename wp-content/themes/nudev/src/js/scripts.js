@@ -119,7 +119,7 @@ var Finance = {};
                 $(this).parent().siblings('li.has-children').removeClass('neu__showme');
             }
         }
-        NewNav._init();
+        // NewNav._init();
 
         
         /**
@@ -295,7 +295,7 @@ var Finance = {};
             }
 
         }
-        // Finance.NavHandler._init();
+        Finance.NavHandler._init();
 
 
 
