@@ -257,8 +257,7 @@
                 width: 100%;
 
                 >li {
-                    // font-size: initial;
-                    @include font-2l-l;
+                    font-size: initial;
                     display: inline-block;
                     vertical-align: top;
                     margin: 0 15px 15px 0;
@@ -299,8 +298,7 @@
                 width: $width;
 
                 >li {
-                    // font-size: initial;
-                    @include font-2l-l;
+                    font-size: initial;
                     display: inline-block;
                     vertical-align: top;
                     width: (($width - (($col - 1) * $space)) / $col);

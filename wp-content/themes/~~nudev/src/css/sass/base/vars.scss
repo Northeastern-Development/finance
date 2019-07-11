@@ -1,0 +1,58 @@
+// 
+// 
+// 
+//          Vars
+//
+// 
+// 
+//          Colors
+// Reds
+$brand_colors-red: rgb(212, 27, 44);
+$brand_colors-red--dark: rgb(148, 19, 32);
+$brand_colors-red--light: rgb(237, 31, 51);
+// Teals
+$brand_colors-teal: rgb(82, 207, 229);
+$brand_colors-teal--dark: rgb(50, 124, 138);
+// Grays
+$brand_colors-gray: rgb(151, 151, 151);
+$brand_colors-gray--dark: rgb(161, 153, 148);
+// Beige
+$brand_colors-beige: rgb(236, 230, 213);
+$brand_colors-beige--light: rgb(239, 235, 221); // unsure of this ( used in forms sidebar )
+// 
+// 
+//          Typography
+// 
+// 
+$font-family-base: 'Lato', sans-serif;
+$font-size-base: 1.6rem;
+$line-height-base: 2.8rem;
+// 
+// 
+//          Grid
+// 
+// 
+$wrapper-width: 100vw;              // widely used
+$content-width: 80vw;               // widely used
+$gutter: 1vw;           // ( why cant this be % instead of vw)
+$wrapper-margins: 0, (($wrapper-width - $content-width) / 2), 0, (($wrapper-width - $content-width) / 2);
+$content-width-wide: 94vw;          // this is used
+$content-width-700: 92vw;           // this is used
+$content-width-narrow: 50vw;        // this is used
+$content-width-960: 96vw;           // used (barely)
+
+
+// This was used on the "brochure" download link in KRI
+// I believe this has been totally depricated
+$navigation-height: 50px;
+
+
+// Breakpoints
+$nav_bp_dt : 960px;
+// $bp_3cols : 600px;
+$bp_3cols : 620px;  // replace this with bp__md asap please
+
+// Breakpoints v2
+$bp__sm : 620px;
+$bp__md : 960px;
+$bp__lg : 1280px;

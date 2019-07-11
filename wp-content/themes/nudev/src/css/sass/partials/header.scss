@@ -1,11 +1,6 @@
 /**
  * 
  */
-div#nu__globalheader {
-    #nu__utility-nav {
-        width: 96vw;
-    }
-}
 header {
     height: 80px;
     width: 100%;
@@ -23,7 +18,7 @@ header {
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 0 2vw;
+        padding: 0 1.5vw;
         margin: 0 auto;
         position: relative;
         border-bottom: 1px solid $brand_colors-gray;

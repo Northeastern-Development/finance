@@ -1,0 +1,258 @@
+/**
+ * partials/editorial
+ * ---
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+ // partials
+ @import "partials/articles";
+
+
+main.single-media{
+  margin-bottom: 0;
+  & > section{
+    margin: 0 0 0 0;
+    width: 100vw;
+    & > article{
+      & > div.title{
+        & > div#title{
+          width: $content-width;
+          padding-top: 30px;
+        }
+      }
+      & > div#contentarea{
+        position: relative;
+        & > div.panel{
+          &:first-of-type{
+            margin-top: 50px;
+          }
+          & > div.contentarea{
+            & div{
+              &.above{
+                & > p{
+                  margin: 0 (nth($wrapper-margins, 2) / 2) $gutter (nth($wrapper-margins, 4) / 2);
+                }
+              }
+              &.below{
+                & > p{
+                  margin: $gutter (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+                }
+              }
+            }
+            & > img{
+              width: $content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+              height: auto;
+              margin: 0 (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+            }
+            & .caption{
+              width: $content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+              margin: 0 (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+            }
+            & > iframe{
+              width: $content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2) !important;
+              height: 35vw !important;
+              margin: 0 (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+            }
+            & > ul.gallery{
+              clear: right;
+              $width: $content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+              width: $width;
+              height: auto;
+              margin: 0 (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+              list-style: none;
+              list-style-type: none;
+              $rowMax: 4;
+              & > li{
+                width: ($width / $rowMax) - $gutter;
+                margin: 0 $gutter $gutter 0;
+                float: left;
+                background: #eee;
+                & img{
+                  width: 100%;
+                }
+                &:nth-child($rowMax){
+                  margin: 0 0 $gutter 0;
+                }
+              }
+            }
+          }
+
+        }
+      }
+      &.lightondark{
+        background: rgba(0,0,0,1.0);
+        color: rgba(255,255,255,1.0);
+        & div#title{
+          & div.tick{
+            background: rgba(255,255,255,1.0);
+          }
+        }
+        & div#contentarea{
+          & div#sharepanel{
+            & a{
+              color: rgba(255,255,255,1.0);
+            }
+          }
+          & section.storyidea{
+            & > a{
+              background: rgba(255, 255, 255, 1.0);
+              &:hover{
+                background: rgba(187, 38, 26, 1.0);
+                border: solid rgba(155, 155, 155, 1.0) 1px;
+                color: rgba(255,255,255,1.0);
+                & > span{
+                  color: rgba(255,255,255,1.0);
+                }
+              }
+            }
+          }
+        }
+      }
+      &.darkonlight{
+        background: rgba(255,255,255,1.0);
+      }
+    }
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 1300px){
+
+  main.single-media{
+    & > section{
+      & > article{
+        & > div#contentarea{
+          position: relative;
+          & > div.panel{
+            & > div.contentarea{
+              & > img{
+                width: 90vw - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+              }
+              & .caption{
+                width: 90vw - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+              }
+              & > iframe{
+                width: 90vw - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2) !important;
+              }
+              & > ul.gallery{
+                $width: 90 - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+                width: $width;
+                $rowMax: 4;
+                & > li{
+                  width: ($width / $rowMax) - $gutter;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 760px){
+
+  main.single-media{
+    & > section{
+      & > article{
+        & > div.title{
+          & > div#title{
+            width: 90vw;
+            // padding-top: 30px;
+          }
+        }
+        & > div#contentarea{
+          position: relative;
+          & > div.panel{
+            & > div.contentarea{
+              & > ul.gallery{
+                $width: 90 - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+                width: $width;
+                $rowMax: 2;
+                & > li{
+                  width: ($width / $rowMax) - $gutter;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 600px){
+
+  main.single-media{
+    & > section{
+      & > article{
+        & > div#contentarea{
+          position: relative;
+          & > div.panel{
+            & > div.contentarea{
+              & div{
+                &.above{
+                  & > p{
+                    margin: 0 0 20px 0;
+                  }
+                }
+                &.below{
+                  & > p{
+                    margin: 0 0 20px 0;
+                  }
+                }
+              }
+              & > img{
+                width: 100% !important;
+                margin: 0 0 0 0;
+              }
+              & .caption{
+                width: 100% !important;
+                margin: 0 0 0 0;
+              }
+              & > iframe{
+                width: 100% !important;
+                margin: 0 0 0 0;
+              }
+              & > ul.gallery{
+                $width: 90 - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2);
+                width: $width;
+                $rowMax: 1;
+                & > li{
+                  width: 100%;
+                  margin: 0 0 30px 0;
+                  float: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}

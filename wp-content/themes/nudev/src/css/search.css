@@ -1,3 +1,7 @@
+@media only screen {
+  div.main > section > div#___gcse_0 div.gsc-webResult {
+    margin-bottom: 30px !important; } }
+
 @media only screen and (max-width: 900px) {
   main#searchpage > section {
     width: 90%; } }

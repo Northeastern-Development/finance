@@ -1,0 +1,144 @@
+// a {
+//     color: rgba(0, 0, 0, 1.0);
+//     text-decoration: none;
+
+//     &:hover {
+//         color: $red;
+//     }
+
+//     &.button {
+//         padding: 10px 30px 10px 30px;
+//         background: rgba(0, 0, 0, 1.0);
+//         color: rgba(255, 255, 255, 1.0);
+//         text-transform: uppercase;
+//         letter-spacing: 1px;
+//     }
+// }
+
+
+// h1 {
+//     font-size: 4rem;
+// }
+
+// h2 {
+
+//     font-size: 3.5rem;
+//     line-height: 3vw;
+//     font-weight: 200;
+// }
+
+// h3 {
+//     font-size: 2.75rem;
+//     line-height: 4rem;
+//     font-weight: 200;
+// }
+
+// h4 {
+//     font-size: 1.6rem;
+//     text-transform: uppercase;
+//     margin: $gutter 0 $gutter 0;
+//     letter-spacing: 1px;
+//     font-weight: 900;
+
+//     &::before {
+//         content: '';
+//         display: inline-block;
+//         width: 70px;
+//         height: 10px;
+//         background: rgba(205, 0, 0, 1.0);
+//         margin: 0 20px 0 0;
+//     }
+
+// }
+
+/* 14px @ 700px increasing to 16px @ 1500px */
+// @media (min-width: 700px) {
+//     h4 {
+//         font-size: calc(0.875rem + ((1vw - 7px) * 0.25));
+//         /* Where: * 0.25 = 100 * font_Size_Difference / viewport_Width_Difference */
+//     }
+// }
+
+/* Prevent font scaling beyond this breakpoint */
+// @media (min-width: 1500px) {
+//     h4 {
+//         font-size: 16px;
+//     }
+// }
+
+
+// h5,
+// .rubric {
+//     font-size: 1.25rem;
+//     line-height: 2.25rem;
+//     font-weight: 900;
+//     letter-spacing: 1px;
+// }
+
+// h5 {
+//     font-size: 1.75rem;
+//     line-height: 2.5rem;
+// }
+
+// h6 {
+//     font-size: 1.5rem;
+//     line-height: 2rem;
+//     font-weight: 400;
+//     letter-spacing: 1px;
+// }
+
+// p {
+//     font-weight: normal;
+//     // margin: 0 0 $gutter 0;
+// }
+
+
+// couldn't find any code using this in the project
+div#wpfront-scroll-top-container {
+    background: nth($brand_colors, 4);
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    line-height: 3.75rem;
+
+    & td.button-holder {
+        background: none;
+        background-color: none;
+        font-size: 3rem;
+        width: 4rem;
+        height: 4rem;
+        line-height: 3.75rem;
+        font-weight: 400;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        text-align: center;
+    }
+}
+
+
+
+// couldn't find this in use in the project;
+// seems it may have been used in the past on a contact page, possibly,
+// only refs are in an old scss file
+.dark {
+    & a {
+        color: red;
+        //text-decoration: underline;
+        font-weight: lighter;
+        border-bottom: 2px solid $red;
+
+        &:hover {
+            color: $red;
+
+            &>span {
+                color: $red;
+            }
+        }
+
+        &>span {
+            color: rgba(255, 255, 255, 1.0);
+            text-decoration: none;
+        }
+    }
+}

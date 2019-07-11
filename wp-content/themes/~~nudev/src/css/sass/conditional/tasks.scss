@@ -1,0 +1,315 @@
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/mixins.scss';
+
+@media only screen {
+    main {
+        >section:nth-of-type(2) {
+            p {
+                @include font-3l-c;
+                margin-bottom: 15px;
+            }
+        }
+
+        >section {
+
+            >h2 {
+                border-bottom: 1px solid black;
+            }
+
+            &.related-tasks {
+                margin-bottom: 40px;
+
+                >ul {
+                    width: 100%;
+                }
+            }
+
+            >.task-options {
+
+                // the solutions header (select solution based on method of payment etc)
+                p {
+                    margin-bottom: 15px;
+                }
+
+                >h2 {
+                    @include font-7l-l;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid black;
+                }
+
+                .task-options-list {
+                    margin-top: 30px;
+                    list-style-type: none;
+
+                    // any task option grouping
+                    >li {
+                        margin-top: 30px;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid transparentize(black, 0.8);
+                        cursor: pointer;
+
+                        // the task option groupings sub-options (steps)
+                        >ul {
+                            margin-top: 15px;
+                            list-style-type: none;
+                            overflow-y: hidden;
+                            cursor: initial;
+                            display: block;
+
+                            // a 'step'
+                            >li {
+                                margin: 0 auto;
+                                margin-bottom: 20px;
+
+                                >a.js__youtube {
+                                    @include neu__iconlink();
+                                    color: $brand_colors-red;
+
+                                    &:before {
+                                        color: $brand_colors-red;
+                                    }
+                                }
+                            }
+
+                            // in-solution 'sidebar' / 'callout'
+                            .sidebar {
+                                background-color: #fff;
+                                position: relative;
+                                z-index: 11;
+                                width: calc(100% / 3);
+                                margin: auto;
+                                margin-left: 20px;
+                                float: right;
+
+                                &:before {
+                                    display: none;
+                                }
+
+                                >div {
+                                    // height: 245px;
+                                    height: 15vw;
+                                    width: 100%;
+                                    background-size: cover;
+                                    background-position: center center;
+                                    background-repeat: no-repeat;
+                                }
+
+                                >h4 {
+                                    @include font-2r-l;
+                                }
+
+                                >p {
+                                    @include font-2l-l;
+                                }
+
+                                >a {
+                                    @include neu__iconlink();
+                                    color: $brand_colors-red;
+
+                                    &:before {
+                                        color: $brand_colors-red;
+                                    }
+                                }
+                            }
+
+                            ul.list {
+                                >li:first-child {
+                                    >h2 {
+                                        @include font-2r-l;
+                                    }
+                                }
+
+                                >li {
+                                    >a.neu__iconlink {
+                                        @include neu__iconlink($icon: "\e2c4");
+                                        color: $brand_colors-red;
+
+                                        &:before {
+                                            color: $brand_colors-red;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                        &.js__tasks_viewable_steps {
+                            >div {
+                                >i.material-icons {
+                                    color: $brand_colors-red;
+                                    border-color: $brand_colors-red;
+                                }
+
+                                &:after {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        >section .task-options-list-item-suboptions {
+            >li {
+                ul {
+                    a {
+                        color: $brand_colors-red;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
+
+                    list-style-type: disc;
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 2.4rem;
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    main>section .task-options-list>li {
+        &.js__tasks_viewable_steps {
+            >a>h5 {
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        // the task option grouping main info (title, description, icon etc)
+        >a {
+            position: relative;
+
+            h5 {
+                >i.material-icons {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: 20px;
+                    padding: 5px;
+                    border-radius: 50%;
+                    border: 1px solid $brand_colors-gray;
+                    color: $brand_colors-gray;
+                }
+
+                margin: 0 auto;
+                padding-right: 20px;
+                position: relative;
+
+                >span {
+                    margin-left: 40px;
+                    border-bottom: 2px solid transparent;
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-size: inherit;
+                    line-height: inherit;
+                }
+
+                @include font-3r-l;
+
+                &:after {
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-family: 'Material Icons';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 20px;
+                    transition: transform 0.4s ease;
+                    content: '\e313';
+                    transform: rotate(0deg);
+
+                }
+            }
+
+            >p {
+                margin: 15px 0;
+            }
+
+            @include font-2l-l;
+
+
+
+            &:hover,
+            &:active,
+            &:focus {
+                >h5 {
+                    &:after {
+                        // transform: rotate(180deg);
+                        color: $brand_colors-red;
+                    }
+
+                    >span {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
+                }
+
+                &:after {
+                    color: $brand_colors-red;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $bp__lg) {
+    main>section>.task-options>h2 {
+        @include font-5l-l;
+        padding-bottom: 15px; // font size dropped so much the padding should too
+    }
+
+    main>section>.task-options .task-options-list>li>a h5 {
+        @include font-2b-l;
+    }
+}
+
+@media only screen and (max-width: $bp__md) {
+    main>section:nth-of-type(2)>p {
+        @include font-2l-c;
+    }
+
+    main>section>.task-options>h2 {
+        @include font-3l-l;
+        padding-bottom: 15px; // font size dropped so much the padding should too
+    }
+}
+
+@media only screen and (max-width: $bp__sm) {
+    main>section>.task-options>.task-options-list .task-options-list-item-suboptions .sidebar {
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        width: calc(100% + 30px);
+        left: -30px;
+        padding-bottom: 15px;
+    }
+
+    main>section>.task-options .task-options-list>li>a {
+
+        >h5 {
+            margin-left: 0;
+        }
+
+        >i.material-icons {
+            padding: 5px;
+            font-size: 1.6rem;
+        }
+    }
+
+    main>section>.task-options .task-options-list>li>ul .sidebar>div {
+        height: 50vw;
+    }
+
+
+}

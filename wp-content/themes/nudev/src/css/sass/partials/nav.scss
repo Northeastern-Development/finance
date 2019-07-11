@@ -1,174 +1,70 @@
 /*
 *   Nav
 */
-@media only screen {
-
-    
-    // Search Button ( in nav )
-    a#neu__sitesearch-toggle {
-        position: absolute;
-        top: 0;
-        right: 2vw;   // matches the padding-right value of the header container
-        margin: 0 auto;
-        color: transparentize(white, 0.2);
-        font-size: 2rem;    // 
-        height: 100%;       // vertical centering
-        line-height: 80px;  // vertical centering
-        padding: 0 5px;     // assist touchable area
-        &:before {          // icon
-            font-family: 'Material Icons';
-            content: '\e8b6'
-        }
-        &:hover, &:focus, &:active {
-            color: white;
-        }
-
-    }
-
-    // Search Form ( flyout, in nav )
-    form#neu__sitesearch-form {
-        background-color: black;
-        color: white;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        position: absolute;
-        top: 0;
-        right: 0px;
-        height: 100%;
-        padding: 0 2vw;
-        
-        // animate flyout
-        transition: transform 0.4s ease;
-        transform: translateX(150%);
-        &.neu__sitesearch-form--shown {
-            width: 100%;
-            transform: translateX(0);
-        }
-        // responsive flyout size
-        @media only screen and (min-width: $bp__md){
-            &.neu__sitesearch-form--shown {
-                width: calc(100% - 320px);
-                max-width: 960px;
-            }
-        }
-        // hide label visually, not from screen readers
-        >label {
-            position: absolute;
-            left: -9999px;
-        }
-        // unstyle input & buttons
-        >input,
-        >button {
-            line-height: 80px;
-            color: transparentize(white, 0.2);
-            -webkit-appearance: none;
-            background: none;
-            border: none;
-            &:hover, &:focus, &:active {
-                color: white;
-            }
-        }
-
-        >input[type="text"] {
-            flex: 1;
-            padding-left: 30px;
-            background-color: black;
-            color: white;
-            border: none;
-            font-size: 16px;
-        }
-        >button {
-            cursor: pointer;
-            margin-right: 15px;
-            padding: 0 5px;
-            font-size: 20px;
-            &[type="submit"] {
-                &:before {
-                    font-family: 'Material Icons';
-                    content: '\e8b6'
-                }
-            }
-            &[type="button"] {
-                &:before {
-                    font-family: 'Material Icons';
-                    content: '\e5cd'
-                }
-            }
-            &:first-of-type {
-            }
-            &:last-of-type {
-                margin-right: 0;
-            }
-        }
-
-    }
-}
-
-
-
-
-
-
-
 
 // Desktop Nav
 @media only screen and (min-width: $bp__md) {
+
     // hide mobile nav
-    #nu__mobile
-    ,label#neu__navicon-label
-    ,input#neu__navicon {
+    #nu__mobile {
         display: none;
     }
+
+    // hide mobile navicon
+    label#neu__navicon-label {
+        display: none;
+    }
+
+    // hide checkbox without removing from dom
+    input#neu__navicon {
+        position: absolute;
+        left: -9999px;
+    }
+
     // reveal destop nav
     #nu__main-nav-desktop {
         display: block;
     }
 
-    // clean item heights in nav
+    // force all top-level nav items height to 100%
     .nu__main-nav,
-    .nu__main-nav > ul,
-    .nu__main-nav > ul > li,
-    .nu__main-nav > ul > li > a {
+    .nu__main-nav>ul,
+    .nu__main-nav>ul>li,
+    .nu__main-nav>ul>li>a {
         height: 100%;
     }
-    .nu__main-nav > ul > li > a > span{
-        line-height: 80px;
-    }
-    
+
     // Initial States
     .nu__main-nav {
-        margin-right: 30px;
         >ul {
             >li {
-                position: relative;
-                &:first-of-type {
-                    position: static;
-                }
-                display: inline-block;
-                vertical-align: top;
                 margin-right: ($gutter * 2);
+                display: inline-block;
+
                 // nav links (text)
                 >a {
-                    position: relative;
+                    height: 100%;
                     display: inline-block;
                     @include font-2b-l;
                     color: rgba(255, 255, 255, 0.8);
                     border-bottom: 5px solid transparent;
+
                     &:hover,
                     &:active,
                     &:focus {
                         color: rgba(255, 255, 255, 1);
                         border-bottom: 5px solid $brand_colors-red;
                     }
+
+                    // vertically center link text within 100% height clickable area
+                    >span {
+                        line-height: 84px;
+                    }
                 }
             }
-            // dropdowns
+
+            // nav items with children (dropdowns)
             >li.has-children {
-                > ul[role="menu"] {
-                    display: none;
-                    position: absolute;
-                }
                 >a {
                     &:after {
                         content: '\e5cf'; // carrot down
@@ -178,56 +74,9 @@
                     }
                 }
             }
-            // drop-down nav active state
-            li.neu__active,
-            li.neu__showme {
-                >a {
-                    color: white;
-                    border-bottom: 5px solid $brand_colors-red;
-                }
-                > .neumenu-wrapper,
-                > ul[role="menu"] {
-                    display: block;
-                }
-            }
-
-            li:last-of-type {
-                > ul[role="menu"]{
-                    flex-flow: column wrap;
-                    background-color: #1f1f1f;
-                    border: 1px solid $brand_colors-gray;
-                    border-top: none;
-                    left: -100%;
-                    top: calc(100% + 1px);
-                    > li {
-                        > a {
-                            line-height: 50px;
-                            white-space: nowrap;
-                            display: block;
-                            padding: 0 30px;
-                            color: rgba(255, 255, 255, 0.8);
-                            border-bottom: 1px solid $brand_colors-gray;
-                            &:hover, &:focus, &:active {
-                                color: black;
-                                background-color: $brand_colors-beige;
-                            }
-                        }
-                        &:last-child > a {
-                            border-bottom: none;
-                        }
-                    }
-                }
-            }
-            
         }
     }
 
-
-
-    
-    
-    
-    // this is just for the howdoi nav i think
     // align sub-nav (initially hidden)
     .neumenu-wrapper {
         display: none;
@@ -237,38 +86,6 @@
         z-index: 11;
         box-shadow: 1px 1px 5px $brand_colors-gray;
     }
-
-    // Conditional States:
-    body.page-template-template-tasks,
-    body.page-template-template-homepage {
-        #nu__main-nav-desktop a[data-name="howdoi"] {
-            border-bottom: 5px solid $brand_colors-red;
-            color: white;
-        }
-    }
-    body.page-template-template-tools-index,
-    body.page-template-template-tools-detail {
-        #nu__main-nav-desktop a[data-name="tools"] {
-            border-bottom: 5px solid $brand_colors-red;
-            color: white;
-        }
-    }
-    body.page-template-template-forms {
-        #nu__main-nav-desktop a[data-name="forms"] {
-            border-bottom: 5px solid $brand_colors-red;
-            color: white;
-        }
-    }
-    body.page-template-template-departments-detail,
-    body.page-template-template-about,
-    body.page-template-template-contact {
-        #nu__main-nav-desktop a[data-name="about"] {
-            border-bottom: 5px solid $brand_colors-red;
-            color: white;
-        }
-    }
-
-
 
     // underline hover for categories and tasks
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a>p,
@@ -288,18 +105,19 @@
     }
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div,
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li {
-        >a {
-
+        > a {
             &:hover,
             &:focus,
             &:active {
-                >p>span {
+                > p > span {
                     border-bottom: 2px solid $brand_colors-red;
                 }
             }
         }
 
     }
+
+
     // "howdoi" menu
     .neumenu-wrapper#howdoi {
         .neumenu-wrapper-inner {
@@ -354,7 +172,7 @@
                 // category buttons
                 >div {
                     margin-right: 30px;
-                    width: calc(20% - 24px);
+                    width: calc(20% - calc(120px / 5));
                     display: flex;
                     flex-flow: column wrap;
                     align-items: flex-start;
@@ -459,12 +277,64 @@
         }
     }
 
+
+    // Active States for top level nav
+    .nu__main-nav {
+
+        // drop-down nav active state
+        li.neu__active,
+        li.neu__showme {
+            >a {
+                color: white;
+                border-bottom: 5px solid $brand_colors-red;
+            }
+        }
+    }
+
+
+
+    // About Submenu
+    li.has-children[data-id="about"] {
+        position: relative;
+    }
+
+    .neumenu-wrapper#about {
+        right: -50%;
+        top: calc(100% + 1px);
+        left: auto;
+        width: auto;
+        box-shadow: none;
+
+        >.neumenu-wrapper-inner {
+            // should match ul on .edu
+            min-height: 0;
+            flex-flow: column wrap;
+            background-color: #1f1f1f;
+            border: 1px solid $brand_colors-gray;
+            border-top: none;
+
+            >a {
+                // should match li on .edu
+                color: transparentize(white, 0.2);
+                line-height: 50px;
+                white-space: nowrap;
+                display: block;
+                padding: 0 30px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $brand_colors-gray;
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $brand_colors-beige;
+                    color: black;
+                }
+            }
+        }
+    }
 }
-
-
-
-
-
 
 // Mobile Nav
 @media only screen and (max-width: $bp__md) {
@@ -585,16 +455,12 @@
     // style navicon & times
     label#neu__navicon-label {
         cursor: pointer;
-        color: transparentize(white, 0.2);
-        &:hover, &:focus, &:active {
-            color: white;
-        }
+        color: white;
         font-size: 24px;
         width: 24px;
-        height: 100%;
-        line-height: 80px;
+        height: 24px;
         position: relative;
-        margin-right: 55px;
+        margin-right: 15px;
 
         &:before,
         &:after {
@@ -664,7 +530,7 @@
 @media only screen and (max-width: $bp__md) {
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
         @include font-3r-c;
-        // color: red;
+        color: red;
     }
 }
 

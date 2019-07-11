@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+div#nu__globalheader {
+    #nu__utility-nav {
+        width: 96vw;
+    }
+}
+header {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 44px; // ( globalheader should ALWAYS be enabled )
+    flex: 0 0 auto;
+    z-index: 1000;
+    background: white none repeat scroll 0 0;
+    -moz-box-flex: 0;
+    div#header {
+        height: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 2vw;
+        margin: 0 auto;
+        position: relative;
+        border-bottom: 1px solid $brand_colors-gray;
+        background-color: black;
+        .logo {
+            height: 100%;
+            width: 230px;
+            svg {
+                height: 100%;
+                max-width: 280px;
+            }
+        }
+    }
+}

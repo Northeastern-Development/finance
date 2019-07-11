@@ -1,0 +1,426 @@
+@import '../../sass/base/mixins.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/vars.scss';
+
+@media only screen {
+    // vars
+    $width: 90vw;
+    $col: 1;
+    $space: 2vw;
+    // 
+
+    section.dept_main {
+        text-align: center;
+
+        // depricated (removed for now)
+        // >h2 {
+        //     text-align: center;
+        //     border-bottom: none;
+        // }
+
+        // blurb
+        >div {
+            margin-bottom: 15px;
+
+            >div {
+                @include font-3l-c;
+
+                // i dont know why this is here;
+                // there shouldn't be a list in the blurb...
+                ul {
+                    a {
+                        color: $brand_colors-red;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
+
+                    list-style-type: disc;
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 2.4rem;
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        // email & phone iconlinks
+        >a.neu__iconlink {
+            display: inline-block;
+            margin-right: 45px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        >a.neu__iconlink.neu__iconlink-email {
+            @include neu__iconlink($icon: "\e0be");
+        }
+
+        >a.neu__iconlink.neu__iconlink-phone {
+            @include neu__iconlink($icon: "\e551");
+        }
+    }
+
+    section.nu__team>article {
+        display: flex;
+        flex-flow: row nowrap;
+        width: $width;
+
+        >div {
+            flex: 1 1 43vw;
+        }
+
+        // background image
+        >div:last-child {
+            width: 43vw;
+            height: 43vw;
+            margin-right: 2vw;
+            order: 1;
+        }
+
+        // written content
+        >div:first-child {
+            order: 2;
+
+            >h3 {
+                @include font-3b-l;
+            }
+
+            >h6 {
+                @include font-2r-l;
+                margin-bottom: 15px;
+            }
+
+            >p.description {
+                margin-bottom: 15px;
+            }
+
+            >p {
+                >a.neu__iconlink {
+                    &.neu__iconlink-phone {
+                        @include neu__iconlink($icon: "\e551");
+                    }
+
+                    &.neu__iconlink-email {
+                        @include neu__iconlink($icon: "\e0be");
+                    }
+
+                    &.neu__iconlink-url {
+                        @include neu__iconlink();
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    section.nu__team-list {
+        width: $width;
+
+        >ul {
+            border-top: 1px solid black;
+            padding-top: 15px;
+            margin-top: 15px;
+            width: $width;
+            flex-flow: column nowrap;
+            text-align: left;
+
+            >li {
+                margin: 0;
+                margin-bottom: 30px;
+                display: flex;
+                flex-flow: row nowrap;
+
+                >div {
+                    flex: 1 1 43vw;
+
+                    &:first-child {
+                        margin-right: 2vw;
+                    }
+                }
+
+                // 
+                >div:not(.neu__bgimg) {
+                    >h3 {
+                        @include font-3b-c;
+                        text-align: center;
+                        border-bottom: 2px solid transparent;
+                    }
+
+                    >p {
+                        margin: 0;
+
+                        &:first-of-type {
+                            margin-bottom: 15px;
+
+                            >span:first-of-type {
+                                @include font-3b-l;
+                            }
+                        }
+
+                        &:nth-last-child(3) a.neu__iconlink {
+                            @include neu__iconlink($icon: "\e551");
+                        }
+
+                        &:nth-last-child(2) a.neu__iconlink {
+                            @include neu__iconlink($icon: "\e0be");
+                        }
+
+                        &.neu__iconlink {
+                            &:before {
+                                color: black;
+                            }
+
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                &:before {
+                                    color: $brand_colors-red;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                // Profile Pic
+                >div.neu__bgimg {
+                    width: 43vw;
+                    height: 43vw;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+
+    // Related Tasks && Related Forms
+    div.wrapper {
+
+        section.dept_relforms,
+        section.dept_reltasks {
+            >ul {
+                flex-flow: column nowrap;
+
+                >li {
+                    flex: 1 0 100%;
+                    position: relative;
+                    @include neu__iconlink($hover: 0);
+                    padding-left: 30px;
+
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: auto;
+                        color: $brand_colors-red;
+                    }
+
+                    >a {
+                        border-bottom: 2px solid transparent;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            border-bottom: 2px solid $brand_colors-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $bp__sm) {
+    $width: 90vw;
+    $col: 3;
+    $space: 2vw;
+
+    // adjust the staff grid (nu__team-list) up to 3 columns
+    div.wrapper {
+
+        section.dept_relforms,
+        section.dept_reltasks {
+            >ul {
+                display: inline-block;
+                text-align: left;
+                font-size: 0;
+                width: 100%;
+
+                >li {
+                    // font-size: initial;
+                    @include font-2l-l;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 15px 15px 0;
+                    width: calc(50% - 7.5px);
+
+                    &:nth-of-type(2n) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        section.nu__team {
+            >article {
+                width: 80%; // only at this breakpoint, constrain this section to be narrower than the grid below
+                width: 100%;
+                margin: 0 auto;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+
+                >div {
+                    flex: none;
+                    order: 0;
+                }
+
+                >div.neu__bgimg {
+                    margin: 0;
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    height: (($width - (($col - 1) * $space)) / $col);
+                }
+            }
+        }
+
+        section.nu__team-list {
+            >ul {
+                display: inline-block;
+                font-size: 0;
+                width: $width;
+
+                >li {
+                    // font-size: initial;
+                    @include font-2l-l;
+                    display: inline-block;
+                    vertical-align: top;
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    margin: 0 $space $space 0;
+
+                    &:nth-child(#{$col}n) {
+                        margin-right: 0;
+                    }
+
+                    >div.neu__bgimg {
+                        height: (($width - (($col - 1) * $space)) / $col);
+                        width: (($width - (($col - 1) * $space)) / $col);
+                        margin-bottom: 15px;
+                    }
+
+                    >div:not(.neu__bgimg) {}
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $bp__md) {
+    $width: 90vw;
+    $space: 2vw;
+    $col: 6;
+
+    div.wrapper {
+
+        // department head
+        section.nu__team {
+            >article {
+                width: 100%; // unset 80% set at smaller view; parent is now width constrained instead
+                flex-flow: row nowrap;
+                justify-content: space-between;
+
+                >div {
+                    flex: none;
+                    order: 0;
+                }
+
+                >div.neu__bgimg {
+                    margin: 0;
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    height: (($width - (($col - 1) * $space)) / $col);
+                }
+            }
+        }
+
+        // staff members grid up to 6col
+        section.nu__team-list {
+            >ul {
+                >li {
+                    // reset sizing
+                    width: (($width - (($col - 1) * $space)) / $col);
+                    margin: 0 $space $space 0;
+
+                    // unset the 3col margin
+                    &:nth-child(3n) {
+                        margin-right: $space;
+                    }
+
+                    // set new 6col margin
+                    &:nth-child(#{$col}n) {
+                        margin-right: 0;
+                    }
+
+                    // reset sizing
+                    >div.neu__bgimg {
+                        height: (($width - (($col - 1) * $space)) / $col);
+                        width: (($width - (($col - 1) * $space)) / $col);
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $bp__lg) {
+
+    section.nu__team-list>ul>li>div:not(.neu__bgimg)>p:first-of-type>span:first-of-type,
+    section.nu__team>article>div:first-child>h3 {
+        @include font-2b-l;
+    }
+
+    section.nu__team>article>div:first-child>h6 {
+        @include font-2r-l;
+    }
+
+}
+
+@media only screen and (max-width: $bp__md) {
+
+    main>section.dept_main {
+        >div>div {
+            @include font-2l-c;
+        }
+    }
+
+    main>section.nu__team {
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: $bp__sm) {
+    div.wrapper>main>section.dept_main {
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        >a.neu__iconlink {
+            margin: 0 auto;
+            margin-bottom: 15px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../sass/base/vars.scss';
+@import '../../sass/base/mixins.scss';
+@import '../../sass/base/fonts.scss';
+
+
+@media only screen {
+
+
+    main#financialstatements {
+
+
+        > section:last-of-type {
+            h2 {
+                // text-align: center;
+                // border-bottom: 2px solid transparent;
+                // padding-bottom: 15px;
+            }
+        }
+        > section:nth-of-type(2){
+            >a {
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid transparentize(black, 0.33);
+                padding: 15px 0;
+
+                &:hover, &:focus, &:active {
+                    span {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
+                }
+                > span {
+                    border-bottom: 2px solid transparent;
+                    @include neu__iconlink();
+                    &:before {
+                        color: $brand_colors-red;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}

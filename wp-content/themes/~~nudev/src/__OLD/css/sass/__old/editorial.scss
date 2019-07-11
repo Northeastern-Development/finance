@@ -1,0 +1,105 @@
+/**
+ * partials/editorial
+ * ---
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+// partials
+ @import "partials/articles";
+
+
+main.single-editorial{
+  margin-bottom: 0;
+  & > section{
+    margin: 0 0 0 0;
+    width: 100vw;
+    & > article{
+      width: 100%;
+      & > #contentarea{
+        opacity: 0.0;
+        position: absolute;
+        background: rgba(255,255,255,1.0);
+        & > div.panel{
+          & > div.contentarea{
+            & p{
+              & .caption{
+                margin: 5px 0 0 0;
+                color: rgba(122, 119, 120, 1.0);
+              }
+            }
+            & > div.intro{
+              & > p{
+                font-size: 3rem;
+                line-height: 4rem;
+                margin: 0 (nth($wrapper-margins, 2) / 2) ($gutter * 3) (nth($wrapper-margins, 4) / 2);
+
+              }
+            }
+            & > p.video{
+              background: rgba(0,0,0,1.0);
+              position: relative;
+              & > iframe{
+                width: $content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2) !important;
+                margin: $gutter 0 $gutter 0;
+              }
+            }
+            & > div.image_and_stats{
+              margin: 0 (nth($wrapper-margins, 2) / 2) $gutter (nth($wrapper-margins, 4) / 2);
+              clear: both;
+              overflow: hidden;
+              & > div{
+                width: (($content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2)) / 2) - $gutter;
+                & > img{
+                  width: 100%;
+                }
+              }
+              & > p{
+                width: ($content-width - (nth($wrapper-margins, 2) / 2) - (nth($wrapper-margins, 4) / 2)) / 2;
+              }
+            }
+            & > div.left{
+              & > div{
+                float: left;
+                margin: 0 $gutter 0 0;
+              }
+              & > p{
+                float: left;
+                margin: 0 0 0 0;
+              }
+            }
+            & > div.right{
+              & > div{
+                float: right;
+                margin: 0 0 0 0;
+              }
+              & > p{
+                float: right;
+                margin: 0 $gutter 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1080px){
+
+  main.single-editorial{
+    & > section{
+      & > article{
+        & > #contentarea{
+          position: relative;
+        }
+      }
+    }
+  }
+
+}

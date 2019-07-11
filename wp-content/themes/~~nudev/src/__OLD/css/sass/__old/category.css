@@ -1,0 +1,340 @@
+/*
+ * partials/category
+ */
+/**
+ * modules/variables
+ * ---
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/**
+ * Grid
+ */
+/* These are variables for the header */
+/* These are variables for the main navigation */
+/**
+ * modules/mixins
+ * ---
+ */
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
+/*
+@font-face {
+  font-family: "Font-Name";
+  src: url("fonts/font-name.eot");
+  src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
+    url("fonts/font-name.woff") format("woff"),
+    url("fonts/font-name.ttf") format("truetype"),
+    url("fonts/font-name.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+div.pagination {
+  clear: both;
+  margin: 1vw 0 0 0;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  width: 100%; }
+  div.pagination > span.page-numbers,
+  div.pagination > a.page-numbers {
+    font-size: 2rem;
+    line-height: 3rem;
+    display: inline-block;
+    width: 30px;
+    text-align: center; }
+    div.pagination > span.page-numbers:hover,
+    div.pagination > a.page-numbers:hover {
+      text-decoration: none;
+      color: #7a7778; }
+  div.pagination > span.current {
+    color: #7a7778; }
+
+main#category {
+  margin: 190px 0 1vw 0; }
+  main#category section > div.articles {
+    overflow: hidden;
+    height: auto;
+    clear: both; }
+    main#category section > div.articles article:not(.simple) {
+      background: #eee; }
+      main#category section > div.articles article:not(.simple):nth-of-type(1) {
+        height: 500px;
+        overflow: hidden;
+        margin: 0 0 0 0; }
+        main#category section > div.articles article:not(.simple):nth-of-type(1) a {
+          width: 100%;
+          height: 100%;
+          display: table; }
+          main#category section > div.articles article:not(.simple):nth-of-type(1) a:hover {
+            opacity: 0.9; }
+        main#category section > div.articles article:not(.simple):nth-of-type(1) div {
+          display: table-cell;
+          width: 50%;
+          vertical-align: middle; }
+          main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) {
+            width: 25%;
+            padding: 0 20px 0 20px;
+            background: black;
+            color: white; }
+            main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) > h1 {
+              font-family: "Tungsten Rounded A", "Tungsten Rounded B";
+              font-weight: 700;
+              font-size: 8rem;
+              line-height: 7rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin: 0 0 1vw 0; }
+            main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) > h2 {
+              font-size: 1.5rem;
+              line-height: 2rem;
+              letter-spacing: 1px; }
+            main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) > h6 {
+              margin: 0 0 1vw 0; }
+            main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) .chevron {
+              border-radius: 50%;
+              font-size: 3.6rem;
+              vertical-align: middle;
+              overflow: hidden;
+              display: table-cell; }
+      main#category section > div.articles article:not(.simple):nth-of-type(2) {
+        margin: 1vw 0 0 1vw;
+        float: right;
+        width: 46.3333333333vw;
+        height: 500px;
+        border: solid #7a7778 1px; }
+        main#category section > div.articles article:not(.simple):nth-of-type(2) a {
+          width: 100%;
+          height: 100%;
+          display: table; }
+          main#category section > div.articles article:not(.simple):nth-of-type(2) a:hover {
+            opacity: 0.9; }
+        main#category section > div.articles article:not(.simple):nth-of-type(2) div {
+          display: table-row; }
+          main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(1) {
+            height: 370px; }
+          main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(2) {
+            background: white; }
+            main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(2) .rubric {
+              margin: 10px 0 0 20px; }
+            main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(2) > h1 {
+              font-family: "Tungsten Rounded A", "Tungsten Rounded B";
+              font-weight: 400;
+              font-size: 3rem;
+              line-height: 3.5rem;
+              letter-spacing: 1px;
+              margin: 0 0 5px 20px; }
+            main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(2) > h6 {
+              margin: 0 20px 0 20px; }
+      main#category section > div.articles article:not(.simple):nth-of-type(3), main#category section > div.articles article:not(.simple):nth-of-type(4), main#category section > div.articles article:not(.simple):nth-of-type(5), main#category section > div.articles article:not(.simple):nth-of-type(6), main#category section > div.articles article:not(.simple):nth-of-type(7), main#category section > div.articles article:not(.simple):nth-of-type(8), main#category section > div.articles article:not(.simple):nth-of-type(9) {
+        float: left;
+        height: 500px;
+        width: 22.6666666667vw;
+        margin: 1vw 0 0 0; }
+        main#category section > div.articles article:not(.simple):nth-of-type(3) a, main#category section > div.articles article:not(.simple):nth-of-type(4) a, main#category section > div.articles article:not(.simple):nth-of-type(5) a, main#category section > div.articles article:not(.simple):nth-of-type(6) a, main#category section > div.articles article:not(.simple):nth-of-type(7) a, main#category section > div.articles article:not(.simple):nth-of-type(8) a, main#category section > div.articles article:not(.simple):nth-of-type(9) a {
+          display: table;
+          width: 100%;
+          height: 100%; }
+          main#category section > div.articles article:not(.simple):nth-of-type(3) a:hover, main#category section > div.articles article:not(.simple):nth-of-type(4) a:hover, main#category section > div.articles article:not(.simple):nth-of-type(5) a:hover, main#category section > div.articles article:not(.simple):nth-of-type(6) a:hover, main#category section > div.articles article:not(.simple):nth-of-type(7) a:hover, main#category section > div.articles article:not(.simple):nth-of-type(8) a:hover, main#category section > div.articles article:not(.simple):nth-of-type(9) a:hover {
+            color: inherit;
+            opacity: 0.9; }
+        main#category section > div.articles article:not(.simple):nth-of-type(3) div, main#category section > div.articles article:not(.simple):nth-of-type(4) div, main#category section > div.articles article:not(.simple):nth-of-type(5) div, main#category section > div.articles article:not(.simple):nth-of-type(6) div, main#category section > div.articles article:not(.simple):nth-of-type(7) div, main#category section > div.articles article:not(.simple):nth-of-type(8) div, main#category section > div.articles article:not(.simple):nth-of-type(9) div {
+          display: table-row; }
+          main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(7) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(8) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(9) div:nth-of-type(1) {
+            height: 370px; }
+          main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(7) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(8) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(9) div:nth-of-type(1) {
+            width: 100%; }
+          main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(7) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(8) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(9) div:nth-of-type(2) {
+            background: black;
+            color: white; }
+            main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(2) .rubric, main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(2) .rubric, main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(2) .rubric, main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(2) .rubric, main#category section > div.articles article:not(.simple):nth-of-type(7) div:nth-of-type(2) .rubric, main#category section > div.articles article:not(.simple):nth-of-type(8) div:nth-of-type(2) .rubric, main#category section > div.articles article:not(.simple):nth-of-type(9) div:nth-of-type(2) .rubric {
+              margin: 10px 20px 0 20px; }
+            main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(2) > h1, main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(2) > h1, main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(2) > h1, main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(2) > h1, main#category section > div.articles article:not(.simple):nth-of-type(7) div:nth-of-type(2) > h1, main#category section > div.articles article:not(.simple):nth-of-type(8) div:nth-of-type(2) > h1, main#category section > div.articles article:not(.simple):nth-of-type(9) div:nth-of-type(2) > h1 {
+              font-family: "Tungsten Rounded A", "Tungsten Rounded B";
+              font-weight: 400;
+              font-size: 3rem;
+              line-height: 3.5rem;
+              letter-spacing: 1px;
+              margin: 0 20px 5px 20px; }
+            main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(2) > h6, main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(2) > h6, main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(2) > h6, main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(2) > h6, main#category section > div.articles article:not(.simple):nth-of-type(7) div:nth-of-type(2) > h6, main#category section > div.articles article:not(.simple):nth-of-type(8) div:nth-of-type(2) > h6, main#category section > div.articles article:not(.simple):nth-of-type(9) div:nth-of-type(2) > h6 {
+              margin: 0 20px 0 20px; }
+      main#category section > div.articles article:not(.simple):nth-of-type(4), main#category section > div.articles article:not(.simple):nth-of-type(5), main#category section > div.articles article:not(.simple):nth-of-type(6), main#category section > div.articles article:not(.simple):nth-of-type(7), main#category section > div.articles article:not(.simple):nth-of-type(8) {
+        margin: 1vw 1vw 0 0; }
+      main#category section > div.articles article:not(.simple):nth-of-type(6), main#category section > div.articles article:not(.simple):nth-of-type(9) {
+        margin: 1vw 0 0 0; }
+    main#category section > div.articles article.simple {
+      width: 34.5vw;
+      height: 200px;
+      float: left;
+      overflow: hidden;
+      border-top: solid #7a7778 1px;
+      padding: 1vw 0 0 0;
+      margin: 1vw 1vw 0 0; }
+      main#category section > div.articles article.simple:nth-of-type(1), main#category section > div.articles article.simple:nth-of-type(2) {
+        border-top: none;
+        padding: 0 0 0 0;
+        margin: 0 1vw 0 0; }
+      main#category section > div.articles article.simple a {
+        width: 100%;
+        height: 100%; }
+      main#category section > div.articles article.simple:nth-of-type(2n+2) {
+        margin-right: 0; }
+      main#category section > div.articles article.simple div:nth-of-type(1) {
+        width: 50%;
+        height: 100%;
+        float: left; }
+      main#category section > div.articles article.simple div:nth-of-type(2) {
+        width: 50%;
+        float: left;
+        background: white; }
+        main#category section > div.articles article.simple div:nth-of-type(2) .rubric {
+          margin: 10px 0 0 20px; }
+        main#category section > div.articles article.simple div:nth-of-type(2) > h5 {
+          margin: 0 20px 0 20px; }
+        main#category section > div.articles article.simple div:nth-of-type(2) > h6 {
+          margin: 0 20px 0 20px; }
+
+section.storyidea {
+  margin: 0 15vw 0 15vw; }
+
+@media only screen and (max-width: 1300px) {
+  main#category section > div.articles article:not(.simple):nth-of-type(2) {
+    width: 100%;
+    margin: 1vw 0 0 0;
+    float: none;
+    clear: both; }
+  main#category section > div.articles article:not(.simple):nth-of-type(3), main#category section > div.articles article:not(.simple):nth-of-type(4), main#category section > div.articles article:not(.simple):nth-of-type(5), main#category section > div.articles article:not(.simple):nth-of-type(6), main#category section > div.articles article:not(.simple):nth-of-type(7), main#category section > div.articles article:not(.simple):nth-of-type(8), main#category section > div.articles article:not(.simple):nth-of-type(9) {
+    width: 34.5vw;
+    margin: 1vw 1vw 0 0; }
+  main#category section > div.articles article:not(.simple):nth-of-type(even) {
+    margin: 1vw 0 0 0; }
+  main#category section > div.articles article.simple {
+    width: 34.5vw;
+    height: 200px;
+    float: left;
+    overflow: hidden;
+    border-top: solid #7a7778 1px;
+    padding: 1vw 0 0 0;
+    margin: 1vw 1vw 0 0; }
+    main#category section > div.articles article.simple:nth-of-type(1), main#category section > div.articles article.simple:nth-of-type(2) {
+      border-top: none;
+      padding: 0 0 0 0;
+      margin: 0 1vw 0 0; }
+    main#category section > div.articles article.simple a {
+      width: 100%;
+      height: 100%; }
+    main#category section > div.articles article.simple:nth-of-type(2n+2) {
+      margin-right: 0; }
+    main#category section > div.articles article.simple div:nth-of-type(1) {
+      width: 50%;
+      height: 100%;
+      float: left; }
+    main#category section > div.articles article.simple div:nth-of-type(2) {
+      width: 50%;
+      float: left;
+      background: white; }
+      main#category section > div.articles article.simple div:nth-of-type(2) .rubric {
+        margin: 10px 0 0 20px; }
+      main#category section > div.articles article.simple div:nth-of-type(2) > h5 {
+        margin: 0 20px 0 20px; }
+      main#category section > div.articles article.simple div:nth-of-type(2) > h6 {
+        margin: 0 20px 0 20px; } }
+
+@media only screen and (max-width: 1280px) {
+  main#category section > div.articles article.simple {
+    width: 69vw;
+    height: 200px;
+    float: none;
+    overflow: hidden;
+    border-top: none;
+    padding: 0 0 0 0;
+    margin: 0 0 1vw 0; }
+    main#category section > div.articles article.simple:nth-of-type(1), main#category section > div.articles article.simple:nth-of-type(2) {
+      margin: 0 0 1vw 0; }
+    main#category section > div.articles article.simple div:nth-of-type(1) {
+      width: 50%;
+      height: 100%;
+      float: left; }
+    main#category section > div.articles article.simple div:nth-of-type(2) {
+      width: 50%;
+      float: left;
+      background: white; }
+      main#category section > div.articles article.simple div:nth-of-type(2) .rubric {
+        margin: 10px 0 0 20px; }
+      main#category section > div.articles article.simple div:nth-of-type(2) > h5 {
+        margin: 0 20px 0 20px; }
+      main#category section > div.articles article.simple div:nth-of-type(2) > h6 {
+        margin: 0 20px 0 20px; } }
+
+@media only screen and (max-width: 960px) {
+  main#category section > div.articles article:not(.simple):nth-of-type(3), main#category section > div.articles article:not(.simple):nth-of-type(4), main#category section > div.articles article:not(.simple):nth-of-type(5), main#category section > div.articles article:not(.simple):nth-of-type(6), main#category section > div.articles article:not(.simple):nth-of-type(7), main#category section > div.articles article:not(.simple):nth-of-type(8), main#category section > div.articles article:not(.simple):nth-of-type(9) {
+    width: 70vw; } }
+
+@media only screen and (max-width: 700px) {
+  main#category {
+    margin: 170px 0 1vw 0; }
+    main#category section > div.articles article:not(.simple) {
+      width: 90vw; }
+      main#category section > div.articles article:not(.simple):nth-of-type(1) {
+        width: 90vw; }
+      main#category section > div.articles article:not(.simple):nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(3), main#category section > div.articles article:not(.simple):nth-of-type(4), main#category section > div.articles article:not(.simple):nth-of-type(5), main#category section > div.articles article:not(.simple):nth-of-type(6), main#category section > div.articles article:not(.simple):nth-of-type(7), main#category section > div.articles article:not(.simple):nth-of-type(8), main#category section > div.articles article:not(.simple):nth-of-type(9) {
+        width: 90vw; }
+    main#category section > div.articles article.simple {
+      width: 90vw; }
+  section.storyidea {
+    margin: 0 5vw 0 5vw; } }
+
+@media only screen and (max-width: 600px) {
+  main#category section > div.articles article:not(.simple) {
+    height: auto;
+    margin: 0 0 0 0; }
+    main#category section > div.articles article:not(.simple):nth-of-type(1) {
+      height: auto; }
+      main#category section > div.articles article:not(.simple):nth-of-type(1) div {
+        display: block;
+        width: 100%;
+        height: 300px; }
+        main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) {
+          width: 100%;
+          height: auto;
+          padding: 20px 20px 20px 20px; }
+          main#category section > div.articles article:not(.simple):nth-of-type(1) div:nth-of-type(2) h1 {
+            font-size: 4rem;
+            line-height: 4.5rem; }
+    main#category section > div.articles article:not(.simple):nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(3), main#category section > div.articles article:not(.simple):nth-of-type(4), main#category section > div.articles article:not(.simple):nth-of-type(5), main#category section > div.articles article:not(.simple):nth-of-type(6) {
+      height: auto;
+      margin: 3vw 0 0 0; }
+      main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(1), main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(1) {
+        height: 300px; }
+      main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(2), main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(2) {
+        height: auto;
+        padding: 20px 20px 20px 20px; }
+        main#category section > div.articles article:not(.simple):nth-of-type(2) div:nth-of-type(2) h6, main#category section > div.articles article:not(.simple):nth-of-type(3) div:nth-of-type(2) h6, main#category section > div.articles article:not(.simple):nth-of-type(4) div:nth-of-type(2) h6, main#category section > div.articles article:not(.simple):nth-of-type(5) div:nth-of-type(2) h6, main#category section > div.articles article:not(.simple):nth-of-type(6) div:nth-of-type(2) h6 {
+          margin: 0 20px 20px 20px; }
+  main#category section > div.articles article.simple {
+    height: auto;
+    float: none;
+    padding: 0 0 0 0; }
+    main#category section > div.articles article.simple:nth-of-type(1n+1) {
+      margin: 0 0 10vw 0; }
+    main#category section > div.articles article.simple div:nth-of-type(1) {
+      width: 100%;
+      height: 200px;
+      float: none; }
+    main#category section > div.articles article.simple div:nth-of-type(2) {
+      width: 100%;
+      float: none; }
+      main#category section > div.articles article.simple div:nth-of-type(2) .rubric {
+        margin: 10px 0 0 0; }
+      main#category section > div.articles article.simple div:nth-of-type(2) > h5 {
+        margin: 0 0 0 0; }
+      main#category section > div.articles article.simple div:nth-of-type(2) > h6 {
+        margin: 0 0 0 0; } }

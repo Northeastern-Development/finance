@@ -3,127 +3,7 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
-        Search = {
-
-            toggleOpen : $('#neu__sitesearch-toggle'),
-            form : $('#neu__sitesearch-form'),
-            input : $('#neu__sitesearch-form > input[type="text"]'),
-            toggleClosed : $('.neu__sitesearch-closebutton'),
-
-            _init : function(){
-
-                Search.toggleOpen.on('click', Search._doOpenSearchBar);
-                Search.toggleClosed.on('click', Search._doCloseSearchBar);
-                $(document).on('click', function(e){
-                    if( !$(e.target).closest('#header').length ){
-                        Search._doCloseSearchBar();
-                    }
-                });
-
-                Search.form.on('blur', 'button', function(e){
-                    
-                    if( !$(e.relatedTarget).closest(Search.form).length ){
-                        Search._doCloseSearchBar();
-                    }
-                    
-                });
-            }
-            ,_doOpenSearchBar : function(e){
-                Search.form.addClass('neu__sitesearch-form--shown');
-
-                Search.form.find('button, input').attr('tabindex', '0');
-                Search.input.focus();
-            }
-            ,_doCloseSearchBar : function(e){
-                Search.form.find('button, input').attr('tabindex', '-1');
-                Search.form.removeClass('neu__sitesearch-form--shown');
-            }
-        }
-        Search._init();
-        
-        
-        
-        
-        NewNav = {
-
-            _init : function(){
-
-                // if click is outside the nav close dropdowns etc.
-                $(document).on('click', function(e){
-                    if( !$(e.target).closest('#nu__main-nav-desktop').length ){
-                        $('li.has-children').removeClass('neu__showme');
-                    }
-                });
-                
-                // if click is on a dropdown
-                // $('#nu__main-nav-desktop li.has-children').on('click', 'a[role="menuitem"]', NewNav._didClickNavItem);
-                
-                // ARIA
-                NewNav._doARIA();
-            }
-            /**
-             * 
-             */
-            ,_doARIA : function(){
-
-                $('header').on('focus', 'div.logo', function(e){
-                    $('li.has-children').removeClass('neu__showme');
-                    $('li.has-children > a[role="menuitem"]').attr('aria-expanded', 'false');
-                });
-                $('header').on('focus', 'a#neu__sitesearch-toggle', function(e){
-                    $('li.has-children').removeClass('neu__showme');
-                    $('li.has-children > a[role="menuitem"]').attr('aria-expanded', 'false');
-                });
-
-                // when we focus on a a nav item
-                $('#nu__main-nav-desktop > ul[role="menubar"]').on('focus', '>li > a[role="menuitem"]', function(e){
-
-                    // close 'other' dropdowns
-                    $(this).parent().siblings('li.has-children').removeClass('neu__showme');
-                    $(this).parent().siblings('li.has-children').attr('aria-expanded', 'false');
-                    
-                    // if this is a dropdown
-                    if( $(this).parent().hasClass('has-children') ){                        
-
-                        if( !$(this).parent().hasClass('neu__showme') ){
-                            // open the hidden menu
-                            $(this).attr('aria-expanded', 'true');
-                            $(this).parent().addClass('neu__showme');
-                        } else {
-                            // hide the hidden menu
-                            $(this).attr('aria-expanded', 'false');
-                            $(this).parent().removeClass('neu__showme');
-                        }
-
-                    }
-                    
-                });
-
-                
-                // end _doARIA
-            }
-            /**
-             * Clicked a Dropdown
-             */
-            ,_didClickNavItem : function(e){
-                // handle toggling dropdowns
-                if( $(this).siblings('ul[role="menu"], div.neumenu-wrapper').length ){
-                    if( !$(this).parent().hasClass('neu__showme') ){
-                        $(this).attr('aria-expanded', 'true');
-                        $(this).parent().addClass('neu__showme');
-                    } else {
-                        $(this).attr('aria-expanded', 'false');
-                        $(this).parent().removeClass('neu__showme');
-                    }
-                }
-                $(this).parent().siblings('li.has-children').removeClass('neu__showme');
-            }
-        }
-        // NewNav._init();
-
-        
         /**
-         * 
          * 
          */
         Finance.NavHandler = {
@@ -131,9 +11,7 @@ var Finance = {};
             navItems: $('#nu__main-nav-desktop > ul > li > a'),
             dropdownPanels: $('li.has-children > .neumenu-wrapper'),
             _init: function () {
-                
                 Finance.NavHandler.navItems.on('focus blur click', Finance.NavHandler._navInteractionHandler);
-
                 // if focus leaves the about dropdown menu, close it
                 $('#nu__main-nav-desktop > ul > li:last-child > .neumenu-wrapper > div > a:last-child').on('blur', function (e) {
                     if ($(this).parent().find($(e.relatedTarget)).length == 0) {
@@ -196,15 +74,8 @@ var Finance = {};
              * @param {event} e 
              */
             _navInteractionHandler: function (e) {
-
-                
-                
                 e.stopPropagation();
-
                 if (e.type == "click") {
-
-                    // console.log('clicked on a nav item');
-                    
                     // click fires before focus
                     if ($(this).data("justfocussed")) {
                         $(this).data("justfocussed", false);
@@ -222,9 +93,6 @@ var Finance = {};
                 }
                 // is focussed only
                 else if (e.type == "focus") {
-
-                    // console.log( 'focused on a nav item ');
-                    
                     $(this).data("justfocussed", true);
                     // close all dropdowns
                     Finance.NavHandler.dropdownPanels.hide();
@@ -247,27 +115,17 @@ var Finance = {};
                 }
                 // is blurred
                 else {
-
-                    // console.log( 'blurred off a nav item ');
-                    
                     $(this).data("justfocussed", false);
-                    
                     // close "other" dropdowns
                     $('#nu__main-nav-desktop > ul > li.has-children').not($(this).parent()).find('.neumenu-wrapper').hide();
-                    
                     // if focus has NOT shifted to a sub-nav item
                     // (note, on the homepage, there is no subnav to close and this will not affect the howdoi functionality afaik)
                     if ($(this).parent().find(e.relatedTarget).length == 0) {
-
-                        // console.log('what is going on here');
-                        
                         // we need to close all nav dropdowns
-                        // Finance.NavHandler.dropdownPanels.hide();
+                        Finance.NavHandler.dropdownPanels.hide();
                         // remove this showme
-                        // Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
+                        Finance.NavHandler.dropdownPanels.parent('li.has-children').removeClass('neu__showme');
                     }
-
-
                     //  we are on the home page
                     if (Finance.NavHandler.isHomepage) {
                         // if we blur from the howdoi to the forms
@@ -311,18 +169,32 @@ var Finance = {};
             backtocats: $('#howdoi.neumenu-wrapper > .neumenu-wrapper-inner > div:first-child > .removefilter'),
 
             _init: function () {
-                // $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
+                $('div.wrapper, footer, div#nu__global-footer').on('click', Finance.Nav._didClickOutsideNav);
+                Finance.Nav.parentlinks.on('click', Finance.Nav._didClickDropdown);
                 Finance.Nav.categories.on('click', Finance.Nav._didClickCategory);
                 Finance.Nav.backtocats.on('click', Finance.Nav._didClickBackToCats);
             },
             _didClickBackToCats: function () {
                 Finance.Nav.categories.removeClass('theFilter');
                 Finance.Nav.categories.parents('.neumenu-wrapper-inner').removeClass('isFiltered');
+
+
+
+                // reset back to topics tabindex
+                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-of-type>a').attr('tabindex', '-1');
+                // reset task view tabindex
+                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>ul>li>a').attr('tabindex', '-1');
+                // reset the category view tabindex
+                // $('.neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:last-of-type>div>a').attr('tabindex', '-1');
+
                 $('#nu__main-nav-desktop > ul > li:first-child > a').focus();
+
             },
             _didClickCategory: function (e) {
                 $(this).parents('.neumenu-wrapper-inner').addClass('isFiltered');
                 $(this).addClass('theFilter');
+
+
                 // set tabindex of task items to 0 when entering a category view
                 $('#howdoi > div > div:first-child > a').attr('tabindex', '0');
                 $(this).find('a').attr('tabindex', '0');

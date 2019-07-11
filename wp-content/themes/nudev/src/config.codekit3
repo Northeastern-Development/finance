@@ -583,6 +583,14 @@
 		"oAP": "/classes/class.CPTs.php",
 		"oF": 0
 		},
+	"/classes/class.cpts.php.BAK": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/classes/class.cpts.php.BAK",
+		"oF": 0
+		},
 	"/classes/class.prefooter.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -948,19 +956,6 @@
 		"oS": 3,
 		"uL": 1
 		},
-	"/css/sass/conditional/search.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/search.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
 	"/css/sass/conditional/tasks.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -1098,9 +1093,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/sass/partials/responsive.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1523,6 +1518,14 @@
 		"oAP": "/functions.php",
 		"oF": 0
 		},
+	"/functions.php.BAK": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/functions.php.BAK",
+		"oF": 0
+		},
 	"/header.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1537,6 +1540,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/includes/navigation.php",
+		"oF": 0
+		},
+	"/includes/navigation.phpBAK": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/includes/navigation.phpBAK",
 		"oF": 0
 		},
 	"/includes/pagehero.php": {
@@ -1555,12 +1566,12 @@
 		"oAP": "/includes/partials/nav.desktop.php",
 		"oF": 0
 		},
-	"/includes/partials/nav.desktop.php.BAK": {
+	"/includes/partials/nav.desktop.php.BAKK": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/includes/partials/nav.desktop.php.BAK",
+		"oAP": "/includes/partials/nav.desktop.php.BAKK",
 		"oF": 0
 		},
 	"/includes/partials/nav.howdoi.php": {
@@ -1703,6 +1714,14 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/js/scripts-min.js.BAK": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/js/scripts-min.js.BAK",
+		"oF": 0
 		},
 	"/js/scripts.js": {
 		"bF": 0,
@@ -2569,7 +2588,7 @@
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 570565566.40427804
+	"lastBuiltDate": 584555663.62427104
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

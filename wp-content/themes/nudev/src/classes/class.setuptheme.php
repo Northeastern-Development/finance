@@ -43,7 +43,6 @@ class SetupTheme
 
         
         if( is_page_template( 'templates/template-tool-detail.php') ){ wp_enqueue_script('tooldetail', get_template_directory_uri() . '/js/tool-detail-min.js', array('theme'), '1.0.0');}
-
     }
     function enqueue_styles(){
 
@@ -103,12 +102,8 @@ class SetupTheme
             wp_enqueue_style('financialstatements', get_template_directory_uri() . '/css/financial-statements.css', array('theme'), '1.0.0');
         }
          // Deadlines
-        if ( is_page_template('templates/template-deadlines.php') ) {
+         if ( is_page_template('templates/template-deadlines.php') ) {
             wp_enqueue_style('deadlines', get_template_directory_uri() . '/css/deadlines.css', array('theme'), '1.0.0');
-        }
-        // Site Search
-        if ( is_page_template('templates/template-search.php') ) {
-            wp_enqueue_style('sitesearch', get_template_directory_uri() . '/css/search.css', array('theme'), '1.0.0');
         }
     }
 }

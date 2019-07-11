@@ -1,0 +1,515 @@
+/**
+ * partials/articles
+ * ---
+ */
+
+// main.single-editorial{
+  main{
+    & section{
+      & > article{
+        & .caption,
+        & .caption_floating{
+          // font-style: italic;
+          display: block;
+          margin: 5px 0 0 0;
+          color: rgba(122, 119, 120, 1.0);
+          font-size: 1.25rem;
+          line-height: 2rem;
+          letter-spacing: 1px;
+        }
+        & .caption_floating{
+          position: absolute;
+          bottom: 0;
+          background: rgba(0,0,0,0.5);
+          color: rgba(255,255,255,1.0);
+          padding: 0 10px 0 10px;
+          margin: $gutter (nth($wrapper-margins, 2) - $gutter) $gutter (nth($wrapper-margins, 4) - $gutter);
+        }
+
+        & > div.title{
+          width: 100%;
+          height: auto;
+          position: fixed;
+          &.inline{
+            position: relative;
+          }
+          & > img{
+            width: 100%;
+          }
+          & > div#title{
+            $width: 35vw;
+            opacity: 0.0;
+            width: $width;
+            margin: nth($wrapper-margins, 1) (nth($wrapper-margins, 2) / 2) nth($wrapper-margins, 3) nth($wrapper-margins, 4);
+            height: auto;
+            & > span.rubrick{
+              width: auto;
+              border: solid #444 1px;
+              font-size: 1.5rem;
+              padding: 3px 30px 3px 30px;
+              border-top-right-radius: 8px;
+              border-bottom-left-radius: 8px;
+              font-weight: 900;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+            }
+            & > h1{
+              font-family: "Tungsten Rounded A", "Tungsten Rounded B";
+              font-weight: 700;
+              font-size: 10rem;
+              line-height: 8rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin: $gutter 0 $gutter 0;
+            }
+            & > h2{
+              font-size: 1.5rem;
+              line-height: 2rem;
+              letter-spacing: 1px;
+              width: 25vw;
+            }
+            & > div.tick{
+              margin: $gutter 0 0 0;
+              background: #444;
+              height: 6px;
+              width: 50px;
+            }
+            & > span.authorname{
+              display: block;
+              margin: 0 0 $gutter 0;
+              font-weight: 700;
+              font-size: 1.5rem;
+              text-transform: uppercase;
+            }
+            &.left,
+            &.right,
+            &.center,
+            &.upper-left,
+            &.upper-center,
+            &.upper-right,
+            &.lower-left,
+            &.lower-center,
+            &.lower-right{
+              position: absolute;
+              z-index: 900;
+            }
+            &.left{
+              top: 100px;
+              left: 0;
+            }
+            &.center{
+              top: 100px;
+              left: ($content-width / 2) - ($width / 2);
+              text-align: center;
+              & > div.tick{
+                margin: $gutter auto 0 auto;
+              }
+            }
+            &.right{
+              top: 100px;
+              right: (nth($wrapper-margins, 4) / 2);
+            }
+            &.upper-left{
+              top: 100px;
+              left: 0;
+            }
+            &.upper-center{
+              top: 100px;
+              left: (($wrapper-width - 25vw) / 2);
+              text-align: center;
+            }
+            &.upper-right{
+              top: 100px;
+              right: (nth($wrapper-margins, 4) / 2);
+            }
+            &.lower-left{
+              bottom: 200px;
+              left: 0;
+            }
+            &.lower-center{
+              bottom: 200px;
+              left: (($wrapper-width - 25vw) / 2);
+              text-align: center;
+            }
+            &.lower-right{
+              bottom: 200px;
+              right: 0;
+            }
+          }
+        }
+        & > div#contentarea{
+          // padding: $gutter 0 0 0;
+          width: auto;
+          background: none;
+          // overflow: hidden;
+
+          & .nv_university-footer{
+            position: relative;
+          }
+
+          &.floating{
+            position: absolute;
+          }
+          & .caption{
+            font-size: 1.25rem;
+            font-weight: 700;
+            height: auto;
+            min-height: $gutter;
+            display: block;
+            // background: red;
+            margin: 0 (nth($wrapper-margins, 2) / 2) $gutter (nth($wrapper-margins, 4) / 2);
+          }
+          & > div.panel{
+            width: 100%;
+            overflow: visible;
+            position: relative;
+            & div.overlap{
+              position: absolute;
+              z-index: 100;
+              height: 50px;
+              background: rgba(255,255,255,1.0);
+              width: $content-width;
+              margin: 0 nth($wrapper-margins, 2) 0 nth($wrapper-margins, 4);
+              top: -50px;
+            }
+            & > div.contentarea{
+              width: $content-width;
+              margin: 0 nth($wrapper-margins, 2) 0 nth($wrapper-margins, 4);
+              overflow: visible;
+              padding: 0 0 $gutter 0;
+              height: auto;
+              & section.storyidea{
+                margin: 0 (nth($wrapper-margins, 2) / 2) $gutter (nth($wrapper-margins, 4) / 2);
+                width: auto;
+                border-top: none;
+              }
+              & blockquote{
+                opacity: 0.0;
+                width: 22vw;
+                height: auto;
+                min-height: 200px;
+                font-size: 4rem;
+                line-height: 4.5rem;
+                text-transform: uppercase;
+                &.right{
+                  float: right;
+                  margin: $gutter (nth($wrapper-margins, 4) /2) $gutter $gutter;
+                }
+                &.left{
+                  float: left;
+                  margin: $gutter $gutter $gutter (nth($wrapper-margins, 4) / 2);
+                }
+              }
+              & > div#sharepanel{
+                position: absolute;
+                top: 0;
+                z-index: 500;
+                width: auto;
+                margin: 0 0 0 ($gutter * 2);
+                height: auto;
+                min-height: 200px;
+                color: rgba(122, 119, 120, 1.0);
+                & > a{
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  overflow: hidden;
+                  font-size: 3rem;
+                  line-height: 50px;
+                  text-align: center;
+                  color: rgba(122, 119, 120, 1.0);
+                  border: solid rgba(122, 119, 120, 1.0) 1px;
+                  border-radius: 50%;
+                  text-decoration: none;
+                  margin: 0 0 $gutter 0;
+                  &:nth-of-type(3),
+                  &:nth-of-type(4){
+                    font-size: 2rem;
+                  }
+                  &:hover,
+        &:active,
+        &:focus{
+                    text-decoration: none;
+                    color: rgba(247, 204, 72, 1.0);
+                    border: solid rgba(247, 204, 72, 1.0) 1px;
+                  }
+
+                }
+              }
+              & > p{
+                margin: 0 (nth($wrapper-margins, 2) / 2) $gutter (nth($wrapper-margins, 4) / 2);
+                width: auto;
+              }
+              & > div#authorbio{
+                clear: both;
+                margin: $gutter (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+                border-top: solid rgba(122, 119, 120, 1.0) 1px;
+                border-bottom: solid rgba(122, 119, 120, 1.0) 1px;
+                height: 70px;
+                line-height: 70px;
+
+              }
+              & > div#posttags{
+                clear: both;
+                margin: $gutter (nth($wrapper-margins, 2) / 2) 0 (nth($wrapper-margins, 4) / 2);
+                font-size: 1.25rem;
+                // border-top: solid rgba(122, 119, 120, 1.0) 1px;
+                // border-bottom: solid rgba(122, 119, 120, 1.0) 1px;
+                // height: 70px;
+                // line-height: 70px;
+                // background: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  @media only screen and (max-width: 1300px){
+
+    main{
+      & section{
+        & > article{
+          & > div.title{
+            width: 100%;
+            height: auto;
+            position: fixed;
+            &.inline{
+              position: relative;
+            }
+            & > img{
+              width: 100%;
+            }
+            & > div#title{
+              $width: 40vw;
+              width: $width;
+              margin: 0 (5vw / 2) 0 5vw;
+            }
+          }
+          & > div#contentarea{
+            & > div.panel{
+              & div.overlap{
+                width: 90vw;
+                margin: 0 5vw 0 5vw;
+              }
+              & > div.contentarea{
+                width: 90vw;
+                margin: 0 5vw 0 5vw;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+  @media only screen and (max-width: 1280px){
+
+    main{
+      & section{
+        & > article{
+          & > div.title{
+            & > div#title{
+              $width: 50vw;
+              width: $width;
+              & > h2{
+                width: 50vw;
+              }
+              &.left,
+              &.right,
+              &.center,
+              &.upper-left,
+              &.upper-center,
+              &.upper-right,
+              &.lower-left,
+              &.lower-center,
+              &.lower-right{
+                position: absolute;
+                z-index: 900;
+              }
+              &.left{
+                top: 50px;
+              }
+              &.center{
+                top: 50px;
+                left: ($content-width / 2) - (90 / 2);
+              }
+              &.right{
+                top: 50px;
+                right: (5vw / 2);
+              }
+              &.upper-left{
+                top: 50px;
+                left: 0;
+              }
+              &.upper-center{
+                top: 50px;
+                left: (($wrapper-width - 25vw) / 2);
+              }
+              &.upper-right{
+                top: 50px;
+                right: (5vw / 2);
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+  @media only screen and (max-width: 1080px){
+
+    main{
+      & section{
+        & > article{
+          & > div.title{
+            position: relative;
+            overflow: visible;
+            & > div#title{
+              & > h1{
+                font-size: 8rem;
+                line-height: 9rem;
+              }
+            }
+          }
+          & > div#contentarea{
+            position: relative;
+            & > div.panel{
+              &:first-of-type{
+                margin-top: 50px;
+              }
+              & div.overlap{
+                display: none;
+              }
+              & > div.contentarea{
+
+                & blockquote{
+                  width: 40vw;
+                }
+                & > div#sharepanel{
+                  margin: 0 0 0 0;
+                  & > a{
+                    width: 40px;
+                    height: 40px;
+                    font-size: 2rem;
+                    line-height: 40px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+  @media only screen and (max-width: 600px){
+
+    main{
+      & section{
+        & > article{
+          & > div.title{
+            & > div#title{
+              $width: 90vw;
+
+              width: $width;
+              margin: 0 5vw 0 5vw;
+              & > span.rubrick{
+                font-size: 1rem;
+              }
+              & > h1{
+                font-size: 4.5rem;
+                line-height: 5.5rem;
+              }
+              & > h2{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                width: 100%;
+              }
+              & > span.authorname{
+                font-size: 1rem;
+              }
+              &.left{
+                top: 30px;
+              }
+              &.center{
+                top: 30px;
+              }
+              &.right{
+                top: 30px;
+              }
+              &.upper-left{
+                top: 30px;
+              }
+              &.upper-center{
+                top: 30px;
+              }
+              &.upper-right{
+                top: 30px;
+              }
+            }
+          }
+          & > div#contentarea{
+            & > div.panel{
+              & > div.contentarea{
+                & blockquote{
+                  width: 100%;
+                  min-height: 100px;
+                  margin: 30px 0 30px 0;
+                  padding: 0 0 0 0;
+                  &.right{
+                    float: none;
+                    margin: 30px 0 30px 0;
+                  }
+                  &.left{
+                    float: none;
+                    margin: 30px 0 30px 0;
+                  }
+                }
+                & > div#sharepanel{
+                  position: relative;
+                  min-height: 80px;
+                  & > a{
+                    display: inline-block;
+                    margin: 10px 10px 0 0;
+                  }
+                }
+                & > p{
+                  margin: 0 0 20px 0;
+                }
+                & > div#authorbio{
+                  margin: $gutter 0 0 0;
+                  & p{
+                    font-size: 1.25rem;
+                    line-height: 2.5rem;
+                    padding: 22px 0 40px 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
