@@ -5,7 +5,7 @@
 
     $hrefs = [
         'forms' => get_permalink( get_page_by_path('forms') )
-        ,'tools' => get_permalink( get_page_by_path('forms') )
+        ,'tools' => get_permalink( get_page_by_path('tools') )
         ,'banner_codes' => 'https://prod-web.neu.edu/wasapp/Banner/Finance/secure/index.jsp'
         ,'about' => get_permalink( get_page_by_path('about') )
         ,'contact' => get_permalink( get_page_by_path('contact') )
@@ -38,19 +38,13 @@
 
 
         <li role="none">
-            <a role="menuitem" href="<?= $hrefs['forms']; ?>" title="" aria-label="" tabindex="0" data-name="forms">
-                <span>Forms</span>
-            </a>
+            <a title="View the Forms Page" tabindex="0" aria-label="View the Forms Page" href="<?= $hrefs['forms']; ?>"><span>Forms</span></a>
         </li>
         <li role="none">
-            <a role="menuitem" href="<?= $hrefs['tools']; ?>" title="" aria-label="" tabindex="0" data-name="tools">
-                <span>Tools</span>
-            </a>
+            <a title="View the Tools Page" aria-label="View the Tools Page" tabindex="0" href="<?= $hrefs['tools']; ?>"><span>Tools</span></a>
         </li>
         <li role="none">
-            <a role="menuitem" href="<?= $hrefs['banner_codes']; ?>" title="" aria-label="" tabindex="0" data-name="banner_codes">
-                <span>Banner Codes</span>
-            </a>
+            <a target="_blank" title="View the Banner Codes Page [will open in a new tab or window]" aria-label="View the Banner Codes Page [will open in a new tab or window]" tabindex="0" href="<?= $hrefs['banner_codes']; ?>"><span>Banner Codes</span></a>
         </li>
         
         <li role="none" class="has-children">
@@ -61,15 +55,11 @@
             <ul role="menu">
 
                 <li role="none">
-                    <a role="menuitem" href="#" title="" aria-label="" tabindex="0">
-                        <span>Departments and Staff</span>
-                    </a>
+                    <a title="View the About page" tabindex="0" aria-label="View the About page" href="<?= $hrefs['about']; ?>"><span>Departments and Staff</span></a>
                 </li>
                 
                 <li role="none">
-                    <a role="menuitem" href="#" title="" aria-label="" tabindex="0">
-                        <span>Contact Us</span>
-                    </a>
+                    <a title="View the Contact page" tabindex="0" aria-label="View the Contact page" href="<?= $hrefs['contact']; ?>"><span>Contact Us</span></a>
                 </li>
                 
             </ul>

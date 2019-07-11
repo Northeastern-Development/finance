@@ -705,6 +705,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/lib/hover-min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/lib/hover-min-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/lib/hover-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -712,6 +722,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/lib/hover-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/lib/magnific-popup-min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/lib/magnific-popup-min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -956,6 +976,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/css/sass/conditional/search.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/sass/conditional/search.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/conditional/tasks.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -1137,6 +1170,16 @@
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
+		},
+	"/css/search-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/search-min-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/css/search.css": {
 		"aP": 1,
@@ -1566,14 +1609,6 @@
 		"oAP": "/includes/partials/nav.desktop.php",
 		"oF": 0
 		},
-	"/includes/partials/nav.desktop.php.BAKK": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/includes/partials/nav.desktop.php.BAKK",
-		"oF": 0
-		},
 	"/includes/partials/nav.howdoi.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1588,6 +1623,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/includes/partials/nav.mobile.php",
+		"oF": 0
+		},
+	"/includes/partials/~~nav.desktop.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/includes/partials/~~nav.desktop.php",
 		"oF": 0
 		},
 	"/includes/prefooter.php": {

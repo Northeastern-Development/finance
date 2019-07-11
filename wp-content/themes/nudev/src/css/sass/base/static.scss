@@ -47,7 +47,9 @@
         max-width: $wrapper-width;
         max-width: 100%; // overriding 100vw
         width: 100%; // overriding 100vw
-        margin-top: 124px;
+        > main {
+            margin-top: 124px;
+        }
     }
 
 

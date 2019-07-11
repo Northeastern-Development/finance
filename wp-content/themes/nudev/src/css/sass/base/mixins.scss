@@ -36,7 +36,7 @@
 // neu__iconlink
 @mixin neu__iconlink( $side : 'left', $icon : "\e5c8", $hover : 1) {
     border-bottom: 2px solid transparent;
-    line-height: inherit;
+    @include font-2l-l;
     display: inline-block;
     @if( $side == 'left' ){
         &:before {

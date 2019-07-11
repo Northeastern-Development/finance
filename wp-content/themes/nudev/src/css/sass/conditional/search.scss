@@ -1,0 +1,30 @@
+@media only screen {
+
+
+    
+    
+    div.main>section>div#___gcse_0 div.gsc-webResult div.gsc-url-top,
+    div.main>section>div#___gcse_0 div.gsc-webResult div.gs-title,
+    div.main>section>div#___gcse_0 div.gsc-webResult {
+
+        // margin: 0 auto !important;
+        
+    }
+    html body div.main>section>div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
+        // display: none !important;
+    }
+    div.main>section>div#___gcse_0 div.gsc-webResult {
+        margin-bottom: 30px !important;
+    }
+
+    
+}
+
+@media only screen and (max-width: 900px){
+
+
+    main#searchpage > section {
+        width: 90%;
+    }
+    
+}

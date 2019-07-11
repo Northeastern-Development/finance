@@ -1,7 +1,109 @@
 /*
 *   Nav
 */
+@media only screen {
 
+    
+    // Search Button ( in nav )
+    a#neu__sitesearch-toggle {
+        position: absolute;
+        top: 0;
+        right: 2vw;   // matches the padding-right value of the header container
+        margin: 0 auto;
+        color: transparentize(white, 0.2);
+        font-size: 2rem;    // 
+        height: 100%;       // vertical centering
+        line-height: 80px;  // vertical centering
+        padding: 0 5px;     // assist touchable area
+        &:before {          // icon
+            font-family: 'Material Icons';
+            content: '\e8b6'
+        }
+        &:hover, &:focus, &:active {
+            color: white;
+        }
+
+    }
+
+    // Search Form ( flyout, in nav )
+    form#neu__sitesearch-form {
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        height: 100%;
+        padding: 0 2vw;
+        
+        // animate flyout
+        transition: transform 0.4s ease;
+        transform: translateX(150%);
+        &.neu__sitesearch-form--shown {
+            width: 100%;
+            transform: translateX(0);
+        }
+        // responsive flyout size
+        @media only screen and (min-width: $bp__md){
+            &.neu__sitesearch-form--shown {
+                width: calc(100% - 320px);
+                max-width: 960px;
+            }
+        }
+        // hide label visually, not from screen readers
+        >label {
+            position: absolute;
+            left: -9999px;
+        }
+        // unstyle input & buttons
+        >input,
+        >button {
+            line-height: 80px;
+            color: transparentize(white, 0.2);
+            -webkit-appearance: none;
+            background: none;
+            border: none;
+            &:hover, &:focus, &:active {
+                color: white;
+            }
+        }
+
+        >input[type="text"] {
+            flex: 1;
+            padding-left: 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+        >button {
+            cursor: pointer;
+            margin-right: 15px;
+            padding: 0 5px;
+            font-size: 20px;
+            &[type="submit"] {
+                &:before {
+                    font-family: 'Material Icons';
+                    content: '\e8b6'
+                }
+            }
+            &[type="button"] {
+                &:before {
+                    font-family: 'Material Icons';
+                    content: '\e5cd'
+                }
+            }
+            &:first-of-type {
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+    }
+}
 // Desktop Nav
 @media only screen and (min-width: $bp__md) {
 
@@ -36,7 +138,10 @@
 
     // Initial States
     .nu__main-nav {
+        margin-right: 30px;
         >ul {
+            display: flex;
+            margin: 0 auto;
             >li {
                 margin-right: ($gutter * 2);
                 display: inline-block;
@@ -172,7 +277,7 @@
                 // category buttons
                 >div {
                     margin-right: 30px;
-                    width: calc(20% - calc(120px / 5));
+                    width: calc(20% - 24px);
                     display: flex;
                     flex-flow: column wrap;
                     align-items: flex-start;
@@ -204,6 +309,7 @@
                         padding: 15px 0;
 
                         >li {
+                            break-inside: avoid;
                             display: block;
                             text-align: left;
                             margin: 15px 0;
@@ -212,6 +318,7 @@
                                 @include font-2r-l;
                                 text-transform: uppercase;
                                 color: $brand_colors-gray;
+                                display: inline-block;
                             }
 
                             &:first-of-type {
@@ -455,12 +562,17 @@
     // style navicon & times
     label#neu__navicon-label {
         cursor: pointer;
-        color: white;
+        color: transparentize(white, 0.2);
+        &:hover, &:focus, &:active {
+            color: white;
+        }
+
         font-size: 24px;
         width: 24px;
-        height: 24px;
+        height: 100%;
+        line-height: 80px;
         position: relative;
-        margin-right: 15px;
+        margin-right: 55px;
 
         &:before,
         &:after {
@@ -530,7 +642,7 @@
 @media only screen and (max-width: $bp__md) {
     .neumenu-wrapper#howdoi .neumenu-wrapper-inner>div:first-child>h2 {
         @include font-3r-c;
-        color: red;
+        // color: red;
     }
 }
 

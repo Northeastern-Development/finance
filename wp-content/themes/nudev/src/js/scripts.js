@@ -3,6 +3,45 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function () {
 
+        Search = {
+
+            toggleOpen : $('#neu__sitesearch-toggle'),
+            form : $('#neu__sitesearch-form'),
+            input : $('#neu__sitesearch-form > input[type="text"]'),
+            toggleClosed : $('.neu__sitesearch-closebutton'),
+
+            _init : function(){
+
+                Search.toggleOpen.on('click', Search._doOpenSearchBar);
+                Search.toggleClosed.on('click', Search._doCloseSearchBar);
+                $(document).on('click', function(e){
+                    if( !$(e.target).closest('#header').length ){
+                        Search._doCloseSearchBar();
+                    }
+                });
+
+                Search.form.on('blur', 'button', function(e){
+                    
+                    if( !$(e.relatedTarget).closest(Search.form).length ){
+                        Search._doCloseSearchBar();
+                    }
+                    
+                });
+            }
+            ,_doOpenSearchBar : function(e){
+                Search.form.addClass('neu__sitesearch-form--shown');
+
+                Search.form.find('button, input').attr('tabindex', '0');
+                Search.input.focus();
+            }
+            ,_doCloseSearchBar : function(e){
+                Search.form.find('button, input').attr('tabindex', '-1');
+                Search.form.removeClass('neu__sitesearch-form--shown');
+            }
+        }
+        Search._init();
+        
+        
         /**
          * 
          */
