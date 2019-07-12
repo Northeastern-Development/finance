@@ -59,6 +59,8 @@
                 ,$task->post_title
             );
         }
+
+        $content_cats = '';
         $content_cats .= sprintf(
             $format_cats
             ,$cat->post_title
