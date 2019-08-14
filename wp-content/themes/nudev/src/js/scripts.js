@@ -1,7 +1,13 @@
 var exceedsContainer = false;
 var Finance = {};
 (function ($, root, undefined) {
-    $(function () {
+    $(function(){
+
+        $(document).ready(function(){
+
+            Finance.faqs.answers.slideUp(0);
+
+        });
 
         Search = {
 
@@ -344,7 +350,7 @@ var Finance = {};
                 $(window).on('load', Finance.faqs._loadHandler);
             },
             _loadHandler: function (e) {
-                Finance.faqs.answers.slideUp(0);
+                // Finance.faqs.answers.slideUp(0);
                 $('a.named_anchor:target').parent('li').addClass('js__collapsible_triggered');
                 $('a.named_anchor:target').siblings('div').slideDown(200);
                 $('a.named_anchor:target').siblings('div').addClass('js__collapsible_opened');
