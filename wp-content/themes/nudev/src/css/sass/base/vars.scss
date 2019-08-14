@@ -1,10 +1,24 @@
 // 
-// 
-// 
 //          Vars
 //
-// 
-// 
+
+@function getVar($v, $ks...) {
+    @each $k in $ks {
+        $v: map-get($v, $k);
+    }
+
+    @return $v;
+}
+
+$sizing : (
+
+    header : 124px,
+    content : (
+        
+    )
+);
+
+
 //          Colors
 // Reds
 $brand_colors-red: rgb(212, 27, 44);
@@ -24,7 +38,8 @@ $brand_colors-beige--light: rgb(239, 235, 221); // unsure of this ( used in form
 //          Typography
 // 
 // 
-$font-family-base: 'Lato', sans-serif;
+$font-family-base: 'Lato',
+sans-serif;
 $font-size-base: 1.6rem;
 $line-height-base: 2.8rem;
 // 
@@ -32,14 +47,17 @@ $line-height-base: 2.8rem;
 //          Grid
 // 
 // 
-$wrapper-width: 100vw;              // widely used
-$content-width: 80vw;               // widely used
-$gutter: 1vw;           // ( why cant this be % instead of vw)
-$wrapper-margins: 0, (($wrapper-width - $content-width) / 2), 0, (($wrapper-width - $content-width) / 2);
-$content-width-wide: 94vw;          // this is used
-$content-width-700: 92vw;           // this is used
-$content-width-narrow: 50vw;        // this is used
-$content-width-960: 96vw;           // used (barely)
+$wrapper-width: 100vw; // widely used
+$content-width: 80vw; // widely used
+$gutter: 1vw; // ( why cant this be % instead of vw)
+$wrapper-margins: 0,
+(($wrapper-width - $content-width) / 2),
+0,
+(($wrapper-width - $content-width) / 2);
+$content-width-wide: 94vw; // this is used
+$content-width-700: 92vw; // this is used
+$content-width-narrow: 50vw; // this is used
+$content-width-960: 96vw; // used (barely)
 
 
 // This was used on the "brochure" download link in KRI
@@ -50,7 +68,7 @@ $navigation-height: 50px;
 // Breakpoints
 $nav_bp_dt : 960px;
 // $bp_3cols : 600px;
-$bp_3cols : 620px;  // replace this with bp__md asap please
+$bp_3cols : 620px; // replace this with bp__md asap please
 
 // Breakpoints v2
 $bp__sm : 620px;

@@ -25,8 +25,11 @@
                     align-items: center;
                     margin: 0;
 
+                    
+
                     // discount item wrapper
                     >li {
+                        position: relative;
                         flex: 1 0 100%;
                         border-bottom: 1px solid transparentize(black, 0.8);
                         padding: 15px 0;
@@ -38,7 +41,7 @@
                         }
 
                         // discount title
-                        >a {
+                        >a:not(.named_anchor) {
                             display: block;
                             @include font-3r-l;
 
@@ -65,6 +68,7 @@
                         >div {
                             @include font-2l-l;
                             margin-top: 15px;
+                            display: none;
                             a {
                                 color: $brand_colors-red;
 

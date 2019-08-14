@@ -1,154 +1,164 @@
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/mixins.scss';
+// 
+// 
+// 
 
-@media only screen {
 
-    
-    // the form category wrapper
-    main > section > div.forms-category {
-        margin-bottom: 30px;
 
-        // form category title
-        > h2 {
-            @include font-7l-l;
-                padding-bottom: 15px;
-                border-bottom: 1px solid black;
-        }
-        // a form wrapper
-        > ul {
-            display: flex;
-            align-items: center;
-        }
+// the form category wrapper
+main>section>div.forms-category {
+    margin-bottom: 30px;
+
+    // form category title
+    >h2 {
+        @include font-7l-l;
+        padding-bottom: 15px;
+        border-bottom: 1px solid black;
     }
 
+    // a form wrapper
+    >ul {
+        // display: flex;
+        // align-items: center;
+    }
+}
 
-    // a form
-    main > section > div.forms-category > ul > li {
 
-        // a form title
-        > a {
-            display: inline-block;
-            width: 100%;
-            position: relative;
-            @include font-3r-l;
+// a form
+main>section>div.forms-category>ul>li {
+
+    position: relative;
+
+    // a form title
+    >a {
+        display: block;
+        width: 100%;
+        position: relative;
+        @include font-3r-l;
+
+        span {
+            border-bottom: 2px solid transparent;
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
             span {
-                border-bottom: 2px solid transparent;
-            }
-            &:focus,
-            &:hover,
-            &:active {
-                span {
-                    border-bottom: 2px solid $brand_colors-red;
-                }
+                border-bottom: 2px solid $brand_colors-red;
             }
         }
-        
     }
-    
-    main div.forms-category {
-        // the form wrapper
-        >ul {
-            // margin: 15px 0;
-            display: flex;
-            align-items: center;
 
-            // 
-            >li {
-                position: relative;
-                padding: 15px 0;
-                padding-left: 30px;
-                border-bottom: 1px solid transparentize(black, 0.8);
+}
 
-                // red arrow on the left side
+main div.forms-category {
+
+    // the form wrapper
+    >ul {
+        // margin: 15px 0;
+        // display: flex;
+        // align-items: center;
+
+        // 
+        >li {
+            position: relative;
+            padding: 15px 0;
+            padding-left: 30px;
+            border-bottom: 1px solid transparentize(black, 0.8);
+
+            // red arrow on the left side
+            &:before {
+                position: absolute;
+                left: 0;
+                top: auto;
+                content: '\e5c8';
+                font-family: "Material Icons";
+                color: $brand_colors-red;
+                transform: rotate(0deg);
+                transition: transform 0.4s ease;
+            }
+
+            // rotate red arrow on interaction
+            &.js__collapsible_triggered {
                 &:before {
-                    position: absolute;
-                    left: 0;
-                    top: auto;
-                    content: '\e5c8';
-                    font-family: "Material Icons";
+                    transform: rotate(90deg);
+                }
+
+                >a:after {
+                    transform: rotate(180deg);
+                }
+            }
+
+            ul:not(.forms-category-relatedresources) {
+                a {
                     color: $brand_colors-red;
-                    transform: rotate(0deg);
-                    transition: transform 0.4s ease;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        border-bottom: 2px solid $brand_colors-red;
+                    }
                 }
-                // rotate red arrow on interaction
-                &.js__collapsible_triggered {
+
+                list-style-type: disc;
+                margin: 0;
+                padding: 0;
+                padding-left: 2.4rem;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            // collapsible field content (initially hidden)
+            >div {
+                @include font-2l-l;
+                margin-top: 15px;
+                display: none;
+
+
+                // files to download
+                >p>a.neu__iconlink {
+                    @include neu__iconlink($icon: "\e2c4");
+                    color: $brand_colors-red;
+
                     &:before {
-                        transform: rotate(90deg);
-                    }
-
-                    >a:after {
-                        transform: rotate(180deg);
+                        color: $brand_colors-red;
                     }
                 }
 
-                ul:not(.forms-category-relatedresources) {
-                    a {
-                        color: $brand_colors-red;
+                h4 {
+                    @include font-2r-l;
+                    margin: 15px 0;
+                }
 
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            border-bottom: 2px solid $brand_colors-red;
+                // related resources list
+                >ul {
+                    display: inline-block;
+                    text-align: left;
+                    font-size: 0;
+                    width: 100%;
+
+                    >li {
+                        font-size: initial;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin: 0 15px 15px 0;
+                        width: calc(50% - 7.5px);
+
+                        &:nth-of-type(2n) {
+                            margin-right: 0;
                         }
                     }
 
-                    list-style-type: disc;
-                    margin: 0;
-                    padding: 0;
-                    padding-left: 2.4rem;
-
-                    li {
-                        margin: 0;
-                        padding: 0;
-                    }
-                }
-
-                // collapsible field content (initially hidden)
-                >div {
-                    @include font-2l-l;
-                    margin-top: 15px;
-
-                    // files to download
-                    >p>a.neu__iconlink {
-                        @include neu__iconlink($icon: "\e2c4");
-                        color: $brand_colors-red;
+                    .neu__iconlink {
+                        @include neu__iconlink;
 
                         &:before {
                             color: $brand_colors-red;
-                        }
-                    }
-
-                    h4 {
-                        @include font-2r-l;
-                        margin: 15px 0;
-                    }
-
-                    // related resources list
-                    >ul {
-                        display: inline-block;
-                        text-align: left;
-                        font-size: 0;
-                        width: 100%;
-
-                        >li {
-                            font-size: initial;
-                            display: inline-block;
-                            vertical-align: top;
-                            margin: 0 15px 15px 0;
-                            width: calc(50% - 7.5px);
-
-                            &:nth-of-type(2n) {
-                                margin-right: 0;
-                            }
-                        }
-
-                        .neu__iconlink {
-                            @include neu__iconlink;
-
-                            &:before {
-                                color: $brand_colors-red;
-                            }
                         }
                     }
                 }
@@ -164,18 +174,22 @@
     main div.forms-category>h2 {
         @include font-5l-l;
     }
+
     main div.forms-category>ul>li>a {
         @include font-2r-l;
     }
 }
+
 // Font Breaks
 @media only screen and (max-width: $bp__md) {
     main div.forms-category>h2 {
         @include font-3l-l;
     }
 }
+
 // Wrap Sidebar into 1 column
 @media only screen and (max-width: $bp__sm) {
+
     // Hidden Content Wrapper
     main>section>div.forms-category>ul>li>div {
         position: relative;

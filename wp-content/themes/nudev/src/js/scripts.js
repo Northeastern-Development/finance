@@ -194,9 +194,6 @@ var Finance = {};
         }
         Finance.NavHandler._init();
 
-
-
-
         /**
          * 
          */
@@ -262,16 +259,6 @@ var Finance = {};
         Finance.Nav._init();
 
 
-
-
-
-
-
-
-
-
-
-
         Finance.MobileNav = {
 
             navicon: $('#neu__navicon-label'),
@@ -319,10 +306,7 @@ var Finance = {};
                 $this.next().slideToggle(350);
             }
         });
-
-
-
-
+        
         Finance.JumpNav = {
 
             _init: function () {
@@ -335,6 +319,7 @@ var Finance = {};
             _doHashHandler: function (e) {
 
                 var hash = window.location.hash.substring(1);
+                
                 if (!hash) {
                     return;
                 }
@@ -343,7 +328,8 @@ var Finance = {};
                 $(window).scrollTop(baseoffset - headheight);
             },
         }
-        Finance.JumpNav._init();
+        // Finance.JumpNav._init();
+
 
 
 
@@ -352,12 +338,17 @@ var Finance = {};
             questions: $('.js__collapsible_list > li'),
             answers: $('.js__collapsible_list > li > div'),
             _init: function () {
-                $(window).on('load', Finance.faqs._loadHandler);
+                
                 Finance.faqs.triggers.on('click', Finance.faqs._clickHandler);
+                
+                $(window).on('load', Finance.faqs._loadHandler);
             },
             _loadHandler: function (e) {
                 Finance.faqs.answers.slideUp(0);
-                Finance.JumpNav._doHashHandler();
+                $('a.named_anchor:target').parent('li').addClass('js__collapsible_triggered');
+                $('a.named_anchor:target').siblings('div').slideDown(200);
+                $('a.named_anchor:target').siblings('div').addClass('js__collapsible_opened');
+                // Finance.JumpNav._doHashHandler();
             },
             _clickHandler: function (e) {
 

@@ -8,6 +8,16 @@
 
     section#glossary {
 
+        a.named_anchor {
+            top: (-124px - 60px);
+            &:target {
+                ~ h6 {
+                    outline: 2px solid rgba($brand_colors-red, 0.33);
+                }
+            }
+        }
+        
+
         // alphabet jumpnav
         div.glossary-jumpnav {
             position: relative;
@@ -62,8 +72,9 @@
                 position: relative;
                 min-height: 30px; // provide space to h2 (letter) if there are no items
                 margin-top: 30px;
-
+                
                 >li {
+                    position: relative;    
                     padding-bottom: 30px;
                     @include font-2l-l;
 

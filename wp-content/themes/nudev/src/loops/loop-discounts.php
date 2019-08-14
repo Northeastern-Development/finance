@@ -38,7 +38,8 @@ $format_category = '
 ';
 
 $format_item = '
-    <li id="%s">
+    <li>
+        <a name="%s" id="%s" class="named_anchor"></a>
         <a href="javascript:;" title="Toggle dropdown item %s" aria-label="Toggle dropdown item %s"><span>%s</span></a>
         <div>%s</div>
     </li>
@@ -62,7 +63,8 @@ foreach( $categories as $category ){
             // write the title and description into the UL opened by the category,
             $content .= sprintf(
                 $format_item
-                ,seoUrl($discount->post_title)
+                ,seoUrl($category->post_title) .'_'. seoUrl($discount->post_title)  // name for anchor
+                ,seoUrl($category->post_title) .'_'. seoUrl($discount->post_title)  // id for anchor
                 ,$discount->post_title
                 ,$discount->post_title
                 ,$discount->post_title

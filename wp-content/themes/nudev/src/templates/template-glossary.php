@@ -38,7 +38,15 @@
 
     $jumpnav = '<div class="glossary-jumpnav">';
     $contents = '<div class="glossary-content">';
-    $haspost_guide = '<li><h6>%s</h6>%s</li>';
+    
+    $haspost_guide = '
+        <li>
+            <a name="%s" id="%s" class="named_anchor"></a>
+            <h6>%s</h6>
+            %s
+        </li>
+    ';
+
     // each letter
     foreach( $alphabet as $letter => $array )
     {
@@ -49,6 +57,8 @@
             foreach( $array as $info ){
                 $contents .= sprintf(
                     $haspost_guide
+                    ,seoUrl($info['post_title'])  // name for anchor
+                    ,seoUrl($info['post_title'])  // id for anchor
                     ,$info['post_title']
                     ,$info['description']
                 );

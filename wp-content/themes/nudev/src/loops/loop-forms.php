@@ -15,10 +15,24 @@
     );
     $categories = get_posts($args);
     
-    // Check : if on a department detail page
-    if( !empty(get_query_var('department')) ){   
 
-        // Only get Forms tagged to this department
+
+    // 
+    // 
+    //  Get Form Posts
+    // 
+
+    
+    
+    // NOTE!!!
+    // IT APPEARS THAT THIS LOOP IS NEVER CALLED ON THE DEPARTMENT DETAIL PAGE
+    // THAT PAGE USES ITS OWN HARD CODED STUFF FOR DISPLAYING THOSE!
+    // THIS BLOCK IS ONLY EVER CALLED ON THE FORMS PAGE TEMPLATE!
+
+    // if this is a department detail page;
+    // we will show all forms assigned to this department
+    if( !empty(get_query_var('department')) ){   
+        // set args for get_posts call below
         $args = array(
             'post_type' => 'forms',
             'posts_per_page' => -1,
@@ -37,7 +51,8 @@
             )
         );
     }
-    // Check : not on a department detail page
+    // if this is not a department detail page;
+    // then this is the forms page
     else {
         // Get all active forms
         $args = array(
@@ -62,8 +77,9 @@
     ';
 
     $format_form = '
-        <ul class="js__collapsible_list list" id="%s">
+        <ul class="js__collapsible_list list">
             <li>
+                <a name="%s" id="%s" class="named_anchor"></a>
                 <a href="javascript:;" title="Toggle the %s dropdown" aria-label="Toggle the %s dropdown"><span>%s</span></a>
                 <div>
                     %s
@@ -75,10 +91,8 @@
             </li>
         </ul>
     ';
+
     
-    $format_files = '
-        <p><a class="neu__iconlink" href="%s" title="Download %s" aria-label="Download %s" target="_blank">%s</a></p>
-    ';
 
     $format_blocks = '<h4>%s</h4>%s';
     $format_relresources = '
@@ -102,28 +116,46 @@
 
             // Verify: Form belongs to category && Form is Active
             if( $category->post_name == $fields['category']->post_name && $fields['status'] == '1'){
+                
                 $files = $fields['files'];
-                // Set: format string for file downloads
+
+                $format_files = '<p><a class="neu__iconlink" href="%s" title="Download %s [will open in new tab/window]" aria-label="Download %s [will open in new tab/window]" target="_blank">%s</a></p>';
                 $content_files = '';
-                if( !is_null($files) && $files != '' ){
+                                
+                // Check that the "Files" repeater has rows;
+                if( !empty($files) ){
+                    // note, this probably just has one row
+                    // loop thru the files repeater
                     foreach( $files as $file ){
-                        if( $file['file'] != '' ){
+
+
+                        // If an External URL is used:
+                        if( !empty($file['external_url']) ){
+
                             $content_files .= sprintf(
                                 $format_files
-                                ,$file['file']
-                                ,( !empty($file['filename']) ) // TITLE ATTR
-                                    ? $file['filename']
-                                    : 'this file'
-                                ,( !empty($file['filename']) ) // TITLE ATTR
-                                    ? $file['filename']
-                                    : 'this file'
-                                ,( !empty($file['filename']) ) // TEXT
-                                    ? $file['filename']
-                                    : 'Download'
+                                ,$file['external_url']
+                                ,( (!empty($file['filename'])) ? $file['filename'] : 'this file')
+                                ,( !empty($file['filename']) ) ? $file['filename'] : 'this file'
+                                ,( !empty($file['filename']) ) ? $file['filename'] : 'Download'
                             );
                         }
+
+                        // If a local file has been added:
+                        else {
+                            if( !empty($file['file']) ){
+                                $content_files .= sprintf(
+                                    $format_files
+                                    ,$file['file']
+                                    ,( (!empty($file['filename'])) ? $file['filename'] : 'this file')
+                                    ,( !empty($file['filename']) ) ? $file['filename'] : 'this file'
+                                    ,( !empty($file['filename']) ) ? $file['filename'] : 'Download'
+                                );
+                            }
+                        }
+                        
                     }
-                }
+                }       
                 
                 // Set: format string for information blocks
                 $content_blocks = '';
@@ -157,14 +189,15 @@
                 // Set: format string combining all form elements into a complete form
                 $content_form .= sprintf(
                     $format_form
-                    ,seoUrl($form->post_title)
-                    ,$form->post_title
-                    ,$form->post_title
-                    ,$form->post_title
-                    ,$content_files
-                    ,$content_blocks
-                    ,get_the_modified_date('m/d/Y', $form)
-                    ,$content_relresources
+                    ,seoUrl($category->post_title) .'_'. seoUrl($form->post_title)  // name for anchor
+                    ,seoUrl($category->post_title) .'_'. seoUrl($form->post_title)  // id for anchor
+                    ,$form->post_title  // title
+                    ,$form->post_title  // aria
+                    ,$form->post_title  // text
+                    ,$content_files // files
+                    ,$content_blocks    // other content
+                    ,get_the_modified_date('m/d/Y', $form) // idk
+                    ,$content_relresources  
                 );
             }
         }
