@@ -7,9 +7,9 @@
 
         Finance.Glossary = {
 
-            offsetHeader : $('div#nu__globalheader').outerHeight() + $('header.header').outerHeight(),
+            // offsetHeader : $('div#nu__globalheader').outerHeight() + $('header.header').outerHeight(),
 
-            offsetHeroAndHeader : $('div#nu__globalheader').outerHeight() + $('header.header').outerHeight() + $('section.hero').outerHeight(),
+            // offsetHeroAndHeader : $('div#nu__globalheader').outerHeight() + $('header.header').outerHeight() + $('section.hero').outerHeight(),
 
             offsetHero : $('section.hero').outerHeight(),
 
@@ -21,7 +21,7 @@
             _init : function(){
                 $(window).on('scroll', Finance.Glossary._scrollHandler );
                 $(window).on('load', Finance.Glossary._loadHandler );
-                Finance.Glossary.jumpLinks.on('click', Finance.Glossary._jumpHandler);
+                // Finance.Glossary.jumpLinks.on('click', Finance.Glossary._jumpHandler);
                 
             },
             _loadHandler : function(e){

@@ -5,7 +5,75 @@ var Finance = {};
 
         $(document).ready(function(){
 
-            Finance.faqs.answers.slideUp(0);
+            // Finance.faqs.answers.slideUp(0);
+            if( location.hash ){
+
+
+                // console.log(location.hash);
+                
+                
+                // $('a.named_anchor:target').parent('li').addClass('js__collapsible_triggered');
+                // $('a.named_anchor:target').siblings('div').slideDown(200);
+                // $('a.named_anchor:target').siblings('div').css('display', 'block');
+                // $('a.named_anchor:target').siblings('div').addClass('js__collapsible_opened');
+
+            }
+
+                
+            // 
+            // URL has hash
+            if( window.location.hash ){
+
+                // handle hash behavior
+                Finance.HashHandler = {
+    
+                    // init sets event listeners that fire later
+                    _init : function(){
+    
+                        $(window).on('hashchange load', function(e){
+
+                            
+                            
+                            // check that we have collapsibles to expand/contract
+                            if( $('.js__collapsible_list').length ){
+
+                                console.log('this should not fire if we dont have collapsibles');
+                                
+                                // get the hash target on load, and on hashchange
+                                var hashTarget = $('a.named_anchor:target');
+    
+                                var hashNotTarget = $('a.named_anchor:not(:target)');
+
+                                // close all the collapsibles
+                                hashNotTarget.parent('li').removeClass('js__collapsible_triggered');
+                                hashNotTarget.siblings('div').css('display', 'none');
+                                hashNotTarget.siblings('div').removeClass('js__collapsible_opened');
+                                
+                                // open the target collapsible
+                                hashTarget.parent('li').addClass('js__collapsible_triggered');
+                                hashTarget.siblings('div').css('display', 'block');
+                                hashTarget.siblings('div').addClass('js__collapsible_opened');
+    
+                                // then, only on hash change
+                                // we need to manually rescroll the page to account for collapsing / expanding elements
+                                if( e.type == 'hashchange' ){
+    
+                                    $(window).scrollTop(hashTarget.offset().top);
+    
+                                }
+
+                            }
+                            
+
+                            
+                        });
+                    }
+                    
+                }
+                Finance.HashHandler._init();
+                
+            }
+            
 
         });
 
@@ -335,10 +403,10 @@ var Finance = {};
             },
         }
         // Finance.JumpNav._init();
-
-
-
-
+        
+        
+        
+        
         Finance.faqs = {
             triggers: $('.js__collapsible_list > li > a'),
             questions: $('.js__collapsible_list > li'),
@@ -347,7 +415,7 @@ var Finance = {};
                 
                 Finance.faqs.triggers.on('click', Finance.faqs._clickHandler);
                 
-                $(window).on('load', Finance.faqs._loadHandler);
+                // $(window).on('load', Finance.faqs._loadHandler);
             },
             _loadHandler: function (e) {
                 // Finance.faqs.answers.slideUp(0);

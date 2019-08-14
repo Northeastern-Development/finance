@@ -22,8 +22,8 @@ class SetupTheme
     function enqueue_scripts(){
 
         wp_deregister_script('jquery');
-        
         wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), '2.2.0', false);
+        
 
         if( is_page_template('templates/template-departments-detail.php') || is_page_template('templates/template-tasks.php') ){
             wp_enqueue_script('magnificjs', get_template_directory_uri() . '/js/lib/jquery.magnific-popup-min.js', array('jquery'), '1.0.0', true);
@@ -43,6 +43,9 @@ class SetupTheme
 
         
         if( is_page_template( 'templates/template-tool-detail.php') ){ wp_enqueue_script('tooldetail', get_template_directory_uri() . '/js/tool-detail-min.js', array('theme'), '1.0.0');}
+
+
+
     }
     function enqueue_styles(){
 

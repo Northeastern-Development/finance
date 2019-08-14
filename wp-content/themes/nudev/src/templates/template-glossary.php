@@ -51,7 +51,7 @@
     foreach( $alphabet as $letter => $array )
     {
         // each letter is a h2 within an ul
-        $contents .= '<ul id="'.$letter.'" class="list"><li><h2>'.strtoupper($letter).'</h2></li>';
+        $contents .= '<ul class="list"><li><a name="%s" id="'.$letter.'" class="named_anchor"></a><h2>'.strtoupper($letter).'</h2></li>';
         // if letter has posts
         if( !empty($array) ){
             foreach( $array as $info ){

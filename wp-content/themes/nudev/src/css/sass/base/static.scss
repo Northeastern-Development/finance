@@ -7,11 +7,32 @@ a.named_anchor {
     
     // the target pseduo element could also be an option here:
     &:target {
-        ~ a {
+        ~ a, ~ h2 {
             outline: 2px solid rgba($brand_colors-red, 0.33);
         }
     }
 }
+
+// HTML element has no-js class; removed asap on script exec
+// if the no-js class is there; we show all the collapsibles
+// when the no-js class is removed; we hide all the collapsibles
+// html:not(.no-js){
+//     .js__collapsible_list > li > div {
+//         display: none;
+//     }
+// }
+// html.no-js {
+//     .js__collapsible_list > li > div {
+//         display: block;
+//     }
+// }
+
+// html:not(.no-js){
+//     .js__collapsible_list > li > div {
+//         display: none;
+//     }
+// }
+
 
 
 @media only screen {
