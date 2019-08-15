@@ -57,7 +57,14 @@
          ?>
     </section>
    <section>
-       <?php include(locate_template('loops/loop-task-optiongroup.php')); ?>
+        <?php 
+       
+            if( !empty($fields['options_group']) ){
+
+                include(locate_template('loops/loop-task-optiongroup.php'));
+            }
+       
+         ?>
    </section>
    
    <section>

@@ -118,7 +118,9 @@ main div.forms-category {
                 @include font-2l-l;
                 margin-top: 15px;
                 display: none;
-
+                &.js__collapsible_opened {
+                    display: block;
+                }
 
                 // files to download
                 >p>a.neu__iconlink {

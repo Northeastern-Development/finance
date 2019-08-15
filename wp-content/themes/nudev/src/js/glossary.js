@@ -39,6 +39,9 @@
                     Finance.Glossary.jumpNav.removeClass('js__glossnav_sticky');
                 }
             },
+
+
+            // THIS IS DEPRICATED, DO NOT ENABLE IT
             _jumpHandler : function(e){
 
                 e.preventDefault();

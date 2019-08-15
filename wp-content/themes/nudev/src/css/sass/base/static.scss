@@ -13,6 +13,11 @@ a.named_anchor {
     }
 }
 
+div.js__collapsible_opened,
+.js__collapsible_opened {
+    display: block;
+}
+
 // HTML element has no-js class; removed asap on script exec
 // if the no-js class is there; we show all the collapsibles
 // when the no-js class is removed; we hide all the collapsibles

@@ -1,1 +1,0 @@
-!function(o,e,n){o(n).ready(function(){o("html").removeClass("no-js"),console.log("removed the no-js");var n=e.location.hash.substring(1),t=o("div#nu__globalheader").height()+o("header").height(),h=o("#"+n).offset().top;o(e).scrollTop(h-t)})}(jQuery,window,document);

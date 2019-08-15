@@ -47,14 +47,14 @@
                         margin-top: 30px;
                         padding-bottom: 15px;
                         border-bottom: 1px solid transparentize(black, 0.8);
-                        cursor: pointer;
+                        // cursor: pointer;
 
                         // the task option groupings sub-options (steps)
                         >ul {
                             margin-top: 15px;
                             list-style-type: none;
                             overflow-y: hidden;
-                            cursor: initial;
+                            // cursor: initial;
                             display: block;
 
                             // a 'step'
