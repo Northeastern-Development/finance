@@ -1517,16 +1517,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/font-awesome.min-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/font-awesome.min-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/font-awesome.min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -2319,16 +2309,6 @@
 		"oA": 0,
 		"oAP": "/single.php",
 		"oF": 0
-		},
-	"/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style-min-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/style.css": {
 		"aP": 1,
