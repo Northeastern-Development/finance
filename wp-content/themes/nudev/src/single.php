@@ -1,4 +1,108 @@
-<?php get_header(); ?>
+<?php 
+/**
+ *      Manage Redirection;
+*/
+
+    // explode URL to determine where we are
+    $pageQuery = explode("/",$_SERVER['REQUEST_URI']);
+
+    // 
+    $postType = $pageQuery[1];
+    $postSlug = $pageQuery[2];
+    $postAttach = $pageQuery[3];
+
+    
+    if( $postType == 'forms' ) // if this is a single for the form post type,
+    {
+        // get this post
+        $args = array(
+            'name' => $postSlug
+            ,'posts_per_page' => 1
+            ,'post_type' => 'forms'
+        );
+        $rec = get_posts($args);
+    
+        // if we got a post
+        if( !empty($rec) ){
+
+            // get the fields (to get category)
+            $fields = get_fields($rec[0]->ID);
+
+            // generate a hash value from the category and post titles
+            $hashCat = seoUrl($fields['category']->post_title);
+            $hashPost = seoUrl($rec[0]->post_title);
+            $hashFull = '#'.$hashCat.'_'.$hashPost;
+
+            wp_redirect(site_url('/forms/'.$hashFull));
+            exit();
+        }
+    }
+    // always just send financial statements back to their index page (no singles exist whatsoever)
+    else if ( $postType == 'financial_statements' ){
+        wp_redirect(site_url('/financial-statements/'));
+        exit();
+    }
+
+    // direct glossary items to the glossary index page; with hash to jump to named anchor
+    else if ( $postType == 'glossary_items' ){
+        wp_redirect(site_url('/glossary/#'.$postSlug));
+        exit();
+    }
+
+    // direct discount categories to the discounts index page
+    else if ( $postType == 'discount-categories' ){
+        wp_redirect(site_url('/discounts/'));
+        exit();
+    }
+
+    // direct discount items to the discounts index page w/ hash to jump to named anchor
+    else if ( $postType == 'discount-items' ){
+        
+        // get this post
+        $args = array(
+            'name' => $postSlug
+            ,'posts_per_page' => 1
+            ,'post_type' => 'discount-items'
+        );
+        $rec = get_posts($args);
+    
+        // if we got a post
+        if( !empty($rec) ){
+
+            // get the fields (to get category)
+            $fields = get_fields($rec[0]->ID);
+
+            // generate a hash value from the category and post titles
+            $hashCat = seoUrl($fields['category']->post_title);
+            $hashPost = seoUrl($rec[0]->post_title);
+            $hashFull = '#'.$hashCat.'_'.$hashPost;
+
+            wp_redirect(site_url('/discounts/'.$hashFull));
+            exit();
+        }
+
+    }
+
+    // task categories
+    else if( $postType == 'tasks_categories' ){
+        wp_redirect(site_url());
+        exit();
+    }
+
+    // newsevents-items 
+    else if( $postType == 'newsevents-items' ){
+        wp_redirect(site_url('/news-events/'.$postSlug));
+        exit();
+    }
+    
+    
+
+
+    get_header(); 
+
+
+
+?>
 
 	<main role="main" aria-label="Content">
 	<!-- section -->

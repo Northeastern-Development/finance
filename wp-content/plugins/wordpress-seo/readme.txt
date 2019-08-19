@@ -3,10 +3,10 @@ Contributors: yoast, joostdevalk, tacoverdo, omarreiss, atimmer, jipmoors
 Donate link: https://yoa.st/1up
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: SEO, XML sitemap, Google Search Console, Content analysis, Readability
+Tags: SEO, XML sitemap, Content analysis, Readability
 Requires at least: 4.9
-Tested up to: 5.0.3
-Stable tag: 9.6
+Tested up to: 5.2.2
+Stable tag: 11.8
 Requires PHP: 5.2.4
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -42,11 +42,10 @@ Yoast SEO does everything in its power to please both visitors and search engine
 
 * Yoast SEO tunes the engine of your site so you can work on creating great content.
 * Our cornerstone content and internal linking features help you optimize your site structure in a breeze.
-* Integrates with Google Search Console: See how your site performs in the search engines and fix crawl errors.
 * Manage SEO roles: Give your colleagues access to specific sections of the Yoast SEO plugin.
 * Bulk editor: Make large-scale edits to your site.
 * **[Premium]** Social previews to manage the way your page is shared on social networks like Facebook and Twitter.
-* **[Premium]** Redirect manager: It keeps your site healthy by easily redirecting errors from Google Search Console, deleted pages and changed URLs.
+* **[Premium]** Redirect manager: It keeps your site healthy by easily redirecting deleted pages and changed URLs.
 
 ### Premium support
 
@@ -106,55 +105,38 @@ You'll find answers to many of your questions on [kb.yoast.com](https://yoa.st/1
 
 == Changelog ==
 
-= 9.6.0 =
-Release Date: February 12th, 2019
+= 11.8.0 =
+Release Date: August 6th, 2019
 
-Content analysis recalibration (beta):
-
-* As there are already a lot of users who are participating in testing, we currently have enough input to start preparing for the release of the improved analysis.
-  * Removes the ability to enable beta testing for new installations.
-  * When the feature is disabled, the ability to re-enable it will disappear.
+Release history tells us that the releases in the months of July and August are usually very quiet and not 'that notable'. Due to vacations from team members, the focus is usually on fixing bugs and cleaning up. Not for Yoast SEO 11.8! This new release gives us an enhanced metabox, bug fixes and the help of contributors from outside the company! Find out all about Yoast SEO 11.8 in [our 11.8 release post](https://yoa.st/release-11-8)!
 
 Enhancements:
 
-* Removes schema (JSON+LD) output from 404 pages.
-* Improves the Google Search Console table accessibility by removing a duplicate button.
-* Improves the code to better comply to the coding standards.
+* Moves advanced SEO settings to a collapsible in the SEO tab.
+* Social settings tab in the metabox now contains collapsibles instead of tabs.
+* Adds style for padding to the metabox menu to avoid it being overwritten by custom editor styles. Props to [@emilyatmobtown](https://github.com/emilyatmobtown).
+* Improves sanitization of the schema output.
 
 Bugfixes:
 
-* Fixes a bug where an empty feed would be available for non-existing pages. Props [stodorovic](https://github.com/stodorovic).
-* Prevents `vendor_prefix/j4mie/idiorm/demo.php` from being included in the release.
+* Fixes a bug where the `WP_Query::get_posts()` method would be called multiple times when the query includes several taxonomy terms, resulting in different results. Props to [@Chouby](https://github.com/Chouby).
+* Fixes a bug where the checkbox in the customizer about showing the blog page in the breadcrumbs would do exactly the opposite of what it promised. Props to [@garrett-eclipse](https://github.com/garrett-eclipse).
+* Fixes a bug where the snippet title and meta description fields would still be left-to-right when the site was set to a right-to-left language.
 
-Other:
+= 11.7.0 =
+Release Date: July 23rd, 2019
 
-* Props to [Kingdutch](https://github.com/Kingdutch) for helping improve our open source content analysis library.
-* Improves the redirect upsell when creating redirects in the search console overview.
-
-= 9.5.0 =
-Release Date: January 22nd, 2019
+By now you probably know the 11.x releases of Yoast SEO are all about Schema. In this release, we’ve enabled the possibility to use a subset of HTML tags in the FAQ and HowTo blocks! Find out all about Yoast SEO 11.7 in [our 11.7 release post](https://yoa.st/release-11-7)!
 
 Enhancements:
 
-* Completes the readability analysis for Swedish by adding the transition words, sentence beginnings and passive voice assessments.
-* Improves the transition word assessment for German.
+* Allows a subset of HTML tags in FAQ answer, HowTo description and HowToStep description schema output: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`, `<br>`, `<ol>`, `<ul>`, `<li>`, `<a>`, `<p>`, `<b>`, `<strong>`, `<i>`, `<em>`, and their closing counterparts.
+* Remove the `noindex` from feeds as this causes issues for podcasts and other feeds.
+* Improves the accessibility of the horizontal tabs in the metabox by implementing an ARIA tabbed user interface.
 
 Bugfixes:
 
-* Fixes a bug where the Ryte endpoint would be called when the Ryte feature has been disabled.
-* Fixes a bug where the 'Show archives for authors without posts in search results?' toggle would be shown when the 'Show author archives in search results?' toggle was disabled in the search appearance settings.
-* Fixes a bug where the front page would be shown in the page sitemap. Props to [stodorovic](https://github.com/stodorovic).
-* Fixes a bug where errors would be thrown in the classic editor when Gutenberg assets were enqueued without Gutenberg being active.
-* Fixes a bug where the editor would not be loaded when clicking the ‘edit’ button for a child page in the page overview. Props [mondrey](https://github.com/mondrey).
-
-Deprecated:
-
-* Deprecates the methods WPSEO_Utils::get_user_locale() and WPSEO_Utils::get_language().
-
-Other:
-
-* Adds a Courses Page showing an overview of the available online courses offered by Yoast Academy.
+* Fixes a bug where the avatar in the knowledge graph settings would incorrectly overwrite the default user profile picture.
 
 = Earlier versions =
-
-For the changelog of earlier versions, please refer to [the Yoast SEO changelog on yoast.com](https://yoa.st/yoast-seo-changelog)
+For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).

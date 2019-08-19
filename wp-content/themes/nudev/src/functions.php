@@ -122,9 +122,25 @@ function custom_rewrite_rule() {
     add_rewrite_rule('^deadlines/page/([^/]*)?', 'index.php?page_id=4572&pagedd=$matches[1]', 'top');
     add_rewrite_rule('^news-events/page/([^/]*)?', 'index.php?page_id=143&paged=$matches[1]', 'top');
     add_rewrite_rule('^news-events/([^/]*)?', 'index.php?page_id=3286&newsitem=$matches[1]', 'top');
+
+
     add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page
+    add_rewrite_rule('^department/?', 'index.php?page_id=3550', 'top'); // department detail page
+    
+    
     add_rewrite_rule('^staff/bio/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
-    add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
+    
+    
+
+    // note: page 91 doesnt exist thats gotta be old dummy stuff
+    // old bad rule
+    // add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=91&team-filter=$matches[1]','top');  // administration
+    // new fixed rule:
+    add_rewrite_rule('^staff/([^/]*)?','index.php?page_id=3550&team-filter=$matches[1]','top');  // administration
+    
+    
+    
+    
     // Tasks:
     add_rewrite_rule('^tasks/([^/]*)/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=$matches[2]','top');
     add_rewrite_rule('^tasks/([^/]*)?','index.php?page_id=3033&taskcat=$matches[1]&taskname=null','top'); // ( can this be removed??? )
@@ -681,10 +697,10 @@ function create_post_type_nudev()
         'public' => true,
         'hierarchical' => false,        // Allows your posts to behave like Hierarchy Pages
         'has_archive' => false,
-        'rewrite' => array(
-            'with_front' => false,
-            'slug'       => 'alerts'
-        ),
+        // 'rewrite' => array(
+        //     'with_front' => false,
+        //     'slug'       => 'alerts'
+        // ),
         'supports' => array(
             'title',
             'editor',

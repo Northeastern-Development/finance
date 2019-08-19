@@ -3,10 +3,10 @@
 * Plugin Name: Simple Custom Post Order
 * Plugin URI: https://wordpress.org/plugins-wp/simple-custom-post-order/
 * Description: Order Items (Posts, Pages, and Custom Post Types) using a Drag and Drop Sortable JavaScript.
-* Version: 2.4.1
+* Version: 2.4.4
 * Author: Colorlib
 * Author URI: https://colorlib.com/
-* Tested up to: 5.0.3
+* Tested up to: 5.1
 * Requires: 4.6 or higher
 * License: GPLv3 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -36,6 +36,7 @@
 
 define('SCPORDER_URL', plugins_url('', __FILE__));
 define('SCPORDER_DIR', plugin_dir_path(__FILE__));
+define('SCPORDER_VERSION', '2.4.4');
 
 $scporder = new SCPO_Engine();
 
@@ -69,10 +70,10 @@ class SCPO_Engine {
         add_action( 'admin_notices', array( $this, 'scporder_notice_not_checked' ) );
         add_action( 'wp_ajax_scporder_dismiss_notices', array( $this, 'dismiss_notices' ) );
 
-        add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
+        add_action( 'plugins_loaded', array( $this, 'load_scpo_textdomain' ) );
     }
 
-    public function load_plugin_textdomain(){
+    public function load_scpo_textdomain(){
         load_plugin_textdomain( 'simple-custom-post-order', false, basename( dirname( __FILE__ ) ) . '/languages/' );
     }
 
@@ -206,9 +207,9 @@ class SCPO_Engine {
         if ($this->_check_load_script_css()) {
             wp_enqueue_script('jquery');
             wp_enqueue_script('jquery-ui-sortable');
-            wp_enqueue_script('scporderjs', SCPORDER_URL . '/assets/scporder.js', array('jquery'), null, true);
+            wp_enqueue_script('scporderjs', SCPORDER_URL . '/assets/scporder.js', array('jquery'), SCPORDER_VERSION, true);
 
-            wp_enqueue_style('scporder', SCPORDER_URL . '/assets/scporder.css', array(), null);
+            wp_enqueue_style('scporder', SCPORDER_URL . '/assets/scporder.css', array(), SCPORDER_VERSION );
         }
     }
 
@@ -231,13 +232,13 @@ class SCPO_Engine {
                 // Here's the optimization
                 $wpdb->query("SET @row_number = 0;");
                 $wpdb->query("UPDATE $wpdb->posts as pt JOIN (
-                  SELECT ID, (@row_number:=@row_number + 1) AS rank
+                  SELECT ID, (@row_number:=@row_number + 1) AS `rank`
                   FROM $wpdb->posts
                   WHERE post_type = '$object' AND post_status IN ( 'publish', 'pending', 'draft', 'private', 'future' )
                   ORDER BY menu_order ASC
                 ) as pt2
                 ON pt.id = pt2.id
-                SET pt.menu_order = pt2.rank;");
+                SET pt.menu_order = pt2.`rank`;");
 
             }
         }
@@ -589,4 +590,4 @@ function scporder_uninstall_db() {
     delete_option('scporder_install');
 }
 
-?>
+require_once 'class-colorlib-dashboard-widget-extend-feed.php';

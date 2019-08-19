@@ -10,15 +10,24 @@
  */
 class WPSEO_Meta_Storage implements WPSEO_Installable {
 
+	/**
+	 * Table name for the meta storage.
+	 *
+	 * @var string
+	 */
 	const TABLE_NAME = 'yoast_seo_meta';
 
 	/**
+	 * Holds the database's proxy.
+	 *
 	 * @var WPSEO_Database_Proxy
 	 */
 	protected $database_proxy;
 
 	/**
-	 * @deprecated
+	 * Holds the prefix of the table.
+	 *
+	 * @deprecated 7.4
 	 *
 	 * @var null|string
 	 */
@@ -84,7 +93,7 @@ class WPSEO_Meta_Storage implements WPSEO_Installable {
 	}
 
 	/**
-	 * Updates the incoming link count
+	 * Updates the incoming link count.
 	 *
 	 * @param array              $post_ids The posts to update the incoming link count for.
 	 * @param WPSEO_Link_Storage $storage  The link storage object.

@@ -88,7 +88,9 @@
     // END GET RELATED TASKS
 
     
+    
     // BEGIN GET RELATED FORMS
+
     $args = array(
         'post_type' => 'forms',
         'posts_per_page' => -1,
@@ -117,9 +119,17 @@
         $content_related_forms = '<h2>Related Forms</h2><ul>';
         
         foreach( $forms as $form ){   
+
+            $form_fields = get_fields($form->ID);
+            $catName = seoUrl($form_fields['category']->post_title);
+
+            $hashLink = site_url('/forms/').'#'.$catName.'_'.seoUrl($form->post_title);
+            
+            
             $content_related_forms .= sprintf(
                 $format_related_forms
-                ,site_url().'/forms/'
+                // ,site_url().'/forms/'       // href -- must include hash
+                ,$hashLink
                 ,$form->post_title
                 ,$form->post_title
                 ,$form->post_title

@@ -5,12 +5,6 @@
  * @package WPSEO\Admin\Views
  */
 
-/**
- * Form object.
- *
- * @var Yoast_Form $yform
- */
-
 if ( ! defined( 'WPSEO_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -52,6 +46,7 @@ if ( is_array( $wpseo_post_types ) && $wpseo_post_types !== array() ) {
 				),
 				'title'       => $post_type->labels->name,
 				'title_after' => ' (<code>' . esc_html( $post_type->name ) . '</code>)',
+				'class'       => 'search-appearance',
 			)
 		);
 
