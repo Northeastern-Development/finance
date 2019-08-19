@@ -7,6 +7,7 @@
  */
     // Get Custom Query Vars -- i.e., site_url.com/tools/banner/access
     $toolname = get_query_var('toolname')  ;              // i.e., 'banner'
+
     $toolgrouping = get_query_var('toolgroup');         // i.e., 'access'
 
     // check for query var value, use that for get post

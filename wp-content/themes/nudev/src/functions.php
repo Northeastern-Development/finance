@@ -125,7 +125,15 @@ function custom_rewrite_rule() {
 
 
     add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page
+
+    
+    
+    
     add_rewrite_rule('^department/?', 'index.php?page_id=3550', 'top'); // department detail page
+
+    
+    
+    add_rewrite_rule('^news-events-item/?', 'index.php?page_id=3167', 'top'); // send financial statement "singles" to the index
     
     
     add_rewrite_rule('^staff/bio/([^/]*)?','index.php?page_id=120&show-bio=$matches[1]','top');  // full bio details
