@@ -1054,6 +1054,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/css/sass/partials/_nu_wpforms.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/partials/_nu_wpforms.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/partials/articles.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -2251,6 +2264,14 @@
 		"oAP": "/modules/is-debug.php",
 		"oF": 0
 		},
+	"/page-local-testing.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-local-testing.php",
+		"oF": 0
+		},
 	"/page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2488,6 +2509,14 @@
 		"oAP": "/templates/template-financial_statements.php",
 		"oF": 0
 		},
+	"/templates/template-forms-submit.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/template-forms-submit.php",
+		"oF": 0
+		},
 	"/templates/template-forms.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2582,6 +2611,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/template-tools-index.php",
+		"oF": 0
+		},
+	"/wpforms-capture.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wpforms-capture.php",
 		"oF": 0
 		}
 	},

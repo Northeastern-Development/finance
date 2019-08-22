@@ -5,7 +5,6 @@ var Finance = {};
 
         $(document).ready(function(){
 
-
             // if collapsible fields are present:
             if( $('.js__collapsible_list').length ){
 

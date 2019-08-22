@@ -10,16 +10,15 @@
     @return $v;
 }
 
-$sizing : (
+$sizing : (header : 124px,
+    content : ());
 
-    header : 124px,
-    content : (
-        
-    )
-);
-
-
+$sizing:(wrapper: 100%, content:(normal: 80vw, wide: 96vw, medium: 65vw, narrow: 50vw), gutter:(vw:(normal: 2vw, medium: 3vw, large: 5vw, small: 1vw), px:(normal: 30px, medium: 20px, large: 60px, small: 15px, vsmall: 5px)), header:(normal: 100px, small: 80px, gheader: 44px), device : (phone : 92vw));
 //          Colors
+$colors: (red:(medium: rgb(204, 0, 0), dark: rgb(147, 0, 0), light: rgb(218, 52, 50)), black:(full: rgb(0, 0, 0), dark: rgb(31, 31, 31)), white: rgb(255, 255, 255), beige: rgb(229, 212, 171), gold: rgb(164, 128, 74), gray:(light: rgb(207, 199, 191), warm: rgb(161, 153, 148), medium: rgb(153, 163, 176), fill: rgb(178, 178, 178)), blue:(light: rgb(82, 207, 229), medium: rgb(0, 110, 181), dark: rgb(56, 87, 117)), green:(bright: rgb(186, 219, 0), teal: rgb(0, 207, 181)), orange: rgb(255, 133, 79), yellow: rgb(255, 191, 61));
+
+
+
 // Reds
 $brand_colors-red: rgb(212, 27, 44);
 $brand_colors-red--dark: rgb(148, 19, 32);

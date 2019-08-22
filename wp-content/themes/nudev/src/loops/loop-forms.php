@@ -122,40 +122,38 @@
                 $format_files = '<p><a class="neu__iconlink" href="%s" title="Download %s [will open in new tab/window]" aria-label="Download %s [will open in new tab/window]" target="_blank">%s</a></p>';
                 $content_files = '';
                                 
-                // Check that the "Files" repeater has rows;
-                if( !empty($files) ){
-                    // note, this probably just has one row
-                    // loop thru the files repeater
-                    foreach( $files as $file ){
 
 
-                        // If an External URL is used:
+                // Get the Form
+                if( !empty( $fields['files'] ) ){
+                    foreach( $fields['files'] as $file ){
+
+                        $href_value = '';
+                        
+                        // check for external URL
                         if( !empty($file['external_url']) ){
-
-                            $content_files .= sprintf(
-                                $format_files
-                                ,$file['external_url']
-                                ,( (!empty($file['filename'])) ? $file['filename'] : 'this file')
-                                ,( !empty($file['filename']) ) ? $file['filename'] : 'this file'
-                                ,( !empty($file['filename']) ) ? $file['filename'] : 'Download'
-                            );
+                            $href_value = $file['external_url'];
+                        }
+                        // check for Upload
+                        else if( !empty($file['file']) ){
+                            $href_value = $file['file'];
+                        }
+                        // check for WPform
+                        else if( !empty($file['wpform']) ){
+                            $href_value = site_url('/form-submission/?form_id=').$file['wpform']->ID;
                         }
 
-                        // If a local file has been added:
-                        else {
-                            if( !empty($file['file']) ){
-                                $content_files .= sprintf(
-                                    $format_files
-                                    ,$file['file']
-                                    ,( (!empty($file['filename'])) ? $file['filename'] : 'this file')
-                                    ,( !empty($file['filename']) ) ? $file['filename'] : 'this file'
-                                    ,( !empty($file['filename']) ) ? $file['filename'] : 'Download'
-                                );
-                            }
-                        }
+                        $content_files .= sprintf(
+                            $format_files
+                            ,$href_value
+                            ,( (!empty($file['filename'])) ? $file['filename'] : 'this file')
+                            ,( !empty($file['filename']) ) ? $file['filename'] : 'this file'
+                            ,( !empty($file['filename']) ) ? $file['filename'] : 'Download'                            
+                        );
                         
                     }
-                }       
+                }
+
                 
                 // Set: format string for information blocks
                 $content_blocks = '';

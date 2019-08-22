@@ -1,0 +1,310 @@
+// 
+//  Northeastern University BrandStyle for WP Forms
+//  This will reset WPForms CSS, and style WPForms to match NU BrandStyle Guidelines
+//  This file will not handle any layout or styling outside of the WPForm container
+
+// form container
+.wpforms-container {
+    width: 100%;
+
+    // form
+    .wpforms-form {
+
+        // form fields container
+        .wpforms-field-container {
+
+            // form fields
+            .wpforms-field {
+                position: relative;
+                margin: 0 0 getVar($sizing, gutter, px, small) 0;
+
+                select, input {
+                    // remove element appearance
+                    -webkit-appearance: none;
+                    
+                    
+                    // reset core styling of <select> and <input> els
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                    border-radius: 0;
+
+                    // 
+                    border-bottom: 1px solid getVar($colors, gray, warm);
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: transparent;
+                        border-bottom: 1px solid getVar($colors, orange);
+                    }
+
+                    // help users track the cursor position tabbing thru the form
+                    &:focus {
+                        outline: 1px solid rgba(getVar($colors, orange), 0.33);
+                    }
+                }
+                textarea {
+                    border: none;
+                    border-bottom: 1px solid getVar($colors, gray, warm);
+                }
+
+                // adjustments for the address field
+                // --- the 'state' select
+                select.wpforms-field-address-state {
+                    -webkit-appearance: none;
+                    border: none;
+                    margin: 0 0 -5px 0;
+                    width: 100%;
+                    > option {
+                        display: block;
+                        width: 80%;
+                    }
+                    +label {
+                        border-top: 1px solid getVar($colors, gray, warm);
+                        padding: 5px 0 0 0;
+                        position: relative;
+
+                        
+                        // create a down-chevron
+                        // MUST mirror the styles of 'nu__wpforms_selectfield_arrow'
+                        &:after {
+                            pointer-events: none;
+                            content: '\e5c5';
+                            font-family: "Material Icons";
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            transform: translateY(-30px);
+                            font-size: 2.4rem;
+                        }
+                    }
+                    &:focus {
+                        +label:after {
+                            transform: translateY(-30px) rotate(180deg);
+                            // color: getVar($colors, orange);
+                        }
+                    }
+                }
+                
+                // restore appearance styles for certain fields (radio, checkbox, number)
+                select,
+                input {
+                    &[type="number"] {
+                        -moz-appearance: textfield;
+
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0 0 0 0;
+                        }
+                    }
+                    &[type="checkbox"] {
+                        vertical-align: middle;
+                        -webkit-appearance: checkbox;
+
+                        +label {
+                            margin-left: getVar($sizing, gutter, px, small);
+                        }
+                    }
+                    &[type="radio"] {
+                        -webkit-appearance: radio;
+                    }
+                }
+
+                // any wpforms field label
+                label {
+                    font-weight: 400;
+
+                    &.wpforms-field-label-inline {
+                        font-weight: 300;
+                    }
+
+                    // the red * for required labels
+                    span.wpforms-required-label {
+                        position: absolute;
+                        margin: -2px 0 0 2px;
+                    }
+                }
+
+
+
+                // hidden labels (review this?)
+                &.wpforms-label-hide {
+                    position: absolute;
+                }
+
+                // dividers
+                &.wpforms-field-divider {
+                    h3 {
+                        font-size: 16px;
+                    }
+                }
+
+                // wrappers for any field that uses a select element
+                &.wpforms-field-date-time,
+                &.wpforms-field-payment-select,
+                &.wpforms-field-select {
+                    position: relative;
+
+                    >div.wpforms-field-description {
+                        position: absolute;
+                    }
+
+                    >i.nu__wpforms_selectfield_arrow {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        font-size: 2.4rem;
+                        margin-bottom: getVar($sizing, gutter, px, small);
+                    }
+
+                    select.wpforms-field-medium {
+                        +i.nu__wpforms_selectfield_arrow {
+                            right: 40%;
+
+                            @media only screen and (max-width: 600px) {
+                                right: 0;
+                            }
+                        }
+                    }
+
+                    // this field requires an arrow
+                    select.wpforms-field-small {
+                        +i.nu__wpforms_selectfield_arrow {
+                            right: 75%;
+
+                            @media only screen and (max-width: 600px) {
+                                right: 0;
+                            }
+                        }
+                    }
+
+                    // focus/hover for the material icon arrow
+                    input:focus+i.material-icons,
+                    select:focus+i.material-icons {
+                        color: getVar($colors, orange);
+                        transform: rotate(180deg);
+                    }
+
+                    >input.wpforms-field-medium {
+                        +i.nu__wpforms_selectfield_arrow {
+                            right: 40%;
+
+                            @media only screen and (max-width: 600px) {
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+
+                // file-upload field
+                &.wpforms-field-file-upload {
+                    display: flex;
+                    flex-flow: column wrap;
+                    padding: 0 0 0 0;
+                    background-color: rgba(getVar($colors, black, full), 0.02);
+
+                    label {
+                        pointer-events: none;
+                        background-color: #fff;
+                        order: 1;
+                        margin: 0 0 0 0;
+                    }
+
+                    .wpforms-field-description {
+                        margin: 0 0 0 0;
+                        background-color: #fff;
+                        order: 2;
+                        padding: getVar($sizing, gutter, px, vsmall) 0;
+                    }
+
+                    input {
+                        cursor: pointer;
+                        order: 3;
+                        display: inline-block;
+                        width: auto;
+                        margin: 0 auto 0 auto;
+                        padding: getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large) 0;
+                        border: none;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            border: none;
+                        }
+                    }
+                }
+
+                
+
+                // 
+                //      RESTYLES FOR THE 'LAYOUTS'
+                // 
+                &.wpforms-one-half,
+                &.wpforms-one-third {
+
+                    // left side
+                    &.wpforms-first {}
+
+                    // right side
+                    &:not(.wpforms-first) {
+                        margin-left: 4% !important;
+                    }
+                }
+            }
+
+        }
+
+        // submit button
+        .wpforms-submit-container {
+            button[type="submit"] {
+                border: 2px solid getVar($colors, yellow);
+                background-color: getVar($colors, yellow);
+                font-weight: 400;
+                padding: 0 0 0 0;
+                min-width: 160px;
+                font-size: 1.6rem !important;
+                line-height: 44px;
+
+                &:active,
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid getVar($colors, yellow);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {}
+
+@media only screen and (max-width: 960px) {}
+
+@media only screen and (max-width: 640px) {
+    .wpforms-container {
+        .wpforms-form {
+            .wpforms-field-container {
+
+                // all fields
+                .wpforms-field,
+                .wpforms-field-row-block {
+                    width: 100%;
+                    margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+
+                    &.wpforms-field-row-block:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &.wpforms-one-half,
+                    &.wpforms-one-third {
+                        &:not(.wpforms-first){
+                            margin-left: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

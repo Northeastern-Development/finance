@@ -10,7 +10,7 @@
     $postType = $pageQuery[1];
     $postSlug = $pageQuery[2];
     $postAttach = $pageQuery[3];
-
+    
     
     if( $postType == 'forms' ) // if this is a single for the form post type,
     {

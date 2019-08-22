@@ -114,6 +114,9 @@ function myplugin_rewrite_tag() {
     add_rewrite_tag( '%department%', '([^&]+)' );	    // Department Detail
     add_rewrite_tag( '%toolname%', '([^&]+)' );	        // Tools
     add_rewrite_tag( '%toolgroup%', '([^&]+)' );	    // Tools
+
+    
+    // add_rewrite_tag( '%form-name%', '([^&]+)' );	    // Tools
 }
 add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
@@ -126,6 +129,7 @@ function custom_rewrite_rule() {
 
     add_rewrite_rule('^departments/([^/]*)?', 'index.php?page_id=3384&department=$matches[1]', 'top'); // department detail page
 
+    // add_rewrite_rule('^forms/submit/([^/]*)?', 'index.php?page_id=4868&form-name=$matches[1]$1','top');
     
     
     
@@ -259,8 +263,14 @@ function ism_dns_prefetch() {
 
 
 
-
-
+// add down arrows to certain wp forms fields
+add_action( 'wpforms_display_field_after', 'append_wpforms_field', 1, 2 );
+function append_wpforms_field( $field, $form_data ) {
+    if( $field['type'] == 'select' || $field['type'] == 'payment-select'  || $field['type'] == 'date-time' ){
+        
+        echo '<i class="material-icons nu__wpforms_selectfield_arrow">&#xe5c5</i>';
+    }
+}
 
 
 
