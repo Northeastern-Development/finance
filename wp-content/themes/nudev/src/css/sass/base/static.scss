@@ -196,6 +196,9 @@ div.js__collapsible_opened,
         >section {
             // width: 50vw;
             width: 60vw;
+            @media only screen and (max-width: 640px){
+                width: 90vw;
+            }
             // margin: ($gutter * 1.7) auto 0 auto;
             margin: 30px auto 0;
 
@@ -545,8 +548,7 @@ div.js__collapsible_opened,
                 flex: 1 0 100%;
             }
         }
-
-
+        
         
         // FAQ Stuff
         >section>ul.nufin-faqs {
@@ -624,239 +626,10 @@ div.js__collapsible_opened,
         }
         // END FAQ STUFF
 
-
-
-
-
-
-
-
         section.hero.hero-image {
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
         }
-
-        section.related-tasks {
-            >ul {
-                font-size: 0;
-                text-align: left;
-                display: inline-block;
-
-                >li {
-                    position: relative;
-                    display: inline-block;
-                    vertical-align: top;
-                    font-size: initial;
-                    margin: 0 15px 15px 0;
-                    width: calc(50% - 7.5px);
-
-                    &:nth-of-type(2n) {
-                        margin-right: 0;
-                    }
-
-                    @include neu__iconlink($hover:0);
-                    border-bottom: none;
-
-                    a {
-                        border-bottom: 2px solid transparent;
-
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            border-bottom: 2px solid $brand_colors-red;
-                        }
-                    }
-
-                    padding-left: 30px;
-
-                    &:before {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        color: $brand_colors-red;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: $bp__sm) {
-    div.wrapper>main {
-
-        section.related-tasks {
-            >ul {
-                >li {
-                    flex: none;
-                    margin: 0;
-                    margin-bottom: 15px;
-                    width: 100%;
-                    max-width: none;
-                }
-            }
-        }
-
-    }
-}
-
-
-
-
-
-
-
-$space: 2vw;
-$width: 90vw;
-
-// largest breakpoint 6 columns
-@media only screen {
-
-    $col: 6;
-
-    div.wrapper>main>section.heretohelp {
-        >h2 {
-            width: 60vw;
-            border-bottom: none;
-            padding: 0;
-            margin: 0 auto;
-        }
-
-        width: $width;
-
-        >ul {
-            width: $width;
-            display: block;
-            font-size: 0;
-            padding-top: 15px;
-            border-top: 1px solid black;
-
-            >li {
-                font-size: initial;
-                display: inline-block;
-                vertical-align: top;
-                // for grid
-                width: (($width - (($col - 1) * $space)) / $col);
-                margin: 0 $space $space 0;
-
-                // for grid
-                &:nth-child(#{$col}n) {
-                    margin-right: 0;
-                }
-
-                // bg img
-                >div.neu__bgimg {
-                    width: (($width - (($col - 1) * $space)) / $col);
-                    height: (($width - (($col - 1) * $space)) / $col);
-                }
-
-                // content
-                >div:not(.neu__bgimg) {
-                    >h4 {
-                        @include font-2r-l;
-                    }
-
-                    >a.neu__iconlink {
-                        @include neu__iconlink($icon: "\e551");
-                    }
-
-                    >a.neu__iconlink:last-of-type {
-                        @include neu__iconlink($icon: "\e0be");
-                    }
-
-                    >a.neu__iconlink:first-of-type {
-                        margin-top: 15px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// larger breakpoint 4 columns
-@media only screen and (max-width: $bp__lg) {
-
-    $col: 4;
-
-    div.wrapper>main>section.heretohelp {
-        >ul {
-            >li {
-                width: (($width - (($col - 1) * $space)) / $col);
-
-                &:nth-child(#{$col}n) {
-                    margin-right: 0;
-                }
-
-                >div.neu__bgimg {
-                    width: (($width - (($col - 1) * $space)) / $col);
-                    height: (($width - (($col - 1) * $space)) / $col);
-                }
-            }
-        }
-    }
-}
-
-// middle breakpoint 3 columns
-@media only screen and (max-width: $bp__md) {
-
-    $col: 3;
-
-    div.wrapper>main>section.heretohelp {
-        >ul {
-            >li {
-                width: (($width - (($col - 1) * $space)) / $col);
-
-                &:nth-child(4n) {
-                    margin-right: $space;
-                }
-
-                &:nth-child(#{$col}n) {
-                    margin-right: 0;
-                }
-
-                >div.neu__bgimg {
-                    width: (($width - (($col - 1) * $space)) / $col);
-                    height: (($width - (($col - 1) * $space)) / $col);
-                }
-            }
-        }
-    }
-}
-
-// smallest breakpoint becomes 1 column
-@media only screen and (max-width: $bp__sm) {
-    $col: 1;
-
-    div.wrapper>main>section.heretohelp {
-        >h2 {
-            width: $width;
-        }
-
-        >ul {
-            >li {
-                width: (($width - (($col - 1) * $space)) / $col);
-                margin: 0;
-                margin-bottom: 30px;
-                display: flex;
-                flex-flow: row nowrap;
-
-                >div.neu__bgimg {
-                    width: 43vw;
-                    height: 43vw;
-                    margin: 0;
-                    margin-right: $space;
-                }
-
-                >div {
-                    flex: 1 1 43vw;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: $bp__sm) {
-    main>section {
-        width: 90%;
     }
 }

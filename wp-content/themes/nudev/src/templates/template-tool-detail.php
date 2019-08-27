@@ -28,8 +28,16 @@
         }
     });
 
+
+    $group_titles = array_map(function($n){
+        return seoUrl($n);
+    },array_column($haveGroups, 'title'));
+
+    $matches = array_search($toolgrouping, $group_titles);
+
+
     // check if toolgrouping is empty
-    if( $toolgrouping == 'null' ){
+    if( $toolgrouping == 'null' || $matches === false){
         // if this is empty, we need to redirect
         wp_redirect(site_url('/tools/').$toolname.'/'.seoUrl($fields['groupings'][0]['title']));
         exit();

@@ -13,18 +13,6 @@
 
         >section {
 
-            >h2 {
-                border-bottom: 1px solid black;
-            }
-
-            &.related-tasks {
-                margin-bottom: 40px;
-
-                >ul {
-                    width: 100%;
-                }
-            }
-
             >.task-options {
 
                 // the solutions header (select solution based on method of payment etc)

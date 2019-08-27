@@ -83,7 +83,7 @@
         ?>
    </section>
 
-   <section class="related-tasks">
+   <section class="related-items">
        <?php 
             if( !empty($fields['related_tasks'])  ) {
                 include(locate_template('includes/related-tasks.php'));
@@ -91,7 +91,7 @@
        ?>
    </section>
 
-    <section class="heretohelp">
+    <section class="nu__team-list">
         <?php 
             if( !empty($fields['helpers']) ){
                 include(locate_template('loops/reusable/loop-heretohelp.php'));

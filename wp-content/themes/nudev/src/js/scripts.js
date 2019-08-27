@@ -3,132 +3,131 @@ var Finance = {};
 (function ($, root, undefined) {
     $(function(){
 
-        $(document).ready(function(){
+        $('html').removeClass('no-js');
 
-            // if collapsible fields are present:
-            if( $('.js__collapsible_list').length ){
+        // if collapsible fields are present:
+        if( $('.js__collapsible_list').length ){
 
-                Finance.Collapsibles = {
+            Finance.Collapsibles = {
 
-                    // initialize collapsibles handler -- add event listeners
-                    _init : function(){
+                // initialize collapsibles handler -- add event listeners
+                _init : function(){
 
-                        $('.js__collapsible_list > li > a').on('click', Finance.Collapsibles._clickHandler);
-                        
-                    }
+                    $('.js__collapsible_list > li > a').on('click', Finance.Collapsibles._clickHandler);
+                    
+                }
 
-                    // click Handler (clicked collapsible list triggering element)
-                    ,_clickHandler : function(e){
+                // click Handler (clicked collapsible list triggering element)
+                ,_clickHandler : function(e){
 
-                        // get 'this' collapsible field
-                        thisAnswer = $(this).siblings('div');
-                        // get the 'other' collapsible fields
-                        otherAnswers = $('.js__collapsible_list > li > div').not(thisAnswer);
+                    // get 'this' collapsible field
+                    thisAnswer = $(this).siblings('div');
+                    // get the 'other' collapsible fields
+                    otherAnswers = $('.js__collapsible_list > li > div').not(thisAnswer);
 
-                        // unset active class from 'other' collapsible fields
-                        $(otherAnswers).parent('li').removeClass('js__collapsible_triggered');  // remove the 'triggered' class from the collapsible field container
-                        $(otherAnswers).removeClass('js__collapsible_opened');                  // remove the 'open' class from the collapsible field
-                        
-                        
-                        // this collapsible is open
-                        if( $(this).parent('li').hasClass('js__collapsible_triggered') ){
+                    // unset active class from 'other' collapsible fields
+                    $(otherAnswers).parent('li').removeClass('js__collapsible_triggered');  // remove the 'triggered' class from the collapsible field container
+                    $(otherAnswers).removeClass('js__collapsible_opened');                  // remove the 'open' class from the collapsible field
+                    
+                    
+                    // this collapsible is open
+                    if( $(this).parent('li').hasClass('js__collapsible_triggered') ){
 
-                            // add the 'opened' class to the div we hide/show
-                            $(this).siblings('div').removeClass('js__collapsible_opened');
-                            // add the 'triggered' class to the collapsible container - to adjust styles for the chevron and underline etc.
-                            $(this).parent('li').removeClass('js__collapsible_triggered');
+                        // add the 'opened' class to the div we hide/show
+                        $(this).siblings('div').removeClass('js__collapsible_opened');
+                        // add the 'triggered' class to the collapsible container - to adjust styles for the chevron and underline etc.
+                        $(this).parent('li').removeClass('js__collapsible_triggered');
 
-                            // we are closing a collapsible;
-                            if( $(this).siblings('a.named_anchor').length ){
+                        // we are closing a collapsible;
+                        if( $(this).siblings('a.named_anchor').length ){
 
-                                // try to use history api
-                                if(history.replaceState) {
-                                    // use replacestate to update URL (prevents scrolling and reloading)
-                                    history.replaceState(null, null, ' ');
-                                }
-                                // history api unavailable browser < ie9
-                                else {
-                                    location.hash = '';
-                                }
+                            // try to use history api
+                            if(history.replaceState) {
+                                // use replacestate to update URL (prevents scrolling and reloading)
+                                history.replaceState(null, null, ' ');
+                            }
+                            // history api unavailable browser < ie9
+                            else {
+                                location.hash = '';
                             }
                         }
-                        // this collapsible is closed
-                        else {
-                            // add the 'opened' class to the div we hide/show
-                            $(this).siblings('div').addClass('js__collapsible_opened');
-                            // add the 'triggered' class to the collapsible container - to adjust styles for the chevron and underline etc.
-                            $(this).parent('li').addClass('js__collapsible_triggered');
+                    }
+                    // this collapsible is closed
+                    else {
+                        // add the 'opened' class to the div we hide/show
+                        $(this).siblings('div').addClass('js__collapsible_opened');
+                        // add the 'triggered' class to the collapsible container - to adjust styles for the chevron and underline etc.
+                        $(this).parent('li').addClass('js__collapsible_triggered');
 
+                        
+
+                        // we are opening a collapsible;
+                        if( $(this).siblings('a.named_anchor').length ){
+
+                            // if this collapsible has a named anchor
+                            // (after weve opened it); push that named anchor into the url
+
+                            window.location.hash = $(this).siblings('a.named_anchor')[0].id;
+
+                        }
+                    }
+                }
+            }
+
+            // initialize collapsibles handler
+            Finance.Collapsibles._init();
+        }
+        
+        
+        
+            
+        // 
+        // URL has hash
+        if( window.location.hash ){
+
+            // handle hash behavior
+            Finance.HashHandler = {
+
+                // init sets event listeners that fire later
+                _init : function(){
+
+                    $(window).on('load', function(e){
+
+                        // check that we have collapsibles to expand/contract
+                        if( $('.js__collapsible_list').length ){
                             
+                            // get the hash target on load, and on hashchange
+                            var hashTarget = $('a.named_anchor:target');
 
-                            // we are opening a collapsible;
-                            if( $(this).siblings('a.named_anchor').length ){
+                            var hashNotTarget = $('a.named_anchor:not(:target)');
 
-                                // if this collapsible has a named anchor
-                                // (after weve opened it); push that named anchor into the url
+                            // close all the collapsibles
+                            // this is mirroring the 'opening' behavior rather than find the collapsibles another way; to keep it consistent
+                            hashNotTarget.parent('li').removeClass('js__collapsible_triggered');
+                            // hashNotTarget.siblings('div').css('display', 'none');
+                            hashNotTarget.siblings('div').removeClass('js__collapsible_opened');
+                            
+                            // open the target collapsible
+                            hashTarget.parent('li').addClass('js__collapsible_triggered');
+                            // hashTarget.siblings('div').css('display', 'block');
+                            hashTarget.siblings('div').addClass('js__collapsible_opened');
 
-                                window.location.hash = $(this).siblings('a.named_anchor')[0].id;
+                            // then, only on hash change
+                            // we need to manually rescroll the page to account for collapsing / expanding elements
+                            if( e.type == 'hashchange' && hashTarget.length ){
+                                
+                                $(window).scrollTop( hashTarget.offset().top );
 
                             }
                         }
-                    }
+                    });
                 }
-
-                // initialize collapsibles handler
-                Finance.Collapsibles._init();
             }
+            Finance.HashHandler._init();
             
-            
-            
-                
-            // 
-            // URL has hash
-            if( window.location.hash ){
-
-                // handle hash behavior
-                Finance.HashHandler = {
-    
-                    // init sets event listeners that fire later
-                    _init : function(){
-    
-                        $(window).on('load', function(e){
-
-                            // check that we have collapsibles to expand/contract
-                            if( $('.js__collapsible_list').length ){
-                                
-                                // get the hash target on load, and on hashchange
-                                var hashTarget = $('a.named_anchor:target');
-    
-                                var hashNotTarget = $('a.named_anchor:not(:target)');
-
-                                // close all the collapsibles
-                                // this is mirroring the 'opening' behavior rather than find the collapsibles another way; to keep it consistent
-                                hashNotTarget.parent('li').removeClass('js__collapsible_triggered');
-                                // hashNotTarget.siblings('div').css('display', 'none');
-                                hashNotTarget.siblings('div').removeClass('js__collapsible_opened');
-                                
-                                // open the target collapsible
-                                hashTarget.parent('li').addClass('js__collapsible_triggered');
-                                // hashTarget.siblings('div').css('display', 'block');
-                                hashTarget.siblings('div').addClass('js__collapsible_opened');
-    
-                                // then, only on hash change
-                                // we need to manually rescroll the page to account for collapsing / expanding elements
-                                if( e.type == 'hashchange' && hashTarget.length ){
-                                    
-                                    $(window).scrollTop( hashTarget.offset().top );
-    
-                                }
-                            }
-                        });
-                    }
-                }
-                Finance.HashHandler._init();
-                
-            }
+        }
             
 
-        });
 
         Search = {
 

@@ -20,14 +20,14 @@
     }
     get_header();
  ?>
-<main class="main" id="forms-submit">
+<main class="main">
     
     <?php 
         // lets not use the hero space on this
         //    echo PageHero::return_pagehero($fields);
      ?>
     
-    <section>
+    <section class="wpform_container">
         <?php 
             echo $return['form'];
         ?>

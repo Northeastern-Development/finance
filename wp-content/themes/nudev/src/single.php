@@ -42,6 +42,11 @@
         wp_redirect(site_url('/financial-statements/'));
         exit();
     }
+    // training items
+    else if ( $postType == 'training_items' ){
+        wp_redirect(site_url('/training/'));
+        exit();
+    }
 
     // direct glossary items to the glossary index page; with hash to jump to named anchor
     else if ( $postType == 'glossary_items' ){

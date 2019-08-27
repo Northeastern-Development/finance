@@ -24,6 +24,7 @@ class cpts
         $this->reg_departments_post_type();
         $this->reg_financial_statements_post_type();
         $this->reg_deadlines_post_type();
+        $this->reg_training_post_type();
 
     }
 
@@ -51,6 +52,37 @@ class cpts
         );
         register_post_type('deadlines', $args);
     }
+
+    // 
+    //  Training
+    // 
+    function reg_training_post_type(){
+        $labels = array(
+            'name' => __('Training', 'nudev'), // Rename these to suit
+            'singular_name' => __('Training Item', 'nudev'),
+            'add_new' => __('Add New', 'nudev'),
+            'add_new_item' => __('Add New Training Item', 'nudev'),
+            'edit' => __('Edit', 'nudev'),
+            'edit_item' => __('Edit Training Item', 'nudev'),
+            'new_item' => __('New Training Item', 'nudev'),
+            'view' => __('View Training Item', 'nudev'),
+            'view_item' => __('View Training Item', 'nudev'),
+            'search_items' => __('Search Training Items', 'nudev'),
+            'not_found' => __('No Training Items found', 'nudev'),
+            'not_found_in_trash' => __('No Training Items found in Trash', 'nudev')
+        );
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'menu_position' => null,
+        );
+        register_post_type('training_items', $args);
+    }
+    // 
+    // 
+    // 
 
     function reg_financial_statements_post_type(){
         $labels = array(

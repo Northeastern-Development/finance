@@ -26,7 +26,7 @@
     
     
     
-    <section>
+    <section class="related-items">
         <h2>Contact Staff</h2>
         <?php include(locate_template('loops/loop-departments.php')); ?>
     </section>

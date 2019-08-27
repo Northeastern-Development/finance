@@ -78,9 +78,8 @@
             }
          ?>
     </section>
-    <section class="heretohelp">
+    <section class="nu__team-list">
         <?php 
-            // heretohelp,
             if( !empty($fields['helpers']) ){
                 include(locate_template('loops/reusable/loop-heretohelp.php'));
             }

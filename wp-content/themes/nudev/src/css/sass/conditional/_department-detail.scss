@@ -1,0 +1,37 @@
+// 
+// 
+// 
+@import '../../sass/base/mixins.scss';
+@import '../../sass/base/fonts.scss';
+@import '../../sass/base/vars.scss';
+// 
+// 
+// 
+
+// first section - an intro blurb + contact info
+section.dept_main {
+    text-align: center;
+    
+    // icon links
+    >a.neu__iconlink {
+        display: inline-block;
+        margin-right: 45px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        // iconlink icons
+        &.neu__iconlink-email {
+            @include neu__iconlink($icon: "\e0be");
+        }
+        &.neu__iconlink-phone {
+            @include neu__iconlink($icon: "\e551");
+        }
+    }
+
+    // main details paragraph
+    > div {
+        margin-bottom: 15px;
+
+    }
+}

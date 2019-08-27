@@ -1,0 +1,307 @@
+// 
+// 
+// 
+// 
+// 
+// 
+
+// section for related items
+// i.e., related forms, related tasks
+// simple 2col grid of iconlinks
+section.related-items {
+    // 
+    $w : 60vw;
+    $c : 2;
+    $g : 2vw;
+    // 
+    
+    // all related items
+    > ul {
+        display: flex;
+        flex-flow: row wrap;
+        
+        // each related item
+        > li {
+            position: relative;
+            flex: 1 0 auto;
+            @include font-2l-l;
+            @include neu__iconlink($hover: 0);
+            width: colWidth($w, $c, $g);
+            padding: 0 0 0 30px;
+            margin: 0 15px 15px 0;
+            &:nth-of-type(2n){
+                margin: 0 0 15px 0;
+            }
+            &:before {
+                position: absolute;
+                left: 0;
+                top: auto;
+                color: $brand_colors-red;
+            }
+            >a {
+                border-bottom: 2px solid transparent;
+                &:hover,
+                &:active,
+                &:focus {
+                    border-bottom: 2px solid $brand_colors-red;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 960px){
+        width: 90vw;
+    }
+    @media only screen and (max-width: 640px){
+        $g : getVar($sizing, gutter, px, small);
+        > ul {
+            > li {
+                width: 100%;
+                margin: 0 0 $g 0;
+            }
+        }
+    }
+}
+
+
+
+
+
+// fourth section -- the 'leadership' part of the staff grids feature
+section.nu__team {
+    // section content (leadership staff as 1 column of rows)
+    > article {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        // details
+        > div:first-child {
+            flex: 1;
+            // member name
+            >h3 {
+                @include font-3b-l;
+            }
+            // member position
+            >h6 {
+                @include font-2r-l;
+                margin-bottom: 15px;
+            }
+            // member short-bio
+            >p.description {
+                margin-bottom: 15px;
+            }
+            // icon links (contact links)
+            a.neu__iconlink {
+                &.neu__iconlink-phone {
+                    @include neu__iconlink($icon: "\e551");
+                }
+                &.neu__iconlink-email {
+                    @include neu__iconlink($icon: "\e0be");
+                }
+                &.neu__iconlink-url {
+                    @include neu__iconlink();
+                }
+            }
+        }
+        // bgimg
+        > div:last-child {
+            &.neu__bgimg {
+                flex: none;
+                height: auto;
+                > div {
+                    height: auto;
+                    @include aspectRatio();
+                }
+            }
+        }
+
+    }
+
+}
+// fifth section -- the 'staff' part of the staff grids feature
+section.nu__team-list {
+    $w : 60vw;      // images size matches narrow section
+    $c : 4;
+    $g : 2vw;
+
+    > h2 {
+        border-bottom: none;
+    }
+    
+    > ul {
+        flex-flow: row wrap;
+        border-top: 1px solid black;
+        padding: 15px 0 0 0;
+        margin: 15px auto;
+        width: 60vw; // enable this to 'square' the two grids at the same width
+        > li {
+            margin: 0 $g $g 0;
+            &:nth-child(#{$c}n){
+                margin: 0 0 $g 0;
+            }
+
+            // staff members
+            > div:not(.neu__bgimg){
+                >h3 {
+                    @include font-3b-c;
+                    text-align: center;
+                    border-bottom: 2px solid transparent;
+                }
+                >p {
+                    margin: 0;
+
+                    &:first-of-type {
+                        margin-bottom: 15px;
+
+                        >span:first-of-type {
+                            @include font-3b-l;
+                        }
+                    }
+
+                    &:nth-last-child(3) a.neu__iconlink {
+                        @include neu__iconlink($icon: "\e551");
+                    }
+
+                    &:nth-last-child(2) a.neu__iconlink {
+                        @include neu__iconlink($icon: "\e0be");
+                    }
+
+                    &.neu__iconlink {
+                        &:before {
+                            color: black;
+                        }
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            &:before {
+                                color: $brand_colors-red;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+}
+
+// also add selector for profile picture inside magnific popup if it exists
+// profile pictures for both staff and leadership sections should be the same size
+section.nu__team > article > div:last-child,    // leadership images
+section.nu__team-list > ul > li {               // staff images
+    $w : 60vw;      // images size matches narrow section
+    $c : 4;
+    $g : 2vw;
+    width: colWidth($w, $c, $g);
+    flex: none;
+    >  .neu__bgimg {
+        width: 100%;
+        height: auto; // reset the 245px height
+        > div {
+            @include aspectRatio();
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px){
+
+    // 1280 needs more width; or down to 3 cols
+    $w : 90vw;
+    $c : 4;
+    $g : 2vw;
+    // 
+    section.nu__team > article > div:last-child,    // leadership images
+    section.nu__team-list > ul > li {
+        width: colWidth($w, $c, $g);
+    }
+    section.nu__team-list {
+        width: $w;
+        > ul {
+            width: $w;
+        }
+    }
+    // 
+    section.nu__team-list>ul>li>div:not(.neu__bgimg)>p:first-of-type>span:first-of-type,
+    section.nu__team>article>div:first-child>h3 {
+        @include font-2b-l;
+    }
+
+    section.nu__team>article>div:first-child>h6 {
+        @include font-2r-l;
+    }
+}
+
+
+
+
+// 
+// 
+// leadership section width bump from 60->90vw
+// staff section breaks from 4col to 3col
+@media only screen and (max-width: 960px){
+    $w : 90vw;
+    $c : 3;
+    $g : 2vw;
+    // 
+    section.nu__team > article > div:last-child,    // leadership images
+    section.nu__team-list > ul > li {
+        width: colWidth($w, $c, $g);
+    }
+    section.nu__team-list {
+        width: $w;
+        > ul {
+            width: $w;
+            > li {
+                &:nth-child(n+1){
+                    margin: 0 $g $g 0;
+                }
+                &:nth-child(#{$c}n){
+                    margin: 0 0 $g 0;
+                }
+            }
+        }
+    }
+    
+    section.nu__team {
+        width: $w;
+    }
+}
+
+// 
+// 
+// 
+@media only screen and (max-width: 640px){
+ 
+    // staff and leadership sections both break to 1col
+    // each profile switched from 1col_2row to 1col_1row
+    // image always on the left, info always on the right
+    $w : 90vw;
+    $c : 1;
+    $g : 2vw;
+
+    section.nu__team > article > div:last-child {
+        
+        width: colWidth(($w / 2), $c, $g);
+    }
+    
+    section.nu__team-list {
+        > ul {
+            flex-flow: row wrap;
+            > li {
+                width: 100%;
+                margin: 0 0 $g 0;;
+                display: flex;
+                flex-flow: row nowrap;
+                > div {
+                    width: colWidth(($w / 2), $c, $g);
+                    &.neu__bgimg {
+                        margin-right: $g;
+                    }
+                }
+                &:nth-child(n+1){
+                    margin: 0 0 $g 0;
+                }
+            }
+        }
+    }
+    
+}

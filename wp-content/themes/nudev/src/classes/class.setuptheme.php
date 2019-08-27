@@ -79,7 +79,14 @@ class SetupTheme
         }
         // Departments Index/Detail Pages
         if( is_page_template('templates/template-departments-detail.php') || is_page_template('templates/template-departments-index.php') ){
-            wp_enqueue_style('departments', get_template_directory_uri() . '/css/departments.css', array('theme'), '1.0.0');
+
+            // production
+            // wp_enqueue_style('departments', get_template_directory_uri() . '/css/departments.css', array('theme'), '1.0.0');
+            
+            // this is a test; not production ready
+            wp_enqueue_style('department-detail', get_template_directory_uri() . '/css/department-detail.css', array('theme'), '1.0.0');
+            
+
         }
         // News and Events Page
         if( is_page_template('templates/template-newsevents-index.php') || is_page_template('templates/template-newsevents-item.php') ){
@@ -104,6 +111,10 @@ class SetupTheme
         // Deadlines
         if ( is_page_template('templates/template-deadlines.php') ) {
             wp_enqueue_style('deadlines', get_template_directory_uri() . '/css/deadlines.css', array('theme'), '1.0.0');
+        }
+        // Deadlines
+        if ( is_page_template('templates/template-training.php') ) {
+            wp_enqueue_style('training', get_template_directory_uri() . '/css/training.css', array('theme'), '1.0.0');
         }
         // Site Search
         if ( is_page_template('templates/template-search.php') ) {

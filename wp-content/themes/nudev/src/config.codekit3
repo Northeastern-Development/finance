@@ -529,14 +529,6 @@
 		"oAP": "/404.php",
 		"oF": 0
 		},
-	"/404.phpBAK": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/404.phpBAK",
-		"oF": 0
-		},
 	"/__OLD": {
 		"ft": 65536,
 		"oA": 1,
@@ -581,14 +573,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/classes/class.cpts.php",
-		"oF": 0
-		},
-	"/classes/class.cpts.php.BAK": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/classes/class.cpts.php.BAK",
 		"oF": 0
 		},
 	"/classes/class.prefooter.php": {
@@ -642,6 +626,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/deadlines-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/department-detail.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/department-detail-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -705,16 +699,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/css/lib/hover-min-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/lib/hover-min-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/css/lib/hover-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -722,16 +706,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/lib/hover-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/lib/magnific-popup-min-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/lib/magnific-popup-min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -754,6 +728,19 @@
 		"oAP": "/css/news-events-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/css/sass/_elems.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/sass/_elems.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"/css/sass/base/fonts.scss": {
 		"aP": 0,
@@ -843,6 +830,19 @@
 		"oA": 1,
 		"oAP": "/css/sass/base/vars.css",
 		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/css/sass/conditional/_department-detail.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/department-detail.css",
+		"oF": 3,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1015,6 +1015,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/css/sass/conditional/training.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/training.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"/css/sass/modules/helpful-links.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1184,16 +1197,6 @@
 		"oS": 3,
 		"uL": 1
 		},
-	"/css/search-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/search-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/css/search.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1234,13 +1237,15 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/dev-templates/is-debug.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
+	"/css/training.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
 		"oA": 0,
-		"oAP": "/dev-templates/is-debug.php",
-		"oF": 0
+		"oAP": "/css/training-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/favicon/android-icon-144x144.png": {
 		"ft": 32768,
@@ -1578,14 +1583,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/includes/navigation.php",
-		"oF": 0
-		},
-	"/includes/navigation.phpBAK": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/includes/navigation.phpBAK",
 		"oF": 0
 		},
 	"/includes/pagehero.php": {
@@ -2016,126 +2013,6 @@
 		"oAP": "/languages/ro_RO.po",
 		"oF": 0
 		},
-	"/loops/__OLD/loop-archived.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-archived.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-category.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-category.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-classnotes.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-classnotes.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-featured.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-featured.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-homepage.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-homepage.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-news-archive.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-news-archive.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-picks.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-picks.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-recent.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-recent.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-search.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-search.php",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-staff-OLD.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-staff-OLD.php.disabled",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-staff.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-staff.php.disabled",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-task-main.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-task-main.php.disabled",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-tools-index.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-tools-index.php.disabled",
-		"oF": 0
-		},
-	"/loops/__OLD/loop-tools-item.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop-tools-item.php.disabled",
-		"oF": 0
-		},
-	"/loops/__OLD/loop.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/loops/__OLD/loop.php",
-		"oF": 0
-		},
 	"/loops/loop-deadlines.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2248,28 +2125,20 @@
 		"oAP": "/loops/reusable/loop-tasks.php",
 		"oF": 0
 		},
+	"/loops/reusable/loop-team-members.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/loops/reusable/loop-team-members.php",
+		"oF": 0
+		},
 	"/loops/reusable/loop-tools.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/loops/reusable/loop-tools.php",
-		"oF": 0
-		},
-	"/modules/is-debug.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/modules/is-debug.php",
-		"oF": 0
-		},
-	"/page-local-testing.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/page-local-testing.php",
 		"oF": 0
 		},
 	"/page.php": {
@@ -2347,110 +2216,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/tag.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-convening.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-convening.php.disabled",
-		"oF": 0
-		},
-	"/templates/__OLD/template-default.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-default.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-employment.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-employment.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-employmentfulltime.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-employmentfulltime.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-employmentparttime.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-employmentparttime.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-employmentprofessional.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-employmentprofessional.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-form.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-form.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-homepage.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-homepage.php.disabled",
-		"oF": 0
-		},
-	"/templates/__OLD/template-location.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-location.php",
-		"oF": 0
-		},
-	"/templates/__OLD/template-news-archive.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-news-archive.php.disabled",
-		"oF": 0
-		},
-	"/templates/__OLD/template-news-item.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-news-item.php.disabled",
-		"oF": 0
-		},
-	"/templates/__OLD/template-staff-bio.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-staff-bio.php.disabled",
-		"oF": 0
-		},
-	"/templates/__OLD/template-staff.php.disabled": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/__OLD/template-staff.php.disabled",
 		"oF": 0
 		},
 	"/templates/template-about.php": {
@@ -2611,6 +2376,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/template-tools-index.php",
+		"oF": 0
+		},
+	"/templates/template-training.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/template-training.php",
 		"oF": 0
 		},
 	"/wpforms-capture.php": {
