@@ -3,15 +3,44 @@
  *  Template Name: Tool Detail
  * 
  *  Description:
+ *      This template is loaded by a redirect:
+ *      siteurl.edu/tools/tool/deeplink
  *          
  */
+
+    // 
     // Get Custom Query Vars -- i.e., site_url.com/tools/banner/access
     $toolname = get_query_var('toolname')  ;              // i.e., 'banner'
-
     $toolgrouping = get_query_var('toolgroup');         // i.e., 'access'
 
+    // Get all the Tools posts
+    $args = array(
+        'post_type' => 'tools'
+        ,'posts_per_page' => -1
+    );
+    $allTools = get_posts($args);
+    
+    // Reduce Tools posts down to an array of slugs
+    foreach( $allTools as $tool){
+        $allToolSlugs[] = $tool->post_name;
+    }
+    
+
+    // 
+    //  Compare query vars to Tools posts
+    // 
+
+    // if the URL has a tool that doesn't exist,
+    if( !in_array($toolname, $allToolSlugs) ){ 
+        // send back to the tools index page
+        wp_redirect(site_url('/tools/'));
+        exit();
+    }
+
+    // the URL is a tool that exists;
+    // we are free to get those fields
     // check for query var value, use that for get post
-    if( $toolname !== 'null' ){
+    else if( $toolname !== 'null' ){
         // get post object
         $toolpost = get_page_by_path($toolname, ARRAY_A, 'tools');
         // get ACF fields

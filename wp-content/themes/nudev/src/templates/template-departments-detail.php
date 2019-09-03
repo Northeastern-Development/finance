@@ -37,8 +37,8 @@
         // ,( !empty($fields['overview']) ) ? '<h2>Our Mission</h2><div>'.$fields['overview'].'</div>' : null
         // ,( !empty($fields['overview']) ) ? '<div>'.$fields['overview'].'</div>' : null
         ,( !empty($fields['overview']) ) ? $fields['overview'] : null
-        ,( !empty($fields['phone']) ) ? '<a class="neu__iconlink neu__iconlink-phone" aria-label="Call '.$department[0]->post_title.'" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a>' : null
-        ,( !empty($fields['email']) ) ? '<a class="neu__iconlink neu__iconlink-email" aria-label="Call '.$department[0]->post_title.'" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a>' : null
+        ,( !empty($fields['phone']) ) ? '<p><a class="neu__iconlink neu__iconlink-phone" aria-label="Call '.$department[0]->post_title.'" title="Call '.$department[0]->post_title.'" href="tel:'.$fields['phone'].'">'.$fields['phone'].'</a></p>' : null
+        ,( !empty($fields['email']) ) ? '<p><a class="neu__iconlink neu__iconlink-email" aria-label="Call '.$department[0]->post_title.'" title="Email '.$department[0]->post_title.'" href="mailto:'.$fields['email'].'">email</a></p>' : null
     );
 
     

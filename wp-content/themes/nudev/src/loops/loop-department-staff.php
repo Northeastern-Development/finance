@@ -128,9 +128,8 @@
                             <span>%s</span><br />
                             <span>%s</span><br />
                         </p>
-                        <p>%s</p>
-                        <p>%s</p>
-                        <p>%s</p>
+                        %s
+                        %s
                     </div>
                 </li>
             ';
@@ -153,15 +152,9 @@
                         ,$staffmember->post_title
                         ,$staffmember->post_title
                         ,$staffmember_fields['title']
-                        ,( !empty($staffmember_fields['phone']) ) 
-                            ? '<a class="neu__iconlink" href="tel:'.$staffmember_fields['phone'].'" aria-label="Call '.$staffmember->post_title.'" title="Call '.$staffmember->post_title.'">'.$staffmember_fields['phone'].'</a>' 
-                            : null
-                        ,( !empty($staffmember_fields['email']) )
-                            ? '<a class="neu__iconlink" href="mailto:'.$staffmember_fields['email'].'" aria-label="Email '.$staffmember->post_title.'" title="Email '.$staffmember->post_title.'">email</a>'
-                            : null
-                        ,( !empty($staffmember_fields['description']) )
-                            ? '<a class="neu__iconlink js__bio" href="/staff/bio/'.$staffmember->post_name.'" aria-label="View '.$staffmember->post_title.'\'s full profile" title="View '.$staffmember->post_title.'\'s full profile">View full profile</a>'
-                            : null
+                        // ,( !empty($staffmember_fields['phone']) )  ? '<a class="neu__iconlink" href="tel:'.$staffmember_fields['phone'].'" aria-label="Call '.$staffmember->post_title.'" title="Call '.$staffmember->post_title.'">'.$staffmember_fields['phone'].'</a>'  : null
+                        ,( !empty($staffmember_fields['email']) ) ? '<p><a class="neu__iconlink neu__iconlink-email" href="mailto:'.$staffmember_fields['email'].'" aria-label="Email '.$staffmember->post_title.'" title="Email '.$staffmember->post_title.'">email</a></p>' : null
+                        ,( !empty($staffmember_fields['description']) ) ? '<p><a class="neu__iconlink js__bio" href="/staff/bio/'.$staffmember->post_name.'" aria-label="View '.$staffmember->post_title.'\'s full profile" title="View '.$staffmember->post_title.'\'s full profile">View full profile</a></p>' : null
                     );
                 }
                 

@@ -20,9 +20,9 @@
                     <span>%s</span><br />
                     <span>%s</span><br />
                 </p>
-                <p>%s</p>
-                <p>%s</p>
-                <p>%s</p>
+                %s
+                %s
+                %s
             </div>
         </li>
     ';
@@ -52,15 +52,9 @@
                 ,$helper['helper']->post_title
                 ,$helper['helper']->post_title
                 ,$subfields['title']
-                ,( !empty($subfields['phone']) ) 
-                    ? '<a class="neu__iconlink" href="tel:'.$subfields['phone'].'" aria-label="Call '.$helper['helper']->post_title.'" title="Call '.$helper['helper']->post_title.'">'.$subfields['phone'].'</a>' 
-                    : null
-                ,( !empty($subfields['email']) )
-                    ? '<a class="neu__iconlink" href="mailto:'.$subfields['email'].'" aria-label="Email '.$helper['helper']->post_title.'" title="Email '.$helper['helper']->post_title.'">email</a>'
-                    : null
-                ,( !empty($subfields['description']) )
-                    ? '<a class="neu__iconlink js__bio" href="/staff/bio/'.$helper['helper']->post_name.'" aria-label="View '.$helper['helper']->post_title.'\'s full profile" title="View '.$helper['helper']->post_title.'\'s full profile">View full profile</a>'
-                    : null
+                ,( !empty($subfields['phone']) )  ? '<p></p><a class="neu__iconlink neu__iconlink-phone" href="tel:'.$subfields['phone'].'" aria-label="Call '.$helper['helper']->post_title.'" title="Call '.$helper['helper']->post_title.'">'.$subfields['phone'].'</a></p>'  : null
+                ,( !empty($subfields['email']) ) ? '<p><a class="neu__iconlink neu__iconlink-email" href="mailto:'.$subfields['email'].'" aria-label="Email '.$helper['helper']->post_title.'" title="Email '.$helper['helper']->post_title.'">email</a></p>' : null
+                ,( !empty($subfields['description']) ) ? '<p><a class="neu__iconlink js__bio" href="/staff/bio/'.$helper['helper']->post_name.'" aria-label="View '.$helper['helper']->post_title.'\'s full profile" title="View '.$helper['helper']->post_title.'\'s full profile">View full profile</a></p>' : null
             );
         }
     }

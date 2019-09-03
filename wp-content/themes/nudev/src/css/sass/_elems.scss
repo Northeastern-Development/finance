@@ -63,7 +63,21 @@ section.related-items {
 }
 
 
+a.neu__iconlink {
+    display: inline-block;
+    margin-right: 45px;
+    &:last-of-type {
+        margin-right: 0;
+    }
 
+    // iconlink icons
+    &.neu__iconlink-email {
+        @include neu__iconlink($icon: "\e0be");
+    }
+    &.neu__iconlink-phone {
+        @include neu__iconlink($icon: "\e551");
+    }
+}
 
 
 // fourth section -- the 'leadership' part of the staff grids feature

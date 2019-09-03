@@ -76,34 +76,6 @@
 }
 
 
-
-// Used on <ul> elements creating a flexbox-based grid of <li> elements
-// Defaults are 3-columns with 30px margins,
-// Accepts 2 arguments : # of columns and margin (specify units)
-// This mixin needs a little more development though. There are bugs with 'dangling' last rows.
-// Generally speaking it works great though, especially for 1, 2 and 3 columns
-// @mixin ul_grid_cols($num : 3, $margin : 30px) {
-//     list-style-type: none;
-//     display: flex;
-//     flex-flow: row wrap;
-//     li {
-//         flex: 1 1 calc(calc(100% / #{$num}) - #{$margin});
-//         margin: 0 #{$margin} #{$margin} 0;
-
-//         // these nth of type chains attempt to get a evenly spaced grid with varying numbers of items
-//         // if the grid has dangling last row it should fill out
-//         &:nth-of-type(#{$num}n) {
-//             margin-right: 0;
-//         }
-//         &:last-of-type:nth-of-type(even){
-//             margin-right: 0;
-//         }
-
-//         // optionally, we can use a max width to leave the items dangling and retain a squared grid
-//         max-width: calc( 100% / #{$num} - #{$margin});
-//     }
-// }
-
 // neu__iconlink
 @mixin neu__iconlink($side : 'left', $icon : "\e5c8", $hover : 1) {
     border-bottom: 2px solid transparent;
