@@ -491,8 +491,8 @@ div.js__collapsible_opened,
         }
     }
 
+    // shadow for the howdoi menu IF its in the header (not when its part of the body, only in the header)
     body {
-
         header .neumenu-wrapper {
             box-shadow: 1px 1px 5px $brand_colors-gray;
         }

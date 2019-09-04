@@ -49,7 +49,7 @@ section.related-items {
         }
     }
     @media only screen and (max-width: 960px){
-        width: 90vw;
+        // width: 90vw;
     }
     @media only screen and (max-width: 640px){
         $g : getVar($sizing, gutter, px, small);
@@ -217,10 +217,8 @@ section.nu__team-list > ul > li {               // staff images
 }
 
 @media only screen and (max-width: 1280px){
-
-    // 1280 needs more width; or down to 3 cols
-    $w : 90vw;
-    $c : 4;
+    $w : 60vw;
+    $c : 3;
     $g : 2vw;
     // 
     section.nu__team > article > div:last-child,    // leadership images
@@ -231,20 +229,21 @@ section.nu__team-list > ul > li {               // staff images
         width: $w;
         > ul {
             width: $w;
+            > li {
+                &:nth-child(n+1){
+                    margin: 0 $g $g 0;
+                }
+                &:nth-child(#{$c}n){
+                    margin: 0 0 $g 0;
+                }
+            }
         }
     }
-    // 
-    section.nu__team-list>ul>li>div:not(.neu__bgimg)>p:first-of-type>span:first-of-type,
-    section.nu__team>article>div:first-child>h3 {
-        @include font-2b-l;
-    }
-
-    section.nu__team>article>div:first-child>h6 {
-        @include font-2r-l;
+    
+    section.nu__team {
+        width: $w;
     }
 }
-
-
 
 
 // 
@@ -252,8 +251,8 @@ section.nu__team-list > ul > li {               // staff images
 // leadership section width bump from 60->90vw
 // staff section breaks from 4col to 3col
 @media only screen and (max-width: 960px){
-    $w : 90vw;
-    $c : 3;
+    $w : 60vw;
+    $c : 2;
     $g : 2vw;
     // 
     section.nu__team > article > div:last-child,    // leadership images
@@ -297,8 +296,13 @@ section.nu__team-list > ul > li {               // staff images
         width: colWidth(($w / 2), $c, $g);
     }
     
+    section.nu__team {
+        width: $w;
+    }
     section.nu__team-list {
+        width: $w;
         > ul {
+            width: $w;
             flex-flow: row wrap;
             > li {
                 width: 100%;

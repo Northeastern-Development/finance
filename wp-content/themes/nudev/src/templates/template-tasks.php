@@ -50,13 +50,13 @@
 
         $fields = get_fields($task); // (inefficient)
     ?>
-    <section>
+    <section class="task-intro">
         <?php 
             $blurb = get_fields($task)['description'];
             echo $blurb;
          ?>
     </section>
-   <section>
+   <section class="task-solutions">
         <?php 
        
             if( !empty($fields['options_group']) ){
@@ -67,7 +67,7 @@
          ?>
    </section>
    
-   <section>
+   <section class="task-faqs">
        <?php 
             if( !empty($fields['faqs']) ){
                 include(locate_template('loops/reusable/loop-faqs.php'));
@@ -75,13 +75,15 @@
         ?>
    </section>
 
-   <section>
-       <?php 
-            if( $fields['use_pre-footer'] == '1' ){
-                include(locate_template('includes/prefooter.php'));
-            }
-        ?>
-   </section>
+   <?php 
+        if( $fields['use_pre-footer'] == '1' ){
+            
+            echo '<section class="prefooter">';
+            include(locate_template('includes/prefooter.php'));
+            echo '</section>';
+
+        }
+    ?>
 
    <section class="related-items">
        <?php 

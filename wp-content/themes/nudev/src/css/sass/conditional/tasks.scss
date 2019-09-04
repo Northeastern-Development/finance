@@ -262,6 +262,17 @@
     }
 }
 
+@media only screen and (max-width: 1280px){
+    body.tasks {
+        main {
+            > section:not(.hero) {
+                // width: 90vw;
+            }
+        }
+    }
+
+}
+
 @media only screen and (max-width: $bp__md) {
     main>section:nth-of-type(2)>p {
         @include font-2l-c;

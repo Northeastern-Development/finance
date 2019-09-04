@@ -7,31 +7,18 @@
 // 
 // 
 // 
-
-// first section - an intro blurb + contact info
-section.dept_main {
-    text-align: center;
     
-    // icon links
-    >a.neu__iconlink {
-        display: inline-block;
-        margin-right: 45px;
-        &:last-of-type {
-            margin-right: 0;
+@media only screen and (max-width: 1280px){
+    body.department {
+    
+        main {
+            >section:not(.hero){
+    
+    
+                // width: 90vw;
+                
+            }
         }
-
-        // iconlink icons
-        &.neu__iconlink-email {
-            @include neu__iconlink($icon: "\e0be");
-        }
-        &.neu__iconlink-phone {
-            @include neu__iconlink($icon: "\e551");
-        }
-    }
-
-    // main details paragraph
-    > div {
-        margin-bottom: 15px;
-
+        
     }
 }

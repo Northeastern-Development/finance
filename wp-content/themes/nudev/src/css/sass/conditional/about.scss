@@ -240,7 +240,6 @@ main {
     main section:last-child>ul>li>a>h3>span {
         @include font-2b-l;
     }
-
 }
 
 @media only screen and (max-width: $bp__md) {

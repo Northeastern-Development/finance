@@ -88,7 +88,7 @@ class SetupTheme
             // production
             // wp_enqueue_style('departments', get_template_directory_uri() . '/css/departments.css', array('theme'), '1.0.0');
             // this is a test; not production ready
-            // wp_enqueue_style('department-detail', get_template_directory_uri() . '/css/department-detail.css', array('theme'), '1.0.0');
+            wp_enqueue_style('department-detail', get_template_directory_uri() . '/css/department-detail.css', array('theme'), '1.0.0');
         }
             
 
