@@ -3,8 +3,6 @@
 (function ($, root, undefined) {
     $(function () {
 
-
-
         Finance.Tasks = {
 
             solutions : $('.js__tasks_solutions'),

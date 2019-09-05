@@ -501,6 +501,82 @@ div.js__collapsible_opened,
     div.main,
     main {
 
+                
+        // // FAQ Stuff
+        // > section>ul.nufin-faqs {
+        //     list-style-type: none;
+        //     margin: 0;
+        //     margin-top: 30px;
+
+        //     >li {
+        //         border-bottom: 1px solid transparentize(black, 0.5);
+
+        //         >a {
+        //             display: block;
+        //             @include font-2r-l;
+        //             margin: 15px 0;
+
+        //             >span {
+        //                 border-bottom: 2px solid transparent;
+        //             }
+
+        //             &:hover,
+        //             &:active,
+        //             &:focus {
+        //                 &:after {
+        //                     // carrot becomes red
+        //                     color: $brand_colors-red;
+        //                 }
+
+        //                 >span {
+        //                     // text is underlined
+        //                     border-bottom: 2px solid $brand_colors-red;
+        //                 }
+        //             }
+        //         }
+
+        //         &.js__collapsible_triggered {
+        //             >a:after {
+        //                 // carrot becomes red
+        //                 // color: $brand_colors-red;
+        //                 transform: rotate(180deg);
+        //             }
+        //         }
+
+        //         >div {
+        //             @include font-2l-l;
+        //             cursor: initial;
+        //             padding-bottom: 15px;
+
+        //             >p {
+        //                 margin-bottom: 15px;
+        //             }
+
+        //             ul {
+        //                 a {
+        //                     color: $brand_colors-red;
+
+        //                     &:hover,
+        //                     &:active,
+        //                     &:focus {
+        //                         border-bottom: 2px solid $brand_colors-red;
+        //                     }
+        //                 }
+
+        //                 list-style-type: disc;
+        //                 margin: 0;
+        //                 padding: 0;
+        //                 padding-left: 2.4rem;
+
+        //                 li {
+        //                     margin: 0;
+        //                     padding: 0;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // END FAQ STUFF
 
 
         ul.js__collapsible_list {
@@ -549,82 +625,6 @@ div.js__collapsible_opened,
             }
         }
         
-        
-        // FAQ Stuff
-        >section>ul.nufin-faqs {
-            list-style-type: none;
-            margin: 0;
-            margin-top: 30px;
-
-            >li {
-                border-bottom: 1px solid transparentize(black, 0.5);
-
-                >a {
-                    display: block;
-                    @include font-2r-l;
-                    margin: 15px 0;
-
-                    >span {
-                        border-bottom: 2px solid transparent;
-                    }
-
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        &:after {
-                            // carrot becomes red
-                            color: $brand_colors-red;
-                        }
-
-                        >span {
-                            // text is underlined
-                            border-bottom: 2px solid $brand_colors-red;
-                        }
-                    }
-                }
-
-                &.js__collapsible_triggered {
-                    >a:after {
-                        // carrot becomes red
-                        // color: $brand_colors-red;
-                        transform: rotate(180deg);
-                    }
-                }
-
-                >div {
-                    @include font-2l-l;
-                    cursor: initial;
-                    padding-bottom: 15px;
-
-                    >p {
-                        margin-bottom: 15px;
-                    }
-
-                    ul {
-                        a {
-                            color: $brand_colors-red;
-
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                border-bottom: 2px solid $brand_colors-red;
-                            }
-                        }
-
-                        list-style-type: disc;
-                        margin: 0;
-                        padding: 0;
-                        padding-left: 2.4rem;
-
-                        li {
-                            margin: 0;
-                            padding: 0;
-                        }
-                    }
-                }
-            }
-        }
-        // END FAQ STUFF
 
         section.hero.hero-image {
             background-size: cover;
