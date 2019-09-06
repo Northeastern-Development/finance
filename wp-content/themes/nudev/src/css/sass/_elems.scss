@@ -79,6 +79,42 @@ a.neu__iconlink {
     }
 }
 
+section.dept_main {
+    text-align: center;
+    > div {
+        margin: 0 0 15px 0;
+        &:first-of-type {
+            @include font-3l-c;
+        }
+    }
+    > p {
+        display: inline-block;
+        margin-right: 45px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    // the tasks pages have all kinds of markup in the blurb
+    // there must have been a list in there at some point
+    ul {
+        a {
+            color: $brand_colors-red;
+            &:hover,
+            &:active,
+            &:focus {
+                border-bottom: 2px solid $brand_colors-red;
+            }
+        }
+        list-style-type: disc;
+        margin: 0;
+        padding: 0;
+        padding-left: 2.4rem;
+        li {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
 
 // fourth section -- the 'leadership' part of the staff grids feature
 section.nu__team {

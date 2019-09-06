@@ -13,7 +13,10 @@
     
     <section>
         <h2>Finance Division</h2>
-        <p><a class="neu__iconlink" title="Email the Finance Division" aria-label="Email the Finance Division" href="mailto:financehelp@northeastern.edu">email</a></p>
+        <div>
+            <p>How can we better serve you? Contact us at <a title="Email the Finance Division" aria-label="Email the Finance Division" href="mailto:financehelp@northeastern.edu">financehelp@northeastern.edu</a> with questions and comments</p>
+
+        </div>
     </section>
 
     <section>
