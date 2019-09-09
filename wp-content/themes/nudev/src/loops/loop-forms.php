@@ -138,10 +138,12 @@
                         else if( !empty($file['file']) ){
                             $href_value = $file['file'];
                         }
+
+                        // currently in development -- testing only
                         // check for WPform
-                        else if( !empty($file['wpform']) ){
-                            $href_value = site_url('/form-submission/?form_id=').$file['wpform']->ID;
-                        }
+                        // else if( !empty($file['wpform']) ){
+                        //     $href_value = site_url('/form-submission/?form_id=').$file['wpform']->ID;
+                        // }
 
                         $content_files .= sprintf(
                             $format_files

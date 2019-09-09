@@ -2125,12 +2125,12 @@
 		"oAP": "/loops/reusable/loop-tasks.php",
 		"oF": 0
 		},
-	"/loops/reusable/loop-team-members.php": {
+	"/loops/reusable/loop-team-members.php.depricated": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/loops/reusable/loop-team-members.php",
+		"oAP": "/loops/reusable/loop-team-members.php.depricated",
 		"oF": 0
 		},
 	"/loops/reusable/loop-tools.php": {
