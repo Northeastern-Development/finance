@@ -104,6 +104,7 @@ if (function_exists('add_theme_support'))
 // add custom query tags here
 function myplugin_rewrite_tag() {
     add_rewrite_tag( '%pagedd%', '([^&]+)' );           // Deadlines
+    add_rewrite_tag( '%deadline-type%', '([^&]+)' );           // Deadlines
     add_rewrite_tag( '%team-filter%', '([^&]+)' );      // Staff
     add_rewrite_tag( '%show-bio%', '([^&]+)' );	        // Bio (staff lightbox)
     add_rewrite_tag( '%taskname%', '([^&]+)' );	        // Tasks
@@ -120,7 +121,20 @@ add_action('init', 'myplugin_rewrite_tag', 10, 0);
 
 // add custom rewrite rules here
 function custom_rewrite_rule() {
+
+
+    // check pagination AND filtered by type
+    add_rewrite_rule('^deadlines/([^/]*)/page/([^/]*)?', 'index.php?page_id=4572&deadline-type=$matches[1]&pagedd=$matches[2]', 'top');
+
+    // check for pagination
     add_rewrite_rule('^deadlines/page/([^/]*)?', 'index.php?page_id=4572&pagedd=$matches[1]', 'top');
+    
+    // check for filtered by type
+    add_rewrite_rule('^deadlines/([^/]*)?', 'index.php?page_id=4572&deadline-type=$matches[1]', 'top');
+    
+
+
+
 
     
     

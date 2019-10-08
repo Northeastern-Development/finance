@@ -2,6 +2,10 @@
 /**
  * Template Name: Deadlines
  */
+
+
+    //  default get posts args
+    // all deadlines, must be active status, date must be in the future
     $args = array(
         'post_type'     => 'deadlines'
         ,'posts_per_page'   => -1
@@ -23,6 +27,46 @@
         ,'meta_key' => 'date'
         ,'order' => 'ASC'
     );
+
+
+    // check if we have a filter query var
+    $typeToFilter = !empty($wp_query->query_vars['deadline-type']) ? $wp_query->query_vars['deadline-type'] : '';
+
+    // if we have a filter query var; append the relevant args to the meta query before you fire it
+    if( !empty($typeToFilter) ){
+
+
+        // if we are looking for deadlines; also show all the posts that have empty type field?
+        if( $typeToFilter == 'deadlines' ){
+            
+            $args['meta_query'][] = array(
+                'relation' => 'OR'
+                ,array(
+                    'key' => 'type'
+                    ,'compare' => 'NOT EXISTS'
+                )
+                ,array(
+                    'key' => 'type'
+                    ,'compare' => '='
+                    ,'value' => $wp_query->query_vars['deadline-type']
+                )
+            );
+            
+        }
+        
+        // otherwise; just normally show what is filtered
+        else {
+            $args['meta_query'][] = array(
+                'key' => 'type'
+                ,'compare' => '='
+                ,'value' => $wp_query->query_vars['deadline-type']
+            );
+        }
+        
+    
+    }
+    
+    // Get the posts ( also, gets the filtered or paginated posts )
     $deadlines = get_posts($args);
 
     // count total # of deadlines
@@ -40,23 +84,51 @@
     // get the ending index for this page (or stop at the total)
     $end = ( ($start + $max) > $total ) ? $total : ( $start + $max );
     
-    $content_deadlines = '<ul class="deadlines">';
+    
+    // 
+    // 
+    // 
+    // 
+    
+    
     $format_deadline = '
-        <li>
+        <li%s>
             <h5>%s</h5>
             %s
         </li>
     ';
-    // loop thru this page of up to $max items
-    for ($i=$start; $i < $end; $i++) {
-        $fields = get_fields($deadlines[$i]);
-        $content_deadlines .= sprintf(
-            $format_deadline
-            ,date('M d' ,strtotime($fields['date']))
-            ,$fields['details']
-        );
+    
+    
+    if( !empty($deadlines) ){
+        
+        $content_deadlines = '<ul class="deadlines">';
+
+    
+        // loop thru this page of up to $max items
+        for ($i=$start; $i < $end; $i++) {
+        
+            $fields = get_fields($deadlines[$i]);
+    
+        
+            $content_deadlines .= sprintf(
+                $format_deadline
+                ,( !empty($fields['type']) ? ' class="'.$fields['type'].'"' : '' )
+                ,date('M d' ,strtotime($fields['date']))
+                ,$fields['details']
+            );
+        }
+    
+    
+        $content_deadlines .= '</ul>';
+
+    } else {
+        $content_deadlines = '<div class="deadlines-nonefound">Sorry, no Important Dates were found...</div>';
     }
-    $content_deadlines .= '</ul>';
+
+    // 
+    // 
+    // 
+    // 
 
 
     // now we make the pagination!
@@ -69,16 +141,21 @@
         // (prev button only appears if we are on a $pageNum greater than one)
         // (next button only appears if we are on a $pageNum smaller than $pagesNeeded)
         
+        
+        // if we have a type filter we need to modify the pagination
+        $modhref = ( !empty($typeToFilter) ? $typeToFilter.'/' : '');
+        
+        
         $prev = ( $pageNum > 1 ) 
-            ? '<li id="paginate-prev"><a title="View previous page" aria-label="View previous page" href="/deadlines/page/'.($pageNum - 1).'">Prev</a></li>' 
-            : '<li class="neu__inactivelink" id="paginate-prev"><a href="/deadlines/page/'.($pageNum - 1).'">Prev</a></li>';
+            ? '<li id="paginate-prev"><a title="View previous page" aria-label="View previous page" href="/deadlines/'.$modhref.'page/'.($pageNum - 1).'">Prev</a></li>' 
+            : '<li class="neu__inactivelink" id="paginate-prev"><a href="/deadlines/'.$modhref.'page/'.($pageNum - 1).'">Prev</a></li>';
         $next = ( $pageNum < $pagesNeeded ) 
-            ? '<li id="paginate-next"><a title="View next page" aria-label="View next page" href="/deadlines/page/'.($pageNum + 1).'">Next</a></li>' 
-            : '<li class="neu__inactivelink" id="paginate-next"><a href="/deadlines/page/'.($pageNum + 1).'">Next</a></li>';
+            ? '<li id="paginate-next"><a title="View next page" aria-label="View next page" href="/deadlines/'.$modhref.'page/'.($pageNum + 1).'">Next</a></li>' 
+            : '<li class="neu__inactivelink" id="paginate-next"><a href="/deadlines/'.$modhref.'page/'.($pageNum + 1).'">Next</a></li>';
         
         
     
-        $format_pagination = '<li><a class="%s" title="View page %s" aria-label="View page %s" href="/deadlines/page/%s/">%s</a></li>';
+        $format_pagination = '<li><a class="%s" title="View page %s" aria-label="View page %s" href="/deadlines/'.$modhref.'page/%s/">%s</a></li>';
         
         $pagination = '<ul class="deadlines-pagination">' . $prev;
 
@@ -95,6 +172,30 @@
         $pagination .= $next . '</ul>';
     }    
     
+    // 
+    // 
+    // 
+    // 
+    
+    $content_filtering = '
+        <div class="deadlines-typefilter">
+            <div>Filter By:</div>
+            <div>
+                <ul>
+                    <li><a '.( $typeToFilter === 'deadlines' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/deadlines').'" title="Filter to view only Deadlines" aria-label="Filter to view only Deadlines"><span class="colorkey deadlines"></span><span>Deadlines</span></a></li>
+                    <li><a '.( $typeToFilter === 'trainings' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/trainings').'" title="Filter to view only Trainings" aria-label="Filter to view only Trainings"><span class="colorkey trainings"></span><span>Trainings</span></a></li>
+                    <li><a '.( $typeToFilter === 'events' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/events').'" title="Filter to view only Events" aria-label="Filter to view only Events"><span class="colorkey events"></span><span>Events</span></a></li>
+                    <li><a class="clear-filter" href="'.site_url('/deadlines/').'" title="View all Important Events" aria-label="View all Important Events"><span class="colorkey clear-filter"></span><span>[clear]</span></a></li>
+                </ul>
+            </div>
+        </div>
+    ';
+    
+    // 
+    // 
+    // 
+    // 
+
     get_header();
 ?>
 <main>
@@ -105,6 +206,7 @@
 
     <section>
         <?php echo $pagination; ?>
+        <?php echo $content_filtering; ?>
         <?php echo $content_deadlines; ?>
         <?php echo $pagination; ?>
     </section>

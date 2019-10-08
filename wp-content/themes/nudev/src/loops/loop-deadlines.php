@@ -26,7 +26,7 @@
 
     $deadlines = get_posts($args);
     $format_deadline = '
-        <li>
+        <li %s>
             <h5>%s</h5>
             %s
         </li>
@@ -34,7 +34,7 @@
     $content_deadline = '
         <div class="deadlines">
             <div>
-                <h4>Upcoming Deadlines</h4>
+                <h4>Upcoming Important Dates</h4>
                 <ul class="deadlines-items">
     ';
     foreach( $deadlines as $deadline ){
@@ -45,6 +45,7 @@
 
             $content_deadline .= sprintf(
                 $format_deadline
+                ,( !empty($fields['type']) ? ' class="'.$fields['type'].'"' : '' )
                 ,date('M d' ,strtotime($fields['date']))
                 ,$fields['details']
             );
@@ -53,7 +54,7 @@
     $content_deadline .= '
                 </ul>
             </div>
-            <a href="/deadlines" class="nu__content_btn" title="View all deadlines" aria-label="View all deadlines">View all deadlines</a>
+            <a href="/deadlines" class="nu__content_btn" title="View all Important Dates" aria-label="View all Important Dates">View all Important Dates</a>
         </div>
     ';
     echo $content_deadline;

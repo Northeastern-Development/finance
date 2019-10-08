@@ -1,6 +1,7 @@
 @import '../../sass/base/fonts.scss';
 @import '../../sass/base/vars.scss';
 @import '../../sass/base/mixins.scss';
+
 /*
 *   Homepage   
 */
@@ -16,9 +17,11 @@
             flex-flow: column nowrap;
             justify-content: space-around;
             height: 650px;
+
             // vertically centered hero content
             >div {
                 width: 60vw;
+
                 >p {
                     @include font-2l-c;
                     margin-bottom: 30px;
@@ -34,11 +37,45 @@
                     border: 1px solid white;
                 }
             }
+
+            +.deadlines {
+                .deadlines-items {
+                    >li {
+                        position: relative;
+                        // add the color coding thing at the top
+                        &:before {
+                            content: '';
+                            background-color: #00cfb5;
+                            width: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 8px;
+                            display: block;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+                        &.trainings {
+                            &:before {
+                                background-color: #ffbe3c;
+                            }
+                        }
+
+                        &.events {
+                            &:before {
+                                background-color: #385774;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
-@media only screen and (max-width: $bp__md){
-    div.wrapper section.hero > div > h2 {
+
+@media only screen and (max-width: $bp__md) {
+    div.wrapper section.hero>div>h2 {
         @include font-5l-c;
     }
 }
@@ -62,17 +99,18 @@
                 position: relative;
                 background-color: $brand_colors-teal--dark;
                 text-align: center;
-                
+
                 // THESE SHOULD ALWAYS LOOK CONSISTENT NO NEED FOR THIS MUCH STYLING HERE
-                > a.nu__content_btn {
+                >a.nu__content_btn {
                     margin-bottom: 30px;
                     color: white;
                     border-color: white;
                 }
 
-                
+
                 >div {
                     position: relative;
+
                     >h4 {
                         padding: 10px 20px;
                         display: inline-block;
@@ -92,6 +130,7 @@
                             margin: 0 auto;
                             margin-bottom: 30px;
                             background-color: white;
+
                             &:last-of-type {
                                 margin-bottom: 0;
                             }
@@ -132,23 +171,25 @@
                     margin: 30px 0;
 
                     >a {
+
                         &:hover,
                         &:active,
                         &:focus {
-                            > div:first-of-type {
+                            >div:first-of-type {
                                 >div {
                                     transform: scale(1.1);
                                 }
                             }
+
                             h5:first-of-type:after {
                                 opacity: 1;
-        
+
                             }
                         }
 
-                        > h5:first-of-type {
+                        >h5:first-of-type {
                             @include font-3b-l;
-        
+
                             &:after {
                                 font-family: "Material Icons";
                                 content: "\e5cc";
@@ -159,10 +200,11 @@
                                 opacity: 0;
                             }
                         }
-                        
+
                         >p:first-of-type {
                             margin-bottom: 15px;
                         }
+
                         >div:first-of-type {
                             @include neu__bgimg;
                             width: 100%;
@@ -178,27 +220,32 @@
                 h5:not(:first-of-type) {
                     @include font-2b-l;
                 }
+
                 p {
                     @include font-2l-l;
                 }
-                > p:last-of-type {
+
+                >p:last-of-type {
                     position: relative;
                     @include neu__iconlink($hover: 0);
                     padding-left: 30px;
+
                     &:before {
                         color: $brand_colors-red;
                         position: absolute;
                         top: 0;
                         left: 0;
                     }
+
                     span {
                         border-bottom: 2px solid transparent;
                     }
                 }
+
                 &:hover,
                 &:active,
                 &:focus {
-                    > p:last-of-type span {
+                    >p:last-of-type span {
                         border-bottom: 2px solid $brand_colors-red;
                     }
                 }
@@ -211,10 +258,12 @@
                     margin: 0 auto;
                     margin-bottom: 15px;
                 }
-                > h5 {
+
+                >h5 {
                     @include font-3b-l;
                 }
-                > p {
+
+                >p {
                     text-align: center;
                 }
             }
@@ -224,7 +273,8 @@
 }
 
 // Responsive Font Size Adjustments
-@media only screen and (max-width: $bp__lg){
+@media only screen and (max-width: $bp__lg) {
+
     div.wrapper .home-feat-news>ul>li>a h5:first-of-type,
     div.wrapper .home-feat-tools>ul>li>a h5:first-of-type,
     div.wrapper>main>div.deadlines>div>ul>li>h5 {
@@ -244,6 +294,7 @@
             }
         }
     }
+
     // Disable the HowDoI Nav (in the header)
     header {
         li[data-id="howdoi"] {
@@ -264,16 +315,19 @@
                 text-align: left;
                 font-size: 0;
                 width: 100%;
-                > li {
+
+                >li {
                     font-size: initial;
                     display: inline-block;
                     vertical-align: top;
                     margin: 0 30px 30px 0;
-                    width: calc( (100% / 3) - 20px);
-                    &:nth-of-type(3n){
+                    width: calc((100% / 3) - 20px);
+
+                    &:nth-of-type(3n) {
                         margin-right: 0;
                     }
-                    > a > p {
+
+                    >a>p {
                         text-align: left;
                     }
                 }
@@ -283,59 +337,66 @@
 
 
     div.wrapper {
-        > main {
-            > section.hero {
-                > div {
+        >main {
+            >section.hero {
+                >div {
+
                     // width: calc(100% / 3);
-                    > p {
+                    >p {
                         margin-bottom: 15px;
+
                         &:last-of-type {
                             margin-bottom: 0;
                         }
                     }
-                    > a.nu__content_btn {
+
+                    >a.nu__content_btn {
                         margin-top: 30px;
                     }
                 }
             }
         }
     }
-    
+
 
     // Desktop Adjustments for Deadlines
     div.wrapper {
-        > main {
+        >main {
 
             div.deadlines {
                 position: relative;
                 height: 210px;
-                > a:last-child {
+
+                >a:last-child {
                     position: absolute;
                     bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
                 }
-                > div {
+
+                >div {
                     position: absolute;
                     top: 0;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     margin: 0 auto;
                     width: 80%;
-                    > h4 {
+
+                    >h4 {
                         position: absolute;
                         margin: 0;
                         left: 0;
                         bottom: 100%;
                     }
-                    > ul {
+
+                    >ul {
                         display: flex;
                         flex-flow: row nowrap;
                         justify-content: flex-start;
                         align-items: center;
                         padding: 0;
-    
-                        > li {
+
+                        >li {
                             flex: 0 1 calc(20% - 15px);
                             height: 185px;
                             // display: flex;
@@ -343,41 +404,46 @@
                             // align-items: flex-start;
                             // justify-content: center;
                             margin: 30px 30px 0 0;
+
                             &:last-child {
                                 margin-right: 0;
                             }
-                            > p {
+
+                            >p {
                                 margin-top: 10px;
                             }
                         }
                     }
                 }
-                
+
             }
 
         }
     }
 }
-@media only screen and (max-width: $bp__lg) and (min-width: $bp__md){
+
+@media only screen and (max-width: $bp__lg) and (min-width: $bp__md) {
     div.wrapper>main>div.deadlines>div>ul>li>p {
         font-size: 1.4rem;
         line-height: 2rem;
     }
 }
 
-@media only screen and (max-width: $bp__sm){
+@media only screen and (max-width: $bp__sm) {
 
-    div.wrapper .home-feat-news>ul>li, div.wrapper .home-feat-tools>ul>li {
+    div.wrapper .home-feat-news>ul>li,
+    div.wrapper .home-feat-tools>ul>li {
         width: auto;
     }
+
     div.wrapper .home-feat-tools>ul>li>a>div:first-of-type {
         width: auto;
     }
 }
 
-@media only screen and (max-width: $bp__md){
+@media only screen and (max-width: $bp__md) {
     div.wrapper section.hero {
         height: auto;
     }
-    
+
 }

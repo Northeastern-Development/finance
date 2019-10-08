@@ -8,22 +8,21 @@ $ltgray : rgba(240, 240, 240, 1);
 
     // use 80% of full width for deadlines (to match homepage)
 
-    main > section:last-of-type {
+    main>section:last-of-type {
         width: 100%;
-        > ul {
+
+        >ul {
             width: 80%;
             margin: 0 auto;
         }
-        > ul.deadlines-pagination {
-            margin-bottom: 30px;
-        }
     }
-    
-    
-    main > section > ul.deadlines {
+
+    main>section>ul.deadlines {
         display: flex;
         flex-flow: row wrap;
-        > li {
+
+        >li {
+            position: relative;
             background-color: $ltgray;
             padding: 15px;
 
@@ -32,34 +31,70 @@ $ltgray : rgba(240, 240, 240, 1);
             margin: 0;
             margin-bottom: 30px;
             margin-right: 30px;
-            &:nth-of-type(5n){
+
+            &:nth-of-type(5n) {
                 margin-right: 0;
             }
-            
-            > h5 {
+
+            >h5 {
                 @include font-3b-l;
             }
-            > p {
+
+            >p {
                 @include font-2l-l;
             }
+
+
+            // add the color coding thing at the top
+            &:before {
+                content: '';
+                background-color: #00cfb5;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 8px;
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            &.trainings {
+                &:before {
+                    background-color: #ffbe3c;
+                }
+            }
+
+            &.events {
+                &:before {
+                    background-color: #385774;
+                }
+            }
+            
         }
     }
-    main > section > ul.deadlines-pagination {
+
+    main>section>ul.deadlines-pagination {
         display: block;
         text-align: center;
-        > li {
+        margin: 60px auto 60px auto;
+
+        >li {
             display: inline-block;
             margin: 0 auto;
-            > a {
+
+            >a {
                 margin: 0 10px;
                 padding: 5px;
                 border-bottom: 2px solid transparent;
+
                 &:before,
                 &:after {
                     font-family: "Material Icons";
                     position: relative;
                     top: 3px;
                 }
+
                 &:hover,
                 &:active,
                 &:focus,
@@ -70,64 +105,175 @@ $ltgray : rgba(240, 240, 240, 1);
             }
         }
 
-        > li#paginate-prev a {
+        >li#paginate-prev a {
             &:before {
                 content: "\e5cb";
             }
         }
-        > li#paginate-next a {
+
+        >li#paginate-next a {
             &:after {
                 content: "\e5cc";
             }
         }
-        > li.neu__inactivelink > a {
+
+        >li.neu__inactivelink>a {
             color: $brand_colors-gray;
             pointer-events: none;
         }
-        
-    }   
+
+    }
+
+
+    main > section > .deadlines-nonefound {
+
+        $g: getVar($sizing, gutter, px, normal);
+        width: 80%;
+        margin: 0 auto 60px auto;
+        text-align: center;
+    }
+
+
+    main>section>.deadlines-typefilter {
+        $g: getVar($sizing, gutter, px, normal);
+        width: 80%;
+        margin: 0 auto 60px auto;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+
+        >div {
+            margin: 0 0 0 $g;
+            font-weight: normal;
+
+            &:first-child {
+                margin: 0;
+            }
+
+            >ul {
+                display: flex;
+                flex-flow: row wrap;
+                
+
+                >li {
+                    margin: 0 0 0 $g;
+
+                    &:first-child {
+                        margin: 0;
+                    }
+
+                    // the name and the color legends
+                    >a {
+                        >span {
+                            margin: 0 0 0 $g;
+                            &:first-child {
+                                margin: 0;
+                            }
+
+                            display: inline-block;
+                            vertical-align: middle;
+
+                            border-bottom: 2px solid rgba(getVar($colors, red, medium), 0);
+
+                            &.colorkey {
+                                height: 8px;
+                                width: 45px;
+                                background-color: #00cfb5;
+
+                                &.trainings {
+                                    background-color: #ffbe3c;
+                                }
+
+                                &.events {
+                                    background-color: #385774;
+                                }
+                                &.clear-filter {
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                        &:hover, &:focus, &:active, &.active {
+                            > span:not(.colorkey) {
+                                border-bottom: 2px solid rgba(getVar($colors, red, medium), 1);
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width: 960px){
+                    flex-flow: column nowrap;
+                    > li {
+                        margin: getVar($sizing, gutter, px, vsmall) 0 0 0;
+                        &:first-of-type {
+                            margin: 0 0 0 0;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+
 }
-@media only screen and (max-width: $bp__lg){
-    main > section > ul.deadlines {
-        > li {
-            flex-basis: calc( 25% - 22.5px  );
-            max-width: calc( 25% - 22.5px );
-            &:nth-of-type(5n){
+
+@media only screen and (max-width: $bp__lg) {
+    main>section>ul.deadlines {
+        >li {
+            flex-basis: calc(25% - 22.5px);
+            max-width: calc(25% - 22.5px);
+
+            &:nth-of-type(5n) {
                 margin-right: 30px;
             }
-            &:nth-of-type(4n){
+
+            &:nth-of-type(4n) {
                 margin-right: 0px;
             }
-            > h5 {
+
+            >h5 {
                 @include font-2b-l;
             }
-            > p {
+
+            >p {
                 font-size: 1.4rem;
                 line-height: 2rem;
             }
         }
     }
 }
-@media only screen and (max-width: $bp__md){
-    main > section > ul.deadlines {
-        > li {
-            flex-basis: calc( 50% - 15px );
+
+@media only screen and (max-width: $bp__md) {
+    main>section>ul.deadlines {
+        >li {
+            flex-basis: calc(50% - 15px);
             max-width: calc(50% - 15px);
-            &:nth-of-type(3n){
+
+            &:nth-of-type(3n) {
                 margin-right: 30px;
             }
-            &:nth-of-type(2n){
+
+            &:nth-of-type(2n) {
                 margin-right: 0px;
             }
         }
     }
 }
-@media only screen and (max-width: $bp__sm){
-    main > section > ul.deadlines {
-        > li {
+
+@media only screen and (max-width: $bp__sm) {
+    main>section>ul.deadlines {
+        >li {
             flex-basis: 100%;
             max-width: 100%;
-            &:nth-of-type(3n){
+
+            &:nth-of-type(3n) {
                 margin-right: 0;
             }
         }
