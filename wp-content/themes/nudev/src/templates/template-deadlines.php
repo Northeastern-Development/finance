@@ -185,7 +185,20 @@
                     <li><a '.( $typeToFilter === 'deadlines' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/deadlines').'" title="Filter to view only Deadlines" aria-label="Filter to view only Deadlines"><span class="colorkey deadlines"></span><span>Deadlines</span></a></li>
                     <li><a '.( $typeToFilter === 'trainings' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/trainings').'" title="Filter to view only Trainings" aria-label="Filter to view only Trainings"><span class="colorkey trainings"></span><span>Trainings</span></a></li>
                     <li><a '.( $typeToFilter === 'events' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/events').'" title="Filter to view only Events" aria-label="Filter to view only Events"><span class="colorkey events"></span><span>Events</span></a></li>
-                    <li><a class="clear-filter" href="'.site_url('/deadlines/').'" title="View all Important Events" aria-label="View all Important Events"><span class="colorkey clear-filter"></span><span>[clear]</span></a></li>
+                    <li><a class="clear-filter nu__content_btn" href="'.site_url('/deadlines/').'" title="View all Important Events" aria-label="View all Important Events">Clear</a></li>
+                </ul>
+            </div>
+        </div>
+    ';
+
+    $content_filtering = '
+        <div class="deadlines-typefilter">
+            <div>Filter By:</div>
+            <div>
+                <ul>
+                    <li><a '.( $typeToFilter === 'deadlines' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/deadlines').'" title="Filter to view only Deadlines" aria-label="Filter to view only Deadlines"><span class="colorkey deadlines"></span><span>Deadlines</span></a></li>
+                    <li><a '.( $typeToFilter === 'trainings' ? 'class="active"' : '' ).' href="'.site_url('/deadlines/trainings').'" title="Filter to view only Trainings" aria-label="Filter to view only Trainings"><span class="colorkey trainings"></span><span>Trainings</span></a></li>
+                    <li><a class="clear-filter nu__content_btn" href="'.site_url('/deadlines/').'" title="View all Important Events" aria-label="View all Important Events">Clear</a></li>
                 </ul>
             </div>
         </div>
