@@ -145,7 +145,7 @@ class NUModuleLoader{
   public function build_footer(){
 
     if(null !== get_option('global_footer') && get_option('global_footer') == 'on'){
-      echo '<div id="nu__global-footer">'.$this->getRemoteContent('/resources/includes/?r=footer&cache=no').'</div>';
+      echo '<div id="nu__global-footer">'.$this->getRemoteContent('/resources/includes/?r=footer').'</div>';
     }
 
   }
@@ -174,13 +174,13 @@ class NUModuleLoader{
 
       // are there any alerts that we need to show?
       if(!$this->debugMode){
-        $return .= $this->getRemoteContent('/resources/components/?return=alerts&cache=no');
+        $return .= $this->getRemoteContent('/resources/components/?return=alerts');
       }else{
-        $return .= wp_remote_get('http://newnu.local/resources/components/?return=alerts&cache=no')['body'];
+        $return .= wp_remote_get('http://newnu.local/resources/components/?return=alerts')['body'];
       }
 
       // grab the content for the main menu
-      $return .= $this->getRemoteContent('/resources/components/?return=main-menu&cache=no');
+      $return .= $this->getRemoteContent('/resources/components/?return=main-menu');
 
       $return .= '</div>';
 

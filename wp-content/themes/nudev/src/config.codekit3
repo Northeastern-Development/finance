@@ -699,6 +699,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/lib/hover-min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/lib/hover-min-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/lib/hover-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -706,6 +716,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/lib/hover-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/lib/magnific-popup-min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/lib/magnific-popup-min-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -977,15 +997,15 @@
 		"uL": 1
 		},
 	"/css/sass/conditional/search.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/css/sass/conditional/search.css",
-		"oF": 0,
+		"oAP": "/css/search.css",
+		"oF": 2,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1540,9 +1560,9 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/font-awesome.min-min.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 3
 		},
 	"/footer-article.php": {
@@ -2200,6 +2220,16 @@
 		"oAP": "/single.php",
 		"oF": 0
 		},
+	"/style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -2405,7 +2435,7 @@
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 584555663.62427104
+	"lastBuiltDate": 595445524.618137
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

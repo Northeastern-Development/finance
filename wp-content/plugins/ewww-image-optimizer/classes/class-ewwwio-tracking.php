@@ -57,7 +57,7 @@ class EWWWIO_Tracking {
 	 * @return void
 	 */
 	private function setup_data() {
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$data = array();
 
 		// Retrieve current theme info.
@@ -65,7 +65,7 @@ class EWWWIO_Tracking {
 		$theme           = $theme_data->Name . ' ' . $theme_data->Version;
 		$data['email']   = get_bloginfo( 'admin_email' ); // Not tracked, used to issue free credits.
 		$data['site_id'] = md5( home_url() );
-		if ( strlen( ewww_image_optimizer_get_option( 'ewww_image_optimizer_tracking_site_id' ) ) == 32 && ctype_alnum( ewww_image_optimizer_get_option( 'ewww_image_optimizer_tracking_site_id' ) ) ) {
+		if ( strlen( ewww_image_optimizer_get_option( 'ewww_image_optimizer_tracking_site_id' ) ) === 32 && ctype_alnum( ewww_image_optimizer_get_option( 'ewww_image_optimizer_tracking_site_id' ) ) ) {
 			ewwwio_debug_message( 'using pre-existing site_id' );
 			$data['site_id'] = ewww_image_optimizer_get_option( 'ewww_image_optimizer_tracking_site_id' );
 		} else {
@@ -88,7 +88,7 @@ class EWWWIO_Tracking {
 		$active_plugins = get_option( 'active_plugins', array() );
 
 		foreach ( $plugins as $key => $plugin ) {
-			if ( in_array( $plugin, $active_plugins ) ) {
+			if ( in_array( $plugin, $active_plugins, true ) ) {
 				// Remove active plugins from list so we can show active and inactive separately.
 				unset( $plugins[ $key ] );
 			}
@@ -141,6 +141,7 @@ class EWWWIO_Tracking {
 		$data['background_opt']         = (bool) ewww_image_optimizer_get_option( 'ewww_image_optimizer_background_optimization' );
 		$data['scheduled_opt']          = (bool) ewww_image_optimizer_get_option( 'ewww_image_optimizer_auto' );
 		$data['include_media_folders']  = (bool) ewww_image_optimizer_get_option( 'ewww_image_optimizer_include_media_paths' );
+		$data['include_originals']      = (bool) ewww_image_optimizer_get_option( 'ewww_image_optimizer_include_originals' );
 		$data['folders_to_opt']         = (bool) ewww_image_optimizer_get_option( 'ewww_image_optimizer_aux_paths' );
 		$data['folders_to_ignore']      = (bool) ewww_image_optimizer_get_option( 'ewww_image_optimizer_exclude_paths' );
 		$data['resize_media_width']     = (int) ewww_image_optimizer_get_option( 'ewww_image_optimizer_maxmediawidth' );
@@ -186,7 +187,7 @@ class EWWWIO_Tracking {
 		if ( ! $this->tracking_allowed() && ! $override ) {
 			return false;
 		}
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 
 		// Send a maximum of once per week.
 		$last_send = $this->get_last_send();
@@ -227,7 +228,7 @@ class EWWWIO_Tracking {
 	 * @return bool The unaltered setting.
 	 */
 	public function check_for_settings_optin( $input ) {
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 		// Send an intial check in on settings save.
 		if ( isset( $_POST['ewww_image_optimizer_allow_tracking'] ) && $_POST['ewww_image_optimizer_allow_tracking'] ) {
 			$this->send_checkin( true );
@@ -240,7 +241,7 @@ class EWWWIO_Tracking {
 	 * Check for a new opt-in via the admin notice
 	 */
 	public function check_for_optin() {
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 		ewww_image_optimizer_set_option( 'ewww_image_optimizer_allow_tracking', 1 );
 		$this->send_checkin( true );
 		ewww_image_optimizer_set_option( 'ewww_image_optimizer_tracking_notice', 1 );
@@ -252,7 +253,7 @@ class EWWWIO_Tracking {
 	 * Check for a new opt-out via the admin notice
 	 */
 	public function check_for_optout() {
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 		delete_option( 'ewww_image_optimizer_allow_tracking' );
 		delete_network_option( null, 'ewww_image_optimizer_allow_tracking' );
 		ewww_image_optimizer_set_option( 'ewww_image_optimizer_tracking_notice', 1 );
@@ -267,7 +268,7 @@ class EWWWIO_Tracking {
 	 * @return false|string
 	 */
 	private function get_last_send() {
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 		return ewww_image_optimizer_get_option( 'ewww_image_optimizer_tracking_last_send' );
 	}
 
@@ -275,7 +276,7 @@ class EWWWIO_Tracking {
 	 * Schedule a weekly checkin.
 	 */
 	public function schedule_send() {
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( is_multisite() ) {
 			if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
 				// Need to include the plugin library for the is_plugin_active function.
@@ -286,10 +287,10 @@ class EWWWIO_Tracking {
 			}
 		}
 		// We send once a week (while tracking is allowed) to check in, which can be used to determine active sites.
-		if ( ewww_image_optimizer_get_option( 'ewww_image_optimizer_allow_tracking' ) == true && ! wp_next_scheduled( 'ewww_image_optimizer_site_report' ) ) {
+		if ( ewww_image_optimizer_get_option( 'ewww_image_optimizer_allow_tracking' ) && ! wp_next_scheduled( 'ewww_image_optimizer_site_report' ) ) {
 			ewwwio_debug_message( 'scheduling checkin' );
 			wp_schedule_event( time(), apply_filters( 'ewww_image_optimizer_schedule', 'daily', 'ewww_image_optimizer_site_report' ), 'ewww_image_optimizer_site_report' );
-		} elseif ( ewww_image_optimizer_get_option( 'ewww_image_optimizer_allow_tracking' ) == true ) {
+		} elseif ( ewww_image_optimizer_get_option( 'ewww_image_optimizer_allow_tracking' ) ) {
 			ewwwio_debug_message( 'checkin already scheduled: ' . wp_next_scheduled( 'ewww_image_optimizer_site_report' ) );
 		} elseif ( wp_next_scheduled( 'ewww_image_optimizer_site_report' ) ) {
 			ewwwio_debug_message( 'un-scheduling checkin' );
@@ -335,7 +336,7 @@ class EWWWIO_Tracking {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-		ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
+		ewwwio_debug_message( '<b>' . __METHOD__ . '()</b>' );
 
 		if ( ! function_exists( 'is_plugin_active_for_network' ) && is_multisite() ) {
 			// Need to include the plugin library for the is_plugin_active function.
