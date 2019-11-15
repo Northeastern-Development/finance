@@ -609,6 +609,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/admin.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/admin-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/contact.css": {
 		"aP": 1,
 		"bl": 0,
@@ -877,6 +887,19 @@
 		"oAP": "/css/about.css",
 		"oF": 2,
 		"oS": 3,
+		"uL": 1
+		},
+	"/css/sass/conditional/admin.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/admin.css",
+		"oF": 2,
+		"oS": 0,
 		"uL": 1
 		},
 	"/css/sass/conditional/contact.scss": {
@@ -2159,6 +2182,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/loops/reusable/loop-tools.php",
+		"oF": 0
+		},
+	"/media-protect.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/media-protect.php",
 		"oF": 0
 		},
 	"/page.php": {

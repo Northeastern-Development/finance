@@ -11,12 +11,20 @@ class SetupTheme
     }
     function _init(){
         add_action('wp_enqueue_scripts', array($this, 'do_wp_enqueue_scripts'));
+        add_action('admin_enqueue_scripts', array($this, 'do_admin_enqueue_scripts'));
     }
 
     function do_wp_enqueue_scripts(){
         // enqueue:
         $this->enqueue_styles();
         $this->enqueue_scripts();
+    }
+
+    function do_admin_enqueue_scripts(){
+
+        wp_register_style('admin-css', get_template_directory_uri().'/css/admin.css', 'theme', '1.0.0' );
+        wp_enqueue_style('admin-css');
+        
     }
 
     function enqueue_scripts(){
