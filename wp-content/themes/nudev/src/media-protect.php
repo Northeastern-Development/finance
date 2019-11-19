@@ -37,23 +37,20 @@
     }
 
     // figure out what the file object should be to use for checking status
-    private function getObject():bool{
-    // private function getObject(){
-
-      $path = pathinfo($this->dir['baseurl'].'/'.$this->file)['filename'];
-      $obj = get_page_by_path($path,"OBJECT",'attachment');
-
+    private function getObject(){
+      $obj = get_post(attachment_url_to_postid($this->dir['baseurl'].'/'.$this->file));
       if(!is_object($obj)){ // it was not an object, check for a parent object next
-        $path = substr($path,0,strrpos($path,'-')); // update the filename removing everything AFTER the last dash to find the parent
-        $this->fileObject = get_page_by_path($path,"OBJECT",'attachment'); // find the parent object
-        unset($path,$obj);  // clean up
+        $ext = pathinfo($this->file, PATHINFO_EXTENSION); // file extension type value
+        $path = substr($this->file,0,strrpos($this->file,'-')); // remove everything AFTER the last dash to find the parent media item
+        $this->fileObject = get_post(attachment_url_to_postid($this->dir['baseurl'].'/'.$path.'.'.$ext)); // find the parent object
+        unset($path,$ext,$obj);  // clean up
         return true;
       }else if(is_object($obj)){  // we have an object, set the file object and return true
         $this->fileObject = $obj;
-        unset($path,$obj);  // clean up
+        unset($obj);  // clean up
         return true;
       }else{  // straight up error
-        unset($path,$obj);  // clean up
+        unset($obj);  // clean up
         return false;
       }
     }
@@ -63,30 +60,33 @@
 
 
     // this will check to see if the file object should be protected or not based on categories assigned
-    private function checkStatus():void{
-      // $this->checkStatus = function(){
+    private function checkStatus(){
 
-      $mCats = get_the_terms($this->fileObject->ID,'attachment_category');
-      $protect = false;
+      if(is_object($this->fileObject)){ // is this a real, functional object that we have to work with?
+        $mCats = get_the_terms($this->fileObject->ID,'attachment_category');
+        $protect = false;
 
-      // loop through the cats for the media item
-      if(!empty($mCats)){ // make sure that we have some category data to look at
-        foreach($mCats as $mC){
-          if($mC->slug == 'protected'){ // does this media item include the protected category?
-            $protect = true;
-            break;  // break if we find the protected cat, no need to look further
+        // loop through the cats for the media item
+        if(!empty($mCats)){ // make sure that we have some category data to look at
+          foreach($mCats as $mC){
+            if($mC->slug == 'protected'){ // does this media item include the protected category?
+              $protect = true;
+              break;  // break if we find the protected cat, no need to look further
+            }
           }
+        } // if no cats, we leave protect set to default of false
+
+        unset($mCats,$mC);  // clean up
+
+        if($protect){ // this is a protected file, make sure the user is logged in
+          unset($protect,$this->fileObject);  // clean up
+          $this->checkUser();
+        }else{  // not a protected file, show it to the user
+          unset($protect,$this->fileObject);  // clean up
+          $this->buildMedia();
         }
-      } // if no cats, we leave protect set to default of false
+      }else{ // for some reason this is NOT an object, so just don't do anything
 
-      unset($mCats,$mC);  // clean up
-
-      if($protect){ // this is a protected file, make sure the user is logged in
-        unset($protect,$this->fileObject);  // clean up
-        $this->checkUser();
-      }else{  // not a protected file, show it to the user
-        unset($protect,$this->fileObject);  // clean up
-        $this->buildMedia();
       }
     }
 
@@ -95,7 +95,7 @@
 
 
     // check to see if the user is logged in or not, and allowed to see protected files
-    private function checkUser():void{
+    private function checkUser(){
       if(!is_user_logged_in()){ // the user is not logged in, bounce them to the login screen and pass the file they were after as a callback
         wp_redirect(wp_login_url($this->dir['baseurl'].'/'.$this->file));
         exit();
@@ -109,7 +109,7 @@
 
 
     // this will build the media item to be returned
-    private function buildMedia():void{
+    private function buildMedia(){
 
       list($basedir) = array_values(array_intersect_key(wp_upload_dir(),array('basedir' => 1)))+array(NULL);
       $this->file = rtrim($basedir,'/').'/'.str_replace('..','',isset($this->file)?$this->file:'');
